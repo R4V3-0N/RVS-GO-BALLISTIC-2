@@ -1,0 +1,151 @@
+
+
+<event name="GB_HOSTILE_REBEL_FED_DESERTER">
+	<text load="GB_TEXT_ENCOUNTER_REBEL_FED"/>
+	<ship load="GB_SHIP_REBEL_FED_GENERIC" hostile="true"/> 
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+<textList name="GB_TEXT_ENCOUNTER_REBEL_FED">
+	<text>You spot a Federation ship far from the beacon and attempt to hail them but to your surprise it turns to attack!</text>
+	<text>You're surprised when a nearby Federation ship opens fire, it appears they're deserters!</text>
+	<text>A stationary Federation ship attempts to lay low at this beacon, but starts charging their weapons as you near them!</text>
+	<text>It doesn't matter if they deserted during the Federation Civil War, a captured ship, or recent turncoats; Because when you attempted to hail them, they immediately powered up their weapons!</text>
+	<text>Your ship is hailed. "We didn't leave the Federation to die in this War! Can't you see that the Rebellion is the only way to our salvation?!"</text>
+	<text>A Federation ship in a Rebel paint scheme approaches cautiously. "Personally," says the captain, "I'd have stuck with the Federation. But I'm a soldier, sir, and I'm no use without a war to fight. Raise your weapons!"</text>
+	<text>At the beacon is a Federation ship laying low that claims to be in covert operation behind enemy lines. But when you question them about their outdated IFF codes, they begin to power up their weapons!</text>
+	<text>By the time you notice the Federation ship here is in Rebel markings and livery, it's too late to avoid a fight.</text>
+	<text>Your ship is hailed. "We've found you at last. Prepare to die!"</text>
+	<text>A Federation ship hails you: "The Federation has left our worlds stagnant, we are fighting for a new future for humanity!"</text>
+	<text>A Federation ship hails. "The Federation's limits on intergalactic expansion prevents humanity from reaching their full potential. The Federation betrayed us and now we're here to make things right!"</text>
+	<text>Though a lot more common during the Federation Civil War, it isn't any less surprising to see a Federation ship in Rebel service. Even less so to see them to immediately lock their weapons on your ship in response to your arrival here.</text>
+	<text>Awaiting at this beacon is nothing more than an ambush, as your ship is immediately assaulted by a near by Federation turncoat. Did they know we were coming?</text>
+	<text>You are being hailed by a Federation ship not too far away from the beacon, everything seems to run smoothly until you realize that their ship's IFF isn't responding to your scans. When inquired, they began to power up their weapons!"</text>
+	<text>At this beacon appears to be another Federation traitor who powers up their weapons. Time to chalk up another one.</text>
+	<text>With another Federation ship spotted in a Rebel scheme you think if there's really a difference between a typical Rebel and someone whose joined recently; As afterall the Rebels themselves were once part of the Federation themselves. Regardless it seems another fight is inevitable and you lock your weapons!</text>
+	<text>To your surprise there is already a Federation ship at this beacon hailing you: however before you can respond to their hail they begin to open fire on you! — it's a trap!</text>
+	<text>You arrived to spot two Federation ships engaged with each other, one of them requests your immediate intervention while the other claims they're a turncoat and not to be trusted. Before you can deduce who to help one of them jumps away and the remaining ship immediately switches targets to you. At least that solves who we should engage.</text>
+</textList>
+
+<ship name="GB_FED_STATION_POW" auto_blueprint="LIST_SHIPS_GENERIC">
+	<destroyed load="DESTROYED_FEDERATION_STATION"/>
+	<deadCrew load="DEAD_CREW_FEDERATION_STATION"/>
+</ship>
+
+<event name="GB_POW_REBEL_GENERIC">
+	<text load="GB_TEXT_POW_REBEL_GENERIC"/>
+	<ship load="GB_FED_STATION_POW" hostile="false"/> 
+	<choice>
+		<text>Hail the station.</text>
+		<event load="GB_POW_REBEL_GENERIC_LIST"/>
+	</choice>
+</event>
+<textList name="GB_TEXT_POW_REBEL_GENERIC">
+	<text>You discover a fully militarized Federation station here, seems like the perfect place to transfer POW's.</text>
+	<text>Just as expected there is a Federation outpost here ready to accept custody of the POW's.</text>
+	<text>A small outpost here has been expecting you to transfer the prisoners of war in exchange for some services for your efforts.</text>
+	<text>You find a hidden Federation outpost. They message you, "You better dock quickly. The less activity in this quadrant the less our chances are of attracting unwanted attention".</text>
+	<text>A zoltan answers your hail onboard the station. "So, you've brought prisoners? I must say I did not expect a renegade to think twice about a surrender when there is scrap at hand... Perhaps there is hope for you lot afterall."</text>
+	<text>This beacon is bustling with activity and traffic.  It seems a Federation station here is providing disaster relief in the system after a recent surge of solar flares. Despite the recent disaster the sun is rather dorment currently and the station grants you clearance to land in preperation for the exchange.</text>
+</textList>
+
+
+<eventList name="FED_FREE_CREW_WELCOME">
+
+	<event> <!-- FED_SUPPLY_STATION EDIT -->
+		<text>You successfully handed off the POW to to a secure facility onboard the station and the warden thanks you. While spending time onboard the station it appears they are selling supplies to passing Federation allied ships.</text>
+		<choice>
+			<text>Purchase fuel.</text>
+			<event>
+				<item_modify>
+					<item type="fuel" min="5" max="7"/>
+					<item type="scrap" min="-12" max="-20"/>
+				</item_modify>
+			</event>
+		</choice>
+		<choice>
+			<text>Purchase ammunition.</text>
+			<event>
+				<item_modify>
+					<item type="missiles" min="8" max="10"/>
+					<item type="scrap" min="-40" max="-55"/>
+				</item_modify>
+			</event>
+		</choice>
+		<choice>
+			<text>Purchase a weapon.</text>
+			<event>
+				<item_modify>
+					<item type="scrap" min="-40" max="-55"/>
+				</item_modify>
+				<weapon name="RANDOM"/>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Attack the station!</text>
+			<event>
+				<text>No one is safe from you, not even allied Federation stations.</text>
+				<ship hostile="true"/>
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event load="MORALITY_UPDATE_GENERAL_FIGHT"/>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Ignore the station.</text>
+			<event>
+				<text>You aren't interested in the station. You ignore them.</text>
+				<choice>
+					<text>Do something onboard the ship.</text>
+					<event load="STORAGE_CHECK"/>
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event/>
+				</choice>
+			</event>
+		</choice>
+	</event>
+	
+	<event>
+		<text>Once onboard the transfer process begins immediately. Though the Rebel doesn't seem the happiest being here they thank for sparing their life. As a reward for going out of your way to deliver the prisoner the outpost offers a reward.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>With how quick the exchange has been you still have some time to do something onboard your ship.</text>
+				<choice>
+					<text>Do something onboard the ship.</text>
+					<event load="STORAGE_CHECK"/>
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event/>
+				</choice>
+			</event>
+		</choice>
+	</event>
+	
+	<event>
+		<text>Upon your approach to the docking bay there is the unmistakable sight of a Rebel Transport on the other end of the hanger bay. It quickly becomes evident that this is a prisoner exchange as you enter a room with 3 people: A Federation Lieutenant, a Rebel representative of some kind, and a 3rd individual you assume is their prisoner. The The two discuss in great length the conditions of the exchange most of it you do not pay attention to. By the end of the rather tense discussions it appears the terms have been agreed upon and the Rebel representative throws on his coat and closes his suitcase and departs with your former captive.</text>
+		<choice>
+			<text>Continue...</text>
+			<event>
+				<text>The Rebel's former prisoner approaches you and turns to the Federation Lieutenant. "Permission to speak, sir?" The lietenant nods. "Sir. I haven't seen starlight in who knows how many rotations. I am a soldier sir and I want to get back into the fight as soon as I get a good feed first before we head out". The Soldier seems not too poorly treated by their former capters and could seem to be a useful addition to your crew. However the Lieutenant mentions that they could keep the Soldier stationed here for a bit and instead offer you some resources instead to help compensate you for your service.</text>
+				<choice>
+					<text>Accept the soldier.</text>
+					<crewMember amount="1" class="human_soldier"/>
+				</choice>
+				<choice>
+					<text>Accept the resources.</text>
+					<autoReward level="HIGH">standard</autoReward>
+				</choice>		
+			</event>
+		</choice>
+	</event>
+	
+	
+</eventList>

@@ -1,0 +1,34 @@
+<FTL>
+<mod:findName type="event" name="START_BEACON_PREP">
+    <mod:findLike type="choice">
+        <mod:findLike type ="event">
+            <mod:findLike type ="choice"><mod:selector req="NO_WEAPON" lvl="0" />
+                <mod:findLike type ="event">
+                    <mod-append:choice>
+                        <text>Grab a basic autocannon.</text>
+                        <event>
+                            <text>Confident with your new arsenal, you prepare to continue on your mission.</text>
+                            <weapon name="GB_AC_1"/> <!-- R4: this costs 10 scrap currently while the other basic weapons are 40 scrap (sells for 20), I am debating on this giving 10scrap-->
+                            <choice hidden="true">
+                                <text>Continue...</text>
+                                <event load="START_BEACON_EXPLAIN_LOAD"/>
+                            </choice>
+                        </event>
+                    </mod-append:choice>
+                </mod:findLike>
+            </mod:findLike>
+        </mod:findLike>
+    </mod:findLike>
+</mod:findName>
+
+<mod:findName type="event" name="TRADER_CIV">
+    <mod-append:choice req="GB_LIST_CREW_FEDERATION_ELITE" blue="true" hidden="true">
+        <text>(Federation Elite) Under the Federation Requisition Act, commandeer some functional weaponry for the war effort.</text>
+        <event load="GB_REQUISITION" />
+    </mod-append:choice>
+	<mod-append:choice req="GB_FED_REQUISITION_LICENSE" blue="true" hidden="true">
+        <text>(Requisition License) Under the Federation Requisition Act, commandeer some functional weaponry for the war effort.</text>
+        <event load="GB_REQUISITION" />
+    </mod-append:choice>
+</mod:findName>
+</FTL>
