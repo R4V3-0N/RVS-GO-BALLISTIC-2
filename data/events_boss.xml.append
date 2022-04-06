@@ -1,0 +1,22 @@
+﻿<mod:findName type = "event" name = "FEDERATION_BASE">
+	<mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
+		<text>(Expanded Cargo Bay) Make your final delivery</text>
+		<event load="GB_FED_BASE_DELIVERY"/>
+	</mod-append:choice>
+</mod:findName>
+
+<event name="GB_FED_BASE_DELIVERY">
+	<text>This is it, the Federation Base. There is no use carrying all this cargo at least for now and the Federation needs these supplies more than ever. The ship docks at the closest port and its compartments and stowages are cleaned out of all the freight. Every ration, firearm, spare parts, drones, and even things as mundane as spare uniforms will go to great lengths in supporting the Federation.</text>
+		<choice>
+		<text>Continue...</text>
+			<event>
+				<autoReward level="HIGH">standard</autoReward>
+				<text>It's almost surreal, standing in the centre of the cargo bay viewing one end of the ship to the other. This will go a very long way in helping the Federation out in this universe. Before you can close the bay doors and get ready to take on the Rebel Flagship you hear some clanging just outside. A Logistics officer coyly waving to get your attention. "You most likely know how much this means to me... us... er- everything. We found this little number burried in the back of the hold. A relic of the Federation-Mantis War. Perhaps it could help you against the Flagship more than it could do down here."</text>
+				<weapon name="GB_AC_3_ELITE"/>
+				<choice>
+					<text>Continue...</text>
+					<event/>
+				</choice>
+			</event>
+		</choice>
+</event>

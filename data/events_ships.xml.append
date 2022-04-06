@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<ship name="GB_SHIP_FED_BOMBER_LOWAMMO" auto_blueprint="GB_FED_BOMBER_LOWAMMO">
+	<destroyed>
+		<text>As the Federation bomber explodes, you get the sense that that bomber in particular was absolutely and completely awful. You feel no guilt scrapping the ship.</text>
+		<autoReward level="MED">standard</autoReward>
+	</destroyed>
+	<deadCrew>
+		<text>As you explore the now crewless ship, you find the captain slumped in a corner, who turns out to be ADMIRAL VANCE of the REBEL FLEET, who stands up and then pulls out a MASSIVE RAILGUN and blows a planet full of KITTENS in half before teleporting away. Maybe murdering these guys was justified.</text>
+		<autoReward level="HIGH">standard</autoReward>
+	</deadCrew>
+</ship>
+<ship name="GB_FED_INTERDICTOR" auto_blueprint="GB_FED_BOMBER_INTERDICTOR">
+	<destroyed>
+		<text>You have defeated the Federation ship and the station surrenders. However the commotion has attracted nearby Rebel patrols. You have no time to return back to the outpost, you must charge your FTL drive.</text>
+		<autoReward level="LOW">standard</autoReward>
+	</destroyed>
+	<deadCrew>
+		<text>You have defeated the Federation ship and the station surrenders. However the commotion has attracted nearby Rebel patrols. You have no time to return back to the outpost, you must charge your FTL drive.</text>
+		<autoReward level="MED">standard</autoReward>
+	</deadCrew>
+</ship>
+<ship name="SHIP_GB_MILITIA_ESCORT" auto_blueprint="MU_MILITIA_ESCORT">
+	<destroyed load="DESTROYED_MILITIA" />
+	<deadCrew load="DEAD_CREW_MILITIA" />
+</ship>
+<ship name="GB_MILITIA_STATION" auto_blueprint="MU_MILITIA_STATION">
+	<destroyed load="DESTROYED_MILITIA" />
+	<deadCrew load="DEAD_CREW_MILITIA" />
+</ship>
+<ship name="SHIP_R4_GB_MV_TRAVELER_FED" auto_blueprint="GB_R4_MR_FED_LIGHT_CRUISER_1">
+	<destroyed load="DEFEAT_MULTIVERSE_TRAVELER" />
+	<deadCrew load="DEFEAT_MULTIVERSE_TRAVELER" />
+</ship>
+<ship name="SHIP_R4_GB_MV_TRAVELER_MILITIA" auto_blueprint="GB_R4_MR_MILITIA_GUARD">
+	<destroyed load="DEFEAT_MULTIVERSE_TRAVELER" />
+	<deadCrew load="DEFEAT_MULTIVERSE_TRAVELER" />
+</ship>
+
+
+
+<ship name="GB_SHIP_REBEL_FED_GENERIC" auto_blueprint="GB_LIST_SHIPS_REBEL_FED">
+	<surrender  chance="0.4" min="2" max="4" load="GB_SURRENDER_REBEL_FED"/> <!-- Set the max to 4 as I feel there's a higher chance for them to surrender over regular rebels -->
+	<escape  chance="0.3" min="3" max="4" load="GB_ESCAPE_REBEL_FED"/>
+	<gotaway load="GB_GOTAWAY_REBEL_FED"/>
+	<destroyed load="GB_DESTROYED_REBEL_FED"/>
+	<deadCrew load="GB_DEAD_CREW_REBEL_FED"/>
+</ship>
+
+<!-- Reference event 
+<ship name="SHIP_CIVILIAN_GENERIC" auto_blueprint="LIST_SHIPS_CIVILIAN_GENERIC">
+    <surrender  chance="0.8" min="2" max="3" load="SURRENDER_CIVILIAN"/>
+    <escape  chance="0.25" min="3" max="4" load="GENERIC_ESCAPE"/>
+    <destroyed load="DESTROYED_CIVILIAN"/>
+    <deadCrew load="DEAD_CREW_CIVILIAN"/>
+</ship> 
+
+
+<ship name="SHIP_REBEL_ALL" auto_blueprint="LIST_SHIPS_REBEL_ALL">
+	<surrender  chance="0.4" min="2" max="3" load="SURRENDER_REBEL"/>
+	<escape  chance="0.3" min="3" max="4" load="ESCAPE_REBEL"/>
+	<gotaway load="GOTAWAY_REBEL"/>
+	<destroyed load="DESTROYED_REBEL"/>
+	<deadCrew load="DEAD_CREW_REBEL"/>
+</ship>
+
+<ship name="SHIP_REBEL_GENERIC" auto_blueprint="LIST_SHIPS_REBEL_GENERIC">
+	<surrender  chance="0.4" min="2" max="3" load="SURRENDER_REBEL"/>
+	<escape  chance="0.3" min="3" max="4" load="ESCAPE_REBEL"/>
+	<gotaway load="GOTAWAY_REBEL"/>
+	<destroyed load="DESTROYED_REBEL"/>
+	<deadCrew load="DEAD_CREW_REBEL"/>
+</ship>
+<ship name="SHIP_REBEL_GENERIC_NOESCAPE" auto_blueprint="LIST_SHIPS_REBEL_GENERIC">
+	<surrender  chance="0.6" min="2" max="3" load="SURRENDER_REBEL"/>
+	<destroyed load="DESTROYED_REBEL"/>
+	<deadCrew load="DEAD_CREW_REBEL"/>
+</ship>
+
+<ship name="SHIP_REBEL_FIGHT" auto_blueprint="LIST_SHIPS_REBEL_FIGHT">
+	<surrender chance="0.4" min="2" max="3" load="SURRENDER_REBEL"/>
+	<escape  chance="0.3" min="3" max="4" load="ESCAPE_REBEL"/>
+	<gotaway load="GOTAWAY_REBEL"/>
+	<destroyed load="DESTROYED_REBEL"/>
+	<deadCrew load="DEAD_CREW_REBEL"/>
+</ship>-->
+
+</FTL>

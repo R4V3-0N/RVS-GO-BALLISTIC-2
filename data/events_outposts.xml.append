@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mod:findName type = "event" name = "FEDERATION_OUTPOST_FED">
+		<mod-append:choice hidden = "true" req = "soldier">
+			<text>(Soldier Crew) Request a weapon.</text>
+			<event>
+				<text>The Federation officer recieves and acknowledges your request. You recieved instructions to dock with the outpost momentarily for installation of an experimental mass driver.</text>
+				<weapon name = "GB_RAIL"/>
+			</event>
+		</mod-append:choice>
+</mod:findName>

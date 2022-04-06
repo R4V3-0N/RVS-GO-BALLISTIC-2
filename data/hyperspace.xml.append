@@ -1,3 +1,6 @@
+
+
+<FTL>
 <mod:findLike type="crew">
 	<mod-append:race name="rvs_drone_trooper">
 		<animSheet>rvs_drone_trooper</animSheet>
@@ -63,3 +66,1480 @@
 		<tooltipName>Battle Drone Mk I</tooltipName>
 	</mod-append:drone>
 </mod:findLike>
+
+<events>
+	<eventFile>ballistic</eventFile>
+
+	<event name="GB_CALL_QUESTION_LOAD"> 
+		<loadEvent>GB_CALL_QUESTION</loadEvent>
+	 </event>	
+	<event name="GB_CALL_QUESTION" recursive="true"/> 
+</events>
+
+<!-- Go Ballistics generic Federation store, based on the Zoltan store-->
+<customStore id="GB_STORE_FED">
+	<hullRepair>
+		<price min="2" max="4"/>
+		<sectorScaled/>
+	</hullRepair>
+	<resource>
+		<type>fuel</type>
+		<count min="3" max="8"/>
+	</resource>
+	<resource>
+		<type>missiles</type>
+		<count min="4" max="11"/>
+		<modifier flat="true">-1</modifier>
+	</resource>
+	<resource>
+		<type>drones</type>
+		<count min="3" max="8"/>
+	</resource>
+	<category type="WEAPONS" group="1">
+		<customTitle>RESERVE WEAPONS</customTitle>
+		<item>
+			<blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS_OLD</blueprint>
+			<modifier min="0.5" max="0.7" flat="false"/>
+			<price>-1</price>
+			<!--<mysteryItem>true</mysteryItem>-->
+		</item> 
+		<item>
+			<blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS</blueprint>
+			<modifier min="0.5" max="0.8" flat="false"/>
+			<price>-1</price>
+			<!--<mysteryItem>true</mysteryItem>-->
+		</item>
+		<item>
+			<blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS</blueprint>
+			<modifier min="0.5" max="0.8" flat="false"/>
+			<price>-1</price>
+			<!--<mysteryItem>true</mysteryItem>-->
+		</item>
+		<chance>66</chance>
+		<groupChance>33</groupChance>
+	</category>
+	<category type="WEAPONS" group="1">
+		<customTitle>EXPERIMENTAL WEAPONS</customTitle>
+		<item>
+			<blueprint>GB_GAUSS_1</blueprint> <!-- swap to GB_SHOP_ITEM_WEAPONS_GAUSS when we got more weapons-->
+			<modifier min="1.1" max="1.3" flat="false"/>
+			<price>-1</price>
+			<!--<mysteryItem>true</mysteryItem>-->
+		</item> 
+		<item>
+			<blueprint>GB_GAUSS_2</blueprint> <!-- swap to GB_SHOP_ITEM_WEAPONS_GAUSS when we got more weapons-->
+			<modifier min="1.0" max="1.2" flat="false"/>
+			<price>-1</price>
+			<!--<mysteryItem>true</mysteryItem>-->
+		</item>
+		<item>
+			<blueprint>GB_GAUSS_3</blueprint> <!-- Not sure what put here... Elite AC's? -->
+			<modifier min="0.9" max="1.1" flat="false"/>
+			<price>-1</price>
+			<!--<mysteryItem>true</mysteryItem>-->
+		</item>
+		<chance>66</chance>
+		<groupChance>33</groupChance>
+	</category>
+	<!--<category type="DRONES" group="1">
+		<customTitle>DRONES OF THE DAY [33% OFF]</customTitle>
+		<item>
+			<modifier flat="false">0.66</modifier> 
+			<price>-1</price>
+			<mysteryItem>true</mysteryItem>
+		</item> 
+		<item>
+			<modifier flat="false">0.66</modifier> 
+			<price>-1</price>
+			<mysteryItem>true</mysteryItem>
+		</item> 
+		<item>
+			<modifier flat="false">0.66</modifier> 
+			<price>-1</price>
+			<mysteryItem>true</mysteryItem>
+		</item> 
+		<chance>45</chance>
+		<groupChance>33</groupChance>
+	</category>-->
+	<category type="AUGMENTS" group="1">
+		<customTitle>AUGMENTS OF THE DAY [33% OFF]</customTitle>
+		<item>
+			<modifier flat="false">0.66</modifier> 
+			<price>-1</price>
+			<mysteryItem>true</mysteryItem>
+		</item> 
+		<item>
+			<modifier flat="false">0.66</modifier> 
+			<price>-1</price>
+			<mysteryItem>true</mysteryItem>
+		</item> 
+		<item>
+			<modifier flat="false">0.66</modifier> 
+			<price>-1</price>
+			<mysteryItem>true</mysteryItem>
+		</item> 
+		<chance>33</chance>
+		<groupChance>33</groupChance>
+	</category>
+	<category type="WEAPONS">
+		<item/>
+		<item> 
+			<blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS</blueprint> <!-- Autocannon weapon list-->
+		</item>
+		<item>
+			<blueprint>GB_SHOP_ITEMS_WEAPONS_FEDERATION</blueprint> <!-- FED weapon list-->
+		</item>
+		<chance>100</chance>
+	</category>
+	<category type="DRONES" group="0">
+		<item/>
+		<item/>
+		<item/>
+		<chance>50</chance>
+		<groupChance>40</groupChance>
+	</category>
+	<category type="AUGMENTS" group="0">
+		<item/>
+		<item/>
+		<item/>
+		<chance>70</chance>
+		<groupChance>60</groupChance>
+	</category>
+	<category type="CREW">
+		<customTitle>DECKHANDS</customTitle>
+		<allowDuplicates/>
+		<item/>
+		<item/>
+		<item>
+			<blueprint>LIST_CREW_FEDERATION_RANDOM</blueprint> <!-- Fed -->
+		</item>
+		<chance>75</chance>
+	</category>
+	<category type="SYSTEMS">
+		<customTitle>ESSENTIAL SYSTEMS</customTitle>
+		<guaranteedSystems>
+			<weapons/>
+			<shields/>
+			<oxygen/>
+		</guaranteedSystems>
+		<item>
+			<blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+		</item>
+		<item>
+			<blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+		</item>
+		<item>
+			<blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+		</item>
+		<chance>100</chance>
+	</category>
+	<category type="SYSTEMS">
+		<customTitle>AUXILIARY SYSTEMS</customTitle>
+		<item>
+			<blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+		</item>
+		<item>
+			<blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+		</item>
+		<item>
+			<blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+		</item>
+		<chance>65</chance>
+	</category>
+</customStore>
+
+
+<store>
+	<!-- Note:  -->
+	<customStore id="STORE_BALLISTIC_AUTOCANNON">
+        <hullRepair>
+			<price min="3" max="5"/>
+			<sectorScaled/>
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="10"/>
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="9" max="13"/>
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="2" max="7"/>
+		</resource>
+		<category type = "WEAPONS" group = "2">
+			<customTitle>BALLISTIC WEAPONS</customTitle>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_PLUS</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_OLD</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS</blueprint>
+            </item>
+			<chance>100</chance>
+		</category>
+		<category type="WEAPONS">
+           <customTitle>BALLISTIC WEAPONS</customTitle>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_PLUS</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_PLUS</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_OLD</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="DRONES" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="AUGMENTS" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="CREW">
+			<customTitle>DECKHANDS</customTitle>
+		    <allowDuplicates/>
+			<item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons/>
+				<shields/>
+				<oxygen/>
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>65</chance>
+        </category>
+    </customStore>
+	
+	<customStore id="STORE_BALLISTIC_STANDARD_AUTOCANNON">
+        <hullRepair>
+			<price min="3" max="5"/>
+			<sectorScaled/>
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="10"/>
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="9" max="13"/>
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="2" max="7"/>
+		</resource>
+		<category type = "WEAPONS" group = "2">
+			<customTitle>BALLISTIC WEAPONS</customTitle>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_OLD</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_PLUS</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS</blueprint>
+            </item>
+			<chance>100</chance>
+		</category>
+		<category type="WEAPONS" group="1">
+            <customTitle>WEAPONS OF THE DAY [33% OFF]</customTitle>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item>
+			<chance>50</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="DRONES" group="1">
+            <customTitle>DRONES OF THE DAY [33% OFF]</customTitle>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<chance>25</chance>
+			<groupChance>15</groupChance>
+        </category>
+		<category type="AUGMENTS" group="1">
+            <customTitle>AUGMENTS OF THE DAY [33% OFF]</customTitle>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<chance>25</chance>
+			<groupChance>35</groupChance>
+        </category>
+		<category type="WEAPONS">
+            <item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="DRONES" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="AUGMENTS" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="CREW">
+			<customTitle>DECKHANDS</customTitle>
+		    <allowDuplicates/>
+			<item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons/>
+				<shields/>
+				<oxygen/>
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>65</chance>
+        </category>
+    </customStore>
+	
+	<!-- the Federation trifecta store, will be used in a unique event at some point -->
+	<customStore id="STORE_BALLISTIC_FED_ENGI_ZOLTAN">
+        <hullRepair>
+			<price min="3" max="5"/>
+			<sectorScaled/>
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="10"/>
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="9" max="13"/>
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="2" max="7"/>
+		</resource>
+		<category type = "WEAPONS" group = "2">
+			<customTitle>ANTIQUE WEAPONS [20% OFF]</customTitle>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_OLD</blueprint>
+				<modifier flat="false">0.8</modifier> 
+                <price>-1</price>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_ENGI_OLD</blueprint>
+				<modifier flat="false">0.8</modifier> 
+                <price>-1</price>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_ZOLTAN_OLD</blueprint>
+				<modifier flat="false">0.8</modifier> 
+                <price>-1</price>
+            </item>
+			<chance>100</chance>
+		</category>
+		<category type="WEAPONS" group="1">
+            <customTitle>WEAPONS OF THE DAY [33% OFF]</customTitle>
+			<item>
+				<blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_OLD</blueprint>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+				<blueprint>GB_SHOP_ITEM_WEAPONS_ENGI_OLD</blueprint>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item>
+			<item>
+				<blueprint>GB_SHOP_ITEM_WEAPONS_ZOLTAN_OLD</blueprint>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="DRONES" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="AUGMENTS" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="CREW">
+			<customTitle>DECKHANDS</customTitle>
+		    <allowDuplicates/>
+			<item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons/>
+				<shields/>
+				<oxygen/>
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>65</chance>
+        </category>
+    </customStore>
+		
+	<customStore id="STORE_BALLISTIC_STANDARD_COILGUN">
+        <hullRepair>
+			<price min="3" max="5"/>
+			<sectorScaled/>
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="10"/>
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="9" max="13"/>
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="2" max="7"/>
+		</resource>
+		<category type = "WEAPONS" group = "2">
+			<customTitle>engi_separatist WEAPONS</customTitle>
+			<item>
+                <blueprint>GB_COILGUNS</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_LIST_WEAPONS_ENGI_SHOP</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_LIST_WEAPONS_ENGI_SHOP</blueprint>
+            </item>
+			<chance>100</chance>
+		</category>
+		<category type="WEAPONS">
+            <item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="DRONES" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="AUGMENTS" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="CREW">
+			<customTitle>DECKHANDS</customTitle>
+		    <allowDuplicates/>
+			<item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons/>
+				<shields/>
+				<oxygen/>
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>65</chance>
+        </category>
+    </customStore>
+	
+	<customStore id="STORE_BALLISTIC_STANDARD_GAUSS">
+        <hullRepair>
+			<price min="3" max="5"/>
+			<sectorScaled/>
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="10"/>
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="9" max="13"/>
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="2" max="7"/>
+		</resource>
+		<category type = "WEAPONS" group = "2">
+			<customTitle>"ACQUIRED" WEAPONS</customTitle>
+			<item>
+                <blueprint>GB_GAUSS</blueprint>
+            </item>
+			<item/>
+            <item/>
+			<chance>100</chance>
+		</category>
+		<category type="WEAPONS">
+            <item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="DRONES" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="AUGMENTS" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="CREW">
+			<customTitle>DECKHANDS</customTitle>
+		    <allowDuplicates/>
+			<item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons/>
+				<shields/>
+				<oxygen/>
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>65</chance>
+        </category>
+    </customStore>
+	
+	<customStore id="STORE_BALLISTIC_AUTOCANNON_BOMB">
+        <hullRepair>
+			<price min="3" max="5"/>
+			<sectorScaled/>
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="10"/>
+		</resource>
+		<resource>
+			<type>missiles</type>
+			<count min="9" max="13"/>
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="2" max="7"/>
+		</resource>
+		<category type = "WEAPONS" group = "2">
+			<customTitle>BALLISTIC WEAPONS</customTitle>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_PLUS</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS_OLD</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS</blueprint>
+            </item>
+			<chance>100</chance>
+		</category>
+		<category type="WEAPONS">
+           <customTitle>BOMB WEAPONS</customTitle>
+			<item>
+                <blueprint>GIFTLIST_BOMBS</blueprint>
+            </item>
+			<item>
+                <blueprint>GIFTLIST_BOMBS</blueprint>
+            </item>
+			<item>
+                <blueprint>GIFTLIST_BOMBS</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="DRONES" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="AUGMENTS" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="CREW">
+			<customTitle>DECKHANDS</customTitle>
+		    <allowDuplicates/>
+			<item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons/>
+				<shields/>
+				<oxygen/>
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>65</chance>
+        </category>
+    </customStore>
+	
+	<customStore id="STORE_BALLISTIC_AUTOCANNON_BOMB_NO_AMMO">
+        <hullRepair>
+			<price min="3" max="5"/>
+			<sectorScaled/>
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="10"/>
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="2" max="7"/>
+		</resource>
+		<category type = "WEAPONS" group = "2">
+			<customTitle>BALLISTIC WEAPONS</customTitle>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_PLUS</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS_OLD</blueprint>
+            </item>
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS</blueprint>
+            </item>
+			<chance>100</chance>
+		</category>
+		<category type="WEAPONS">
+           <customTitle>BOMB WEAPONS</customTitle>
+			<item>
+                <blueprint>GIFTLIST_BOMBS</blueprint>
+            </item>
+			<item>
+                <blueprint>GIFTLIST_BOMBS</blueprint>
+            </item>
+			<item>
+                <blueprint>GIFTLIST_BOMBS</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="DRONES" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="AUGMENTS" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="CREW">
+			<customTitle>DECKHANDS</customTitle>
+		    <allowDuplicates/>
+			<item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons/>
+				<shields/>
+				<oxygen/>
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>65</chance>
+        </category>
+    </customStore>
+	
+	<customStore id="STORE_STANDARD_NO_AMMO">
+        <hullRepair>
+			<price min="3" max="5"/>
+			<sectorScaled/>
+		</hullRepair>
+		<resource>
+			<type>fuel</type>
+			<count min="5" max="10"/>
+		</resource>
+		<resource>
+			<type>drones</type>
+			<count min="6" max="11"/>
+		</resource>
+		<category type="WEAPONS" group="1">
+            <customTitle>WEAPONS OF THE DAY [33% OFF]</customTitle>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item>
+			<chance>50</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="DRONES" group="1">
+            <customTitle>DRONES OF THE DAY [33% OFF]</customTitle>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<chance>25</chance>
+			<groupChance>15</groupChance>
+        </category>
+		<category type="AUGMENTS" group="1">
+            <customTitle>AUGMENTS OF THE DAY [33% OFF]</customTitle>
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<item>
+                <modifier flat="false">0.66</modifier> 
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item> 
+			<chance>25</chance>
+			<groupChance>35</groupChance>
+        </category>
+		<category type="WEAPONS">
+            <item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="DRONES" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="AUGMENTS" group="0">
+            <item/>
+            <item/>
+            <item/>
+			<chance>65</chance>
+			<groupChance>50</groupChance>
+        </category>
+		<category type="CREW">
+			<customTitle>DECKHANDS</customTitle>
+		    <allowDuplicates/>
+			<item/>
+            <item/>
+            <item/>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+            <customTitle>ESSENTIAL SYSTEMS</customTitle>
+			<guaranteedSystems>
+                <weapons/>
+				<shields/>
+				<oxygen/>
+            </guaranteedSystems>
+			<item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_ESSENTIAL</blueprint>
+            </item>
+			<chance>100</chance>
+        </category>
+		<category type="SYSTEMS">
+			<customTitle>AUXILIARY SYSTEMS</customTitle>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+            <item>
+                <blueprint>SHOP_ITEM_SYSTEMS_BONUS</blueprint>
+            </item>
+			<chance>65</chance>
+        </category>
+    </customStore>
+	
+	<customStore id="STORE_SYLVAN_AC">
+		<itemPurchaseLimit>2</itemPurchaseLimit>
+		<resource>
+			<type>missiles</type>
+			<count min="9" max="13"/>
+		</resource>
+		<category type="WEAPONS">
+			<customTitle>AUTOCANNONS</customTitle>
+            <item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_OLD</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_OLD</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>GB_ROTARY_AC</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="WEAPONS">
+            <customTitle>BALLISTIC WEAPONS</customTitle>
+			<item>
+                <blueprint>SHOP_WEAPONS_BALLISTICS</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>SHOP_WEAPONS_BALLISTICS</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>SHOP_WEAPONS_BALLISTICS</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
+	
+	<customStore id="STORE_SYLVAN_GAUSS">
+		<itemPurchaseLimit>2</itemPurchaseLimit>
+		<resource>
+			<type>missiles</type>
+			<count min="9" max="13"/>
+		</resource>
+		<category type="WEAPONS">
+			<customTitle>MASS ACCELERATORS</customTitle>
+            <item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_MA_CANNONS</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_MA_CANNONS</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>GB_SHOP_ITEM_WEAPONS_MA_CANNONS</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="WEAPONS">
+            <customTitle>FOCUS BEAMS</customTitle>
+			<item>
+                <blueprint>SHOP_ITEM_SYLVAN_FOCUS_STANDARD</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>SHOP_ITEM_SYLVAN_FOCUS_STANDARD</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>SHOP_ITEM_SYLVAN_FOCUS_SPECIAL</blueprint>
+                <modifier min="0.8" max="1.3" flat="false"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
+	
+</store>
+
+
+<mod:findLike type="ships">
+	
+	<!--PLAYER SHIPS-->
+	
+	<mod:findLike type ="shipOrder">
+	<!--PAGE 1-->
+	<mod-append:ship>PLAYER_SHIP_R4_GB_KESTREL</mod-append:ship>
+	<mod-append:empty/>
+	<mod-append:empty/>
+	<mod-append:empty/>
+	<mod-append:empty/>
+	<mod-append:empty/>
+	<mod-append:empty/>
+	<mod-append:empty/>
+	<mod-append:empty/>
+	<mod-append:empty/>
+	</mod:findLike>
+
+	<!--SHIP UNLOCKS-->
+	
+	<mod-append:ship name="PLAYER_SHIP_R4_GB_KESTREL" b="true" c="true">
+		<unlock variant="a" silent="false">
+			<type>3</type>
+			<otherUnlocks>
+				<ship>PLAYER_SHIP_KESTREL</ship>
+				<ship>PLAYER_SHIP_KESTREL_2</ship>
+				<ship>PLAYER_SHIP_KESTREL_3</ship>
+			</otherUnlocks>
+		<silent>true</silent>
+		</unlock>
+		<unlock variant="b" silent="true">
+			<type>1</type>
+			<shipReq>PLAYER_SHIP_R4_GB_KESTREL</shipReq>
+            <value>5</value>
+		<silent>true</silent>
+		</unlock>
+		<unlock variant="c" silent="true">
+			<type>1</type>
+			<shipReq>PLAYER_SHIP_R4_GB_KESTREL_2</shipReq>
+            <value>5</value>
+		<silent>true</silent>
+		</unlock>
+		<unlock variant="c" silent="true">
+			<type>2</type>
+			<shipReq>PLAYER_SHIP_R4_GB_KESTREL</shipReq>
+		<silent>true</silent>
+		</unlock>
+	</mod-append:ship>
+
+	<!--PLAYER SHIPS-->
+
+    <mod-append:ship name="PLAYER_SHIP_RVSP_GB_KESTREL" b="true" c="true"/>
+    <mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL">
+        <hiddenAug>SHIP_KESTREL</hiddenAug>
+        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
+        <crewLimit>11</crewLimit>
+		<crew>
+			<human room = "0"/> <!--piloting-->
+			<human room = "10"/> <!--weapons-->
+			<human room = "11"/> <!--shields-->
+			<human room = "12"/> <!--engines-->
+		</crew>
+    </mod-append:customShip>
+	
+    <mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL_2">
+        <hiddenAug>SHIP_KESTREL</hiddenAug>
+        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<human room = "9"/> <!--engines-->
+			<human room = "10"/> <!--weapons-->
+			<orchid room = "12"/> <!--cloaking-->
+			<zoltan room = "5"/> <!--piloting :)-->
+		</crew>
+        <crewLimit>11</crewLimit>
+    </mod-append:customShip>
+	
+	<mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL_3">
+		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crewLimit>11</crewLimit>
+		<crew>
+			<human room = "11"/> <!--weapons-->
+			<zoltan room = "12"/> <!--shields-->
+			<mantis_free room = "0"/> <!--pilot-->
+			<engi_separatist room = "13"/> <!--engines-->
+		</crew>
+	</mod-append:customShip>
+	
+
+	<mod-append:ship name="PLAYER_SHIP_RVSP_FED_FREIGHTER" b="true" c="false" />
+	<mod-append:customShip name="PLAYER_SHIP_RVSP_FED_FREIGHTER">
+		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crewLimit>8</crewLimit>
+		<crew>
+			<human room = "25"/> <!--weapons-->
+			<human room = "28"/> <!--engines-->
+			<engi_separatist room = "0"/> <!--pilot-->
+		</crew>
+	</mod-append:customShip>
+	
+	<mod-append:customShip name="PLAYER_SHIP_RVS_FED_FREIGHTER_2">
+		<hiddenAug>SHIP_FEDERATION</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crewLimit>8</crewLimit>
+	</mod-append:customShip>
+
+	<!--<mod-append:customShip name="PLAYER_SHIP_RVS_FED_FREIGHTER_3">
+		<hiddenAug>SHIP_FEDERATION</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crewLimit>8</crewLimit>
+	</mod-append:customShip>-->
+	
+	
+	
+	<!--ENEMY SHIPS-->
+	
+	<mod-append:customShip name = "GB_R4_MR_FED_LIGHT_CRUISER_1">
+		<shipIcons>
+			<shipIcon>icon_respirators</shipIcon>
+		</shipIcons>
+		<crew>
+			<human_soldier room = "0"/>
+			<human room = "3"/>
+			<engi_separatist room = "7"/>
+			<engi_separatist room = "2"/>
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name = "GB_R4_MR_MILITIA_GUARD">
+		<shipIcons>
+			<shipIcon>icon_shieldboost</shipIcon>
+		</shipIcons>
+		<crew>
+			<engi_separatist room = "5"/>
+		</crew>
+	</mod-append:customShip>
+	<mod-append:customShip name="MT_BOSS_GB_R4_BALLISTIC_C_NORMAL">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+			<shipIcon>icon_weaponboost</shipIcon>
+		</shipIcons>
+		<crew>
+			<human room="4"/> <!--doors-->
+			<!--<orchid room="6"/>->> <!--weapons-->
+			<shell room="12"/> <!--clonebay-->
+			<engi_separatist room="15"/> <!--engines-->
+			<mantis_free room="13"/> <!--empty-->
+			<zoltan room="11"/> <!--shields-->
+			<leech room="6"/> <!--weapons-->
+		</crew>
+		<noFuelStalemate/>
+	</mod-append:customShip>
+	<mod-append:customShip name="MT_BOSS_GB_R4_BALLISTIC_C_CHALLENGE">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+			<shipIcon>icon_weaponboost</shipIcon>
+		</shipIcons>
+		<crew>
+			<human room="4"/> <!--doors-->
+			<!--<orchid room="6"/> <!--weapons-->
+			<shell room="12"/> <!--clonebay-->
+			<engi_separatist room="15"/> <!--engines-->
+			<mantis_warlord room="13"/> <!--empty-->
+			<zoltan room="11"/> <!--shields-->
+			<leech room="6"/> <!--weapons-->
+		</crew>
+		<noFuelStalemate/>
+	</mod-append:customShip>
+	<mod-append:customShip name="MT_BOSS_GB_R4_BALLISTIC_C_EXTREME">
+		<shipIcons>
+			<shipIcon>icon_threat</shipIcon>
+			<shipIcon>icon_specialwep</shipIcon>
+			<shipIcon>icon_weaponboost</shipIcon>
+		</shipIcons>
+		<crew>
+			<human_medic room="4"/> <!--doors-->
+			<!--<orchid room="6"/> <!--weapons-->
+			<shell_guardian room="12"/> <!--clonebay-->
+			<engi_separatist room="15"/> <!--engines-->
+			<mantis_warlord room="13"/> <!--empty-->
+			<zoltan room="11"/> <!--shields-->
+			<leech_ampere room="6"/> <!--weapons-->
+		</crew>
+		<noFuelStalemate/>
+	</mod-append:customShip>
+</mod:findLike>
+
+
+
+
+
+
+<augments>
+	<aug name="AUTO_LOADER_LOW_SHIELD_LOCKED"> <!-- R4: Robin, let's get a proper prefix on these augments, delete when done -->
+		<locked/>
+		<function name="AUTO_COOLDOWN" value="0.20" />
+		<function name="SHIELD_RECHARGE" value="-0.4" />
+		<function name="ROCK_ARMOR" value="0.1" useForReqs="false" warning="false"/>
+	</aug>
+	<aug name="AUTO_LOADER_LOW_SHIELD"> <!-- R4: Robin, let's get a proper prefix on these augments, delete when done -->
+		<function name="AUTO_COOLDOWN" value="0.20" />
+		<function name="SHIELD_RECHARGE" value="-0.4" />
+		<function name="ROCK_ARMOR" value="0.1" useForReqs="false" warning="false"/>
+	</aug>
+	<aug name="GB_PHONE">
+		<function name="FTL_BOOSTER" value="-0.15" useForReqs="false" warning="false"/>
+		<locked/>
+	</aug>
+</augments>
+
+<crew> <!-- AC1 EMP crew, 1 ion damage -->
+	<race name="gb_ion_instant_1">
+			<maxHealth>100</maxHealth>
+			<repairSpeed>0</repairSpeed>
+			<canFight>false</canFight>
+			<canRepair>false</canRepair>
+			<canSabotage>false</canSabotage>
+			<canSuffocate>false</canSuffocate>
+			<fireDamageMultiplier>0</fireDamageMultiplier>
+			<canMan>false</canMan>
+			<noClone>true</noClone>
+			<noSlot>true</noSlot>
+			<controllable>false</controllable>
+			<selectable>false</selectable>
+			<canPhaseThroughDoors>true</canPhaseThroughDoors>
+			<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
+			<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
+			<damageMultiplier>0</damageMultiplier>
+			<damageTakenMultiplier>0.0</damageTakenMultiplier> 
+			<animBase>mantis</animBase>
+			<deathSounds>
+				<deathSound>energyDeath</deathSound>
+			</deathSounds>
+			<shootingSounds>
+				<shootingSound>mantisSpit1</shootingSound>
+				<shootingSound>mantisSpit2</shootingSound>
+				<shootingSound>mantisSpit3</shootingSound>
+			</shootingSounds>
+			<hasCustomDeathAnimation>true</hasCustomDeathAnimation>
+			<hasDeathExplosion>true</hasDeathExplosion>
+			<deathEffect>
+				<ion>1</ion>
+				<stun>3</stun>
+				<friendlyFire>true</friendlyFire>
+				<shipFriendlyFire>true</shipFriendlyFire>
+			</deathEffect>
+				
+			
+		
+		</race>
+</crew>
+	
+	<crew> <!-- EMP AC2 Ion crew, 2 ion damage -->
+		<race name="gb_ion_instant_2">
+			<maxHealth>100</maxHealth>
+			<repairSpeed>0</repairSpeed>
+			<canFight>false</canFight>
+			<canRepair>false</canRepair>
+			<canSabotage>false</canSabotage>
+			<canSuffocate>false</canSuffocate>
+			<fireDamageMultiplier>0</fireDamageMultiplier>
+			<canMan>false</canMan>
+			<noClone>true</noClone>
+			<noSlot>true</noSlot>
+			<controllable>false</controllable>
+			<selectable>false</selectable>
+			<canPhaseThroughDoors>true</canPhaseThroughDoors>
+			<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
+			<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
+			<damageMultiplier>0</damageMultiplier>
+			<damageTakenMultiplier>0.0</damageTakenMultiplier> 
+			<animBase>mantis</animBase>
+			<deathSounds>
+				<deathSound>energyDeath</deathSound>
+			</deathSounds>
+			<shootingSounds>
+				<shootingSound>mantisSpit1</shootingSound>
+				<shootingSound>mantisSpit2</shootingSound>
+				<shootingSound>mantisSpit3</shootingSound>
+			</shootingSounds>
+			<deathEffect>
+				<ion>2</ion>
+				<stun>3</stun>
+				<friendlyFire>true</friendlyFire>
+				<shipFriendlyFire>true</shipFriendlyFire>
+			</deathEffect>
+				
+			
+		
+		</race>
+		</crew>
+		
+	<crew> <!-- EMP AC3 Ion crew, 3 ion damage-->
+		<race name="gb_ion_instant_3">
+			<maxHealth>100</maxHealth>
+			<repairSpeed>0</repairSpeed>
+			<canFight>false</canFight>
+			<canRepair>false</canRepair>
+			<canSabotage>false</canSabotage>
+			<canSuffocate>false</canSuffocate>
+			<fireDamageMultiplier>0</fireDamageMultiplier>
+			<canMan>false</canMan>
+			<noClone>true</noClone>
+			<noSlot>true</noSlot>
+			<controllable>false</controllable>
+			<selectable>false</selectable>
+			<canPhaseThroughDoors>true</canPhaseThroughDoors>
+			<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
+			<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
+			<damageMultiplier>0</damageMultiplier>
+			<damageTakenMultiplier>0.0</damageTakenMultiplier> 
+			<animBase>mantis</animBase>
+			<deathSounds>
+				<deathSound>energyDeath</deathSound>
+			</deathSounds>
+			<shootingSounds>
+				<shootingSound>mantisSpit1</shootingSound>
+				<shootingSound>mantisSpit2</shootingSound>
+				<shootingSound>mantisSpit3</shootingSound>
+			</shootingSounds>
+			<deathEffect>
+				<ion>3</ion>
+				<stun>5</stun>
+				<friendlyFire>true</friendlyFire>
+				<shipFriendlyFire>true</shipFriendlyFire>
+			</deathEffect>
+				
+			
+		
+		</race>
+	</crew>
+</FTL>
