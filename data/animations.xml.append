@@ -1,3 +1,77 @@
+<FTL>
+<!-- CREW -->
+<!-- CREW DRONES -->
+<animSheet name="rvs_drone_trooper" w="280" h="210" fw="35" fh="35">people/rvs_drone_trooper_base.png</animSheet>
+<animSheet name="rvs_drone_trooper_death" w="320" h="32" fh="32" fw="32">effects/explosion1_strip10.png</animSheet>
+<anim name="rvs_drone_trooper_death_right">
+	<sheet>rvs_drone_trooper_death</sheet>
+	<desc length="10" x="0" y="0"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_death_left">
+	<sheet>rvs_drone_trooper_death</sheet>
+	<desc length="10" x="0" y="0"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_walk_down">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="4" x="0" y="5"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_walk_right">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="4" x="4" y="5"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_walk_up">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="4" x="0" y="4"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_walk_left">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="4" x="4" y="4"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_shoot_down">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="3" x="0" y="3"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_shoot_right">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="3" x="3" y="3"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_shoot_up">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="3" x="2" y="0"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_shoot_left">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="3" x="5" y="0"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_power_down">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="7" x="0" y="2"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_power_up">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="7" x="0" y="1"/>
+	<time>1.0</time>
+</anim>
+<anim name="rvs_drone_trooper_fly">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<anim name="rvs_drone_trooper_portrait">
+	<sheet>rvs_drone_trooper</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
 
 <!-- PROJECTILES -->
 <animSheet name="GB_shot_light" w="160" h="16" fw="40" fh="16">projectiles/GB_shot_light_strip4.png</animSheet>
@@ -687,3 +761,4 @@
 	<desc length="4" x="0" y="0"/>
 	<time>0.8</time>
 </anim>
+</FTL>
