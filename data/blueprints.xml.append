@@ -1,0 +1,61 @@
+<blueprintList name="RVS_LIST_TOGGLE_TROOPER">
+	<name>RVS_TROOPERTOG_BATTLE</name>
+	<name>RVS_TROOPERTOG_BOARDER</name>
+</blueprintList>
+<droneBlueprint name="RVS_TROOPERTOG_BATTLE">
+	<type>BATTLE</type>
+	<locked>1</locked>
+	<tip>tip_toggle_crew</tip>
+	<title>Trooper Drone [Security]</title>
+	<short>Trooper [S]</short>
+	<desc>[CURRENT MODE: Security] Controllable, a personnel drone that can be toggled to act as either a Defensive security or boarding drone before battle.
+    
+-100 HP, 1.1x combat damage, 2.2x range combat damage.
+-1.2x movement speed</desc>
+	<!--<desc>[CURRENT MODE: Anti-Personnel] Controllable, a personnel drone that can be toggled to act as either a Defensive Anti-Person or Boarding drone before Trooper.
+    
+-175 HP, 1.1x combat damage
+-0.8x movement speed</desc>  Battle drone description-->
+	<power>1</power>
+	<cost>40</cost>
+	<bp>3</bp>
+	<rarity>2</rarity>
+	<iconImage>battle</iconImage>
+</droneBlueprint>
+<droneBlueprint name="RVS_TROOPERTOG_BOARDER">
+	<type>BOARDER</type>
+	<tip>tip_toggle_crew</tip>
+	<locked>1</locked>
+	<title>Trooper Drone [Boarding]</title>
+	<short>Trooper [B]</short>
+	<desc>[CURRENT MODE: Boarding] Controllable, a personnel drone that can be toggled to act as either a Defensive security or boarding drone before battle.
+    
+-100 HP, 1.1x combat damage, 2.2x range combat damage.
+-1.2x movement speed</desc>
+	<power>1</power>
+	<speed>20</speed>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<iconImage>boarder</iconImage>
+</droneBlueprint>
+
+<crewBlueprint name="rvs_drone_trooper">
+	<title>Trooper Drone</title>
+	<short>Trooper Drone</short>
+	<desc>This is not the drone description you are looking for - please report it.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<powerList>
+		<power>DRONE</power>
+	</powerList>
+</crewBlueprint>
+<!--<crewBlueprint name="RVS_trooper_board">
+	<title>Battle Drone</title>
+	<short>Battle Drone</short>
+	<desc>YOU SHOULD NEVER SEE THIS.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<powerList>
+		<power>DRONE</power>
+	</powerList>
+</crewBlueprint>-->

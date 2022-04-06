@@ -1,0 +1,65 @@
+<mod:findLike type="crew">
+	<mod-append:race name="rvs_drone_trooper">
+		<animSheet>rvs_drone_trooper</animSheet>
+		<controllable>true</controllable>
+		<canFight>true</canFight>
+		<canSabotage>true</canSabotage>
+		<canRepair>false</canRepair>
+		<canSuffocate>false</canSuffocate>
+		<canMan>false</canMan>
+		<maxHealth>100</maxHealth>
+		<stunMultiplier>0.25</stunMultiplier>
+		<resistsMindControl>true</resistsMindControl>	<!-- salvage event -->
+		<droneAI>
+			<fightAI/>
+			<returnToDroneRoom/>
+		</droneAI>
+		<damageMultiplier>1.8</damageMultiplier>
+		<!--<damageMultiplier>1.1</damageMultiplier>					When canPunch is on-->
+		<!--<rangedDamageMultiplier>2.2</rangedDamageMultiplier>		When canPunch is on-->
+		<fireDamageMultiplier>0.25</fireDamageMultiplier>
+		<moveSpeedMultiplier>1.2</moveSpeedMultiplier>
+		<controllable>true</controllable>
+		<shootingSounds> <!-- placeholder sound-->
+			<shootingSound>detectiveShoot1</shootingSound>
+			<shootingSound>detectiveShoot2</shootingSound>
+			<shootingSound>detectiveShoot3</shootingSound>
+		</shootingSounds>
+	</mod-append:race>
+	<!--<mod-append:race name="rvs_trooper_board">
+		<animSheet>drone_trooper</animSheet>
+		<controllable>true</controllable>
+		<canFight>true</canFight>
+		<canSabotage>true</canSabotage>
+		<canRepair>false</canRepair>
+		<canSuffocate>false</canSuffocate>
+		<canMan>false</canMan>
+		<maxHealth>100</maxHealth>
+		<stunMultiplier>0.25</stunMultiplier>
+		<resistsMindControl>true</resistsMindControl>
+		<droneAI>
+			<fightAI/>
+			<returnToDroneRoom/>
+		</droneAI>
+		<damageMultiplier>1.1</damageMultiplier>
+		<rangedDamageMultiplier>2.2</rangedDamageMultiplier>
+		<fireDamageMultiplier>0.25</fireDamageMultiplier>
+		<moveSpeedMultiplier>1.2</moveSpeedMultiplier>
+		<controllable>true</controllable>
+		<shootingSounds>
+			<shootingSound>detectiveShoot1</shootingSound>
+			<shootingSound>detectiveShoot2</shootingSound>
+			<shootingSound>detectiveShoot3</shootingSound>
+		</shootingSounds>
+	</mod-append:race>-->
+</mod:findLike>	
+<mod:findLike type="drones">
+	<mod-append:drone name="RVS_TROOPERTOG_BOARDER">
+		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
+		<tooltipName>Battle Drone Mk I</tooltipName>
+	</mod-append:drone>
+	<mod-append:drone name="RVS_TROOPERTOG_BATTLE">
+		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
+		<tooltipName>Battle Drone Mk I</tooltipName>
+	</mod-append:drone>
+</mod:findLike>
