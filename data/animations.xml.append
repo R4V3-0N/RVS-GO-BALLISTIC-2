@@ -72,6 +72,7 @@
 	<sheet>rvs_drone_trooper</sheet>
 	<desc length="1" x="0" y="0"/>
 	<time>1</time>
+</anim>
 
 <!-- PROJECTILES -->
 <animSheet name="GB_shot_light" w="160" h="16" fw="40" fh="16">projectiles/GB_shot_light_strip4.png</animSheet>
