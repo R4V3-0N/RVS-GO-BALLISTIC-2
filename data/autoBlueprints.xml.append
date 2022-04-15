@@ -344,7 +344,21 @@ created from scratch using the components or techniques of them to create odd an
 		••••••••••••••••••••••••••••••••••••••••••
 -->
 
-<blueprintList name = "GB_CARAVAN_REWARD">
+<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_LIGHT"> 
+	<name>GB_AC_1</name>
+	<name>GB_AC_2</name>
+</blueprintList>
+<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_MODERATE"> 
+	<name>GB_AC_2</name>
+	<name>GB_AC_3</name>
+</blueprintList>
+<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_HEAVY"> 
+	<name>GB_AC_3</name>
+	<!--<name>GB_AC_4</name>-->
+</blueprintList>
+
+
+<blueprintList name = "GB_CARAVAN_REWARD">  <!-- R4: Todo, change this to "GB_GIFTLIST_AUTOCANNONS_MODERATE -->
 	<name>GB_AC_2</name>
 	<name>GB_AC_3</name>
 </blueprintList>
@@ -353,6 +367,13 @@ created from scratch using the components or techniques of them to create odd an
 	<name>RECON_BOARDING</name>
 	<name>RECON_DEFENSE</name>
 </blueprintList>
+
+<blueprintList name = "GB_GIFTLIST_MG">  <!-- R4: Machine Guns -->
+	<name>GB_MG</name>
+	<name>GB_HMG</name>
+	<!--	<name>GB_MGA</name>-->
+</blueprintList>
+
 
 <!-- 	••••••••••••••••••••••••••••••••••••••••••
 					   Shop lists

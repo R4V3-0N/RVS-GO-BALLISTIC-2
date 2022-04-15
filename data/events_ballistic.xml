@@ -1,5 +1,4 @@
 <FTL>
-
 <eventList name = "GB_GENERIC_EVENTS">
 	<event load = "GB_CARAVAN_ABANDONED"/>
 	<event load = "GB_MILITIA_ESCORT"/>
@@ -8,9 +7,10 @@
 
 <eventList name = "GB_ITEMS">
 	<event load = "GB_FED_RESEARCH_RAIL"/>
-	<event load = "GB_MUSEUM_TOUR"/>
+	<!--<event load = "GB_MUSEUM_TOUR"/> -->
 </eventList>
 
+<!-- overly complicated find-and-loot event -->
 <event name="GB_CARAVAN_ABANDONED" unique="true">
    <text>You arrive to find what was once a supply caravan in a debris field; most likely victims of Pirates. There is no response to your hails.</text>
    <choice hidden="true">
@@ -223,6 +223,7 @@
 	</choice>
 </event>
 
+<!-- For when you want to check multiple ships at this caravan after you checked one, causing a delay. -->
 <eventList name="GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED">
 	<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED_GOOD"/>
 	<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED_BAD"/>
@@ -332,9 +333,10 @@
 	</choice>
 </event>
 
+
 <event name = "GB_MILITIA_ESCORT">
 	<distressBeacon/>
-	<ship load = "SHIP_GB_MILITIA_ESCORT" hostile = "false"/>
+	<ship load = "SHIP_GB_MILITIA_ESCORT" hostile = "false"/> <!-- change this to generic escort ships? like the outrider, escort, etc. -->
 	<text>The source of the distress beacon is emanating from a small Militia Escort. "Captain! We're very low on fuel and need some repairs desperately. Could you possibly take us to the nearest repair platform?"</text>
 	<choice>
 		<text>Accept.</text>
@@ -523,7 +525,7 @@
 
 <ship name="SHIP_TESTING_RAILGUN" auto_blueprint="LIST_SHIPS_REBEL_FIGHT">
 	<destroyed load="GB_RAIL_TEST_DESTROYED_REBEL"/>
-	<deadCrew load="DEAD_CREW_REBEL"/>
+	<deadCrew load="DEAD_CREW_REBEL"/> <!-- R4: Notice: Probably should have a unique dead crew line -->
 	<triggeredEvent event="GB_RAIL_TEST_REBEL_ESCAPE" time="60" thisFight="true" clearOnJump="true">
 		<triggeredEventBox load="DEFAULT_TIMER" pos="default">
 			<warning time="10.0" flash="true"/>
@@ -542,8 +544,10 @@
 	</choice>
 </event>
 
+<!-- R4: To do, would later need a quest beacon to deliver the information. -->
 <event name = "GB_RAIL_TEST_DESTROYED_REBEL">
-	<text>The rebel ship has been eliminated, thanks to the prototype tech. You scrap the ship.</text>
+	<!--<text>The rebel ship has been eliminated, thanks to the prototype tech. You scrap the ship.</text>-->
+	<text>A successful test of the new prototype arsenal leaving the familiar orange hull of the Rebel ship littered with suitable salvage. Hopefully the combat recordings of this field test would prove satisfactory.</text>-
 	<autoReward level = "HIGH">standard</autoReward>
 </event>
 
@@ -554,7 +558,7 @@
 	<choice hidden = "true" req = "GB_RAIL_1" lvl="1">
 		<text>Continue...</text>
 		<event>
-			<text>The commander of the station is unimpressed, and takes the prototype weapon away with him.</text>
+			<text>The commander of the station is unimpressed, and orders the prototype weapon to be returned immediately.</text>
 			<remove name = "GB_RAIL_1"/>
 		</event>
 	</choice>
@@ -564,11 +568,12 @@
 	</choice>
 </event>
 
-<event name = "GB_MUSEUM_TOUR">  <!--I guess I'm trying to evoke Trantor here-->
+<!-- WIP -->
+<event name = "GB_MUSEUM_TOUR">  <!-- CG Jr: I guess I'm trying to evoke Trantor here-->
 	<text>This planet hosts a large human settlement, covering a large portion of the surface. The landscape is covered in sprawling urban landscapes cradled between towering peaks on the supercontinent. Standing tall amid the city is a grand building, surrounded by fountains and seemingly the centre of attention.</text>
 	<choice hidden = "true">
 		<text>Land and look around the building.</text>
-		<event><!--Can I can I use grizzled here?-->
+		<event><!--CG Jr: Can I can I use grizzled here?-->
 			<text>A grizzled Federation officer is guarding the front of the complex, allowing select members of the public to pass through into the halls beyond. You and your crew approach, and, recognising your uniforms, the officer stands aside to let you pass.</text>
 			<choice hidden = "true">
 				<text>Continue...</text>
@@ -699,6 +704,430 @@
 							<choice> tell me about the expansion wars [[summary]] -> [[how it affected the Federation and international response]]
 							<choice> ask about the museums collection [[broad description]] -> [[options to ask about some items]]
 						<event/>
-					</choice> -->
+</choice> -->
+
+
+
+
+
+
+<!-- reference event
+<event name="ENGI_FLEET_DELAY" unique="true">
+	<text>You notice an Engi colony hiding on the other side of a nearby moon. It turns out they're excavating an equipment cache from the Federation-Mantis War, and they suggest it might be used to lure the pursuing rebel fleet.</text>
+	<choice>
+		<text>Booby trap the cache.</text>
+		<event>
+			<text>You transfer down some missile warheads and the Engi rig them to blow before setting a distress signal to attract the fleet's attention.</text>
+			<item_modify>
+				<item type="missiles" min="-2" max="-2"/>
+			</item_modify>
+			<modifyPursuit amount="-2"/>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Secure the cache.</text>
+		<event>
+			<text>You have the Engi complete their excavations and bring the supplies onboard.</text>
+			<autoReward level="MED">drone</autoReward>
+		</event>
+	</choice>
+</event>-->
+<event name="TEST_SENSORS">
+    <text>Test sensors.</text>    
+    <choice req="sensors" max_group="0" lvl="1">
+        <text>(Sensors) Attempt to scan</text>
+        <event load="TEST_SENSORS_NORMAL"/>
+    </choice>
+    <choice req="sensors" max_group="0" lvl="3">
+        <text>(Adv. Sensors) Attempt to scan</text>
+        <event load="TEST_SENSORS_HIGH"/>
+    </choice>
+</event>
+<eventList name="TEST_SENSORS_NORMAL">
+    <event load="TEST_SENSORS_FAIL"/>
+    <event load="TEST_SENSORS_FAIL"/>
+    <event load="TEST_SENSORS_FAIL"/>
+    <event load="TEST_SENSORS_SUCCESS"/>
+</eventList>
+<eventList name="TEST_SENSORS_HIGH">
+    <event load="TEST_SENSORS_FAIL"/>
+    <event load="TEST_SENSORS_SUCCESS"/>
+</eventList>
+<event name="TEST_SENSORS_FAIL">
+    <text>You failed to scan properly.</text>
+</event>
+<event name="TEST_SENSORS_SUCCESS">
+    <text>You successfully scanned the area!</text>
+</event>
+
+
+<!-- R4 "lets make a quick GB Cache event I said... it'll be easy and quick I said" why am I like this.-->
+<event name="GB_CACHE_TROJAN_ASTEROID" unique="true">
+	<text planet="PLANET_GAS">You have jumped to a rather unassuming space close to a trojan asteroid cluster that share its orbit with a nearby Gas Giant. Yet breaking the banal nature of the site your database claims that there is an old cache from the Federation-Mantis War hidden deep in the cluster. </text>
+	
+	<!-- R4: Manual search, higher chance of success, but failure leaves you stuck in an asteroid field or even damaged-->
+	<choice>
+		<text>Search inside the asteroid field.</text> 
+		<event>
+			<event load="GB_CACHE_TROJAN_ASTEROID_SEARCH"/>
+		</event>
+	</choice>
+
+	<!-- R4: Assisted search, higher chance of success, but failure leaves you stuck in an asteroid field or even damaged-->
+	<choice req="pilot" lvl="3" hidden="true">
+		<text>(Adv. Piloting) Carefully search inside the asteroid field.
+			<event>
+				<event load="GB_CACHE_TROJAN_ASTEROID_SEARCH_ADV"/>
+			</event>
+		</text>
+	</choice>
+
+	<!-- R4: Armour to protect yourself from the asteroids -->
+	<choice hidden="true" req="BLUELIST_ARMOR">
+		<text>(Armor Plating) Make a thorough search for the ship without fear of stray asteroids.</text>
+		<event>
+			<event load="GB_CACHE_TROJAN_ASTEROID_SEARCH_ADV"/>
+		</event>
+	</choice>
+
+	<!-- R4: Energy shield to protect yourself from the asteroids -->
+	<choice hidden="true" req="BLUELIST_ENERGY_SHIELD">
+		<text>(Energy Shield) Your shield will protect you.</text>
+		<event>
+			<event load="GB_CACHE_TROJAN_ASTEROID_SEARCH_ADV"/>
+		</event>
+	</choice>
+
+	<!-- R4: Defence drones to protect yourself from the asteroids -->
+	<choice hidden="true" req="BLUELIST_DRONES_DEFENSE">
+		<text>(Defense Drone) Shoot down the mine.</text>
+		<!-- drone parts needed -->
+		<event>
+			<event load="GB_CACHE_TROJAN_ASTEROID_SEARCH_ADV"/>
+		</event>
+	</choice>
+	
+	<!-- R4: Sensors, lower chance of success, but failure leaves you safe and sound. -->
+    <choice req="sensors" max_group="0" lvl="1" hidden="true" blue="false">
+        <text>(Sensors) Attempt to scan the asteroid field</text>
+        <event load="GB_CACHE_TROJAN_ASTEROID_SCAN"/>
+    </choice>
+	<choice req="sensors" max_group="0" lvl="2" hidden="true">
+        <text>(Upg. Sensors) Scan the asteroid field.</text>
+        <event load="GB_CACHE_TROJAN_ASTEROID_SCAN_UPG"/>
+    </choice>
+    <choice req="sensors" max_group="0" lvl="3" hidden="true">
+        <text>(Adv. Sensors) Scan the asteroid field.</text>
+        <event load="GB_CACHE_TROJAN_ASTEROID_SCAN_ADV"/>
+    </choice>
+	<choice req="sensors" max_group="0" lvl="3" hidden="true">
+        <text>(Adv. Sensors) Scan the asteroid field.</text>
+        <event load="GB_CACHE_TROJAN_ASTEROID_SCAN_ADV"/>
+    </choice>
+
+	<choice hidden="true" req="ADV_SCANNERS">
+        <text>(LSR) Scan the asteroid field.</text>
+        <event load="GB_CACHE_TROJAN_ASTEROID_SCAN_ADV"/>
+    </choice>
+
+	<!-- R4: Mandatory leave option-->
+	<choice hidden="true">
+		<text>Leave.</text>
+		<event>
+			<text>You avoid the trojan and the cache that may be awaiting inside of it.</text>
+			<choice>
+				<text>Do something onboard the ship.</text>
+				<event load = "STORAGE_CHECK_REAL"/>
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<!-- GB_CACHE_TROJAN_ASTEROID chances-->
+
+<!-- Manual Searching Lists-->
+<eventList name="GB_CACHE_TROJAN_ASTEROID_SEARCH"> <!-- 50% chance to fail -->
+    <event load="GB_CACHE_ASTEROID_FAIL_BAD"/>
+    <event load="GB_CACHE_ASTEROID_FAIL"/>
+	<event load="GB_CACHE_ASTEROID_FAIL"/>
+    <event load="GB_CACHE_ASTEROID_SUCCESS"/>
+    <event load="GB_CACHE_ASTEROID_SUCCESS"/>
+	<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE"/>
+</eventList>
+<eventList name="GB_CACHE_TROJAN_ASTEROID_SEARCH_ADV"> <!-- 100% success, 60% chance to Elite AC-->
+    <event load="GB_CACHE_ASTEROID_SUCCESS"/>
+    <event load="GB_CACHE_ASTEROID_SUCCESS"/>
+	<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE"/>
+	<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE"/>
+	<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE"/>
+</eventList>
+
+<!-- Scanning Search lists -->
+<eventList name="GB_CACHE_TROJAN_ASTEROID_SCAN"> <!-- 71.4% chance to fail, no asteroids or damage on failure-->
+    <event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+    <event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+    <event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+	<event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+	<event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+    <event load="GB_CACHE_ASTEROID_SUCCESS_SCAN"/>
+	<event load="GB_CACHE_ASTEROID_SUCCESS_SCAN"/>
+</eventList>
+<eventList name="GB_CACHE_TROJAN_ASTEROID_SCAN_UPG"> <!-- 50% chance to fail -->
+    <event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+	<event load="GB_CACHE_ASTEROID_SUCCESS_SCAN"/>
+</eventList>
+<eventList name="GB_CACHE_TROJAN_ASTEROID_SCAN_ADV">  <!-- 100% success, 50% chance to Elite AC-->
+    <event load="GB_CACHE_ASTEROID_SUCCESS_SCAN"/>
+    <event load="GB_CACHE_ASTEROID_SUCCESS_SCAN"/>
+	<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE_SCAN"/>
+	<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE_SCAN"/>
+	<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE_SCAN"/>
+</eventList>
+
+
+<event name="GB_CACHE_ASTEROID_FAIL">
+	<environment type="asteroid"/>
+    <text>Despite your best attempt to find the cache it is no where to be seen. The database must've been out of date and now it's time to survive escaping the trojan.</text>
+</event>
+<event name="GB_CACHE_ASTEROID_FAIL_BAD">
+	<environment type="asteroid"/>
+    <text>Before you can spend too much time doing a search inside the Trojan a few asteroids get past your shields and partially damage your ship. You'll have to pull out!</text>
+	<damage amount="2"/>
+	<damage amount="1" system="random"/>
+</event>
+<event name="GB_CACHE_ASTEROID_SUCCESS">
+	<environment type="asteroid"/>
+	<text>After a thorough search through the trojan you can find what appears to be the cache is well hidden inside of one of the larger asteroids crators!</text>
+	<choice hidden="true">
+		<text>Secure the cache.</text>
+		<event>
+			<event load = "GB_CACHE_REWARD"/>
+		</event>
+	</choice>
+	<choice>
+		<text>Booby trap the cache.</text>
+		<event>
+			<text>This Federation cache inside of this trojan would make the perfect bait for a trap to help throw off the Rebel fleet from their pursuit. You order to rig the stowages insdie the asteroid before setting a distress signal to attract the fleet's attention.</text>
+			<item_modify>
+				<item type="missiles" min="-2" max="-2"/>
+			</item_modify>
+			<modifyPursuit amount="-3"/> <!-- 3 instead of 2 due to location of the cache-->
+		</event>
+	</choice>
+</event>
+<event name="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE"> <!--- R4: todo, what is this-->
+	<environment type="asteroid"/>
+	<text>After a thorough search through the trojan you can find what appears to be the cache is well hidden inside of one of the larger asteroids crators!</text>
+	<choice hidden="true">
+		<text>Secure the cache.</text>
+		<event>
+			<event load = "GB_CACHE_REWARD_AC_ELITE"/>
+		</event>
+	</choice>
+	<choice>
+		<text>Booby trap the cache.</text>
+		<event>
+			<text>This Federation cache inside of this trojan would make the perfect bait for a trap to help throw off the Rebel fleet from their pursuit. You order to rig the stowages insdie the asteroid before setting a distress signal to attract the fleet's attention.</text>
+			<item_modify>
+				<item type="missiles" min="-2" max="-2"/>
+			</item_modify>
+			<modifyPursuit amount="-3"/> <!-- 3 instead of 2 due to location of the cache-->
+		</event>
+	</choice>
+</event>
+
+<event name="GB_CACHE_ASTEROID_FAIL_SCAN">
+    <text>Unfortuantely your scanners are unable to detect a cache or anything of note inside the trojan. Disappointed you move on.</text>
+</event>
+<event name="GB_CACHE_ASTEROID_SUCCESS_SCAN">
+	<text>After a thorough scan through the trojan you can find what appears to be the cache is well hidden inside of one of the larger asteroids crators!</text> <!-- R4: Changes search with scan because yes.-->
+	<choice hidden="true">
+		<text>Enter the asteroid field and secure the cache.</text> <!-- R4: Describes how you have to enter the asteroid field -->
+		<event>
+			<environment type="asteroid"/> <!-- R4: Does this work when I do it like this?-->
+			<event load = "GB_CACHE_REWARD"/>
+		</event>
+	</choice>
+	<choice>
+		<text>Enter the asteroid field and booby trap the cache.</text>
+		<event>
+			<environment type="asteroid"/> <!-- R4: Does this work when I do it like this?-->
+			<text>This Federation cache inside of the trojan would make the perfect bait for a trap to help throw off the Rebel fleet from their pursuit. You order to rig the stowages inside the asteroid before setting a distress signal to attract the fleet's attention.</text>
+			<item_modify>
+				<item type="missiles" min="-2" max="-2"/>
+			</item_modify>
+			<modifyPursuit amount="-3"/> <!-- 3 instead of 2 due to location of the cache-->
+		</event>
+	</choice>
+</event>
+
+
+<!-- Cache Generic Reward List, no Duds-->
+<eventList name="GB_CACHE_REWARD">
+    <event load="GB_CACHE_AUTOCANNONS"/>
+    <event load="GB_CACHE_WEAPON"/>
+	<event load="GB_CACHE_DRONE"/>
+
+	<!-- Resource focus -->
+	<event load="GB_CACHE_STUFF"/>
+	<event load="GB_CACHE_FUEL"/>
+	<event load="GB_CACHE_AMMO"/>
+	<event load="GB_CACHE_DRONES"/>
+
+	<!-- Specific items -->
+	<event load="GB_CACHE_AUTOCANNON_1"/> <!-- AC1 is cheap, so this gives high reward alongside the AC1 -->
+	<event load="GB_CACHE_TROOPER DRONE"/> <!-- Trooper Drone is cheap, so this gives high reward alongside the Trooper Drone -->
+	<event load="GB_CACHE_MACHINEGUN"/> <!-- Machinegun isn't a standard ship weapon and is cheap, so this gives a high reward and narrative focus -->
+	<!--<event load="GB_CACHE_AC_DRONE"/>--> <!-- Gives the Ballistic AC drone out specifically -->
+</event>
+<!-- Cache Elite Reward List, Autocannons only-->
+<eventList name="GB_CACHE_REWARD_AC_ELITE">
+    <event load="GB_CACHE_AUTOCANNON_1_ELITE"/>
+    <event load="GB_CACHE_AUTOCANNON_2_ELITE"/>
+	<event load="GB_CACHE_AUTOCANNON_3_ELITE"/>
+	<!--<event load="GB_CACHE_AUTOCANNON_4_ELITE"/> -->
+</event>
+
+
+<!-- 	••••••••••••••••••••••••••••••••••••••••••
+						  CACHE REWARDS
+		••••••••••••••••••••••••••••••••••••••••••
+-->
+<event name="GB_CACHE_REWARD">
+    <text>You have your crew enter the cache and bring up the apposite supplies.</text>
+	<autoReward level="HIGH">standard</autoReward>
+</event>
+<event name="GB_CACHE_AUTOCANNONS">
+    <text>The cache seems to be with some munitions and cannons left over from the old war. Ready to be installed onto your ship.</text>
+	<weapon name="GB_GIFTLIST_AUTOCANNONS_MODERATE"/>
+	<autoReward level="MED">missiles</autoReward> <!-- R4: Missiles to go with the AC and some scrap-->
+</event>
+<event name="GB_CACHE_WEAPON">
+    <text>You have your crew enter the cache and bring up some useful weapons and supplies.</text>
+	<weapon name="GIFTLIST_FEDERATION"/>
+	<autoReward level="LOW">standard</autoReward>
+	<!--<autoReward level="MED">weapon</autoReward>-->
+</event>
+<event name="GB_CACHE_DRONE">
+    <text>You have your crew enter the cache and bring up the useful drones and supplies.</text>
+	<autoReward level="MED">drone</autoReward>
+</event>
+
+
+<event name="GB_CACHE_STUFF">
+    <text>There doesn't appear to have much useful scrap in this cache, but there are plenty of useful supplies for you to claim.</text>
+	<autoReward level="HIGH">stuff</autoReward>
+</event>
+<event name="GB_CACHE_FUEL">
+    <text>This cache must've been once close to an anchorage during the war because it is filled with fuel tanks of which most seem to be full and in good condition.</text>
+	<autoReward level="HIGH">fuel</autoReward>
+</event>
+<event name="GB_CACHE_AMMO">
+    <text>The cache is fitted with stowages of ammunition most likely to supply the early Federation fleet with enough munitions for their autocannons and missiles. Perfectly usable in modern systems.</text>
+	<autoReward level="HIGH">missiles</autoReward>
+</event>
+<event name="GB_CACHE_DRONES"> 
+    <text>A quick investigation shows this cache has drone parts aplenty stored here leaving you with a rather large haul.</text>
+	<autoReward level="HIGH">droneparts</autoReward>
+</event>
+
+<event name="GB_CACHE_AUGB_CACHE_AUTOCANNON_1">
+    <text>There is an unoridnarily high supply of light autocannons and supplies left over from the old war inside this cache that is still more than fit to be installed onto your ship.</text>
+	<weapon name="GB_AC_1"/>
+	<autoReward level="MED">stuff</autoReward> <!-- R4: Missiles to go with the AC and some scrap-->
+	<choice>
+		<text>The rest of the supplies and equipment is brought onboard before the Rebel fleet catches up.</text>
+		<event>
+			<weapon name="GB_AC_1"/>
+			<autoReward level="MED">missiles</autoReward>
+		</event>
+	</choice>
+</event>
+<event name="GB_CACHE_MACHINEGUN"> 
+    <text>The cache is filled with rows and rows of weapons and munitions for the old Federation Army. Though mostly ineffective against ships it could potentially be useful in softening up their crew.</text>
+	<autoReward level="HIGH">standard</autoReward>
+	<weapon name="GB_GIFTLIST_MG"/>
+	<choice>
+		<text>Beyond the heavy infantry support weapons there also appears to be a plethora of firearms and equipment that would prove to be useful.</text>
+		<event>
+			<augment name="CREW_FIREARMS"/>
+		</event>
+	</choice>
+</event>
+
+
+<!-- 	••••••••••••••••••••••••••••••••••••••••••
+			CACHE ELITE AUTOCANNON REWARDS
+		••••••••••••••••••••••••••••••••••••••••••
+-->
+<event name="GB_CACHE_AUTOCANNON_1_ELITE">
+    <text>Upon closer examination, the cache seems to have been stocked with light autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
+	<weapon name="GB_AC_3_ELITE"/>
+	<autoReward level="HIGH">missiles</autoReward>
+</event>
+<event name="GB_CACHE_AUTOCANNON_2_ELITE">
+    <text>Upon closer examination, the cache seems to have been stocked with autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
+	<weapon name="GB_AC_3_ELITE"/>
+	<autoReward level="MED">missiles</autoReward>
+</event>
+<event name="GB_CACHE_AUTOCANNON_3_ELITE">
+    <text>Upon closer examination, the cache seems to have been stocked with heavy autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
+	<weapon name="GB_AC_3_ELITE"/>
+	<autoReward level="LOW">missiles</autoReward>
+</event>
+<!--<event name="GB_CACHE_AUTOCANNON_4_ELITE">
+    <text>Upon closer examination, the cache seems to have been stocked with heavy autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
+	<weapon name="GB_AC_4_ELITE"/>
+	<autoReward level="MED">missiles_only</autoReward>
+</event>-->
+
+
+
+<event name="GB_CACHE_TEMPLATE" unique="true">
+	<text>You notice a dilapidated </text>
+	<choice>
+		<text>[Sabotage option]</text>
+		<event>
+			<text>[Action of Sabotage]</text>
+			<item_modify>
+				<item type="missiles" min="-2" max="-2"/>
+			</item_modify>
+			<modifyPursuit amount="-2"/>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>[Loot option 1]</text>
+		<event>
+			<text>[You got the thing1]</text>
+			<autoReward level="MED">drone</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>[Loot option 2]</text>
+		<event>
+			<text>[You got the thing2]</text>
+			<autoReward level="MED">weapon</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>[Leave option]</text>
+		<event>
+			<text>[Showing Disinterest]</text>
+			<choice>
+				<text>Do something on board the ship.</text>
+				<event load = "STORAGE_CHECK_REAL"/>
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
 
 </FTL>
