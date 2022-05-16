@@ -826,7 +826,7 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO7" lvl="0" blue="false" hidden="true"> <!-- Particle Ammo Type -->
-			<text>Particle ammo.[no hull , 4 sys, 30 crew dmg, 20% fire chance, 22% ammo consumption]/text>
+			<text>Particle ammo.[no hull , 4 sys, 30 crew dmg, 20% fire chance, 22% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_HEAT</loadEvent>
 			</event>
