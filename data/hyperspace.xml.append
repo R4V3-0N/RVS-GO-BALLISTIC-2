@@ -1245,22 +1245,22 @@
 	<!--PLAYER SHIPS-->
 
 	<mod:findLike type ="shipOrder">
-	<!--PAGE 1-->
-	<mod-append:ship>PLAYER_SHIP_R4_GB_KESTREL</mod-append:ship>
-	<mod-append:empty/>
-	<mod-append:empty/>
-	<mod-append:empty/>
-	<mod-append:empty/>
-	<mod-append:empty/>
-	<mod-append:empty/>
-	<mod-append:empty/>
-	<mod-append:empty/>
-	<mod-append:empty/>
+		<!--PAGE 1-->
+		<mod-append:ship>PLAYER_SHIP_RVSP_GB_KESTREL</mod-append:ship>
+		<mod-append:ship>PLAYER_SHIP_RVSP_FED_FREIGHTER</mod-append:ship>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
 	</mod:findLike>
 
 	<!--SHIP UNLOCKS-->
 
-	<mod-append:ship name="PLAYER_SHIP_R4_GB_KESTREL" b="true" c="true">
+	<!--<mod-append:ship name="PLAYER_SHIP_R4_GB_KESTREL" b="true" c="true">
 		<unlock variant="a" silent="false">
 			<type>3</type>
 			<otherUnlocks>
@@ -1268,53 +1268,53 @@
 				<ship>PLAYER_SHIP_KESTREL_2</ship>
 				<ship>PLAYER_SHIP_KESTREL_3</ship>
 			</otherUnlocks>
-		<silent>true</silent>
+			<silent>true</silent>
 		</unlock>
 		<unlock variant="b" silent="true">
 			<type>1</type>
 			<shipReq>PLAYER_SHIP_R4_GB_KESTREL</shipReq>
-            <value>5</value>
-		<silent>true</silent>
+			<value>5</value>
+			<silent>true</silent>
 		</unlock>
 		<unlock variant="c" silent="true">
 			<type>1</type>
 			<shipReq>PLAYER_SHIP_R4_GB_KESTREL_2</shipReq>
-            <value>5</value>
-		<silent>true</silent>
+			<value>5</value>
+			<silent>true</silent>
 		</unlock>
 		<unlock variant="c" silent="true">
 			<type>2</type>
 			<shipReq>PLAYER_SHIP_R4_GB_KESTREL</shipReq>
-		<silent>true</silent>
+			<silent>true</silent>
 		</unlock>
-	</mod-append:ship>
+	</mod-append:ship>-->
 
 	<!--PLAYER SHIPS-->
 
-    <mod-append:ship name="PLAYER_SHIP_RVSP_GB_KESTREL" b="true" c="true"/>
-    <mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL">
-        <hiddenAug>SHIP_KESTREL</hiddenAug>
-        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
-        <crewLimit>11</crewLimit>
+	<mod-append:ship name="PLAYER_SHIP_RVSP_GB_KESTREL" b="true" c="true"/>
+	<mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL">
+		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crewLimit>11</crewLimit>
 		<crew>
 			<human room = "0"/> <!--piloting-->
 			<human room = "10"/> <!--weapons-->
 			<human room = "11"/> <!--shields-->
 			<human room = "12"/> <!--engines-->
 		</crew>
-    </mod-append:customShip>
+	</mod-append:customShip>
 
-    <mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL_2">
-        <hiddenAug>SHIP_KESTREL</hiddenAug>
-        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	<mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL_2">
+		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crew>
 			<human room = "9"/> <!--engines-->
 			<human room = "10"/> <!--weapons-->
 			<orchid room = "12"/> <!--cloaking-->
 			<zoltan room = "5"/> <!--piloting :)-->
 		</crew>
-        <crewLimit>11</crewLimit>
-    </mod-append:customShip>
+		<crewLimit>11</crewLimit>
+	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL_3">
 		<hiddenAug>SHIP_KESTREL</hiddenAug>
