@@ -75,35 +75,55 @@
 	 </event>
 	<event name="GB_CALL_QUESTION" recursive="true"/>
 	<variable name="gb_ammo_toggle" op="set" val="0"/>
-	<req name="GB_CURRENT_AMMO1"  type="sum" lvl="1" max_lvl="1">
-		<name>gb_ammo_toggle</name>
+	<req name="GB_CURRENT_AMMO1">
+		<req type="sum" lvl="1" max_lvl="1">
+			<name>gb_ammo_toggle</name>
+		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO2"  type="sum" lvl="2" max_lvl="2">
-		<name>gb_ammo_toggle</name>
+	<req name="GB_CURRENT_AMMO2">
+		<req type="sum" lvl="2" max_lvl="2">
+			<name>gb_ammo_toggle</name>
+		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO3"  type="sum" lvl="3" max_lvl="3">
-		<name>gb_ammo_toggle</name>
+	<req name="GB_CURRENT_AMMO3">
+		<req type="sum" lvl="3" max_lvl="3">
+			<name>gb_ammo_toggle</name>
+		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO4"  type="sum" lvl="4" max_lvl="4">
-		<name>gb_ammo_toggle</name>
+	<req name="GB_CURRENT_AMMO4">
+		<req type="sum" lvl="4" max_lvl="4">
+			<name>gb_ammo_toggle</name>
+		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO5"  type="sum" lvl="5" max_lvl="5">
-		<name>gb_ammo_toggle</name>
+	<req name="GB_CURRENT_AMMO5" >
+		<req type="sum" lvl="5" max_lvl="5">
+			<name>gb_ammo_toggle</name>
+		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO6"  type="sum" lvl="6" max_lvl="6">
-		<name>gb_ammo_toggle</name>
+	<req name="GB_CURRENT_AMMO6" >
+		<req type="sum" lvl="6" max_lvl="6">
+			<name>gb_ammo_toggle</name>
+		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO7"  type="sum" lvl="7" max_lvl="7">
-		<name>gb_ammo_toggle</name>
+	<req name="GB_CURRENT_AMMO7" >
+		<req type="sum" lvl="7" max_lvl="7">
+			<name>gb_ammo_toggle</name>
+		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO8"  type="sum" lvl="8" max_lvl="8">
-		<name>gb_ammo_toggle</name>
+	<req name="GB_CURRENT_AMMO8" >
+		<req type="sum" lvl="8" max_lvl="8">
+			<name>gb_ammo_toggle</name>
+		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO9"  type="sum" lvl="9" max_lvl="9">
-		<name>gb_ammo_toggle</name>
+	<req name="GB_CURRENT_AMMO9" >
+		<req type="sum" lvl="9" max_lvl="9">
+			<name>gb_ammo_toggle</name>
+		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO10"  type="sum" lvl="10" max_lvl="10">
-		<name>gb_ammo_toggle</name>
+	<req name="GB_CURRENT_AMMO10" >
+		<req type="sum" lvl="10" max_lvl="10">
+			<name>gb_ammo_toggle</name>
+		</req>
 	</req>
 </events>
 
@@ -1454,7 +1474,7 @@
 
 <crew> <!-- AC1 EMP crew, 1 ion damage -->
 	<race name="gb_ion_instant_1">
-		<maxHealth>100</maxHealth>
+		<maxHealth>0</maxHealth>
 		<repairSpeed>0</repairSpeed>
 		<canFight>false</canFight>
 		<canRepair>false</canRepair>
@@ -1496,7 +1516,7 @@
 
 <crew> <!-- EMP AC2 Ion crew, 2 ion damage -->
 	<race name="gb_ion_instant_2">
-		<maxHealth>100</maxHealth>
+		<maxHealth>0</maxHealth>
 		<repairSpeed>0</repairSpeed>
 		<canFight>false</canFight>
 		<canRepair>false</canRepair>
@@ -1536,7 +1556,7 @@
 
 <crew> <!-- EMP AC3 Ion crew, 3 ion damage-->
 	<race name="gb_ion_instant_3">
-		<maxHealth>100</maxHealth>
+		<maxHealth>0</maxHealth>
 		<repairSpeed>0</repairSpeed>
 		<canFight>false</canFight>
 		<canRepair>false</canRepair>
