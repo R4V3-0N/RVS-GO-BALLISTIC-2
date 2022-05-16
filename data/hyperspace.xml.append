@@ -55,7 +55,7 @@
 			<shootingSound>detectiveShoot3</shootingSound>
 		</shootingSounds>
 	</mod-append:race>-->
-</mod:findLike>	
+</mod:findLike>
 <mod:findLike type="drones">
 	<mod-append:drone name="RVS_TROOPERTOG_BOARDER">
 		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
@@ -70,10 +70,41 @@
 <events>
 	<eventFile>ballistic</eventFile>
 
-	<event name="GB_CALL_QUESTION_LOAD"> 
+	<event name="GB_CALL_QUESTION_LOAD">
 		<loadEvent>GB_CALL_QUESTION</loadEvent>
-	 </event>	
-	<event name="GB_CALL_QUESTION" recursive="true"/> 
+	 </event>
+	<event name="GB_CALL_QUESTION" recursive="true"/>
+	<variable name="gb_ammo_toggle" op="set" val="0"/>
+	<req name="GB_CURRENT_AMMO1"  type="sum" lvl="1" max_lvl="1">
+		<name>gb_ammo_toggle</name>
+	</req>
+	<req name="GB_CURRENT_AMMO2"  type="sum" lvl="2" max_lvl="2">
+		<name>gb_ammo_toggle</name>
+	</req>
+	<req name="GB_CURRENT_AMMO3"  type="sum" lvl="3" max_lvl="3">
+		<name>gb_ammo_toggle</name>
+	</req>
+	<req name="GB_CURRENT_AMMO4"  type="sum" lvl="4" max_lvl="4">
+		<name>gb_ammo_toggle</name>
+	</req>
+	<req name="GB_CURRENT_AMMO5"  type="sum" lvl="5" max_lvl="5">
+		<name>gb_ammo_toggle</name>
+	</req>
+	<req name="GB_CURRENT_AMMO6"  type="sum" lvl="6" max_lvl="6">
+		<name>gb_ammo_toggle</name>
+	</req>
+	<req name="GB_CURRENT_AMMO7"  type="sum" lvl="7" max_lvl="7">
+		<name>gb_ammo_toggle</name>
+	</req>
+	<req name="GB_CURRENT_AMMO8"  type="sum" lvl="8" max_lvl="8">
+		<name>gb_ammo_toggle</name>
+	</req>
+	<req name="GB_CURRENT_AMMO9"  type="sum" lvl="9" max_lvl="9">
+		<name>gb_ammo_toggle</name>
+	</req>
+	<req name="GB_CURRENT_AMMO10"  type="sum" lvl="10" max_lvl="10">
+		<name>gb_ammo_toggle</name>
+	</req>
 </events>
 
 <!-- Go Ballistics generic Federation store, based on the Zoltan store-->
@@ -102,7 +133,7 @@
 			<modifier min="0.5" max="0.7" flat="false"/>
 			<price>-1</price>
 			<!--<mysteryItem>true</mysteryItem>-->
-		</item> 
+		</item>
 		<item>
 			<blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS</blueprint>
 			<modifier min="0.5" max="0.8" flat="false"/>
@@ -125,7 +156,7 @@
 			<modifier min="1.1" max="1.3" flat="false"/>
 			<price>-1</price>
 			<!--<mysteryItem>true</mysteryItem>-->
-		</item> 
+		</item>
 		<item>
 			<blueprint>GB_GAUSS_2</blueprint> <!-- swap to GB_SHOP_ITEM_WEAPONS_GAUSS when we got more weapons-->
 			<modifier min="1.0" max="1.2" flat="false"/>
@@ -144,46 +175,46 @@
 	<!--<category type="DRONES" group="1">
 		<customTitle>DRONES OF THE DAY [33% OFF]</customTitle>
 		<item>
-			<modifier flat="false">0.66</modifier> 
+			<modifier flat="false">0.66</modifier>
 			<price>-1</price>
 			<mysteryItem>true</mysteryItem>
-		</item> 
+		</item>
 		<item>
-			<modifier flat="false">0.66</modifier> 
+			<modifier flat="false">0.66</modifier>
 			<price>-1</price>
 			<mysteryItem>true</mysteryItem>
-		</item> 
+		</item>
 		<item>
-			<modifier flat="false">0.66</modifier> 
+			<modifier flat="false">0.66</modifier>
 			<price>-1</price>
 			<mysteryItem>true</mysteryItem>
-		</item> 
+		</item>
 		<chance>45</chance>
 		<groupChance>33</groupChance>
 	</category>-->
 	<category type="AUGMENTS" group="1">
 		<customTitle>AUGMENTS OF THE DAY [33% OFF]</customTitle>
 		<item>
-			<modifier flat="false">0.66</modifier> 
+			<modifier flat="false">0.66</modifier>
 			<price>-1</price>
 			<mysteryItem>true</mysteryItem>
-		</item> 
+		</item>
 		<item>
-			<modifier flat="false">0.66</modifier> 
+			<modifier flat="false">0.66</modifier>
 			<price>-1</price>
 			<mysteryItem>true</mysteryItem>
-		</item> 
+		</item>
 		<item>
-			<modifier flat="false">0.66</modifier> 
+			<modifier flat="false">0.66</modifier>
 			<price>-1</price>
 			<mysteryItem>true</mysteryItem>
-		</item> 
+		</item>
 		<chance>33</chance>
 		<groupChance>33</groupChance>
 	</category>
 	<category type="WEAPONS">
 		<item/>
-		<item> 
+		<item>
 			<blueprint>GB_SHOP_ITEM_WEAPONS_GP_CANNONS</blueprint> <!-- Autocannon weapon list-->
 		</item>
 		<item>
@@ -348,7 +379,7 @@
 			<chance>65</chance>
         </category>
     </customStore>
-	
+
 	<customStore id="STORE_BALLISTIC_STANDARD_AUTOCANNON">
         <hullRepair>
 			<price min="3" max="5"/>
@@ -382,17 +413,17 @@
 		<category type="WEAPONS" group="1">
             <customTitle>WEAPONS OF THE DAY [33% OFF]</customTitle>
 			<item>
-                <modifier flat="false">0.66</modifier> 
-                <price>-1</price>
-				<mysteryItem>true</mysteryItem>
-            </item> 
-			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
             </item>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item>
+			<item>
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
             </item>
@@ -402,40 +433,40 @@
 		<category type="DRONES" group="1">
             <customTitle>DRONES OF THE DAY [33% OFF]</customTitle>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<chance>25</chance>
 			<groupChance>15</groupChance>
         </category>
 		<category type="AUGMENTS" group="1">
             <customTitle>AUGMENTS OF THE DAY [33% OFF]</customTitle>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<chance>25</chance>
 			<groupChance>35</groupChance>
         </category>
@@ -499,7 +530,7 @@
 			<chance>65</chance>
         </category>
     </customStore>
-	
+
 	<!-- the Federation trifecta store, will be used in a unique event at some point -->
 	<customStore id="STORE_BALLISTIC_FED_ENGI_ZOLTAN">
         <hullRepair>
@@ -522,17 +553,17 @@
 			<customTitle>ANTIQUE WEAPONS [20% OFF]</customTitle>
 			<item>
                 <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_OLD</blueprint>
-				<modifier flat="false">0.8</modifier> 
+				<modifier flat="false">0.8</modifier>
                 <price>-1</price>
             </item>
 			<item>
                 <blueprint>GB_SHOP_ITEM_WEAPONS_ENGI_OLD</blueprint>
-				<modifier flat="false">0.8</modifier> 
+				<modifier flat="false">0.8</modifier>
                 <price>-1</price>
             </item>
 			<item>
                 <blueprint>GB_SHOP_ITEM_WEAPONS_ZOLTAN_OLD</blueprint>
-				<modifier flat="false">0.8</modifier> 
+				<modifier flat="false">0.8</modifier>
                 <price>-1</price>
             </item>
 			<chance>100</chance>
@@ -541,19 +572,19 @@
             <customTitle>WEAPONS OF THE DAY [33% OFF]</customTitle>
 			<item>
 				<blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_OLD</blueprint>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<item>
 				<blueprint>GB_SHOP_ITEM_WEAPONS_ENGI_OLD</blueprint>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
             </item>
 			<item>
 				<blueprint>GB_SHOP_ITEM_WEAPONS_ZOLTAN_OLD</blueprint>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
             </item>
@@ -613,7 +644,7 @@
 			<chance>65</chance>
         </category>
     </customStore>
-		
+
 	<customStore id="STORE_BALLISTIC_STANDARD_COILGUN">
         <hullRepair>
 			<price min="3" max="5"/>
@@ -704,7 +735,7 @@
 			<chance>65</chance>
         </category>
     </customStore>
-	
+
 	<customStore id="STORE_BALLISTIC_STANDARD_GAUSS">
         <hullRepair>
 			<price min="3" max="5"/>
@@ -791,7 +822,7 @@
 			<chance>65</chance>
         </category>
     </customStore>
-	
+
 	<customStore id="STORE_BALLISTIC_AUTOCANNON_BOMB">
         <hullRepair>
 			<price min="3" max="5"/>
@@ -889,7 +920,7 @@
 			<chance>65</chance>
         </category>
     </customStore>
-	
+
 	<customStore id="STORE_BALLISTIC_AUTOCANNON_BOMB_NO_AMMO">
         <hullRepair>
 			<price min="3" max="5"/>
@@ -983,7 +1014,7 @@
 			<chance>65</chance>
         </category>
     </customStore>
-	
+
 	<customStore id="STORE_STANDARD_NO_AMMO">
         <hullRepair>
 			<price min="3" max="5"/>
@@ -1000,17 +1031,17 @@
 		<category type="WEAPONS" group="1">
             <customTitle>WEAPONS OF THE DAY [33% OFF]</customTitle>
 			<item>
-                <modifier flat="false">0.66</modifier> 
-                <price>-1</price>
-				<mysteryItem>true</mysteryItem>
-            </item> 
-			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
             </item>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
+                <price>-1</price>
+				<mysteryItem>true</mysteryItem>
+            </item>
+			<item>
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
             </item>
@@ -1020,40 +1051,40 @@
 		<category type="DRONES" group="1">
             <customTitle>DRONES OF THE DAY [33% OFF]</customTitle>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<chance>25</chance>
 			<groupChance>15</groupChance>
         </category>
 		<category type="AUGMENTS" group="1">
             <customTitle>AUGMENTS OF THE DAY [33% OFF]</customTitle>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<item>
-                <modifier flat="false">0.66</modifier> 
+                <modifier flat="false">0.66</modifier>
                 <price>-1</price>
 				<mysteryItem>true</mysteryItem>
-            </item> 
+            </item>
 			<chance>25</chance>
 			<groupChance>35</groupChance>
         </category>
@@ -1117,7 +1148,7 @@
 			<chance>65</chance>
         </category>
     </customStore>
-	
+
 	<customStore id="STORE_SYLVAN_AC">
 		<itemPurchaseLimit>2</itemPurchaseLimit>
 		<resource>
@@ -1130,17 +1161,17 @@
                 <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_OLD</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item> 
+            </item>
 			<item>
                 <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_OLD</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item>    
+            </item>
             <item>
                 <blueprint>GB_ROTARY_AC</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item>    
+            </item>
         </category>
 		<category type="WEAPONS">
             <customTitle>BALLISTIC WEAPONS</customTitle>
@@ -1148,20 +1179,20 @@
                 <blueprint>SHOP_WEAPONS_BALLISTICS</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item> 
+            </item>
 			<item>
                 <blueprint>SHOP_WEAPONS_BALLISTICS</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item>    
+            </item>
             <item>
                 <blueprint>SHOP_WEAPONS_BALLISTICS</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item>    
+            </item>
         </category>
     </customStore>
-	
+
 	<customStore id="STORE_SYLVAN_GAUSS">
 		<itemPurchaseLimit>2</itemPurchaseLimit>
 		<resource>
@@ -1174,17 +1205,17 @@
                 <blueprint>GB_SHOP_ITEM_WEAPONS_MA_CANNONS</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item> 
+            </item>
 			<item>
                 <blueprint>GB_SHOP_ITEM_WEAPONS_MA_CANNONS</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item>    
+            </item>
             <item>
                 <blueprint>GB_SHOP_ITEM_WEAPONS_MA_CANNONS</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item>    
+            </item>
         </category>
 		<category type="WEAPONS">
             <customTitle>FOCUS BEAMS</customTitle>
@@ -1192,27 +1223,27 @@
                 <blueprint>SHOP_ITEM_SYLVAN_FOCUS_STANDARD</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item> 
+            </item>
 			<item>
                 <blueprint>SHOP_ITEM_SYLVAN_FOCUS_STANDARD</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item>    
+            </item>
             <item>
                 <blueprint>SHOP_ITEM_SYLVAN_FOCUS_SPECIAL</blueprint>
                 <modifier min="0.8" max="1.3" flat="false"/>
                 <price>-1</price>
-            </item>    
+            </item>
         </category>
     </customStore>
-	
+
 </store>
 
 
 <mod:findLike type="ships">
-	
+
 	<!--PLAYER SHIPS-->
-	
+
 	<mod:findLike type ="shipOrder">
 	<!--PAGE 1-->
 	<mod-append:ship>PLAYER_SHIP_R4_GB_KESTREL</mod-append:ship>
@@ -1228,7 +1259,7 @@
 	</mod:findLike>
 
 	<!--SHIP UNLOCKS-->
-	
+
 	<mod-append:ship name="PLAYER_SHIP_R4_GB_KESTREL" b="true" c="true">
 		<unlock variant="a" silent="false">
 			<type>3</type>
@@ -1272,7 +1303,7 @@
 			<human room = "12"/> <!--engines-->
 		</crew>
     </mod-append:customShip>
-	
+
     <mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL_2">
         <hiddenAug>SHIP_KESTREL</hiddenAug>
         <hiddenAug>FOR_MULTIVERSE</hiddenAug>
@@ -1284,7 +1315,7 @@
 		</crew>
         <crewLimit>11</crewLimit>
     </mod-append:customShip>
-	
+
 	<mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL_3">
 		<hiddenAug>SHIP_KESTREL</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
@@ -1296,7 +1327,7 @@
 			<engi_separatist room = "13"/> <!--engines-->
 		</crew>
 	</mod-append:customShip>
-	
+
 
 	<mod-append:ship name="PLAYER_SHIP_RVSP_FED_FREIGHTER" b="true" c="false" />
 	<mod-append:customShip name="PLAYER_SHIP_RVSP_FED_FREIGHTER">
@@ -1309,7 +1340,7 @@
 			<engi_separatist room = "0"/> <!--pilot-->
 		</crew>
 	</mod-append:customShip>
-	
+
 	<mod-append:customShip name="PLAYER_SHIP_RVS_FED_FREIGHTER_2">
 		<hiddenAug>SHIP_FEDERATION</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
@@ -1321,11 +1352,11 @@
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>8</crewLimit>
 	</mod-append:customShip>-->
-	
-	
-	
+
+
+
 	<!--ENEMY SHIPS-->
-	
+
 	<mod-append:customShip name = "GB_R4_MR_FED_LIGHT_CRUISER_1">
 		<shipIcons>
 			<shipIcon>icon_respirators</shipIcon>
@@ -1353,7 +1384,7 @@
 		</shipIcons>
 		<crew>
 			<human room="4"/> <!--doors-->
-			<!--<orchid room="6"/>->> <!--weapons-->
+			<!--<orchid room="6"/>--> <!--weapons-->
 			<shell room="12"/> <!--clonebay-->
 			<engi_separatist room="15"/> <!--engines-->
 			<mantis_free room="13"/> <!--empty-->
@@ -1370,7 +1401,7 @@
 		</shipIcons>
 		<crew>
 			<human room="4"/> <!--doors-->
-			<!--<orchid room="6"/> <!--weapons-->
+			<!--<orchid room="6"/>--> <!--weapons-->
 			<shell room="12"/> <!--clonebay-->
 			<engi_separatist room="15"/> <!--engines-->
 			<mantis_warlord room="13"/> <!--empty-->
@@ -1387,7 +1418,7 @@
 		</shipIcons>
 		<crew>
 			<human_medic room="4"/> <!--doors-->
-			<!--<orchid room="6"/> <!--weapons-->
+			<!--<orchid room="6"/>--> <!--weapons-->
 			<shell_guardian room="12"/> <!--clonebay-->
 			<engi_separatist room="15"/> <!--engines-->
 			<mantis_warlord room="13"/> <!--empty-->
@@ -1423,123 +1454,123 @@
 
 <crew> <!-- AC1 EMP crew, 1 ion damage -->
 	<race name="gb_ion_instant_1">
-			<maxHealth>100</maxHealth>
-			<repairSpeed>0</repairSpeed>
-			<canFight>false</canFight>
-			<canRepair>false</canRepair>
-			<canSabotage>false</canSabotage>
-			<canSuffocate>false</canSuffocate>
-			<fireDamageMultiplier>0</fireDamageMultiplier>
-			<canMan>false</canMan>
-			<noClone>true</noClone>
-			<noSlot>true</noSlot>
-			<controllable>false</controllable>
-			<selectable>false</selectable>
-			<canPhaseThroughDoors>true</canPhaseThroughDoors>
-			<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
-			<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
-			<damageMultiplier>0</damageMultiplier>
-			<damageTakenMultiplier>0.0</damageTakenMultiplier> 
-			<animBase>mantis</animBase>
-			<deathSounds>
-				<deathSound>energyDeath</deathSound>
-			</deathSounds>
-			<shootingSounds>
-				<shootingSound>mantisSpit1</shootingSound>
-				<shootingSound>mantisSpit2</shootingSound>
-				<shootingSound>mantisSpit3</shootingSound>
-			</shootingSounds>
-			<hasCustomDeathAnimation>true</hasCustomDeathAnimation>
-			<hasDeathExplosion>true</hasDeathExplosion>
-			<deathEffect>
-				<ion>1</ion>
-				<stun>3</stun>
-				<friendlyFire>true</friendlyFire>
-				<shipFriendlyFire>true</shipFriendlyFire>
-			</deathEffect>
-				
-			
-		
-		</race>
+		<maxHealth>100</maxHealth>
+		<repairSpeed>0</repairSpeed>
+		<canFight>false</canFight>
+		<canRepair>false</canRepair>
+		<canSabotage>false</canSabotage>
+		<canSuffocate>false</canSuffocate>
+		<fireDamageMultiplier>0</fireDamageMultiplier>
+		<canMan>false</canMan>
+		<noClone>true</noClone>
+		<noSlot>true</noSlot>
+		<controllable>false</controllable>
+		<selectable>false</selectable>
+		<canPhaseThroughDoors>true</canPhaseThroughDoors>
+		<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
+		<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
+		<damageMultiplier>0</damageMultiplier>
+		<damageTakenMultiplier>0.0</damageTakenMultiplier>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>energyDeath</deathSound>
+		</deathSounds>
+		<shootingSounds>
+			<shootingSound>mantisSpit1</shootingSound>
+			<shootingSound>mantisSpit2</shootingSound>
+			<shootingSound>mantisSpit3</shootingSound>
+		</shootingSounds>
+		<hasCustomDeathAnimation>true</hasCustomDeathAnimation>
+		<hasDeathExplosion>true</hasDeathExplosion>
+		<deathEffect>
+			<ion>1</ion>
+			<stun>3</stun>
+			<friendlyFire>true</friendlyFire>
+			<shipFriendlyFire>true</shipFriendlyFire>
+		</deathEffect>
+
+
+
+	</race>
 </crew>
-	
-	<crew> <!-- EMP AC2 Ion crew, 2 ion damage -->
-		<race name="gb_ion_instant_2">
-			<maxHealth>100</maxHealth>
-			<repairSpeed>0</repairSpeed>
-			<canFight>false</canFight>
-			<canRepair>false</canRepair>
-			<canSabotage>false</canSabotage>
-			<canSuffocate>false</canSuffocate>
-			<fireDamageMultiplier>0</fireDamageMultiplier>
-			<canMan>false</canMan>
-			<noClone>true</noClone>
-			<noSlot>true</noSlot>
-			<controllable>false</controllable>
-			<selectable>false</selectable>
-			<canPhaseThroughDoors>true</canPhaseThroughDoors>
-			<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
-			<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
-			<damageMultiplier>0</damageMultiplier>
-			<damageTakenMultiplier>0.0</damageTakenMultiplier> 
-			<animBase>mantis</animBase>
-			<deathSounds>
-				<deathSound>energyDeath</deathSound>
-			</deathSounds>
-			<shootingSounds>
-				<shootingSound>mantisSpit1</shootingSound>
-				<shootingSound>mantisSpit2</shootingSound>
-				<shootingSound>mantisSpit3</shootingSound>
-			</shootingSounds>
-			<deathEffect>
-				<ion>2</ion>
-				<stun>3</stun>
-				<friendlyFire>true</friendlyFire>
-				<shipFriendlyFire>true</shipFriendlyFire>
-			</deathEffect>
-				
-			
-		
-		</race>
-		</crew>
-		
-	<crew> <!-- EMP AC3 Ion crew, 3 ion damage-->
-		<race name="gb_ion_instant_3">
-			<maxHealth>100</maxHealth>
-			<repairSpeed>0</repairSpeed>
-			<canFight>false</canFight>
-			<canRepair>false</canRepair>
-			<canSabotage>false</canSabotage>
-			<canSuffocate>false</canSuffocate>
-			<fireDamageMultiplier>0</fireDamageMultiplier>
-			<canMan>false</canMan>
-			<noClone>true</noClone>
-			<noSlot>true</noSlot>
-			<controllable>false</controllable>
-			<selectable>false</selectable>
-			<canPhaseThroughDoors>true</canPhaseThroughDoors>
-			<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
-			<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
-			<damageMultiplier>0</damageMultiplier>
-			<damageTakenMultiplier>0.0</damageTakenMultiplier> 
-			<animBase>mantis</animBase>
-			<deathSounds>
-				<deathSound>energyDeath</deathSound>
-			</deathSounds>
-			<shootingSounds>
-				<shootingSound>mantisSpit1</shootingSound>
-				<shootingSound>mantisSpit2</shootingSound>
-				<shootingSound>mantisSpit3</shootingSound>
-			</shootingSounds>
-			<deathEffect>
-				<ion>3</ion>
-				<stun>5</stun>
-				<friendlyFire>true</friendlyFire>
-				<shipFriendlyFire>true</shipFriendlyFire>
-			</deathEffect>
-				
-			
-		
-		</race>
-	</crew>
+
+<crew> <!-- EMP AC2 Ion crew, 2 ion damage -->
+	<race name="gb_ion_instant_2">
+		<maxHealth>100</maxHealth>
+		<repairSpeed>0</repairSpeed>
+		<canFight>false</canFight>
+		<canRepair>false</canRepair>
+		<canSabotage>false</canSabotage>
+		<canSuffocate>false</canSuffocate>
+		<fireDamageMultiplier>0</fireDamageMultiplier>
+		<canMan>false</canMan>
+		<noClone>true</noClone>
+		<noSlot>true</noSlot>
+		<controllable>false</controllable>
+		<selectable>false</selectable>
+		<canPhaseThroughDoors>true</canPhaseThroughDoors>
+		<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
+		<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
+		<damageMultiplier>0</damageMultiplier>
+		<damageTakenMultiplier>0.0</damageTakenMultiplier>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>energyDeath</deathSound>
+		</deathSounds>
+		<shootingSounds>
+			<shootingSound>mantisSpit1</shootingSound>
+			<shootingSound>mantisSpit2</shootingSound>
+			<shootingSound>mantisSpit3</shootingSound>
+		</shootingSounds>
+		<deathEffect>
+			<ion>2</ion>
+			<stun>3</stun>
+			<friendlyFire>true</friendlyFire>
+			<shipFriendlyFire>true</shipFriendlyFire>
+		</deathEffect>
+
+
+
+	</race>
+</crew>
+
+<crew> <!-- EMP AC3 Ion crew, 3 ion damage-->
+	<race name="gb_ion_instant_3">
+		<maxHealth>100</maxHealth>
+		<repairSpeed>0</repairSpeed>
+		<canFight>false</canFight>
+		<canRepair>false</canRepair>
+		<canSabotage>false</canSabotage>
+		<canSuffocate>false</canSuffocate>
+		<fireDamageMultiplier>0</fireDamageMultiplier>
+		<canMan>false</canMan>
+		<noClone>true</noClone>
+		<noSlot>true</noSlot>
+		<controllable>false</controllable>
+		<selectable>false</selectable>
+		<canPhaseThroughDoors>true</canPhaseThroughDoors>
+		<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
+		<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
+		<damageMultiplier>0</damageMultiplier>
+		<damageTakenMultiplier>0.0</damageTakenMultiplier>
+		<animBase>mantis</animBase>
+		<deathSounds>
+			<deathSound>energyDeath</deathSound>
+		</deathSounds>
+		<shootingSounds>
+			<shootingSound>mantisSpit1</shootingSound>
+			<shootingSound>mantisSpit2</shootingSound>
+			<shootingSound>mantisSpit3</shootingSound>
+		</shootingSounds>
+		<deathEffect>
+			<ion>3</ion>
+			<stun>5</stun>
+			<friendlyFire>true</friendlyFire>
+			<shipFriendlyFire>true</shipFriendlyFire>
+		</deathEffect>
+
+
+
+	</race>
+</crew>
 </FTL>
