@@ -68,11 +68,11 @@
 <mod:findName type = "event" name = "COMBAT_CHECK_TOGGLE">
 
 	<!--TROOPER DRONE-->
-	<mod-append:choice req="GB_TROOPERTOG_DEFEND" blue="false">
+	<mod-append:choice req="RVS_TROOPERTOG_DEFEND" blue="false">
 		<text>(Battle Drone) Set the state of the drone. [Current mode: Anti-Person]</text>
 		<event load="GB_COMBAT_CHECK_TROOPERTOG_BATTLE"/>
 	</mod-append:choice>
-	<mod-append:choice req="GB_TROOPERTOG_BOARDER" blue="false">
+	<mod-append:choice req="RVS_TROOPERTOG_BOARDER" blue="false">
 		<text>(Battle Drone) Set the state of the drone. [Current mode: Boarder]</text>
 		<event load="GB_COMBAT_CHECK_TROOPERTOG_BOARDER"/>
 	</mod-append:choice>
@@ -339,12 +339,12 @@
 		<text>Set the drone to Boarding Mode.</text>
 		<event>
 			<text>You start calibrating the drone...</text>
-			<remove name="GB_TROOPERTOG_DEFEND"/>
+			<remove name="RVS_TROOPERTOG_DEFEND"/>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
-					<drone name="GB_TROOPERTOG_BOARDER"/>
+					<drone name="RVS_TROOPERTOG_BOARDER"/>
 					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
@@ -372,12 +372,12 @@
 		<text>Set the drone to Security Mode.</text>
 		<event>
 			<text>You start calibrating the drone...</text>
-			<remove name="GB_TROOPERTOG_BOARDER"/>
+			<remove name="RVS_TROOPERTOG_BOARDER"/>
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
-					<drone name="BATTLETOG_DEFEND"/>
+					<drone name="RVS_TROOPERTOG_DEFEND"/>
 					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
@@ -1180,7 +1180,7 @@
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="2" max_lvl="2" blue="false" hidden="true"> <!-- Caseless Ammo Type -->
-			<text>Current: Caseless ammo.[-2s cd, 33% ammo consumption]</text>
+			<text>Current: Caseless ammo.[-2s cd, 30% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="3" max_lvl="3" blue="false" hidden="true"> <!-- High Velocity Ammo Type -->
@@ -1192,7 +1192,7 @@
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="5" max_lvl="5" blue="false" hidden="true"> <!-- Concussive Ammo Type -->
-			<text>Current: Concussive ammo.[stuns,debuffs,hullbust, 33% ammo consumption]</text>
+			<text>Current: Concussive ammo.[stuns,debuffs,hullbust, 35% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="6" max_lvl="6" blue="false" hidden="true"> <!-- EMP Ammo Type -->
@@ -1222,7 +1222,7 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO2" lvl="0" blue="false" hidden="true"> <!-- Caseless Ammo Type -->
-			<text>Caseless ammo.[-2s cd, 33% ammo consumption]</text>
+			<text>Caseless ammo.[-2s cd, 30% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_CASELESS</loadEvent>
 			</event>
@@ -1240,7 +1240,7 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO5" lvl="0" blue="false" hidden="true"> <!-- Concussive Ammo Type -->
-			<text>Concussive ammo.[stuns,debuffs,hullbust, 33% ammo consumption]</text>
+			<text>Concussive ammo.[stuns,debuffs,hullbust, 35% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_HE</loadEvent>
 			</event>
@@ -1311,7 +1311,7 @@
 		</choice>
 	</event>
 	<event name="COMBAT_CHECK_GB_AC_3_LOAD_CASELESS">
-		<text>Caseless rounds: [4s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 40% stun(3s), 40% breach chance, 33% ammo consumption]
+		<text>Caseless rounds: [4s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 40% stun(3s), 40% breach chance, 30% ammo consumption]
 			Load into the Autocannon MK III?
 		</text>
 		<choice>
@@ -1356,7 +1356,7 @@
 		</choice>
 	</event>
 	<event name="COMBAT_CHECK_GB_AC_3_LOAD_HE">
-		<text>Concussion rounds: [6s cd, 2 hull dmg(hullbust), 2 sys dmg, 30 crew dmg, 4s stun, enemies lose power charge and take 90% more damage for 10s, 40% breach chance, 33% ammo consumption]
+		<text>Concussion rounds: [6s cd, 2 hull dmg(hullbust), 2 sys dmg, 30 crew dmg, 4s stun, enemies lose power charge and take 90% more damage for 10s, 40% breach chance, 35% ammo consumption]
 			Load into the Autocannon MK III?
 		</text>
 		<choice>
@@ -1386,7 +1386,7 @@
 		</choice>
 	</event>
 	<event name="COMBAT_CHECK_GB_AC_3_LOAD_HEAT">
-		<text>Particle rounds: [6s cd, 1 hull dmg, 6 sys dmg, 45 crew dmg, 40% fire chance, 16% breach chance, 33% ammo consumption]
+		<text>Particle rounds: [6s cd, 1 hull dmg, 6 sys dmg, 45 crew dmg, 40% fire chance, 12% breach chance, 33% ammo consumption]
 			Load into the Autocannon MK III?
 		</text>
 		<choice>

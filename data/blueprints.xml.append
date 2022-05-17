@@ -1552,6 +1552,8 @@
 	<missiles>1</missiles>
 	<freeMissileChance>67</freeMissileChance>
 	<damage>3</damage>
+	<persDamage>-3</persDamage>
+	<sysDamage>-3</sysDamage>
 	<shots>1</shots>
 	<sp>0</sp>
 	<spin>0</spin>
