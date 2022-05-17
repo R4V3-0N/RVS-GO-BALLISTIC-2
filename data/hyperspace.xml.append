@@ -60,7 +60,7 @@
 		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
 		<tooltipName>Battle Drone Mk I</tooltipName>
 	</drone>
-	<drone name="RVS_TROOPERTOG_BATTLE">
+	<drone name="RVS_TROOPERTOG_DEFEND">
 		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
 		<tooltipName>Battle Drone Mk I</tooltipName>
 	</drone>
@@ -74,53 +74,53 @@
 	 </event>
 	<event name="GB_CALL_QUESTION" recursive="true"/>
 	<variable name="gb_ammo_toggle" op="set" val="0"/>
-	<req name="GB_CURRENT_AMMO1">
-		<req type="sum" lvl="1" max_lvl="1">
+	<req name="GB_CURRENT_AMMO1" lvl="1" max_lvl="1">
+		<req type="sum" >
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO2">
-		<req type="sum" lvl="2" max_lvl="2">
+	<req name="GB_CURRENT_AMMO2" lvl="2" max_lvl="2">
+		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO3">
-		<req type="sum" lvl="3" max_lvl="3">
+	<req name="GB_CURRENT_AMMO3" lvl="3" max_lvl="3">
+		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO4">
-		<req type="sum" lvl="4" max_lvl="4">
+	<req name="GB_CURRENT_AMMO4" lvl="4" max_lvl="4">
+		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO5" >
-		<req type="sum" lvl="5" max_lvl="5">
+	<req name="GB_CURRENT_AMMO5" lvl="5" max_lvl="5">
+		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO6" >
-		<req type="sum" lvl="6" max_lvl="6">
+	<req name="GB_CURRENT_AMMO6" lvl="6" max_lvl="6">
+		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO7" >
-		<req type="sum" lvl="7" max_lvl="7">
+	<req name="GB_CURRENT_AMMO7" lvl="7" max_lvl="7">
+		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO8" >
-		<req type="sum" lvl="8" max_lvl="8">
+	<req name="GB_CURRENT_AMMO8" lvl="8" max_lvl="8">
+		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO9" >
-		<req type="sum" lvl="9" max_lvl="9">
+	<req name="GB_CURRENT_AMMO9" lvl="9" max_lvl="9">
+		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO10" >
-		<req type="sum" lvl="10" max_lvl="10">
+	<req name="GB_CURRENT_AMMO10" lvl="10" max_lvl="10">
+		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
