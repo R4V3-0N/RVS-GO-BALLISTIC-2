@@ -2612,10 +2612,10 @@
 -->
 
 <blueprintList name="RVS_LIST_TOGGLE_TROOPER">
-	<name>RVS_TROOPERTOG_BATTLE</name>
+	<name>RVS_TROOPERTOG_DEFEND</name>
 	<name>RVS_TROOPERTOG_BOARDER</name>
 </blueprintList>
-<droneBlueprint name="RVS_TROOPERTOG_BATTLE">
+<droneBlueprint name="RVS_TROOPERTOG_DEFEND">
 	<type>BATTLE</type>
 	<locked>1</locked>
 	<tip>tip_toggle_crew</tip>
