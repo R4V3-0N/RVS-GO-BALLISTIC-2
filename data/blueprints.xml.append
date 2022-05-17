@@ -1006,7 +1006,7 @@
 	<sysDamage>-2</sysDamage>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>2</breachChance>
+	<breachChance>3</breachChance>
 	<stunChance>2</stunChance>
 	<cooldown>6</cooldown>
 	<power>2</power>
@@ -1063,7 +1063,7 @@
 	<persDamage>1</persDamage>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>2</breachChance>
+	<breachChance>4</breachChance>
 	<stunChance>2</stunChance>
 	<cooldown>6</cooldown>
 	<statBoosts> <!--5/10/15/20/25-->
@@ -1212,6 +1212,7 @@
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
+	<accuracyMod>10</accuracyMod>
 	<freeMissileChance>70</freeMissileChance>
 	<damage>3</damage>
 	<shots>1</shots>
@@ -1554,7 +1555,7 @@
 	<shots>1</shots>
 	<sp>0</sp>
 	<spin>0</spin>
-	<breachChance>4</breachChance>
+	<breachChance>5</breachChance>
 	<stunChance>4</stunChance>
 	<cooldown>6</cooldown>
 	<power>3</power>
@@ -1610,7 +1611,7 @@
 	<persDamage>1</persDamage>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>4</breachChance>
+	<breachChance>6</breachChance>
 	<stunChance>4</stunChance>
 	<cooldown>6</cooldown>
 		<statBoosts> <!--5/10/15/20/25-->
@@ -2620,12 +2621,13 @@
 	<short>Trooper [S]</short>
 	<desc>[CURRENT MODE: Security] Controllable, a personnel drone that can be toggled to act as either a Defensive security or boarding drone before battle.
 
--100 HP, 1.1x combat damage, 2.2x range combat damage.
--1.2x movement speed</desc>
+		-100 HP, 1.1x combat damage, 2.2x range combat damage.
+		-1.2x movement speed
+	</desc>
 	<!--<desc>[CURRENT MODE: Anti-Personnel] Controllable, a personnel drone that can be toggled to act as either a Defensive Anti-Person or Boarding drone before Trooper.
 
--175 HP, 1.1x combat damage
--0.8x movement speed</desc>  Battle drone description-->
+	-175 HP, 1.1x combat damage
+	-0.8x movement speed</desc>  Battle drone description-->
 	<power>1</power>
 	<cost>40</cost>
 	<bp>3</bp>
@@ -2640,8 +2642,9 @@
 	<short>Trooper [B]</short>
 	<desc>[CURRENT MODE: Boarding] Controllable, a personnel drone that can be toggled to act as either a Defensive security or boarding drone before battle.
 
--100 HP, 1.1x combat damage, 2.2x range combat damage.
--1.2x movement speed</desc>
+		-100 HP, 1.1x combat damage, 2.2x range combat damage.
+		-1.2x movement speed
+	</desc>
 	<power>1</power>
 	<speed>20</speed>
 	<cost>40</cost>

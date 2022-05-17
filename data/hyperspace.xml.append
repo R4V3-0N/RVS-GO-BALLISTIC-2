@@ -1,9 +1,8 @@
 
 
 <FTL>
-<mod:findLike type="crew">
-	<mod-append:race name="rvs_drone_trooper">
-		<animSheet>rvs_drone_trooper</animSheet>
+<crew>
+	<race name="rvs_drone_trooper">
 		<controllable>true</controllable>
 		<canFight>true</canFight>
 		<canSabotage>true</canSabotage>
@@ -28,7 +27,7 @@
 			<shootingSound>detectiveShoot2</shootingSound>
 			<shootingSound>detectiveShoot3</shootingSound>
 		</shootingSounds>
-	</mod-append:race>
+	</race>
 	<!--<mod-append:race name="rvs_trooper_board">
 		<animSheet>drone_trooper</animSheet>
 		<controllable>true</controllable>
@@ -55,17 +54,17 @@
 			<shootingSound>detectiveShoot3</shootingSound>
 		</shootingSounds>
 	</mod-append:race>-->
-</mod:findLike>
-<mod:findLike type="drones">
-	<mod-append:drone name="RVS_TROOPERTOG_BOARDER">
+</crew>
+<drones>
+	<drone name="RVS_TROOPERTOG_BOARDER">
 		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
 		<tooltipName>Battle Drone Mk I</tooltipName>
-	</mod-append:drone>
-	<mod-append:drone name="RVS_TROOPERTOG_BATTLE">
+	</drone>
+	<drone name="RVS_TROOPERTOG_BATTLE">
 		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
 		<tooltipName>Battle Drone Mk I</tooltipName>
-	</mod-append:drone>
-</mod:findLike>
+	</drone>
+</drones>
 
 <events>
 	<eventFile>ballistic</eventFile>

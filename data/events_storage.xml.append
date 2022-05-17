@@ -246,43 +246,83 @@
 	<!--Autocannon MK III Ammo Types -->
 	<mod-append:choice req = "GB_AC_3" blue = "false"> <!--Autocannon MK III Ammo Types -->
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Standard, 3 power]</text>
-		<event load="COMBAT_CHECK_GB_AC_3"/>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			<remove name="GB_AC_3"/>
+			<variable name="gb_ammo_toggle" op="set" val="1"/>
+		</event>
 	</mod-append:choice>
 	<mod-append:choice req = "GB_AC_3_CASELESS" blue = "false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Caseless, 3 power]</text>
-		<event load="COMBAT_CHECK_GB_AC_3_CASELESS"/>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			<remove name="GB_AC_3_CASELESS"/>
+			<variable name="gb_ammo_toggle" op="set" val="2"/>
+		</event>
 	</mod-append:choice>
 	<mod-append:choice req = "GB_AC_3_HV" blue = "false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: High Velocity, 3 power]</text>
-		<event load="COMBAT_CHECK_GB_AC_3_HV"/>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			<remove name="GB_AC_3_HV"/>
+			<variable name="gb_ammo_toggle" op="set" val="3"/>
+		</event>
 	</mod-append:choice>
 	<mod-append:choice req = "GB_AC_3_FREE" blue = "false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Recycler, 3 power]</text>
-		<event load="COMBAT_CHECK_GB_AC_3_FREE"/>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			<remove name="GB_AC_3_FREE"/>
+			<variable name="gb_ammo_toggle" op="set" val="4"/>
+		</event>
 	</mod-append:choice>
 	<mod-append:choice req = "GB_AC_3_HE" blue = "false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Concussive, 3 power]</text>
-		<event load="COMBAT_CHECK_GB_AC_3_HE"/>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			<remove name="GB_AC_3_HE"/>
+			<variable name="gb_ammo_toggle" op="set" val="5"/>
+		</event>
 	</mod-append:choice>
 	<mod-append:choice req = "GB_AC_3_EMP" blue = "false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: EMP, 3 power]</text>
-		<event load="COMBAT_CHECK_GB_AC_3_EMP"/>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			<remove name="GB_AC_3_EMP"/>
+			<variable name="gb_ammo_toggle" op="set" val="6"/>
+		</event>
 	</mod-append:choice>
 	<mod-append:choice req = "GB_AC_3_HEAT" blue = "false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Particle, 3 power]</text>
-		<event load="COMBAT_CHECK_GB_AC_3_HEAT"/>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			<remove name="GB_AC_3_HEAT"/>
+			<variable name="gb_ammo_toggle" op="set" val="7"/>
+		</event>
 	</mod-append:choice>
 	<mod-append:choice req = "GB_AC_3_INCENDIARY" blue = "false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Incendiary, 3 power]</text>
-		<event load="COMBAT_CHECK_GB_AC_3_INCENDIARY"/>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			<remove name="GB_AC_3_INCENDIARY"/>
+			<variable name="gb_ammo_toggle" op="set" val="8"/>
+		</event>
 	</mod-append:choice>
 	<mod-append:choice req = "GB_AC_3_FLECHETTE" blue = "false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Flechette, 3 power]</text>
-		<event load="COMBAT_CHECK_GB_AC_3_FLECHETTE"/>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			<remove name="GB_AC_3_FLECHETTE"/>
+			<variable name="gb_ammo_toggle" op="set" val="9"/>
+		</event>
 	</mod-append:choice>
 	<mod-append:choice req = "GB_AC_3_RAD" blue = "false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode:Rad, 3 power]</text>
-		<event load="COMBAT_CHECK_GB_AC_3_RAD"/>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			<remove name="GB_AC_3_RAD"/>
+			<variable name="gb_ammo_toggle" op="set" val="10"/>
+		</event>
 	</mod-append:choice>
 
 </mod:findName>
@@ -388,7 +428,7 @@
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="7" max_lvl="7" blue="false" hidden="true"> <!-- Particle Ammo Type -->
-			<text>Current: Particle ammo.[no hull , 2 sys, 15 crew dmg, 10% fire chance, 18% ammo consumption]</text>
+			<text>Current: Particle ammo.[no hull dmg, 2 sys dmg, 15 crew dmg, 10% fire chance, 18% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="8" max_lvl="8" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
@@ -440,7 +480,7 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO7" lvl="0" blue="false" hidden="true"> <!-- Particle Ammo Type -->
-			<text>Particle ammo.[no hull , 2 sys, 15 crew dmg, 10% fire chance, 18% ammo consumption]</text>
+			<text>Particle ammo.[no hull dmg, 2 sys dmg, 15 crew dmg, 10% fire chance, 18% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_HEAT</loadEvent>
 			</event>
@@ -774,7 +814,7 @@
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="7" max_lvl="7" blue="false" hidden="true"> <!-- Particle Ammo Type -->
-			<text>Current: Particle ammo.[no hull , 4 sys, 30 crew dmg, 20% fire chance, 22% ammo consumption]</text>
+			<text>Current: Particle ammo.[no hull dmg, 4 sys dmg, 30 crew dmg, 20% fire chance, 22% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="8" max_lvl="8" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
@@ -782,11 +822,11 @@
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="9" max_lvl="9" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Current: Flechette ammo.[+0% breach, only DoT crew dmg, 0 sys dmg, 22% ammo consumption]</text>
+			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 22% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="10" max_lvl="10" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
-			<text>Current: Radiation ammo.[+0% breach, rad effects, +15 crew dmg, 25% ammo consumption]</text>
+			<text>Current: Radiation ammo.[+20% breach, rad effects, +15 crew dmg, 25% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="GB_CURRENT_AMMO1" lvl="0" blue="false" hidden="true"> <!-- Standard Ammo Type -->
@@ -826,7 +866,7 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO7" lvl="0" blue="false" hidden="true"> <!-- Particle Ammo Type -->
-			<text>Particle ammo.[no hull , 4 sys, 30 crew dmg, 20% fire chance, 22% ammo consumption]</text>
+			<text>Particle ammo.[no hull dmg, 4 sys dmg, 30 crew dmg, 20% fire chance, 22% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_HEAT</loadEvent>
 			</event>
@@ -838,13 +878,13 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO9" lvl="0" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Flechette ammo.[[+0% breach, only DoT crew dmg, 0 sys dmg, 22% ammo consumption]</text>
+			<text>Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 22% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_FLECHETTE</loadEvent>
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO10" lvl="0" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
-			<text>Radiation ammo.[+0% breach, rad effects, +15 crew dmg, 25% ammo consumption]</text>
+			<text>Radiation ammo.[+20% breach, rad effects, +15 crew dmg, 25% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_RAD</loadEvent>
 			</event>
@@ -990,7 +1030,7 @@
 		</choice>
 	</event>
 	<event name="COMBAT_CHECK_GB_AC_2_LOAD_FLECHETTE">
-		<text>Flechette rounds: [6s cd, 2 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 20% stun(3s), 20% breach chance, 40 px radius, 22% ammo consumption]
+		<text>Flechette rounds: [6s cd, 2 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 20% stun(3s), 30% breach chance, 40 px radius, 22% ammo consumption]
 			Load into the Autocannon MK II?
 		</text>
 		<choice>
@@ -1005,7 +1045,7 @@
 		</choice>
 	</event>
 	<event name="COMBAT_CHECK_GB_AC_2_LOAD_RAD">
-		<text>Rad rounds: [6s cd, 2 hull dmg, 2 sys dmg, 45 crew dmg, rad debuffs, 20% stun(3s), 20% breach chance, 25% ammo consumption, illegal :)]
+		<text>Rad rounds: [6s cd, 2 hull dmg, 2 sys dmg, 45 crew dmg, rad debuffs, 20% stun(3s), 40% breach chance, 25% ammo consumption, illegal :)]
 			Load into the Autocannon MK II?
 		</text>
 		<choice>
@@ -1132,2117 +1172,392 @@
 	</event>
 </FTL>
 
+<FTL><!--Autocannon MK III Ammo Types -->
+	<event name="COMBAT_CHECK_GB_AC_3">
+		<text>Select an ammo type to load into your Autocannon MK III</text>
+		<choice req="gb_ammo_toggle" lvl="1" max_lvl="1" blue="false" hidden="true"> <!-- Standard Ammo Type -->
+			<text>Current: Standard ammo.[default]</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="gb_ammo_toggle" lvl="2" max_lvl="2" blue="false" hidden="true"> <!-- Caseless Ammo Type -->
+			<text>Current: Caseless ammo.[-2s cd, 33% ammo consumption]</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="gb_ammo_toggle" lvl="3" max_lvl="3" blue="false" hidden="true"> <!-- High Velocity Ammo Type -->
+			<text>Current: High Velocity ammo.[+30% breach, faster, 30% ammo consumption]</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="gb_ammo_toggle" lvl="4" max_lvl="4" blue="false" hidden="true"> <!-- Recycler Ammo Type -->
+			<text>Current: Recycler ammo.[no status, 13% ammo consumption]</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="gb_ammo_toggle" lvl="5" max_lvl="5" blue="false" hidden="true"> <!-- Concussive Ammo Type -->
+			<text>Current: Concussive ammo.[stuns,debuffs,hullbust, 33% ammo consumption]</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="gb_ammo_toggle" lvl="6" max_lvl="6" blue="false" hidden="true"> <!-- EMP Ammo Type -->
+			<text>Current: EMP ammo.[no sys dmg, 3 ion dmg on room hit, 38% ammo consumption]</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="gb_ammo_toggle" lvl="7" max_lvl="7" blue="false" hidden="true"> <!-- Particle Ammo Type -->
+			<text>Current: Particle ammo.[1 hull dmg, 6 sys dmg, 45 crew dmg, 40% fire chance, 33% ammo consumption]</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="gb_ammo_toggle" lvl="8" max_lvl="8" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
+			<text>Current: Incendiary ammo.[100% fire, 30% ammo consumption]</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="gb_ammo_toggle" lvl="9" max_lvl="9" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
+			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 33% ammo consumption]</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="gb_ammo_toggle" lvl="10" max_lvl="10" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
+			<text>Current: Radiation ammo.[+20% breach, rad effects, +15 crew dmg, 35% ammo consumption]</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_CURRENT_AMMO1" lvl="0" blue="false" hidden="true"> <!-- Standard Ammo Type -->
+			<text>Standard ammo.[default]</text>
+			<event>
+			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_STANDARD</loadEvent>
+			</event>
+		</choice>
+		<choice req="GB_CURRENT_AMMO2" lvl="0" blue="false" hidden="true"> <!-- Caseless Ammo Type -->
+			<text>Caseless ammo.[-2s cd, 33% ammo consumption]</text>
+			<event>
+			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_CASELESS</loadEvent>
+			</event>
+		</choice>
+		<choice req="GB_CURRENT_AMMO3" lvl="0" blue="false" hidden="true"> <!-- High Velocity Ammo Type -->
+			<text>High Velocity ammo.[+30% breach, faster, 30% ammo consumption]</text>
+			<event>
+			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_HV</loadEvent>
+			</event>
+		</choice>
+		<choice req="GB_CURRENT_AMMO4" lvl="0" blue="false" hidden="true"> <!-- Recycler Ammo Type -->
+			<text>Recycler ammo.[no status, 13% ammo consumption]</text>
+			<event>
+			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_FREE</loadEvent>
+			</event>
+		</choice>
+		<choice req="GB_CURRENT_AMMO5" lvl="0" blue="false" hidden="true"> <!-- Concussive Ammo Type -->
+			<text>Concussive ammo.[stuns,debuffs,hullbust, 33% ammo consumption]</text>
+			<event>
+			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_HE</loadEvent>
+			</event>
+		</choice>
+		<choice req="GB_CURRENT_AMMO6" lvl="0" blue="false" hidden="true"> <!-- EMP Ammo Type -->
+			<text>EMP ammo.[no sys dmg, 3 ion dmg on room hit, 38% ammo consumption]</text>
+			<event>
+			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_EMP</loadEvent>
+			</event>
+		</choice>
+		<choice req="GB_CURRENT_AMMO7" lvl="0" blue="false" hidden="true"> <!-- Particle Ammo Type -->
+			<text>Particle ammo.[1 hull dmg , 6 sys dmg, 45 crew dmg, 40% fire chance, 33% ammo consumption]</text>
+			<event>
+			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_HEAT</loadEvent>
+			</event>
+		</choice>
+		<choice req="GB_CURRENT_AMMO8" lvl="0" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
+			<text>Incendiary ammo.[100% fire, 30% ammo consumption]</text>
+			<event>
+			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_INCENDIARY</loadEvent>
+			</event>
+		</choice>
+		<choice req="GB_CURRENT_AMMO9" lvl="0" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
+			<text>Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 33% ammo consumption]</text>
+			<event>
+			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_FLECHETTE</loadEvent>
+			</event>
+		</choice>
+		<choice req="GB_CURRENT_AMMO10" lvl="0" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
+			<text>Radiation ammo.[+20% breach, rad effects, +15 crew dmg, 35% ammo consumption]</text>
+			<event>
+			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_RAD</loadEvent>
+			</event>
+		</choice>
 
-<!--Autocannon MK III Ammo Types -->
-<event name="COMBAT_CHECK_GB_AC_3">
-	<text>Select an ammo type to load into your Autocannon MK III</text>
-	<choice hidden="true"> <!-- Caseless Ammo Type -->
-		<text>Load Caseless ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_CASELESS"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- High Velocity Ammo Type -->
-		<text>Load High Velocity ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_HV"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Recycler Ammo Type -->
-		<text>Load Recycler ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_FREE"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Concussive Ammo Type -->
-	<text>Load Concussive ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3"/>
-		<choice hidden="true">
-			<text>Continue...</text>
+		<choice>
+			<text>Do something else instead.</text>
 			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
+				<loadEventList seeded="false" generate="false">
+					<event load="GET_AC_3_STANDARD" req="GB_CURRENT_AMMO1"/>
+					<event load="GET_AC_3_CASELESS" req="GB_CURRENT_AMMO2"/>
+					<event load="GET_AC_3_HV" req="GB_CURRENT_AMMO3"/>
+					<event load="GET_AC_3_FREE" req="GB_CURRENT_AMMO4"/>
+					<event load="GET_AC_3_HE" req="GB_CURRENT_AMMO5"/>
+					<event load="GET_AC_3_EMP" req="GB_CURRENT_AMMO6"/>
+					<event load="GET_AC_3_HEAT" req="GB_CURRENT_AMMO7"/>
+					<event load="GET_AC_3_INCENDIARY" req="GB_CURRENT_AMMO8"/>
+					<event load="GET_AC_3_FLECHETTE" req="GB_CURRENT_AMMO9"/>
+					<event load="GET_AC_3_RAD" req="GB_CURRENT_AMMO10"/>
+				</loadEventList>
 			</event>
 		</choice>
 	</event>
-</choice>
-	<choice hidden="true"> <!-- EMP Ammo Type -->
-	<text>Load EMP ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_EMP"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Particle Ammo Type -->
-	<text>Load Particle ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HEAT"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Incendiary Ammo Type -->
-	<text>Load Incendiary ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_INCENDIARY"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Flechette Ammo Type -->
-	<text>Load Flechette ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_FLECHETTE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Radiation Ammo Type -->
-	<text>Load Radiation ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_RAD"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
 
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
-	</choice>
-</event>
+	<event name="COMBAT_CHECK_GB_AC_3_LOAD_STANDARD">
+		<text>Standard rounds: [6s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 40% stun(3s), 40% breach chance, 25% ammo consumption]
+			Load into the Autocannon MK III?
+		</text>
+		<choice>
+			<text>Proceed.</text>
+			<event load="GET_AC_3_STANDARD"/>
+		</choice>
+		<choice>
+			<text>Nevermind.</text>
+			<event>
+				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			</event>
+		</choice>
+	</event>
+	<event name="COMBAT_CHECK_GB_AC_3_LOAD_CASELESS">
+		<text>Caseless rounds: [4s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 40% stun(3s), 40% breach chance, 33% ammo consumption]
+			Load into the Autocannon MK III?
+		</text>
+		<choice>
+			<text>Proceed.</text>
+			<event load="GET_AC_3_CASELESS"/>
+		</choice>
+		<choice>
+			<text>Nevermind.</text>
+			<event>
+				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			</event>
+		</choice>
+	</event>
+	<event name="COMBAT_CHECK_GB_AC_3_LOAD_HV">
+		<text>High Velocity rounds: [6s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 40% stun(3s), 70% breach chance, +10% accuracy, +33% velocity, 30% ammo consumption]
+			Load into the Autocannon MK III?
+		</text>
+		<choice>
+			<text>Proceed.</text>
+			<event load="GET_AC_3_HV"/>
+		</choice>
+		<choice>
+			<text>Nevermind.</text>
+			<event>
+				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			</event>
+		</choice>
+	</event>
+	<event name="COMBAT_CHECK_GB_AC_3_LOAD_FREE">
+		<text>Recycler rounds: [6s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 13% ammo consumption]
+			Load into the Autocannon MK III?
+		</text>
+		<choice>
+			<text>Proceed.</text>
+			<event load="GET_AC_3_FREE"/>
+		</choice>
+		<choice>
+			<text>Nevermind.</text>
+			<event>
+				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			</event>
+		</choice>
+	</event>
+	<event name="COMBAT_CHECK_GB_AC_3_LOAD_HE">
+		<text>Concussion rounds: [6s cd, 2 hull dmg(hullbust), 2 sys dmg, 30 crew dmg, 4s stun, enemies lose power charge and take 90% more damage for 10s, 40% breach chance, 33% ammo consumption]
+			Load into the Autocannon MK III?
+		</text>
+		<choice>
+			<text>Proceed.</text>
+			<event load="GET_AC_3_HE"/>
+		</choice>
+		<choice>
+			<text>Nevermind.</text>
+			<event>
+				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			</event>
+		</choice>
+	</event>
+	<event name="COMBAT_CHECK_GB_AC_3_LOAD_EMP">
+		<text>EMP rounds: [6s cd, 3 hull dmg, 0 sys dmg, 45 crew dmg, 3 ion dmg on rooms, 40% stun(3s), 40% breach chance, 38% ammo consumption]
+			Load into the Autocannon MK III?
+		</text>
+		<choice>
+			<text>Proceed.</text>
+			<event load="GET_AC_3_EMP"/>
+		</choice>
+		<choice>
+			<text>Nevermind.</text>
+			<event>
+				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			</event>
+		</choice>
+	</event>
+	<event name="COMBAT_CHECK_GB_AC_3_LOAD_HEAT">
+		<text>Particle rounds: [6s cd, 1 hull dmg, 6 sys dmg, 45 crew dmg, 40% fire chance, 16% breach chance, 33% ammo consumption]
+			Load into the Autocannon MK III?
+		</text>
+		<choice>
+			<text>Proceed.</text>
+			<event load="GET_AC_3_HEAT"/>
+		</choice>
+		<choice>
+			<text>Nevermind.</text>
+			<event>
+				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			</event>
+		</choice>
+	</event>
+	<event name="COMBAT_CHECK_GB_AC_3_LOAD_INCENDIARY">
+		<text>Incendiary rounds: [6s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 40% stun(3s), 100% fire chance, 0% breach chance, 30% ammo consumption]
+			Load into the Autocannon MK III?
+		</text>
+		<choice>
+			<text>Proceed.</text>
+			<event load="GET_AC_3_INCENDIARY"/>
+		</choice>
+		<choice>
+			<text>Nevermind.</text>
+			<event>
+				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			</event>
+		</choice>
+	</event>
+	<event name="COMBAT_CHECK_GB_AC_3_LOAD_FLECHETTE">
+		<text>Flechette rounds: [6s cd, 3 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 40% stun(3s), 50% breach chance, 40 px radius, 33% ammo consumption]
+			Load into the Autocannon MK III?
+		</text>
+		<choice>
+			<text>Proceed.</text>
+			<event load="GET_AC_3_FLECHETTE"/>
+		</choice>
+		<choice>
+			<text>Nevermind.</text>
+			<event>
+				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			</event>
+		</choice>
+	</event>
+	<event name="COMBAT_CHECK_GB_AC_3_LOAD_RAD">
+		<text>Rad rounds: [6s cd, 3 hull dmg, 3 sys dmg, 60 crew dmg, rad debuffs, 40% stun(3s), 60% breach chance, 35% ammo consumption, illegal :)]
+			Load into the Autocannon MK III?
+		</text>
+		<choice>
+			<text>Proceed.</text>
+			<event load="GET_AC_3_RAD"/>
+		</choice>
+		<choice>
+			<text>Nevermind.</text>
+			<event>
+				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			</event>
+		</choice>
+	</event>
 
-<event name="COMBAT_CHECK_GB_AC_3_CASELESS">
-	<text>Select an ammo type to load into your Autocannon MK III</text>
-	<choice hidden="true"> <!-- Standard Ammo Type -->
-		<text>Load Standard ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_CASELESS"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- High Velocity Ammo Type -->
-		<text>Load High Velocity ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_CASELESS"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_HV"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Recycler Ammo Type -->
-		<text>Load Recycler ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_CASELESS"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_FREE"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Concussive Ammo Type -->
-	<text>Load Concussive ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_CASELESS"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
+	<event name="GET_AC_3_STANDARD">
+		<weapon name="GB_AC_3"/>
+		<loadEventList>
+			<event req="MARKER_FLAGSHIP" lvl="0">
+				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- EMP Ammo Type -->
-	<text>Load EMP ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_CASELESS"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_EMP"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
+			<event req="MARKER_FLAGSHIP" lvl="1">
+				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
-		</choice>
+		</loadEventList>
 	</event>
-</choice>
-	<choice hidden="true"> <!-- Particle Ammo Type -->
-	<text>Load Particle ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_CASELESS"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HEAT"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
+	<event name="GET_AC_3_CASELESS">
+		<weapon name="GB_AC_3_CASELESS"/>
+		<loadEventList>
+			<event req="MARKER_FLAGSHIP" lvl="0">
+				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Incendiary Ammo Type -->
-	<text>Load Incendiary ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_CASELESS"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_INCENDIARY"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
+			<event req="MARKER_FLAGSHIP" lvl="1">
+				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
-		</choice>
+		</loadEventList>
 	</event>
-</choice>
-	<choice hidden="true"> <!-- Flechette Ammo Type -->
-	<text>Load Flechette ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_CASELESS"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_FLECHETTE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
+	<event name="GET_AC_3_HV">
+		<weapon name="GB_AC_3_HV"/>
+		<loadEventList>
+			<event req="MARKER_FLAGSHIP" lvl="0">
+				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Radiation Ammo Type -->
-	<text>Load Radiation ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_CASELESS"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_RAD"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
+			<event req="MARKER_FLAGSHIP" lvl="1">
+				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
-		</choice>
+		</loadEventList>
 	</event>
-</choice>
+	<event name="GET_AC_3_FREE">
+		<weapon name="GB_AC_3_FREE"/>
+		<loadEventList>
+			<event req="MARKER_FLAGSHIP" lvl="0">
+				<loadEvent>COMBAT_CHECK</loadEvent>
+			</event>
+			<event req="MARKER_FLAGSHIP" lvl="1">
+				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+			</event>
+		</loadEventList>
+	</event>
+	<event name="GET_AC_3_HE">
+		<weapon name="GB_AC_3_HE"/>
+		<loadEventList>
+			<event req="MARKER_FLAGSHIP" lvl="0">
+				<loadEvent>COMBAT_CHECK</loadEvent>
+			</event>
+			<event req="MARKER_FLAGSHIP" lvl="1">
+				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+			</event>
+		</loadEventList>
+	</event>
+	<event name="GET_AC_3_EMP">
+		<weapon name="GB_AC_3_EMP"/>
+		<loadEventList>
+			<event req="MARKER_FLAGSHIP" lvl="0">
+				<loadEvent>COMBAT_CHECK</loadEvent>
+			</event>
+			<event req="MARKER_FLAGSHIP" lvl="1">
+				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+			</event>
+		</loadEventList>
+	</event>
+	<event name="GET_AC_3_HEAT">
+		<weapon name="GB_AC_3_HEAT"/>
+		<loadEventList>
+			<event req="MARKER_FLAGSHIP" lvl="0">
+				<loadEvent>COMBAT_CHECK</loadEvent>
+			</event>
+			<event req="MARKER_FLAGSHIP" lvl="1">
+				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+			</event>
+		</loadEventList>
+	</event>
+	<event name="GET_AC_3_INCENDIARY">
+		<weapon name="GB_AC_3_INCENDIARY"/>
+		<loadEventList>
+			<event req="MARKER_FLAGSHIP" lvl="0">
+				<loadEvent>COMBAT_CHECK</loadEvent>
+			</event>
+			<event req="MARKER_FLAGSHIP" lvl="1">
+				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+			</event>
+		</loadEventList>
+	</event>
+	<event name="GET_AC_3_FLECHETTE">
+		<weapon name="GB_AC_3_FLECHETTE"/>
+		<loadEventList>
+			<event req="MARKER_FLAGSHIP" lvl="0">
+				<loadEvent>COMBAT_CHECK</loadEvent>
+			</event>
+			<event req="MARKER_FLAGSHIP" lvl="1">
+				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+			</event>
+		</loadEventList>
+	</event>
+	<event name="GET_AC_3_RAD">
+		<weapon name="GB_AC_3_RAD"/>
+		<loadEventList>
+			<event req="MARKER_FLAGSHIP" lvl="0">
+				<loadEvent>COMBAT_CHECK</loadEvent>
+			</event>
+			<event req="MARKER_FLAGSHIP" lvl="1">
+				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+			</event>
+		</loadEventList>
+	</event>
+</FTL>
 
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
-	</choice>
-</event>
-
-<event name="COMBAT_CHECK_GB_AC_3_HV">
-	<text>Select an ammo type to load into your Autocannon MK III</text>
-	<choice hidden="true"> <!-- Standard Ammo Type -->
-		<text>Load Standard ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_HV"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Caseless Ammo Type -->
-		<text>Load Caseless ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_HV"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_CASELESS"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Recycler Ammo Type -->
-		<text>Load Recycler ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_HV"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_FREE"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Concussive Ammo Type -->
-	<text>Load Concussive ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HV"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- EMP Ammo Type -->
-	<text>Load EMP ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HV"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_EMP"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Particle Ammo Type -->
-	<text>Load Particle ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HV"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HEAT"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Incendiary Ammo Type -->
-	<text>Load Incendiary ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HV"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_INCENDIARY"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Flechette Ammo Type -->
-	<text>Load Flechette ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HV"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_FLECHETTE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Radiation Ammo Type -->
-	<text>Load Radiation ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HV"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_RAD"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
-	</choice>
-</event>
-
-<event name="COMBAT_CHECK_GB_AC_3_FREE">
-	<text>Select an ammo type to load into your Autocannon MK III</text>
-	<choice hidden="true"> <!-- Standard Ammo Type -->
-		<text>Load Standard ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_FREE"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Caseless Ammo Type -->
-		<text>Load Caseless ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_FREE"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_CASELESS"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- High Velocity Ammo Type -->
-		<text>Load High Velocity ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_FREE"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_HV"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Concussive Ammo Type -->
-	<text>Load Concussive ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_FREE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- EMP Ammo Type -->
-	<text>Load EMP ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_FREE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_EMP"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Particle Ammo Type -->
-	<text>Load Particle ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_FREE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HEAT"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Incendiary Ammo Type -->
-	<text>Load Incendiary ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_FREE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_INCENDIARY"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Flechette Ammo Type -->
-	<text>Load Flechette ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_FREE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_FLECHETTE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Radiation Ammo Type -->
-	<text>Load Radiation ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_FREE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_RAD"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
-	</choice>
-</event>
-
-<event name="COMBAT_CHECK_GB_AC_3_EMP">
-	<text>Select an ammo type to load into your Autocannon MK III</text>
-	<choice hidden="true"> <!-- Standard Ammo Type -->
-		<text>Load Standard ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_EMP"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Caseless Ammo Type -->
-		<text>Load Caseless ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_EMP"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_CASELESS"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- High Velocity Ammo Type -->
-		<text>Load High Velocity ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_EMP"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_HV"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Recycler Ammo Type -->
-		<text>Load Recycler ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_EMP"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_FREE"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Concussive Ammo Type -->
-	<text>Load Concussive ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_EMP"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Particle Ammo Type -->
-	<text>Load Particle ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_EMP"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HEAT"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Incendiary Ammo Type -->
-	<text>Load Incendiary ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_EMP"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_INCENDIARY"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Flechette Ammo Type -->
-	<text>Load Flechette ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_EMP"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_FLECHETTE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Radiation Ammo Type -->
-	<text>Load Radiation ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_EMP"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_RAD"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
-	</choice>
-</event>
-
-<event name="COMBAT_CHECK_GB_AC_3_HE">
-	<text>Select an ammo type to load into your Autocannon MK III</text>
-	<choice hidden="true"> <!-- Standard Ammo Type -->
-		<text>Load Standard ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_HE"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Caseless Ammo Type -->
-		<text>Load Caseless ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_HE"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_CASELESS"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- High Velocity Ammo Type -->
-		<text>Load High Velocity ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_HE"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_HV"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Recycler Ammo Type -->
-		<text>Load Recycler ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_HE"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_FREE"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- EMP Ammo Type -->
-	<text>Load EMP ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_EMP"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Particle Ammo Type -->
-	<text>Load Particle ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HEAT"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Incendiary Ammo Type -->
-	<text>Load Incendiary ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_INCENDIARY"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Flechette Ammo Type -->
-	<text>Load Flechette ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_FLECHETTE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Radiation Ammo Type -->
-	<text>Load Radiation ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_RAD"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
-	</choice>
-</event>
-
-<event name="COMBAT_CHECK_GB_AC_3_HEAT">
-	<text>Select an ammo type to load into your Autocannon MK III</text>
-	<choice hidden="true"> <!-- Standard Ammo Type -->
-		<text>Load Standard ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_HEAT"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Caseless Ammo Type -->
-		<text>Load Caseless ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_HEAT"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_CASELESS"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- High Velocity Ammo Type -->
-		<text>Load High Velocity ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_HEAT"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_HV"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Recycler Ammo Type -->
-		<text>Load Recycler ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_HEAT"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_FREE"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Concussive Ammo Type -->
-	<text>Load Concussive ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HEAT"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- EMP Ammo Type -->
-	<text>Load EMP ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HEAT"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_EMP"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Incendiary Ammo Type -->
-	<text>Load Incendiary ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HEAT"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_INCENDIARY"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Flechette Ammo Type -->
-	<text>Load Flechette ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HEAT"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_FLECHETTE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Radiation Ammo Type -->
-	<text>Load Radiation ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_HEAT"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_RAD"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
-	</choice>
-</event>
-
-<event name="COMBAT_CHECK_GB_AC_3_INCENDIARY">
-	<text>Select an ammo type to load into your Autocannon MK III</text>
-	<choice hidden="true"> <!-- Standard Ammo Type -->
-		<text>Load Standard ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_INCENDIARY"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Caseless Ammo Type -->
-		<text>Load Caseless ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_INCENDIARY"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_CASELESS"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- High Velocity Ammo Type -->
-		<text>Load High Velocity ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_INCENDIARY"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_HV"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Recycler Ammo Type -->
-		<text>Load Recycler ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_INCENDIARY"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_FREE"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Concussive Ammo Type -->
-	<text>Load Concussive ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_INCENDIARY"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- EMP Ammo Type -->
-	<text>Load EMP ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_INCENDIARY"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_EMP"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Particle Ammo Type -->
-	<text>Load Particle ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_INCENDIARY"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HEAT"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Flechette Ammo Type -->
-	<text>Load Flechette ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_INCENDIARY"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_FLECHETTE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Radiation Ammo Type -->
-	<text>Load Radiation ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_INCENDIARY"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_RAD"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
-	</choice>
-</event>
-
-<event name="COMBAT_CHECK_GB_AC_3_FLECHETTE">
-	<text>Select an ammo type to load into your Autocannon MK III</text>
-	<choice hidden="true"> <!-- Standard Ammo Type -->
-		<text>Load Standard ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_FLECHETTE"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Caseless Ammo Type -->
-		<text>Load Caseless ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_FLECHETTE"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_CASELESS"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- High Velocity Ammo Type -->
-		<text>Load High Velocity ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_FLECHETTE"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_HV"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Recycler Ammo Type -->
-		<text>Load Recycler ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_FLECHETTE"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_FREE"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Concussive Ammo Type -->
-	<text>Load Concussive ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_FLECHETTE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- EMP Ammo Type -->
-	<text>Load EMP ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_FLECHETTE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_EMP"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Particle Ammo Type -->
-	<text>Load Particle ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_FLECHETTE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HEAT"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Incendiary Ammo Type -->
-	<text>Load Incendiary ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_FLECHETTE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_INCENDIARY"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Radiation Ammo Type -->
-	<text>Load Radiation ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_FLECHETTE"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_RAD"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
-	</choice>
-</event>
-
-<event name="COMBAT_CHECK_GB_AC_3_RAD">
-	<text>Select an ammo type to load into your Autocannon MK III</text>
-	<choice hidden="true"> <!-- Standard Ammo Type -->
-		<text>Load Standard ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_RAD"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Caseless Ammo Type -->
-		<text>Load Caseless ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_RAD"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_CASELESS"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- High Velocity Ammo Type -->
-		<text>Load High Velocity ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_RAD"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_HV"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Recycler Ammo Type -->
-		<text>Load Recycler ammo into the weapon.</text>
-		<event>
-			<text>You begin loading the different ammo type into the weapon.</text>
-			<remove name="GB_AC_3_RAD"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event>
-					<text>You finish loading the weapon.</text>
-					<weapon name="GB_AC_3_FREE"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true"> <!-- Concussive Ammo Type -->
-	<text>Load Concussive ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_RAD"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- EMP Ammo Type -->
-	<text>Load EMP ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_RAD"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_EMP"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Particle Ammo Type -->
-	<text>Load Particle ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_RAD"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_HEAT"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Incendiary Ammo Type -->
-	<text>Load Incendiary ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_RAD"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_INCENDIARY"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-	<choice hidden="true"> <!-- Flechette Ammo Type -->
-	<text>Load Flechette ammo into the weapon.</text>
-	<event>
-		<text>You begin loading the different ammo type into the weapon.</text>
-		<remove name="GB_AC_3_RAD"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event>
-				<text>You finish loading the weapon.</text>
-				<weapon name="GB_AC_3_FLECHETTE"/>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
-					<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-				</choice>
-				<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK_FLAGSHIP"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</choice>
-
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
-	</choice>
-</event>
 
 
 <event name="COMBAT_CHECK_GB_COMBAT_AC_1">
