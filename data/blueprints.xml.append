@@ -3177,7 +3177,7 @@
 				<number>1</number>
 			</slot>
 		</doors>
-		<drones power="4" room="1" start="true" img="room_drones" />
+		<drones power="4" max="8" room="1" start="true" img="room_drones" />
 		<engines power="3" room="24" start="true" img="room_engines_4">
 			<slot>
 				<direction>down</direction>
@@ -3204,14 +3204,14 @@
 				<number>1</number>
 			</slot>
 		</sensors>
-		<shields power="4" room="15" start="true" img="room_shields_11">
+		<shields power="4" max="8" room="15" start="true" img="room_shields_11">
 			<slot>
 				<direction>down</direction>
 				<number>1</number>
 			</slot>
 		</shields>
 		<teleporter power="1" room="7" start="false" />
-		<weapons power="1" room="27" start="false" img="room_weapons_8">
+		<weapons power="1" max="8" room="27" start="false" img="room_weapons_8">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -3227,6 +3227,9 @@
 	</droneList>
 	<health amount="35" />
 	<maxPower amount="10" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="slug" />
+	<crewCount amount="1" class="mantis_free" />
 	<aug name="GB_PHONE" />
 	<aug name="NEBULA_GASSES" /> <!-- R4: Might change this later, a trade augment to give a headstart economically -->
 	<aug name="CRATE_MISSILES" /> <!-- Similar as Nebula gasses, might just be dumped into an event at first sight or used to get an edge in missiles -->
