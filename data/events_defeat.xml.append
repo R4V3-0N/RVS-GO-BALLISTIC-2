@@ -1,0 +1,289 @@
+<eventList name="GB_DESTROYED_REBEL_FED">
+	<event load="GB_DESTROYED_REBEL_FED_GENERIC"/>
+	<event load="GB_DESTROYED_REBEL_FED_GENERIC"/>
+	<event load="GB_DESTROYED_REBEL_FED_GENERIC"/>
+	<event load="GB_DESTROYED_REBEL_FED_GENERIC"/>
+	
+	<event load="GB_DESTROYED_REBEL_FED_POW_POD"/>
+</eventList>
+<event name="GB_DESTROYED_REBEL_FED_GENERIC">
+	<text load="GB_TEXT_DESTROYED_REBEL_FED"/>
+	<autoReward level="MED">standard</autoReward>
+	<choice>
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+<textList name="GB_TEXT_DESTROYED_REBEL_FED">
+	<text>The fiery red of the explosions complements the orange hull of the former Federation ship. Satisfied with your handiwork, you scrap the ship.</text>
+	<text>Every ship full of Federation traitors that you destroy means a slightly safer galaxy. It's not much, but it's honest work.</text>
+	<text>Every ship full of Federation deserters that you destroy means a slightly safer galaxy, at least, that is what you tell yourself.</text>
+	<text>You wonder which side of the war their families must've been on assuming they still had a family. Hopefully no more families will need to be torn when we destroy the flagship.</text>
+	<text>You know the Rebels must have families but whether or not they shared in their vision, you will never know.</text>
+	<text>It isn't out of the question that they still had families back in the Federation. Unfortunately, just one of the many bitter realities of the Federation Civil War.</text>
+	<text>Large portions of scrap material break away from the former Federation ship as one final salvo breaks the ship up catastrophically.</text>
+	<text>You receive a hail from the Rebel ship right as it explodes, but it's too late. The face of the captain begging for his life briefly flashes before he is consumed by the fire in front of your eyes.</text>
+	<text>The death of your opponents is rarely as satisfying as when it's a Rebel ship. But when it's a former Federation owned ship, it reminds you that the Rebels themselves were once Federation too.</text>
+	<text>The Rebel ship explodes, leaving behind a substantial collection of useful scrap material.</text>
+</textList>
+
+
+<event name="GB_DESTROYED_REBEL_FED_POW_POD">
+	<text>Just before the Rebel ship explodes, an escape pod ejects from it. Unfortunately, it doesn't get far before you collect it and bring it aboard. Once the pod is opened, the Rebel recruit asks to be treated with respect as a prisoner of war and for you to transfer custody to a Federation internment station.</text>
+	<autoReward level="LOW">standard</autoReward>
+	<choice hidden="true">
+		<text>Try to persuade them to rejoin the Federation and join your crew.</text>
+		<event load="GB_DESTROYED_REBEL_POW_CREW"/>
+	</choice>
+	<choice hidden="true" req="mind">
+		<text>(Mind Control) Try to 'persuade them' to rejoin the Federation and join your crew.</text>
+		<event load="GB_DESTROYED_REBEL_POW_MIND"/>
+	</choice>
+	<choice hidden="true" req="BIRDMAN_PACIFIST"> <!-- R4: birbiurbrbrirbirbrrbirrbrrbrrbrbriribriorb --> <!-- robin: rbibribribrirbrrrddidirbrbdbydirbd-->
+		<text>Give him a kiss on the cheek and send him on his way.</text>
+		<event>
+			<text>You wish the Rebel well and send them on their way to the nearest station.</text>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Agree to transport them  as a POW.</text>
+		<event>
+			<text>It will be inconvenient to make a detour now but it is the right thing to do. Time to find a nearby Federation aligned outpost or station to transfer the prisoner over, or otherwise release them from custody.</text>
+			<event>
+				<quest event="GB_POW_REBEL_GENERIC" />
+				<choice>
+					<text>Continue...</text>
+					<event/>
+				</choice>
+			</event>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Space him.</text>
+		<event>		
+			<text>As you grab the Rebel by the arms and drag them into the airlock he protests little. A tear rolls down his cheek as they stands up straight and accepts their fate. You close the airlock once again when their corpse has drifted a safe distance from the ship.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="MORALITY_UPDATE_GENERAL"/>
+			</choice>		
+		</event>
+	</choice>
+</event>
+<eventList name="GB_DESTROYED_REBEL_POW_CREW">
+	<event>
+		<text>The Rebel ponders on the offer. They had already betrayed the Federation and joined sides with the Rebellion. However, your generosity seems to invigorate their faith in the Federation, or cowardice of being sent to a war camp or worse. Regardless, they are now confident with joining your crew, and readorns a Federation uniform.</text>
+		<crewMember amount="1" class="human"/>
+		<choice>
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</event>
+	<!-- R4: potential system to sneak on a Rebel spy? -->
+	<event>
+		<text>The Rebel seems distrought, "The Federation it's- after everything it's done to make us weak, everything to set us back in the intergalactic stage! You can't make me join your crew. I won't!"</text>
+		<choice>
+			<text>Take them as a prisoner of war.</text>
+			<event>
+				<text>It will be inconvenient to make a detour now but it is the right thing to do. Time to find a nearby Federation aligned outpost or station to transfer the prisoner over, or otherwise release them from custody.</text>
+				<quest event="GB_POW_REBEL_GENERIC" />
+				<choice>
+					<text>Continue...</text>
+					<event/>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<!--<text>Execute them.</text>-->
+			<text>Space him.</text>
+			<event>
+				<text>As you grab the Rebel by the arms and drag them into the airlock, they protest little. A tear rolls down their cheek as they stands up straight and accepts their fate. You close the airlock once again when their corpse has drifted a safe distance from the ship.</text>
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event load="MORALITY_UPDATE_GENERAL"/>
+				</choice>	
+			</event>
+		</choice>
+	</event>
+	<event>
+		<text>The Rebel puts on a facade of gratitude, which is shattered quickly when they pull out a laser and blasts one of your crew! They shout "I will never go back to the Federation! Humanity will prosper! Humanity will be eq-" and with that, a shot of your sidearm cuts them short. Time to drag their body out the airlock and send them into the endless vacuum of space.</text>
+		<removeCrew>
+			<clone>true</clone>
+			<text>Luckily, your killed crewmember is already undergoing the cloning process.</text>
+		</removeCrew>
+	</event>
+</eventList>
+<eventList name="GB_DESTROYED_REBEL_POW_MIND">
+	<event>
+		<text>The Rebel is grateful for you sparing them, despite it meaning they must betray their original cause. Looks like we won't need the mind control after all.</text>
+		<crewMember amount="1" class="human"/>
+		<choice>
+		<text>Continue...</text>
+		<event/>
+	</choice>
+	</event>
+	<event>
+		<text>The Rebel puts on a facade of gratitude, which is shattered quickly when they pull out a laser and tries to shoot one of your crew! Luckily, the mind control stops them and they drops to the floor. You hurry to drag them out the airlock.</text>
+	<choice>
+		<text>Continue...</text>
+		<event/>
+	</choice>
+	</event>
+</eventList>
+
+<event name="GB_DEAD_CREW_REBEL_FED">
+	<text load="GB_TEXT_DEAD_CREW_REBEL_FED"/>
+	<autoReward level="HIGH">standard</autoReward>
+	<choice>
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+<textList name="GB_TEXT_DEAD_CREW_REBEL_FED">
+	<text>Some of these men were still wearing their Federation uniforms, something just doesn't sit right with you seeing their corpses...</text>
+	<text>As the captain of the Rebel ship collapses to his knees, he beckons for you to come closer. He whispers, "It didn't... need to end like this...", and falls lifeless to the ground.</text>
+	<text>With the Rebel vessel now clear of its crew, you are free to scrap the remains.</text>
+	<text>These men and women fought for a brighter future, it is unfortunate that there doesn't seem to be a place for them in that future anymore.</text>
+	
+	<!-- R4: Generic crew death lines, mostly because MV ones is offputting to me and too specific and I can't think of many good Rebel unique lines-->
+	<text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+	<text>With the crew dead, you are able to take the fuel out of storage. You also take all the scrap you can manage.</text>
+</textList>
+
+<event name="GB_ESCAPE_REBEL_FED">
+	<text load="GB_TEXT_ESCAPE_REBEL_FED"/>
+	<choice>
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+<textList name="GB_TEXT_ESCAPE_REBEL_FED">
+	<text>You overhear the Rebel captain giving orders to his crew. "Bugger this! Redirect as much power as necessary to the engines. We have to get out of here!"</text>
+	<text>You notice the characteristic flaring of the former Federation ships engines; a tell-tell sign that they are trying to escape!</text>
+	<text>It's rare that Rebels try to run away from a battle, but these defector's Federation training still runs fresh and they focus prioritisation in keeping their ship safe as they try to make their escape.</text>
+	<text>You can tell from a massive spike in the enemy's engine power that the ship is trying to escape.</text>
+	<text>It appears the traitors are trying to hail you to surrender, but interference of a nearby star makes it impossible to discern a word of the communiqué, and they take your silence as a refusal. They are diverting all power to their engines and are trying to escape!</text> <!-- R4: the é is okay in FTL yes? -->
+</textList>
+
+<eventList name="GB_GOTAWAY_REBEL_FED">
+	<event load="GB_GOTAWAY_REBEL_FED_GENERIC"/>
+	<event load="GB_GOTAWAY_REBEL_FED_GENERIC"/>
+	<event load="GB_GOTAWAY_REBEL_FED_GENERIC"/>
+	<event load="GOTAWAY_REBEL_GENERIC"/>  <!-- R4: I have no clue why but sure, why not, let's make the MVanilla generic GOTAWAY a rare chance here -->
+	
+	<event load="GOTAWAY_REBEL_FED_REMAINS"/> <!-- this is staying MVanilla -->
+</eventList>
+<event name="GB_GOTAWAY_REBEL_FED_GENERIC">
+	<text load="GB_TEXT_GOTAWAY_REBEL_FED"/>
+	<choice>
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+<textList name="GB_TEXT_GOTAWAY_REBEL_FED">
+	<text>The Rebel captain laughs as he jumps away, leaving you all alone at the beacon.</text>
+	<text>"You will rue this day!" The Rebel ship jumps away.</text>
+	<text>You curse under your breath as the Rebel ship's engines flare one last time and it jumps away.</text>
+	<text>The Rebel ship escapes. You focus on the repairs necessary after that profitless fight.</text>
+	<text>"Intentional or not, there's no shame in letting us get away. Your hands got just a little less bloodier." Says the defected Captain of the Federation vessel, as they perform a partial salute just before jumping.</text>
+</textList>
+<!-- <event name="GOTAWAY_REBEL_REMAINS">
+	<text>The Rebel ship jumps away. At first you're disappointed, but then you realise a portion of scrap matter has been left behind from the fight. It's not much, but it helps soften the blow of your failure.</text>
+	<autoReward level="LOW">scrap_only</autoReward>
+</event>  This is an MVanilla event -->
+
+<eventList name="GB_SURRENDER_REBEL_FED">
+	<event load="GB_SURRENDER_REBEL_FED_GENERIC"/>
+	<event load="GB_SURRENDER_REBEL_FED_GENERIC"/>
+	<event load="GB_SURRENDER_REBEL_FED_GENERIC"/>
+	<event load="GB_SURRENDER_REBEL_FED_GENERIC"/>
+	<event load="GB_SURRENDER_REBEL_FED_GENERIC"/> <!-- R4: Only added 1 more generic to counteract the new condition addition. I want these turncoats to be more likely to give a fleet delay response and less likely to give a blanket demand -->
+	
+	<event load="GB_SURRENDER_REBEL_FED_FLEET"/>
+	<event load="GB_SURRENDER_REBEL_FED_FLEET"/>
+	<event load="GB_SURRENDER_REBEL_FED_UNDERCOVER"/> <!-- R4: New surrender type compared to regular Rebels -->
+	<event load="GB_SURRENDER_REBEL_FED_DEMAND"/>
+</eventList>
+<event name="GB_SURRENDER_REBEL_FED_GENERIC">
+	<text load="GB_TEXT_SURRENDER_REBEL_FED_GENERIC"/>
+	<choice>
+		<text>Accept their surrender.</text>
+		<event>
+			<ship hostile="false"/>
+			<autoReward level="RANDOM">stuff</autoReward>
+		</event>
+	</choice>
+	<choice>
+		<text load="GENERIC_SURRENDER_CHOICE_NOMERCY"/>
+		<event/>
+	</choice>
+</event>
+<textList name="GB_TEXT_SURRENDER_REBEL_FED_GENERIC">
+	<text>The Rebel captain hails you. In the background, you can see the chaos that your weapons have caused. "Ok, you win. We surrender."</text>
+	<text>It's rare for a Rebel ship to offer their surrender to a Federation one, but not long ago these crew were Federation, perhaps they have a shred of kinsmanship left.</text>
+	<text>"Ok, we surrender! We are protected under Federation law as deserters to surrender ourselves in! We accept being taken as prisoners of war, just please accept our surrender!"</text>
+	<text>"Please accept our formal surrender... maybe as a POW I could see my daughter back at the Union Coreworlds..."</text>
+	<text>The Rebel ship is running on fumes. Panting heavily, the Rebel captain begs you let them live.</text>
+	<text>"Ok, you've proven that you are superior in combat. Now, prove that you are as forgiving as you say you are."</text>
+	<text>At last, the Rebel ship seems to yield. They offer a surrender.</text>
+	<text>"We followed quickly in the footsteps of the Rebelion, we will NEVER surrendr-... Oh get off it our fuel reserves just blown! we-  we surrender. Please just take whatever we have left in our storage if you let us live."</text>
+	<text>"Okay, okay! You win. Command will never forgive us recruits for letting you go, but at least we'll be alive to see ourselves dismissed. Will you accept our surrender?"</text>
+	<text>The Rebel ship has no desire to fight anymore. They desperately hail you.</text>
+	<text>"Command doesn't have to know we encountered you here. Just let us go and we'll give you what we have."</text>
+	<text>"I may be a soldier, sir...  I think I have made myself useful one last time. Accept my surrender. It's over for me."</text>
+</textList>
+<event name="GB_SURRENDER_REBEL_FED_DEMAND">
+	<text load="GB_TEXT_SURRENDER_REBEL_FED_DEMAND"/>
+	<choice>
+		<text>Accept their surrender.</text>
+		<event>
+			<ship hostile="false"/>
+		</event>
+	</choice>
+	<choice>
+		<text load="GENERIC_SURRENDER_CHOICE_NOMERCY"/>
+		<event/>
+	</choice>
+</event>
+<textList name="GB_TEXT_SURRENDER_REBEL_FED_DEMAND">
+	<text>"You have gone too far. Is this how the Federation fights now since we've left? Disgraceful!"</text>
+	<text>The Rebel ship hails you. "No more games. You will let us live or you will suffer the wrath of the Rebellion!"</text>
+	<text>"The Rebellion will never die! You are making martyrs out of every single one of us! This isn't the Federation way. Let us go now!"</text>
+	<text>"If the Federation was a shred of what it once was, you should know that killing us is wrong. Accept our surrender, and prove the Federation is as just as your propoganda claims they are."</text>
+</textList>
+<event name="GB_SURRENDER_REBEL_FED_FLEET">
+	<text load="GB_TEXT_SURRENDER_REBEL_FED_FLEET"/>
+	<choice>
+		<text>Accept their surrender. [Delays the fleet 2 jumps]</text>
+		<event>
+			<text>The Rebels promise to delay the fleet, and jump away.</text>
+			<ship hostile="false"/>
+			<modifyPursuit amount="-2"/>
+		</event>
+	</choice>
+	<choice>
+		<text load="GENERIC_SURRENDER_CHOICE_NOMERCY"/>
+		<event/>
+	</choice>
+</event>
+<textList name="GB_TEXT_SURRENDER_REBEL_FED_FLEET">
+	<text>"Look look, maybe we can both get something out of this. I know the fleet is an issue for you. If you let us live, we can lie to the fleet about your location. They'll never know until it's too late."</text>
+	<text>The Rebel ship surrenders, and promises to delay the fleet if you let them live.</text>
+	<text>"If you kill us, you gain nothing but some insignificant scrap. We're more useful to you alive. Let us go, and we can delay the fleet for you."</text>
+	<text>"What are we doing... why are we doing this! This is all wrong. I do not wish to fight anymore. We-... we want to rejoin with the Federation. Let us send 1 more message to our comrades-... the Rebels. It'll provide them with false information on your whereabouts. It should delay them but please... let us go!"</text>
+</textList>
+<event name="GB_SURRENDER_REBEL_FED_UNDERCOVER"> <!-- R4: you reckon we need a text list for this? --> <!--robin: text lists usually better then just a single text, but given how its a rare surrender i doubt we *need* one-->
+	<text>"Flashing proper IFF codes now. Cease fire! Cease fire! We are running covert ops deep in Rebel territory and I think you pulled a convincing enough display to shake any suspicion among the Rebels. Take this 'surrender' as compensation, exfiltrate double time. Don't worry about us, we'll be okay and cover your tracks. Out."</text>
+	<choice>
+		<text>Accept their 'surrender'.</text>
+		<event>
+			<text>The 'Rebels' promise to delay the fleet, and jump away.</text>
+			<ship hostile="false"/>
+			<modifyPursuit amount="-1"/>
+			<autoReward level="HIGH">standard</autoReward>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>

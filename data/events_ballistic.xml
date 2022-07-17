@@ -1,0 +1,1131 @@
+<FTL>
+	<eventList name = "GB_GENERIC_EVENTS">
+		<event load = "GB_CARAVAN_ABANDONED"/>
+		<event load = "GB_MILITIA_ESCORT"/>
+		<event load = "GB_FED_BOMBER_DISTRESS"/>
+	</eventList>
+
+	<eventList name = "GB_ITEMS">
+		<event load = "GB_FED_RESEARCH_RAIL"/>
+		<!--<event load = "GB_MUSEUM_TOUR"/> -->
+	</eventList>
+
+	<!-- overly complicated find-and-loot event -->
+	<event name="GB_CARAVAN_ABANDONED" unique="true">
+		<text>You arrive to find what was once a supply caravan in a debris field; most likely victims of Pirates. There is no response to your hails.</text>
+		<choice hidden="true">
+			<text>Dock with one of the transports and investigate.</text>
+			<event load="GB_CARAVAN_ABANDONED_TRANSPORTER" />
+		</choice>
+		<choice hidden="true">
+			<text>Dock with one of the escorts and investigate.</text>
+			<event load="GB_CARAVAN_ABANDONED_ESCORT" />
+		</choice>
+		<choice hidden="true" req="GB_LIST_RECON_DRONES">
+			<text>(Recon Drone) Use a Recon Drone to quickly investigate each ship.</text>
+			<event load="GB_CARAVAN_ABANDONED_RECON" />
+		</choice>
+		<choice hidden="true" req="LIFE_SCANNER">
+			<text>(Lifeform Scanner) Run a scan on the caravan to detect if there are any survivors.</text>
+			<event load="GB_CARAVAN_ABANDONED_SCAN" />
+		</choice>
+		<choice hidden="true">
+			<text>Leave the caravan alone.</text>
+			<event />
+		</choice>
+	</event>
+
+	<eventList name="GB_CARAVAN_ABANDONED_TRANSPORTER">
+		<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_GOOD"/>
+		<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_BAD"/>
+		<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_AUGMENT"/>
+	</eventList>
+
+	<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_GOOD">
+		<text>It looks like the pirates or who ever attacked the caravan had already taken anything it was transporting or otherwise not bolted to the floor. You salvage what you can before leaving.</text>
+		<autoReward level="LOW">scrap_only</autoReward>
+		<choice hidden="true">
+			<text>Take time to investigate one of the Escorts.</text>
+			<event>
+				<text>Although it'll take more time, surely there is something left behind worth looking for.</text>
+				<modifyPursuit amount="1" />
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event load="GB_CARAVAN_ABANDONED_ESCORT_DELAYED" />
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true" req="SCRAP_COLLECTOR">
+			<text>(Scrap Recovery Arm) Attempt to recover additional salvage.</text>
+			<event>
+				<text>Your scrap recovery arm slowly gathers up any usable debris from the caravan wrecks drifting nearby.</text>
+				<autoReward level="LOW">standard</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true" req="MAGNET_ARM">
+			<text>(Magnetic Arm) Attempt to recover additional salvage.</text>
+			<event>
+				<text>Your Magnetic Arm makes quick work out of collecting the small space debris that floats around the wreckages.</text>
+				<autoReward level="MED">standard</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Leave.</text>
+			<event />
+		</choice>
+	</event>
+
+	<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_BAD">
+		<text>It looks like the pirates or who ever attacked the caravan had already taken most of the goods carried by the Transport, however they were not the most thorough, and you find a reasonable amount of salvage.</text>
+		<autoReward level="MED">standard</autoReward>
+		<choice hidden="true">
+			<text>Take time to investigate one of the Escorts.</text>
+			<event>
+				<text>Although it'll take more time, surely there is something left behind worth looking for.</text>
+				<modifyPursuit amount="1" />
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event load="GB_CARAVAN_ABANDONED_ESCORT_DELAYED" />
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Leave.</text>
+			<event />
+		</choice>
+	</event>
+
+	<event name="GB_CARAVAN_ABANDONED_TRANSPORTER_AUGMENT">
+		<text>Who ever attacked the caravan must've missed this Transporter or mysteriously wasn't interested in ransacking it for its contents. Regardless the crew is long dead and there is ample supplies to help you stock yourself for your mission.</text>
+		<autoReward level="RANDOM">augment</autoReward>
+		<choice hidden="true">
+			<text>Take time to investigate one of the Escorts.</text>
+			<event>
+				<text>Although it'll take more time, surely there is something left behind worth looking for.</text>
+				<modifyPursuit amount="1" />
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event load="GB_CARAVAN_ABANDONED_ESCORT_DELAYED" />
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Leave.</text>
+			<event />
+		</choice>
+	</event>
+
+	<eventList name="GB_CARAVAN_ABANDONED_ESCORT"> <!-- LIKE JESUS HOW MANY EVENT OUTCOMES-->
+		<event name = "GB_CARAVAN_ABANDONED_ESCORT_GOOD"/>
+		<event name = "GB_CARAVAN_ABANDONED_ESCORT_BAD"/>
+		<event name = "GB_CARAVAN_ABANDONED_ESCORT_CREW"/>
+	</eventList>
+
+	<event name="GB_CARAVAN_ABANDONED_ESCORT_GOOD">
+		<text>The cause of the outcome of the engagement has been made clear once you boarded the vessel. It seems the escorts were still operating a few quaint Autocannons, and had ran out of ammunition during the fight. Upon examining the weapon, you discover it is still in functional order, albeit dry on ammunition, and is ready to be installed!</text>
+		<autoReward level="RANDOM">scrap_only</autoReward>
+		<weapon name="GB_CARAVAN_REWARD" />
+		<choice hidden="true">
+			<text>Take time to investigate one of the Transports.</text>
+			<event>
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event load="GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED" />
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true" req = "slug">
+			<text>(Slug Crew) When docking with the escort, your Slug sensed something.</text>
+			<event>
+				<text>You heed your Slug's advice and follow their directions to where the lifesource is, where you find a man hunched over a weapon console. Although not in as severe a condition as initially expected, but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders".</text>
+				<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Leave.</text>
+			<event />
+		</choice>
+	</event>
+
+	<event name="GB_CARAVAN_ABANDONED_ESCORT_CREW">
+		<text>The cause of the outcome of the engagement has been made clear once you boarded the vessel. It seems the escorts were still operating a few quaint Autocannons and had ran out of ammunition during the fight, likely during the last leg of their journey. Before you are able to begin salvaging, your crew spots a survivor in the weapons room hunched over a console. Although not in as severe a condition as initially expected, but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders".</text>
+		<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>After the survivor stabilizes back on your ship, he agrees to allow you to salvage his ship as long as you help him give his former crew a proper respects and a burial at space.</text>
+				<autoReward level="RANDOM">scrap_only</autoReward>
+				<choice hidden="true">
+					<text>Take time to investigate one of the Transports.</text>
+					<event load="GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED" />
+				</choice>
+				<choice hidden="true">
+					<text>Leave.</text>
+					<event />
+				</choice>
+			</event>
+		</choice>
+	</event>
+	<event name="GB_CARAVAN_ABANDONED_ESCORT_BAD">
+		<text>It appears that this escort had suffered from a catastrophic ammunition detonation which put a swift yet brutal end to the crew of this ship. The ships internals are warped and twisted metal frame. There is not much inside the ship to salvage and even less so on the outside.</text>
+		<choice hidden="true">
+			<text>Take time to investigate one of the Transports.</text>
+			<event load="GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED" />
+		</choice>
+		<choice hidden="true" req="SCRAP_COLLECTOR">
+			<text>(Scrap Recovery Arm) Attempt to recover additional salvage.</text>
+			<event>
+				<text>Your scrap recovery arm slowly gathers up any usable debris from the caravan wrecks drifting nearby.</text>
+				<autoReward level="LOW">scrap_only</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>(Magnetic Arm) Attempt to recover additional salvage.</text>
+			<event>
+				<text>Your Magnetic Arm makes quick work out of collecting the small space debris that floats around the wreckages.</text>
+				<autoReward level="MED">scrap_only</autoReward>
+			</event>
+		</choice>
+	</event>
+	<event name ="GB_CARAVAN_ABANDONED_RECON">
+		<text>You repeatedly deploy your Recon Drone as it finishes investigating each ship, moving through each ones swiftly and analysing the environment on a timely manner. The Transports have mostly been sacked during the attack, however the Recon Drone's camera feed does show that the pirates have not been so thorough as initially thought, leaving behind some useful salvage.</text>
+		<autoReward level="HIGH">droneparts</autoReward>
+		<item_modify>
+			<item type="drones" min="-5" max="-5" />
+		</item_modify>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>Just as you finish salvaging the the transport, your Recon Drone on the last ship alerts you about a survivor on one of the escorts, however it would take time to finish salvaging the Transport and rescue them.</text>
+				<autoReward level="HIGH">standard</autoReward>
+				<choice hidden="true">
+					<text>Rescue the survivor.</text>
+					<event>
+						<text>Thanks to your Recon Drone you were able to find them just in time, and are able to stabilize their condition once aboard your ship. He states that he was a gunnery officer aboard their ship and that they were ambushed just before their final destination and were low on ammunition, unable to defend themselves. They offer their sincerest gratitude for rescuing them and offer to join your crew.</text>
+						<modifyPursuit amount="1" />
+						<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
+					</event>
+				</choice>
+				<choice hidden="true" req="teleporter" lvl="1">
+					<text>(Teleporter) Lock on to the survivors life signature and beam them onto your ship.</text>
+					<event>
+						<text>Thanks to your Recon Drone you were able to find them just in time, and are able to stabilize their condition once aboard your ship. He states that he was a gunnery officer aboard their ship and that they were ambushed just before their final destination and were low on ammunition, unable to defend themselves. They offer their sincerest gratitude for rescuing them and offer to join your crew.</text>
+						<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
+					</event>
+				</choice>
+				<choice hidden="true">
+					<text>Leave.</text>
+					<event>
+						<text>You have an important mission, you have already spent enough time salvaging the transporter. You prepare to move on.</text>
+					</event>
+				</choice>
+			</event>
+		</choice>
+	</event>
+
+	<!-- For when you want to check multiple ships at this caravan after you checked one, causing a delay. -->
+	<eventList name="GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED">
+		<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED_GOOD"/>
+		<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED_BAD"/>
+		<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED_AUGMENT"/>
+	</eventList>
+	<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED_GOOD">
+		<text>It looks like the pirates or who ever attacked the caravan had already taken anything it was transporting or otherwise not bolted to the floor. You salvage what you can before leaving.</text>
+		<autoReward level="LOW">scrap_only</autoReward>
+		<choice hidden="true" req="SCRAP_COLLECTOR">
+			<text>(Scrap Recovery Arm) Attempt to recover additional salvage.</text>
+			<event>
+				<text>Your scrap recovery arm slowly gathers up any usable debris from the caravan wrecks drifting nearby.</text>
+				<autoReward level="LOW">standard</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true" req="MAGNET_ARM">
+			<text>(Magnetic Arm) Attempt to recover additional salvage.</text>
+			<event>
+				<text>Your Magnetic Arm makes quick work out of collecting the small space debris that floats around the wreckages.</text>
+				<autoReward level="MED">standard</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Leave.</text>
+			<event />
+		</choice>
+	</event>
+	<event name = "GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED_BAD">
+		<text>It looks like the pirates or who ever attacked the caravan had already taken most of the goods carried by the Transport, however they were not the most thorough, and you find a reasonable amount of salvage.</text>
+		<autoReward level="MED">standard</autoReward>
+		<choice hidden="true">
+			<text>Leave.</text>
+			<event />
+		</choice>
+	</event>
+	<event name="GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED_AUGMENT">
+		<text>Who ever attacked the caravan must've missed this Transporter or mysteriously wasn't interested in ransacking it for its contents. Regardless, the crew is long dead, and there are ample supplies to help you stock yourself for your mission.</text>
+		<autoReward level="RANDOM">augment</autoReward>
+		<choice hidden="true">
+			<text>Leave.</text>
+			<event />
+		</choice>
+	</event>
+
+	<eventList name="GB_CARAVAN_ABANDONED_ESCORT_DELAYED">
+		<event name = "GB_CARAVAN_ABANDONED_ESCORT_DELAYED_GOOD"/>
+		<event name = "GB_CARAVAN_ABANDONED_ESCORT_DELAYED_BAD"/>
+		<event name = "GB_CARAVAN_ABANDONED_ESCORT_DELAYED_CREW"/>
+	</eventList>
+	<event name="GB_CARAVAN_ABANDONED_ESCORT_DELAYED_GOOD">
+		<text>The cause of the outcome of the engagement has been made clear once you boarded the vessel. It seems the escorts were still operating a few quaint Autocannons and had ran out of ammunition during the fight. Upon examining the weapon you discover, it is still in functional order, albeit dry on ammunition, and is ready to be installed!</text>
+		<autoReward level="RANDOM">scrap_only</autoReward>
+		<weapon name="GB_CARAVAN_REWARD" />
+		<choice hidden="true" req = "slug">
+			<text>(Slug Crew) When docking with the escort your slug senses something.</text>
+			<event>
+				<text>You heed your slugs advice and follow their directions to where the lifesource is. Where you find a man hunched over a weapon console. Although not in as severe a condition as initially expected but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till I we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders".</text>
+				<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Leave.</text>
+			<event />
+		</choice>
+	</event>
+	<event name="GB_CARAVAN_ABANDONED_ESCORT_DELAYED_CREW">
+		<text>The cause of the outcome of the engagement has been made clear once you boarded the vessel. It seems the escorts were still operating a few quaint Autocannons and had ran out of ammunition during the fight, likely during the last leg of their journey. Before you are able to begin salvaging, your crew spots a survivor in the weapons room hunched over a console. Although not in as severe a condition as initially expected, but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders".</text>
+		<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<text>After the survivor stabilizes back on your ship, he agrees to allow you to salvage his ship as long as you help him give his former crew a proper respects and a burial at space.</text>
+				<autoReward level="RANDOM">scrap_only</autoReward>
+				<choice hidden="true">
+					<text>Leave.</text>
+					<event />
+				</choice>
+			</event>
+		</choice>
+	</event>
+	<event name="GB_CARAVAN_ABANDONED_ESCORT_DELAYED_BAD">
+		<text>It appears that this escort had suffered from a catastrophic ammunition detonation which put a swift yet brutal end to the crew of this ship. The ships internals are warped and twisted metal frame. There is not much inside the ship to salvage and even less so on the outside.</text>
+		<choice hidden="true" req="SCRAP_COLLECTOR">
+			<text>(Scrap Recovery Arm) Attempt to recover additional salvage.</text>
+			<event>
+				<text>Your scrap recovery arm slowly gathers up any usable debris from the caravan wrecks drifting nearby.</text>
+				<autoReward level="LOW">scrap_only</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>(Magnetic Arm) Attempt to recover additional salvage.</text>
+			<event>
+				<text>Your Magnetic Arm makes quick work out of collecting the small space debris that floats around the wreckages.</text>
+				<autoReward level="MED">scrap_only</autoReward>
+			</event>
+		</choice>
+	</event>
+
+	<event name="GB_CARAVAN_ABANDONED_SCAN">
+		<text>Scans indicate that there is one lifeform onboard one of the better off escorts. The signal is faint but stable.</text>
+		<choice>
+			<text>Investigate the escort and rescue them. </text>
+			<event>
+				<text>You head directly towards where the lifeform was detected, where you find a man hunched over a weapons console. Although not in as severe a condition as initially expected, but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders".</text>
+				<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
+			</event>
+		</choice>
+	</event>
+
+
+	<event name = "GB_MILITIA_ESCORT">
+		<distressBeacon/>
+		<ship load = "SHIP_GB_MILITIA_ESCORT" hostile = "false"/> <!-- change this to generic escort ships? like the outrider, escort, etc. -->
+		<text>The source of the distress beacon is emanating from a small Militia Escort. "Captain! We're very low on fuel and need some repairs desperately. Could you possibly take us to the nearest repair platform?"</text>
+		<choice>
+			<text>Accept.</text>
+			<event>
+				<text>"Thank you very much Captain. I'm sure we can arrange some remuneration at the shipyards.</text>
+				<quest event = "GB_QUEST_MILITIA_ESCORT"/>
+			</event>
+		</choice>
+		<choice>
+			<text>Decline.</text>
+			<event>
+				<text>"Ok, captain. We'll just, uhh, die here then."</text>
+				<choice>
+					<text>Do something on board the ship.</text>
+					<event load = "STORAGE_CHECK_REAL"/>
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event/>
+				</choice>
+			</event>
+		</choice>
+		<choice>
+			<text>Attack!</text>
+			<event>
+				<ship hostile = "true"/>
+				<text>You've decided, instead of helping the Militiamen, to brutally attack them instead.</text>
+				<choice>
+					<text>Continue...</text>
+					<event load="MORALITY_UPDATE_GENERAL_FIGHT"/>
+				</choice>
+			</event>
+		</choice>
+	</event>
+
+	<event name = "GB_QUEST_MILITIA_ESCORT">
+		<text>You've arrived at the shipyards, and receive a message from the Militiamen thanking you. They dispatch a shipwright to install a specialised piece of equipment on your ship.</text>
+		<weapon name = "GB_CARAVAN_REWARD"/>
+		<autoReward level = "MED">standard</autoReward>
+	</event>
+
+	<event name = "GB_FED_BOMBER_DISTRESS">
+		<distressBeacon/>
+		<text>You arrive at the beacon, only to find a Federation Bomber with its hull in tatters. Upon hailing, they explain that they had a run-in with some Mantis and are desperately low on munitions.</text>
+		<ship load = "GB_SHIP_FED_BOMBER_LOWAMMO" hostile = "false"/>
+		<choice hidden = "true">
+			<text>Give them a small amount of ammo. [-3}]</text>
+			<event>
+				<text>It isn't much, but it's all you can spare. Hopefully it'll be enough to keep them alive until a supply convoy finds its way here. The crew offer a few spare droneparts to recompense.</text>
+				<item_modify>
+					<item type = "missiles" min = "-3" max = "-3"/>
+					<item type="drones" min="2" max="4"/>
+				</item_modify>
+			</event>
+		</choice>
+		<choice hidden = "true">
+			<text>Give them a medium amount of ammo. [-5}]</text>
+			<event>
+				<text>"Thank you, sir. This should be plenty to get us out of this hellhole." The crew dispense an augment to help you on your mission.</text>
+				<autoReward level = "RANDOM">augment</autoReward>
+				<item_modify>
+					<item type = "missiles" min = "-5" max = "-5"/>
+				</item_modify>
+			</event>
+		</choice>
+		<choice hidden = "true">
+			<text>Give them a large amount of ammo. [-10}]</text>
+			<event>
+				<text>You hand over a significant amount of ammunition to the stranded Federation soldiers. Their captain messages you: "We don't have much to give, but we could probably spare one of our weapons. The other 3 should be plenty."</text>
+				<weapon name = "GB_CARAVAN_REWARD"/>
+				<item_modify>
+					<item type = "missiles" min = "-10" max = "-10"/>
+				</item_modify>
+			</event>
+		</choice>
+		<choice hidden = "true" req = "RECYCLER">
+			<text>Show them your Recycler module.</text>
+			<event>
+				<text>"You can just... make ammo? Man, why haven't we ever got one of these? We'd be happy to buy it off you if you can spare it. We have scrap.</text>
+				<choice hidden = "true">
+					<text>Agree to the trade.</text>
+					<event>
+						<remove name = "RECYCLER"/>
+						<item_modify>
+							<item type = "scrap" min = "30" max = "50"/>
+						</item_modify>
+					</event>
+				</choice>
+				<choice>
+					<text>Decline.</text>
+					<event>
+						<text>You decide you need the Recycler more than these stranded soldiers and prepare to move on.</text>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden = "true" req = "CRATE_MISSILES">
+			<text>Give them your ammo crate.</text>
+			<event>
+				<text>You hand over your ammo crate to the stranded Federation soldiers. Their captain messages you: "We don't have much to give, but we could probably spare one of our weapons. The other 3 should be plenty."</text>
+				<weapon name = "GB_CARAVAN_REWARD"/>
+				<remove name = "CRATE_MISSILES"/>
+			</event>
+		</choice>
+		<choice>
+			<text>We can't help.</text>
+			<event>
+				<text>"We understand. Fly safe."</text>
+				<choice>
+					<text>Do something on board the ship.</text>
+					<event load = "STORAGE_CHECK_REAL"/>
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event/>
+				</choice>
+			</event>
+		</choice>
+		<choice>
+			<text>If they're low on ammo they're an easy target, attack!</text>
+			<event>
+				<ship hostile = "true"/>
+				<text>You power up your weapons and prepare to obliterate your allies.</text>
+				<choice>
+					<text>Continue...</text>
+					<event load="MORALITY_UPDATE_GENERAL_FIGHT"/>
+				</choice>
+			</event>
+		</choice>
+	</event>
+
+	<event name="GB_FED_RESEARCH_RAIL">
+		<text>A Federation research station is sending out a request on Federation encrypted channels.</text>
+		<choice hidden="true">
+			<text>Contact them.</text>
+			<event>
+				<text>You transmit your ID to the outpost and contact them on encrypted frequencies. "Your codes are verified. Good to see you. We're a RnD facility tasked to improve the firepower of the Federation fleet and we need some field trials to be performed to work out the kinks. There's a reward in for it upon a successful egress after dispatching your target. What do you say Renegade?"</text>
+				<choice hidden="true">
+					<text>Agree to test the weapon.</text>
+					<event>
+						<text>"Excellent. We have reports of a Rebel forward scout near by for you to engage. We will send you all the supplies you need for your task. Equip the prototype Railgun and head to the designated target. Good luck!"</text>
+						<quest event="GB_RAILGUN_FIELD_TEST" />
+						<item_modify>
+							<item type="fuel" min="2" max="2" />
+							<item type="missiles" min="5" max="5" />
+						</item_modify>
+						<weapon name="GB_RAIL_1" />
+					</event>
+				</choice>
+				<choice hidden="true">
+					<text>Refuse.</text>
+					<event>
+						<text>"In that case farewell".</text>
+						<choice hidden="true">
+							<text>Do something onboard the ship.</text>
+							<event load="STORAGE_CHECK" />
+						</choice>
+						<choice hidden="true">
+							<text>Do nothing.</text>
+							<event />
+						</choice>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Ignore the station.</text>
+			<event>
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event>
+						<text>You aren't interested in the station. You ignore them.</text>
+						<choice hidden="true">
+							<text>Do something onboard the ship.</text>
+							<event load="STORAGE_CHECK" />
+						</choice>
+						<choice hidden="true">
+							<text>Do nothing.</text>
+							<event />
+						</choice>
+					</event>
+				</choice>
+			</event>
+		</choice>
+	</event>
+
+	<ship name="SHIP_TESTING_RAILGUN" auto_blueprint="LIST_SHIPS_REBEL_FIGHT">
+		<destroyed load="GB_RAIL_TEST_DESTROYED_REBEL"/>
+		<deadCrew load="DEAD_CREW_REBEL"/> <!-- R4: Notice: Probably should have a unique dead crew line -->
+		<triggeredEvent event="GB_RAIL_TEST_REBEL_ESCAPE" time="60" thisFight="true" clearOnJump="true">
+			<triggeredEventBox load="DEFAULT_TIMER" pos="default">
+				<warning time="10.0" flash="true"/>
+				<tooltip>The Rebel will escape as soon as this timer runs out.</tooltip>
+			</triggeredEventBox>
+			<timerSounds load="DEFAULT_TIMER_SOUNDS"/>
+		</triggeredEvent>
+	</ship>
+
+	<event name = "GB_RAILGUN_FIELD_TEST">
+		<text>This is where the station reported rebel activity, and sure enough, a scout comes in to intercept you almost immediately. Time to show them who's boss.</text>
+		<ship load = "SHIP_TESTING_RAILGUN" hostile = "true"/>
+		<choice>
+			<text>Continue...</text>
+			<event load = "COMBAT_CHECK"/>
+		</choice>
+	</event>
+
+	<!-- R4: To do, would later need a quest beacon to deliver the information. -->
+	<event name = "GB_RAIL_TEST_DESTROYED_REBEL">
+		<!--<text>The rebel ship has been eliminated, thanks to the prototype tech. You scrap the ship.</text>-->
+		<text>A successful test of the new prototype arsenal leaving the familiar orange hull of the Rebel ship littered with suitable salvage. Hopefully the combat recordings of this field test would prove satisfactory.</text>-
+		<autoReward level = "HIGH">standard</autoReward>
+	</event>
+
+	<event name="GB_RAIL_TEST_REBEL_ESCAPE">
+		<text>The rebels jump away, and you sense you lost valuable time on the fleet.</text>
+		<instantEscape/>
+		<modifyPursuit amount = "1"/>
+		<choice hidden = "true" req = "GB_RAIL_1" lvl="1">
+			<text>Continue...</text>
+			<event>
+				<text>The commander of the station is unimpressed, and orders the prototype weapon to be returned immediately.</text>
+				<remove name = "GB_RAIL_1"/>
+			</event>
+		</choice>
+		<choice hidden = "true" req = "GB_RAIL_1" lvl="0">
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</event>
+
+	<!-- WIP -->
+	<event name = "GB_MUSEUM_TOUR">  <!-- CG Jr: I guess I'm trying to evoke Trantor here-->
+		<text>This planet hosts a large human settlement, covering a large portion of the surface. The landscape is covered in sprawling urban landscapes cradled between towering peaks on the supercontinent. Standing tall amid the city is a grand building, surrounded by fountains and seemingly the centre of attention.</text>
+		<choice hidden = "true">
+			<text>Land and look around the building.</text>
+			<event><!--CG Jr: Can I can I use grizzled here?-->
+				<text>A grizzled Federation officer is guarding the front of the complex, allowing select members of the public to pass through into the halls beyond. You and your crew approach, and, recognising your uniforms, the officer stands aside to let you pass.</text>
+				<choice hidden = "true">
+					<text>Continue...</text>
+					<event>
+						<text>You enter into the atrium, where you see many great displays of equipment of various points of the Federation's timespan in this Universe. Some things depicted here, especially the events do not line up perfectly with what you are familiar with in your universe. You aren't sure if that's due to errors of the displays or a divergence in the timeline between this and your universe. Entering the main corridor, you realise that this is a museum, built to contain old Federation memorabilia. A curator scuttles up to you, and, seeing your insignia, asks if they can provide anything to assist with your mission - for a price.</text>
+						<choice>
+							<text>Take a tour around the museum. WARNING, DOES NOTHING FOR NOW</text>
+							<!--<event load = "GB_MUSEUM_TOUR_TOUR"/>-->
+						</choice>
+						<choice>
+							<text>Let's get straight to business, shall we?</text>
+							<event load = "GB_MUSEUM_PURCHASE_DONATE"/>
+						</choice>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Ignore the city.</text>
+			<event>
+				<text>Whilst it might be quite the sight, you don't have time to waste on tourism.</text>
+				<choice>
+					<text>Do something onboard the ship.</text>
+					<event load="STORAGE_CHECK"/>
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event/>
+				</choice>
+			</event>
+		</choice>
+	</event>
+
+	<event name = "GB_MUSEUM_PURCHASE_DONATE">
+		<text>The curator bows obsequiously, and leads you into a dusty storeroom, where a variety of antique weapons are hanging on the walls, neatly categorised by year and users. You note that the 'Federation' section is rather empty. "I, sir, would be delighted to assist you in any way. Well, any way that helps us both." </text>
+		<choice>
+			<text>Offer to purchase a weapon from the collection.</text>
+			<event>
+				<text>"We've sold and traded many items from our inventory over the years, but never have I thought of something from our collection going out back into battle."</text>
+				<weapon name = "GB_SHOP_ITEM_WEAPONS_CANNONS_OLD"/>
+				<item_modify>
+					<item type="scrap" min="-10" max="-35"/>
+				</item_modify>
+			</event>
+		</choice>
+		<choice req = "LIST_CREW_FEDERATION_ELITE">
+			<text>(Federation Elite Crew) Requisition a weapon from the collection.</text>
+			<event>
+				<text>With the Federations supply shortage of weapons, they passed a resolution that allows their Elites and Officers to requisition former Federation equipment.</text> <!-- something after the explanation of how requisition works?-->
+				<weapon name = "GB_RAIL"/> <!-- maybe an Elite AC or AC4? Random chance between those two?-->
+				<item_modify>
+					<item type="scrap" min="-40" max="-55"/>
+				</item_modify>
+			</event>
+		</choice>
+		<!-- Have the donate weapons be a single option to donate a weapon, which then plays the event a bit and asks what do you wish to donate, which then prompts the bellow weapons -->
+		<choice req = "GB_SHOP_ITEM_WEAPONS_CANNONS_OLD">
+			<text>Donate a weapon to the museum.</text>
+			<event>
+				<text>The curator seems rather shocked when you offer to donate some of your arsenal. "We thought the military didn't care about us any more... what with this Multiversal conflict going on, the last time a supply ship made it out this far was six months ago. Whilst it may not be food, we at The Federal War Museum would be delighted to take some equipment off you, captain."</text>
+				<choice req="GB_AC_1">
+					<text>Donate your autocannon MK1 to the museum.</text>
+					<event>
+						<text>"Hmm. A mark one autocannon. Quite a poor specimen, as well." They grumble a little, but eventually you talk them into paying you for it.</text>
+						<autoReward level = "MED">scrap_only</autoReward>
+					</event>
+				</choice>
+				<choice req="GB_AC_2">
+					<text>Donate your autocannon MK2 to the museum.</text>
+					<event>
+						<text>The curator stares when you offer your donation. "A mark two? In excellent condition, as well. I would be honoured to take this off your hands, captain."</text>
+						<autoReward level = "HIGH">scrap_only</autoReward>
+					</event>
+				</choice>
+				<choice req="GB_AC_3">
+					<text>Donate your autocannon MK3 to the museum.</text>
+					<event>
+						<text>"Oh my, oh my! A mark three. Gosh, I haven't seen one of these for... oh, must be twenty years. A little beat-up I see, but this would be a prize addition to our collection here." They offer you as much scrap as they can find in their vaults.</text>
+						<autoReward level = "HIGH">scrap_only</autoReward>
+						<choice hidden = "true">
+							<text>Continue...</text>
+							<event>
+								<text>The museum drop off even more scrap as you leave the building.</text>
+								<autoReward level = "HIGH">scrap_only</autoReward>
+							</event>
+						</choice>
+					</event>
+				</choice>
+				<!--<choice req="GB_AC_4">
+					<text>Donate your autocannon MK4 to the museum.</text>
+					<event/>
+				</choice>-->
+				<choice>
+					<text>Leave.</text>
+					<event/>
+				</choice>
+			</event>
+		</choice>
+		<choice>
+			<text>Leave.</text>
+			<event/>
+		</choice>
+	</event>
+
+	<!--<event name = "GB_MUSEUM_TOUR_TOUR">
+		<text>You request to take a tour around the museum, in the hopes it will teach you more about your mission.</text>
+		<choice>
+			<text>Ask to take a tour around the museum.</text>
+			<event>
+				<text>Something something LORE BIRB</text>
+				<choice req = "jerry">
+					<text>Jerry wants to learn about Canada.</text>
+				</choice>
+				<choice> tell me about the Federation-Mantis War [[general overview]] -> [[conclusion of war]] -> menu of 3 questions, 1: Free mantis origin,  2: increased piracy (Tiikaka), 3: Federation question, 4:
+				<choice> tell me about the Federations Weapons History [[Autocannon lore during war]] -> [[what happened post war]] -> [[Rebelion era]] -> [[now]]
+				<choice> tell me about the expansion wars [[summary]] -> [[how it affected the Federation and international response]]
+				<choice> ask about the museums collection [[broad description]] -> [[options to ask about some items]]
+					<event/>
+				</choice>
+			</event>
+		</choice>-->
+		<!--<choice>
+			<text>Ask to take a tour around the museum.</text>
+			<event>
+				<text>Something something LORE BIRB</text>
+				<choice> tell me about the Federation-Mantis War [[general overview]] -> [[conclusion of war]] -> menu of 3 questions, 1: Free mantis origin,  2: increased piracy (Tiikaka), 3: Federation question, 4:
+				<choice> tell me about the Federations Weapons History [[Autocannon lore during war]] -> [[what happened post war]] -> [[Rebelion era]] -> [[now]]
+				<choice> tell me about the expansion wars [[summary]] -> [[how it affected the Federation and international response]]
+				<choice> ask about the museums collection [[broad description]] -> [[options to ask about some items]]
+					<event/>
+				</choice>
+			</event>
+		</choice>
+	</event> -->
+
+
+
+
+	<!-- reference event
+	<event name="ENGI_FLEET_DELAY" unique="true">
+		<text>You notice an Engi colony hiding on the other side of a nearby moon. It turns out they're excavating an equipment cache from the Federation-Mantis War, and they suggest it might be used to lure the pursuing rebel fleet.</text>
+		<choice>
+			<text>Booby trap the cache.</text>
+			<event>
+				<text>You transfer down some missile warheads and the Engi rig them to blow before setting a distress signal to attract the fleet's attention.</text>
+				<item_modify>
+					<item type="missiles" min="-2" max="-2"/>
+				</item_modify>
+				<modifyPursuit amount="-2"/>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Secure the cache.</text>
+			<event>
+				<text>You have the Engi complete their excavations and bring the supplies onboard.</text>
+				<autoReward level="MED">drone</autoReward>
+			</event>
+		</choice>
+	</event>-->
+	<event name="TEST_SENSORS">
+		<text>Test sensors.</text>
+		<choice req="sensors" max_group="0" lvl="1">
+			<text>(Sensors) Attempt to scan</text>
+			<event load="TEST_SENSORS_NORMAL"/>
+		</choice>
+		<choice req="sensors" max_group="0" lvl="3">
+			<text>(Adv. Sensors) Attempt to scan</text>
+			<event load="TEST_SENSORS_HIGH"/>
+		</choice>
+	</event>
+	<eventList name="TEST_SENSORS_NORMAL">
+		<event load="TEST_SENSORS_FAIL"/>
+		<event load="TEST_SENSORS_FAIL"/>
+		<event load="TEST_SENSORS_FAIL"/>
+		<event load="TEST_SENSORS_SUCCESS"/>
+	</eventList>
+	<eventList name="TEST_SENSORS_HIGH">
+		<event load="TEST_SENSORS_FAIL"/>
+		<event load="TEST_SENSORS_SUCCESS"/>
+	</eventList>
+	<event name="TEST_SENSORS_FAIL">
+		<text>You failed to scan properly.</text>
+	</event>
+	<event name="TEST_SENSORS_SUCCESS">
+		<text>You successfully scanned the area!</text>
+	</event>
+
+
+	<!-- R4 "lets make a quick GB Cache event I said... it'll be easy and quick I said" why am I like this.-->
+	<event name="GB_CACHE_TROJAN_ASTEROID" unique="true">
+		<text planet="PLANET_GAS">You have jumped to a rather unassuming space close to a trojan asteroid cluster that share its orbit with a nearby Gas Giant. Yet breaking the banal nature of the site your database claims that there is an old cache from the Federation-Mantis War hidden deep in the cluster. </text>
+
+		<!-- R4: Manual search, higher chance of success, but failure leaves you stuck in an asteroid field or even damaged-->
+		<choice>
+			<text>Search inside the asteroid field.</text>
+			<event>
+				<event load="GB_CACHE_TROJAN_ASTEROID_SEARCH"/>
+			</event>
+		</choice>
+
+		<!-- R4: Assisted search, higher chance of success, but failure leaves you stuck in an asteroid field or even damaged-->
+		<choice req="pilot" lvl="3" hidden="true">
+			<text>(Adv. Piloting) Carefully search inside the asteroid field.</text>
+				<event>
+					<event load="GB_CACHE_TROJAN_ASTEROID_SEARCH_ADV"/>
+				</event>
+		</choice>
+
+		<!-- R4: Armour to protect yourself from the asteroids -->
+		<choice hidden="true" req="BLUELIST_ARMOR">
+			<text>(Armor Plating) Make a thorough search for the ship without fear of stray asteroids.</text>
+			<event>
+				<event load="GB_CACHE_TROJAN_ASTEROID_SEARCH_ADV"/>
+			</event>
+		</choice>
+
+		<!-- R4: Energy shield to protect yourself from the asteroids -->
+		<choice hidden="true" req="BLUELIST_ENERGY_SHIELD">
+			<text>(Energy Shield) Your shield will protect you.</text>
+			<event>
+				<event load="GB_CACHE_TROJAN_ASTEROID_SEARCH_ADV"/>
+			</event>
+		</choice>
+
+		<!-- R4: Defence drones to protect yourself from the asteroids -->
+		<choice hidden="true" req="BLUELIST_DRONES_DEFENSE">
+			<text>(Defense Drone) Shoot down the mine.</text>
+			<!-- drone parts needed -->
+			<event>
+				<event load="GB_CACHE_TROJAN_ASTEROID_SEARCH_ADV"/>
+			</event>
+		</choice>
+
+		<!-- R4: Sensors, lower chance of success, but failure leaves you safe and sound. -->
+		<choice req="sensors" max_group="0" lvl="1" hidden="true" blue="false">
+			<text>(Sensors) Attempt to scan the asteroid field</text>
+			<event load="GB_CACHE_TROJAN_ASTEROID_SCAN"/>
+		</choice>
+		<choice req="sensors" max_group="0" lvl="2" hidden="true">
+			<text>(Upg. Sensors) Scan the asteroid field.</text>
+			<event load="GB_CACHE_TROJAN_ASTEROID_SCAN_UPG"/>
+		</choice>
+		<choice req="sensors" max_group="0" lvl="3" hidden="true">
+			<text>(Adv. Sensors) Scan the asteroid field.</text>
+			<event load="GB_CACHE_TROJAN_ASTEROID_SCAN_ADV"/>
+		</choice>
+		<choice req="sensors" max_group="0" lvl="3" hidden="true">
+			<text>(Adv. Sensors) Scan the asteroid field.</text>
+			<event load="GB_CACHE_TROJAN_ASTEROID_SCAN_ADV"/>
+		</choice>
+
+		<choice hidden="true" req="ADV_SCANNERS">
+			<text>(LSR) Scan the asteroid field.</text>
+			<event load="GB_CACHE_TROJAN_ASTEROID_SCAN_ADV"/>
+		</choice>
+
+		<!-- R4: Mandatory leave option-->
+		<choice hidden="true">
+			<text>Leave.</text>
+			<event>
+				<text>You avoid the trojan and the cache that may be awaiting inside of it.</text>
+				<choice>
+					<text>Do something onboard the ship.</text>
+					<event load = "STORAGE_CHECK_REAL"/>
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event/>
+				</choice>
+			</event>
+		</choice>
+	</event>
+
+	<!-- GB_CACHE_TROJAN_ASTEROID chances-->
+
+	<!-- Manual Searching Lists-->
+	<eventList name="GB_CACHE_TROJAN_ASTEROID_SEARCH"> <!-- 50% chance to fail -->
+		<event load="GB_CACHE_ASTEROID_FAIL_BAD"/>
+		<event load="GB_CACHE_ASTEROID_FAIL"/>
+		<event load="GB_CACHE_ASTEROID_FAIL"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE"/>
+	</eventList>
+	<eventList name="GB_CACHE_TROJAN_ASTEROID_SEARCH_ADV"> <!-- 100% success, 60% chance to Elite AC-->
+		<event load="GB_CACHE_ASTEROID_SUCCESS"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE"/>
+	</eventList>
+
+	<!-- Scanning Search lists -->
+	<eventList name="GB_CACHE_TROJAN_ASTEROID_SCAN"> <!-- 71.4% chance to fail, no asteroids or damage on failure-->
+		<event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+		<event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+		<event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+		<event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+		<event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS_SCAN"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS_SCAN"/>
+	</eventList>
+	<eventList name="GB_CACHE_TROJAN_ASTEROID_SCAN_UPG"> <!-- 50% chance to fail -->
+		<event load="GB_CACHE_ASTEROID_FAIL_SCAN"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS_SCAN"/>
+	</eventList>
+	<eventList name="GB_CACHE_TROJAN_ASTEROID_SCAN_ADV">  <!-- 100% success, 50% chance to Elite AC-->
+		<event load="GB_CACHE_ASTEROID_SUCCESS_SCAN"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS_SCAN"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE_SCAN"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE_SCAN"/>
+		<event load="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE_SCAN"/>
+	</eventList>
+
+
+	<event name="GB_CACHE_ASTEROID_FAIL">
+		<environment type="asteroid"/>
+		<text>Despite your best attempt to find the cache it is no where to be seen. The database must've been out of date and now it's time to survive escaping the trojan.</text>
+	</event>
+	<event name="GB_CACHE_ASTEROID_FAIL_BAD">
+		<environment type="asteroid"/>
+		<text>Before you can spend too much time doing a search inside the Trojan a few asteroids get past your shields and partially damage your ship. You'll have to pull out!</text>
+		<damage amount="2"/>
+		<damage amount="1" system="random"/>
+	</event>
+	<event name="GB_CACHE_ASTEROID_SUCCESS">
+		<environment type="asteroid"/>
+		<text>After a thorough search through the trojan you can find what appears to be the cache is well hidden inside of one of the larger asteroids crators!</text>
+		<choice hidden="true">
+			<text>Secure the cache.</text>
+			<event>
+				<event load = "GB_CACHE_REWARD"/>
+			</event>
+		</choice>
+		<choice>
+			<text>Booby trap the cache.</text>
+			<event>
+				<text>This Federation cache inside of this trojan would make the perfect bait for a trap to help throw off the Rebel fleet from their pursuit. You order to rig the stowages insdie the asteroid before setting a distress signal to attract the fleet's attention.</text>
+				<item_modify>
+					<item type="missiles" min="-2" max="-2"/>
+				</item_modify>
+				<modifyPursuit amount="-3"/> <!-- 3 instead of 2 due to location of the cache-->
+			</event>
+		</choice>
+	</event>
+	<event name="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE"> <!--- R4: todo, what is this-->
+		<environment type="asteroid"/>
+		<text>After a thorough search through the trojan you can find what appears to be the cache is well hidden inside of one of the larger asteroids crators!</text>
+		<choice hidden="true">
+			<text>Secure the cache.</text>
+			<event>
+				<event load = "GB_CACHE_REWARD_AC_ELITE"/>
+			</event>
+		</choice>
+		<choice>
+			<text>Booby trap the cache.</text>
+			<event>
+				<text>This Federation cache inside of this trojan would make the perfect bait for a trap to help throw off the Rebel fleet from their pursuit. You order to rig the stowages insdie the asteroid before setting a distress signal to attract the fleet's attention.</text>
+				<item_modify>
+					<item type="missiles" min="-2" max="-2"/>
+				</item_modify>
+				<modifyPursuit amount="-3"/> <!-- 3 instead of 2 due to location of the cache-->
+			</event>
+		</choice>
+	</event>
+
+	<event name="GB_CACHE_ASTEROID_FAIL_SCAN">
+		<text>Unfortuantely your scanners are unable to detect a cache or anything of note inside the trojan. Disappointed you move on.</text>
+	</event>
+	<event name="GB_CACHE_ASTEROID_SUCCESS_SCAN">
+		<text>After a thorough scan through the trojan you can find what appears to be the cache is well hidden inside of one of the larger asteroids crators!</text> <!-- R4: Changes search with scan because yes.-->
+		<choice hidden="true">
+			<text>Enter the asteroid field and secure the cache.</text> <!-- R4: Describes how you have to enter the asteroid field -->
+			<event>
+				<environment type="asteroid"/> <!-- R4: Does this work when I do it like this?-->
+				<event load = "GB_CACHE_REWARD"/>
+			</event>
+		</choice>
+		<choice>
+			<text>Enter the asteroid field and booby trap the cache.</text>
+			<event>
+				<environment type="asteroid"/> <!-- R4: Does this work when I do it like this?-->
+				<text>This Federation cache inside of the trojan would make the perfect bait for a trap to help throw off the Rebel fleet from their pursuit. You order to rig the stowages inside the asteroid before setting a distress signal to attract the fleet's attention.</text>
+				<item_modify>
+					<item type="missiles" min="-2" max="-2"/>
+				</item_modify>
+				<modifyPursuit amount="-3"/> <!-- 3 instead of 2 due to location of the cache-->
+			</event>
+		</choice>
+	</event>
+
+
+	<!-- Cache Generic Reward List, no Duds-->
+	<eventList name="GB_CACHE_REWARD">
+		<event load="GB_CACHE_AUTOCANNONS"/>
+		<event load="GB_CACHE_WEAPON"/>
+		<event load="GB_CACHE_DRONE"/>
+
+		<!-- Resource focus -->
+		<event load="GB_CACHE_STUFF"/>
+		<event load="GB_CACHE_FUEL"/>
+		<event load="GB_CACHE_AMMO"/>
+		<event load="GB_CACHE_DRONES"/>
+
+		<!-- Specific items -->
+		<event load="GB_CACHE_AUTOCANNON_1"/> <!-- AC1 is cheap, so this gives high reward alongside the AC1 -->
+		<event load="GB_CACHE_TROOPER DRONE"/> <!-- Trooper Drone is cheap, so this gives high reward alongside the Trooper Drone -->
+		<event load="GB_CACHE_MACHINEGUN"/> <!-- Machinegun isn't a standard ship weapon and is cheap, so this gives a high reward and narrative focus -->
+		<!--<event load="GB_CACHE_AC_DRONE"/>--> <!-- Gives the Ballistic AC drone out specifically -->
+	</event>
+	<!-- Cache Elite Reward List, Autocannons only-->
+	<eventList name="GB_CACHE_REWARD_AC_ELITE">
+		<event load="GB_CACHE_AUTOCANNON_1_ELITE"/>
+		<event load="GB_CACHE_AUTOCANNON_2_ELITE"/>
+		<event load="GB_CACHE_AUTOCANNON_3_ELITE"/>
+		<!--<event load="GB_CACHE_AUTOCANNON_4_ELITE"/> -->
+	</event>
+
+
+	<!-- 	••••••••••••••••••••••••••••••••••••••••••
+	CACHE REWARDS
+	••••••••••••••••••••••••••••••••••••••••••-->
+	<event name="GB_CACHE_REWARD">
+		<text>You have your crew enter the cache and bring up the apposite supplies.</text>
+		<autoReward level="HIGH">standard</autoReward>
+	</event>
+	<event name="GB_CACHE_AUTOCANNONS">
+		<text>The cache seems to be with some munitions and cannons left over from the old war. Ready to be installed onto your ship.</text>
+		<weapon name="GB_GIFTLIST_AUTOCANNONS_MODERATE"/>
+		<autoReward level="MED">missiles</autoReward> <!-- R4: Missiles to go with the AC and some scrap-->
+	</event>
+	<event name="GB_CACHE_WEAPON">
+		<text>You have your crew enter the cache and bring up some useful weapons and supplies.</text>
+		<weapon name="GIFTLIST_FEDERATION"/>
+		<autoReward level="LOW">standard</autoReward>
+		<!--<autoReward level="MED">weapon</autoReward>-->
+	</event>
+	<event name="GB_CACHE_DRONE">
+		<text>You have your crew enter the cache and bring up the useful drones and supplies.</text>
+		<autoReward level="MED">drone</autoReward>
+	</event>
+
+
+	<event name="GB_CACHE_STUFF">
+		<text>There doesn't appear to have much useful scrap in this cache, but there are plenty of useful supplies for you to claim.</text>
+		<autoReward level="HIGH">stuff</autoReward>
+	</event>
+	<event name="GB_CACHE_FUEL">
+		<text>This cache must've been once close to an anchorage during the war because it is filled with fuel tanks of which most seem to be full and in good condition.</text>
+		<autoReward level="HIGH">fuel</autoReward>
+	</event>
+	<event name="GB_CACHE_AMMO">
+		<text>The cache is fitted with stowages of ammunition most likely to supply the early Federation fleet with enough munitions for their autocannons and missiles. Perfectly usable in modern systems.</text>
+		<autoReward level="HIGH">missiles</autoReward>
+	</event>
+	<event name="GB_CACHE_DRONES">
+		<text>A quick investigation shows this cache has drone parts aplenty stored here leaving you with a rather large haul.</text>
+		<autoReward level="HIGH">droneparts</autoReward>
+	</event>
+
+	<event name="GB_CACHE_AUGB_CACHE_AUTOCANNON_1">
+		<text>There is an unoridnarily high supply of light autocannons and supplies left over from the old war inside this cache that is still more than fit to be installed onto your ship.</text>
+		<weapon name="GB_AC_1"/>
+		<autoReward level="MED">stuff</autoReward> <!-- R4: Missiles to go with the AC and some scrap-->
+		<choice>
+			<text>The rest of the supplies and equipment is brought onboard before the Rebel fleet catches up.</text>
+			<event>
+				<weapon name="GB_AC_1"/>
+				<autoReward level="MED">missiles</autoReward>
+			</event>
+		</choice>
+	</event>
+	<event name="GB_CACHE_MACHINEGUN">
+		<text>The cache is filled with rows and rows of weapons and munitions for the old Federation Army. Though mostly ineffective against ships it could potentially be useful in softening up their crew.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<weapon name="GB_GIFTLIST_MG"/>
+		<choice>
+			<text>Beyond the heavy infantry support weapons there also appears to be a plethora of firearms and equipment that would prove to be useful.</text>
+			<event>
+				<augment name="CREW_FIREARMS"/>
+			</event>
+		</choice>
+	</event>
+
+
+	<!-- 	••••••••••••••••••••••••••••••••••••••••••
+	CACHE ELITE AUTOCANNON REWARDS
+	••••••••••••••••••••••••••••••••••••••••••-->
+	<event name="GB_CACHE_AUTOCANNON_1_ELITE">
+		<text>Upon closer examination, the cache seems to have been stocked with light autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
+		<weapon name="GB_AC_3_ELITE"/>
+		<autoReward level="HIGH">missiles</autoReward>
+	</event>
+	<event name="GB_CACHE_AUTOCANNON_2_ELITE">
+		<text>Upon closer examination, the cache seems to have been stocked with autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
+		<weapon name="GB_AC_3_ELITE"/>
+		<autoReward level="MED">missiles</autoReward>
+	</event>
+	<event name="GB_CACHE_AUTOCANNON_3_ELITE">
+		<text>Upon closer examination, the cache seems to have been stocked with heavy autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
+		<weapon name="GB_AC_3_ELITE"/>
+		<autoReward level="LOW">missiles</autoReward>
+	</event>
+	<!--<event name="GB_CACHE_AUTOCANNON_4_ELITE">
+		<text>Upon closer examination, the cache seems to have been stocked with heavy autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
+		<weapon name="GB_AC_4_ELITE"/>
+		<autoReward level="MED">missiles_only</autoReward>
+	</event>-->
+
+
+
+	<event name="GB_CACHE_TEMPLATE" unique="true">
+		<text>You notice a dilapidated </text>
+		<choice>
+			<text>[Sabotage option]</text>
+			<event>
+				<text>[Action of Sabotage]</text>
+				<item_modify>
+					<item type="missiles" min="-2" max="-2"/>
+				</item_modify>
+				<modifyPursuit amount="-2"/>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>[Loot option 1]</text>
+			<event>
+				<text>[You got the thing1]</text>
+				<autoReward level="MED">drone</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>[Loot option 2]</text>
+			<event>
+				<text>[You got the thing2]</text>
+				<autoReward level="MED">weapon</autoReward>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>[Leave option]</text>
+			<event>
+				<text>[Showing Disinterest]</text>
+				<choice>
+					<text>Do something on board the ship.</text>
+					<event load = "STORAGE_CHECK_REAL"/>
+				</choice>
+				<choice>
+					<text>Do nothing.</text>
+					<event/>
+				</choice>
+			</event>
+		</choice>
+	</event>
+
+
+</FTL>

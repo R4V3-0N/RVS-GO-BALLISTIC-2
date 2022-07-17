@@ -1,0 +1,13 @@
+RVS stands for Ravpor Void Systems (R is subject to change, Ravpor being the original team / prefix name when it was just R4V3-0N and Porcu working on GB together).
+This prefix is to be used currently for all player and enemy ships until further notice. The name was chosen as a sorta pseudo-lore adjacent ship and weapons manufacturer that represents the dev team in a lore friendly way.
+
+Borrowing from MV's system:
+RVS	= Regular Enemy Ships
+RVSR	= Multiverse Renegade Enemy Ships
+RVSP	= Player Ships
+RVSPV	= Player Vanilla Ships
+RVSPE	= Player Elite Ships
+
+All ships will be slowly converted to this until further notice (I am still debating on if there should be a _ between RVS and any add-on letter suffix)
+
+Let's see if we can make GB's ship prefixes consistent again!

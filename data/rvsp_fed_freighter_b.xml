@@ -1,0 +1,19 @@
+<img x="-30" y="-51" w="571" h="559" />
+<offsets>
+	<floor x="24" y="45" />
+	<cloak x="-20" y="-20" />
+</offsets>
+<thrusters sync="true">
+    <thruster x="18" y="142">thruster_GB</thruster>
+	<thruster x="18" y="345">thruster_GB</thruster>
+	<thruster x="93" y="66">thruster_freighter</thruster>
+	<thruster x="93" y="466">thruster_freighter</thruster>
+</thrusters>
+<weaponMounts>
+	<mount x="506" y="181" rotate="true" mirror="true" gib="-1" slide="right" />
+	<mount x="506" y="378" rotate="true" mirror="false" gib="-1" slide="right" />
+	<mount x="378" y="59" rotate="true" mirror="true" gib="-1" slide="up" />
+	<mount x="378" y="499" rotate="true" mirror="false" gib="-1" slide="down" />
+	<mount x="612" y="263" rotate="true" mirror="false" gib="-1" slide="no" />
+</weaponMounts>
+<explosion />
