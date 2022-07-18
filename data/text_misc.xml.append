@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <text name="map_icon_store_separatist">STORE [SEP]</text>
+
+<text name="addon_hover_gb">GO-BALLISTIC-2
+Currently Enabled.
+Click to see more info.</text>
+<text name="info_addon_gb">GO-BALLISTIC-2
+Developed by: R4V3-0N, porcu93, cgjunior, laszlogasd, Madoktor, RobintheDragon2, Kommandant_Julk and formerly by ChronoVortex
+Currently Enabled.
+
+This mod adds 16 new ballistic weapons and 1 new toggle drone themed around out dated ballistic weaponry of the Federation during its foundation during the Federation-Mantis War.
+This version is built for use with Multiverse 5.1. The mod is a redevelopment and update of the original GO BALLISTIC!, a mod made by R4V3-0N with significant help from ChronoVortex. It features new art, sound effects, and a complete rebalance of the weapons and drones of the original.
+Reimagining the niche of these weapons using new Hyperspace functionality that did not exist at the time of the original mod and with a small team of friends.
+</text>
