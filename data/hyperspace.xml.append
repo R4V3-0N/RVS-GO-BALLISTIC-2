@@ -16,12 +16,12 @@
 			<fightAI/>
 			<returnToDroneRoom/>
 		</droneAI>
-		<damageMultiplier>1.8</damageMultiplier>
+		<damageMultiplier>1.1</damageMultiplier>
+		<rangedDamageMultiplier>2.2</rangedDamageMultiplier>
 		<!--<damageMultiplier>1.1</damageMultiplier>					When canPunch is on-->
 		<!--<rangedDamageMultiplier>2.2</rangedDamageMultiplier>		When canPunch is on-->
 		<fireDamageMultiplier>0.25</fireDamageMultiplier>
 		<moveSpeedMultiplier>1.2</moveSpeedMultiplier>
-		<controllable>true</controllable>
 		<shootingSounds> <!-- placeholder sound-->
 			<shootingSound>detectiveShoot1</shootingSound>
 			<shootingSound>detectiveShoot2</shootingSound>
