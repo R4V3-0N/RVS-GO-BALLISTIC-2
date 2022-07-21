@@ -2713,7 +2713,7 @@
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	<weaponArt>laser_1</weaponArt>
+	<weaponArt>laser_burst_1</weaponArt>
 </weaponBlueprint>
 
 <weaponBlueprint name="DRONE_AC_2" NOLOC="1">
@@ -2741,7 +2741,7 @@
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	<weaponArt>laser_1</weaponArt>
+	<weaponArt>laser_burst_1</weaponArt>
 </weaponBlueprint>
 
 <weaponBlueprint name="DRONE_AC_3" NOLOC="1">
@@ -2769,7 +2769,7 @@
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	<weaponArt>laser_1</weaponArt>
+	<weaponArt>laser_burst_1</weaponArt>
 </weaponBlueprint>
 
 <!-- Drone Body -->
@@ -3160,7 +3160,7 @@
 
 <shipBlueprint name="PLAYER_SHIP_RVSP_FED_FREIGHTER_2" layout="rvsp_fed_freighter_b" img="rvsp_fed_freighter_b">
 	<class>Federation Freighter</class>
-	<name>Picus</name> <!-- Picus is a woodpecker/ diety/ king/ minor god. Picus was an agricultural deity associated particularly with the fertilization of the soil with manure. The woodpecker was also an important bird in augury.-->
+	<name>Picus</name> <!-- Picus is a woodpecker/ deity/ king/ minor god. Picus was an agricultural deity associated particularly with the fertilization of the soil with manure. The woodpecker was also an important bird in augury.-->
 	<desc>A completely unarmed mercantile freighter that holds excessive trade goods to help fund its militerisation.</desc>
 	<systemList>
 		<artillery power="1" room="22" start="false" weapon="ARTILLERY_BOSS_1" img="room_artillery" />

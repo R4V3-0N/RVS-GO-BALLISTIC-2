@@ -40,7 +40,7 @@
 	<mod-append:event name = "GB_STOREEVENT_OLD_FED_STORE_AUTOCANNONS"/>
 </mod:findName>
 
-<eventList name = "GB_BALLISTIC_STORES"> <!--NOW UNUSED, HERE FOR REFERENCE-->
+<eventList name = "GB_BALLISTIC_STORES" unused="true"> <!--NOW UNUSED, HERE FOR REFERENCE-->
 	<event load = "GB_STOREEVENT_OLD_FED_STORE_AUTOCANNONS"/>
 	<event load = "GB_STOREEVENT_ASTEROID_AUTOCANNON_STORE"/>
 	<event load = "GB_STOREEVENT_ALIEN_AUTOCANNONS"/>
@@ -154,7 +154,7 @@
 		<color r="215" g="255" b="200" a="1"/>
 	</beaconType>
 	<text>You expect to find a well stocked Federation market at this Merchant's beacon, but instead, there's only a small station, and one singular patrol ship. Hopefully, there is enough to stock up on for your journey here.</text>
-	<ship load = "MU_GHOST_FED_BOMBER" hostile = "false"/>
+	<ship load="MU_GHOST_FED_BOMBER" hostile = "false"/>
 	<choice>
 		<text>Visit the store.</text>
 		<event>
@@ -386,7 +386,7 @@
 		<event>
 			<text>"Oh good, oh good! Guests at last! Have you come to purchase an Autocannon? Perhaps a mint condition Leto? Oh please, my stock is expansive, endless even!"</text>
 			<store>STORE_BALLISTIC_AUTOCANNON</store>
-			<choice hidden="true" req="soldier">
+			<choice hidden="true" req="human_soldier">
 				<text>(Soldier Crew) "Do you offer anything better?"</text>
 				<event>
 					<text>You expect the Militiaman to get offended, but instead she gets even more excited. "I found this not too long ago, but I have been reserving it for someone special. You're the first person to show any interest, so here you go!"</text>
@@ -459,7 +459,7 @@
 		<event/>
 	</choice>
 </event>
-<event name="GB_STORE_LOAD_NOSYS"> <!-- R4: unused currently -->
+<event name="GB_STORE_LOAD_NOSYS" unused="true"> <!-- R4: unused currently -->
 	<store>GB_STORE_FED_NOSYS</store> <!-- R4: Robin, delete this comment as you make sure each store exists, This one ofers no systems -->
 	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
 	<choice>
@@ -471,7 +471,7 @@
 		<event/>
 	</choice>
 </event>
-<event name="GB_STORE_LOAD_NOCREW"> 
+<event name="GB_STORE_LOAD_NOCREW" unused="true"> 
 	<store>GB_STORE_FED_NOCREW</store> <!-- R4: Robin, delete this comment as you make sure each store exists, this one offers no crew -->
 	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
 	<choice>
@@ -663,7 +663,7 @@
 			</choice>
 		</event>
 	</choice>
-	<choice hidden="true" req="separatist"> <!-- I didn't finish this, I want this to be similar to the Crystal merchant event, where after communicating with your Separatist you are able to trade easily with the Merchant and have a random reward-->
+	<choice hidden="true" req="engi_separatist"> <!-- I didn't finish this, I want this to be similar to the Crystal merchant event, where after communicating with your Separatist you are able to trade easily with the Merchant and have a random reward-->
 		<text>(Separatist Crew) Ask your Separatist about the strange phenomenon.</text>
 		<event>
 			<text>Your Separatist explains that the ship is indeed manned, it's just the Separatist had entered a nanoform, most likely as a precaution. They contact the vessel, and, recognising a friendly face, offer a small reward, opening their store.</text>
@@ -716,7 +716,7 @@
 	</event>
 </eventList>
 
-<eventList name="GB_REQUISITION_EXCHANGE">
+<eventList name="GB_REQUISITION_EXCHANGE" unused="true">
 	<event>
 		<text load="GB_REQUISITION_WEAPON" />
 		<weapon name="GB_LIST_REQUISITIONED_WEAPONS" />
@@ -870,7 +870,7 @@
 
 <!-- R4: attempt to add requisition things to stores -->
 <mod:findName type="event" name="STOREEVENT_OUTPOST">
-    <mod-append:choice req="GB_LIST_CREW_FEDERATION_ELITE" blue="true" hidden="true">
+    <mod-append:choice req="LIST_CREW_FEDERATION_ELITE" blue="true" hidden="true">
         <text>(Federation Elite) Under the Federation Requisition Act, commandeer some functional weaponry for the war effort.</text>
         <event load="GB_REQUISITION_STATION" />
     </mod-append:choice>

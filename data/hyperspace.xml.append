@@ -1310,16 +1310,16 @@
 
 	<!--PLAYER SHIPS-->
 
-	<mod-append:ship name="PLAYER_SHIP_RVSP_GB_KESTREL" b="true" c="true"/>
+	<mod-append:ship name="PLAYER_SHIP_RVSP_GB_KESTREL" b="true" c="true" unused="true"/>
 	<mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL">
 		<hiddenAug>SHIP_KESTREL</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>11</crewLimit>
 		<crew>
-			<human room = "0"/> <!--piloting-->
-			<human room = "10"/> <!--weapons-->
-			<human room = "11"/> <!--shields-->
-			<human room = "12"/> <!--engines-->
+			<human room="0"/> <!--piloting-->
+			<human room="10"/> <!--weapons-->
+			<human room="11"/> <!--shields-->
+			<human room="12"/> <!--engines-->
 		</crew>
 	</mod-append:customShip>
 
@@ -1327,10 +1327,10 @@
 		<hiddenAug>SHIP_KESTREL</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crew>
-			<human room = "9"/> <!--engines-->
-			<human room = "10"/> <!--weapons-->
-			<orchid room = "12"/> <!--cloaking-->
-			<zoltan room = "5"/> <!--piloting :)-->
+			<human room="9"/> <!--engines-->
+			<human room="10"/> <!--weapons-->
+			<orchid room="12"/> <!--cloaking-->
+			<zoltan room="5"/> <!--piloting :)-->
 		</crew>
 		<crewLimit>11</crewLimit>
 	</mod-append:customShip>
@@ -1340,27 +1340,27 @@
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>11</crewLimit>
 		<crew>
-			<human room = "11"/> <!--weapons-->
-			<zoltan room = "12"/> <!--shields-->
-			<mantis_free room = "0"/> <!--pilot-->
-			<engi_separatist room = "13"/> <!--engines-->
+			<human room="11"/> <!--weapons-->
+			<zoltan room="12"/> <!--shields-->
+			<mantis_free room="0"/> <!--pilot-->
+			<engi_separatist room="13"/> <!--engines-->
 		</crew>
 	</mod-append:customShip>
 
 
-	<mod-append:ship name="PLAYER_SHIP_RVSP_FED_FREIGHTER" b="true" c="false" />
+	<mod-append:ship name="PLAYER_SHIP_RVSP_FED_FREIGHTER" b="true" c="false" unused="true"/>
 	<mod-append:customShip name="PLAYER_SHIP_RVSP_FED_FREIGHTER">
 		<hiddenAug>SHIP_KESTREL</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>8</crewLimit>
 		<crew>
-			<human room = "25"/> <!--weapons-->
-			<human room = "28"/> <!--engines-->
-			<engi_separatist room = "0"/> <!--pilot-->
+			<human room="25"/> <!--weapons-->
+			<human room="28"/> <!--engines-->
+			<engi_separatist room="0"/> <!--pilot-->
 		</crew>
 	</mod-append:customShip>
 
-	<mod-append:customShip name="PLAYER_SHIP_RVS_FED_FREIGHTER_2">
+	<mod-append:customShip name="PLAYER_SHIP_RVSP_FED_FREIGHTER_2">
 		<hiddenAug>SHIP_FEDERATION</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>8</crewLimit>
@@ -1376,23 +1376,23 @@
 
 	<!--ENEMY SHIPS-->
 
-	<mod-append:customShip name = "GB_R4_MR_FED_LIGHT_CRUISER_1">
+	<mod-append:customShip name="GB_R4_MR_FED_LIGHT_CRUISER_1">
 		<shipIcons>
 			<shipIcon>icon_respirators</shipIcon>
 		</shipIcons>
 		<crew>
-			<human_soldier room = "0"/>
-			<human room = "3"/>
-			<engi_separatist room = "7"/>
-			<engi_separatist room = "2"/>
+			<human_soldier room="0"/>
+			<human room="3"/>
+			<engi_separatist room="7"/>
+			<engi_separatist room="2"/>
 		</crew>
 	</mod-append:customShip>
-	<mod-append:customShip name = "GB_R4_MR_MILITIA_GUARD">
+	<mod-append:customShip name="GB_R4_MR_MILITIA_GUARD">
 		<shipIcons>
 			<shipIcon>icon_shieldboost</shipIcon>
 		</shipIcons>
 		<crew>
-			<engi_separatist room = "5"/>
+			<engi_separatist room="5"/>
 		</crew>
 	</mod-append:customShip>
 	<mod-append:customShip name="MT_BOSS_GB_R4_BALLISTIC_C_NORMAL">

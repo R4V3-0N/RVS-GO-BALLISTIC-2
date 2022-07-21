@@ -5,7 +5,7 @@
 		<event load = "GB_FED_BOMBER_DISTRESS"/>
 	</eventList>
 
-	<eventList name = "GB_ITEMS">
+	<eventList name = "GB_ITEMS" unused="true">
 		<event load = "GB_FED_RESEARCH_RAIL"/>
 		<!--<event load = "GB_MUSEUM_TOUR"/> -->
 	</eventList>
@@ -128,6 +128,7 @@
 		<choice hidden="true">
 			<text>Take time to investigate one of the Transports.</text>
 			<event>
+				<text>Continue...</text>
 				<choice hidden="true">
 					<text>Continue...</text>
 					<event load="GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED" />
@@ -505,6 +506,7 @@
 		<choice hidden="true">
 			<text>Ignore the station.</text>
 			<event>
+				<text>Continue...</text>
 				<choice hidden="true">
 					<text>Continue...</text>
 					<event>
@@ -569,7 +571,7 @@
 	</event>
 
 	<!-- WIP -->
-	<event name = "GB_MUSEUM_TOUR">  <!-- CG Jr: I guess I'm trying to evoke Trantor here-->
+	<event name = "GB_MUSEUM_TOUR" unused="true">  <!-- CG Jr: I guess I'm trying to evoke Trantor here-->
 		<text>This planet hosts a large human settlement, covering a large portion of the surface. The landscape is covered in sprawling urban landscapes cradled between towering peaks on the supercontinent. Standing tall amid the city is a grand building, surrounded by fountains and seemingly the centre of attention.</text>
 		<choice hidden = "true">
 			<text>Land and look around the building.</text>
@@ -733,7 +735,7 @@
 			</event>
 		</choice>
 	</event>-->
-	<event name="TEST_SENSORS">
+	<event name="TEST_SENSORS" unused="true">
 		<text>Test sensors.</text>
 		<choice req="sensors" max_group="0" lvl="1">
 			<text>(Sensors) Attempt to scan</text>
@@ -763,7 +765,7 @@
 
 
 	<!-- R4 "lets make a quick GB Cache event I said... it'll be easy and quick I said" why am I like this.-->
-	<event name="GB_CACHE_TROJAN_ASTEROID" unique="true">
+	<event name="GB_CACHE_TROJAN_ASTEROID" unique="true" unused="true">
 		<text planet="PLANET_GAS">You have jumped to a rather unassuming space close to a trojan asteroid cluster that share its orbit with a nearby Gas Giant. Yet breaking the banal nature of the site your database claims that there is an old cache from the Federation-Mantis War hidden deep in the cluster. </text>
 
 		<!-- R4: Manual search, higher chance of success, but failure leaves you stuck in an asteroid field or even damaged-->
@@ -983,14 +985,14 @@
 		<event load="GB_CACHE_TROOPER DRONE"/> <!-- Trooper Drone is cheap, so this gives high reward alongside the Trooper Drone -->
 		<event load="GB_CACHE_MACHINEGUN"/> <!-- Machinegun isn't a standard ship weapon and is cheap, so this gives a high reward and narrative focus -->
 		<!--<event load="GB_CACHE_AC_DRONE"/>--> <!-- Gives the Ballistic AC drone out specifically -->
-	</event>
+	</eventList>
 	<!-- Cache Elite Reward List, Autocannons only-->
 	<eventList name="GB_CACHE_REWARD_AC_ELITE">
 		<event load="GB_CACHE_AUTOCANNON_1_ELITE"/>
 		<event load="GB_CACHE_AUTOCANNON_2_ELITE"/>
 		<event load="GB_CACHE_AUTOCANNON_3_ELITE"/>
 		<!--<event load="GB_CACHE_AUTOCANNON_4_ELITE"/> -->
-	</event>
+	</eventList>
 
 
 	<!-- 	••••••••••••••••••••••••••••••••••••••••••
@@ -1034,7 +1036,7 @@
 		<autoReward level="HIGH">droneparts</autoReward>
 	</event>
 
-	<event name="GB_CACHE_AUGB_CACHE_AUTOCANNON_1">
+	<event name="GB_CACHE_AUGB_CACHE_AUTOCANNON_1" unused="true">
 		<text>There is an unoridnarily high supply of light autocannons and supplies left over from the old war inside this cache that is still more than fit to be installed onto your ship.</text>
 		<weapon name="GB_AC_1"/>
 		<autoReward level="MED">stuff</autoReward> <!-- R4: Missiles to go with the AC and some scrap-->
@@ -1085,7 +1087,7 @@
 
 
 
-	<event name="GB_CACHE_TEMPLATE" unique="true">
+	<event name="GB_CACHE_TEMPLATE" unique="true" unused="true">
 		<text>You notice a dilapidated </text>
 		<choice>
 			<text>[Sabotage option]</text>

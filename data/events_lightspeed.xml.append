@@ -103,6 +103,7 @@
 		<choice hidden="true">
 			<text>Uh....oops?</text>
 			<event>
+				<text>Uh....oops?</text>
 				<ship hostile="true"/>
 				<choice hidden="true">
 					<text>Continue...</text>
@@ -145,6 +146,7 @@
 		<choice hidden="true">
 			<text>Raise your weapons and prepare to take the payment from them yourself.</text>
 			<event>
+				<text>Raise your weapons and prepare to take the payment from them yourself.</text>
 				<ship hostile="true"/>
 				<choice hidden="true">
 					<text>Continue...</text>
@@ -159,6 +161,7 @@
 		<choice hidden="true">
 			<text>Uh....oops?</text>
 			<event>
+				<text>Uh....oops?</text>
 				<ship hostile="true"/>
 				<choice hidden="true">
 					<text>Continue...</text>

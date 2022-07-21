@@ -50,6 +50,7 @@
 		<event>
 			<text>It will be inconvenient to make a detour now but it is the right thing to do. Time to find a nearby Federation aligned outpost or station to transfer the prisoner over, or otherwise release them from custody.</text>
 			<event>
+				<text>Continue...</text>
 				<quest event="GB_POW_REBEL_GENERIC" />
 				<choice>
 					<text>Continue...</text>

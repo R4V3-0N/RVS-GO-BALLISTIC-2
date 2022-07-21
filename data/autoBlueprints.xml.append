@@ -56,12 +56,12 @@ created from scratch using the components or techniques of them to create odd an
 -->
 
 <!-- R4: used in any event where you need an Elite Federation crew, this list encompases more than MVanilla's counterpart. Though I am now thinking maybe having unique crew give better rewards could be interesting... Problem is you will never see Tully much pre-S8 and Turzil is unlikely to be used early game either-->
-<blueprintList name="GB_LIST_CREW_FEDERATION_ELITE">
+<blueprintList name="LIST_CREW_FEDERATION_ELITE">
 	<name>human_soldier</name>
 	<name>unique_tully</name>
 	<name>zoltan_peacekeeper</name>
 	<name>orchid_chieftain</name>
-	<name>engi_defend</name>
+	<name>engi_defender</name>
 	<name>unique_turzil</name> <!-- R4: Despite being a fugitive, I feel he can act in an appropiate capacity for this event-->
 </blueprintList>
 
@@ -364,7 +364,7 @@ created from scratch using the components or techniques of them to create odd an
 </blueprintList>
 
 <blueprintList name = "GB_LIST_RECON_DRONES">
-	<name>RECON_BOARDING</name>
+	<name>RECON_BOARDER</name>
 	<name>RECON_DEFENSE</name>
 </blueprintList>
 
@@ -992,7 +992,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 <blueprintList name="GB_MV_WEAPONS_LASER_AND_CANNONS"> <!--- one shot lasers and cannons for the Militia GUARD Multiverse Renigade --->
 	<name>LASER_BURST_1</name>
 	<name>LASER_HEAVY_1</name>
-	<name>LASER_LIGHT_1</name>
+	<name>LASER_LIGHT</name>
 	<!-- <name>LASER_LIGHT_2</name> I think it might be too evil having a Light 2 -->
 	<name>GB_AC_1</name>
 	<name>GB_AC_2</name>
@@ -1084,8 +1084,8 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<droneList drones="0" count="0" />
 	<health amount="8" />
 	<maxPower amount="10" />
-	<crewCount amount="1" max="1" class="soldier" />
-	<crewCount amount="1" max="1" class="peace" />
+	<crewCount amount="1" max="1" class="human_soldier" />
+	<crewCount amount="1" max="1" class="zoltan_peacekeeper" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="SYSTEM_CASING_NEW" />
 </shipBlueprint>
@@ -1344,17 +1344,17 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="10" count="4">
-		<weapon name = "GB_ROTARY_AC"/>
-		<weapon name = "FOCUS_1"/>
-		<weapon name = "BOMB_1"/>
-		<weapon name = "MISSILES_2_ENEMY"/>
+		<weapon name="GB_ROTARY_AC"/>
+		<weapon name="FOCUS_1"/>
+		<weapon name="BOMB_1"/>
+		<weapon name="MISSILES_2_ENEMY"/>
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="20" />
 	<maxPower amount="21" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name = "AUTO_LOADER_LOW_SHIELD"/>
-	<crewCount amount = "1" max = "1" class = "human"/>
+	<aug name="AUTO_LOADER_LOW_SHIELD"/>
+	<crewCount amount="1" max="1" class="human"/>
 </shipBlueprint>
 <shipBlueprint name="MT_BOSS_GB_R4_BALLISTIC_C_CHALLENGE" layout="mt_boss_gb_r4_ballistic" img="mt_boss_gb_r4_ballistic">
 	<class>Renegade Cruiser</class>
@@ -1372,17 +1372,17 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="10" count="4">
-		<weapon name = "GB_ROTARY_AC"/>
-		<weapon name = "FOCUS_1"/>
-		<weapon name = "BOMB_1"/>
-		<weapon name = "MISSILES_3_ENEMY"/>
+		<weapon name="GB_ROTARY_AC"/>
+		<weapon name="FOCUS_1"/>
+		<weapon name="BOMB_1"/>
+		<weapon name="MISSILES_3_ENEMY"/>
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="23" />
 	<maxPower amount="25" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name = "AUTO_LOADER_LOW_SHIELD"/>
-	<crewCount amount = "1" max = "1" class = "soldier"/>
+	<aug name="AUTO_LOADER_LOW_SHIELD"/>
+	<crewCount amount="1" max="1" class="human_soldier"/>
 </shipBlueprint>
 <shipBlueprint name="MT_BOSS_GB_R4_BALLISTIC_C_EXTREME" layout="mt_boss_gb_r4_ballistic" img="mt_boss_gb_r4_ballistic">
 	<class>Renegade Cruiser</class>
@@ -1400,16 +1400,16 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="10" count="4">
-		<weapon name = "GB_ROTARY_AC"/>
-		<weapon name = "FOCUS_CHAIN"/>
-		<weapon name = "BOMB_1"/>
-		<weapon name = "MISSILES_3_ENEMY"/>
+		<weapon name="GB_ROTARY_AC"/>
+		<weapon name="FOCUS_CHAIN"/>
+		<weapon name="BOMB_1"/>
+		<weapon name="MISSILES_3_ENEMY"/>
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="25" />
 	<maxPower amount="27" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name = "AUTO_LOADER_LOW_SHIELD"/>
-	<crewCount amount = "1" max = "1" class = "soldier"/>
+	<aug name="AUTO_LOADER_LOW_SHIELD"/>
+	<crewCount amount="1" max="1" class="human_soldier"/>
 </shipBlueprint>
 </FTL>
