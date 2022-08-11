@@ -3139,7 +3139,7 @@
 			</slot>
 		</shields>
 		<teleporter power="1" room="10" start="false" />
-		<weapons max="8" power="2" room="25" start="true" img="RVSP_room_weapons_1">
+		<weapons max="6" power="2" room="25" start="true" img="RVSP_room_weapons_1"> <!-- changed to 6 -Dalvy -->
 			<slot>
 				<direction>right</direction>
 				<number>1</number>
