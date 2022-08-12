@@ -10,6 +10,9 @@
 <mod:findName type="event" name="MILITIA_DEPOT">
     <mod-append:choice req="LIST_CREW_FEDERATION_ELITE" blue="true" hidden="true">
         <text>(Federation Elite) Request a weapon.</text>
-		<weapon name="GB_AC_BASIC_LIST"/>
+		<event>
+			<text>Your request has been accepted.</text>
+			<weapon name="GB_AC_BASIC_LIST"/>
+		</event>
     </mod-append:choice>
 </mod:findName>
