@@ -3283,6 +3283,15 @@
     <stackable>false</stackable>
 </augBlueprint>
 
+<augBlueprint name="GB_FED_REQUISITION_LICENSE"> <!--This is a inaccessible item, ONLY used to test a event-->
+    <title>Federation Member License</title>
+	<desc>This license certifies your Federation membership.</desc>
+    <cost>0</cost>
+    <bp>0</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+</augBlueprint>
+
 <!--    ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
           CREW WEAPON JANK
 		◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
