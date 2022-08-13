@@ -76,6 +76,14 @@ created from scratch using the components or techniques of them to create odd an
 	<name>turzil</name> <
 </blueprintList>-->
 
+<!--This is used for the Freighter unlock questline -Dino -->
+<blueprintList name="LIST_ENGIS_CONVOY">
+	<name>engi</name>
+	<name>engi_defender</name>
+	<name>engi_separatist</name>
+	<name>engi_separatist_nano</name>
+</blueprintList>
+
 
 <!--
 ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘

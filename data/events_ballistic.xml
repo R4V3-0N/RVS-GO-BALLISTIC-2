@@ -1130,4 +1130,138 @@
 	</event>
 
 
+	<!--
+	••••••••••••••••••••••••••••••••••••••••••
+	Experimental Freighter unlock -Dino
+	••••••••••••••••••••••••••••••••••••••••••
+	-->
+
+	<event name="GB_ESCORT_QUESTLINE">
+		<text>As you approach the beacon you can spot a damaged federation ship, its hull is torn apart at one point.</text>
+		<choice>
+			<text>Hail them.</text>
+			<event>
+				<text>Hello, one of our fuel tanks exploded while we were fighting against some rebel scum, we can't navigate propperly so the rest left us behind.</text>
+				<choice>
+					<text id="continue"/>
+					<event>
+						<text>We need a strong ship to escort the rest of the convoy, we lost many ships in that fight. may you escort us?</text>
+						<choice>
+							<text>Promise to escort the convoy.</text>
+							<event>
+								<text>Thank you kind federation ship</text>
+								<quest event="GB_ESCORT_CONVOY_1"/>
+								<choice>
+									<text id="continue"/>
+									<event>
+										<text>Take this, it may help you on your way.</text>
+										<quest event="GB_ESCORT_CONVOY_2"/>
+										<choice>
+											<text id="continue"/>
+											<event>
+												<quest event="GB_ESCORT_CONVOY_3"/>
+											</event>
+										</choice>
+									</event>
+								</choice>
+							</event>
+						</choice>
+						<choice>
+							<text>Spare some fuel and promise to escort the convoy.</text>
+							<event>
+								<text>Thank you this really helps us now.</text>
+								<quest event="GB_ESCORT_CONVOY_1"/>
+								<item_modify>
+									<item type="fuel" min="-4" max="-4"/>
+								</item_modify>
+								<choice>
+									<text id="continue"/>
+									<event>
+										<text>Take this for the fuel.</text>
+										<autoReward level="MED">scrap</autoReward>
+										<quest event="GB_ESCORT_CONVOY_2"/>
+										<choice>
+											<text id="continue"/>
+											<event>
+												<quest event="GB_ESCORT_CONVOY_3"/>
+											</event>
+										</choice>
+									</event>
+								</choice>
+							</event>
+						</choice>
+						<choice hidden="true" req="LIST_ENGIS_CONVOY">
+							<text>Send one of your engis to do repairs and promise to escort the convoy.</text>
+							<event>
+								<text>Thanks these damages could not been fixed that fast without help.</text>
+								<quest event="GB_ESCORT_CONVOY_1"/>
+								<choice>
+									<text id="continue"/>
+									<event>
+										<text>Take this as a payment for your help.</text>
+										<autoReward level="MED">stuff</autoReward>
+										<quest event="GB_ESCORT_CONVOY_2"/>
+										<choice>
+											<text id="continue"/>
+											<event>
+												<quest event="GB_ESCORT_CONVOY_3"/>
+											</event>
+										</choice>
+									</event>
+								</choice>
+							</event>
+						</choice>
+						<choice>
+							<text>We cant help you.</text>
+							<event>
+								<text>Thats unfortunate, I guess I have to find somebody else to help us.</text>
+							</event>
+						</choice>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice>
+			<text>Ignore them.</text>
+			<event>
+				<text>You close the coms and continue on your journey</text>
+			</event>
+		</choice>
+	</event>
+
+	
+	<event name="GB_ESCORT_CONVOY_1">
+		<text>tab to select next</text>
+		<choice>
+			<text></text>
+			<event>
+				
+			</event>
+		</choice>
+	</event>
+
+	<event name="GB_ESCORT_CONVOY_2">
+		<text>tab to select next</text>
+		<choice>
+			<text></text>
+			<event>
+				
+			</event>
+		</choice>
+	</event>
+
+	<event name="GB_ESCORT_CONVOY_3">
+		<text>tab to select next</text>
+		<choice>
+			<text></text>
+			<event>
+				
+			</event>
+		</choice>
+	</event>
+
+
+
+
+
 </FTL>
