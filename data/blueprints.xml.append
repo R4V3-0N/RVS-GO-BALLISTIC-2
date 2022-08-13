@@ -2861,10 +2861,10 @@
 		•••••••••••••••••••••
 -->
 <shipBlueprint name="PLAYER_SHIP_RVSP_GB_KESTREL" layout="rvsp_gb_kestrel_a" img="rvsp_gb_kestrel_a">
-	<class>Antique Kestrel Cruiser</class>
-	<name>The Falco</name>
-	<unlock id="ship_PLAYER_SHIP_BALLISTIC_unlock"/>
-	<desc>A boring and outdated human vessel originally produced by the Federation. In its stock original configeration during the Federation-Mantis War.</desc>
+	<class id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_class"/>
+	<name id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_name"/>
+	<unlock id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_unlock"/>
+	<desc id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_desc"/>
 	<!--just a bunch of human crew-->
 	<systemList>
 		<artillery max="4" power="1" room="17" start="false" weapon="ARTILLERY_BEAM" img="room_artillery" />
@@ -2935,10 +2935,10 @@
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_RVSP_GB_KESTREL_2" layout="rvsp_gb_kestrel_b" img="rvsp_gb_kestrel_b"> <!-- R4: Started changing their layout and image names -->
-	<class>Antique Kestrel Cruiser</class>
-	<name>Warhawk</name> <!-- Warhawk, named after the Curtiss P-40 'Warhawk', a Warhawk also describes in politics someone who favors war or continuing to escalate an existing conflict as opposed to other solutions and are the opposite of doves. -->
-	<unlock id="ship_PLAYER_SHIP_BALLISTIC_2_unlock"/>
-	<desc>This old modified Kestrel class ship designed to destroy enemy ships with an amassment of autocannons.</desc>
+	<class id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_2_class"/>
+	<name id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_2_name"/> <!-- Warhawk, named after the Curtiss P-40 'Warhawk', a Warhawk also describes in politics someone who favors war or continuing to escalate an existing conflict as opposed to other solutions and are the opposite of doves. -->
+	<unlock id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_2_unlock"/>
+	<desc id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_2_desc"/>
 	<!--human human orchid zoltan-->
 	<systemList>
 		<artillery max="3" power="1" room="8" start="false" weapon="ARTILLERY_MFK_1" img="room_artillery" />
@@ -3011,10 +3011,10 @@
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_RVSP_GB_KESTREL_3" layout="rvsp_gb_kestrel_c" img="rvsp_gb_kestrel_c">
-	<class>Antique Kestrel Cruiser</class>
-	<name>The Martlet</name>
-	<unlock id="ship_PLAYER_SHIP_BALLISTIC_3_unlock"/>
-	<desc>An old battlehardened Kestrel that is the embodiment that a good offense is a good defence.</desc>
+	<class id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_3_class"/>
+	<name id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_3_name"/>
+	<unlock id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_3_unlock"/>
+	<desc id="ship_PLAYER_SHIP_RVSP_GB_KESTREL_3_desc"/>
 	<!--human free mantis zoltan separatist-->
 	<systemList>
 		<artillery power="1" room="18" start="false" weapon="ARTILLERY_BEAM" img="room_artillery" />
@@ -3087,9 +3087,10 @@
 
 
 <shipBlueprint name="PLAYER_SHIP_RVSP_FED_FREIGHTER" layout="rvsp_fed_freighter" img="rvsp_fed_freighter">
-	<class>Federation Freighter</class>
-	<name>Roc</name>
-	<desc>A heavy freight ship that has formed the backbone of Federation logistics for decades. Though lacking in firepower it makes up for it in its cargo capacity.</desc>
+	<class id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_class"/>
+	<name id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_name"/>
+	<unlock id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_unlock"/>
+	<desc id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_desc"/>
 	<systemList>
 		<artillery max="4" power="1" room="6" start="false" weapon="ARTILLERY_BOSS_1" img="room_artillery" /> <!-- R4: Placeholder artillery -->
 		<battery max="2" power="1" room="11" start="false" img="RVSP_room_battery_1" />
@@ -3159,9 +3160,10 @@
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_RVSP_FED_FREIGHTER_2" layout="rvsp_fed_freighter_b" img="rvsp_fed_freighter_b">
-	<class>Federation Freighter</class>
-	<name>Picus</name> <!-- Picus is a woodpecker/ deity/ king/ minor god. Picus was an agricultural deity associated particularly with the fertilization of the soil with manure. The woodpecker was also an important bird in augury.-->
-	<desc>A completely unarmed mercantile freighter that holds excessive trade goods to help fund its militerisation.</desc>
+	<class id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_class"/>
+	<name id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_name"/> <!-- Picus is a woodpecker/ deity/ king/ minor god. Picus was an agricultural deity associated particularly with the fertilization of the soil with manure. The woodpecker was also an important bird in augury.-->
+	<unlock id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_unlock"/>
+	<desc id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_desc"/>
 	<systemList>
 		<artillery power="1" room="22" start="false" weapon="ARTILLERY_BOSS_1" img="room_artillery" />
 		<battery max="2" power="1" room="29" start="false" img="room_battery_13" />
