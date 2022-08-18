@@ -13,7 +13,7 @@
 ////////////		Visualisation of GB content weapon distribution		////////////
 
 CIVILIAN:	Rifled Cannons		Autocannons
-MILITIA:	Rifled Cannons		Autocannons		Advanced Autocannons	
+MILITIA:	Rifled Cannons		Autocannons		Advanced Autocannons
 FEDERATION:						Autocannons		Advanced Autocannons	Gauss Rifles	Railguns [Anti-ship slugs]
 ENGI:																	Gauss Rifles	Railguns [Disrupter slugs]
 ZOLTAN:																					Railguns [Energy slugs]
@@ -26,10 +26,10 @@ PIRATES:	Rifled Cannons		Autocannons		???						???
 Autocannons were developed and used early in Humanities early years of intersolar expansion, reaching the peak of their service life during the Federation-Mantis War as reliable cost effective weapons
 in the face of the Red Mantis Menace, however this marked the last major conflict that Autocannons were used due to their ammo dependency which prevented any extended incursion into Hive Territory and
 extended combat effectiveness compared to the ammoless Lasers used to great effect by Mantis raiding parties in Federation territory. The Federation had begun the process of phasing out these weapons
-and have been making their ways down to Civilian Ships for self defence, becoming a common choice in less fortunate systems and nodes often winding up in the hands of Pirates and Mercenaries being an 
+and have been making their ways down to Civilian Ships for self defence, becoming a common choice in less fortunate systems and nodes often winding up in the hands of Pirates and Mercenaries being an
 easy solution to fill gaps in their firepower to perform illegitimate work.
 
-In the recent Civil Wars of the Federation within nearly every member state against the Rebelion, the Duskbringers, the Seperatists, etc. Had caused these now antiquated weapons to been requisitioned 
+In the recent Civil Wars of the Federation within nearly every member state against the Rebelion, the Duskbringers, the Seperatists, etc. Had caused these now antiquated weapons to been requisitioned
 from private hands, museums, and old weapon depots. Though no true replacement for laser weaponry it is still preferable to suplment a ships firepower and even more so a better alternative than nothing
 at all.
 
@@ -38,7 +38,7 @@ Civilian caravans to being former operators of them during the wars of past.
 
 Newer Autocannon models have been made and experimented with to help supliment the Federations ships firepower and update these weapons to compete in the modern conflicts of the Multiverse. Such as the
 
-More advance kinetic weaponry as a colaberation between the Engi and Humans such as Gauss Rifles and Railguns have been developed to counter recent point defence system and drones especially the more 
+More advance kinetic weaponry as a colaberation between the Engi and Humans such as Gauss Rifles and Railguns have been developed to counter recent point defence system and drones especially the more
 maneuverable small compact Autoships that have  a growing presence and threat. These are often seen being carried by Elite Federation kill teams and Federation Multiverse Agents and occasionaly in the
 hands of the Engi vessels. Though the recent liberation of Engi sectors by the Seperatists had lead to a dirivitive technology the Coil Gun in their arsenal.
 
@@ -102,7 +102,7 @@ created from scratch using the components or techniques of them to create odd an
 	<mod-append:name>GB_AC_2</mod-append:name>
 </mod:findName>
 
-<mod:findName type="blueprintList" name="GIFTLIST_FEDERATION"> 
+<mod:findName type="blueprintList" name="GIFTLIST_FEDERATION">
 	<mod-append:name>GB_AC_3</mod-append:name>
 	<mod-append:name>GB_GAUSS_2</mod-append:name> <!-- R4: unsure of Gauss, Rail, or both being here, but as the original list is short I'll keep this short -->
 </mod:findName>
@@ -165,7 +165,7 @@ created from scratch using the components or techniques of them to create odd an
 </mod:findName>
 
 <mod:findName type="blueprintList" name="LIST_CHECK_TOGGLES_AND_AMPS">
-	
+
 	<mod-append:name>GB_AC_1</mod-append:name>
 	<mod-append:name>GB_AC_1_CASELESS</mod-append:name>
 	<mod-append:name>GB_AC_1_HV</mod-append:name>
@@ -176,7 +176,7 @@ created from scratch using the components or techniques of them to create odd an
 	<mod-append:name>GB_AC_1_INCENDIARY</mod-append:name>
 	<mod-append:name>GB_AC_1_FLECHETTE</mod-append:name>
 	<mod-append:name>GB_AC_1_RAD</mod-append:name>
-	
+
 	<mod-append:name>GB_AC_2</mod-append:name>
 	<mod-append:name>GB_AC_2_CASELESS</mod-append:name>
 	<mod-append:name>GB_AC_2_HV</mod-append:name>
@@ -187,7 +187,7 @@ created from scratch using the components or techniques of them to create odd an
 	<mod-append:name>GB_AC_2_INCENDIARY</mod-append:name>
 	<mod-append:name>GB_AC_2_FLECHETTE</mod-append:name>
 	<mod-append:name>GB_AC_2_RAD</mod-append:name>
-	
+
 	<mod-append:name>GB_AC_3</mod-append:name>
 	<mod-append:name>GB_AC_3_CASELESS</mod-append:name>
 	<mod-append:name>GB_AC_3_HV</mod-append:name>
@@ -198,7 +198,7 @@ created from scratch using the components or techniques of them to create odd an
 	<mod-append:name>GB_AC_3_INCENDIARY</mod-append:name>
 	<mod-append:name>GB_AC_3_FLECHETTE</mod-append:name>
 	<mod-append:name>GB_AC_3_RAD</mod-append:name>
-	
+
 	<mod-append:name>GB_COMBAT_AC_1</mod-append:name>
 	<mod-append:name>GB_COMBAT_AC_2</mod-append:name>
 	<mod-append:name>GB_COMBAT_AC_3</mod-append:name>
@@ -301,7 +301,7 @@ created from scratch using the components or techniques of them to create odd an
 <!--—————————————————————
 		Weapons
 ——————————————————————-->
-<blueprintList name="GB_AC_BASIC_LIST"> <!--- Just a basic list of the generic ACs--->
+<blueprintList name="GB_AC_BASIC_LIST"> <!--- Just a basic list of the generic ACs-->
     <name>GB_AC_1</name>
     <name>GB_AC_2</name>
     <name>GB_AC_3</name>
@@ -336,6 +336,9 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_RAIL_3</name>
 </blueprintList>
 
+<blueprintList name="GB_LIST_REQUISITIONED_WEAPONS"><!-- this list was missing and i dunno waht to put hre, so its just mirroring basic AC list-->
+	<name>GB_AC_BASIC_LIST</name>
+</blueprintList>
 
 <!--—————————————————————
 		Drones
@@ -352,15 +355,15 @@ created from scratch using the components or techniques of them to create odd an
 		••••••••••••••••••••••••••••••••••••••••••
 -->
 
-<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_LIGHT"> 
+<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_LIGHT">
 	<name>GB_AC_1</name>
 	<name>GB_AC_2</name>
 </blueprintList>
-<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_MODERATE"> 
+<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_MODERATE">
 	<name>GB_AC_2</name>
 	<name>GB_AC_3</name>
 </blueprintList>
-<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_HEAVY"> 
+<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_HEAVY">
 	<name>GB_AC_3</name>
 	<!--<name>GB_AC_4</name>-->
 </blueprintList>
@@ -390,7 +393,7 @@ created from scratch using the components or techniques of them to create odd an
 
 
 <!--Masterlist, based on Fed Ship Weapon Lists-->
-<blueprintList name="GB_SHOP_ITEMS_WEAPONS_FEDERATION"> 
+<blueprintList name="GB_SHOP_ITEMS_WEAPONS_FEDERATION">
 	<name>LASER_BURST_2</name>
 	<name>LASER_BURST_3</name>
 	<name>LASER_BURST_5</name>
@@ -402,13 +405,13 @@ created from scratch using the components or techniques of them to create odd an
 	<name>BEAM_1</name>
 	<name>BEAM_2</name>
 	<name>BOMB_1</name>
-	
+
 	<name>SHOTGUN_2</name>
 	<name>LASER_CHAINGUN_2</name>
 	<name>ION_CHARGEGUN</name>
 	<name>ION_STUN</name>
 	<name>ION_STUN_HEAVY</name>
-	
+
 	<name>LASER_PIERCE</name>
 	<name>LASER_PARTICLE</name>
 	<name>MISSILES_PARTICLE</name>
@@ -417,7 +420,7 @@ created from scratch using the components or techniques of them to create odd an
 	<name>BEAM_SCYTHE</name>
 	<name>ION_TRI</name>
 	<name>ION_HEAVY</name>
-	
+
 	<name>LASER_HULL_CHAINGUN</name>
 	<name>LASER_HEAVY_CHAINGUN</name>
 	<!-- GB content bellow-->
@@ -452,14 +455,14 @@ created from scratch using the components or techniques of them to create odd an
 </blueprintList>-->
 
 
-<!---- SHOP_ITEM_WEAPONS_GP_CANNONS ---->
+<!-- SHOP_ITEM_WEAPONS_GP_CANNONS -->
 <!-- Can be used for when you want a store with any Autocannon in a slot -->
 <blueprintList name="GB_SHOP_ITEM_WEAPONS_GP_CANNONS">
 	<name>GB_AC_1</name>
 	<name>GB_AC_2</name>
 	<name>GB_AC_3</name>
 	<name>GB_ROTARY_AC</name>
-	
+
 	<!--<name>GB_RIFLED_CANNON</name>
 	<name>GB_BURST_CANNON_1</name>
 	<name>GB_BURST_CANNON_2</name> -->
@@ -480,13 +483,13 @@ created from scratch using the components or techniques of them to create odd an
 	<mod-append:name>GB_GAUSS_3</mod-append:name>
 </mod:findName>
 
-<blueprintList name="GB_SHOP_ITEM_WEAPONS_GP_CANNONS_OLD"> <!--- originally meant to be the GB_SHOP_ITEM_WEAPONS_CANNONS_OLD list, however going to retroactively use this to implement MG's into the store pool for now--->
+<blueprintList name="GB_SHOP_ITEM_WEAPONS_GP_CANNONS_OLD"> <!--- originally meant to be the GB_SHOP_ITEM_WEAPONS_CANNONS_OLD list, however going to retroactively use this to implement MG's into the store pool for now-->
 	<name>GB_AC_1</name>
 	<name>GB_AC_2</name>
 	<name>GB_AC_3</name>
 	<name>GB_MG</name>
 	<name>GB_HMG</name>
-	<name>MISSILES_1</name>	
+	<name>MISSILES_1</name>
 	<!--<name>GB_RIFLED_CANNON</name>-->
 </blueprintList>
 
@@ -508,11 +511,11 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_AC_2</name>
 	<name>GB_AC_3</name>
 	<name>GB_ROTARY_AC</name>
-	
+
 	<!--<name>GB_RIFLED_CANNON</name>
 	<name>GB_BURST_CANNON_1</name>
 	<name>GB_BURST_CANNON_2</name> -->
-	
+
 	<name>GB_GAUSS_1</name>
 	<name>GB_GAUSS_2</name>
 	<name>GB_GAUSS_3</name>
@@ -537,39 +540,39 @@ created from scratch using the components or techniques of them to create odd an
 </blueprintList>
 
 
-<!-- 
+<!--
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 These are for the Fed-Mantis store event, these will be modified in the future as more weapons are added
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
 <!-- Not sure about Burst canons being here, The AC Mk4 however will be here as 1 of the few events that would give it. Rifled cannon might be considered a dud item and might be removed
 Post update content might change these to "Federation"/Elite versions instead which has better stats, not sure what those will be-->
-<blueprintList name="GB_SHOP_ITEM_WEAPONS_CANNONS_OLD"> <!--- modified list from GP cannons list--->
+<blueprintList name="GB_SHOP_ITEM_WEAPONS_CANNONS_OLD"> <!--- modified list from GP cannons list-->
     <name>GB_AC_1</name>
     <name>GB_AC_2</name>
     <name>GB_AC_3</name>
     <!--<name>GB_AC_4</name> -->
-    
-    <!--<name>GB_RIFLED_CANNON</name> 
+
+    <!--<name>GB_RIFLED_CANNON</name>
     <name>GB_BURST_CANNON_1</name>
     <name>GB_BURST_CANNON_2</name> -->
 </blueprintList>
 
-<blueprintList name="GB_SHOP_ITEM_WEAPONS_ENGI_OLD"> <!--- R4: wow, I thought old Ions existed, turns out they don't. Guess I'll just put these 3 here for now --->
+<blueprintList name="GB_SHOP_ITEM_WEAPONS_ENGI_OLD"> <!--- R4: wow, I thought old Ions existed, turns out they don't. Guess I'll just put these 3 here for now -->
     <name>ION_1</name>
     <name>ION_HEAVY</name>
     <name>BOMB_ION</name>
-    <name>RUSTY_LASER_HEAVY_1</name>    
+    <name>RUSTY_LASER_HEAVY_1</name>
 </blueprintList>
 
-<blueprintList name="GB_SHOP_ITEM_WEAPONS_ZOLTAN_OLD">  <!--- no rusty beams either --->
+<blueprintList name="GB_SHOP_ITEM_WEAPONS_ZOLTAN_OLD">  <!--- no rusty beams either -->
     <name>ENERGY_1</name>
     <name>BOMB_STUN</name>
     <name>BEAM_1</name>
     <name>BEAM_2</name>
 </blueprintList>
 
-<blueprintList name="GB_LIST_WEAPONS_ENGI_SHOP"> 
+<blueprintList name="GB_LIST_WEAPONS_ENGI_SHOP">
 	<name>LASER_BURST_1</name>
 	<name>LASER_BURST_3</name>
 	<name>LASER_HEAVY_1</name>
@@ -581,14 +584,14 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>ION_1</name>
 	<name>ION_2</name>
 	<name>ION_3</name>
-	
+
 	<name>ION_CHAINGUN</name>
 	<name>ION_CHARGEGUN</name>
 	<name>ION_STUN</name>
 	<name>ION_STUN_2</name>
 	<name>ION_STUN_HEAVY</name>
 	<name>ION_STUN_CHARGEGUN</name>
-	
+
 	<name>ION_HEAVY</name>
 	<name>ION_TRI</name>
 	<name>ION_FIRE</name>
@@ -598,7 +601,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>ENERGY_1</name>
 	<name>ENERGY_2</name>
 	<name>ENERGY_HULL</name>
-	
+
 	<name>ENERGY_STUN</name>
 	<name>ENERGY_CHARGEGUN</name>
 </blueprintList>
@@ -622,7 +625,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 ////////////////////////////////////////////////////////////////////////////////////
 -->
 
-<mod:findName type="blueprintList" name="LIST_WEAPONS_CIVILIAN"> 
+<mod:findName type="blueprintList" name="LIST_WEAPONS_CIVILIAN">
 	<mod-append:name>GB_AC_1</mod-append:name>
 	<mod-append:name>GB_AC_2</mod-append:name>
 	<!-- <mod-append:name>GB_RIFLED_CANNON</mod-append:name>
@@ -639,7 +642,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 ////////////////////////////////////////////////////////////////////////////////////
 -->
 
-<mod:findName type="blueprintList" name="LIST_WEAPONS_MILITIA"> 
+<mod:findName type="blueprintList" name="LIST_WEAPONS_MILITIA">
 	<mod-append:name>GB_AC_1</mod-append:name>
 	<mod-append:name>GB_AC_2</mod-append:name>
 	<mod-append:name>GB_AC_3</mod-append:name>
@@ -657,7 +660,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 ////////////////////////////////////////////////////////////////////////////////////
 -->
 
-<mod:findName type="blueprintList" name="LIST_WEAPONS_MILITIA_ELITE"> 
+<mod:findName type="blueprintList" name="LIST_WEAPONS_MILITIA_ELITE">
 	<mod-append:name>GB_AC_2</mod-append:name> <!-- AC's go up a mark over the standard and no longer use the outdated rifled cannon-->
 	<mod-append:name>GB_AC_3</mod-append:name>
 	<!-- <mod-append:name>GB_BURST_CANNON_1</mod-append:name>
@@ -676,14 +679,14 @@ Post update content might change these to "Federation"/Elite versions instead wh
 ////////////////////////////////////////////////////////////////////////////////////
 -->
 
-<mod:findName type="blueprintList" name="LIST_WEAPONS_FED"> 
+<mod:findName type="blueprintList" name="LIST_WEAPONS_FED">
 	<mod-append:name>GB_AC_1</mod-append:name>
 	<mod-append:name>GB_AC_2</mod-append:name>
 	<mod-append:name>GB_AC_3</mod-append:name>
 	<!-- <mod-append:name>GB_BURST_CANNON_1</mod-append:name>
 	<mod-append:name>GB_BURST_CANNON_2</mod-append:name> -->
 	<mod-append:name>GB_GAUSS_1_ENEMY</mod-append:name> <!-- R4: I just added the 2 into the Fed Weapon list, the Gauss 1 didn't seem problematic, time to stress test -->
-	<mod-append:name>GB_GAUSS_2_ENEMY</mod-append:name> 
+	<mod-append:name>GB_GAUSS_2_ENEMY</mod-append:name>
 </mod:findName>
 <mod:findName type="blueprintList" name="LIST_DRONES_FED">
 	<mod-append:name>GB_COMBAT_AC_1</mod-append:name>
@@ -692,11 +695,11 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<mod-append:name>GB_DEFENSE_AC</mod-append:name>
 </mod:findName>
 
-<blueprintList name="GB_ANTIQUE_FEDERATION"> <!--- this could benefit greatly from my ideas on some missiles, rockets, and torpedoes. Will use this for some encounters that require a more simple ammo weapon list with Fed themes --->
+<blueprintList name="GB_ANTIQUE_FEDERATION"> <!--- this could benefit greatly from my ideas on some missiles, rockets, and torpedoes. Will use this for some encounters that require a more simple ammo weapon list with Fed themes-->
 	<name>GB_AC_1</name>
 	<name>GB_AC_2</name>
 	<name>GB_AC_3</name>
-	
+
 	<name>MISSILES_1</name>
 	<name>BOMB_1</name>
 	<name>BOMB_FIRE</name>
@@ -712,8 +715,8 @@ Post update content might change these to "Federation"/Elite versions instead wh
 ////////////////////////////////////////////////////////////////////////////////////
 -->
 
-<!--- Not part of MV or currently used --->
-<mod:findName type="blueprintList" name="LIST_WEAPONS_FED_ELITE"> 
+<!--- Not part of MV or currently used -->
+<mod:findName type="blueprintList" name="LIST_WEAPONS_FED_ELITE">
 	<mod-append:name>GB_AC_1</mod-append:name>
 	<mod-append:name>GB_AC_2</mod-append:name>
 	<mod-append:name>GB_AC_3</mod-append:name>
@@ -739,8 +742,8 @@ Post update content might change these to "Federation"/Elite versions instead wh
 </mod:findName>
 
 
-<!--- For  --->
-<blueprintList name="GB_LIST_WEAPONS_FED_STEALTH"> 
+<!--- For  -->
+<blueprintList name="GB_LIST_WEAPONS_FED_STEALTH">
 	<name>LASER_BURST_1</name>
 	<name>LASER_BURST_2_ENEMY</name>
 	<name>LASER_BURST_3</name>
@@ -756,17 +759,17 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>BEAM_ADAPT_2</name>
 	<name>BEAM_LONG_2</name>
 	<name>BOMB_1_ENEMY</name>
-	
+
 	<name>SHOTGUN_2</name>
 	<name>LASER_CHAINGUN_2</name>
 	<name>ION_STUN</name>
 	<name>ION_STUN_HEAVY</name>
-	
+
 	<name>MISSILES_PARTICLE</name>
 
 	<name>ION_TRI</name>
 	<name>ION_HEAVY</name>
-	
+
 	<!--GB Content-->
 	<name>GB_AC_3_E</name>
 	<name>GB_RAIL_1_ENEMY</name>
@@ -803,7 +806,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 </mod:findName>
 <mod:findName type="blueprintList" name="LIST_DRONES_ENGI_COMBAT">  <!-- unchanged, might edit later -->
-	
+
 </mod:findName>
 <mod:findName type="blueprintList" name="LIST_DRONES_ENGI_DEFENSE"> 	<!-- unchanged, might edit later -->
 
@@ -835,14 +838,14 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>ION_1</name>
 	<name>ION_2</name>
 	<name>ION_3</name>
-	
+
 	<name>ION_CHAINGUN</name>
 	<name>ION_CHARGEGUN</name>
 	<name>ION_STUN</name>
 	<name>ION_STUN_2</name>
 	<name>ION_STUN_HEAVY</name>
 	<name>ION_STUN_CHARGEGUN</name>
-	
+
 	<name>ION_HEAVY</name>
 	<name>ION_TRI</name>
 	<name>ION_FIRE</name>
@@ -854,7 +857,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>ENERGY_1</name>
 	<name>ENERGY_2</name>
 	<name>ENERGY_HULL</name>
-	
+
 	<name>ENERGY_STUN</name>
 	<name>ENERGY_CHARGEGUN</name>
 	<!-- GB content bellow -->
@@ -973,7 +976,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 -->
 
 
-<!--- currently nothing, may add some form of plasma/ energy/ laser railgun for the Zoltans another time, or for their Elites --->
+<!--- currently nothing, may add some form of plasma/ energy/ laser railgun for the Zoltans another time, or for their Elites -->
 
 
 <!--
@@ -985,19 +988,19 @@ Post update content might change these to "Federation"/Elite versions instead wh
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 -->
-
-<!-- <blueprintList name="GB_MV_WEAPONS_LASER_AND_CANNONS"> <!--- one shot lasers and cannons for the Militia GUARD Multiverse Renigade --->
+<!-- one shot lasers and cannons for the Militia GUARD Multiverse Renigade -->
+<!-- <blueprintList name="GB_MV_WEAPONS_LASER_AND_CANNONS">
 	<name>LASER_BURST_1</name>
 	<name>LASER_HEAVY_1</name>
 	<name>LASER_LIGHT_1</name>
-	<!-- <name>LASER_LIGHT_2</name> I think it might be too evil having a Light 2
+	<!- <name>LASER_LIGHT_2</name> I think it might be too evil having a Light 2
     <name>GB_AC_1</name>
     <name>GB_AC_2</name>
     <name>GB_AC_3</name>
 </blueprintList> -->
 
 <!-- R4: Time to stress test how good or bad of an idea it is for enemies to use ammo swapping!-->
-<blueprintList name="GB_MV_WEAPONS_LASER_AND_CANNONS"> <!--- one shot lasers and cannons for the Militia GUARD Multiverse Renigade --->
+<blueprintList name="GB_MV_WEAPONS_LASER_AND_CANNONS"> <!--- one shot lasers and cannons for the Militia GUARD Multiverse Renigade -->
 	<name>LASER_BURST_1</name>
 	<name>LASER_HEAVY_1</name>
 	<name>LASER_LIGHT</name>
@@ -1026,13 +1029,13 @@ Post update content might change these to "Federation"/Elite versions instead wh
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
-			
+
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 -->
 
-<blueprintList name="MV_WEAPONS_CANNON"> 
+<blueprintList name="MV_WEAPONS_CANNON">
 	<name>GB_AC_1</name>
 	<name>GB_AC_2</name>
 	<name>GB_AC_3</name>
@@ -1040,12 +1043,12 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<!--<mod-append:name>GB_BURST_CANNON_1</mod-append:name>
 	<mod-append:name>GB_BURST_CANNON_2</mod-append:name>-->
 </blueprintList>
-<blueprintList name="MV_WEAPONS_CANNON_BURST"> 
+<blueprintList name="MV_WEAPONS_CANNON_BURST">
 	<!--<mod-append:name>GB_BURST_CANNON_1</mod-append:name>
 	<mod-append:name>GB_BURST_CANNON_2</mod-append:name>-->
 </blueprintList>
 
-<!-- <mod:findName type="blueprintList" name="MV_WEAPONS_CANNON_HEAVY"> 
+<!-- <mod:findName type="blueprintList" name="MV_WEAPONS_CANNON_HEAVY">
 	<mod-append:name>LASER_HEAVY_1</mod-append:name>
 	<mod-append:name>LASER_HEAVY_2</mod-append:name>
 	<mod-append:name>LASER_HEAVY_3</mod-append:name>
@@ -1239,7 +1242,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<cloakImage>mu_fed_bomber</cloakImage>
 </shipBlueprint>
 
-<shipBlueprint name="GB_FED_BOMBER_INTERDICTOR" layout="GB_fed_bomber_interdictor" img="mu_fed_bomber"> <!--- dry on ammo version ---> <!-- Used in asteroid hideout event -->
+<shipBlueprint name="GB_FED_BOMBER_INTERDICTOR" layout="GB_fed_bomber_interdictor" img="mu_fed_bomber"> <!--- dry on ammo version --> <!-- Used in asteroid hideout event -->
 	<class>Federation Bomber</class>
 	<minSector>2</minSector>
 	<maxSector>8</maxSector>
@@ -1255,7 +1258,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
-	<weaponList missiles="3" count="4"> <!--- might set ammo lower later, it should intentionally run out of ammo early into a fight --->
+	<weaponList missiles="3" count="4"> <!--- might set ammo lower later, it should intentionally run out of ammo early into a fight -->
 		<weapon name="GB_AC_2" />
 		<weapon name="BOMB_1" />
 		<weapon name="GB_ANTIQUE_FEDERATION" />
@@ -1280,7 +1283,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
-		<artillery power="1" max="2" room="6" start="true" weapon="GB_RAIL_ARTILLERY" /> 
+		<artillery power="1" max="2" room="6" start="true" weapon="GB_RAIL_ARTILLERY" />
 		<battery power="1" max="2" room="12" start="true" />
 		<clonebay power="1" max="3" room="5" start="true" />
 		<doors power="1" max="3" room="11" start="true" />
@@ -1293,7 +1296,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="3" count="4"> <!--- this may require a lot of rebalancing, the idea is that it has to have a coilgun and gauss rifle. Subject to rebalancing, this may be the main enemy to test if these mass drivers are OP in enemy hands and require enemy variants--->
+	<weaponList missiles="3" count="4"> <!--- this may require a lot of rebalancing, the idea is that it has to have a coilgun and gauss rifle. Subject to rebalancing, this may be the main enemy to test if these mass drivers are OP in enemy hands and require enemy variants-->
 		<weapon name="GB_COILGUNS_ENEMY" />
 		<weapon name="GB_GAUSS_ENEMY" />
 		<weapon name="MV_WEAPONS_BEAMS_DAMAGE" />
