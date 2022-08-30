@@ -1587,15 +1587,17 @@
 	</race>
 </crew>
 <mod:findLike type="achievements">
-	<mod:findWithChildLike type="page" child-type="section">
-		<mod:selector text="Renegade Cruisers"/>
-		<mod-append:achievement name="ACH_REN_BALLISTICC">
-			<name>Threat Mitigation</name>
-			<description>Defeat the Antique Kestrel C Renegade and get the Pray'n'Spray.</description>
-			<icon>renegade_kestrel_b</icon>
-			<header>Renegade Defeated</header>
-		</mod-append:achievement>
-	</mod:findWithChildLike>
+	<mod:findLike type="page">
+		<mod:findLike type="section">
+			<mod:selector text="Renegade Cruisers"/>
+			<mod-append:achievement name="ACH_REN_BALLISTICC">
+				<name>Threat Mitigation</name>
+				<description>Defeat the Antique Kestrel C Renegade and get the Pray'n'Spray.</description>
+				<icon>renegade_kestrel_b</icon>
+				<header>Renegade Defeated</header>
+			</mod-append:achievement>
+		</mod:findLike>
+	</mod:findLike>
 </mod:findLike>
 
 </FTL>
