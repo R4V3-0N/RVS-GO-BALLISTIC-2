@@ -1334,7 +1334,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<maxPower amount="7" />
 	<crewCount amount="2" max="6" class="LIST_CREW_MILITIA_RANDOM" />
 	<boardingAI>sabotage</boardingAI>
-	<aug name="EX_SHIELD_RECHARGE" />
+	<aug name="UPG_SHIELDS_PERFORMANCE" />
 </shipBlueprint>
 
 
