@@ -606,6 +606,39 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>ENERGY_CHARGEGUN</name>
 </blueprintList>
 
+<!-- 	••••••••••••••••••••••••••••••••••••••••••
+					   Quest lists
+		••••••••••••••••••••••••••••••••••••••••••
+-->
+
+<blueprintList name="GB_LIST_REPAIR_WEAPONS"> <!-- repair spec weapons-->
+	<name>BEAM_REPAIR</name>
+	<name>BOMB_HEAL</name>
+	<name>BOMB_HEAL_SYSTEM</name>
+	<name>BOMB_HEAL_SYSTEM_STRONG</name>
+</blueprintList>
+
+<blueprintList name="GB_LIST_REPAIR_AUGS" type="any"> <!-- repair spec augs-->
+	<name>REPAIR_ARM</name>
+	<name>SLUG_GEL</name>
+	<name>HEKTAR_GEL</name>
+	<name>SYLVAN_GEL</name>
+	<name>UPG_ARM_REPAIR</name>
+</blueprintList>
+
+<blueprintList name="GB_LIST_REPAIR_DRONES" type="any"> <!-- repair spec drones-->
+	<name>DRONE_RECOVERY</name>
+	<name>REPAIR_BOARDER</name>
+</blueprintList>
+
+<blueprintList name="GB_LIST_REPAIR_CREW" type="any"> <!-- repair spec crew-->
+	<name>LIST_CREW_ENGI</name>
+	<name>LIST_CREW_ENGINEER</name>
+	<name>technician</name>
+	<name>scrapper_engineer</name> <!-- TCC compatibility -->
+	<name>rsa_technician</name> <!-- TCC compatibility -->
+</blueprintList>
+
 <!--
 ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
 ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
