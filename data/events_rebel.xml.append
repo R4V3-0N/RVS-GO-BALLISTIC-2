@@ -2,7 +2,7 @@
 
 <event name="GB_HOSTILE_REBEL_FED_DESERTER">
 	<text load="GB_TEXT_ENCOUNTER_REBEL_FED"/>
-	<ship load="GB_SHIP_REBEL_FED_GENERIC" hostile="true"/> 
+	<ship load="GB_SHIP_REBEL_FED_GENERIC" hostile="true"/>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="COMBAT_CHECK"/>
@@ -36,7 +36,7 @@
 
 <event name="GB_POW_REBEL_GENERIC">
 	<text load="GB_TEXT_POW_REBEL_GENERIC"/>
-	<ship load="GB_FED_STATION_POW" hostile="false"/> 
+	<ship load="GB_FED_STATION_POW" hostile="false"/>
 	<choice>
 		<text>Hail the station.</text>
 		<event load="GB_POW_REBEL_GENERIC_LIST"/>
@@ -52,7 +52,7 @@
 </textList>
 
 
-<eventList name="FED_FREE_CREW_WELCOME">
+<eventList name="GB_POW_REBEL_GENERIC_LIST">
 
 	<event> <!-- FED_SUPPLY_STATION EDIT -->
 		<text>You successfully handed off the POW to to a secure facility onboard the station and the warden thanks you. While spending time onboard the station it appears they are selling supplies to passing Federation allied ships.</text>
@@ -109,7 +109,7 @@
 			</event>
 		</choice>
 	</event>
-	
+
 	<event>
 		<text>Once onboard the transfer process begins immediately. Though the Rebel doesn't seem the happiest being here they thank for sparing their life. As a reward for going out of your way to deliver the prisoner the outpost offers a reward.</text>
 		<autoReward level="HIGH">standard</autoReward>
@@ -128,7 +128,7 @@
 			</event>
 		</choice>
 	</event>
-	
+
 	<event>
 		<text>Upon your approach to the docking bay there is the unmistakable sight of a Rebel Transport on the other end of the hanger bay. It quickly becomes evident that this is a prisoner exchange as you enter a room with 3 people: A Federation Lieutenant, a Rebel representative of some kind, and a 3rd individual you assume is their prisoner. The The two discuss in great length the conditions of the exchange most of it you do not pay attention to. By the end of the rather tense discussions it appears the terms have been agreed upon and the Rebel representative throws on his coat and closes his suitcase and departs with your former captive.</text>
 		<choice>
@@ -142,10 +142,10 @@
 				<choice>
 					<text>Accept the resources.</text>
 					<autoReward level="HIGH">standard</autoReward>
-				</choice>		
+				</choice>
 			</event>
 		</choice>
 	</event>
-	
-	
+
+
 </eventList>
