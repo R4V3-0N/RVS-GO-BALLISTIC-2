@@ -77,6 +77,23 @@
 		<event load="GB_COMBAT_CHECK_TROOPERTOG_BOARDER"/>
 	</mod-append:choice>
 
+	<!-- combat drone-->
+	<mod-append:choice req="GB_COMBAT_AC_1" blue="false">
+		<text>(Autocannon Drone) Set the state of the drone. [Current mode: Combat I]</text>
+		<event load="COMBAT_CHECK_GB_COMBAT_AC_1"/>
+	</mod-append:choice>
+	<mod-append:choice req="GB_COMBAT_AC_1" blue="false">
+		<text>(Autocannon Drone) Set the state of the drone. [Current mode: Combat II]</text>
+		<event load="COMBAT_CHECK_GB_COMBAT_AC_2"/>
+	</mod-append:choice>
+	<mod-append:choice req="GB_COMBAT_AC_1" blue="false">
+		<text>(Autocannon Drone) Set the state of the drone. [Current mode: Combat III]</text>
+		<event load="COMBAT_CHECK_GB_COMBAT_AC_3"/>
+	</mod-append:choice>
+	<mod-append:choice req="GB_COMBAT_AC_1" blue="false">
+		<text>(Autocannon Drone) Set the state of the drone. [Current mode: Defence]</text>
+		<event load="COMBAT_CHECK_GB_DEFENSE_AC"/>
+	</mod-append:choice>
 	<!--AUTOCANNON AMMO TOGGLE-->
 	<mod-append:choice req = "GB_AC_1" blue = "false"> <!--Autocannon MK I Ammo Types -->
 		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Standard, 1 power]</text>
