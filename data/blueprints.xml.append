@@ -331,6 +331,7 @@
 	<sysDamage>-1</sysDamage>
 	<spawnCrew>
 		<race>gb_ion_instant_1</race>
+		<lifetime>0</lifetime>
 		<number>1</number>
 		<noSlot>true</noSlot>
 	</spawnCrew>
@@ -881,6 +882,7 @@
 	<stunChance>2</stunChance>
 	<spawnCrew>
 		<race>gb_ion_instant_2</race>
+		<lifetime>0</lifetime>
 		<number>1</number>
 		<noSlot>true</noSlot>
 	</spawnCrew>
@@ -1431,6 +1433,7 @@
 	<cooldown>6</cooldown>
 	<spawnCrew>
 		<race>gb_ion_instant_3</race>
+		<lifetime>0</lifetime>
 		<number>1</number>
 		<noSlot>true</noSlot>
 	</spawnCrew>
@@ -2512,7 +2515,7 @@
 	<type>BURST</type>
 	<title>'Spray'n'Pray'</title>
 	<short>'S.A.P.'</short>
-	<desc>BRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRT</desc> <!-- maybe should write an actual description some day-->
+	<desc>Name says it all, pew-pew-pew-pew-pew-pew-pew-pew</desc> <!-- maybe should write an actual description some day-->
 	<tooltip>Boss loot.</tooltip>
 	<missiles>1</missiles>
 	<freeMissileChance>45</freeMissileChance>
