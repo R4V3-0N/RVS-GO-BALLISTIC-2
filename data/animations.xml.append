@@ -159,7 +159,7 @@
 	<time>0.5</time>
 </anim>
 
-<animSheet name="GB_shot_medium_HE" w="200" h="20" fw="50" fh="20">projectiles/GB_shot_medium_he_strip4.png</animSheet>
+<animSheet name="GB_shot_medium_HE" w="200" h="20" fw="50" fh="20">projectiles/GB_shot_medium_HE_strip4.png</animSheet>
 <anim name="GB_shot_medium_HE">
 	<sheet>GB_shot_medium_HE</sheet>
 	<desc length="4" x="0" y="0" />
@@ -348,7 +348,7 @@
 	<fireFrame>2</fireFrame>
 	<firePoint x="11" y="21" />
 	<mountPoint x="3" y="57" />
-	<chargeImage>weapons_autocannon_ammo/GB_Autocannon_HV_1_glow.png</chargeImage>
+	<chargeImage>weapons_autocannon_ammo/GB_Autocannon_1_HV_glow.png</chargeImage>
 </weaponAnim>
 
 <animSheet name="GB_Autocannon_1_HEAT" w="119" h="67" fw="17" fh="67">weapons_autocannon_ammo/GB_Autocannon_1_HEAT_strip7.png</animSheet>
@@ -373,7 +373,7 @@
 	<chargeImage>weapons_autocannon/GB_Autocannon_1_glow.png</chargeImage>
 </weaponAnim>
 
-<animSheet name="GB_Autocannon_1_FREE" w="119" h="67" fw="17" fh="67">weapons_autocannon_ammo/GB_Autocannon_1_free_strip7.png</animSheet>
+<animSheet name="GB_Autocannon_1_FREE" w="119" h="67" fw="17" fh="67">weapons_autocannon_ammo/GB_Autocannon_1_Free_strip7.png</animSheet>
 <weaponAnim name="GB_Autocannon_1_FREE">
 	<sheet>GB_Autocannon_1_FREE</sheet>
 	<desc length="7" x="0" y="0" />
@@ -439,7 +439,7 @@
 	<chargeImage>weapons_autocannon/GB_Autocannon_2_glow.png</chargeImage>
 </weaponAnim>
 
-<animSheet name="GB_Autocannon_2_FREE" w="171" h="75" fw="19" fh="75">weapons_autocannon_ammo/GB_Autocannon_2_FREE_strip9.png</animSheet>
+<animSheet name="GB_Autocannon_2_FREE" w="171" h="75" fw="19" fh="75">weapons_autocannon_ammo/GB_Autocannon_2_Free_strip9.png</animSheet>
 <weaponAnim name="GB_Autocannon_2_FREE">
 	<sheet>GB_Autocannon_2_FREE</sheet>
 	<desc length="9" x="0" y="0" />
@@ -593,7 +593,7 @@
 	<chargeImage>weapons_autocannon/GB_Autocannon_3_glow.png</chargeImage>
 </weaponAnim>
 
-<animSheet name="GB_Autocannon_3_FREE" w="234" h="90" fw="26" fh="90">weapons_autocannon_ammo/GB_Autocannon_3_FREE_strip9.png</animSheet>
+<animSheet name="GB_Autocannon_3_FREE" w="234" h="90" fw="26" fh="90">weapons_autocannon_ammo/GB_Autocannon_3_Free_strip9.png</animSheet>
 <weaponAnim name="GB_Autocannon_3_FREE">
 	<sheet>GB_Autocannon_3_FREE</sheet>
 	<desc length="9" x="0" y="0" />
