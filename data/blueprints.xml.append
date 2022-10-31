@@ -3160,6 +3160,7 @@
 	<health amount="35" />
 	<maxPower amount="9" />
 	<aug name="GB_PHONE" />
+	<shieldImage>mupc_a55</shieldImage>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_RVSP_FED_FREIGHTER_2" layout="rvsp_fed_freighter_b" img="rvsp_fed_freighter_b">
@@ -3238,6 +3239,7 @@
 	<aug name="GB_PHONE" />
 	<aug name="NEBULA_GASSES" /> <!-- R4: Might change this later, a trade augment to give a headstart economically -->
 	<aug name="CRATE_MISSILES" /> <!-- Similar as Nebula gasses, might just be dumped into an event at first sight or used to get an edge in missiles -->
+	<shieldImage>mupc_a55</shieldImage>
 </shipBlueprint>
 
 

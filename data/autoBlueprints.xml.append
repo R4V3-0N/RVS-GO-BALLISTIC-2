@@ -634,7 +634,6 @@ Post update content might change these to "Federation"/Elite versions instead wh
 <blueprintList name="GB_LIST_REPAIR_CREW" type="any"> <!-- repair spec crew-->
 	<name>LIST_CREW_ENGI</name>
 	<name>LIST_CREW_ENGINEER</name>
-	<name>technician</name>
 	<name>scrapper_engineer</name> <!-- TCC compatibility -->
 	<name>rsa_technician</name> <!-- TCC compatibility -->
 </blueprintList>
