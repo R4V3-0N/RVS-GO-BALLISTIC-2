@@ -180,7 +180,7 @@
 				<autoReward level="LOW">scrap_only</autoReward>
 			</event>
 		</choice>
-		<choice hidden="true">
+		<choice hidden="true" req="MAGNET_ARM">
 			<text>(Magnetic Arm) Attempt to recover additional salvage.</text>
 			<event>
 				<text>Your Magnetic Arm makes quick work out of collecting the small space debris that floats around the wreckages.</text>
@@ -314,7 +314,7 @@
 				<autoReward level="LOW">scrap_only</autoReward>
 			</event>
 		</choice>
-		<choice hidden="true">
+		<choice hidden="true" req="MAGNET_ARM">
 			<text>(Magnetic Arm) Attempt to recover additional salvage.</text>
 			<event>
 				<text>Your Magnetic Arm makes quick work out of collecting the small space debris that floats around the wreckages.</text>

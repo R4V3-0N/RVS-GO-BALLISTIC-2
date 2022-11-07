@@ -453,7 +453,7 @@
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="9" max_lvl="9" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 18% ammo consumption]</text>
+			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg(+1 frag projectile), 0 sys dmg, 18% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="10" max_lvl="10" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
@@ -509,7 +509,7 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 18% ammo consumption]</text>
+			<text>Flechette ammo.[+10% breach, only DoT crew dmg(+1 frag projectile), 0 sys dmg, 18% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_FLECHETTE</loadEvent>
 			</event>
@@ -661,7 +661,7 @@
 		</choice>
 	</event>
 	<event name="COMBAT_CHECK_GB_AC_1_LOAD_FLECHETTE">
-		<text>Flechette rounds: [6s cd, 1 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 20% breach chance, 30 px radius, 18% ammo consumption]
+		<text>Flechette rounds: [6s cd, 1 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 20% breach chance, 30 px radius, 1 frag projectile, 18% ammo consumption]
 			Load into the Autocannon MK I?
 		</text>
 		<choice>
@@ -839,7 +839,7 @@
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="9" max_lvl="9" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 22% ammo consumption]</text>
+			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg(+4 frag projectiles), 1 sys dmg, 22% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="10" max_lvl="10" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
@@ -895,7 +895,7 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 22% ammo consumption]</text>
+			<text>Flechette ammo.[+10% breach, only DoT crew dmg(+4 frag projectiles), 1 sys dmg, 22% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_FLECHETTE</loadEvent>
 			</event>
@@ -1047,7 +1047,7 @@
 		</choice>
 	</event>
 	<event name="COMBAT_CHECK_GB_AC_2_LOAD_FLECHETTE">
-		<text>Flechette rounds: [6s cd, 2 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 20% stun(3s), 30% breach chance, 40 px radius, 22% ammo consumption]
+		<text>Flechette rounds: [6s cd, 2 hull dmg, 1 sys dmg, 1 dps DoT(25s) crew dmg, 20% stun(3s), 30% breach chance, 40 px radius, 4 frag projectiles, 22% ammo consumption]
 			Load into the Autocannon MK II?
 		</text>
 		<choice>
@@ -1225,7 +1225,7 @@
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="9" max_lvl="9" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 33% ammo consumption]</text>
+			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg(+6 frag projectiles), 2 sys dmg, 33% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="10" max_lvl="10" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
@@ -1281,7 +1281,7 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 33% ammo consumption]</text>
+			<text>Flechette ammo.[+10% breach, only DoT crew dmg(+6 frag projectiles), 1 sys dmg, 33% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_FLECHETTE</loadEvent>
 			</event>
@@ -1433,7 +1433,7 @@
 		</choice>
 	</event>
 	<event name="COMBAT_CHECK_GB_AC_3_LOAD_FLECHETTE">
-		<text>Flechette rounds: [6s cd, 3 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 40% stun(3s), 50% breach chance, 40 px radius, 33% ammo consumption]
+		<text>Flechette rounds: [6s cd, 3 hull dmg, 2 sys dmg, 1 dps DoT(25s) crew dmg, 40% stun(3s), 50% breach chance, 40 px radius, 6 frag projectiles, 33% ammo consumption]
 			Load into the Autocannon MK III?
 		</text>
 		<choice>
