@@ -1,0 +1,219 @@
+<!-- 	•••••••••••••••••••••
+			An event I just wrote
+		•••••••••••••••••••••
+
+no clue what sector this is meant to be for.
+-->
+
+
+<event name="RVS_ABANDONED_MINING_TOWN">
+	<text>You have arrived to what appears to be what is left of an old mining colony that has long since been abandoned.&#10;Sandblasted buildings nestled in the craters of the asteroids loom eerily in the dense smog that now fills this beacon.&#10;The flourishing mining town must have been quickly abandoned when the asteroids started belching toxic fumes due to reckless mining and exploitation.&#10;&#10;Though your shields are holding up to the thicker debris, they were not calibrated to deal with the microparticles in the smog and your engine begins to sputter and weaken.</text>
+	<status type="loss" target="all" system="engines" amount="1"/> <!-- R4: For Vert(?), This is my place holder for the hazard in this beacon. I want this hazard to eventually reduce engines a little, and set sensors to level 1.-->
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="RVS_ABANDONED_MINING_TOWN_LOAD"/>
+	</choice>
+</event>
+<eventList name="RVS_ABANDONED_MINING_TOWN_LOAD">
+	<event load="RVS_ABANDONED_MINING_TOWN_SCRAPYARD"/>
+	<!--<event load="RVS_ABANDONED_MINING_TOWN_EMPTY"/>-->
+	<!--<event load="RVS_ABANDONED_MINING_TOWN_SMUGGLER"/>-->
+	<!--<event load="RVS_ABANDONED_MINING_TOWN_HAZARD"/>-->
+	<!--<event load="RVS_ABANDONED_MINING_TOWN_HORROR"/>-->
+</eventList>
+
+<event name="RVS_ABANDONED_MINING_TOWN_SCRAPYARD">
+	<text>Though the mines have been inert and lifeless for many years. Something catches your attention: lights flickering deep within the haze where the debris appears to be thickest. With the swirling clouds forming a brief clearing, you can see that those lights mark the perimeter of a scrapyard of sorts. Perhaps there are riches unclaimed hidden within.</text>
+	<choice hidden="true">
+		<text>Investigate the scrapyard.</text>
+		<event>
+			<text>You decide to investigate the scrapyard and take a closer look. On your approach you are hailed by a ramshackled station amidst the debris by those who still call this beacon their home. They welcome you to their scrapyard and offer you to browse their wares for sale. Or if you feel lucky you could try and see what you could uncover at the scrapyard.</text>
+			<choice hidden="true">
+				<text>Head inside the scrapyard.</text>
+				<event load="RVS_ABANDONED_MINING_TOWN_SCRAPYARD_EXPLORE"/>
+			</choice>
+			<choice hidden="true">
+				<text>Head to the station to trade.</text>
+				<event>
+					<text>You dock at the small station and take your time perusing at your leisure.</text>
+					<store>STORE_STANDARD</store> <!-- should change the store to something unique? -->
+				</event>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Ignore the junkyard.</text>
+		<event>
+			<text>There is nothing of interest at this beacon worth your time to investigate in this smog. You order to charge the FTL drive.</text>
+		</event>
+	</choice>
+</event>
+<!-- R4: Event list for exploring the mining town scrapyard-->
+<eventList name="RVS_ABANDONED_MINING_TOWN_SCRAPYARD_EXPLORE"> <!-- R4: Most of these is a direct lift from INS+ Scrapyard event.Though modified they are in essence the same except for a few new events. Permission granted by Slow -->
+	<event load="RVS_AMT_SCRAPYARD_STANDARD"/>
+	<event load="RVS_AMT_SCRAPYARD_STANDARD"/>
+	<event load="RVS_AMT_SCRAPYARD_FREIGHTER_FUEL"/>
+	<event load="RVS_AMT_SCRAPYARD_FREIGHTER_FUEL"/>
+	
+	<event load="RVS_AMT_SCRAPYARD_FREIGHTER_SUS"/> <!-- can be negative, needs to finish -->
+	<event load="RVS_AMT_SCRAPYARD_FREIGHTER_TRADE"/> <!-- currently just nebula gasses, change to a unique sell aug later -->
+
+	<!--<event load="RVS_AMT_SCRAPYARD_STRAY_WEAPON"/>  to do --> 
+	
+	<!--<event load="RVS_AMT_SCRAPYARD_MINER"/>  to do --> 
+	<!--<event load="RVS_AMT_SCRAPYARD_MINER"/>-->
+	
+	<event load="RVS_AMT_SCRAPYARD_COLONY_SHIP"/>	
+</eventList>
+
+<event name="RVS_AMT_SCRAPYARD_STANDARD"> <!-- done --> 
+	<text>Despite the thick polution and debris at this beacon your exploration of the field depths turns out to be rather successful all things considered. You managed to collect a worthwhile amount of usable materials, before your engines gets worse in this smog.</text>
+	<autoReward level="MED">standard</autoReward>
+	<choice>
+		<text load="GENERIC_CONTINUE_TEXT"/>
+		<event/>
+	</choice>
+</event>
+
+<event name="RVS_AMT_SCRAPYARD_FREIGHTER_FUEL">
+	<text>Within the clouds of the scrapyard you can barely make out the silhouette of a pre-multiversal travel era Federation freighter that appears mostly intact More importantly, its fuel reserves are still present and in quite plentiful supply. You managed to collect a worthwhile amount of usable materials, before your engines gets worse in this smog.</text> <!-- haven't modified from this point down -->
+	<autoReward level="MED">fuel</autoReward>
+	<choice>
+		<text load="GENERIC_CONTINUE_TEXT"/>
+		<event/>
+	</choice>
+</event>
+
+<event name="RVS_AMT_SCRAPYARD_FREIGHTER_SUS"> <!-- I think it is done, needs testing -->
+	<text>Within the clouds of the scrapyard you discover a cargo freighter that appears mostly intact. You locate a sealed container within the hold, however on inspection your crew realises it's wired up to an explosive trap. It might be possible to disarm the trap and secure whatever may be inside.</text>
+	<choice hidden="true">
+		<text>Go for it.</text>
+		<event load="RVS_SCRAPYARD_TRAP"/>
+	</choice>
+	<choice hidden="true" req="BLUELIST_CREW_NODOORS">
+		<text>(Phasing Crew) Bypass the trap.</text>
+		<event load="RVS_SCRAPYARD_BYPASS_TRAP"/>
+	</choice>
+	<choice hidden="true">
+		<text>It's not worth it, leave with what we've found so far.</text>
+		<event>
+			<text>Your haul prior to this is sufficient enough. You get onboard your ship and decide to depart before your engine succumbs to the choking haze.</text>
+			<autoReward level="MED">stuff</autoReward>
+		</event>
+	</choice>
+</event>
+<eventList name="RVS_SCRAPYARD_TRAP">|
+	<!-- R4: Good outcomes -->
+	<event>
+		<text load="RVS_SCRAPYARD_TRAP_TEXT"/>
+		<autoReward level="MED">weapon</autoReward>
+	</event>
+	<event>
+		<text load="RVS_SCRAPYARD_TRAP_TEXT"/>
+		<autoReward level="HIGH">weapon</autoReward>
+	</event>	
+	<event>
+		<text load="RVS_SCRAPYARD_TRAP_TEXT"/>
+		<autoReward level="MED">drone</autoReward>
+	</event>
+	<event>
+		<text load="RVS_SCRAPYARD_TRAP_TEXT"/>
+		<autoReward level="MED">augment</autoReward>
+	</event>
+	<event>
+		<text load="RVS_SCRAPYARD_TRAP_TEXT"/>
+		<autoReward level="HIGH">standard</autoReward>
+	</event>
+
+	<!-- R4: Negative outcomes -->
+	<event>
+		<text load="RVS_SCRAPYARD_TRAP_FAIL_TEXT"/>
+		<autoReward level="MED">stuff</autoReward>
+		<removeCrew>
+			<clone>true</clone>
+			<text>Thankfully, your Clone Bay ensures that the pyrotechnics display doesn't have any lasting effects. Your crew member stumbles out of the bay and curses at cutting the red wire.</text>
+		</removeCrew>
+	</event>
+	<event> <!-- R4: dupe for higher negative outcome chance -->
+		<text load="RVS_SCRAPYARD_TRAP_FAIL_TEXT"/>
+		<autoReward level="MED">stuff</autoReward>
+		<removeCrew>
+			<clone>true</clone>
+			<text>Thankfully, your Clone Bay ensures that the pyrotechnics display doesn't have any lasting effects. Your crew member stumbles out of the bay and curses at cutting the red wire.</text>
+		</removeCrew>
+	</event>
+</eventList>
+<textList name="RVS_SCRAPYARD_TRAP_TEXT">
+	<text>A loud beeping sound echoes throughout the cargo bay as the trap is triggered, but the noise quickly dies down to the tune of an expired power source. That was a close call.</text>
+	<text>Your volunteer's quick moves enabled the trap to be deactivated granting you access to the container's contents.</text>
+	<text>The trap triggers with a loud beeping sound, but the sound soon dies down as the power source expires. That was too close for comfort.</text>
+	<text>In the freighters cargo bay, loud beeping emanates as your volunteer triggers the trap! Fortunately the beeping dies down nearly immediately as the powersource rapidly drains. Looks like your volunteer will live another day. </text>
+	<text>Your crew member simply stares at the container, before battering down the door with their shoulder. You are caught off guard and dumbfounded by what you just witnessed. Before you could bark at them you could hear them yell from inside that it was merely a dud. You can't tell if that was stupidity or bravery and you opt to not dwell on it further.</text>
+</textList>
+<textList name="RVS_SCRAPYARD_TRAP_FAIL_TEXT">
+	<text>The freighter explodes in a blase of fury, catching your crew member between the collapsing structure leaving only but a short screaming on the comms followed by static. A grim reminder of the dangers and perils that come with every choice you make but on the bright side at least your cruiser wasn't damaged in the explosion, you prepare to depart before anything else decides to take a turn for the worst in this forsaken system.</text>
+	<text>The cargo ship explodes in a blaze of fury after a single tense beep, blasting your crew member and a section of the freighter apart into a debris field. You make preperations to depart before anything worse happens.</text>
+</textList>
+
+<eventList name="RVS_SCRAPYARD_BYPASS_TRAP">
+	<event>
+		<text load="RVS_SCRAPYARD_BYPASS_TRAP_TEXT"/>
+		<autoReward level="MED">weapon</autoReward>
+	</event>
+	<event>
+		<text load="RVS_SCRAPYARD_BYPASS_TRAP_TEXT"/>
+		<autoReward level="MED">drone</autoReward>
+	</event>
+	<event>
+		<text load="RVS_SCRAPYARD_BYPASS_TRAP_TEXT"/>
+		<autoReward level="MED">augment</autoReward>
+	</event>
+	<event>
+		<text load="RVS_SCRAPYARD_BYPASS_TRAP_TEXT"/>
+		<autoReward level="HIGH">standard</autoReward>
+	</event>
+</eventList>
+<textList name="RVS_SCRAPYARD_BYPASS_TRAP_TEXT"> <!-- R4: Why is this a list? because I just got lazy to the point I started putting more work than if I just made unique dialogue per option -->
+	<text>Your crew is able to slip easily into the container, where they find and defuse the explosives with ease. With the container being now safe you easily take its contents aboard.</text>
+	<text>Without any concern for the trap activating your crew disarms the explosive. Looks like a pretty hefty haul.</text>
+	<text>The beeping noises of the trap dies down slowly after being deactivated by your crew. Leaving the container silent as you salvage its contents.</text>
+	<text>You are still concerned about the safety of your crew even after they disarmed the bomb and gave a go ahead. Though once the goods are brought onboard and secured you can begin to relax again.</text>
+</textList>
+
+<event name="RVS_AMT_SCRAPYARD_FREIGHTER_TRADE"> <!-- I think it is done, needs testing -->
+	<text>Within the clouds of the scrapyard you discover a cargo freighter that appears mostly destroyed. However on closer inspection you discover a cargo container sticking halfway out of a breach in the hull, its contents remaining intact. You give the order to drag the find into the cargo bay.</text>
+	<autoReward level="MED">fuel</autoReward>
+	<augment name="NEBULA_GASSES"/> <!--R4: May change this to a more fitting augment later-->
+</event>
+
+<event name="RVS_AMT_SCRAPYARD_COLONY_SHIP"> <!-- R4: I think this is done, needs testing --> 
+	<text>Despite the thick polution and debris at this beacon you can immediatly spot what appears to be the hulking mass of what was most likely a colony ship that most likely seeded this solar system with life before it was driven away by the intense pollution. You managed to collect as much useable materials from the ships frame as you can, however, you could spend more time collecting debris from this hulk here at the risk of becoming stranded here.</text>
+	<autoReward level="HIGH">standard</autoReward>
+	<choice>
+		<text>Take the risk and spend more time gathering materials.</text>
+		<event load="RVS_AMT_SCRAPYARD_COLONY_SHIP_MORE"/>
+	</choice>
+	<choice>
+		<event>
+		<text>It's not worth it, leave with what we've found so far.</text>
+		</event>
+	</choice>
+</event>
+<eventList name="RVS_AMT_SCRAPYARD_COLONY_SHIP_MORE">
+	<event> 
+		<text>You spend a considerable amount of time delving deeper into the hulk. Meticulously cutting up and disassembling useful components from the ships engineering and gargantuan life support. You come off with a pretty decent haul and fortunately your engines haven't seem to have worsened. You best leave before the Rebel fleet gains any more ground on you.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<modifyPursuit amount="1"/> <!-- R4: 1 fleet delay for spending a little more time salvaging -->
+	</event>
+	<event> 
+		<text>You spend a considerable amount of time delving deeper into the hulk. Meticulously cutting up and disassembling useful components from the ships engineering and gargantuan life support. You come off with a pretty decent haul and fortunately your engines haven't seem to have worsened. You best leave before the Rebel fleet gains any more ground on you.</text>
+		<autoReward level="MED">augment</autoReward>
+		<modifyPursuit amount="1"/> <!-- R4: 1 fleet delay for spending a little more time salvaging -->
+	</event>
+	<event>
+		<text>You spend a considerable amount of time delving deeper into the hulk. Meticulously cutting up and disassembling useful components from the ships engineering and gargantuan life support. You come off with a pretty decent haul, however, your engines begin to choke and stall on the polutants of this beacon. Cleaning out the engines and repairing them will take time, time that you can't afford to lose as the Rebel fleet continues their advance.</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<damage amount="2" system="engines" /> <!-- R4: uh... this is just system damage riiiight? -->
+		<modifyPursuit amount="2"/> <!-- R4: 2 fleet delay for things going awry while you salvage -->
+	</event>
+</eventList>
