@@ -159,7 +159,7 @@
 </event>
 <textList name="GB_TEXT_ESCAPE_REBEL_FED">
 	<text>You overhear the Rebel captain giving orders to his crew. "Bugger this! Redirect as much power as necessary to the engines. We have to get out of here!"</text>
-	<text>You notice the characteristic flaring of the former Federation ships engines; a tell-tell sign that they are trying to escape!</text>
+	<text>You notice the characteristic flaring of the former Federation ships engines; a telltale sign that they are trying to escape!</text>
 	<text>It's rare that Rebels try to run away from a battle, but these defector's Federation training still runs fresh and they focus prioritisation in keeping their ship safe as they try to make their escape.</text>
 	<text>You can tell from a massive spike in the enemy's engine power that the ship is trying to escape.</text>
 	<text>It appears the traitors are trying to hail you to surrender, but interference of a nearby star makes it impossible to discern a word of the communiqué, and they take your silence as a refusal. They are diverting all power to their engines and are trying to escape!</text> <!-- R4: the é is okay in FTL yes? -->

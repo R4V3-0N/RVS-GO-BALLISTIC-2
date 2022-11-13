@@ -29,7 +29,59 @@
 -->
 <!-- R4: Who ever convinced me to do more than 2 additional ammo types, who ever made it go up to as many as it did and still more to come, I will find you, and I will slap you-->
 
-
+<weaponBlueprint name="GB_AC_1_FLECHETTE"> <!-- flechettes that cause bleed damage -->
+	<type>BURST</type>
+	<title>Autocannon Mark I [Flechette]</title>
+	<short>AC I [F]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<damage>0</damage>
+	<persDamage>0</persDamage> <!-- no Pers damage from projectile, only via bleed-->
+	<sysDamage>0</sysDamage> <!--minus 1, flat, for all flechette AC marks-->
+	<shots>1</shots>
+	<sp>0</sp>
+	<speed>50</speed>
+	<breachChance>2</breachChance>
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<radius>30</radius>
+	<cost>10</cost>
+	<statBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>25</duration>
+			<boostAnim>blood_effect</boostAnim>
+		</statBoost>
+	</statBoosts>
+	<projectiles>
+		<projectile count="1" fake="false">GB_shot_tiny_flechette</projectile>
+	</projectiles>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_FLECHETTE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
 <!--AUTOCANNON 1-->
 
 <weaponBlueprint name="GB_AC_1"> <!-- standard-->
@@ -456,11 +508,12 @@
 	<missiles>1</missiles>
 	<freeMissileChance>82</freeMissileChance>
 	<damage>1</damage>
-	<persDamage>-1</persDamage> <!-- no Pers damage from projectile, only via bleed-->
+	<noPersDamage>true</noPersDamage> <!-- no Pers damage from projectile, only via bleed-->
 	<sysDamage>-1</sysDamage> <!--minus 1, flat, for all flechette AC marks-->
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>2</breachChance>
+	<speed>60</speed>
 	<cooldown>6</cooldown>
 	<power>1</power>
 	<bp>4</bp>
@@ -480,7 +533,7 @@
 	</statBoosts>
 	<projectiles>
 		<projectile count="1" fake="false">GB_shot_light_flechette</projectile>
-		<projectile count="1" fake="true">GB_shot_tiny_flechette</projectile>
+		<projectile count="1" fake="false" blueprint="GB_AC_FLECHETTE_FRAG">GB_shot_tiny_flechette</projectile>
 	</projectiles>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
@@ -1004,11 +1057,12 @@
 	<missiles>1</missiles>
 	<freeMissileChance>78</freeMissileChance>
 	<damage>2</damage>
-	<persDamage>-2</persDamage>
-	<sysDamage>-2</sysDamage>
+	<noPersDamage>true</noPersDamage>
+	<sysDamage>-1</sysDamage>
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>3</breachChance>
+	<speed>60</speed>
 	<stunChance>2</stunChance>
 	<cooldown>6</cooldown>
 	<power>2</power>
@@ -1029,7 +1083,7 @@
 	</statBoosts>
 	<projectiles>
 		<projectile count="1" fake="false">GB_shot_medium_flechette</projectile>
-		<projectile count="4" fake="true">GB_shot_tiny_flechette</projectile>
+		<projectile count="4" fake="false" blueprint="GB_AC_FLECHETTE_FRAG">GB_shot_tiny_flechette</projectile>
 	</projectiles>
 	<image>GB_shot_medium_flechette</image>
 	<launchSounds>
@@ -1524,7 +1578,7 @@
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<cost>40</cost>
-	<image>GB_shot_heavy_INCENDIARY</image>
+	<image>GB_shot_heavy_INCENDIARY</image> 
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
 		<sound>GB_cannonHeavy2</sound>
@@ -1555,12 +1609,13 @@
 	<missiles>1</missiles>
 	<freeMissileChance>67</freeMissileChance>
 	<damage>3</damage>
-	<persDamage>-3</persDamage>
-	<sysDamage>-3</sysDamage>
+	<noPersDamage>true</noPersDamage>
+	<sysDamage>-1</sysDamage>
 	<shots>1</shots>
 	<sp>0</sp>
 	<spin>0</spin>
 	<breachChance>5</breachChance>
+	<speed>60</speed>
 	<stunChance>4</stunChance>
 	<cooldown>6</cooldown>
 	<power>3</power>
@@ -1581,7 +1636,7 @@
 	</statBoosts>
 	<projectiles>
 		<projectile count="1" fake="false">GB_shot_heavy_flechette</projectile>
-		<projectile count="6" fake="true">GB_shot_tiny_flechette</projectile>
+		<projectile count="6" fake="false" blueprint="GB_AC_FLECHETTE_FRAG">GB_shot_tiny_flechette</projectile>
 	</projectiles>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -3160,6 +3215,7 @@
 	<health amount="35" />
 	<maxPower amount="9" />
 	<aug name="GB_PHONE" />
+	<shieldImage>mupc_a55</shieldImage>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_RVSP_FED_FREIGHTER_2" layout="rvsp_fed_freighter_b" img="rvsp_fed_freighter_b">
@@ -3238,6 +3294,7 @@
 	<aug name="GB_PHONE" />
 	<aug name="NEBULA_GASSES" /> <!-- R4: Might change this later, a trade augment to give a headstart economically -->
 	<aug name="CRATE_MISSILES" /> <!-- Similar as Nebula gasses, might just be dumped into an event at first sight or used to get an edge in missiles -->
+	<shieldImage>mupc_a55</shieldImage>
 </shipBlueprint>
 
 
@@ -3253,7 +3310,7 @@
 
 <augBlueprint name = "AUTO_LOADER_LOW_SHIELD_LOCKED"> <!-- R4: need to change these to have a prefix-->
 	<title>Assault Auto-Reloader</title>
-	<desc>Massively decreases your weapon cooldown at the cost of slowing shield recharge rate considerably. Because what's the fun otherwise? (-20% weapon cooldown, -33% shield recharge rate.)</desc>
+	<desc>Increases weapon fire rate by 20% and provides 10% hull resistance, but reduces shield recharge speed by 33%</desc>
 	<cost>0</cost>
 	<bp>9</bp>
 	<rarity>0</rarity>
@@ -3262,7 +3319,7 @@
 
 <augBlueprint name = "AUTO_LOADER_LOW_SHIELD"> <!-- R4: need to change these to have a prefix-->
 	<title>Assault Auto-Reloader</title>
-	<desc>Massively decreases your weapon cooldown at the cost of slowing shield recharge rate considerably. Because what's the fun otherwise? (-20% weapon cooldown, -33% shield recharge rate.)</desc>
+	<desc>Massively  your weapon cooldown at the cost of slowing shield recharge rate considerably. Because what's the fun otherwise? (-20% weapon cooldown, -33% shield recharge rate.)</desc>
 	<cost>50</cost>
 	<bp>9</bp>
 	<rarity>0</rarity>

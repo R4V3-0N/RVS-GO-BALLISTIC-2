@@ -243,7 +243,7 @@
 			<environment type = "asteroid"/>
 			<text>You are surprised to see a derelict outpost inside a crater of a dwarf planet within the asteroid field. As you approach for a landing they hail you on Federation channels. "Wasn't expecting a Federation vessel coming this way into our area of operations for another couple of months. We're short on munitions, and we're struggling to provide for the strikes this far deep in enemy territory with how infrequent supply runs have been. Perhaps we can come to an arrangement?"</text>
 			<choice>
-				<text>Hand over some ammunition to access a store. [-5 }]</text>
+				<text>Hand over some ammunition to access a store.</text>
 				<event>
 					<item_modify>
 						<item type="missiles" min="-5" max="-5"/>
@@ -256,7 +256,7 @@
 				<event>
 					<text>"These old things are running the foolproof classic load out of Autocannons and Bombs. Works perfectly fine up until you operate a bit further than a stone toss away from the supply lines. Hard getting supplies this far out without being overt in this enemy sector. You're more than free to take some off our hands in our inventory. No use keeping cannons that can't fire."</text>
 					<choice>
-                        <text>Agree to trade for a reduced cost. [-2 }]</text>
+                        <text>Agree to trade for a reduced cost.</text>
                         <event>
                             <item_modify>
                                 <item type="missiles" min="-2" max="-2"/>
@@ -265,7 +265,7 @@
                         </event>
                     </choice>
                     <choice>
-                        <text>Let's stick to the regular store. [-5 }]</text>
+                        <text>Let's stick to the regular store.</text>
                         <event>
                             <item_modify>
                                 <item type="missiles" min="-5" max="-5"/>

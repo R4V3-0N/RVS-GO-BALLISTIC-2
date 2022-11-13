@@ -6,7 +6,7 @@
 		<event load="STORAGE_CHECK_GB_AMMO"/>
 	</mod-append:choice>
 </mod:findName>-->
-
+<!--old toggle events?
 <event name="STORAGE_CHECK_GB_AMMO" unused="true">
 	<text>which autocannon do you want to config</text>
 	<choice req="GB_AC_1_LIST" blue = "false" hidden="true">
@@ -61,7 +61,7 @@
 		<text>Do something else instead.</text>
 		<event load="STORAGE_CHECK"/>
 	</choice>
-</event>
+</event>-->
 
 
 <!--Autocannon Ammo Types -->
@@ -453,7 +453,7 @@
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="9" max_lvl="9" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 18% ammo consumption]</text>
+			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg(+1 frag projectile), 0 sys dmg, 18% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="10" max_lvl="10" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
@@ -509,7 +509,7 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 18% ammo consumption]</text>
+			<text>Flechette ammo.[+10% breach, only DoT crew dmg(+1 frag projectile), 0 sys dmg, 18% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_FLECHETTE</loadEvent>
 			</event>
@@ -661,7 +661,7 @@
 		</choice>
 	</event>
 	<event name="COMBAT_CHECK_GB_AC_1_LOAD_FLECHETTE">
-		<text>Flechette rounds: [6s cd, 1 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 20% breach chance, 30 px radius, 18% ammo consumption]
+		<text>Flechette rounds: [6s cd, 1 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 20% breach chance, 30 px radius, 1 frag projectile, 18% ammo consumption]
 			Load into the Autocannon MK I?
 		</text>
 		<choice>
@@ -694,10 +694,10 @@
 	<event name="GET_AC_1_STANDARD">
 		<weapon name="GB_AC_1"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -705,10 +705,10 @@
 	<event name="GET_AC_1_CASELESS">
 		<weapon name="GB_AC_1_CASELESS"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -716,10 +716,10 @@
 	<event name="GET_AC_1_HV">
 		<weapon name="GB_AC_1_HV"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -727,10 +727,10 @@
 	<event name="GET_AC_1_FREE">
 		<weapon name="GB_AC_1_FREE"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -738,10 +738,10 @@
 	<event name="GET_AC_1_HE">
 		<weapon name="GB_AC_1_HE"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -749,10 +749,10 @@
 	<event name="GET_AC_1_EMP">
 		<weapon name="GB_AC_1_EMP"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -760,10 +760,10 @@
 	<event name="GET_AC_1_HEAT">
 		<weapon name="GB_AC_1_HEAT"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -771,10 +771,10 @@
 	<event name="GET_AC_1_INCENDIARY">
 		<weapon name="GB_AC_1_INCENDIARY"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -782,10 +782,10 @@
 	<event name="GET_AC_1_FLECHETTE">
 		<weapon name="GB_AC_1_FLECHETTE"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -793,10 +793,10 @@
 	<event name="GET_AC_1_RAD">
 		<weapon name="GB_AC_1_RAD"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -839,7 +839,7 @@
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="9" max_lvl="9" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 22% ammo consumption]</text>
+			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg(+4 frag projectiles), 1 sys dmg, 22% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="10" max_lvl="10" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
@@ -895,7 +895,7 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 22% ammo consumption]</text>
+			<text>Flechette ammo.[+10% breach, only DoT crew dmg(+4 frag projectiles), 1 sys dmg, 22% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_FLECHETTE</loadEvent>
 			</event>
@@ -1047,7 +1047,7 @@
 		</choice>
 	</event>
 	<event name="COMBAT_CHECK_GB_AC_2_LOAD_FLECHETTE">
-		<text>Flechette rounds: [6s cd, 2 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 20% stun(3s), 30% breach chance, 40 px radius, 22% ammo consumption]
+		<text>Flechette rounds: [6s cd, 2 hull dmg, 1 sys dmg, 1 dps DoT(25s) crew dmg, 20% stun(3s), 30% breach chance, 40 px radius, 4 frag projectiles, 22% ammo consumption]
 			Load into the Autocannon MK II?
 		</text>
 		<choice>
@@ -1080,10 +1080,10 @@
 	<event name="GET_AC_2_STANDARD">
 		<weapon name="GB_AC_2"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1091,10 +1091,10 @@
 	<event name="GET_AC_2_CASELESS">
 		<weapon name="GB_AC_2_CASELESS"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1102,10 +1102,10 @@
 	<event name="GET_AC_2_HV">
 		<weapon name="GB_AC_2_HV"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1113,10 +1113,10 @@
 	<event name="GET_AC_2_FREE">
 		<weapon name="GB_AC_2_FREE"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1124,10 +1124,10 @@
 	<event name="GET_AC_2_HE">
 		<weapon name="GB_AC_2_HE"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1135,10 +1135,10 @@
 	<event name="GET_AC_2_EMP">
 		<weapon name="GB_AC_2_EMP"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1146,10 +1146,10 @@
 	<event name="GET_AC_2_HEAT">
 		<weapon name="GB_AC_2_HEAT"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1157,10 +1157,10 @@
 	<event name="GET_AC_2_INCENDIARY">
 		<weapon name="GB_AC_2_INCENDIARY"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1168,10 +1168,10 @@
 	<event name="GET_AC_2_FLECHETTE">
 		<weapon name="GB_AC_2_FLECHETTE"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1179,10 +1179,10 @@
 	<event name="GET_AC_2_RAD">
 		<weapon name="GB_AC_2_RAD"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1225,7 +1225,7 @@
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="9" max_lvl="9" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 33% ammo consumption]</text>
+			<text>Current: Flechette ammo.[+10% breach, only DoT crew dmg(+6 frag projectiles), 2 sys dmg, 33% ammo consumption]</text>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="10" max_lvl="10" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
@@ -1281,7 +1281,7 @@
 			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Flechette ammo.[+10% breach, only DoT crew dmg, 0 sys dmg, 33% ammo consumption]</text>
+			<text>Flechette ammo.[+10% breach, only DoT crew dmg(+6 frag projectiles), 1 sys dmg, 33% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_FLECHETTE</loadEvent>
 			</event>
@@ -1433,7 +1433,7 @@
 		</choice>
 	</event>
 	<event name="COMBAT_CHECK_GB_AC_3_LOAD_FLECHETTE">
-		<text>Flechette rounds: [6s cd, 3 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 40% stun(3s), 50% breach chance, 40 px radius, 33% ammo consumption]
+		<text>Flechette rounds: [6s cd, 3 hull dmg, 2 sys dmg, 1 dps DoT(25s) crew dmg, 40% stun(3s), 50% breach chance, 40 px radius, 6 frag projectiles, 33% ammo consumption]
 			Load into the Autocannon MK III?
 		</text>
 		<choice>
@@ -1466,10 +1466,10 @@
 	<event name="GET_AC_3_STANDARD">
 		<weapon name="GB_AC_3"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1477,10 +1477,10 @@
 	<event name="GET_AC_3_CASELESS">
 		<weapon name="GB_AC_3_CASELESS"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1488,10 +1488,10 @@
 	<event name="GET_AC_3_HV">
 		<weapon name="GB_AC_3_HV"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1499,10 +1499,10 @@
 	<event name="GET_AC_3_FREE">
 		<weapon name="GB_AC_3_FREE"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1510,10 +1510,10 @@
 	<event name="GET_AC_3_HE">
 		<weapon name="GB_AC_3_HE"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1521,10 +1521,10 @@
 	<event name="GET_AC_3_EMP">
 		<weapon name="GB_AC_3_EMP"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1532,10 +1532,10 @@
 	<event name="GET_AC_3_HEAT">
 		<weapon name="GB_AC_3_HEAT"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1543,10 +1543,10 @@
 	<event name="GET_AC_3_INCENDIARY">
 		<weapon name="GB_AC_3_INCENDIARY"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1554,10 +1554,10 @@
 	<event name="GET_AC_3_FLECHETTE">
 		<weapon name="GB_AC_3_FLECHETTE"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1565,10 +1565,10 @@
 	<event name="GET_AC_3_RAD">
 		<weapon name="GB_AC_3_RAD"/>
 		<loadEventList>
-			<event req="MARKER_FLAGSHIP" lvl="0">
+			<event req="loc_flagship" lvl="0">
 				<loadEvent>COMBAT_CHECK</loadEvent>
 			</event>
-			<event req="MARKER_FLAGSHIP" lvl="1">
+			<event req="loc_flagship" lvl="1">
 				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
 			</event>
 		</loadEventList>
@@ -1589,11 +1589,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_DEFENSE_AC"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1611,11 +1611,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_COMBAT_AC_2"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1633,11 +1633,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_COMBAT_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1645,11 +1645,11 @@
 			</choice>
 		</event>
 	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
+	<choice blue="false" req="loc_flagship" lvl="0" max_group="1"  >
 		<text>Do something else instead.</text>
 		<event load="COMBAT_CHECK"/>
 	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+	<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 		<text>Do something else instead.</text>
 		<event load="COMBAT_CHECK_FLAGSHIP"/>
 	</choice>
@@ -1667,11 +1667,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_DEFENSE_AC"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1689,11 +1689,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_COMBAT_AC_1"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1711,11 +1711,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_COMBAT_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1723,11 +1723,11 @@
 			</choice>
 		</event>
 	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
+	<choice blue="false" req="loc_flagship" lvl="0" max_group="1"  >
 		<text>Do something else instead.</text>
 		<event load="COMBAT_CHECK"/>
 	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+	<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 		<text>Do something else instead.</text>
 		<event load="COMBAT_CHECK_FLAGSHIP"/>
 	</choice>
@@ -1745,11 +1745,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_DEFENSE_AC"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1767,11 +1767,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_COMBAT_AC_1"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1789,11 +1789,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_COMBAT_AC_2"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1801,11 +1801,11 @@
 			</choice>
 		</event>
 	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
+	<choice blue="false" req="loc_flagship" lvl="0" max_group="1"  >
 		<text>Do something else instead.</text>
 		<event load="COMBAT_CHECK"/>
 	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+	<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 		<text>Do something else instead.</text>
 		<event load="COMBAT_CHECK_FLAGSHIP"/>
 	</choice>
@@ -1823,11 +1823,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_COMBAT_AC_1"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1845,11 +1845,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_COMBAT_AC_2"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1867,11 +1867,11 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="GB_COMBAT_AC_3"/>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK"/>
 					</choice>
-					<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 						<text>Continue...</text>
 						<event load="COMBAT_CHECK_FLAGSHIP"/>
 					</choice>
@@ -1879,11 +1879,11 @@
 			</choice>
 		</event>
 	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="0" max_group="1"  >
+	<choice blue="false" req="loc_flagship" lvl="0" max_group="1"  >
 		<text>Do something else instead.</text>
 		<event load="COMBAT_CHECK"/>
 	</choice>
-	<choice blue="false" req="MARKER_FLAGSHIP" lvl="1" max_group="1">
+	<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
 		<text>Do something else instead.</text>
 		<event load="COMBAT_CHECK_FLAGSHIP"/>
 	</choice>
