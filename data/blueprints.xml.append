@@ -1610,7 +1610,7 @@
 	<freeMissileChance>67</freeMissileChance>
 	<damage>3</damage>
 	<noPersDamage>true</noPersDamage>
-	<sysDamage>-2</sysDamage>
+	<sysDamage>-1</sysDamage>
 	<shots>1</shots>
 	<sp>0</sp>
 	<spin>0</spin>
