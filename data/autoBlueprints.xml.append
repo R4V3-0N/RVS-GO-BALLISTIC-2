@@ -368,6 +368,33 @@ created from scratch using the components or techniques of them to create odd an
 	<!--<name>GB_AC_4</name>-->
 </blueprintList>
 
+<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_LIGHT_ELITE">
+	<name>GB_AC_1</name>
+	<name>GB_AC_2</name>
+</blueprintList>
+<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_MODERATE_ELITE">
+	<name>GB_AC_2</name>
+	<name>GB_AC_3</name>
+</blueprintList>
+<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_HEAVY_ELITE">
+	<name>GB_AC_3</name>
+	<!--<name>GB_AC_4</name>-->
+</blueprintList>
+
+
+<blueprintList name = "GB_GIFTLIST_AUTOCANNONS">
+	<name>GB_AC_1</name>
+	<name>GB_AC_2</name>
+	<name>GB_AC_3</name>
+	<!--<name>GB_AC_4</name>-->
+</blueprintList>
+<blueprintList name = "GB_GIFTLIST_AUTOCANNONS_ELITE">
+	<name>GB_AC_1_E</name>
+	<name>GB_AC_2_E</name>
+	<name>GB_AC_3_E</name>
+	<!--<name>GB_AC_4_E</name>-->
+</blueprintList>
+
 
 <blueprintList name = "GB_CARAVAN_REWARD">  <!-- R4: Todo, change this to "GB_GIFTLIST_AUTOCANNONS_MODERATE -->
 	<name>GB_AC_2</name>

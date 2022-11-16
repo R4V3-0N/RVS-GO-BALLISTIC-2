@@ -203,17 +203,302 @@ no clue what sector this is meant to be for.
 	<event> 
 		<text>You spend a considerable amount of time delving deeper into the hulk. Meticulously cutting up and disassembling useful components from the ships engineering and gargantuan life support. You come off with a pretty decent haul and fortunately your engines haven't seem to have worsened. You best leave before the Rebel fleet gains any more ground on you.</text>
 		<autoReward level="HIGH">standard</autoReward>
-		<modifyPursuit amount="1"/> <!-- R4: 1 fleet delay for spending a little more time salvaging -->
+		<modifyPursuit amount="1"/> <!-- R4: 1 fleet increase for spending a little more time salvaging -->
 	</event>
 	<event> 
 		<text>You spend a considerable amount of time delving deeper into the hulk. Meticulously cutting up and disassembling useful components from the ships engineering and gargantuan life support. You come off with a pretty decent haul and fortunately your engines haven't seem to have worsened. You best leave before the Rebel fleet gains any more ground on you.</text>
 		<autoReward level="MED">augment</autoReward>
-		<modifyPursuit amount="1"/> <!-- R4: 1 fleet delay for spending a little more time salvaging -->
+		<modifyPursuit amount="1"/> <!-- R4: 1 fleet increase for spending a little more time salvaging -->
 	</event>
 	<event>
 		<text>You spend a considerable amount of time delving deeper into the hulk. Meticulously cutting up and disassembling useful components from the ships engineering and gargantuan life support. You come off with a pretty decent haul, however, your engines begin to choke and stall on the polutants of this beacon. Cleaning out the engines and repairing them will take time, time that you can't afford to lose as the Rebel fleet continues their advance.</text>
 		<autoReward level="HIGH">standard</autoReward>
 		<damage amount="2" system="engines" /> <!-- R4: uh... this is just system damage riiiight? -->
-		<modifyPursuit amount="2"/> <!-- R4: 2 fleet delay for things going awry while you salvage -->
+		<modifyPursuit amount="2"/> <!-- R4: 2 fleet increase for things going awry while you salvage -->
 	</event>
 </eventList>
+
+
+
+<event name="RVS_FED_RND_EVAC_STORE"> <!-- R4: Can someone make sure this is marked on the map as a Fed Store -->
+	<text>You arrive at a Federation Weapons R&amp;D facility that is in the middle of an evacuation with the inevitable arrival of the Rebel Fleet in this sector. Though they are willing to engage in some trade with you to lighten their load, they can not provide any other assistance for the time being.</text>
+	<choice hidden="true">
+		<text>Trade with them.</text>
+		<event>
+			<store>STORE_FED</store>
+		</event>
+	</choice>
+	<choice hidden="true" req="MINELAUNCHER_CHECK"> <!-- R4: Note. I want to have the background have mines floating in it at some point. Similar to CE but animated similar to a lighter asteroid field. Until then for now I would like to request a periodic power surge for the player during this fight off screen that yeets a 1 damage mine at the enemy say every 6 seconds?-->
+		<text>(Mine launcher) Offer to lay a protective minefield to aid in their evacuation.</text>
+		<event>
+			<text>They appreciate your offer and help coordinate with you to lay mines to help cover their escape and give them more time. As a friendly Federation controlled beacon they can provide ample warning to the locals of the location and nature of the minefield, and in accordance with interstellar law should not taint your reputation with any notoriety. How do you wish to proceed with laying the minefield?</text>
+			<choice hidden="true" req="MINELAUNCHER_1" blue="true">
+				<text>Use your Mk 1 Mine Launcher. [-13}, gives 2 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-2"/>
+					<item_modify>
+						<item type="missiles" min="-13" max="-13"/>
+					</item_modify>
+				</event> 
+			</choice>
+			<choice hidden="true" req="MINELAUNCHER_2" blue="true">
+				<text>Use your Mk 2 Mine Launcher. [-10}, gives 2 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-2"/>
+					<item_modify>
+						<item type="missiles" min="-10" max="-10"/>
+					</item_modify>
+					<choice hidden="true" >
+						<text>Continue...</text>
+						<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="MINELAUNCHER_3" blue="true">
+				<text>Use your Mk 3 Mine Launcher. [-7}, gives 2 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-2"/>
+					<item_modify>
+						<item type="missiles" min="-7" max="-7"/>
+					</item_modify>
+					<choice hidden="true" >
+						<text>Continue...</text>
+						<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="MINELAUNCHER_FREE" blue="true">
+				<text>Use your Recycler Mine Launcher and additional missiles. [-3}, Gives 1 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-1"/>
+					<item_modify>
+						<item type="missiles" min="-3" max="-3"/>
+					</item_modify>
+					<choice hidden="true" >
+						<text>Continue...</text>
+						<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="MINELAUNCHER_FIRE" blue="true">
+				<text>Use your Fire Mine Launcher. [-17}, gives 3 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-3"/>
+					<item_modify>
+						<item type="missiles" min="-17" max="-17"/>
+					</item_modify>
+					<choice hidden="true" >
+						<text>Continue...</text>
+						<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="LOOT_LOSTSUN_1" blue="true">
+				<text>Use your Loot Fire Mine Launcher. [-15}, gives 3 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-3"/>
+					<item_modify>
+						<item type="missiles" min="-15" max="-15"/>
+					</item_modify>
+					<choice hidden="true" >
+						<text>Continue...</text>
+						<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="MINELAUNCHER_BREACH" blue="true">
+				<text>Use your Breach Mine Launcher. [-17}, gives 3 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-3"/>
+					<item_modify>
+						<item type="missiles" min="-17" max="-17"/>
+					</item_modify>
+					<choice hidden="true" >
+						<text>Continue...</text>
+						<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="LOOT_MATH_6" blue="true">
+				<text>Use the 'Percentage'. [-15}, gives 3 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-3"/>
+					<item_modify>
+						<item type="missiles" min="-15" max="-15"/>
+					</item_modify>
+					<choice hidden="true" >
+						<text>Continue...</text>
+						<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="MINELAUNCHER_STUN" blue="true">
+				<text>Use your Stun Mine Launcher. [-17}, gives 3 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-3"/>
+					<item_modify>
+						<item type="missiles" min="-17" max="-17"/>
+					</item_modify>
+					<choice hidden="true" >
+						<text>Continue...</text>
+						<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="MINELAUNCHER_CRYSTAL" blue="true">
+				<text>Use your Shard Launcher and additional missiles. [-5}, gives 1 delay, does not impact notoriety]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. Fortunately, due to obscure legal loopholes, the use of this weapon isn't illegal, though it is very morally dubious.</text>
+					<modifyPursuit amount="-1"/>
+					<item_modify>
+						<item type="missiles" min="-5" max="-5"/>
+					</item_modify>
+					<choice hidden="true" >
+						<text>Continue...</text>
+						<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="MINELAUNCHER_KERNEL" blue="true">
+				<text>Use your Vine Launcher. [Gives 1 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-1"/>
+					<choice hidden="true" >
+						<text>Continue...</text>
+					<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+				</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="MINELAUNCHER_GIANT" blue="true">
+				<text>Use your Pharaoh Mine Launcher. [-7}, gives 3 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-3"/>
+					<item_modify>
+						<item type="missiles" min="-7" max="-7"/>
+					</item_modify>
+					<choice hidden="true" >
+						<text>Continue...</text>
+						<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true" req="ANCIENT_MINELAUNCHER" blue="true">
+				<text>Use your Aether Mine Launcher. [-7}, gives 2 delay]</text>
+				<event>
+					<text>You rig the ammunition and set a trap for the Rebels. It's definitely illegal to do, but you'll be gone before it matters.</text>
+					<modifyPursuit amount="-2"/>
+					<item_modify>
+						<item type="missiles" min="-7" max="-7"/>
+					</item_modify>
+					<choice hidden="true" >
+						<text>Continue...</text>
+						<event load="RVS_FED_RND_EVAC_STORE_MINES"/>
+					</choice>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Nevermind.</text>
+				<event load="STORAGE_CHECK_JOB_LOAD"/>
+			</choice>
+		</event>
+	</choice>
+	<!--<choice hidden="true">
+		<text>Offer to stay behind to help with the evacuation.</text>
+		<event>
+			<modifyPursuit amount="1"/>
+			<text>You decide to stay back and help assist in the evacuation. Shuttling scientists and officers off the facility into the nearby Federation carryships.</text>
+		</event>
+	</choice> Hidden for now, WIP. Double fleet, should give similar reward as minefield event-->
+	<choice hidden="true">
+		<text>Leave.</text>
+		<event load="RVS_FED_RND_EVAC_STORE_AMBUSH_CHANCE"/>
+	</choice>
+</event>
+
+<eventlist name="RVS_FED_RND_EVAC_STORE_MINES">
+	<event load="RVS_FED_RND_EVAC_STORE_MINES_ATTACK"/>
+	<event load="RVS_FED_RND_EVAC_STORE_MINES_CALM"/>
+</eventList>
+<event name="RVS_FED_RND_EVAC_STORE_ATTACK">
+	<text>As you are undisturbed here you lay some mines forming a defensive minefield to mask the facilities evacuation. As a precaution, you place a couple hazard markers as well to mark for later disposal assuming any is left after the Rebel fleet doesn’t end up contacting all the mines here. The Rebel forces will be completely oblivious to the minefield and most certainly suffer heavy losses while civilian vessels avoid the node with the facilities forewarning. With enough time to spare you decide to take a purose of what they're willing to trade.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<store>STORE_FED</store>
+			<text>In recognition of your efforts, the weapons facility offers to install an improved autocannon and some resources as thanks.  With enough time to spare you decide to take a peruse of what they're willing to trade, however, just as you begin to wrap up with your bartering while docked you hear the classic Federation klaxon blares down throughout the facility. It must be a Rebel forward scout and it does not seem too happy stumbling into a minefield!</text>
+			<weapon name="GB_GIFTLIST_AUTOCANNONS_ELITE"/>
+			<autoReward level="MED">standard</autoReward>
+			<ship load="SHIP_REBEL_FIGHT" hostile="true"/> <!-- R4: Could potentially have it have a custom fleeing message mentioning how if it escapes it'll surely warn the Rebel fleet about the trap that lays before them and you must destroy it at all costs-->
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+		</event>
+	</choice>
+</event>
+<event name="RVS_FED_RND_EVAC_STORE_CALM">
+	<text>As you are undisturbed here you lay some mines forming a defensive minefield to mask the facilities evacuation. As a precaution, you place a couple hazard markers as well to mark for later disposal assuming any is left after the Rebel fleet doesn’t end up contacting all the mines here. The Rebel forces will be completely oblivious to the minefield and most certainly suffer heavy losses while civilian vessels avoid the node with the facilities forewarning.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<store>STORE_FED</store>
+			<text>In recognition of your efforts, the weapons facility offers to install an improved autocannon and some resources as thanks. With enough time to spare you decide to take a purose of what they're willing to trade.<</text>
+			<weapon name="GB_GIFTLIST_AUTOCANNONS_ELITE"/>
+			<autoReward level="MED">standard</autoReward>
+			<reward>
+		</event>
+	</choice>
+</event>
+
+
+<eventlist name="RVS_FED_RND_EVAC_STORE_AMBUSH_CHANCE">
+	<event load="RVS_FED_RND_EVAC_STORE_AMBUSH"/>
+	<event load="RVS_FED_RND_EVAC_STORE_LEAVE"/>
+</eventList>
+<event name="RVS_FED_RND_EVAC_STORE_LEAVE">
+	<text>There isn't much that you can do here to help them and you aren't interesting in bartering with them either. Though you wish them good luck you decide its best to follow their lead and leave this beacon soon.</text>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK"/>
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+	</choice>
+</event>
+<event name="RVS_FED_RND_EVAC_STORE_AMBUSH">
+	<text>There isn't much that you can do here to help them and you aren't interesting in bartering with them either. Though you wish them good luck you decide its best to follow their lead and leave this beacon soon.</text>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event>
+			<text>Before you can ponder what to do onboard your ship you are interrupted in thought as the R&amp;D facility hails you frantically! A Rebel forward scout has jumped in and breached the outer perimeter. It must consider you to be the greater target as it flew right past the facility and is barreling right towards you! Attention on deck. All hands battle stations!</text>
+			<ship load="SHIP_REBEL_FIGHT" hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event>
+			<text>Before you can make preperations to leave you are interrupted as the R&amp;D facility hails you frantically! A Rebel forward scout has jumped in and breached the outer perimeter. It must consider you to be the greater target as it flew right past the facility and is barreling right towards you! Attention on deck. All hands battle stations!</text>
+			<ship load="SHIP_REBEL_FIGHT" hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+</event>
