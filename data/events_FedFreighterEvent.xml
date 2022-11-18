@@ -1,16 +1,16 @@
 <event name="RVS_FREIGHTER_ESCORT_DISTRESS" unique="true">
   <beaconType text="ENCRYPTED DISTRESS" global="true" persist="false" hideVanillaLabel="true"> <!--TODO: Set global to false once testing is done-->
     <color r="102" g="51" b="51" a="1" /> <!-- R4: Not sure how this will look in game, subject to change -->
-    <undiscoveredTooltip>Encrypted Distress Beacon. Someone might need help.</undiscoveredTooltip> <!-- R4: might need change -->
+    <undiscoveredTooltip>Encrypted distress beacon. Someone might need help.</undiscoveredTooltip> <!-- R4: might need change -->
     <unvisitedTooltip>An unvisited location.</unvisitedTooltip>
     <visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
   </beaconType>
   <ship load="GB_FED_FREIGHTER_EVENT_FED_ESCORT" hostile="false"/> <!-- Currently like judges, nothing set up for hostility -->
-  <text>With great haste, you attempt to locate the source of the encrypted distress signal with short-range scans. A small Federation escort floats motionlessly amidst a cloud of gas. You tune in on Federation hailing frequencies: "Friendly Merc, We've taken heavy damage and request immediate repairs we're leaking fuel, over".</text>
+  <text>You attempt to locate the source of the encrypted distress signal with short-range scans. A small Federation escort floats motionlessly amidst a cloud of gas. You tune in on Federation hailing frequencies: "Friendly vessel, we've taken heavy damage and are leaking fuel. Requesting immediate assistance."</text>
   <choice hidden="true" req="GB_LIST_REPAIR_WEAPONS">
-    <text>(Repair Weapons) Use your equipment to repair the ship efficiently.</text>
+    <text>(Repair Weapon) Use your equipment to repair the ship efficiently.</text>
     <event>
-      <text>A quick few salvos of your repair weapons patches up the ship into a more stable condition, sealing their hull and preventing any further leaking.</text>
+      <text>A few salvos of your repair weapon patch up the ship easily, sealing their hull and preventing any further leaking.</text>
       <choice hidden="true">
         <text>Continue...</text>
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
@@ -18,12 +18,12 @@
     </event>
   </choice>
   <choice hidden="false" req="GB_LIST_REPAIR_WEAPONS_AMMO"> <!--This list does not exist-->
-    <text>(Repair Ammo Weapons) Use your munition based equipment to repair the ship efficiently.</text>
+    <text>(Repair Ammo Weapon) Use your munition based equipment to repair the ship efficiently.</text>
     <event>
       <item_modify steal="true">
         <item type="missiles" min="-3" max="-1"/> <!-- R4: Probably should mention this in the above message that it uses ammo? --> <!--hidden="false" takes care of this-->
       </item_modify>
-      <text>A quick few salvos of your repair weapons patches up the ship into a more stable condition, sealing their hull and preventing any further leaking.</text>
+      <text>A few salvos of your repair weapon patch up the ship easily, sealing their hull and preventing any further leaking.</text>
       <choice hidden="true">
         <text>Continue...</text>
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
@@ -31,12 +31,12 @@
     </event>
   </choice>
   <choice hidden="false" req="REPAIR_ARM">
-    <text>(Repair Arm) Use your repair arms to repair the vessel</text> <!-- R4: Probably should mention this in the above message that it uses scrap? --> <!--hidden="false" takes care of this-->
+    <text>(Repair Arm) Use your repair arm to repair the vessel.</text> <!-- R4: Probably should mention this in the above message that it uses scrap? --> <!--hidden="false" takes care of this-->
     <event>
       <item_modify steal="true">
         <item type="scrap" min="-6" max="-1"/>
       </item_modify>
-      <text>The repair arm works with machine precision, repairing the damages of the vessel. Using a moderate amount of scrap and debris, it seals their fuel tanks and any other breaches, mending the ship back together.</text>
+      <text>The repair arm works with machine precision. Using a moderate amount of scrap and debris, it seals their fuel tanks and any other breaches, preventing any further leaking.</text>
       <choice hidden="true">
         <text>Continue...</text>
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
@@ -44,12 +44,12 @@
     </event>
   </choice>
   <choice hidden="false" req="BLUELIST_DRONES_REPAIR_CREW">
-    <text>(Repair Drones) Use your repair drones to repair their damage. </text>
+    <text>(Repair Drone) Use your repair drone to repair their damage.</text>
     <event>
       <item_modify steal="true">
         <item type="drones" min="-1" max="-1"/>
       </item_modify>
-      <text>The drones make short work of the damage as they work effortlessly around the ship repairing it to a stable condition, reinforcing the hull and sealing breaches and leaks.</text>
+      <text>Once dispatched, the drone makes short work of the damage. It seals their fuel tanks and any other breaches, preventing any further leaking.</text>
       <choice hidden="true">
         <text>Continue...</text>
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
@@ -59,7 +59,7 @@
   <choice hidden="true" req="GB_LIST_REPAIR_CREW"> <!--Instead of creating a list manually, just use an existing MV list and append to it, and have other mods do the same. If it doesn't exist, then create one in Inferno-Core-->
     <text>(Repair Crew) Use your trained crew to repair their damage.</text>
     <event>
-      <text>You dock with the ship and board over a repair detail to repair the ship's damage. Their experience and proficiency leaves little left to be desired as they bring it to a stable condition no longer leaking fuel fumes.&#10;</text>
+      <text>You dock with the ship and send your crew member to repair the ship's damage. Their experience and proficiency makes short work of the breaches, quickly sealing their fuel tanks and preventing any further leaking.&#10;</text>
       <choice hidden="true">
         <text>Continue...</text>
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
@@ -70,7 +70,7 @@
     <text>Take time to repair their ship.</text>
     <event>
       <modifyPursuit amount="1"/>
-      <text>It will take a fair bit of time but you can't just leave this Federation ship stranded here. You dock with the ship and have a repair team board their vessel, diligently going over the damages until the ship is no longer leaking any fuel fumes.&#10;</text>
+      <text>The fleet will make some headway, but you can't just leave this Federation ship stranded here. You dock with the vessel and send a team aboard, diligently repairing the damage until the its is no longer leaking fuel.&#10;</text>
       <choice hidden="true">
         <text>Continue...</text>
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
@@ -80,15 +80,15 @@
   <choice hidden="true">
     <text>Wish them luck and leave.</text>
     <event>
-      <text>You don't think they'll be too happy that you couldn't help but you assure them that if you do encounter any friendly ships that you will forward them their way. Still though you can't help but feel disappointed with yourself that you couldn't assist them.</text>
+      <text>You don't think they'll be too happy that you couldn't help, but you assure them that if you do encounter any friendly ships that you will forward them their way. Still though, you can't help but feel disappointed with yourself that you couldn't assist them.</text>
       <choice>
-				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
-			</choice>
-			<choice>
-				<text>Do nothing.</text>
-				<event/>
-			</choice>
+        <text>Do something onboard the ship.</text>
+        <event load="STORAGE_CHECK"/>
+      </choice>
+      <choice>
+        <text>Do nothing.</text>
+        <event/>
+      </choice>
     </event>
   </choice>
 </event>
