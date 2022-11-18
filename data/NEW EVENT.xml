@@ -102,7 +102,7 @@ no clue what sector this is meant to be for.
 		</event>
 	</choice>
 </event>
-<eventList name="RVS_SCRAPYARD_TRAP">|
+<eventList name="RVS_SCRAPYARD_TRAP">
 	<!-- R4: Good outcomes -->
 	<event>
 		<text load="RVS_SCRAPYARD_TRAP_TEXT"/>
@@ -454,7 +454,7 @@ no clue what sector this is meant to be for.
 		<text>Continue...</text>
 		<event>
 			<store>STORE_FED</store>
-			<text>In recognition of your efforts, the weapons facility offers to install an improved autocannon and some resources as thanks. With enough time to spare you decide to take a purose of what they're willing to trade.<</text>
+			<text>In recognition of your efforts, the weapons facility offers to install an improved autocannon and some resources as thanks. With enough time to spare you decide to take a purose of what they're willing to trade.</text>
 			<weapon name="GB_GIFTLIST_AUTOCANNONS_ELITE"/>
 			<autoReward level="MED">standard</autoReward>
 			<reward>

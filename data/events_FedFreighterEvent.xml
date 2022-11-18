@@ -95,7 +95,7 @@
 
 <event name="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS">
   <autoReward level="MED">scrap_only</autoReward>
-  <text>"Much obliged friendly vessel. We were left stranded after we were attacked by Rebel interceptors gunning it to a military convoy we were escorting. Those tossers blew our bloody fuel tanks but not long after we sent them packing. We're still in a sorry state, so I recommend you rendezvous with the convoy ASAP. It's imperative that they make it to their objective."</text>
+  <text>"Much obliged friendly vessel. We were left stranded after we were attacked by Rebel interceptors gunning it to a military convoy we were escorting. Those tossers blew our bloody fuel tanks right before we sent them packing. We're still in a sorry state, so I recommend you rendezvous with the convoy ASAP. It's imperative that they make it to their objective."</text>
   <choice hidden="true">
     <text>Agree to rendezvous with the convoy.</text>
     <event>
@@ -157,7 +157,8 @@
 </event>
 
 <event name="RVS_FREIGHTER_CONVOY">
-  <text>You arrive at the coordinates given to you by the escort to find a Federation military checkpoint. Patrols of Federation vessels in the area protecting a couple of armed orbital facilities. Outside of the heavy military traffic at this beacon it's a relatively unremarkable star system, though you can't seem to locate the convoy.</text>
+  <customFleet right="false" firing="false" autoDarkening="false">CUSTOM_FLEET_FED</customFleet>
+  <text>You arrive at the coordinates given to you by the escort to find a Federation military checkpoint. Federation vessels patrol the area, protecting a couple of armed orbital facilities. Outside of the heavy military traffic at this beacon it's a relatively unremarkable star system, though you can't seem to locate the convoy.</text>
   <choice hidden="true">
     <text>Wait.</text>
     <event>
