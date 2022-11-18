@@ -1,0 +1,10 @@
+Cost Icons
+FUEL:     ~
+SCRAP:    {
+MISSILES: }
+DRONES:   |
+
+Weapon Modifiers
+ELITE:         €
+REDUCED POWER: †
+BETTER STATS:  ™
