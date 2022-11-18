@@ -793,7 +793,7 @@
 		</choice>
 
 		<!-- R4: Energy shield to protect yourself from the asteroids -->
-		<choice hidden="true" req="BLUELIST_ENERGY_SHIELD">
+		<choice hidden="true" req="LIST_CHECK_ENERGY_SHIELD"> 
 			<text>(Energy Shield) Your shield will protect you.</text>
 			<event>
 				<event load="GB_CACHE_TROJAN_ASTEROID_SEARCH_ADV"/>
@@ -933,7 +933,7 @@
 		<choice>
 			<text>Booby trap the cache.</text>
 			<event>
-				<text>This Federation cache inside of this trojan would make the perfect bait for a trap to help throw off the Rebel fleet from their pursuit. You order to rig the stowages insdie the asteroid before setting a distress signal to attract the fleet's attention.</text>
+				<text>This Federation cache inside of this trojan would make the perfect bait for a trap to help throw off the Rebel fleet from their pursuit. You order to rig the storages inside the asteroid before setting a distress signal to attract the fleet's attention.</text>
 				<item_modify>
 					<item type="missiles" min="-2" max="-2"/>
 				</item_modify>
@@ -950,14 +950,14 @@
 		<choice hidden="true">
 			<text>Enter the asteroid field and secure the cache.</text> <!-- R4: Describes how you have to enter the asteroid field -->
 			<event>
-				<environment type="asteroid"/> <!-- R4: Does this work when I do it like this?-->
+				<environment type="asteroid"/> <!-- R4: Does this work when I do it like this?--><!--julk: *doubt*-->
 				<event load = "GB_CACHE_REWARD"/>
 			</event>
 		</choice>
 		<choice>
 			<text>Enter the asteroid field and booby trap the cache.</text>
 			<event>
-				<environment type="asteroid"/> <!-- R4: Does this work when I do it like this?-->
+				<environment type="asteroid"/> <!-- R4: Does this work when I do it like this?--><!--julk: i think so-->
 				<text>This Federation cache inside of the trojan would make the perfect bait for a trap to help throw off the Rebel fleet from their pursuit. You order to rig the stowages inside the asteroid before setting a distress signal to attract the fleet's attention.</text>
 				<item_modify>
 					<item type="missiles" min="-2" max="-2"/>

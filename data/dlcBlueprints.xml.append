@@ -168,9 +168,9 @@
 	<cost>70</cost>
 	<image>GB_magnetic_slug_medium</image>
 	<launchSounds>
-		<sound>GB_gauss1</sound>
-		<sound>GB_gauss2</sound>
-		<sound>GB_gauss3</sound>
+		<sound>GB_gaussMedium1</sound>
+		<sound>GB_gaussMedium2</sound>
+		<sound>GB_gaussMedium3</sound>
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>
@@ -214,9 +214,9 @@
 	<cost>70</cost>
 	<image>GB_magnetic_slug_medium</image>
 	<launchSounds>
-		<sound>GB_gauss1</sound>
-		<sound>GB_gauss2</sound>
-		<sound>GB_gauss3</sound>
+		<sound>GB_gaussMedium1</sound>
+		<sound>GB_gaussMedium2</sound>
+		<sound>GB_gaussMedium3</sound>
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>

@@ -1893,10 +1893,14 @@
 
 
 <mod:findName type="event" name="STORAGE_CHECK_STATUS_MV">
-	<mod-append:choice hidden="true" req="ACH_MV_BALLISTIC" lvl="1" blue="false">
+	<mod-append:choice hidden="true" req="ach_mv_ballistic" lvl="1" blue="false">
 		<text>Antique Kestrel Cruiser</text>
 		<event load="OPTION_INVALID" />
 	</mod-append:choice>
+	<mod:findWithChildLike type="choice">
+		<mod:selector>Return.</mod:selector>
+		<mod:setAttributes req="FOR_MULTIVERSE" max_group="1" blue="false"/>
+	</mod:findWithChildLike>		
 </mod:findName>
 
 <mod:findName type="eventList" name="STORAGE_CHECK_AUG_MVBOSS_SPAWNER_LIST">
