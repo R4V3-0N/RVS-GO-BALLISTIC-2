@@ -1,12 +1,11 @@
 <event name="RVS_FREIGHTER_ESCORT_DISTRESS" unique="true">
-  <beaconType text="ENCRYPTED DISTRESS" req="ITEM_ID" global="false"
-              persist="false" hideVanillaLabel="true">
+  <beaconType text="ENCRYPTED DISTRESS" global="true" persist="false" hideVanillaLabel="true"> <!--TODO: Set global to false once testing is done-->
     <color r="102" g="51" b="51" a="1" /> <!-- R4: Not sure how this will look in game, subject to change -->
     <undiscoveredTooltip>Encrypted Distress Beacon. Someone might need help.</undiscoveredTooltip> <!-- R4: might need change -->
     <unvisitedTooltip>An unvisited location.</unvisitedTooltip>
     <visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
   </beaconType>
-  <ship load="[I forgor the ID, but something something Fed Escort]" hostile="false"/> <!-- R4: needs to have a Fed Escort here -->
+  <ship load="GB_FED_FREIGHTER_EVENT_FED_ESCORT" hostile="false"/> <!-- Currently like judges, nothing set up for hostility -->
   <text>With great haste, you attempt to locate the source of the encrypted distress signal with short-range scans. A small Federation escort floats motionlessly amidst a cloud of gas. You tune in on Federation hailing frequencies: "Friendly Merc, We've taken heavy damage and request immediate repairs we're leaking fuel, over".</text>
   <choice hidden="true" req="GB_LIST_REPAIR_WEAPONS">
     <text>(Repair Weapons) Use your equipment to repair the ship efficiently.</text>
@@ -18,11 +17,11 @@
       </choice>
     </event>
   </choice>
-  <choice hidden="true" req="GB_LIST_REPAIR_WEAPONS_AMMO">
+  <choice hidden="false" req="GB_LIST_REPAIR_WEAPONS_AMMO"> <!--This list does not exist-->
     <text>(Repair Ammo Weapons) Use your munition based equipment to repair the ship efficiently.</text>
     <event>
       <item_modify steal="true">
-        <item type="missiles" min="1" max="3"/> <!-- R4: Probably should mention this in the above message that it uses ammo? -->
+        <item type="missiles" min="-3" max="-1"/> <!-- R4: Probably should mention this in the above message that it uses ammo? --> <!--hidden="false" takes care of this-->
       </item_modify>
       <text>A quick few salvos of your repair weapons patches up the ship into a more stable condition, sealing their hull and preventing any further leaking.</text>
       <choice hidden="true">
@@ -31,11 +30,11 @@
       </choice>
     </event>
   </choice>
-  <choice hidden="true" req="GB_LIST_REPAIR_ARMS">
-    <text>(Repair Arm) Use your repair arms to repair the vessel</text> <!-- R4: Probably should mention this in the above message that it uses scrap? -->
+  <choice hidden="false" req="REPAIR_ARM">
+    <text>(Repair Arm) Use your repair arms to repair the vessel</text> <!-- R4: Probably should mention this in the above message that it uses scrap? --> <!--hidden="false" takes care of this-->
     <event>
       <item_modify steal="true">
-        <item type="scrap" min="1" max="6"/>
+        <item type="scrap" min="-6" max="-1"/>
       </item_modify>
       <text>The repair arm works with machine precision, repairing the damages of the vessel. Using a moderate amount of scrap and debris, it seals their fuel tanks and any other breaches, mending the ship back together.</text>
       <choice hidden="true">
@@ -44,11 +43,11 @@
       </choice>
     </event>
   </choice>
-  <choice hidden="true" req="GB_LIST_REPAIR_CREW">
+  <choice hidden="false" req="BLUELIST_DRONES_REPAIR_CREW">
     <text>(Repair Drones) Use your repair drones to repair their damage. </text>
     <event>
       <item_modify steal="true">
-        <item type="drones" min="1" max="1"/>
+        <item type="drones" min="-1" max="-1"/>
       </item_modify>
       <text>The drones make short work of the damage as they work effortlessly around the ship repairing it to a stable condition, reinforcing the hull and sealing breaches and leaks.</text>
       <choice hidden="true">
@@ -57,7 +56,7 @@
       </choice>
     </event>
   </choice>
-  <choice hidden="true" req="GB_LIST_REPAIR_CREW">
+  <choice hidden="true" req="GB_LIST_REPAIR_CREW"> <!--Instead of creating a list manually, just use an existing MV list and append to it, and have other mods do the same. If it doesn't exist, then create one in Inferno-Core-->
     <text>(Repair Crew) Use your trained crew to repair their damage.</text>
     <event>
       <text>You dock with the ship and board over a repair detail to repair the ship's damage. Their experience and proficiency leaves little left to be desired as they bring it to a stable condition no longer leaking fuel fumes.&#10;</text>
@@ -67,7 +66,7 @@
       </choice>
     </event>
   </choice>
-  <choice hidden="true">
+  <choice hidden="false">
     <text>Take time to repair their ship.</text>
     <event>
       <modifyPursuit amount="1"/>
@@ -82,10 +81,14 @@
     <text>Wish them luck and leave.</text>
     <event>
       <text>You don't think they'll be too happy that you couldn't help but you assure them that if you do encounter any friendly ships that you will forward them their way. Still though you can't help but feel disappointed with yourself that you couldn't assist them.</text>
-      <choice hidden="true">
-        <text>Do something []</text> <!-- R4: Copy paste the regular do something/nothing event here -->
-        <text>Do Nothing []</text>
-      </choice>
+      <choice>
+				<text>Do something onboard the ship.</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+			<choice>
+				<text>Do nothing.</text>
+				<event/>
+			</choice>
     </event>
   </choice>
 </event>
@@ -100,9 +103,13 @@
       <text>You acknowledge their transmission and agree to rendezvous with the convoy and escort them to their destination. Their former escort reiterates the importance of this mission and for you to proceed with great urgency.</text>
     </event>
   </choice>
-  <choice hidden="true">
-    <text>Offer them some fuel [-6].</text> <!-- R4: fuel symbol here -->
+  <choice hidden="false">
+    <text>Offer them some fuel.</text> 
     <event>
+      <item_modify>
+        <item type="fuel" min="-6" max="-6"/>
+      </item_modify>
+      <variable name="gb_gave_fuel" op="set" val="1"/>
       <text>With the amount of fuel they've lost in the explosion and subsequent leak, they're still far from full working order. You offer to refuel their ship to help it get back up to running order.</text>
       <choice hidden="true">
         <text>Continue...</text>
@@ -113,6 +120,7 @@
   <choice hidden="true" req="FUEL_CONSERVER">
     <text>(Fuel Conserver) Offer them your fuel conserver.</text>
     <event>
+      <variable name="gb_gave_fuel" op="set" val="1"/>
       <removeItem>FUEL_CONSERVER</removeItem>
       <autoReward level="LOW">item</autoReward>
       <text>It isn't hard to tell that they must be very low on fuel in between their fuel explosion and ensuing leak, but they still have enough fumes to go off of if they had a fuel conserver. You offer to transfer yours to help get them back up to running order.</text>
@@ -182,10 +190,20 @@
   <choice hidden="true">
     <text>Continue...</text>
     <event>
-      <modifyPursuit amount="0"/> <!-- 1 fleet delay, and also give a moderate repair say 4-6 damage -->
+      <modifyPursuit amount="-1"/> <!-- 1 fleet delay, and also give a moderate repair say 4-6 damage -->
+      <damage amount="-5"/>
       <text>With all the heavy military traffic here it's almost a surprise with how peaceful it is here. It will be difficult for the Rebels to track you here, assuming if the resistance here doesn't slow them instead.</text>
-      <choice hidden="true" req="[insert minelauncher]"> <!-- this should mostly be a copy pasta of the minelayer event option except you do not get a notoriety hit. The text should also reflect this and mention how you are reinforcing a military checkpoint --> 
+      <choice hidden="true" req="BLUELIST_MINELAUNCHERS_ALL"> <!-- this should mostly be a copy pasta of the minelayer event option except you do not get a notoriety hit. The text should also reflect this and mention how you are reinforcing a military checkpoint --> 
         <text>(Minelauncher) Reinforce the checkpoint with mines.</text>
+         <event>
+          <text>You spend a couple hours carefully positioning the mines as instructed by a scruffy-looking Lieutenant</text>
+          <choice>
+            <text></text>
+            <event>
+              
+            </event>
+          </choice>
+        </event>
       </choice>
     </event>
   </choice>
@@ -197,7 +215,7 @@
   <choice hidden="true">
     <text>Continue...</text>
     <event> <!-- enemy encounter, insert a Rebel fighter of some sorts here maybe an Elite? -->
-		<text>The perimeter alarms are set off and Federation ships scramble to intercept but a few ships leak through between the battle lines. You lock onto the biggest ship and move in to engage. You will have to hold the Rebels off while the convoy charges up their drives and jump away! </text>
+		  <text>The perimeter alarms are set off and Federation ships scramble to intercept but a few ships leak through between the battle lines. You lock onto the biggest ship and move in to engage. You will have to hold the Rebels off while the convoy charges up their drives and jump away! </text>
     </event>
   </choice>
 </event>

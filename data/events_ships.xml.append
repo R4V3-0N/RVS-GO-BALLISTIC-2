@@ -47,6 +47,16 @@
 	<deadCrew load="GB_DEAD_CREW_REBEL_FED"/>
 </ship>
 
+
+<ship name="GB_FED_FREIGHTER_EVENT_FED_ESCORT" auto_blueprint="MU_FED_ESCORT">
+	<destroyed>
+		<text>.</text>
+	</destroyed>
+	<deadCrew>
+		<text>.</text>
+	</deadCrew>
+</ship>
+
 <!-- Reference event 
 <ship name="SHIP_CIVILIAN_GENERIC" auto_blueprint="LIST_SHIPS_CIVILIAN_GENERIC">
     <surrender  chance="0.8" min="2" max="3" load="SURRENDER_CIVILIAN"/>

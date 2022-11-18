@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<mod:findName type="sectorDescription" name="STANDARD_SPACE"> <!--Sector One-->
+	<mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS" min="1" max="1" priority="1"/>
+</mod:findName>
+
+
+
 <mod:findName type="sectorDescription" name="SECTOR_FEDERATION"> <!--AUTOCANNONS AND GAUSS-->
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="GB_AC_1" rarity="4"/>
