@@ -68,12 +68,16 @@
 
 <events>
 	<eventFile>ballistic</eventFile>
+	
+	<!--remove later-->
+	<eventFile>FedFreighterEvent</eventFile>
 
 	<event name="GB_CALL_QUESTION_LOAD">
 		<loadEvent>GB_CALL_QUESTION</loadEvent>
 	 </event>
 	<event name="GB_CALL_QUESTION" recursive="true"/>
 	<variable name="gb_ammo_toggle" op="set" val="0"/>
+	<variable name="gb_gave_fuel" op="set" val="0"/>
 	<req name="GB_CURRENT_AMMO1" lvl="1" max_lvl="1">
 		<req type="sum" >
 			<name>gb_ammo_toggle</name>
@@ -124,6 +128,10 @@
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
+
+	
+
+
 </events>
 
 <!-- Go Ballistics generic Federation store, based on the Zoltan store-->
