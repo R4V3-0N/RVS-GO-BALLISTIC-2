@@ -95,12 +95,12 @@
 
 <event name="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS">
   <autoReward level="MED">scrap_only</autoReward>
-  <text>"Much obliged Merc. We were left stranded after we were attacked by Rebel interceptors gunning it to a military convoy we were escorting. Those tossers blew our bloody fuel tanks but not long after we sent them packing. We're still in a sorry state so I recommend you rendezvous with the convoy urgently. It is imperative that they make it to their objective. Do you acknowledge? over".</text>
+  <text>"Much obliged friendly vessel. We were left stranded after we were attacked by Rebel interceptors gunning it to a military convoy we were escorting. Those tossers blew our bloody fuel tanks but not long after we sent them packing. We're still in a sorry state, so I recommend you rendezvous with the convoy ASAP. It's imperative that they make it to their objective."</text>
   <choice hidden="true">
     <text>Agree to rendezvous with the convoy.</text>
     <event>
       <quest event="RVS_FREIGHTER_CONVOY"/>
-      <text>You acknowledge their transmission and agree to rendezvous with the convoy and escort them to their destination. Their former escort reiterates the importance of this mission and for you to proceed with great urgency.</text>
+      <text>You agree to rendezvous with the convoy and escort them to their destination.</text>
     </event>
   </choice>
   <choice hidden="false">
@@ -110,7 +110,7 @@
         <item type="fuel" min="-6" max="-6"/>
       </item_modify>
       <variable name="gb_gave_fuel" op="set" val="1"/>
-      <text>With the amount of fuel they've lost in the explosion and subsequent leak, they're still far from full working order. You offer to refuel their ship to help it get back up to running order.</text>
+      <text>With the amount of fuel they've lost in the explosion and subsequent leak, they're still far from full working order. You offer to refuel their ship so they can get back to the convoy.</text>
       <choice hidden="true">
         <text>Continue...</text>
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS_HELPED"/>
@@ -123,7 +123,7 @@
       <variable name="gb_gave_fuel" op="set" val="1"/>
       <removeItem>FUEL_CONSERVER</removeItem>
       <autoReward level="LOW">item</autoReward>
-      <text>It isn't hard to tell that they must be very low on fuel in between their fuel explosion and ensuing leak, but they still have enough fumes to go off of if they had a fuel conserver. You offer to transfer yours to help get them back up to running order.</text>
+      <text>With the amount of fuel they've lost in the explosion and subsequent leak, they're still far from full working order, but they still have enough fumes to make use of your fuel conserver. You offer to transfer it to them so they can get back to the convoy.</text>
       <choice hidden="true">
         <text>Continue...</text>
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS_HELPED"/>
@@ -133,7 +133,7 @@
   <choice hidden="true">
     <text>Refuse.</text>
     <event>
-      <text>You don't think they'll be too happy that you couldn't help, but you assure them that if you do encounter any friendly ships, you will forward them their way. Still, though, you can't help but feel disappointed with yourself and wonder if you could have done more.</text>
+      <text>You don't think they'll be too happy that you couldn't help, but you assure them that if you do encounter any friendly ships that you will forward them their way. Still though, you can't help but feel disappointed with yourself that you couldn't assist them.</text>
     </event>
   </choice>
 </event>
@@ -145,7 +145,7 @@
     <text>Agree to rendezvous with the convoy.</text>
     <event>
       <quest event="RVS_FREIGHTER_CONVOY"/>
-      <text>You acknowledge their transmission and agree to rendezvous with the convoy and escort them to their destination. Their former escort reiterates the importance of this mission and for you to proceed with great urgency.</text>
+      <text>You agree to rendezvous with the convoy and escort them to their destination.</text>
     </event>
   </choice>
   <choice hidden="true">
@@ -157,11 +157,11 @@
 </event>
 
 <event name="RVS_FREIGHTER_CONVOY">
-  <text>With patrols of Federation vessels in the area protecting a couple of armed orbital facilities it's no mistake that this is a Federation military checkpoint. Outside of the heavy military traffic at this beacon it's a relatively unremarkable star system though you can't seem to find where the convoy is.</text>
+  <text>You arrive at the coordinates given to you by the escort to find a Federation military checkpoint. Patrols of Federation vessels in the area protecting a couple of armed orbital facilities. Outside of the heavy military traffic at this beacon it's a relatively unremarkable star system, though you can't seem to locate the convoy.</text>
   <choice hidden="true">
     <text>Wait.</text>
     <event>
-      <text>It doesn't take long until a few ships begin jumping into the system. A few freighters and transports arrive along with their escorts trickling in one after the other till well more than a dozen ships arrive.  This must be the convoy you were sent to escort! "Multiverse Renegade, this is Supply Officer Kyrylo in command of the Federation Ship Grebe. If I understand it correctly you are assigned to provide this convoy an additional escort, correct? Good. They've taken hits at nearly every turn and the Federation Fleet can't spare any of their ships in this sector for this mission and we're more than accepting of any help, even if it's from a Renegade, over". </text>
+      <text>It doesn't take long before ships begin jumping into the system. A few freighters and transports arrive along with their escorts trickling in one after the other, until well over a dozen ships arrive. This must be the convoy you were sent to escort! "Multiverse Renegade, this is Supply Officer Kyrylo in command of the Federation ship Grebe. If I understand correctly, you are assigned to provide this convoy an additional escort, correct? Good. We've taken hits at nearly every turn and the Federation Fleet can't spare any of their ships in this sector. We can use all the help we can get, even if it's from a Renegade."</text>
       <choice hidden="true">
         <text>Accept the mission.</text>
         <event>
@@ -177,7 +177,7 @@
       <choice hidden="true">
         <text>Attack the convoy!</text> <!-- R4: hard fight innitiated.  You are up against the Freighter while you are getting bombed, ASB'ed, and fighting the Freighter.  Crew killing can give you the weapon it's carrying which I will make for this event in a bit.  Destroying it you can get it if you got a mag arm --> 
         <event>
-          <text>If this convoy is important enough for the Rebels to try and prevent it from reaching its destination it must be carrying something very valuable or powerful.  [Note to Dalv, I haven't finished this option. I reckon you can finish writing it up with a self justification for this action followed by a moral hit general and combat menu, ship turned hostile!]</text>
+          <text>If this convoy is important enough for the Rebels to try and prevent it from reaching its destination, it must be carrying something very valuable or powerful.  [Note to Dalv, I haven't finished this option. I reckon you can finish writing it up with a self justification for this action followed by a moral hit general and combat menu, ship turned hostile!]</text>
         </event>
       </choice>
     </event>
@@ -186,13 +186,13 @@
 
 <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_SAFE">
   <autoReward level="MED">stuff</autoReward>
-  <text>You jump into a heavily militarised sector with the rest of the convoy following in suite. The Federation checkpoint hails you and after a quick exchange and flashing of IFF signals you are welcomed to help yourself to a quick resupply and repair.</text>
+  <text>You jump into a heavily militarised sector with the rest of the convoy following suit. The Federation checkpoint hails you and after a quick exchange and flashing of IFF signals you are welcomed to help yourself to a quick resupply and repair.</text>
   <choice hidden="true">
     <text>Continue...</text>
     <event>
       <modifyPursuit amount="-1"/> <!-- 1 fleet delay, and also give a moderate repair say 4-6 damage -->
       <damage amount="-5"/>
-      <text>With all the heavy military traffic here it's almost a surprise with how peaceful it is here. It will be difficult for the Rebels to track you here, assuming if the resistance here doesn't slow them instead.</text>
+      <text>With all the heavy military traffic here it's almost a surprise how peaceful it is. It will be difficult for the Rebels to track you here, an the resistance they'll meet when they arrive will certainly keep them occupied.</text>
       <choice hidden="true" req="BLUELIST_MINELAUNCHERS_ALL"> <!-- this should mostly be a copy pasta of the minelayer event option except you do not get a notoriety hit. The text should also reflect this and mention how you are reinforcing a military checkpoint --> 
         <text>(Minelauncher) Reinforce the checkpoint with mines.</text>
          <event>
@@ -211,11 +211,11 @@
 
 <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_HOSTILE">
   <autoReward level="MED">stuff</autoReward>
-  <text>You jump into a heavily militarised sector with the rest of the convoy following in suite. The Federation checkpoint hails you and after a quick exchange and flashing of IFF signals you are welcomed to help yourself to a quick resupply and repair.</text>
+  <text>You jump into a heavily militarised sector with the rest of the convoy following suit. The Federation checkpoint hails you and after a quick exchange and flashing of IFF signals you are welcomed to help yourself to a quick resupply and repair.</text>
   <choice hidden="true">
     <text>Continue...</text>
     <event> <!-- enemy encounter, insert a Rebel fighter of some sorts here maybe an Elite? -->
-		  <text>The perimeter alarms are set off and Federation ships scramble to intercept but a few ships leak through between the battle lines. You lock onto the biggest ship and move in to engage. You will have to hold the Rebels off while the convoy charges up their drives and jump away! </text>
+		  <text>The perimeter alarms are set off as Rebels begin jumping into the system! Federation ships scramble to intercept, but a few of the Rebels leak through between the battle lines. You lock onto the biggest ship and move in to engage. You'll have to hold them off while the convoy charges up their FTL drives!</text>
     </event>
   </choice>
 </event>
