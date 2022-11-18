@@ -514,7 +514,11 @@
 			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_FLECHETTE</loadEvent>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO10" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
+		<choice req="GB_AMMO_10_NO" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
+			<text>To load radiation ammo a slug clansman is needed.</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_AMMO_10_YES"  blue="false" hidden="true"> <!-- Radiation Ammo Type -->
 			<text>Radiation ammo.[+20% breach, rad effects, +15 crew dmg, 22% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_RAD</loadEvent>
@@ -900,7 +904,11 @@
 			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_FLECHETTE</loadEvent>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO10" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
+		<choice req="GB_AMMO_10_NO" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
+			<text>To load radiation ammo a slug clansman is needed.</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_AMMO_10_YES"  blue="false" hidden="true"> <!-- Radiation Ammo Type -->
 			<text>Radiation ammo.[+20% breach, rad effects, +15 crew dmg, 25% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_RAD</loadEvent>
@@ -1286,7 +1294,11 @@
 			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_FLECHETTE</loadEvent>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO10" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
+		<choice req="GB_AMMO_10_NO" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
+			<text>To load radiation ammo a slug clansman is needed.</text>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_AMMO_10_YES"  blue="false" hidden="true"> <!-- Radiation Ammo Type -->
 			<text>Radiation ammo.[+20% breach, rad effects, +15 crew dmg, 35% ammo consumption]</text>
 			<event>
 			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_RAD</loadEvent>

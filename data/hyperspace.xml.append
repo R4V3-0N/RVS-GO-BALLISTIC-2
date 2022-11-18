@@ -113,22 +113,35 @@
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO8" lvl="8" max_lvl="8">
+	<req name="GB_CURRENT_AMMO8" lvl="8" max_lvl="8"><!---->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO9" lvl="9" max_lvl="9">
+	<req name="GB_CURRENT_AMMO9" lvl="9" max_lvl="9"><!--flechette-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO10" lvl="10" max_lvl="10">
+	<req name="GB_CURRENT_AMMO10" lvl="10" max_lvl="10"><!--rad-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-
+	<req name="GB_AMMO_10_YES" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO10</name>
+		</req>
+		<name>LIST_CREW_CLAN</name>
+	</req>
+	<req name="GB_AMMO_10_NO" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO10</name>
+		</req>
+		<req lvl="0" max_lvl="0">
+			<name>LIST_CREW_CLAN</name>
+		</req>
+	</req>
 	
 
 
