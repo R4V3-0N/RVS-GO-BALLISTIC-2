@@ -129,6 +129,7 @@
 		</req>
 	</req>
 
+    <bossShip>RVS_REBEL_CRUISER</bossShip>
 	
 
 
@@ -1448,6 +1449,12 @@
 		</crew>
 		<noFuelStalemate/>
 	</mod-append:customShip>
+    <mod-append:customShip name="RVS_REBEL_CRUISER">
+        <shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+        </shipIcons>
+        <noFuelStalemate/>
+    </mod-append:customShip>
 </mod:findLike>
 
 
