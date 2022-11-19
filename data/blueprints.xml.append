@@ -29,7 +29,7 @@
 -->
 <!-- R4: Who ever convinced me to do more than 2 additional ammo types, who ever made it go up to as many as it did and still more to come, I will find you, and I will slap you-->
 
-<weaponBlueprint name="GB_AC_1_FLECHETTE"> <!-- flechettes that cause bleed damage -->
+<weaponBlueprint name="GB_AC_FLECHETTE_FRAG"> <!-- flechettes that cause bleed damage -->
 	<type>BURST</type>
 	<title>Autocannon Mark I [Flechette]</title>
 	<short>AC I [F]</short>
