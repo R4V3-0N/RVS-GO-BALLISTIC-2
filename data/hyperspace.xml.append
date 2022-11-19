@@ -78,6 +78,8 @@
 	<event name="GB_CALL_QUESTION" recursive="true"/>
 	<variable name="gb_ammo_toggle" op="set" val="0"/>
 	<variable name="gb_gave_fuel" op="set" val="0"/>
+	<variable name="loc_foundsafe" op="set" val="0"/>
+	<variable name="loc_foundhostile" op="set" val="0"/>
 	<req name="GB_CURRENT_AMMO1" lvl="1" max_lvl="1"><!--standard-->
 		<req type="sum" >
 			<name>gb_ammo_toggle</name>
