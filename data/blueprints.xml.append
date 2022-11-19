@@ -141,7 +141,7 @@
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<cost>10</cost>
-	<image>GB_shot_light_CASELESS</image>
+	<image>GB_shot_light</image>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
 		<sound>GB_cannonLight2</sound>
@@ -687,7 +687,7 @@
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<cost>20</cost>
-	<image>GB_shot_medium_CASELESS</image>
+	<image>GB_shot_medium</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
 		<sound>GB_cannonMedium2</sound>
@@ -1239,7 +1239,7 @@
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<cost>40</cost>
-	<image>GB_shot_heavy_CASELESS</image>
+	<image>GB_shot_heavy</image>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
 		<sound>GB_cannonHeavy2</sound>

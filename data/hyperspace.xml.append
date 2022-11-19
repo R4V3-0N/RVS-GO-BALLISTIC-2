@@ -78,44 +78,82 @@
 	<event name="GB_CALL_QUESTION" recursive="true"/>
 	<variable name="gb_ammo_toggle" op="set" val="0"/>
 	<variable name="gb_gave_fuel" op="set" val="0"/>
-	<req name="GB_CURRENT_AMMO1" lvl="1" max_lvl="1">
+	<req name="GB_CURRENT_AMMO1" lvl="1" max_lvl="1"><!--standard-->
 		<req type="sum" >
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO2" lvl="2" max_lvl="2">
+	<req name="GB_CURRENT_AMMO2" lvl="2" max_lvl="2"><!--caseless-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO3" lvl="3" max_lvl="3">
+	<req name="GB_CURRENT_AMMO3" lvl="3" max_lvl="3"><!--hv-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO4" lvl="4" max_lvl="4">
+	<req name="GB_CURRENT_AMMO4" lvl="4" max_lvl="4"><!--recycler-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO5" lvl="5" max_lvl="5">
+	<req name="GB_AMMO_4_YES" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO4</name>
+		</req>
+		<req>
+			<name>RECYCLER</name>
+			<name>EXTRA_PREP</name>
+			<name>ANCIENT_REPLICATOR</name>
+			<name>EXPLOSIVE_REPLICATOR</name>
+		</req>
+	</req>
+	<req name="GB_AMMO_4_NO" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO4</name>
+		</req>
+		<req lvl="0" max_lvl="0">
+			<name>RECYCLER</name>
+			<name>EXTRA_PREP</name>
+			<name>ANCIENT_REPLICATOR</name>
+			<name>EXPLOSIVE_REPLICATOR</name>
+		</req>
+	</req>
+	<req name="GB_CURRENT_AMMO5" lvl="5" max_lvl="5"><!--Concusive-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO6" lvl="6" max_lvl="6">
+	<req name="GB_CURRENT_AMMO6" lvl="6" max_lvl="6"><!--EMP-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO7" lvl="7" max_lvl="7">
+	<req name="GB_CURRENT_AMMO7" lvl="7" max_lvl="7"><!--particle-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO8" lvl="8" max_lvl="8"><!---->
+	<req name="GB_CURRENT_AMMO8" lvl="8" max_lvl="8"><!--Incediary-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
+		</req>
+	</req>
+	<req name="GB_AMMO_8_YES" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO8</name>
+		</req>
+		<req>
+			<name>LIST_CREW_LOSTSUN</name>
+		</req>
+	</req>
+	<req name="GB_AMMO_8_NO" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO8</name>
+		</req>
+		<req lvl="0" max_lvl="0">
+			<name>LIST_CREW_LOSTSUN</name>
 		</req>
 	</req>
 	<req name="GB_CURRENT_AMMO9" lvl="9" max_lvl="9"><!--flechette-->
