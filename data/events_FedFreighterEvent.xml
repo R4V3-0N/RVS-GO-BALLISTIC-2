@@ -134,6 +134,13 @@
     <text>Refuse.</text>
     <event>
       <text>You don't think they'll be too happy that you couldn't help, but you assure them that if you do encounter any friendly ships that you will forward them their way. Still though, you can't help but feel disappointed with yourself that you couldn't assist them.</text>
+      <choice hidden="true">
+        <text>Do something onboard the ship.</text> <!-- R4: Copy paste the regular do something/nothing event here -->
+        <event load="STORAGE_CHECK"/>
+      </choice>
+      <choice>
+        <text>Do nothing.</text>
+      </choice>
     </event>
   </choice>
 </event>
@@ -152,6 +159,13 @@
     <text>Refuse.</text>
     <event>
       <text>You have put considerable amount of time and resources into assisting the Federation ship and decide it is best to carry on and resume your mission, but you can't help but wonder what will happen to the convoy in your absence.&#10;</text>
+      <choice hidden="true">
+        <text>Do something onboard the ship.</text> <!-- R4: Copy paste the regular do something/nothing event here -->
+        <event load="STORAGE_CHECK"/>
+      </choice>
+      <choice>
+        <text>Do nothing.</text>
+      </choice>
     </event>
   </choice>
 </event>
@@ -167,6 +181,7 @@
         <text>Accept the mission.</text>
         <event>
           <text>[something something you agree and you got co-ordinates to a checkpoint]</text> <!-- R4: can't think of the text ATM. -->
+          <quest event="RVS_FREIGHTER_CONVOY_CHECKPOINT"/>
         </event>
       </choice>
       <choice hidden="true">
@@ -184,9 +199,15 @@
     </event>
   </choice>
 </event>
-
+<event name="RVS_FREIGHTER_CONVOY_CHECKPOINT">
+  <loadEventList seeded="false" first="false" generate="false" default="RVS_FREIGHTER_CONVOY_CHECKPOINT_FINAL">
+    <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_SAFE" req="loc_foundsafe" lvl="0" max_lvl="0"/>
+    <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_HOSTILE" req="loc_foundhostile" lvl="0" max_lvl="0"/>
+  </loadEventList>
+</event>
 <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_SAFE">
   <autoReward level="MED">stuff</autoReward>
+  <variable name="loc_foundsafe" op="set" val="1"/>
   <text>You jump into a heavily militarised sector with the rest of the convoy following suit. The Federation checkpoint hails you and after a quick exchange and flashing of IFF signals you are welcomed to help yourself to a quick resupply and repair.</text>
   <choice hidden="true">
     <text>Continue...</text>
@@ -206,21 +227,54 @@
           </choice>
         </event>
       </choice>
+      <choice>
+        <text>Proceed to the next checkpoint.</text>
+        <quest event="RVS_FREIGHTER_CONVOY_CHECKPOINT"/>
+      </choice>
     </event>
   </choice>
 </event>
 
 <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_HOSTILE">
   <autoReward level="MED">stuff</autoReward>
+  <variable name="loc_foundhostile" op="set" val="1"/>
   <text>You jump into a heavily militarised sector with the rest of the convoy following suit. The Federation checkpoint hails you and after a quick exchange and flashing of IFF signals you are welcomed to help yourself to a quick resupply and repair.</text>
   <choice hidden="true">
     <text>Continue...</text>
     <event> <!-- enemy encounter, insert a Rebel fighter of some sorts here maybe an Elite? -->
 		  <text>The perimeter alarms are set off as Rebels begin jumping into the system! Federation ships scramble to intercept, but a few of the Rebels leak through between the battle lines. You lock onto the biggest ship and move in to engage. You'll have to hold them off while the convoy charges up their FTL drives!</text>
+      <ship load="GB_SHIP_REBEL" hostile="true"/>
+      <choice>
+        <text>Continue...</text>
+        <event load="COMBAT_CHECK"/>
+      </choice>
     </event>
   </choice>
 </event>
+<event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_HOSTILE_FINISH">
+  <text>With the rebel elite dispatched the convoy jumps away to the next checkpoint.</text>
+  <quest event="RVS_FREIGHTER_CONVOY_CHECKPOINT"/>
+</event>
+<ship name="GB_SHIP_REBEL" auto_blueprint="LIST_SHIPS_REBEL_ELITE_MASSIVE">
+  <destroyed>
+    <loadEvent>DEFEAT_REBEL_ELITE</loadEvent>
+    <queueEvent>RVS_FREIGHTER_CONVOY_CHECKPOINT_HOSTILE_FINISH</queueEvent>
+  </destroyed>
+  <deadCrew>
+    <loadEvent>DEFEAT_REBEL_ELITE</loadEvent>
+    <queueEvent>RVS_FREIGHTER_CONVOY_CHECKPOINT_HOSTILE_FINISH</queueEvent>
+  </deadCrew>
+</ship>
 
+<event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_FINAL">
+  <text> You were expecting to see a fully operational Forward Operating Base here and an attachment of ships. However, you are met with disaster as signs of a recent battle litter this system with all reactor signatures showing dead: Well, except a squadron of Rebel ships here eager to pounce on their prey! "Renegade! This is Supply Officer Kyrylo hailing. Mission aborted! The FOB is destroyed. I repeat the FOB is destroyed. There is nothing left here for us. We're exfiltrating immediately but something jamming our drives! You need to buy us some time".  With the escorts engaging the lighter enemy ships you take on the biggest ship here and draw its fire away from the convoy. You have to make this quick or the convoy will take significant damage!"  </text>
+  <choice>
+    <text>Engage!</text>
+  </choice>
+  <choice req="engines" lvl="4">
+    <text>(advanced engines)NOPE.</text>
+  </choice>
+</event>
 
 <!--Final event: you arrive to the destination which is already over run with rebels and destroyed. You have to destroy the enemy Rebel cruiser within the alloted time to get a high reward and a weapon, if you took a bit too long you still have a bit of leeway, the Convoy got damaged but they are still mostly safe, if you took too long the convoy is destroeyd and it is safe to jump away.  Destroying the Cruiser should still give a high to medium reward regardles as salvage. Anything baring the convoys destruction should unlock the freihgter. After saving the convoy there will be a mention of them regrouping and heading to the last stand instead as their alternate destination for a special encounter I am still brainstorming.  The ship you saved from the start if you refueled them should also provide bomb support here. When the convoy is destroyed enemy ASB is activated 
 

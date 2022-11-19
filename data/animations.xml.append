@@ -103,13 +103,6 @@
 	<time>0.5</time>
 </anim>
 
-<animSheet name="GB_shot_light_CASELESS" w="160" h="16" fw="40" fh="16">projectiles/GB_shot_light_caseless_strip4.png</animSheet>
-<anim name="GB_shot_light_CASELESS">
-	<sheet>GB_shot_light_CASELESS</sheet>
-	<desc length="4" x="0" y="0" />
-	<time>0.5</time>
-</anim>
-
 <animSheet name="GB_shot_light_HEAT" w="160" h="16" fw="40" fh="16">projectiles/GB_shot_light_HEAT_strip4.png</animSheet>
 <anim name="GB_shot_light_HEAT">
 	<sheet>GB_shot_light_HEAT</sheet>
