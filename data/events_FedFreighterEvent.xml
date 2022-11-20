@@ -94,9 +94,9 @@
 </event>
 
 <event name="RVS_FREIGHTER_ESCORT_DISTRESS_REPAIRED">
-	<loadEventList default="RVS_FREIGHTER_ESCORT_DISTRESS_DEFAULT">
-		<event name="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS" req="loc_fedfreighter_repaired" lvl="0" max_lvl="0"/>
-	</loadEventList>
+  <loadEventList default="RVS_FREIGHTER_ESCORT_DISTRESS_DEFAULT">
+    <event name="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS" req="loc_fedfreighter_repaired" lvl="0" max_lvl="0"/>
+  </loadEventList>
 </event>
 <event name="RVS_FREIGHTER_ESCORT_DISTRESS_DEFAULT">
   <autoReward level="HIGH">scrap_only</autoReward>
@@ -151,6 +151,7 @@
       </choice>
       <choice>
         <text>Do nothing.</text>
+        <event/>
       </choice>
     </event>
   </choice>
@@ -176,6 +177,7 @@
       </choice>
       <choice>
         <text>Do nothing.</text>
+        <event/>
       </choice>
     </event>
   </choice>
