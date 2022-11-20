@@ -1330,6 +1330,45 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<boardingAI>sabotage</boardingAI>
 </shipBlueprint>
 
+<shipBlueprint name="RVS_REBEL_CRUISER" layout="rvs_rebel_cruiser" img="rvs_rebel_cruiser"> <!-- Encrypted distress boss -->
+	<class>Rebel Cruiser</class>
+	<systemList>
+		<artillery power="1" max="4" room="0" start="true" weapon="LIST_ARTILLERY_GUARD" />
+		<battery power="1" max="2" room="11" start="true" />
+		<doors power="3" max="3" room="18" start="true" />
+		<drones power="4" max="4" room="7" start="true" />
+		<engines power="2" max="2" room="10" start="true" />
+		<medbay power="2" max="2" room="19" start="true" />
+		<mind power="2" max="2" room="16" start="true" />
+		<oxygen power="3" max="3" room="8" start="true" />
+		<pilot power="2" max="2" room="20" start="true" />
+		<shields power="4" max="10" room="6" start="true" />
+		<weapons power="9" max="9" room="13" start="true" />
+		<!--
+        <cloaking power="1" max="1" room="14" start="false" />
+		<hacking power="1" max="1" room="4" start="false" />
+		<sensors power="1" max="1" room="1" start="false" />
+		<teleporter power="2" max="2" room="5" start="false" />
+        -->
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="0" count="4">
+		<weapon name="LASER_BURST_3" />
+		<weapon name="LASER_BURST_5" />
+		<weapon name="BEAM_2" />
+		<weapon name="LASER_HEAVY_1" />
+	</weaponList>
+	<droneList drones="0" count="2">
+		<drone name="BATTLETOG_BOARDER" />
+		<drone name="COMBAT_1_BEAM" />
+	</droneList>
+	<health amount="20" />
+	<maxPower amount="26" />
+	<crewCount amount="3" max="7" class="human_soldier" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
 
 <!-- 	••••••••••••••••••••••••••••••••••••••••••
 				MULTIVERSE RENEGADES

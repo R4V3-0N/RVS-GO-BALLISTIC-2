@@ -13,7 +13,7 @@
       <text>A few salvos of your repair weapon patch up the ship easily, sealing their hull and preventing any further leaking.</text>
       <choice hidden="true">
         <text>Continue...</text>
-        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
+        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_REPAIRED"/>
       </choice>
     </event>
   </choice>
@@ -26,7 +26,7 @@
       <text>A few salvos of your repair weapon patch up the ship easily, sealing their hull and preventing any further leaking.</text>
       <choice hidden="true">
         <text>Continue...</text>
-        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
+        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_REPAIRED"/>
       </choice>
     </event>
   </choice>
@@ -39,7 +39,7 @@
       <text>The repair arm works with machine precision. Using a moderate amount of scrap and debris, it seals their fuel tanks and any other breaches, preventing any further leaking.</text>
       <choice hidden="true">
         <text>Continue...</text>
-        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
+        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_REPAIRED"/>
       </choice>
     </event>
   </choice>
@@ -52,7 +52,7 @@
       <text>Once dispatched, the drone makes short work of the damage. It seals their fuel tanks and any other breaches, preventing any further leaking.</text>
       <choice hidden="true">
         <text>Continue...</text>
-        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
+        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_REPAIRED"/>
       </choice>
     </event>
   </choice>
@@ -62,7 +62,7 @@
       <text>You dock with the ship and send your crew member to repair the ship's damage. Their experience and proficiency makes short work of the breaches, quickly sealing their fuel tanks and preventing any further leaking.&#10;</text>
       <choice hidden="true">
         <text>Continue...</text>
-        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
+        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_REPAIRED"/>
       </choice>
     </event>
   </choice>
@@ -73,7 +73,7 @@
       <text>The fleet will make some headway, but you can't just leave this Federation ship stranded here. You dock with the vessel and send a team aboard, diligently repairing the damage until the its is no longer leaking fuel.&#10;</text>
       <choice hidden="true">
         <text>Continue...</text>
-        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS"/>
+        <event load="RVS_FREIGHTER_ESCORT_DISTRESS_REPAIRED"/>
       </choice>
     </event>
   </choice>
@@ -93,8 +93,19 @@
   </choice>
 </event>
 
+<event name="RVS_FREIGHTER_ESCORT_DISTRESS_REPAIRED">
+  <loadEventList default="RVS_FREIGHTER_ESCORT_DISTRESS_DEFAULT">
+    <event name="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS" req="loc_fedfreighter_repaired" lvl="0" max_lvl="0"/>
+  </loadEventList>
+</event>
+<event name="RVS_FREIGHTER_ESCORT_DISTRESS_DEFAULT">
+  <autoReward level="HIGH">scrap_only</autoReward>
+  <text>"Much obliged friendly vessel, we should be in good enough shape to find somewhere to refuel. We'll send you all the scrap we can spare. Best of luck out there."</text>
+</event>
+
 <event name="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS">
   <autoReward level="MED">scrap_only</autoReward>
+  <variable name="loc_fedfreighter_repaired" op="set" val="1"/>
   <text>"Much obliged friendly vessel. We were left stranded after we were attacked by Rebel interceptors gunning it to a military convoy we were escorting. Those tossers blew our bloody fuel tanks right before we sent them packing. We're still in a sorry state, so I recommend you rendezvous with the convoy ASAP. It's imperative that they make it to their objective."</text>
   <choice hidden="true">
     <text>Agree to rendezvous with the convoy.</text>
@@ -140,6 +151,7 @@
       </choice>
       <choice>
         <text>Do nothing.</text>
+        <event/>
       </choice>
     </event>
   </choice>
@@ -165,6 +177,7 @@
       </choice>
       <choice>
         <text>Do nothing.</text>
+        <event/>
       </choice>
     </event>
   </choice>
@@ -267,7 +280,7 @@
 </ship>
 
 <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_FINAL">
-  <text> You were expecting to see a fully operational Forward Operating Base here and an attachment of ships. However, you are met with disaster as signs of a recent battle litter this system with all reactor signatures showing dead: Well, except a squadron of Rebel ships here eager to pounce on their prey! "Renegade! This is Supply Officer Kyrylo hailing. Mission aborted! The FOB is destroyed. I repeat the FOB is destroyed. There is nothing left here for us. We're exfiltrating immediately but something jamming our drives! You need to buy us some time".  With the escorts engaging the lighter enemy ships you take on the biggest ship here and draw its fire away from the convoy. You have to make this quick or the convoy will take significant damage!"  </text>
+  <text>You were expecting to see a fully operational Forward Operating Base here and an attachment of ships. However, you are met with disaster as signs of a recent battle litter this system with all reactor signatures showing dead: Well, except a squadron of Rebel ships here eager to pounce on their prey! "Renegade! This is Supply Officer Kyrylo hailing. Mission aborted! The FOB is destroyed. I repeat the FOB is destroyed. There is nothing left here for us. We're exfiltrating immediately but something jamming our drives! You need to buy us some time".  With the escorts engaging the lighter enemy ships you take on the biggest ship here and draw its fire away from the convoy. You have to make this quick or the convoy will take significant damage!"</text>
   <choice>
     <text>Engage!</text>
   </choice>

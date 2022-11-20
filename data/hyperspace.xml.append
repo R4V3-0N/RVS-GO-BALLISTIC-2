@@ -76,6 +76,7 @@
 		<loadEvent>GB_CALL_QUESTION</loadEvent>
 	 </event>
 	<event name="GB_CALL_QUESTION" recursive="true"/>
+	<variable name="loc_fedfreighter_repaired" op="set" val="0"/>
 	<variable name="gb_ammo_toggle" op="set" val="0"/>
 	<variable name="gb_gave_fuel" op="set" val="0"/>
 	<variable name="loc_foundsafe" op="set" val="0"/>
@@ -182,6 +183,8 @@
 			<name>LIST_CREW_CLAN</name>
 		</req>
 	</req>
+
+    <bossShip>RVS_REBEL_CRUISER</bossShip>
 	
 
 
@@ -1501,6 +1504,12 @@
 		</crew>
 		<noFuelStalemate/>
 	</mod-append:customShip>
+    <mod-append:customShip name="RVS_REBEL_CRUISER">
+        <shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+        </shipIcons>
+        <noFuelStalemate/>
+    </mod-append:customShip>
 </mod:findLike>
 
 
