@@ -102,7 +102,7 @@ no clue what sector this is meant to be for.
 		</event>
 	</choice>
 </event>
-<eventList name="RVS_SCRAPYARD_TRAP">|
+<eventList name="RVS_SCRAPYARD_TRAP">
 	<!-- R4: Good outcomes -->
 	<event>
 		<text load="RVS_SCRAPYARD_TRAP_TEXT"/>
@@ -424,12 +424,12 @@ no clue what sector this is meant to be for.
 	</choice>
 </event>
 
-<eventlist name="RVS_FED_RND_EVAC_STORE_MINES">
+<eventList name="RVS_FED_RND_EVAC_STORE_MINES">
 	<event load="RVS_FED_RND_EVAC_STORE_MINES_ATTACK"/>
 	<event load="RVS_FED_RND_EVAC_STORE_MINES_CALM"/>
 </eventList>
 <event name="RVS_FED_RND_EVAC_STORE_ATTACK">
-	<text>As you are undisturbed here you lay some mines forming a defensive minefield to mask the facilities evacuation. As a precaution, you place a couple hazard markers as well to mark for later disposal assuming any is left after the Rebel fleet doesn’t end up contacting all the mines here. The Rebel forces will be completely oblivious to the minefield and most certainly suffer heavy losses while civilian vessels avoid the node with the facilities forewarning. With enough time to spare you decide to take a purose of what they're willing to trade.</text>
+	<text>As you are undisturbed here you lay some mines forming a defensive minefield to mask the facilities evacuation. As a precaution, you place a couple hazard markers as well to mark for later disposal assuming any is left after the Rebel fleet doesn't end up contacting all the mines here. The Rebel forces will be completely oblivious to the minefield and most certainly suffer heavy losses while civilian vessels avoid the node with the facilities forewarning. With enough time to spare you decide to take a purose of what they're willing to trade.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -443,25 +443,23 @@ no clue what sector this is meant to be for.
 				<event load="COMBAT_CHECK"/>
 			</choice>
 		</event>
-		</event>
 	</choice>
 </event>
 <event name="RVS_FED_RND_EVAC_STORE_CALM">
-	<text>As you are undisturbed here you lay some mines forming a defensive minefield to mask the facilities evacuation. As a precaution, you place a couple hazard markers as well to mark for later disposal assuming any is left after the Rebel fleet doesn’t end up contacting all the mines here. The Rebel forces will be completely oblivious to the minefield and most certainly suffer heavy losses while civilian vessels avoid the node with the facilities forewarning.</text>
+	<text>As you are undisturbed here you lay some mines forming a defensive minefield to mask the facilities evacuation. As a precaution, you place a couple hazard markers as well to mark for later disposal assuming any is left after the Rebel fleet doesn't end up contacting all the mines here. The Rebel forces will be completely oblivious to the minefield and most certainly suffer heavy losses while civilian vessels avoid the node with the facilities forewarning.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
 			<store>STORE_FED</store>
-			<text>In recognition of your efforts, the weapons facility offers to install an improved autocannon and some resources as thanks. With enough time to spare you decide to take a purose of what they're willing to trade.<</text>
+			<text>In recognition of your efforts, the weapons facility offers to install an improved autocannon and some resources as thanks. With enough time to spare you decide to take a purose of what they're willing to trade.</text>
 			<weapon name="GB_GIFTLIST_AUTOCANNONS_ELITE"/>
 			<autoReward level="MED">standard</autoReward>
-			<reward>
 		</event>
 	</choice>
 </event>
 
 
-<eventlist name="RVS_FED_RND_EVAC_STORE_AMBUSH_CHANCE">
+<eventList name="RVS_FED_RND_EVAC_STORE_AMBUSH_CHANCE">
 	<event load="RVS_FED_RND_EVAC_STORE_AMBUSH"/>
 	<event load="RVS_FED_RND_EVAC_STORE_LEAVE"/>
 </eventList>

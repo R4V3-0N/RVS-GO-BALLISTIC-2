@@ -152,7 +152,8 @@
 <event name="MTBOSS_BALLISTICC_DESTROYED">
 	<text>The mighty vessel has been eliminated! Within its wreckage remains plenty of scrap and supplies for the taking.</text>
 	<autoReward level="HIGH">standard_no_item</autoReward>
-	<hiddenAug>ACH_MV_BALLISTIC</hiddenAug>
+	<variable name="ach_mv_ballistic" op="set" val="1"/>
+	<metaVariable name="prof_renegades_killed" op="add" val="1"/>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="MTBOSS_BALLISTICC_DROP_CHANCE"/>
@@ -168,7 +169,8 @@
 <event name="MTBOSS_BALLISTICC_DEADCREW">
 	<text>The mighty vessel has been eliminated! Within its wreckage remains plenty of scrap and supplies for the taking.</text>
 	<autoReward level="HIGH">standard_no_item</autoReward>
-	<hiddenAug>ACH_MV_BALLISTIC</hiddenAug>
+	<variable name="ach_mv_ballistic" op="set" val="1"/>
+	<metaVariable name="prof_renegades_killed" op="add" val="1"/>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event load="MTBOSS_BALLISTICC_DROP"/>

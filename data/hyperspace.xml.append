@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
 
 <FTL>
 <crew>
@@ -68,7 +68,7 @@
 
 <events>
 	<eventFile>ballistic</eventFile>
-	
+	<variable name="ach_mv_ballistic" op="set" val="0"/>	
 	<!--remove later-->
 	<eventFile>FedFreighterEvent</eventFile>
 
@@ -76,59 +76,115 @@
 		<loadEvent>GB_CALL_QUESTION</loadEvent>
 	 </event>
 	<event name="GB_CALL_QUESTION" recursive="true"/>
+	<variable name="loc_fedfreighter_repaired" op="set" val="0"/>
 	<variable name="gb_ammo_toggle" op="set" val="0"/>
 	<variable name="gb_gave_fuel" op="set" val="0"/>
-	<req name="GB_CURRENT_AMMO1" lvl="1" max_lvl="1">
+	<variable name="loc_foundsafe" op="set" val="0"/>
+	<variable name="loc_foundhostile" op="set" val="0"/>
+	<req name="GB_CURRENT_AMMO1" lvl="1" max_lvl="1"><!--standard-->
 		<req type="sum" >
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO2" lvl="2" max_lvl="2">
+	<req name="GB_CURRENT_AMMO2" lvl="2" max_lvl="2"><!--caseless-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO3" lvl="3" max_lvl="3">
+	<req name="GB_CURRENT_AMMO3" lvl="3" max_lvl="3"><!--hv-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO4" lvl="4" max_lvl="4">
+	<req name="GB_CURRENT_AMMO4" lvl="4" max_lvl="4"><!--recycler-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO5" lvl="5" max_lvl="5">
+	<req name="GB_AMMO_4_YES" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO4</name>
+		</req>
+		<req>
+			<name>RECYCLER</name>
+			<name>EXTRA_PREP</name>
+			<name>ANCIENT_REPLICATOR</name>
+			<name>EXPLOSIVE_REPLICATOR</name>
+		</req>
+	</req>
+	<req name="GB_AMMO_4_NO" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO4</name>
+		</req>
+		<req lvl="0" max_lvl="0">
+			<name>RECYCLER</name>
+			<name>EXTRA_PREP</name>
+			<name>ANCIENT_REPLICATOR</name>
+			<name>EXPLOSIVE_REPLICATOR</name>
+		</req>
+	</req>
+	<req name="GB_CURRENT_AMMO5" lvl="5" max_lvl="5"><!--Concusive-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO6" lvl="6" max_lvl="6">
+	<req name="GB_CURRENT_AMMO6" lvl="6" max_lvl="6"><!--EMP-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO7" lvl="7" max_lvl="7">
+	<req name="GB_CURRENT_AMMO7" lvl="7" max_lvl="7"><!--particle-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO8" lvl="8" max_lvl="8">
+	<req name="GB_CURRENT_AMMO8" lvl="8" max_lvl="8"><!--Incediary-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO9" lvl="9" max_lvl="9">
+	<req name="GB_AMMO_8_YES" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO8</name>
+		</req>
+		<req>
+			<name>LIST_CREW_LOSTSUN</name>
+		</req>
+	</req>
+	<req name="GB_AMMO_8_NO" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO8</name>
+		</req>
+		<req lvl="0" max_lvl="0">
+			<name>LIST_CREW_LOSTSUN</name>
+		</req>
+	</req>
+	<req name="GB_CURRENT_AMMO9" lvl="9" max_lvl="9"><!--flechette-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
 	</req>
-	<req name="GB_CURRENT_AMMO10" lvl="10" max_lvl="10">
+	<req name="GB_CURRENT_AMMO10" lvl="10" max_lvl="10"><!--rad-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
+		</req>
+	</req>
+	<req name="GB_AMMO_10_YES" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO10</name>
+		</req>
+		<name>LIST_CREW_CLAN</name>
+	</req>
+	<req name="GB_AMMO_10_NO" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO10</name>
+		</req>
+		<req lvl="0" max_lvl="0">
+			<name>LIST_CREW_CLAN</name>
 		</req>
 	</req>
 
+    <bossShip>RVS_REBEL_CRUISER</bossShip>
 	
 
 
@@ -1448,6 +1504,12 @@
 		</crew>
 		<noFuelStalemate/>
 	</mod-append:customShip>
+    <mod-append:customShip name="RVS_REBEL_CRUISER">
+        <shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+        </shipIcons>
+        <noFuelStalemate/>
+    </mod-append:customShip>
 </mod:findLike>
 
 
