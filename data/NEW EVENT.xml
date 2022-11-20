@@ -194,9 +194,7 @@ no clue what sector this is meant to be for.
 		<event load="RVS_AMT_SCRAPYARD_COLONY_SHIP_MORE"/>
 	</choice>
 	<choice>
-		<event>
 		<text>It's not worth it, leave with what we've found so far.</text>
-		</event>
 	</choice>
 </event>
 <eventList name="RVS_AMT_SCRAPYARD_COLONY_SHIP_MORE">
