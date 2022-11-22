@@ -1,12 +1,12 @@
 <event name="RVS_FREIGHTER_ESCORT_DISTRESS" unique="true">
   <beaconType text="ENCRYPTED DISTRESS" global="true" persist="false" hideVanillaLabel="true"> <!--TODO: Set global to false once testing is done-->
-    <color r="102" g="51" b="51" a="1" /> <!-- R4: Not sure how this will look in game, subject to change -->
+    <color r="233" g="123" b="74" a="1" /> <!-- CV: made this the same as supply depots -->
     <undiscoveredTooltip>Encrypted distress beacon. Someone might need help.</undiscoveredTooltip> <!-- R4: might need change -->
     <unvisitedTooltip>An unvisited location.</unvisitedTooltip>
     <visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
   </beaconType>
   <ship load="GB_FED_FREIGHTER_EVENT_FED_ESCORT" hostile="false"/> <!-- Currently like judges, nothing set up for hostility -->
-  <text>You attempt to locate the source of the encrypted distress signal with short-range scans. A small Federation escort floats motionlessly amidst a cloud of gas. You tune in on Federation hailing frequencies: "Friendly vessel, we've taken heavy damage and are leaking fuel. Requesting immediate assistance."</text>
+  <text>You attempt to locate the source of the encrypted distress signal with short-range scans. A small Federation escort floats motionlessly amidst a cloud of gas. You tune in on Federation hailing frequencies: "Friendly vessel, this is the Federation ship Kaha'i. we've taken heavy damage and are leaking fuel. Requesting immediate assistance."</text>
   <choice hidden="true" req="GB_LIST_REPAIR_WEAPONS">
     <text>(Repair Weapon) Use your equipment to repair the ship efficiently.</text>
     <event>
@@ -120,7 +120,6 @@
       <item_modify>
         <item type="fuel" min="-6" max="-6"/>
       </item_modify>
-      <variable name="gb_gave_fuel" op="set" val="1"/>
       <text>With the amount of fuel they've lost in the explosion and subsequent leak, they're still far from full working order. You offer to refuel their ship so they can get back to the convoy.</text>
       <choice hidden="true">
         <text>Continue...</text>
@@ -131,7 +130,6 @@
   <choice hidden="true" req="FUEL_CONSERVER">
     <text>(Fuel Conserver) Offer them your fuel conserver.</text>
     <event>
-      <variable name="gb_gave_fuel" op="set" val="1"/>
       <removeItem>FUEL_CONSERVER</removeItem>
       <autoReward level="LOW">item</autoReward>
       <text>With the amount of fuel they've lost in the explosion and subsequent leak, they're still far from full working order, but they still have enough fumes to make use of your fuel conserver. You offer to transfer it to them so they can get back to the convoy.</text>
@@ -159,6 +157,7 @@
 <!-- R4: hidden augment/ meta var for you giving this ship fuel/ fuel conserver. Appears in the last event to provide bomb support which I think should be 2 small bombs, upgraded to breach bombs on challenging and extreme -->
 
 <event name="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS_HELPED">
+  <variable name="gb_gave_fuel" op="set" val="1"/>
   <text>"With this, we could manage to reconnect with the convoy! However, if that last encounter was anything to go by, we still would need all the help we can get. I can't stress enough how important this mission is".&#10;</text>
   <choice hidden="true">
     <text>Agree to rendezvous with the convoy.</text>
@@ -227,8 +226,10 @@
     <event>
       <modifyPursuit amount="-1"/> <!-- 1 fleet delay, and also give a moderate repair say 4-6 damage -->
       <damage amount="-5"/>
+      <quest event="RVS_FREIGHTER_CONVOY_CHECKPOINT"/>
       <text>With all the heavy military traffic here it's almost a surprise how peaceful it is. It will be difficult for the Rebels to track you here, an the resistance they'll meet when they arrive will certainly keep them occupied.</text>
-      <choice hidden="true" req="BLUELIST_MINELAUNCHERS_ALL"> <!-- this should mostly be a copy pasta of the minelayer event option except you do not get a notoriety hit. The text should also reflect this and mention how you are reinforcing a military checkpoint --> 
+      <!-- this should mostly be a copy pasta of the minelayer event option except you do not get a notoriety hit. The text should also reflect this and mention how you are reinforcing a military checkpoint --> 
+      <!-- <choice hidden="true" req="BLUELIST_MINELAUNCHERS_ALL">
         <text>(Minelauncher) Reinforce the checkpoint with mines.</text>
          <event>
           <text>You spend a couple hours carefully positioning the mines as instructed by a scruffy-looking Lieutenant</text>
@@ -239,10 +240,10 @@
             </event>
           </choice>
         </event>
-      </choice>
+      </choice> -->
       <choice>
         <text>Proceed to the next checkpoint.</text>
-        <quest event="RVS_FREIGHTER_CONVOY_CHECKPOINT"/>
+        <event/>
       </choice>
     </event>
   </choice>
@@ -255,7 +256,7 @@
   <choice hidden="true">
     <text>Continue...</text>
     <event> <!-- enemy encounter, insert a Rebel fighter of some sorts here maybe an Elite? -->
-		  <text>The perimeter alarms are set off as Rebels begin jumping into the system! Federation ships scramble to intercept, but a few of the Rebels leak through between the battle lines. You lock onto the biggest ship and move in to engage. You'll have to hold them off while the convoy charges up their FTL drives!</text>
+        <text>The perimeter alarms are set off as Rebels begin jumping into the system! Federation ships scramble to intercept, but a few of the Rebels leak through between the battle lines. You lock onto the biggest ship and move in to engage. You'll have to hold them off while the convoy charges up their FTL drives!</text>
       <ship load="GB_SHIP_REBEL" hostile="true"/>
       <choice>
         <text>Continue...</text>
@@ -279,17 +280,84 @@
   </deadCrew>
 </ship>
 
+
+
+<ship name="SHIP_GB_CONVOY_BOSS" auto_blueprint="RVS_REBEL_CRUISER">
+  <destroyed load="RVS_FREIGHTER_CONVOY_WIN" />
+  <deadCrew load="RVS_FREIGHTER_CONVOY_WIN" />
+</ship>
+
 <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_FINAL">
-  <text>You were expecting to see a fully operational Forward Operating Base here and an attachment of ships. However, you are met with disaster as signs of a recent battle litter this system with all reactor signatures showing dead: Well, except a squadron of Rebel ships here eager to pounce on their prey! "Renegade! This is Supply Officer Kyrylo hailing. Mission aborted! The FOB is destroyed. I repeat the FOB is destroyed. There is nothing left here for us. We're exfiltrating immediately but something jamming our drives! You need to buy us some time".  With the escorts engaging the lighter enemy ships you take on the biggest ship here and draw its fire away from the convoy. You have to make this quick or the convoy will take significant damage!"</text>
+  <ship load="SHIP_GB_CONVOY_BOSS" hostile="false"/>
+  <text>You were expecting to see a fully operational Forward Operating Base here and an attachment of ships. However, you are met with disaster as signs of a recent battle litter this system with all reactor signatures showing dead, except a squadron of Rebel ships eager to pounce on their prey! "Renegade! This is Supply Officer Kyrylo hailing. Mission aborted! The FOB is destroyed. I repeat, the FOB is destroyed. There's nothing left here for us. We're exfiltrating immediately, but the Rebels are jamming our drives! You need to buy us some time."</text>
   <choice>
     <text>Engage!</text>
+    <event>
+      <ship hostile="true"/>
+      <text>While the escorts engage the lighter enemy ships, you take on the biggest ship and draw its fire away from the convoy. You'll have to make this quick or the convoy will take significant damage!</text>
+      <triggeredEvent event="RVS_FREIGHTER_CONVOY_DAMAGED" time="90" thisFight="true">
+        <triggeredEventBox load="DEFAULT_TIMER" pos="default">
+          <warning time="10.0" flash="true"/>
+          <tooltip>Time until the convoy takes significant damage.</tooltip>
+        </triggeredEventBox>
+        <timerSounds load="DEFAULT_TIMER_SOUNDS"/>
+      </triggeredEvent>
+      <choice hidden="true" req="gb_gave_fuel" lvl="1" blue="false">
+        <text>Continue...</text>
+        <event>
+          <text>As you move to engage the cruiser, a familiar escort ship breaks off from the convoy. "Friendly vessel, this is the Kaha'i. We'll provide what fire support we can, let's show these blighters how wrong they were to mess with us!"</text>
+          <triggeredEvent event="RVS_FREIGHTER_ESCORT_AIRSTRIKE_SUPPORT" seeded="false" loops="999999999" thisFight="true" minTime="25.0" maxTime="25.0">
+            <warningMessage id="warning_support" r="120" g="255" b="120" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true"/>
+          </triggeredEvent>
+          <choice hidden="true">
+            <text>Continue...</text>
+            <event load="COMBAT_CHECK"/>
+          </choice>
+        </event>
+      </choice>
+      <choice hidden="true" req="gb_gave_fuel" lvl="0" max_lvl="0" blue="false">
+        <text>Continue...</text>
+        <event load="COMBAT_CHECK"/>
+      </choice>
+    </event>
   </choice>
-  <choice req="engines" lvl="4">
+  <!--<choice req="engines" lvl="4">
     <text>(advanced engines)NOPE.</text>
-  </choice>
+  </choice>-->
+</event>
+<event name="RVS_FREIGHTER_ESCORT_AIRSTRIKE_SUPPORT">
+  <superBarrage player="true" name="RVS_FREIGHTER_ESCORT_AIRSTRIKE"/>
 </event>
 
-<!--Final event: you arrive to the destination which is already over run with rebels and destroyed. You have to destroy the enemy Rebel cruiser within the alloted time to get a high reward and a weapon, if you took a bit too long you still have a bit of leeway, the Convoy got damaged but they are still mostly safe, if you took too long the convoy is destroeyd and it is safe to jump away.  Destroying the Cruiser should still give a high to medium reward regardles as salvage. Anything baring the convoys destruction should unlock the freihgter. After saving the convoy there will be a mention of them regrouping and heading to the last stand instead as their alternate destination for a special encounter I am still brainstorming.  The ship you saved from the start if you refueled them should also provide bomb support here. When the convoy is destroyed enemy ASB is activated 
+<event name="RVS_FREIGHTER_CONVOY_DAMAGED">
+  <variable name="loc_fedfreighter_damaged" op="set" val="1"/>
+  <text>You've been fighting the enemy cruiser so long that the convoy has taken a severe beating from the other ships, but they're still alive. If you can't defeat the cruiser soon, the convoy will surely be destroyed.</text>
+  <triggeredEvent event="RVS_FREIGHTER_CONVOY_DESTROYED" time="40" thisFight="true">
+    <triggeredEventBox load="DEFAULT_TIMER" pos="default">
+      <warning time="10.0" flash="true"/>
+      <tooltip>Time until the convoy is destroyed.</tooltip>
+    </triggeredEventBox>
+    <timerSounds load="DEFAULT_TIMER_SOUNDS"/>
+  </triggeredEvent>
+</event>
+<event name="RVS_FREIGHTER_CONVOY_DESTROYED">
+  <text>You watch in horror as the convoy's ships are blown apart one by one, powerless to stop it. With their mission completed, the enemy ships jump away. There's nothing for it but to scrap the debris and move on. You have your own mission to complete, and with any luck the Federation can still be saved.</text>
+  <autoReward level="MED">standard</autoReward>
+  <instantEscape/>
+</event>
 
-<text> You were expecting to see a fully operational Forward Operating Base here and an attachment of ships. However, you are met with disaster as signs of a recent battle litter this system with all reactor signatures showing dead: Well, except a squadron of Rebel ships here eager to pounce on their prey! "Renegade! This is Supply Officer Kyrylo hailing. Mission aborted! The FOB is destroyed. I repeat the FOB is destroyed. There is nothing left here for us. We're exfiltrating immediately but something jamming our drives! You need to buy us some time".  With the escorts engaging the lighter enemy ships you take on the biggest ship here and draw its fire away from the convoy. You have to make this quick or the convoy will take significant damage!"  </text>
--->
+<event name="RVS_FREIGHTER_CONVOY_WIN">
+  <loadEventList default="RVS_FREIGHTER_CONVOY_SAVED_DAMAGE">
+    <event name="RVS_FREIGHTER_CONVOY_SAVED_NODAMAGE" req="loc_fedfreighter_damaged" lvl="0" max_lvl="0"/>
+  </loadEventList>
+</event>
+<event name="RVS_FREIGHTER_CONVOY_SAVED_DAMAGE">
+  <text>Without the crusier to support them, you and the convoy's escort are easily able to chase away the remaining ships. "Thanks for the help Renegade, you really saved our hides. []"</text> <!-- CV: what are they transporting? what do they give you? -->
+  <autoReward level="MED">standard</autoReward>
+  <!-- CV: needs fed freighter unlock and special weapon -->
+</event>
+<event name="RVS_FREIGHTER_CONVOY_SAVED_NODAMAGE">
+  <text>Without the crusier to support them, you and the convoy's escort are easily able to chase away the remaining ships. "Thanks for the help Renegade. We're not in great shape, but []"</text> <!-- CV: what would they do now that the FOB is gone? -->
+  <autoReward level="MED">standard</autoReward>
+  <!-- CV: needs fed freighter unlock -->
+</event>

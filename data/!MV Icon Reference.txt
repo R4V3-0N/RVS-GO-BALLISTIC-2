@@ -1,10 +1,13 @@
-Cost Icons
+Event Text Icons
 FUEL:     ~
 SCRAP:    {
 MISSILES: }
 DRONES:   |
+REPAIR:   $
 
 Weapon Modifiers
 ELITE:         €
+FIRE:          ‰
 REDUCED POWER: †
-BETTER STATS:  ™
+REDUCED CD:    ‡
+UPGRADED:      ™
