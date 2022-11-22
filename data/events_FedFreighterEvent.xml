@@ -1,5 +1,5 @@
 <event name="RVS_FREIGHTER_ESCORT_DISTRESS" unique="true">
-  <beaconType text="ENCRYPTED DISTRESS" global="true" persist="false" hideVanillaLabel="true"> <!--TODO: Set global to false once testing is done-->
+  <beaconType text="ENCRYPTED DISTRESS" global="false" persist="false" hideVanillaLabel="true"> <!--TODO: Set global to false once testing is done-->
     <color r="233" g="123" b="74" a="1" /> <!-- CV: made this the same as supply depots -->
     <undiscoveredTooltip>Encrypted distress beacon. Someone might need help.</undiscoveredTooltip> <!-- R4: might need change -->
     <unvisitedTooltip>An unvisited location.</unvisitedTooltip>

@@ -303,9 +303,9 @@ created from scratch using the components or techniques of them to create odd an
 -->
 
 
-<!--—————————————————————
+<!-----------------------
 		Weapons
-——————————————————————-->
+------------------------>
 <blueprintList name="GB_AC_BASIC_LIST"> <!--- Just a basic list of the generic ACs-->
     <name>GB_AC_1</name>
     <name>GB_AC_2</name>
@@ -345,9 +345,9 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_AC_BASIC_LIST</name>
 </blueprintList>
 
-<!--—————————————————————
+<!-----------------------
 		Drones
-——————————————————————-->
+------------------------>
 <blueprintList name = "GB_DRONES_COMBAT_CANNONS">
 	<name>GB_COMBAT_AC_1</name>
 	<name>GB_COMBAT_AC_2</name>
@@ -1278,9 +1278,9 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 
 
-<!--—————————————————————
+<!-----------------------
 	Quest/Event specific
-——————————————————————-->
+------------------------>
 
 <shipBlueprint name="GB_FED_BOMBER_LOWAMMO" layout="gb_fed_bomber" img="gb_fed_bomber"> <!-- Used for events with a near-depleted Fed Bomber --> <!--last i checked this is the one with the damaged sprite -->
 	<class>Damaged Federation Bomber</class>
