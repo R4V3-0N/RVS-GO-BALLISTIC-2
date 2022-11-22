@@ -127,13 +127,7 @@
 		<weapon name="GB_CARAVAN_REWARD" />
 		<choice hidden="true">
 			<text>Take time to investigate one of the Transports.</text>
-			<event>
-				<text>Continue...</text>
-				<choice hidden="true">
-					<text>Continue...</text>
-					<event load="GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED" />
-				</choice>
-			</event>
+			<event load="GB_CARAVAN_ABANDONED_TRANSPORTER_DELAYED" />
 		</choice>
 		<choice hidden="true" req = "slug">
 			<text>(Slug Crew) When docking with the escort, your Slug sensed something.</text>
