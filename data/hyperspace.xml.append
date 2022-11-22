@@ -77,6 +77,7 @@
 	 </event>
 	<event name="GB_CALL_QUESTION" recursive="true"/>
 	<variable name="loc_fedfreighter_repaired" op="set" val="0"/>
+	<variable name="loc_fedfreighter_damaged" op="set" val="0"/>
 	<variable name="gb_ammo_toggle" op="set" val="0"/>
 	<variable name="gb_gave_fuel" op="set" val="0"/>
 	<variable name="loc_foundsafe" op="set" val="0"/>
@@ -189,6 +190,14 @@
 
 
 </events>
+
+<mod:findLike type="boss">
+    <mod-append:surgeBarrage name="RVS_FREIGHTER_ESCORT_AIRSTRIKE">
+		<weapon name="BOMB_1" count="3"/>
+		<weapon name="BOMB_BREACH_1" count="1"/>
+    </mod-append:surgeBarrage>
+</mod:findLike>
+
 
 <!-- Go Ballistics generic Federation store, based on the Zoltan store-->
 <customStore id="GB_STORE_FED">
