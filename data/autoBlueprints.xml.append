@@ -106,6 +106,11 @@ created from scratch using the components or techniques of them to create odd an
 	<mod-append:name>GB_AC_3</mod-append:name>
 	<mod-append:name>GB_GAUSS_2</mod-append:name> <!-- R4: unsure of Gauss, Rail, or both being here, but as the original list is short I'll keep this short -->
 </mod:findName>
+<mod:findName type="blueprintList" name="GIFTLIST_FREE">
+	<mod-append:name>GB_AC_1</mod-append:name>
+	<mod-append:name>GB_AC_2</mod-append:name>
+	<mod-append:name>GB_GAUSS_1</mod-append:name>
+</mod:findName>
 
 <!-- <mod:findName type="blueprintList" name="GIFTLIST_ENGI">
 </mod:findName> -->
@@ -298,9 +303,9 @@ created from scratch using the components or techniques of them to create odd an
 -->
 
 
-<!--—————————————————————
+<!-----------------------
 		Weapons
-——————————————————————-->
+------------------------>
 <blueprintList name="GB_AC_BASIC_LIST"> <!--- Just a basic list of the generic ACs-->
     <name>GB_AC_1</name>
     <name>GB_AC_2</name>
@@ -340,9 +345,9 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_AC_BASIC_LIST</name>
 </blueprintList>
 
-<!--—————————————————————
+<!-----------------------
 		Drones
-——————————————————————-->
+------------------------>
 <blueprintList name = "GB_DRONES_COMBAT_CANNONS">
 	<name>GB_COMBAT_AC_1</name>
 	<name>GB_COMBAT_AC_2</name>
@@ -674,6 +679,15 @@ Post update content might change these to "Federation"/Elite versions instead wh
 -->
 
 
+<!-- Make sure ALL enemy ships get at least a few missiles to use for ballistic weapons -->
+<mod:findLike type="shipBlueprint">
+    <mod:findLike type="weaponList">
+        <mod:selector missiles="0" />
+        <mod:setAttributes missiles="5" />
+    </mod:findLike>
+</mod:findLike>
+
+
 <!--
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -685,8 +699,8 @@ Post update content might change these to "Federation"/Elite versions instead wh
 -->
 
 <mod:findName type="blueprintList" name="LIST_WEAPONS_CIVILIAN">
-	<mod-append:name>GB_AC_1</mod-append:name>
-	<mod-append:name>GB_AC_2</mod-append:name>
+	<mod-append:name>GB_AC_1_AMMO</mod-append:name>
+	<mod-append:name>GB_AC_2_AMMO</mod-append:name>
 	<!-- <mod-append:name>GB_RIFLED_CANNON</mod-append:name>
 	<mod-append:name>GB_BURST_CANNON_1</mod-append:name> -->
 </mod:findName>
@@ -702,9 +716,9 @@ Post update content might change these to "Federation"/Elite versions instead wh
 -->
 
 <mod:findName type="blueprintList" name="LIST_WEAPONS_MILITIA">
-	<mod-append:name>GB_AC_1</mod-append:name>
-	<mod-append:name>GB_AC_2</mod-append:name>
-	<mod-append:name>GB_AC_3</mod-append:name>
+	<mod-append:name>GB_AC_1_AMMO</mod-append:name>
+	<mod-append:name>GB_AC_2_AMMO</mod-append:name>
+	<mod-append:name>GB_AC_3_AMMO</mod-append:name>
 	<!-- <mod-append:name>GB_RIFLED_CANNON</mod-append:name>
 	<mod-append:name>GB_BURST_CANNON_1</mod-append:name> -->
 </mod:findName>
@@ -720,8 +734,8 @@ Post update content might change these to "Federation"/Elite versions instead wh
 -->
 
 <mod:findName type="blueprintList" name="LIST_WEAPONS_MILITIA_ELITE">
-	<mod-append:name>GB_AC_2</mod-append:name> <!-- AC's go up a mark over the standard and no longer use the outdated rifled cannon-->
-	<mod-append:name>GB_AC_3</mod-append:name>
+	<mod-append:name>GB_AC_2_AMMO</mod-append:name> <!-- AC's go up a mark over the standard and no longer use the outdated rifled cannon-->
+	<mod-append:name>GB_AC_3_AMMO</mod-append:name>
 	<!-- <mod-append:name>GB_BURST_CANNON_1</mod-append:name>
 	<mod-append:name>GB_BURST_CANNON_2</mod-append:name> -->
 	<mod-append:name>GB_GAUSS_1_ENEMY</mod-append:name> <!-- CDEG equipped with lower mark of Federation Advance Technologies-->
@@ -739,9 +753,9 @@ Post update content might change these to "Federation"/Elite versions instead wh
 -->
 
 <mod:findName type="blueprintList" name="LIST_WEAPONS_FED">
-	<mod-append:name>GB_AC_1</mod-append:name>
-	<mod-append:name>GB_AC_2</mod-append:name>
-	<mod-append:name>GB_AC_3</mod-append:name>
+	<mod-append:name>GB_AC_1_AMMO</mod-append:name>
+	<mod-append:name>GB_AC_2_AMMO</mod-append:name>
+	<mod-append:name>GB_AC_3_AMMO</mod-append:name>
 	<!-- <mod-append:name>GB_BURST_CANNON_1</mod-append:name>
 	<mod-append:name>GB_BURST_CANNON_2</mod-append:name> -->
 	<mod-append:name>GB_GAUSS_1_ENEMY</mod-append:name> <!-- R4: I just added the 2 into the Fed Weapon list, the Gauss 1 didn't seem problematic, time to stress test -->
@@ -874,6 +888,8 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 </mod:findName>
 
+
+
 <!--
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -947,10 +963,10 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 <!--FIGHTER-->
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_FIGHTER">
-	<mod-overwrite:weaponList missiles="0" count="3" load="LIST_WEAPONS_SEPARATIST" />
+	<mod-overwrite:weaponList missiles="5" count="3" load="LIST_WEAPONS_SEPARATIST" />
 </mod:findName>
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_FIGHTER_NO2">
-	<mod-overwrite:weaponList missiles="0" count="3" load="LIST_WEAPONS_SEPARATIST" />
+	<mod-overwrite:weaponList missiles="5" count="3" load="LIST_WEAPONS_SEPARATIST" />
 </mod:findName>
 
 <!--RIGGER-->
@@ -987,10 +1003,10 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 <!--DROPSHIP-->
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_DROPSHIP">
-	<mod-overwrite:weaponList missiles="0" count="4" load="LIST_WEAPONS_SEPARATIST" />
+	<mod-overwrite:weaponList missiles="5" count="4" load="LIST_WEAPONS_SEPARATIST" />
 </mod:findName>
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_DROPSHIP_NO2">
-	<mod-overwrite:weaponList missiles="0" count="4" load="LIST_WEAPONS_SEPARATIST" />
+	<mod-overwrite:weaponList missiles="5" count="4" load="LIST_WEAPONS_SEPARATIST" />
 </mod:findName>
 
 <!--MOTHERSHIP-->
@@ -1273,9 +1289,9 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 
 
-<!--—————————————————————
+<!-----------------------
 	Quest/Event specific
-——————————————————————-->
+------------------------>
 
 <shipBlueprint name="GB_FED_BOMBER_LOWAMMO" layout="gb_fed_bomber" img="gb_fed_bomber"> <!-- Used for events with a near-depleted Fed Bomber --> <!--last i checked this is the one with the damaged sprite -->
 	<class>Damaged Federation Bomber</class>

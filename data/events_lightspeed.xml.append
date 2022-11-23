@@ -23,9 +23,9 @@
 	</loadEventList>
 </event>
 
-<!--—————————————————————
+<!-----------------------
 	Dispatch Delivery Events
-——————————————————————-->
+------------------------>
 
 <event name="GB_DISPATCH_1">
 	<text load="GB_TEXT_DISPATCH_DELIVERY"/>
@@ -804,13 +804,13 @@
 	</choice>
 </event>
 
-<!--—————————————————————
+<!-----------------------
 	Dispatch Delivery Generic Text Lists
-——————————————————————-->
+------------------------>
 
 <textList name="GB_TEXT_DISPATCH_DELIVERY">
 	<text>You contact the dispatch for another mission.</text>
-	<text>The faint glow on your terminal alerts you of a mission update, looks like you’ll be making another delivery.</text>
+	<text>The faint glow on your terminal alerts you of a mission update, looks like you'll be making another delivery.</text>
 	<text>You received a hail from your dispatcher, it seems they have lined you up for another job.</text>
 	<text>"Dispatch here. Got a mission for you.".</text>
 	<text>"Hey! This is dispatch. Got another client that could use a delivery.".</text>

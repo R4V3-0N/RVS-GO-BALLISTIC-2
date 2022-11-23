@@ -93,7 +93,7 @@
 		</choice>
 	</event>
 	<event>
-		<text>You must've been on edge because when 2 contacts just jumped in on an approach vector you order all your crew to their battle stations and power up your weapons — however it was just a Union freighter and its outrider probably delivering a shipment: Just a false alarm. You collect your pay and prepare to leave.</text>
+		<text>You must've been on edge because when 2 contacts just jumped in on an approach vector you order all your crew to their battle stations and power up your weapons - however it was just a Union freighter and its outrider probably delivering a shipment: Just a false alarm. You collect your pay and prepare to leave.</text>
 		<store>GB_STORE_FED</store>
 		<modifyPursuit amount="1"/>
 		<choice hidden="true">
@@ -198,7 +198,7 @@
 			<choice hidden="true">
 				<text>Inquire about the strange choice of venue.</text>
 				<event>
-				<text>The operator of this store front coughs to clear his throat. "This thing? Just a demilitarized Aquila. Converted for use as a long range hauler. Ample shields and firepower to keep any trigger happy Pirate off your back. Are you looking to trade, or are you just curious? We have some old hand-me-downs in surplus if you’re interested.”</text>
+				<text>The operator of this store front coughs to clear his throat. "This thing? Just a demilitarized Aquila. Converted for use as a long range hauler. Ample shields and firepower to keep any trigger happy Pirate off your back. Are you looking to trade, or are you just curious? We have some old hand-me-downs in surplus if you're interested."</text>
 					<choice hidden="true">
 						<text>Nah, just access the regular store.</text>
 						<event load="STORE_LOAD_GENERIC"/>
