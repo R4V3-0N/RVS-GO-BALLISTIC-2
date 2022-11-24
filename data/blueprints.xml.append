@@ -28,6 +28,7 @@
 	Rad
 -->
 <!-- R4: Who ever convinced me to do more than 2 additional ammo types, who ever made it go up to as many as it did and still more to come, I will find you, and I will slap you-->
+<!-- R4: 2022/11/24 13:00, Julk I swear to god we're going to add 5 more ammo types at some point and it's all your fault. Thank you <3 --> 
 
 <weaponBlueprint name="GB_AC_FLECHETTE_FRAG"> <!-- flechettes that cause bleed damage -->
 	<type>BURST</type>
@@ -47,7 +48,7 @@
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<radius>30</radius>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<statBoosts>
 		<statBoost name="trueHealAmount">
 			<boostType>FLAT</boostType>
@@ -100,7 +101,7 @@
 	<power>1</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<image>GB_shot_light</image>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
@@ -140,7 +141,7 @@
 	<power>1</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<image>GB_shot_light</image>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
@@ -168,9 +169,9 @@
 	<title>Autocannon Mark I [High Velocity]</title>
 	<short>AC I [HV]</short>
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
-	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<tooltip>1 shot 1 damage weapon, 80% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>83</freeMissileChance>
+	<freeMissileChance>80</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
 	<damage>1</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -180,7 +181,7 @@
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<accuracyMod>10</accuracyMod>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<speed>80</speed>
 	<image>GB_shot_light_HV</image>
 	<launchSounds>
@@ -210,7 +211,7 @@
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>83</freeMissileChance>
+	<freeMissileChance>80</freeMissileChance>	<!-- R4 2022/11/24: was 83 -->
 	<damage>1</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -220,7 +221,7 @@
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<accuracyMod>5</accuracyMod> <!--half player accuracy-->
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<speed>80</speed>
 	<image>GB_shot_light_HV</image>
 	<launchSounds>
@@ -249,9 +250,9 @@
 	<title>Autocannon Mark I [Recycler]</title>
 	<short>AC I [Re]</short>
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
-	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
-	<missiles>1</missiles>
-	<freeMissileChance>93</freeMissileChance> <!-- might change this to 100%-->
+	<tooltip>1 shot 1 damage weapon, requires 10 ammunition to fire but doesn't consume it.</tooltip>
+	<missiles>10</missiles>
+	<freeMissileChance>93</freeMissileChance> <!-- might change this to 100%--> <!-- R4 2022/11/24: was 93 -->
 	<damage>1</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -260,7 +261,7 @@
 	<power>1</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<image>GB_shot_light_recycled</image>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
@@ -283,6 +284,9 @@
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
 
+<!--  
+R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity.
+-->
 <weaponBlueprint name="GB_AC_1_HE"> <!-- Hull damage focus, stuns crew and makes them more vulnerable -->
 	<type>LASER</type>
 	<title>Autocannon Mark I [Concussive]</title>
@@ -290,7 +294,7 @@
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>83</freeMissileChance>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
 	<damage>1</damage>
 	<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
@@ -318,7 +322,7 @@
 	<power>1</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<image>GB_shot_light_HE</image>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
@@ -394,7 +398,7 @@
 	<power>1</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<speed>80</speed>
 	<image>GB_shot_light_EMP</image>
 	<launchSounds>
@@ -425,7 +429,7 @@
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>82</freeMissileChance>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 82 -->
 	<sysDamage>2</sysDamage>
 	<persDamage>1</persDamage>
 	<shots>1</shots>
@@ -435,7 +439,7 @@
 	<power>1</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<image>GB_shot_light_HEAT</image>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
@@ -466,7 +470,7 @@
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>83</freeMissileChance>
+	<freeMissileChance>80</freeMissileChance>	<!-- R4 2022/11/24: was 83 -->
 	<damage>1</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -475,7 +479,7 @@
 	<power>1</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<image>GB_shot_light_Incendiary</image>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
@@ -506,7 +510,7 @@
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>82</freeMissileChance>
+	<freeMissileChance>80</freeMissileChance>	<!-- R4 2022/11/24: was 82 -->
 	<damage>1</damage>
 	<noPersDamage>true</noPersDamage> <!-- no Pers damage from projectile, only via bleed-->
 	<sysDamage>-1</sysDamage> <!--minus 1, flat, for all flechette AC marks-->
@@ -519,7 +523,7 @@
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<radius>30</radius>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<statBoosts>
 		<statBoost name="trueHealAmount">
 			<boostType>FLAT</boostType>
@@ -563,7 +567,7 @@
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means. (FT: Warcrimes!)</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>78</freeMissileChance>
+	<freeMissileChance>75</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
 	<damage>1</damage>
 	<persDamage>1</persDamage>
 	<shots>1</shots>
@@ -603,7 +607,7 @@
 	<power>1</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<image>GB_shot_light_RAD</image>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
@@ -636,7 +640,7 @@
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>83</freeMissileChance>
+	<freeMissileChance>80</freeMissileChance>	<!-- R4 2022/11/24: was 83 -->
 	<damage>2</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -646,7 +650,7 @@
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
 	<image>GB_shot_medium</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
@@ -676,7 +680,7 @@
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>78</freeMissileChance>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 78 -->
 	<damage>2</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -686,7 +690,7 @@
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
 	<image>GB_shot_medium</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
@@ -716,7 +720,7 @@
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>80</freeMissileChance>
+	<freeMissileChance>77</freeMissileChance> <!-- R4 2022/11/24: was 80 -->
 	<damage>2</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -728,7 +732,7 @@
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
 	<image>GB_shot_medium_HV</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
@@ -757,7 +761,7 @@
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>80</freeMissileChance>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 80 for some reason -->
 	<damage>2</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -769,7 +773,7 @@
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
 	<image>GB_shot_medium_HV</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
@@ -798,8 +802,8 @@
 	<short>AC II [Re]</short>
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
-	<missiles>1</missiles>
-	<freeMissileChance>91</freeMissileChance>
+	<missiles>15</missiles>
+	<freeMissileChance>100</freeMissileChance>	<!-- R4 2022/11/24: was 91 -->
 	<damage>2</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -807,7 +811,7 @@
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
 	<image>GB_shot_medium_recycled</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
@@ -830,6 +834,9 @@
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
 
+<!--  
+R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too TWO in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
+-->
 <weaponBlueprint name="GB_AC_2_HE"> <!-- from mk 2 on, -1 damage, gains hullbust -->
 	<type>LASER</type>
 	<title>Autocannon Mark II [Concussive]</title>
@@ -837,7 +844,7 @@
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>78</freeMissileChance>
+	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
 	<damage>1</damage>
 	<!--<sysDamage>1</sysDamage>-->
 	<persDamage>1</persDamage>
@@ -868,7 +875,7 @@
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
 	<image>GB_shot_medium_HE</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
@@ -927,7 +934,7 @@
 		Stun Chance: 20% (3 seconds long)
 	</tooltipOverride>
 	<missiles>1</missiles>
-	<freeMissileChance>73</freeMissileChance>
+	<freeMissileChance>72</freeMissileChance>	<!-- R4 2022/11/24: was 73 -->
 	<damage>2</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -943,7 +950,7 @@
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
 	<image>GB_shot_medium_EMP</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
@@ -973,7 +980,7 @@
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>78</freeMissileChance>
+	<freeMissileChance>70</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
 	<sysDamage>4</sysDamage>
 	<persDamage>2</persDamage> <!--R4: We have to pay attention to how easy it is to achieve crew kills with the HEAT AC1 and 2, they are not intended for crew killing primarily and we may need to reduce the whole series crew damage by 1. -->
 	<shots>1</shots>
@@ -984,7 +991,7 @@
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
 	<image>GB_shot_medium_HEAT</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
@@ -1014,7 +1021,7 @@
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>80</freeMissileChance>
+	<freeMissileChance>75</freeMissileChance>	<!-- R4 2022/11/24: was 80 -->
 	<damage>2</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1025,7 +1032,7 @@
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
 	<image>GB_shot_medium_INCENDIARY</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
@@ -1055,7 +1062,7 @@
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>78</freeMissileChance>
+	<freeMissileChance>75</freeMissileChance>	<!-- R4 2022/11/24: was 80 -->
 	<damage>2</damage>
 	<noPersDamage>true</noPersDamage>
 	<sysDamage>-1</sysDamage>
@@ -1068,7 +1075,7 @@
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
 	<radius>40</radius>
 	<statBoosts>
 		<statBoost name="trueHealAmount">
@@ -1114,7 +1121,7 @@
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>75</freeMissileChance>
+	<freeMissileChance>70</freeMissileChance>	<!-- R4 2022/11/24: was 75 -->
 	<damage>2</damage>
 	<persDamage>1</persDamage>
 	<shots>1</shots>
@@ -1155,7 +1162,7 @@
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
 	<image>GB_shot_medium_RAD</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
@@ -1188,7 +1195,7 @@
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>75</freeMissileChance>
+	<freeMissileChance>70</freeMissileChance> <!-- R4 2022/11/24: was 75 -->
 	<damage>3</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1198,7 +1205,7 @@
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
 	<image>GB_shot_heavy</image>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -1228,7 +1235,7 @@
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>70</freeMissileChance>
+	<freeMissileChance>60</freeMissileChance>	<!-- R4 2022/11/24: was 70 -->
 	<damage>3</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1238,7 +1245,7 @@
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
 	<image>GB_shot_heavy</image>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -1269,7 +1276,7 @@
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
 	<accuracyMod>10</accuracyMod>
-	<freeMissileChance>70</freeMissileChance>
+	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 70 -->
 	<damage>3</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1280,7 +1287,7 @@
 	<speed>80</speed>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
 	<image>GB_shot_heavy_HV</image>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -1310,7 +1317,7 @@
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
 	<accuracy>5</accuracy> <!--half player accuracy-->
-	<freeMissileChance>70</freeMissileChance>
+	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 70 -->
 	<damage>3</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1321,7 +1328,7 @@
 	<speed>80</speed>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
 	<image>GB_shot_heavy_HV</image>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -1350,8 +1357,8 @@
 	<short>AC III [Re]</short>
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
-	<missiles>1</missiles>
-	<freeMissileChance>87</freeMissileChance>
+	<missiles>25</missiles>
+	<freeMissileChance>100</freeMissileChance>
 	<damage>3</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1359,7 +1366,7 @@
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
 	<image>GB_shot_heavy_recycled</image>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -1382,6 +1389,9 @@
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
 
+<!--  
+R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too THREE in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
+-->
 <weaponBlueprint name="GB_AC_3_HE">
 	<type>LASER</type>
 	<title>Autocannon Mark III [Concussive]</title>
@@ -1389,7 +1399,7 @@
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>65</freeMissileChance>
+	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
 	<damage>2</damage>
 	<hullBust>1</hullBust>
 	<shots>1</shots>
@@ -1418,7 +1428,7 @@
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
 	<image>GB_shot_heavy_HE</image>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -1478,7 +1488,7 @@
 		Stun Chance: 40% (3 seconds long)
 	</tooltipOverride>
 	<missiles>1</missiles>
-	<freeMissileChance>62</freeMissileChance>
+	<freeMissileChance>60</freeMissileChance>	<!-- R4 2022/11/24: was 62 -->
 	<damage>3</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1494,7 +1504,7 @@
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
 	<image>GB_shot_heavy_EMP</image>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -1524,9 +1534,9 @@
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>67</freeMissileChance>
-	<damage>1</damage>
-	<sysDamage>5</sysDamage>
+	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 67 -->
+	<damage>0</damage> 	<!-- R4 2022/11/24: was 1 -->
+	<sysDamage>6</sysDamage> 	<!-- R4 2022/11/24: was 5 -->
 	<persDamage>2</persDamage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1536,7 +1546,7 @@
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
 	<image>GB_shot_heavy_HEAT</image>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -1566,7 +1576,7 @@
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>70</freeMissileChance>
+	<freeMissileChance>65</freeMissileChance>	<!-- R4 2022/11/24: was 70 -->
 	<damage>3</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1577,7 +1587,7 @@
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
 	<image>GB_shot_heavy_INCENDIARY</image> 
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -1607,7 +1617,7 @@
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>67</freeMissileChance>
+	<freeMissileChance>55</freeMissileChance>	<!-- R4 2022/11/24: was 67, this is a heavy nerf relatively because I didn't realise this thing does 175 crew damage over time if it hits all the same room. Pending test results from this nerf-->
 	<damage>3</damage>
 	<noPersDamage>true</noPersDamage>
 	<sysDamage>-1</sysDamage>
@@ -1621,7 +1631,7 @@
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
 	<radius>50</radius>
 	<statBoosts>
 		<statBoost name="trueHealAmount">
@@ -1666,9 +1676,9 @@
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>65</freeMissileChance>
+	<freeMissileChance>55</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
 	<damage>3</damage>
-	<persDamage>1</persDamage>
+	<persDamage>2</persDamage> <!-- R4 2022/11/24: was 1, more RAD for the irradiated one!-->
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>6</breachChance>
@@ -1707,7 +1717,7 @@
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
 	<image>GB_shot_heavy_RAD</image>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -1741,7 +1751,7 @@
 	<desc>A super heavy Autocannon that only ever was in limited production before the end of the war before being cancelled. Scarcely seen in the modern Universe.</desc>
 	<tooltip>1 shot 4 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>65</freeMissileChance>
+	<freeMissileChance>65</freeMissileChance> 
 	<damage>4</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1798,7 +1808,7 @@
 	<stun>6</stun>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>10</cost>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
 	<image>GB_shot_light</image>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
@@ -1840,7 +1850,7 @@
 	<stun>6</stun>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
 	<image>GB_shot_medium</image>
 	<launchSounds>
 		<sound>GB_cannonMedium1</sound>
@@ -1882,7 +1892,7 @@
 	<stun>6</stun>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
 	<image>GB_shot_heavy</image>
 	<launchSounds>
 		<sound>GB_cannonHeavy1</sound>
@@ -2439,6 +2449,7 @@
 		•••••••••••••••••••••
 -->
 
+ <!-- R4 2022/11/24: With the Vert blcak magics. I want this weapon to have a low chance of doing hull damage but not pop shields. Something in the realms of low enough that it doesn't work every time it shoots but at least every other volley-->
 <weaponBlueprint name="GB_MG">
 	<type>LASER</type>
 	<title>Machine Gun</title>
@@ -2484,7 +2495,7 @@
 	<tooltip>3 shot 30 crew damage weapon, 10% chance to cause a breach, 10% chance to stun for 2 seconds</tooltip>
 	<damage>0</damage>
 	<persDamage>2</persDamage>
-	<shots>1</shots>
+	<shots>3</shots> <!-- R4 2022/11/24: was 1, an error-->
 	<sp>0</sp>
 	<breachChance>1</breachChance>
 	<stunChance>1</stunChance>
@@ -2534,7 +2545,7 @@
 	<speed>180</speed>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>40</cost>
+	<cost>45</cost>
 	<image>GB_magnetic_slug_light</image>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
@@ -3208,7 +3219,7 @@
 	<weaponSlots>3</weaponSlots>
 	<droneSlots>3</droneSlots>
 	<weaponList missiles="18" count="3">
-		<weapon name="LASER_BURST_1" />
+		<weapon name="GB_AC_1" /> <!-- R4 2022/11/24: Switched back to GB_AC_1, the laser burst was a test place holder before merging with GB-->
 		<weapon name="MISSILES_1" />
 	</weaponList>
 	<droneList drones="0" count="3" />
@@ -3290,7 +3301,7 @@
 	<maxPower amount="10" />
 	<crewCount amount="1" class="human" />
 	<crewCount amount="1" class="slug" />
-	<crewCount amount="1" class="mantis_free" />
+	<crewCount amount="1" class="orchid" /> <!--R4 2022/11/24: replaced free mantis with Orchid-->
 	<aug name="GB_PHONE" />
 	<aug name="NEBULA_GASSES" /> <!-- R4: Might change this later, a trade augment to give a headstart economically -->
 	<aug name="CRATE_MISSILES" /> <!-- Similar as Nebula gasses, might just be dumped into an event at first sight or used to get an edge in missiles -->
