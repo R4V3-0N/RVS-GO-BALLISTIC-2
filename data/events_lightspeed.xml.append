@@ -804,6 +804,8 @@
 	</choice>
 </event>
 
+
+
 <!-----------------------
 	Dispatch Delivery Generic Text Lists
 ------------------------>
@@ -837,6 +839,263 @@
 	<text>"Alright, here are the co-ordinates. Good luck on this one. Dispatch out.".</text>
 	<text>Unfortunately for this one you are given only a vague set of directions. However upon referencing the star map you think you have a good idea of where your target is and plan a route accordingly.</text>
 </textList>
+
+
+
+<!-- 	•••••••••••••••••••••
+         SMUGGLING EVENTS
+		•••••••••••••••••••••
+-->
+
+<event name="GB_SMUGGLE_DELIVERY_GENERIC_1">
+	<text load="GB_SMUGGLE_TEXT_1"/>
+	<choice hidden="true">
+		<text>Attempt to sneak into the station.</text>
+		<event load="GB_SMUGGLE_DELIVERY_RISK_LIST"/>
+	</choice>
+	<choice hidden="true" req="CLOAKING" max_lvl="1" max_group="0">
+		<text>(Cloaking) Attempt to stealthily enter the station.</text>
+		<event load="GB_SMUGGLE_DELIVERY_CLOAK_LIST"/>
+	</choice>
+	<choice hidden="true" req="CLOAKING" lvl="2" max_group="0">
+		<text>(Improved Cloaking) Use your stealth to enter the station.</text>
+		<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+	</choice>
+	<choice hidden="true">
+		<text>Leave.</text>
+		<event>
+			<text>You decide it isn't worth the risk and prepare to leave.</text>
+		</event>
+	</choice>
+</event>
+
+<textList name="GB_SMUGGLE_TEXT_1"> 
+	<text>Bustling with activity as ships regularly enter and depart from the slotted opening in the side of the large trade station. It is equipped with basic sensor equipment and light police patrols making sure no one who is wanted and unwelcomed enters, or those carrying any contraband and illicit goods. There is a chance you could slip past their security with all this traffic here, but you are willing to take the risk?</text>
+	<text>There is a constant stream of ships entering and leaving the large trade station through the slotted opening. The facility is equipped with basic sensor equipment and police patrols that ensure no one unwanted and unwelcome enters, or has contraband or illicit goods with them. With all this traffic here, there is a chance you could slip past their security, but are you willing to take the chance?</text>
+	<text>You arrive at a bustling trade hub. A popular tourist destination it seems as you can tell by all the Union cruise liners, space liners, and taxi ships ferrying people to and from. With the range of ships that enter the large megastation you could slip in without notice to your clandestine delivery. Assuming you aren’t scanned by the security patrols that keep this station clean of contraband.</text>
+	<text>At a thriving trade center, you find yourself at a loss with all the activity at this beacon. With all the heavy haulers and mining vessels entering the station it seems to be a zero-G refinery and processing facility. As a result of the frequency of ships entering the mega-refinery, clandestine deliveries could take place without anyone being aware. Providing you do not get scanned by the security patrols that patrol this station for contraband.</text>
+</textList>
+
+
+<eventList name="GB_SMUGGLE_DELIVERY_RISK_LIST"> <!-- No cloak, 1/2 chance of success -->
+	<event load="GB_SMUGGLE_DELIVERY_CAUGHT"/>
+	<event load="GB_SMUGGLE_DELIVERY_BRIBE"/>
+	<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+	<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+</eventList>
+
+
+<eventList name="GB_SMUGGLE_DELIVERY_CLOAK_LIST"> <!-- Cloak, 2/3 chance of success -->
+	<event load="GB_SMUGGLE_DELIVERY_CAUGHT"/>
+	<event load="GB_SMUGGLE_DELIVERY_BRIBE"/>
+	<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+	<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+	<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+	<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+</eventList>
+<event name="GB_SMUGGLE_DELIVERY_CAUGHT">
+	<text>Despite your best efforts to slip in undetected, but your hopes are dashed when your voice warning system cuts into the silence onboard your ship with the words: “Ship scan detected” and any hopes they would miss anything is lost when the stations enforcer demands your ship to pull aside from the traffic entering the station and surrender to a cargo inspection.</text>
+	<choice hidden="true">
+		<text>Allow them to inspect your cargo hold.</text>
+		<event load="GB_SMUGGLE_DELIVERY_INSPECTION"/>
+	</choice>
+	<choice hidden="true" req="mind" lvl="1" max_group="0">
+		<text>(Mind Control) Make the enforcer believe you have already been cleared to dock.</text>
+		<event load="GB_SMUGGLE_DELIVERY_MIND_CHANCE"/>
+	</choice>
+	<choice hidden="true" req="mind" lvl="2" max_group="0">
+		<text>(Improved Mind Control) Make the enforcer believe you have already been cleared to dock.</text>
+		<event>
+			<text>You 'convince' the enforcer that you have already been checked by another patrol and had already been cleared to dock at the station. They apologise for the mix up and let you continue your way into the station without further incident.</text>
+			<choice hidden="true">
+				<text>Phew, that was close.</text>
+				<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="mind" lvl="2" max_group="0">
+		<text>(Advanced Mind Control) Make the enforcer believe you have already been cleared to dock.</text>
+		<event>
+			<autoReward level="LOW">scrap_only</autoReward>
+			<text>You 'convince' the enforcer that you have already been checked by another patrol and had already been cleared to dock at the station. They apologise profusely for the mix up and offer you a small helping of scrap for your inconvenience of being pulled out of the queue and let you continue your way into the station without further incident.</text>
+			<choice hidden="true">
+				<text>Phew, that was close.</text>
+				<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Refuse to be inspected and power up your weapons!</text>
+		<event load="GB_SMUGGLE_STATION_FIGHT"/>
+	</choice>
+</event>
+
+<eventList name="GB_SMUGGLE_DELIVERY_INSPECTION">
+	<event load="GB_SMUGGLE_DELIVERY_INSPECTION_FAIL"/>
+	<event load="GB_SMUGGLE_DELIVERY_INSPECTION_CLEAR"/>
+</eventList>
+
+<event name="GB_SMUGGLE_DELIVERY_INSPECTION_FAIL">
+	<text>The security staff board your ship and begin scanning through your cargo hold closely. Suddenly alarms go off and they turn to you. “You are carrying prohibited goods. Surrender your cargo and pay the fine and everything else should be in order. Failure to comply will result in your arrest and the detainment of this vessel”.</text>
+	<choice hidden="true">
+		<text>Pay the fine.</text>
+		<event>
+			<item_modify steal="true">
+				<item type="scrap" min="15" max="15"/>
+			</item_modify>
+			<text>Insert your EVENT text here!</text>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Resist and fight your way out!</text>
+		<event load="GB_SMUGGLE_STATION_FIGHT"/>
+	</choice>
+</event>
+
+<event name="GB_SMUGGLE_DELIVERY_INSPECTION_CLEAR">
+	<text>The security staff board your ship and begin scanning through your cargo hold closely. However for one reason or another it seems they didn’t find the contraband in your cargo hold at all and eventually they return back to their ship and give you the all clear.</text>
+	<choice hidden="true">
+		<text>Phew, that was close.</text>
+		<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+	</choice>
+</event>
+
+<eventList name="GB_SMUGGLE_DELIVERY_MIND_CHANCE">
+	<event load="GB_SMUGGLE_DELIVERY_MIND_FAIL"/>
+	<event load="GB_SMUGGLE_DELIVERY_MIND_SUCCESS"/>
+</eventList>
+
+<event name="GB_SMUGGLE_DELIVERY_MIND_FAIL">
+	<text>Your attempts to ‘convince’ the enforcer that you’re already been checked and cleared for docking has failed. After an awkward pause they repeat their demand to board your vessel for inspection, they’re not going to ask again.</text>
+	<choice hidden="true">
+		<text>Allow them to inspect your cargo hold.</text>
+		<event load="GB_SMUGGLE_DELIVERY_INSPECTION"/>
+	</choice>
+	<choice hidden="true">
+		<text>Refuse to be inspected and power up your weapons!</text>
+		<event load="GB_SMUGGLE_STATION_FIGHT"/>
+	</choice>
+</event>
+
+<event name="GB_SMUGGLE_DELIVERY_MIND_SUCCESS">
+	<text>You 'convince' the enforcer that you have already been checked by another patrol and had already been cleared to dock at the station. They apologise for the mix up and let you continue your way into the station without further incident.</text>
+	<choice hidden="true">
+		<text>Phew, that was close.</text>
+		<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+	</choice>
+</event>
+
+<event name="GB_SMUGGLE_STATION_FIGHT"> 
+	<ship load="SHIP_MILITIA_FIGHT" hostile="true"/>
+	<environment type="PDS" target="player"/>
+	<boarders min="1" max="3" class="LIST_CREW_MILITIA_RANDOM"/>
+	<damage amount="0" system="random" effect="breach" />
+	<text>The enforcer does not back down and immediately reciprocates your actions.The station doesn’t sit idly by and eagerly demonstrates its full arsenal. Opening up with a barrage from its anti-ship battery! To make matters worse it seems to be a few militiamen onboard your vessel and don’t intend to get off too soon.	Perhaps it may be worth considering an escape.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+	<event load="MORALITY_UPDATE_GENERAL_FIGHT"/> <!-- R4: This is what I do to make it do a morality hit right? -->
+		<!--<event load="COMBAT_CHECK"/> -->
+	</choice>
+</event>
+
+<event name="GB_SMUGGLE_DELIVERY_SUCCESS">
+	<text>Fortunately there is no further incident, you make it inside the station and dock at your assigned landing pad. From there you carry out on foot in the hangar space to your contact where you collect your payment and organise a transfer of the goods. You can only imagine what you transported here and even more so what it will be used for. But you aren’t being paid to ask any questions. You decide while you are still docked inside the station to browse at the local stores.</text>
+	<autoReward level="HIGH">item</autoReward>
+	<store>STORE_STANDARD</store>
+</event>
+
+<event name="GB_SMUGGLE_DELIVERY_BRIBE">
+	<text>Despite your best efforts to slip in undetected, but your hopes are dashed when	your voice warning system cuts into the silence onboard your ship with the words: “Ship scan detected”, however, instead of being pulled aside for an inspection by an enforcer you are instead offered an opportunity to help ‘incentivise’ them to turn a blind eye and let you walk away. You didn't know that bribery was so rampant in these parts but it could be worth dealing with a corrupt enforcer instead of an infallible one.</text>
+	<choice>
+		<text>Bribe them to let you continue.</text>
+		<event>
+			<item_modify steal="true">
+				<item type="scrap" min="15" max="15"/>
+			</item_modify>
+		</event>
+	</choice>
+	<choice req="mind" lvl="1" max_group="0">
+		<text>(Mind Control) Make the enforcer lower the 'fee' to access the station.</text>
+		<event>
+			<text>You 'convince' the enforcer to be in a more charitable mood and lower the price to pay them off.</text>
+			<item_modify steal="true">
+				<item type="scrap" min="3" max="8"/>
+			</item_modify>
+			<choice>
+				<text>Continue...</text>
+				<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="mind" lvl="2" max_group="0">
+		<text>(Improved Mind Control) Convince the enforcer to let you go without a bribe.</text>
+		<event>
+			<text>You 'convince' the enforcer to be in a more charitable mood and decide to let you go without the need of any bribes.</text>
+			<choice hidden="true">
+				<text>Phew, that was close.</text>
+				<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Refuse to bribe them.</text>
+		<event>
+			<text>Without the incentive there is nothing stopping them from continuing with their job, and that is to take you out of the queue into the station and bring you in for a cargo inspection.</text>
+			<choice hidden="true">
+				<text>Allow them to inspect your cargo hold.</text>
+				<event load="GB_SMUGGLE_DELIVERY_INSPECTION"/>
+			</choice>
+			<choice hidden="true">
+				<text>Refuse to be inspected and power up your weapons!</text>
+				<event load="GB_SMUGGLE_STATION_FIGHT"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Refuse to bribe them and power up your weapons!</text>
+		<event load="GB_SMUGGLE_STATION_FIGHT"/>
+	</choice>
+</event>
+
+<event name="GB_SMUGGLE_DELIVERY_CAUGHT">
+	<text>Despite your best efforts to slip in undetected, but your hopes are dashed when	your voice warning system cuts into the silence onboard your ship with the words: “Ship scan detected” and any hopes they would miss anything is lost when the stations enforcer demands your ship to pull aside from the traffic entering the station and surrender to a cargo inspection.</text>
+	<choice hidden="true">
+		<text>Allow them to inspect your cargo hold.</text>
+		<event load="GB_SMUGGLE_DELIVERY_INSPECTION"/>
+	</choice>
+	<choice hidden="true" req="mind" lvl="1" max_group="0">
+		<text>(Mind Control) Make the enforcer believe you have already been cleared to dock.</text>
+		<event load="GB_SMUGGLE_DELIVERY_MIND_CHANCE"/>
+	</choice>
+	<choice hidden="true" req="mind" lvl="2" max_group="0">
+		<text>(Improved Mind Control) Make the enforcer believe you have already been cleared to dock.</text>
+		<event>
+			<text>You 'convince' the enforcer that you have already been checked by another patrol and had already been cleared to dock at the station. They apologise for the mix up and let you continue your way into the station without further incident.</text>
+			<choice hidden="true">
+				<text>Phew, that was close.</text>
+				<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true" req="mind" lvl="2" max_group="0">
+		<text>(Advanced Mind Control) Make the enforcer believe you have already been cleared to dock.</text>
+		<event>
+			<autoReward level="LOW">scrap_only</autoReward>
+			<text>You 'convince' the enforcer that you have already been checked by another patrol and had already been cleared to dock at the station. They apologise profusely for the mix up and offer you a small helping of scrap for your inconvenience of being pulled out of the queue and let you continue your way into the station without further incident.</text>
+			<choice hidden="true">
+				<text>Phew, that was close.</text>
+				<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Refuse to be inspected and power up your weapons!</text>
+		<event load="GB_SMUGGLE_STATION_FIGHT"/>
+	</choice>
+</event>
+
+
+
 
 
 
