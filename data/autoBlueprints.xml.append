@@ -1426,7 +1426,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 <!-- This Multiverse Renegade is themed on using single shot lasers and autocannons, as we introduce them we will add in Rifles, when and if it ever comes recoilless rifles may work too-->
 <shipBlueprint name="GB_R4_MR_MILITIA_GUARD" layout="R4_MR_militia_guard" img="R4_MR_militia_guard">
-	<class id="text_GB_R4_MR_MILITIA_GUARD_class">Multiverse Renegade</class>
+	<class>Multiverse Renegade</class>
 	<minSector>1</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
