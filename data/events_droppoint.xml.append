@@ -90,7 +90,7 @@
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
-			<text>You are left to your own devices as you continue to salvage the remnants of the supply allowing you to collect a heavier haul.</text>
+			<text>The ship leaves you alone as you salvage the remnants of the supply depot, allowing you to collect a heavier salvage haul.</text>
 			<autoReward level="MED">scrap_only</autoReward>
 			<choice hidden="true">
 				<text>Continue...</text>
