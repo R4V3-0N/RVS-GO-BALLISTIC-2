@@ -1,2 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<text name="text_GB_AMMO_CURRENT_1">Current: Standard ammo. [default]</text>
+<text name="text_GB_AMMO_CURRENT_2">Current: Caseless ammo. [faster]</text>
+<text name="text_GB_AMMO_CURRENT_3">Current: High Velocity ammo. [accurate]</text>
+<text name="text_GB_AMMO_CURRENT_4">Current: Recycler ammo. [free]</text>
+<text name="text_GB_AMMO_CURRENT_5">Current: Concussive ammo. [hullbust]</text>
+<text name="text_GB_AMMO_CURRENT_6">Current: EMP ammo. [ion]</text>
+<text name="text_GB_AMMO_CURRENT_7">Current: Particle ammo. [anti-sys]</text>
+<text name="text_GB_AMMO_CURRENT_8">Current: Incendiary ammo. [fire]</text>
+<text name="text_GB_AMMO_CURRENT_9">Current: Flechette ammo. [anti-crew]</text>
+<text name="text_GB_AMMO_CURRENT_10">Current: Radiation ammo. [anti-crew]</text>
+<text name="text_GB_AMMO_LOAD_1">Standard ammo. [default]</text>
+<text name="text_GB_AMMO_LOAD_2">Caseless ammo. [faster]</text>
+<text name="text_GB_AMMO_LOAD_3">High Velocity ammo. [accurate]</text>
+<text name="text_GB_AMMO_LOAD_4_NO">To load recycler ammo a recycler or ammo replicator is needed.</text>
+<text name="text_GB_AMMO_LOAD_4">Recycler ammo. [free]</text>
+<text name="text_GB_AMMO_LOAD_5">Concussive ammo. [hullbust]</text>
+<text name="text_GB_AMMO_LOAD_6">EMP ammo. [ion]</text>
+<text name="text_GB_AMMO_LOAD_7">Particle ammo.[particle]</text>
+<text name="text_GB_AMMO_LOAD_8_NO">To load incendiary ammo a lost sun crew is needed.</text>
+<text name="text_GB_AMMO_LOAD_8">Incendiary ammo.[fire]</text>
+<text name="text_GB_AMMO_LOAD_9">Flechette ammo. [anti-crew]</text>
+<text name="text_GB_AMMO_LOAD_10_NO">To load radiation ammo a slug clansman is needed.</text>
+<text name="text_GB_AMMO_LOAD_10">Radiation ammo. [anti-crew]</text>
