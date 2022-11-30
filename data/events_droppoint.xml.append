@@ -1,0 +1,132 @@
+<mod:findName type="event" name="DROPPOINT_SUPPLY_DEPOT_NORMAL">         
+    <mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
+        <text>(Expanded Cargo Bay) Give additional supplies to the supply depot.</text> 
+        <event load="GB_SUPPLY_DEPOT_RESUPPLY"/>
+    </mod-append:choice>
+</mod:findName>
+
+<mod:findName type="event" name="DROPPOINT_SUPPLY_DEPOT_DESTROYED">         
+    <mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
+        <text>(Expanded Cargo Bay) Use your larger cargo bay to collect the larger debris.</text> 
+        <event load="GB_SUPPLY_DEPOT_RESUPPLY_DESTROYED"/>
+    </mod-append:choice>
+</mod:findName>
+
+<mod:findName type="event" name="DROPPOINT_SUPPLY_DEPOT_SHORTAGE_FUEL">         
+    <mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
+        <text>(Expanded Cargo Bay) Give additional supplies to the supply depot.</text> 
+        <event load="GB_SUPPLY_DEPOT_RESUPPLY_SHORTAGE"/>
+    </mod-append:choice>
+</mod:findName>
+
+<mod:findName type="event" name="DROPPOINT_SUPPLY_DEPOT_SHORTAGE_DRONES">         
+    <mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
+        <text>(Expanded Cargo Bay) Give additional supplies to the supply depot.</text> 
+        <event load="GB_SUPPLY_DEPOT_RESUPPLY_SHORTAGE"/>
+    </mod-append:choice>
+</mod:findName>
+
+<mod:findName type="event" name="DROPPOINT_SUPPLY_DEPOT_SHORTAGE_MISSILES">         
+    <mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
+        <text>(Expanded Cargo Bay) Give additional supplies to the supply depot.</text> 
+        <event load="GB_SUPPLY_DEPOT_RESUPPLY_SHORTAGE"/>
+    </mod-append:choice>
+</mod:findName>
+
+<!-- I didn't know what to do here since the delivery drones didn't work -->
+<!-- <mod:findName type="event" name="DROPPOINT_SUPPLY_DEPOT_REPAIR">         
+      <mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
+        <text>CHOICE TEXT HERE</text> 
+        <event load="GB_SUPPLY_DEPOT_RESUPPLY_REPAIR"/>
+    </mod-append:choice>
+</mod:findName> -->
+
+
+<mod:findName type="event" name="DROPPOINT_SUPPLY_DEPOT_ATTACK_MANTIS">         
+    <mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
+        <text>(Expanded Cargo Bay) Use your larger cargo bay to collect the larger debris.</text> 
+        <event load="GB_SUPPLY_DEPOT_RESUPPLY_SALVAGE_LIST"/>
+    </mod-append:choice>
+</mod:findName>
+
+
+<mod:findName type="event" name="DROPPOINT_SUPPLY_DEPOT_ATTACK_PIRATE">         
+    <mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
+        <text>(Expanded Cargo Bay) Use your larger cargo bay to collect the larger debris.</text> 
+        <event load="GB_SUPPLY_DEPOT_RESUPPLY_SALVAGE_LIST"/>
+    </mod-append:choice>
+</mod:findName>
+
+
+<mod:findName type="event" name="DROPPOINT_SUPPLY_DEPOT_ATTACK_REBEL">         
+    <mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
+        <text>(Expanded Cargo Bay) Use your larger cargo bay to collect the larger debris.</text> 
+        <event load="GB_SUPPLY_DEPOT_RESUPPLY_SALVAGE_LIST"/>
+    </mod-append:choice>
+</mod:findName>
+
+
+<event name="GB_SUPPLY_DEPOT_RESUPPLY">
+	<text>You deliver a few cargo containers of additional supplies to help keep the depot to operate longer in these dangerous times. They give you their thanks and offer you additional scrap as payment.</text>
+	<autoReward level="LOW">scrap_only</autoReward>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+
+
+<event name="GB_SUPPLY_DEPOT_RESUPPLY_SHORTAGE">
+	<text>You deliver some cargo containers full of supplies and resources to make up for what the depot is lacking. The Federation Officer responds "We weren't expecting any deliveries anytime soon. This would go a long way wtih helping any other visitors." and offers you some scrap as payment.</text>
+	<autoReward level="MED">scrap_only</autoReward>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+</event>
+
+<event name="GB_SUPPLY_DEPOT_RESUPPLY_DESTROYED">
+	<text>There isn't much remaining of the supply depot. However we can bring onboard the larger bits of debris onboard to break up for salvage later and stow away any useful components...</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>You are left to your own devices as you continue to salvage the remnants of the supply allowing you to collect a heavier haul.</text>
+			<autoReward level="MED">scrap_only</autoReward>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+
+<eventList name="GB_SUPPLY_DEPOT_RESUPPLY_SALVAGE_LIST">
+	<event load="GB_SUPPLY_DEPOT_RESUPPLY_SALVAGE"/>
+	<event load="GB_SUPPLY_DEPOT_RESUPPLY_SALVAGE_GOOD"/>
+</eventList>
+
+<event name="GB_SUPPLY_DEPOT_RESUPPLY_SALVAGE">
+	<text>There isn't much remaining of the supply depot. However we can bring onboard the larger bits of debris onboard to break up for salvage later and stowe away any useful components...</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+			<text>It seems your salvage attempts have attracted unwanted attention! You prepare for battle.</text>
+			<autoReward level="LOW">scrap_only</autoReward>
+			<ship hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="GB_SUPPLY_DEPOT_RESUPPLY_SALVAGE_GOOD">
+	<text>You are left to your own devices as you continue to salvage the remnants of the supply depot without any interferance of the nearby ship collecting a heavier haul.</text>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event/>
+	</choice>
+	<autoReward level="MED">scrap_only</autoReward>
+</event>
