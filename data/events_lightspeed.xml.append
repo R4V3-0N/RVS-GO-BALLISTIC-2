@@ -239,7 +239,7 @@
 
 	<event>
 		<ship load="LIST_SHIPS_FED_BIG" hostile="false"/>
-		<text>To your surprise the flotilla of ships you expected here is instead a rather heavy fleet of ships running on fumes. The heaviest ship makes a lumbering turn towards you before halting part way through the maneuover... it appears it took a momment for the IFF to register you as a friendly. The ship hails you "Pardon for scaring you Renegade. We haven't had some good RnR in a long time and it's beginning to show but with this delivery I reckon we can patch these ships up and get back into fighting condition. Once that's done we'll launch a counter offensive on the approaching fleet! They'll won't know what hit 'em.".</text>
+		<text>To your surprise, the flotilla of ships you expected here is instead a rather heavy fleet of ships running on fumes. The heaviest ship makes a lumbering turn towards you before halting part way through the maneuover... Seems that it took a momment for the IFF to register you as a friendly. "Pardon for scaring you Renegade. We haven't had some good RnR in a long time and it's beginning to show, but with this delivery I reckon we can patch these ships up and get back into fighting condition. Once that's done we'll launch a counter offensive on the approaching fleet! They'll won't know what hit 'em."</text>
 		<modifyPursuit amount="-3"/>
 			<choice>
 			<text>Continue...</text>
