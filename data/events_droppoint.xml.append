@@ -67,7 +67,7 @@
 
 
 <event name="GB_SUPPLY_DEPOT_RESUPPLY">
-	<text>You deliver a few cargo containers of additional supplies to help keep the depot to operate longer in these dangerous times. They give you their thanks and offer you additional scrap as payment.</text>
+	<text>You deliver a few cargo containers of additional supplies, which will certainly help keep the depot in operation in these dangerous times. They give you their thanks and offer you additional scrap as payment.</text>
 	<autoReward level="LOW">scrap_only</autoReward>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -77,7 +77,7 @@
 
 
 <event name="GB_SUPPLY_DEPOT_RESUPPLY_SHORTAGE">
-	<text>You deliver some cargo containers full of supplies and resources to make up for what the depot is lacking. The Federation Officer responds "We weren't expecting any deliveries anytime soon. This would go a long way wtih helping any other visitors." and offers you some scrap as payment.</text>
+	<text>You deliver some cargo containers full of supplies and resources to make up for what the depot is lacking. The Federation Officer responds "We weren't expecting any deliveries anytime soon. This will go a long way in helping any other visitors." They offer you some scrap as payment.</text>
 	<autoReward level="MED">scrap_only</autoReward>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -86,7 +86,7 @@
 </event>
 
 <event name="GB_SUPPLY_DEPOT_RESUPPLY_DESTROYED">
-	<text>There isn't much remaining of the supply depot. However we can bring onboard the larger bits of debris onboard to break up for salvage later and stow away any useful components...</text>
+	<text>There isn't much remaining of the supply depot, but you can bring the larger debris onboard to break up for salvage later and stow away any useful components.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -107,7 +107,7 @@
 </eventList>
 
 <event name="GB_SUPPLY_DEPOT_RESUPPLY_SALVAGE">
-	<text>There isn't much remaining of the supply depot. However we can bring onboard the larger bits of debris onboard to break up for salvage later and stowe away any useful components...</text>
+	<text>There isn't much remaining of the supply depot, but you can bring the larger debris onboard to break up for salvage later and stow away any useful components.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event>
@@ -123,7 +123,7 @@
 </event>
 
 <event name="GB_SUPPLY_DEPOT_RESUPPLY_SALVAGE_GOOD">
-	<text>You are left to your own devices as you continue to salvage the remnants of the supply depot without any interferance of the nearby ship collecting a heavier haul.</text>
+	<text>You are left to your own devices as you continue to salvage the remnants of the supply depot without any interferance from the nearby ship, collecting a heavier haul.</text>
 	<choice hidden="true">
 		<text>Continue...</text>
 		<event/>
