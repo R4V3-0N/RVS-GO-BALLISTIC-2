@@ -102,7 +102,7 @@
 		<mod-append:blueprint name="GB_GAUSS_2" rarity="3"/>
 		<mod-append:blueprint name="GB_GAUSS_2" rarity="5"/>
 	</mod:findLike>
-</mod:findName>SECTOR_PIRATE_UNIQUE
+</mod:findName>
 
 
 <!-- R4, 29/11/2022: added asteroid generic to GB's lists-->
