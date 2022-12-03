@@ -2050,6 +2050,48 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<weaponArt>GB_Gauss_2</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
+<weaponBlueprint name="GB_GAUSS_2_LOOT">
+	<type>LASER</type>
+	<title>Gauss Rifle Mark II</title>
+	<short>Gauss II</short>
+    <tip>loot_federation_freighter_1</tip>
+	<desc>Special loot weapon. See tooltip in the inventory to check the improvements over the base version.</desc>
+	<tooltip>1 shot 3 damage weapon, 75% chance to not use ammo, 80% chance to cause a breach, 30% chance to stun, pierces 2 shields, 25% more accurate</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>65</freeMissileChance>
+	<accuracyMod>20</accuracyMod>
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>2</sp>
+	<breachChance>8</breachChance>
+	<stunChance>3</stunChance>
+	<cooldown>16</cooldown> <!--- was 13 -->
+	<power>2</power>
+	<speed>180</speed>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>70</cost>
+	<image>GB_shot_light</image>
+	<launchSounds>
+		<sound>GB_gaussMedium1</sound>
+		<sound>GB_gaussMedium2</sound>
+		<sound>GB_gaussMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Gauss_2_loot</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
 <weaponBlueprint name="GB_GAUSS_2_ENEMY">
 	<type>LASER</type>
 	<title>Gauss Rifle Mark II</title>

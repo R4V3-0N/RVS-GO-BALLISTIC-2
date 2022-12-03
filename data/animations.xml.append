@@ -639,6 +639,16 @@
 	<mountPoint x="3" y="105" />
 	<chargeImage>weapons_gauss/GB_Gauss_2_glow.png</chargeImage>
 </weaponAnim>
+<animSheet name="GB_Gauss_2_loot" w="378" h="160" fw="27" fh="160">weapons_gauss/GB_Gauss_2_loot_strip14.png</animSheet>
+<weaponAnim name="GB_Gauss_2_loot">
+	<sheet>GB_Gauss_2_loot</sheet>
+	<desc length="14" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>7</fireFrame>
+	<firePoint x="16" y="36" />
+	<mountPoint x="3" y="105" />
+	<chargeImage>weapons_gauss/GB_Gauss_2_glow.png</chargeImage>
+</weaponAnim>
 <animSheet name="GB_Gauss_3" w="465" h="160" fw="31" fh="160">weapons_gauss/GB_Gauss_3_strip15.png</animSheet>
 <weaponAnim name="GB_Gauss_3">
 	<sheet>GB_Gauss_3</sheet>

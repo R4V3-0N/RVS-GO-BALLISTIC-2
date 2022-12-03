@@ -13,3 +13,6 @@ This mod adds 16 new ballistic weapons and 1 new toggle drone themed around out 
 This version is built for use with Multiverse 5.1. The mod is a redevelopment and update of the original GO BALLISTIC!, a mod made by R4V3-0N with significant help from ChronoVortex. It features new art, sound effects, and a complete rebalance of the weapons and drones of the original.
 Reimagining the niche of these weapons using new Hyperspace functionality that did not exist at the time of the original mod and with a small team of friends.
 </text>
+
+<text name="loot_federation_freighter_1">FEDERATION LOOT
++40% breach chance</text>

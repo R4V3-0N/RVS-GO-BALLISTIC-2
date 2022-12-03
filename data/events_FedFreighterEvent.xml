@@ -358,7 +358,7 @@
   <text>Without the crusier to support them, you and the convoy's escort are easily able to chase away the remaining ships. "Thanks for the help Renegade, you really saved our hides. []"</text> <!-- CV: what are they transporting? what do they give you? -->
   <autoReward level="MED">standard</autoReward>
   <unlockCustomShip silent="false">PLAYER_SHIP_RVSP_FED_FREIGHTER</unlockCustomShip>
-  <!--<weapon name="idk lol"/>-->
+  <weapon name="GB_GAUSS_2_LOOT"/>
 </event>
 <event name="RVS_FREIGHTER_CONVOY_SAVED_DAMAGE">
   <text>Without the crusier to support them, you and the convoy's escort are easily able to chase away the remaining ships. "Thanks for the help Renegade. We're not in great shape, but []"</text> <!-- CV: what would they do now that the FOB is gone? -->
