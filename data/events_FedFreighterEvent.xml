@@ -70,7 +70,7 @@
     <text>Take time to repair their ship.</text>
     <event>
       <modifyPursuit amount="1"/>
-      <text>The fleet will make some headway, but you can't just leave this Federation ship stranded here. You dock with the vessel and send a team aboard, diligently repairing the damage until the its is no longer leaking fuel.&#10;</text>
+      <text>The fleet will make some headway, but you can't just leave this Federation ship stranded here. You dock with the vessel and send a team aboard, diligently repairing the damage until it no longer leaks fuel.&#10;</text>
       <choice hidden="true">
         <text>Continue...</text>
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS_REPAIRED"/>
@@ -158,7 +158,7 @@
 
 <event name="RVS_FREIGHTER_ESCORT_DISTRESS_OPTIONS_HELPED">
   <variable name="gb_gave_fuel" op="set" val="1"/>
-  <text>"With this, we could manage to reconnect with the convoy! However, if that last encounter was anything to go by, we still would need all the help we can get. I can't stress enough how important this mission is".&#10;</text>
+  <text>"With this, we could manage to reconnect with the convoy! However, if that last encounter was anything to go by, we still would need all the help we can get. I can't stress enough how important this mission is."&#10;</text>
   <choice hidden="true">
     <text>Agree to rendezvous with the convoy.</text>
     <event>
@@ -192,22 +192,25 @@
       <choice hidden="true">
         <text>Accept the mission.</text>
         <event>
-          <text>[something something you agree and you got co-ordinates to a checkpoint]</text> <!-- R4: can't think of the text ATM. -->
+          <text>"Good, we'll transmit the coordinates for the next checkpoint. See you there."</text>
           <quest event="RVS_FREIGHTER_CONVOY_CHECKPOINT"/>
         </event>
       </choice>
       <choice hidden="true">
         <text>Decline the mission.</text>
         <event>
-          <text>[Something something you refuse]</text> <!-- R4: can't think of text ATM. -->
+          <text>You're sick and tired of anti-Renegade prejudice. You flip Kyrylo the bird and cut comms before he can respond.</text>
         </event>
       </choice>
+      <!-- R4: hard fight innitiated.  You are up against the Freighter while you are getting bombed, ASB'ed, and fighting the Freighter.  Crew killing can give you the weapon it's carrying which I will make for this event in a bit.  Destroying it you can get it if you got a mag arm --> 
+      <!--
       <choice hidden="true">
-        <text>Attack the convoy!</text> <!-- R4: hard fight innitiated.  You are up against the Freighter while you are getting bombed, ASB'ed, and fighting the Freighter.  Crew killing can give you the weapon it's carrying which I will make for this event in a bit.  Destroying it you can get it if you got a mag arm --> 
+        <text>Attack the convoy!</text>
         <event>
           <text>If this convoy is important enough for the Rebels to try and prevent it from reaching its destination, it must be carrying something very valuable or powerful.  [Note to Dalv, I haven't finished this option. I reckon you can finish writing it up with a self justification for this action followed by a moral hit general and combat menu, ship turned hostile!]</text>
         </event>
       </choice>
+      -->
     </event>
   </choice>
 </event>
@@ -220,14 +223,14 @@
 <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_SAFE">
   <autoReward level="MED">stuff</autoReward>
   <variable name="loc_foundsafe" op="set" val="1"/>
-  <text>You jump into a heavily militarised sector with the rest of the convoy following suit. The Federation checkpoint hails you and after a quick exchange and flashing of IFF signals you are welcomed to help yourself to a quick resupply and repair.</text>
+  <text>You jump into a heavily militarised sector with the rest of the convoy following suit. The Federation checkpoint hails you, and after a quick exchange and flashing of IFF signals, you are welcomed to help yourself to a quick resupply and repair.</text>
   <choice hidden="true">
     <text>Continue...</text>
     <event>
       <modifyPursuit amount="-1"/> <!-- 1 fleet delay, and also give a moderate repair say 4-6 damage -->
       <damage amount="-5"/>
       <quest event="RVS_FREIGHTER_CONVOY_CHECKPOINT"/>
-      <text>With all the heavy military traffic here it's almost a surprise how peaceful it is. It will be difficult for the Rebels to track you here, an the resistance they'll meet when they arrive will certainly keep them occupied.</text>
+      <text>With all the heavy military traffic here it's almost a surprise how peaceful it is. It will be difficult for the Rebels to track you here, and the resistance they'll meet when they arrive will certainly keep them occupied.</text>
       <!-- this should mostly be a copy pasta of the minelayer event option except you do not get a notoriety hit. The text should also reflect this and mention how you are reinforcing a military checkpoint --> 
       <!-- <choice hidden="true" req="BLUELIST_MINELAUNCHERS_ALL">
         <text>(Minelauncher) Reinforce the checkpoint with mines.</text>
@@ -252,7 +255,7 @@
 <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_HOSTILE">
   <autoReward level="MED">stuff</autoReward>
   <variable name="loc_foundhostile" op="set" val="1"/>
-  <text>You jump into a heavily militarised sector with the rest of the convoy following suit. The Federation checkpoint hails you and after a quick exchange and flashing of IFF signals you are welcomed to help yourself to a quick resupply and repair.</text>
+  <text>You jump into a heavily militarised sector with the rest of the convoy following suit. The Federation checkpoint hails you, and after a quick exchange and flashing of IFF signals, you are welcomed to help yourself to a quick resupply and repair.</text>
   <choice hidden="true">
     <text>Continue...</text>
     <event> <!-- enemy encounter, insert a Rebel fighter of some sorts here maybe an Elite? -->
