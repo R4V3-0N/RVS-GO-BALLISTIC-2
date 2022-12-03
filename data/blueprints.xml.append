@@ -3232,7 +3232,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <shipBlueprint name="PLAYER_SHIP_RVSP_FED_FREIGHTER_2" layout="rvsp_fed_freighter_b" img="rvsp_fed_freighter_b">
 	<class id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_class"/>
 	<name id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_name"/> <!-- Picus is a woodpecker/ deity/ king/ minor god. Picus was an agricultural deity associated particularly with the fertilization of the soil with manure. The woodpecker was also an important bird in augury.-->
-	<unlock id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_unlock"/>
+    <unlock id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_2_unlock"/>
 	<desc id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_desc"/>
 	<systemList>
 		<artillery power="1" room="22" start="false" weapon="ARTILLERY_BOSS_1" img="room_artillery" />

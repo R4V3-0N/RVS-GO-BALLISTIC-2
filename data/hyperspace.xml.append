@@ -1421,7 +1421,27 @@
 	</mod-append:customShip>
 
 
-	<mod-append:ship name="PLAYER_SHIP_RVSP_FED_FREIGHTER" b="true" c="false" unused="true"/>
+	<mod-append:ship name="PLAYER_SHIP_RVSP_FED_FREIGHTER" b="true" c="false" unused="true">
+        <unlock variant="a" silent="false">
+            <type>4</type>
+        </unlock>
+		<unlock variant="b" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_RVSP_FED_FREIGHTER</shipReq>
+            <value>5</value>
+        </unlock>
+        <!--
+		<unlock variant="c" silent="false">
+            <type>1</type>
+            <shipReq>PLAYER_SHIP_RVSP_FED_FREIGHTER_2</shipReq>
+            <value>5</value>
+        </unlock>
+		<unlock variant="c" silent="false">
+            <type>2</type>
+            <shipReq>PLAYER_SHIP_RVSP_FED_FREIGHTER</shipReq>
+        </unlock>
+        -->
+    </mod-append:ship>
 	<mod-append:customShip name="PLAYER_SHIP_RVSP_FED_FREIGHTER">
 		<hiddenAug>SHIP_KESTREL</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>

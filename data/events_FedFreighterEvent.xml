@@ -354,13 +354,14 @@
     <event name="RVS_FREIGHTER_CONVOY_SAVED_NODAMAGE" req="loc_fedfreighter_damaged" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
-<event name="RVS_FREIGHTER_CONVOY_SAVED_DAMAGE">
+<event name="RVS_FREIGHTER_CONVOY_SAVED_NODAMAGE">
   <text>Without the crusier to support them, you and the convoy's escort are easily able to chase away the remaining ships. "Thanks for the help Renegade, you really saved our hides. []"</text> <!-- CV: what are they transporting? what do they give you? -->
   <autoReward level="MED">standard</autoReward>
-  <!-- CV: needs fed freighter unlock and special weapon -->
+  <unlockCustomShip silent="false">PLAYER_SHIP_RVSP_FED_FREIGHTER</unlockCustomShip>
+  <!--<weapon name="idk lol"/>-->
 </event>
-<event name="RVS_FREIGHTER_CONVOY_SAVED_NODAMAGE">
+<event name="RVS_FREIGHTER_CONVOY_SAVED_DAMAGE">
   <text>Without the crusier to support them, you and the convoy's escort are easily able to chase away the remaining ships. "Thanks for the help Renegade. We're not in great shape, but []"</text> <!-- CV: what would they do now that the FOB is gone? -->
   <autoReward level="MED">standard</autoReward>
-  <!-- CV: needs fed freighter unlock -->
+  <unlockCustomShip silent="false">PLAYER_SHIP_RVSP_FED_FREIGHTER</unlockCustomShip>
 </event>
