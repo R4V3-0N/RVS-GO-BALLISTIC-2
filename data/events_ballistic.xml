@@ -132,7 +132,7 @@
 		<choice hidden="true" req = "slug">
 			<text>(Slug Crew) When docking with the escort, your Slug sensed something.</text>
 			<event>
-				<text>You heed your Slug's advice and follow their directions to where the lifesource is, where you find a man hunched over a weapon console. Although not in as severe a condition as initially expected, but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders".</text>
+				<text>You heed your Slug's advice and follow their directions to where the lifesource is, where you find a man hunched over a weapon console. Although not in as severe a condition as initially expected, but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders."</text>
 				<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
 			</event>
 		</choice>
@@ -143,7 +143,7 @@
 	</event>
 
 	<event name="GB_CARAVAN_ABANDONED_ESCORT_CREW">
-		<text>The cause of the outcome of the engagement has been made clear once you boarded the vessel. It seems the escorts were still operating a few quaint Autocannons and had ran out of ammunition during the fight, likely during the last leg of their journey. Before you are able to begin salvaging, your crew spots a survivor in the weapons room hunched over a console. Although not in as severe a condition as initially expected, but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders".</text>
+		<text>The cause of the outcome of the engagement has been made clear once you boarded the vessel. It seems the escorts were still operating a few quaint Autocannons and had ran out of ammunition during the fight, likely during the last leg of their journey. Before you are able to begin salvaging, your crew spots a survivor in the weapons room hunched over a console. Although not in as severe a condition as initially expected, but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders."</text>
 		<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -275,7 +275,7 @@
 		<choice hidden="true" req = "slug">
 			<text>(Slug Crew) When docking with the escort your slug senses something.</text>
 			<event>
-				<text>You heed your slugs advice and follow their directions to where the lifesource is. Where you find a man hunched over a weapon console. Although not in as severe a condition as initially expected but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till I we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders".</text>
+				<text>You heed your slugs advice and follow their directions to where the lifesource is. Where you find a man hunched over a weapon console. Although not in as severe a condition as initially expected but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till I we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders."</text>
 				<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
 			</event>
 		</choice>
@@ -285,7 +285,7 @@
 		</choice>
 	</event>
 	<event name="GB_CARAVAN_ABANDONED_ESCORT_DELAYED_CREW">
-		<text>The cause of the outcome of the engagement has been made clear once you boarded the vessel. It seems the escorts were still operating a few quaint Autocannons and had ran out of ammunition during the fight, likely during the last leg of their journey. Before you are able to begin salvaging, your crew spots a survivor in the weapons room hunched over a console. Although not in as severe a condition as initially expected, but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders".</text>
+		<text>The cause of the outcome of the engagement has been made clear once you boarded the vessel. It seems the escorts were still operating a few quaint Autocannons and had ran out of ammunition during the fight, likely during the last leg of their journey. Before you are able to begin salvaging, your crew spots a survivor in the weapons room hunched over a console. Although not in as severe a condition as initially expected, but any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders."</text>
 		<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -322,7 +322,7 @@
 		<choice>
 			<text>Investigate the escort and rescue them. </text>
 			<event>
-				<text>You head directly towards where the lifeform was detected, where you find a man hunched over a weapons console. Although not in a condition as severe as initially expected, but were you to be delayed any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders".</text> <!-- sentence fixed -Dalvy -->
+				<text>You head directly towards where the lifeform was detected, where you find a man hunched over a weapons console. Although not in a condition as severe as initially expected, but were you to be delayed any longer and they would've most likely not made it. They sincerely thank you for saving them when you did and offer to join your crew. "I was a gunnery officer aboard our ship, consider myself somewhat of a crack shot too 'till we began running dry towards the end of our caravans journey. Now I wish to pick up where I left off and make the universe a safer place from these raiders."</text> <!-- sentence fixed -Dalvy -->
 				<crewMember pilot="1" weapons="2" amount="1" class="human">Raynard</crewMember>
 			</event>
 		</choice>
@@ -484,7 +484,7 @@
 				<choice hidden="true">
 					<text>Refuse.</text>
 					<event>
-						<text>"In that case... farewell".</text>
+						<text>"In that case... farewell."</text>
 						<choice hidden="true">
 							<text>Do something onboard the ship.</text>
 							<event load="STORAGE_CHECK" />

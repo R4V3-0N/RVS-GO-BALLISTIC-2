@@ -46,7 +46,7 @@
 	<text>You discover a fully militarized Federation station here, seems like the perfect place to transfer POW's.</text>
 	<text>Just as expected there is a Federation outpost here ready to accept custody of the POW's.</text>
 	<text>A small outpost here has been expecting you to transfer the prisoners of war in exchange for some services for your efforts.</text>
-	<text>You find a hidden Federation outpost. They message you, "You better dock quickly. The less activity in this quadrant the less our chances are of attracting unwanted attention".</text>
+	<text>You find a hidden Federation outpost. They message you, "You better dock quickly. The less activity in this quadrant the less our chances are of attracting unwanted attention."</text>
 	<text>A zoltan answers your hail onboard the station. "So, you've brought prisoners? I must say I did not expect a renegade to think twice about a surrender when there is scrap at hand... Perhaps there is hope for you lot afterall."</text>
 	<text>This beacon is bustling with activity and traffic.  It seems a Federation station here is providing disaster relief in the system after a recent surge of solar flares. Despite the recent disaster the sun is rather dorment currently and the station grants you clearance to land in preperation for the exchange.</text>
 </textList>
@@ -134,7 +134,7 @@
 		<choice>
 			<text>Continue...</text>
 			<event>
-				<text>The Rebel's former prisoner approaches you and turns to the Federation Lieutenant. "Permission to speak, sir?" The lietenant nods. "Sir. I haven't seen starlight in who knows how many rotations. I am a soldier sir and I want to get back into the fight as soon as I get a good feed first before we head out". The Soldier seems not too poorly treated by their former capters and could seem to be a useful addition to your crew. However the Lieutenant mentions that they could keep the Soldier stationed here for a bit and instead offer you some resources instead to help compensate you for your service.</text>
+				<text>The Rebel's former prisoner approaches you and turns to the Federation Lieutenant. "Permission to speak, sir?" The lietenant nods. "Sir. I haven't seen starlight in who knows how many rotations. I am a soldier sir and I want to get back into the fight as soon as I get a good feed first before we head out." The Soldier seems not too poorly treated by their former capters and could seem to be a useful addition to your crew. However the Lieutenant mentions that they could keep the Soldier stationed here for a bit and instead offer you some resources instead to help compensate you for your service.</text>
 				<choice>
 					<text>Accept the soldier.</text>
 					<crewMember amount="1" class="human_soldier"/>
