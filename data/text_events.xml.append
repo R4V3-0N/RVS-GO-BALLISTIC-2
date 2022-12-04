@@ -17,9 +17,9 @@
 <text name="text_GB_AMMO_LOAD_4">Recycler ammo. [free]</text>
 <text name="text_GB_AMMO_LOAD_5">Concussive ammo. [hullbust]</text>
 <text name="text_GB_AMMO_LOAD_6">EMP ammo. [ion]</text>
-<text name="text_GB_AMMO_LOAD_7">Particle ammo.[particle]</text>
+<text name="text_GB_AMMO_LOAD_7">Particle ammo. [particle]</text>
 <text name="text_GB_AMMO_LOAD_8_NO">To load incendiary ammo a lost sun crew is needed.</text>
-<text name="text_GB_AMMO_LOAD_8">Incendiary ammo.[fire]</text>
+<text name="text_GB_AMMO_LOAD_8">Incendiary ammo. [fire]</text>
 <text name="text_GB_AMMO_LOAD_9">Flechette ammo. [anti-crew]</text>
 <text name="text_GB_AMMO_LOAD_10_NO">To load radiation ammo a slug clansman is needed.</text>
 <text name="text_GB_AMMO_LOAD_10">Radiation ammo. [anti-crew]</text>
