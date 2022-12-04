@@ -1262,6 +1262,24 @@
 ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
 -->
 
+    <!-- Use these lists to reduce the odds of the event coming up -->
+    <eventList name="RVS_FREIGHTER_ESCORT_DISTRESS_ZOLTAN">
+        <event load="RVS_FREIGHTER_ESCORT_DISTRESS"/>
+        <event load="EMPTY_ZOLTAN"/>
+    </eventList>
+    <eventList name="RVS_FREIGHTER_ESCORT_DISTRESS_ENGI">
+        <event load="RVS_FREIGHTER_ESCORT_DISTRESS"/>
+        <event load="EMPTY_ENGI"/>
+    </eventList>
+    <eventList name="RVS_FREIGHTER_ESCORT_DISTRESS_FREEMANTIS">
+        <event load="RVS_FREIGHTER_ESCORT_DISTRESS"/>
+        <event load="EMPTY_FREEMANTIS"/>
+    </eventList>
+    <eventList name="RVS_FREIGHTER_ESCORT_DISTRESS_ORCHID">
+        <event load="RVS_FREIGHTER_ESCORT_DISTRESS"/>
+        <event load="EMPTY_ORCHID"/>
+    </eventList>
+
     <event name="RVS_FREIGHTER_ESCORT_DISTRESS" unique="true">
         <beaconType text="ENCRYPTED DISTRESS" global="false" persist="false" hideVanillaLabel="true"> 
             <color r="233" g="123" b="74" a="1" /> <!-- CV: made this the same as supply depots -->
@@ -1556,6 +1574,7 @@
     </ship>
 
     <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_FINAL">
+        <customFleet right="false" firing="false" autoDarkening="false">CUSTOM_FLEET_FED_DESTROYED</customFleet>
         <ship load="SHIP_GB_CONVOY_BOSS" hostile="false"/>
         <text>You were expecting to see a fully operational Forward Operating Base here and an attachment of ships. However, you are met with disaster as signs of a recent battle litter this system with all reactor signatures showing dead, except a squadron of Rebel ships eager to pounce on their prey! "Renegade! This is Supply Officer Kyrylo hailing. Mission aborted! The FOB is destroyed. I repeat, the FOB is destroyed. There's nothing left here for us. We're exfiltrating immediately, but the Rebels are jamming our drives! You need to buy us some time."</text>
         <choice>

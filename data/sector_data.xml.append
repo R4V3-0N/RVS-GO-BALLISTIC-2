@@ -141,7 +141,7 @@
 		<mod-append:blueprint name="GB_RAIL_2" rarity="5"/>
 		<mod-append:blueprint name="GB_RAIL_3" rarity="5"/>
 	</mod:findLike>
-    <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS" min="0" max="1"/>
+    <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS_ZOLTAN" min="0" max="1"/>
 </mod:findName>
 <mod:findName type="sectorDescription" name="SECTOR_ZOLTAN_UNIQUE">   <!--RAILS PLACEHOLDER-->
 	<mod:findLike type = "rarityList">
@@ -159,7 +159,7 @@
 		<mod-append:blueprint name="RVS_TROOPERTOG_DEFEND" rarity="5"/>
 		<!--<mod-append:blueprint name="GB_GAUSS_AP" rarity="5"/>-->
 	</mod:findLike>
-    <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS" min="0" max="1"/>
+    <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS_ENGI" min="0" max="1"/>
 </mod:findName>
 <mod:findName type="sectorDescription" name="SECTOR_ENGI_UNIQUE">  <!--GAUSS-->
 	<mod:findLike type = "rarityList">
@@ -196,9 +196,12 @@
 		<mod-append:blueprint name="GB_AC_2" rarity="4"/>
 		<mod-append:blueprint name="GB_COMBAT_AC_1" rarity="5"/>
 	</mod:findLike>
-    <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS" min="0" max="1"/>
+    <mod:findName type="event" name="EMPTY_FREEMANTIS">
+        <mod:setAttributes min="1" max="1" />
+    </mod:findName>
+    <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS_FREEMANTIS" min="0" max="1"/>
 </mod:findName>
 
 <mod:findName type="sectorDescription" name="SECTOR_ORCHID">
-    <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS" min="0" max="1"/>
+    <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS_ORCHID" min="0" max="1"/>
 </mod:findName>

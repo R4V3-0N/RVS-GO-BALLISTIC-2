@@ -183,8 +183,15 @@
 		</req>
 	</req>
 
+    
+    <!-- fed freighter boss stuff -->
     <bossShip>RVS_REBEL_CRUISER</bossShip>
-	
+	<fleetDef name="CUSTOM_FLEET_FED_DESTROYED">
+        <ship layer="0">fleetfed_2_small_wreck</ship>
+		<ship layer="1">fleetfed_1_med_wreck</ship>
+        <numShips layer="1">1</numShips>
+		<numShips layer="0">2</numShips>
+    </fleetDef>
 
 
 </events>
