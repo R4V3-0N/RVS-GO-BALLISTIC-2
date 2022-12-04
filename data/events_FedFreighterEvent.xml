@@ -324,9 +324,12 @@
       </choice>
     </event>
   </choice>
-  <!--<choice req="engines" lvl="4">
-    <text>(advanced engines)NOPE.</text>
-  </choice>-->
+  <choice>
+    <text>Leave.</text>
+    <event>
+      <text>There's no way you're fighting this monstrosity. You move away from the battle and try not to think about the convoy being torn to pieces as the FTL drive charges.</text>
+    </event>
+  </choice>
 </event>
 <event name="RVS_FREIGHTER_ESCORT_AIRSTRIKE_SUPPORT">
   <superBarrage player="true" name="RVS_FREIGHTER_ESCORT_AIRSTRIKE"/>
@@ -355,13 +358,19 @@
   </loadEventList>
 </event>
 <event name="RVS_FREIGHTER_CONVOY_SAVED_NODAMAGE">
-  <text>Without the crusier to support them, you and the convoy's escort are easily able to chase away the remaining ships. "Thanks for the help Renegade, you really saved our hides. []"</text> <!-- CV: what are they transporting? what do they give you? -->
+  <text>Without the crusier to support them, you and the convoy's escort are easily able to chase away the remaining ships. "Thanks for the help Renegade, you really saved our hides. We were transporting some advanced weapons to the FOB to outfit the fleet. You're not exactly part of the fleet, but I think we can make an exception in your case."</text>
   <autoReward level="MED">standard</autoReward>
-  <unlockCustomShip silent="false">PLAYER_SHIP_RVSP_FED_FREIGHTER</unlockCustomShip>
   <weapon name="GB_GAUSS_2_LOOT"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event>
+      <text>"Since FOB is gone, we'll have to reroute directly to Node 17. We should be able to make our own way from here, I doubt we'll meet any more resistance quite like that." You and Kyrylo wish each other luck on your respective missions and the convoy jumps away, leaving you a little more hopeful that you'll be able to save this universe's Federation.</text>
+      <unlockCustomShip silent="false">PLAYER_SHIP_RVSP_FED_FREIGHTER</unlockCustomShip>
+    </event>
+  </choice>
 </event>
 <event name="RVS_FREIGHTER_CONVOY_SAVED_DAMAGE">
-  <text>Without the crusier to support them, you and the convoy's escort are easily able to chase away the remaining ships. "Thanks for the help Renegade. We're not in great shape, but []"</text> <!-- CV: what would they do now that the FOB is gone? -->
+  <text>Without the crusier to support them, you and the convoy's escort are easily able to chase away the remaining ships. "Thanks for the help Renegade. We're not in great shape, but we're still kicking. Now that the FOB is gone, we'll have to reroute directly to Node 17 to deliver our cargo. I doubt we'll meet any more resistance quite like that, we should be able to make it on our own from here." You and Kyrylo wish each other luck on your respective missions and the convoy jumps away, leaving you a little more hopeful that you'll be able to save this universe's Federation.</text>
   <autoReward level="MED">standard</autoReward>
   <unlockCustomShip silent="false">PLAYER_SHIP_RVSP_FED_FREIGHTER</unlockCustomShip>
 </event>

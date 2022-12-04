@@ -1359,7 +1359,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 		<oxygen power="3" max="3" room="8" start="true" />
 		<pilot power="2" max="2" room="20" start="true" />
 		<shields power="4" max="10" room="6" start="true" />
-		<weapons power="9" max="9" room="13" start="true" />
+		<weapons power="6" max="9" room="13" start="true" />
 		<!--
         <cloaking power="1" max="1" room="14" start="false" />
 		<hacking power="1" max="1" room="4" start="false" />
@@ -1369,21 +1369,75 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
-	<weaponList missiles="0" count="4">
-		<weapon name="LASER_BURST_3" />
-		<weapon name="LASER_BURST_5" />
-		<weapon name="BEAM_2" />
-		<weapon name="LASER_HEAVY_1" />
-	</weaponList>
+	<weaponList missiles="0" count="4" load="LIST_WEAPONS_REBEL_CRUISER" />
 	<droneList drones="0" count="2">
 		<drone name="BATTLETOG_BOARDER" />
-		<drone name="COMBAT_1_BEAM" />
+		<drone name="DEFENSE_1_ENEMY" />
 	</droneList>
 	<health amount="20" />
-	<maxPower amount="26" />
+	<maxPower amount="36" />
 	<crewCount amount="3" max="7" class="human_soldier" />
 	<boardingAI>sabotage</boardingAI>
 </shipBlueprint>
+<blueprintList name="LIST_WEAPONS_REBEL_CRUISER">
+	<name>LASER_BURST_1</name>
+	<name>LASER_BURST_2_ENEMY</name>
+	<name>LASER_BURST_3</name>
+	<name>LASER_HEAVY_1</name>
+	<name>LASER_HEAVY_2</name>
+	<name>LASER_HULL_1_ENEMY</name>
+	<name>LASER_HULL_2</name>
+	<name>LASER_HULL_3</name>
+	<name>MISSILES_1_ENEMY</name>
+	<name>MISSILES_2_ENEMY</name>
+	<name>MISSILES_3_ENEMY</name>
+	<name>MISSILES_BURST_ENEMY</name>
+	<name>MISSILES_BURST_2_ENEMY</name>
+	<name>BEAM_1</name>
+	<name>BEAM_2</name>
+	<name>BEAM_3</name>
+	<name>BEAM_LONG</name>
+	<name>BEAM_FIRE</name>
+	<name>BOMB_1_ENEMY</name>
+	<name>BOMB_BREACH_1_ENEMY</name>
+	
+	<name>LASER_CHAINGUN_ENEMY</name>
+	<name>LASER_CHAINGUN_2</name>
+	<name>LASER_CHARGEGUN_ENEMY</name>
+	<name>LASER_CHARGEGUN_2</name>
+	<name>LASER_CHARGEGUN_3</name>
+	<name>SHOTGUN_2</name>
+	<name>SHOTGUN_3</name>
+	<name>SHOTGUN_CHARGE</name>
+	
+	<name>LASER_PIERCE_ENEMY</name>
+	<name>MISSILES_FIRE_ENEMY</name>
+	
+	<name>LASER_HEAVY_CHAINGUN</name>
+	<name>LASER_CHARGE_CHAIN_ENEMY</name>
+	<name>LASER_CHAINGUN_DAMAGE</name>
+	<name>BEAM_CHAIN</name>
+	<name>SHOTGUN_CHAIN</name>
+	<name>SHOTGUN_FIRE</name>
+	<name>FOCUS_CHAIN_ENEMY</name>
+	<name>BEAM_LONG_2</name>
+    
+    <name>GB_AC_1</name>
+	<name>GB_AC_2</name>
+	<name>GB_AC_3</name>
+    
+	<name>GB_AC_1_E</name>
+	<name>GB_AC_2_E</name>
+	<name>GB_AC_3_E</name>
+    
+	<name>GB_ROTARY_AC</name>
+    
+	<name>GB_GAUSS_1_ENEMY</name>
+	<name>GB_GAUSS_2_ENEMY</name>
+	<name>GB_GAUSS_3_ENEMY</name>
+	<name>GB_RAIL_1_ENEMY</name>
+	<name>GB_RAIL_2_ENEMY</name>
+</blueprintList>
 
 
 <!-- 	••••••••••••••••••••••••••••••••••••••••••
