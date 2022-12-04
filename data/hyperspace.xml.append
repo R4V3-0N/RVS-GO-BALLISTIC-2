@@ -68,9 +68,7 @@
 
 <events>
 	<eventFile>ballistic</eventFile>
-	<variable name="ach_mv_ballistic" op="set" val="0"/>	
-	<!--remove later-->
-	<eventFile>FedFreighterEvent</eventFile>
+	<variable name="ach_mv_ballistic" op="set" val="0"/>
 
 	<event name="GB_CALL_QUESTION_LOAD">
 		<loadEvent>GB_CALL_QUESTION</loadEvent>
