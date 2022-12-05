@@ -10,6 +10,7 @@
 <text name="text_GB_AMMO_CURRENT_8">Current: Incendiary ammo. [fire]</text>
 <text name="text_GB_AMMO_CURRENT_9">Current: Flechette ammo. [anti-crew]</text>
 <text name="text_GB_AMMO_CURRENT_10">Current: Radiation ammo. [anti-crew]</text>
+<text name="text_GB_AMMO_CURRENT_20">Current: Tiberium ammo. [anti-crew]</text>
 <text name="text_GB_AMMO_LOAD_1">Standard ammo. [default]</text>
 <text name="text_GB_AMMO_LOAD_2">Caseless ammo. [faster]</text>
 <text name="text_GB_AMMO_LOAD_3">High Velocity ammo. [accurate]</text>
@@ -23,3 +24,5 @@
 <text name="text_GB_AMMO_LOAD_9">Flechette ammo. [anti-crew]</text>
 <text name="text_GB_AMMO_LOAD_10_NO">To load radiation ammo a slug clansman is needed.</text>
 <text name="text_GB_AMMO_LOAD_10">Radiation ammo. [anti-crew]</text>
+<text name="text_GB_AMMO_LOAD_20_NO">To load Tiberium ammo a Tiberium tech is needed.</text>
+<text name="text_GB_AMMO_LOAD_20">Tiberium ammo. [anti-crew]</text>
