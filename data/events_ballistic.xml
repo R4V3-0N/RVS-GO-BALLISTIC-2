@@ -1496,6 +1496,12 @@
         </choice>
     </event>
     <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT">
+        <beaconType text="CHECKPOINT" global="true" persist="false" hideVanillaLabel="true"> 
+            <color r="233" g="123" b="74" a="1" /> <!-- CV: made this the same as supply depots -->
+            <undiscoveredTooltip>This is the location of a Federation checkpoint.</undiscoveredTooltip> 
+            <unvisitedTooltip>This is the location of a Federation checkpoint.</unvisitedTooltip>
+            <visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+        </beaconType>
         <loadEventList seeded="false" first="false" generate="false" default="RVS_FREIGHTER_CONVOY_CHECKPOINT_FINAL">
             <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_SAFE" req="loc_foundsafe" lvl="0" max_lvl="0"/>
             <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT_HOSTILE" req="loc_foundhostile" lvl="0" max_lvl="0"/>

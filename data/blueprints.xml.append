@@ -2062,12 +2062,12 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<accuracyMod>20</accuracyMod>
 	<damage>3</damage>
 	<shots>1</shots>
-	<sp>2</sp>
+	<sp>3</sp>
 	<breachChance>8</breachChance>
 	<stunChance>3</stunChance>
 	<cooldown>16</cooldown> <!--- was 13 -->
 	<power>2</power>
-	<speed>180</speed>
+	<speed>200</speed>
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<cost>70</cost>
