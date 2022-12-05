@@ -182,6 +182,28 @@
 			<name>LIST_CREW_CLAN</name>
 		</req>
 	</req>
+	
+	<req name="GB_CURRENT_AMMO20" lvl="20" max_lvl="20"><!--Tiberium-->
+		<req type="sum">
+			<name>gb_ammo_toggle</name>
+		</req>
+	</req>
+	<req name="GB_AMMO_20_YES" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO20</name>
+		</req>
+		<name>LIST_TIBERIUM_ALL</name>
+		<name>var_installed_tiberium</name>
+	</req>
+	<req name="GB_AMMO_20_NO" type="all">
+		<req lvl="0" max_lvl="0">
+			<name>GB_CURRENT_AMMO20</name>
+		</req>
+		<req lvl="0" max_lvl="0">
+			<name>LIST_TIBERIUM_ALL</name>
+		</req>
+		<name>var_installed_tiberium</name>
+	</req>
 
     
     <!-- fed freighter boss stuff -->
