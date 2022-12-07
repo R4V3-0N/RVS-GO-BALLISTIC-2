@@ -1448,7 +1448,7 @@
 	</mod-append:customShip>
 
 
-	<mod-append:ship name="PLAYER_SHIP_RVSP_FED_FREIGHTER" b="true" c="false" unused="true">
+	<mod-append:ship name="PLAYER_SHIP_RVSP_FED_FREIGHTER" b="true" c="true" unused="true">
         <unlock variant="a" silent="false">
             <type>4</type>
         </unlock>
@@ -1470,7 +1470,7 @@
         -->
     </mod-append:ship>
 	<mod-append:customShip name="PLAYER_SHIP_RVSP_FED_FREIGHTER">
-		<hiddenAug>SHIP_KESTREL</hiddenAug>
+		<hiddenAug>SHIP_FEDERATION</hiddenAug> <!-- R4: Placeholder -->
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>8</crewLimit>
 		<crew>
@@ -1481,16 +1481,19 @@
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_RVSP_FED_FREIGHTER_2">
-		<hiddenAug>SHIP_FEDERATION</hiddenAug>
+		<hiddenAug>SHIP_FEDERATION</hiddenAug>	<!-- R4: Placeholder -->
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>8</crewLimit>
 	</mod-append:customShip>
 
-	<!--<mod-append:customShip name="PLAYER_SHIP_RVS_FED_FREIGHTER_3">
-		<hiddenAug>SHIP_FEDERATION</hiddenAug>
+	
+	<mod-append:customShip name="PLAYER_SHIP_RVSP_FED_FREIGHTER_3">
+		<hiddenAug>SHIP_PIRATE</hiddenAug> <!-- R4: I think... this one is fitting? -->
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>8</crewLimit>
-	</mod-append:customShip>-->
+	</mod-append:customShip>
+	
+
 
 
 

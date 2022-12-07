@@ -3351,6 +3351,81 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </shipBlueprint>
 
 
+<shipBlueprint name="PLAYER_SHIP_RVSP_FED_FREIGHTER_3" layout="rvsp_fed_freighter_c" img="rvsp_fed_freighter_c">
+	<class>Federation Freighter</class>
+	<name>Ngowo</name> <!-- One of the aboriginal names for the Malleefowl. A bird that incubates its egg for a very long time -->
+	<desc>This model has been used to carry and sell exotic spices to worlds afar and to defend itself from anyone who isn't willing to pay for it.</desc>
+	<systemList>
+		<artillery power="1" room="19" start="false" weapon="ARTILLERY_BOSS_1" img="room_artillery" />
+		<cloaking power="1" room="16" start="false" img="room_cloaking" />
+		<clonebay power="1" room="12" start="true">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="2" room="31" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" room="21" start="true" img="room_drones_4" />
+		<engines power="3" room="6" start="true" img="room_engines">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="17" start="false" img="room_hacking_6" />
+		<medbay power="1" room="12" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="25" start="false" img="room_mind" />
+		<oxygen power="1" room="26" start="true" img="room_oxygen_7" />
+		<pilot power="3" room="1" start="true" img="room_pilot_5">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="27" start="false" img="room_sensors_4">
+			<slot>
+				<direction>left</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" room="23" start="true" img="room_shields_6">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="13" start="false" />
+		<weapons power="3" room="10" start="true" img="room_weapons_6">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="8" count="3">
+		<weapon name="GB_GAUSS_2" />
+		<weapon name="GB_MG" /> <!-- R4: first player ship starting with one of these -->
+	</weaponList>
+	<droneList drones="12" count="3">
+		<drone name="RVS_TROOPERTOG_DEFEND" /> <!-- R4: First player ship equiped with these bad bois, time to see if 2 is OP or not -->
+		<drone name="RVS_TROOPERTOG_DEFEND" />
+	</droneList>
+	<health amount="35" />
+	<maxPower amount="9" />
+	<crewCount amount="1" class="slug" />
+	<crewCount amount="1" class="engi_separatist" />
+	<aug name="NEBULA_GASSES" /> <!-- R4: Replace this with the unique cargo. Something along the line of Exotic Spices -->
+</shipBlueprint>
 
 
 
