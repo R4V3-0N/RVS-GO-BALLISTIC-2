@@ -3119,6 +3119,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<health amount="30" />
 	<maxPower amount="7" />
 	<aug name="EX_AUTO_COOLDOWN" />
+	<shieldImage>rvsp_gb_kestrel_a</shieldImage>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_RVSP_GB_KESTREL_3" layout="rvsp_gb_kestrel_c" img="rvsp_gb_kestrel_c">
@@ -3192,6 +3193,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<health amount="30" />
 	<maxPower amount="8" />
 	<aug name="AUTO_LOADER_LOW_SHIELD_LOCKED" />
+	<shieldImage>rvsp_gb_kestrel_a</shieldImage>
+	<cloakImage>rvsp_gb_kestrel_b</cloakImage>
 </shipBlueprint>
 
 
@@ -3348,13 +3351,14 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<aug name="NEBULA_GASSES" /> <!-- R4: Might change this later, a trade augment to give a headstart economically -->
 	<aug name="CRATE_MISSILES" /> <!-- Similar as Nebula gasses, might just be dumped into an event at first sight or used to get an edge in missiles -->
 	<shieldImage>mupc_a55</shieldImage>
+	<cloakImage>rvsp_fed_freighter</cloakImage>
 </shipBlueprint>
 
 
 <shipBlueprint name="PLAYER_SHIP_RVSP_FED_FREIGHTER_3" layout="rvsp_fed_freighter_c" img="rvsp_fed_freighter_c">
 	<class>Federation Freighter</class>
 	<name>Ngowo</name> <!-- One of the aboriginal names for the Malleefowl. A bird that incubates its egg for a very long time -->
-	<desc>This model has been used to carry and sell exotic spices to worlds afar and to defend itself from anyone who isn't willing to pay for it.</desc>
+	<desc>This model has been used to smuggle and sell exotic spices to worlds afar and to defend itself from anyone who isn't willing to pay for it.</desc>
 	<systemList>
 		<artillery power="1" room="19" start="false" weapon="ARTILLERY_BOSS_1" img="room_artillery" />
 		<cloaking power="1" room="16" start="false" img="room_cloaking" />
@@ -3425,6 +3429,9 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<crewCount amount="1" class="slug" />
 	<crewCount amount="1" class="engi_separatist" />
 	<aug name="NEBULA_GASSES" /> <!-- R4: Replace this with the unique cargo. Something along the line of Exotic Spices -->
+	<shieldImage>mupc_a55</shieldImage>
+	<cloakImage>rvsp_fed_freighter</cloakImage>
+	<floorImage>rvsp_fed_freighter</floorImage>
 </shipBlueprint>
 
 
