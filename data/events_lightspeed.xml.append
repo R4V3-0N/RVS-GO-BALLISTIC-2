@@ -1008,6 +1008,7 @@
 	<choice>
 		<text>Bribe them to let you continue.</text>
 		<event>
+			<text>can someone finally put some text here, like seriously, there is supposed to be actual text here</text><!--someone gotta put a text here-->
 			<item_modify steal="true">
 				<item type="scrap" min="15" max="15"/>
 			</item_modify>
