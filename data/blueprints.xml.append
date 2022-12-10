@@ -10,9 +10,9 @@
 		•••••••••••••••••••••
 -->
 
-<!-----------------------
+<!-- 
 	BASIC AUTOCANNONS
------------------------->
+ -->
 
 <!-- Autocannon Ammo Types List
 
@@ -30,59 +30,7 @@
 <!-- R4: Who ever convinced me to do more than 2 additional ammo types, who ever made it go up to as many as it did and still more to come, I will find you, and I will slap you-->
 <!-- R4: 2022/11/24 13:00, Julk I swear to god we're going to add 5 more ammo types at some point and it's all your fault. Thank you <3 --> 
 
-<weaponBlueprint name="GB_AC_FLECHETTE_FRAG"> <!-- flechettes that cause bleed damage -->
-	<type>BURST</type>
-	<title>Autocannon Mark I [Flechette]</title>
-	<short>AC I [F]</short>
-	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
-	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
-	<damage>0</damage>
-	<persDamage>0</persDamage> <!-- no Pers damage from projectile, only via bleed-->
-	<sysDamage>0</sysDamage> <!--minus 1, flat, for all flechette AC marks-->
-	<shots>1</shots>
-	<sp>0</sp>
-	<speed>50</speed>
-	<breachChance>2</breachChance>
-	<cooldown>6</cooldown>
-	<power>1</power>
-	<bp>4</bp>
-	<rarity>0</rarity>
-	<radius>30</radius>
-	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
-	<statBoosts>
-		<statBoost name="trueHealAmount">
-			<boostType>FLAT</boostType>
-			<amount>-1</amount>
-			<shipTarget>ALL</shipTarget>
-			<crewTarget>ALL</crewTarget>
-			<affectsSelf>true</affectsSelf>
-			<duration>25</duration>
-			<boostAnim>blood_effect</boostAnim>
-		</statBoost>
-	</statBoosts>
-	<projectiles>
-		<projectile count="1" fake="false">GB_shot_tiny_flechette</projectile>
-	</projectiles>
-	<launchSounds>
-		<sound>GB_cannonLight1</sound>
-		<sound>GB_cannonLight2</sound>
-		<sound>GB_cannonLight3</sound>
-	</launchSounds>
-	<hitShipSounds>
-		<sound>hitHull2</sound>
-		<sound>hitHull3</sound>
-	</hitShipSounds>
-	<hitShieldSounds>
-		<sound>hitShield1</sound>
-		<sound>hitShield2</sound>
-		<sound>hitShield3</sound>
-	</hitShieldSounds>
-	<missSounds>
-		<sound>miss</sound>
-	</missSounds>
-	<weaponArt>GB_Autocannon_1_FLECHETTE</weaponArt>
-	<iconImage>laser</iconImage>
-</weaponBlueprint>
+
 <!--AUTOCANNON 1-->
 
 <weaponBlueprint name="GB_AC_1"> <!-- standard-->
@@ -252,7 +200,7 @@
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, requires 10 ammunition to fire but doesn't consume it.</tooltip>
 	<missiles>10</missiles>
-	<freeMissileChance>93</freeMissileChance> <!-- might change this to 100%--> <!-- R4 2022/11/24: was 93 -->
+	<freeMissileChance>100</freeMissileChance> <!-- might change this to 100%--> <!-- R4 2022/11/24: was 93 -->
 	<damage>1</damage>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1790,25 +1738,25 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 ------------------------>
 
 
-<weaponBlueprint name="GB_AC_1_E">
+<weaponBlueprint name="GB_AC_1_ELITE">
 	<type>LASER</type>
-	<title>Autocannon Mark I</title>
-	<short>AC I</short>
+	<title>Elite Autocannon Mark I</title>
+	<short>€ AC I</short>
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>85</freeMissileChance>
+	<freeMissileChance>90</freeMissileChance> <!-- R4: Standard is 85 -->
 	<damage>1</damage>
 	<persDamage>1</persDamage>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>1</breachChance>
-	<cooldown>5</cooldown>
+	<breachChance>2</breachChance> <!-- R4: Standard is 1-->
+	<cooldown>6</cooldown>
 	<power>1</power>
-	<stun>6</stun>
+	<stun>2</stun> <!-- R4: Gave elite AC 1 stun -->
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
+	<cost>30</cost> <!-- R4: Standard is 20-->
 	<image>GB_shot_light</image>
 	<launchSounds>
 		<sound>GB_cannonLight1</sound>
@@ -1827,27 +1775,575 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	<weaponArt>GB_Autocannon_1</weaponArt>
+	<weaponArt>GB_Autocannon_1_Elite</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
 
-<weaponBlueprint name="GB_AC_2_E">
+<weaponBlueprint name="GB_AC_1_ELITE_CASELESS"> <!-- lower cooldown, higher DPS -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [Caseless]</title>
+	<short>€ AC I [CL]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>80</freeMissileChance> <!-- same as standard -->
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>1</breachChance>
+	<cooldown>3</cooldown> <!-- R4: standard is 4, in the future might change this to require a 12 second window and chain it down to 3 -->
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost>
+	<image>GB_shot_light</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_CASELESS</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_1_ELITE_HV"> <!-- Higher shot speed, higher accuracy, minor breach increase -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [High Velocity]</title>
+	<short>€ AC I [HV]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 80% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>80</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>1</sp> <!-- testing with shield pierce -->
+	<breachChance>2</breachChance>
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<accuracyMod>10</accuracyMod>
+	<cost>30</cost>
+	<speed>95</speed> <!-- R4: Standard is 80-->
+	<image>GB_shot_light_HV</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_HV</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_1_ELITE_HV_ENEMY"> <!-- Enemy version has lower accuracy -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [High Velocity]</title>
+	<short>€ AC I [HV]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>80</freeMissileChance>	<!-- R4 2022/11/24: was 83 -->
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>1</sp>
+	<breachChance>2</breachChance>
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<accuracyMod>5</accuracyMod> <!--half player accuracy-->
+	<cost>30</cost> <!-- R4 2022/11/24: was 10 -->
+	<speed>80</speed>
+	<image>GB_shot_light_HV</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	weaponArt>GB_Autocannon_1_Elite_HV</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_1_ELITE_FREE"> <!-- better ammo duplication chance, no 'effects' -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [Recycler]</title>
+	<short>€ AC I [Re]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, requires 10 ammunition to fire but doesn't consume it.</tooltip>
+	<missiles>1</missiles> <!-- Standard is 10-->
+	<freeMissileChance>100</freeMissileChance> <!-- might change this to 100%--> <!-- R4 2022/11/24: was 93 -->
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>1</breachChance> <!-- Standard is 0, mirrors the default ammo of standard now-->
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost> <!-- R4 2022/11/24: was 10 -->
+	<image>GB_shot_light_recycled</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_FREE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<!--  
+R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity.
+-->
+<weaponBlueprint name="GB_AC_1_ELITE_HE"> <!-- R4: Will be a chance to crit doing +1 damage, Elite version does +1 system damage to non-crits, might add a separate crit with hullbust, IDK -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [Squash head]</title>
+	<short>€ AC I [HESH]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
+	<damage>1</damage>
+	<sysDamage>1</sysDamage> <!-- R4 Added System damage -->
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>5</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>5</duration>
+		</statBoost>
+	</statBoosts>
+	<shots>1</shots>
+	<stun>4</stun>
+	<sp>0</sp>
+	<breachChance>4</breachChance> <!-- Standard was 2-->
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost>
+	<image>GB_shot_light_HE</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+
+<weaponBlueprint name="GB_AC_1_ELITE_EMP"> <!-- Ions enemy rooms but not shields, thus can't supress shield -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [EMP]</title>
+	<short>€ AC I [EMP]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<!-- <descriptionOverride>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+
+		Stats:
+		Required Power: 1
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 77%
+
+		Base Hull Damage: 1
+		Total Crew Damage: 15
+		Ion Damage: 1 (Rooms Only)
+
+		Breach Chance: 10% (Adjusted: 10%)
+
+		Buy/Sell Price: 10~/5~
+	</descriptionOverride> -->
+	<tooltip>1 shot 1 damage weapon, 77% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<!-- <tooltipOverride>Required Power: 1
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 77%
+
+		Base Hull Damage: 1
+		Total Crew Damage: 15
+		Ion Damage: 1 (Rooms Only)
+
+		Breach Chance: 10% (Adjusted: 10%)
+	</tooltipOverride>-->
+	<missiles>1</missiles>
+	<freeMissileChance>77</freeMissileChance>
+	<damage>1</damage>
+	<sysDamage>-1</sysDamage>
+	<ion>1</ion> <!-- R4: Elite version does 1 ion damage regardless -->
+	<!--<spawnCrew>
+		<race>gb_ion_instant_1</race>
+		<lifetime>0</lifetime>
+		<number>1</number>
+		<noSlot>true</noSlot>
+	</spawnCrew>-->
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>1</breachChance>
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost> <!-- R4 2022/11/24: was 10 -->
+	<speed>80</speed>
+	<image>GB_shot_light_EMP</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_emp</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_1_ELITE_HEAT"> <!-- System damage amplified and focused -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [Particle]</title>
+	<short>€ AC I [Part]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 82 -->
+	<sysDamage>2</sysDamage>
+	<persDamage>1</persDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>3</fireChance> <!-- Standard was 1 -->
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost> <!-- R4 2022/11/24: was 10 -->
+	<image>GB_shot_light_HEAT</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_HEAT</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<!--<weaponBlueprint name="GB_AC_1_FIRE"> ?-->
+<weaponBlueprint name="GB_AC_1_ELITE_INCENDIARY"> <!-- Fire chance -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [Incendiary]</title>
+	<short>€ AC I [I]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>80</freeMissileChance>	<!-- R4 2022/11/24: was 83 -->
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>6</fireChance> <!-- Standard was 4-->
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost> <!-- R4 2022/11/24: was 10 -->
+	<image>GB_shot_light_Incendiary</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_Incendiary</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_1_ELITE_FLECHETTE"> <!-- flechettes that cause bleed damage -->
+	<type>BURST</type>
+	<title>Elite Autocannon Mark I [Flechette]</title>
+	<short>€ AC I [F]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>80</freeMissileChance>
+	<damage>1</damage> <!-- Elite version removes the -1 system damage -->
+	<noPersDamage>true</noPersDamage> <!-- no Pers damage from projectile, only via bleed-->
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<speed>60</speed>
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<radius>30</radius>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
+	<statBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>25</duration>
+			<boostAnim>blood_effect</boostAnim>
+		</statBoost>
+	</statBoosts>
+	<projectiles>
+		<projectile count="1" fake="false">GB_shot_light_flechette</projectile>
+		<projectile count="2" fake="false" blueprint="GB_AC_FLECHETTE_FRAG">GB_shot_tiny_flechette</projectile> <!-- R4: Standard is 1 -->
+	</projectiles>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_FLECHETTE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_1_ELITE_RAD"> <!-- anti crew, rad, illegal -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [Rad]</title>
+	<short>€ AC I [R]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means. (FT: Warcrimes!)</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
+	<damage>1</damage>
+	<persDamage>2</persDamage> <!-- Standard is 1 -->
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>3</breachChance>
+	<cooldown>6</cooldown>
+	<statBoosts> <!--5/10/15/20/25-->
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+		<statBoost name="stunMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.75</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+		</statBoost>
+		<statBoost name="repairSpeed">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+		</statBoost>
+	</statBoosts>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost> <!-- R4 2022/11/24: was 10 -->
+	<image>GB_shot_light_RAD</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_RAD</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+
+
+<!-- Elite Autocannon 2-->
+
+<weaponBlueprint name="GB_AC_2_ELITE">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II</title>
+	<short>€ AC II</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>85</freeMissileChance> <!-- Standard is 80 -->
+	<damage>2</damage>
+	<persDamage>1</persDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance> <!-- Increased breach from 2 -->
+	<stunChance>4</stunChance> <!-- Increased stun to 4 -->
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<stun>6</stun>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+	<image>GB_shot_medium</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+
+<weaponBlueprint name="GB_AC_2">
 	<type>LASER</type>
 	<title>Autocannon Mark II</title>
 	<short>AC II</short>
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>83</freeMissileChance>
+	<freeMissileChance>80</freeMissileChance>	<!-- R4 2022/11/24: was 83 -->
 	<damage>2</damage>
-	<persDamage>1</persDamage>
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>2</breachChance>
 	<stunChance>2</stunChance>
-	<cooldown>5</cooldown>
+	<cooldown>6</cooldown>
 	<power>2</power>
-	<stun>6</stun>
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
@@ -1873,23 +2369,583 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
 
-<weaponBlueprint name="GB_AC_3_E">
+<weaponBlueprint name="GB_AC_2_ELITE_CASELESS">
 	<type>LASER</type>
-	<title>Autocannon Mark III</title>
-	<short>AC III</short>
+	<title>Elite Autocannon Mark II [Caseless]</title>
+	<short>€ AC II [CL]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 78 -->
+	<damage>2</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>4</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+	<image>GB_shot_medium</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_CASELESS</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_ELITE_HV">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II [High Velocity]</title>
+	<short>€ AC II [HV]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>77</freeMissileChance> <!-- R4 2022/11/24: was 80 -->
+	<damage>2</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<speed>80</speed>
+	<accuracyMod>10</accuracyMod>
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+	<image>GB_shot_medium_HV</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_HV</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_2_ELITE_HV_ENEMY">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II [High Velocity]</title>
+	<short>€ AC II [HV]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 80 for some reason -->
+	<damage>2</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<speed>80</speed>
+	<accuracyMod>5</accuracyMod> <!--half player accuracy-->
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+	<image>GB_shot_medium_HV</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_HV</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_ELITE_FREE">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II [Recycler]</title>
+	<short>€ AC II [Re]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>5</missiles> <!-- Standard is 15-->
+	<freeMissileChance>100</freeMissileChance>	<!-- R4 2022/11/24: was 91 -->
+	<damage>2</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost>
+	<image>GB_shot_medium_recycled</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_FREE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<!--  
+R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too TWO in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
+-->
+<weaponBlueprint name="GB_AC_2_ELITE_HE"> <!-- Chance to crit, Elite has bonus system damage when not critting -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II [Squash Head]</title>
+	<short>€ AC II [HESH]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
+	<damage>2</damage>
+	<sysDamage>1</sysDamage> <!-- Elite gets system damage, not sure if it should be 1 or 2-->
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>10</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>10</duration>
+		</statBoost>
+	</statBoosts>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<stun>4</stun>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+	<image>GB_shot_medium_HE</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_ELITE_EMP"> <!-- R4: I do not know what to do with this ATM so for now it's the same as standard -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II [Electromagnetic Pulse]</title>
+	<short>€ AC II [EMP]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<descriptionOverride>The standard Autocannon of the Federation during its founding. Outdated but still effective.
+
+		Stats:
+		Required Power: 2
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 73%
+
+		Base Hull Damage: 2
+		Total Crew Damage: 30
+		Ion Damage: 2 (Rooms Only)
+
+		Breach Chance: 20% (Adjusted: 20%)
+		Stun Chance: 20% (3 seconds long)
+
+		Buy/Sell Price: 20~/10~
+	</descriptionOverride>
+	<tooltip>1 shot 2 damage weapon, 73% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<tooltipOverride>Required Power: 2
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 73%
+
+		Base Hull Damage: 2
+		Total Crew Damage: 30
+		Ion Damage: 2 (Rooms Only)
+
+		Breach Chance: 20% (Adjusted: 20%)
+		Stun Chance: 20% (3 seconds long)
+	</tooltipOverride>
+	<missiles>1</missiles>
+	<freeMissileChance>72</freeMissileChance>	<!-- R4 2022/11/24: was 73 -->
+	<damage>2</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<stunChance>2</stunChance>
+	<spawnCrew>
+		<race>gb_ion_instant_2</race>
+		<lifetime>0</lifetime>
+		<number>1</number>
+		<noSlot>true</noSlot>
+	</spawnCrew>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+	<image>GB_shot_medium_EMP</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_EMP</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_ELITE_HEAT">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II [Particle]</title>
+	<short>€ AC II [Part]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>70</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
+	<sysDamage>4</sysDamage>
+	<persDamage>2</persDamage> <!--R4: We have to pay attention to how easy it is to achieve crew kills with the HEAT AC1 and 2, they are not intended for crew killing primarily and we may need to reduce the whole series crew damage by 1. -->
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>4</fireChance> <!-- Standard was 1 -->
+	<breachChance>1</breachChance> <!-- half breach -->
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+	<image>GB_shot_medium_HEAT</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_HEAT</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_ELITE_INCENDIARY">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II [Incendiary]</title>
+	<short>€ AC II [I]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance>	<!-- R4 2022/11/24: was 80 -->
+	<damage>2</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>9</fireChance> <!-- Standard was 7 -->
+	<breachChance>1</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+	<image>GB_shot_medium_INCENDIARY</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_INCENDIARY</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_ELITE_FLECHETTE">
+	<type>BURST</type>
+	<title>Elite Autocannon Mark II [Flechette]</title>
+	<short>€ AC II [F]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance>	<!-- R4 2022/11/24: was 80 -->
+	<damage>2</damage> <!-- Removed system damage penalty for Elite -->
+	<noPersDamage>true</noPersDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>3</breachChance>
+	<speed>60</speed>
+	<stunChance>2</stunChance>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+	<radius>40</radius>
+	<statBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>25</duration>
+			<boostAnim>blood_effect</boostAnim>
+		</statBoost>
+	</statBoosts>
+	<projectiles>
+		<projectile count="1" fake="false">GB_shot_medium_flechette</projectile>
+		<projectile count="5" fake="false" blueprint="GB_AC_FLECHETTE_FRAG">GB_shot_tiny_flechette</projectile> <!-- Standard was 4 -->
+	</projectiles>
+	<image>GB_shot_medium_flechette</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_FLECHETTE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_ELITE_RAD">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II [Radiation]</title>
+	<short>€ AC II [Rad]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>70</freeMissileChance>	<!-- R4 2022/11/24: was 75 -->
+	<damage>2</damage>
+	<persDamage>2</persDamage> <!-- standard was 1-->
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>6</cooldown>
+	<statBoosts> <!--5/10/15/20/25-->
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>10</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+		<statBoost name="stunMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.75</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>10</duration>
+		</statBoost>
+		<statBoost name="repairSpeed">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>10</duration>
+		</statBoost>
+	</statBoosts>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+	<image>GB_shot_medium_RAD</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_RAD</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+
+
+
+
+
+
+
+
+
+
+<weaponBlueprint name="GB_AC_3_ELITE">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III</title>
+	<short>€ AC III</short>
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>81</freeMissileChance>
+	<freeMissileChance>80</freeMissileChance>
 	<damage>3</damage>
 	<persDamage>1</persDamage>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>4</breachChance>
-	<stunChance>4</stunChance>
-	<cooldown>5</cooldown>
+	<breachChance>6</breachChance>
+	<stunChance>6</stunChance>
+	<cooldown>6</cooldown> <!-- that's a lot of 6's-->
 	<power>3</power>
 	<stun>6</stun>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost>
+	<image>GB_shot_heavy</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+
+<weaponBlueprint name="GB_AC_3_ELITE_CASELESS">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [Caseless]</title>
+	<short>€ AC III [Cl]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>60</freeMissileChance>	<!-- R4 2022/11/24: was 70 -->
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>3</cooldown>
+	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
@@ -1911,11 +2967,480 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	<weaponArt>GB_Autocannon_3</weaponArt>
+	<weaponArt>GB_Autocannon_3_Elite_CASELESS</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_ELITE_HV">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [High Velocity]</title>
+	<short>€ AC III [HV]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<accuracyMod>10</accuracyMod>
+	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 70 -->
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>1</sp> <!-- Gave Elites Shield Pierce -->
+	<breachChance>7</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>6</cooldown>
+	<power>3</power>
+	<speed>95</speed> <!-- Standard is 80 -->
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
+	<image>GB_shot_heavy_HV</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_HV</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_3_ELITE_HV_ENEMY">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [High Velocity]</title>
+	<short>€ AC III [HV]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<accuracy>5</accuracy> <!--half player accuracy-->
+	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 70 -->
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>1</sp>
+	<breachChance>7</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>6</cooldown>
+	<power>3</power>
+	<speed>95</speed>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
+	<image>GB_shot_heavy_HV</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_HV</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_ELITE_FREE">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [Recycler]</title>
+	<short>€ AC III [Re]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>10</missiles> <!-- Standard is 25 -->
+	<freeMissileChance>100</freeMissileChance>
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<cooldown>6</cooldown>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
+	<image>GB_shot_heavy_recycled</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_FREE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<!--  
+R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too THREE in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
+-->
+<weaponBlueprint name="GB_AC_3_ELITE_HE"> <!-- Same as above, crit chance shenanigary-->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [Squash Head]</title>
+	<short>€ AC III [HESH]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
+	<damage>3</damage>
+	<sysDamage>1</sysDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>8</stunChance>
+	<cooldown>6</cooldown>
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+	</statBoosts>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
+	<image>GB_shot_heavy_HE</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_HE</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
 
 
+<weaponBlueprint name="GB_AC_3_ELITE_EMP"> <!-- As with the AC 2, no clue how to tackle the stats of these things. I might make the Elites a Stun Ion instead but that won't fit with the graphics... -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [Electro-magnetic pulse]</title>
+	<short>€ AC III [EMP]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<descriptionOverride>The standard Autocannon of the Federation during its founding. Outdated but still effective.
+
+		Stats:
+		Required Power: 3
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 62%
+
+		Base Hull Damage: 3
+		Total Crew Damage: 45
+		Ion Damage: 3 (Rooms Only)
+
+		Breach Chance: 40% (Adjusted: 40%)
+		Stun Chance: 40% (3 seconds long)
+
+		Buy/Sell Price: 40~/20~
+	</descriptionOverride>
+	<tooltip>1 shot 3 damage weapon, 62% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<tooltipOverride>Required Power: 3
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 62%
+
+		Base Hull Damage: 3
+		Total Crew Damage: 45
+		Ion Damage: 3 (Rooms Only)
+
+		Breach Chance: 40% (Adjusted: 40%)
+		Stun Chance: 40% (3 seconds long)
+	</tooltipOverride>
+	<missiles>1</missiles>
+	<freeMissileChance>60</freeMissileChance>	<!-- R4 2022/11/24: was 62 -->
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>6</cooldown>
+	<spawnCrew>
+		<race>gb_ion_instant_3</race>
+		<lifetime>0</lifetime>
+		<number>1</number>
+		<noSlot>true</noSlot>
+	</spawnCrew>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
+	<image>GB_shot_heavy_EMP</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_EMP</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_ELITE_HEAT">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [Particle]</title>
+	<short>€ AC III [Part.]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>50</freeMissileChance>
+	<damage>0</damage>
+	<sysDamage>6</sysDamage>
+	<persDamage>2</persDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>6</fireChance> <!-- Standard is 6-->
+	<breachChance>2</breachChance> <!--half breach-->
+	<cooldown>6</cooldown>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost>
+	<image>GB_shot_heavy_HEAT</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_HEAT</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_ELITE_INCENDIARY">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [Incendiary]</title>
+	<short>€ AC III [I]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>70</freeMissileChance>
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>10</fireChance> <!-- How do I make this do more than 100% fire for an Elite AC? For now will opt for a more generous missile usage -->
+	<breachChance>2</breachChance> <!--half breach chance to help keep incendiary effect while making it feel umphfy! -->
+	<stunChance>4</stunChance>
+	<cooldown>6</cooldown>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
+	<image>GB_shot_heavy_INCENDIARY</image> 
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_INCENDIARY</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_ELITE_FLECHETTE">
+	<type>BURST</type>
+	<title>Elite Autocannon Mark III [Flechette]</title>
+	<short>€ AC III [F]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>55</freeMissileChance>	<!-- R4 2022/11/24: was 67, this is a heavy nerf relatively because I didn't realise this thing does 175 crew damage over time if it hits all the same room. Pending test results from this nerf-->
+	<damage>3</damage> <!-- removed sys damage penalty for elite -->
+	<noPersDamage>true</noPersDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<spin>0</spin>
+	<breachChance>5</breachChance>
+	<speed>60</speed>
+	<stunChance>4</stunChance>
+	<cooldown>6</cooldown>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
+	<radius>50</radius>
+	<statBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>25</duration>
+			<boostAnim>blood_effect</boostAnim>
+		</statBoost>
+	</statBoosts>
+	<projectiles>
+		<projectile count="1" fake="false">GB_shot_heavy_flechette</projectile>
+		<projectile count="7" fake="false" blueprint="GB_AC_FLECHETTE_FRAG">GB_shot_tiny_flechette</projectile> <!-- May the dust mother have mercy on me, for I increased this by 1 over standard -->
+	</projectiles>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_FLECHETTE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_ELITE_RAD">
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [Radiation]</title>
+	<short>€ AC III [R]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>55</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
+	<damage>3</damage>
+	<persDamage>3</persDamage> <!-- RADIATION FOR THE RADIATION LORD! -->
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>6</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>6</cooldown>
+		<statBoosts> <!--5/10/15/20/25-->
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>15</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+		<statBoost name="stunMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.75</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>15</duration>
+		</statBoost>
+		<statBoost name="repairSpeed">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>15</duration>
+		</statBoost>
+	</statBoosts>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
+	<image>GB_shot_heavy_RAD</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_RAD</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
 
 
 <!-- 	•••••••••••••••••••••
@@ -2623,7 +4148,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<type>BURST</type>
 	<title>'Spray'n'Pray'</title>
 	<short>'S.A.P.'</short>
-	<desc>Name says it all, pew-pew-pew-pew-pew-pew-pew-pew</desc> <!-- maybe should write an actual description some day-->
+	<desc>Name says it all, dakka-dakka-dakka-dakka-dakka-dakka</desc> <!-- maybe should write an actual description some day--> <!-- R4: 2022/12/10 instead of doing so. I just memed it more-->
 	<tooltip>Boss loot.</tooltip>
 	<missiles>1</missiles>
 	<freeMissileChance>45</freeMissileChance>
@@ -2637,7 +4162,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<fireTime>0.05</fireTime>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>60</cost>
+	<cost>80</cost> <!-- Was 60 -->
 	<boost>
 		<type>cooldown</type>
 		<amount>20</amount>
