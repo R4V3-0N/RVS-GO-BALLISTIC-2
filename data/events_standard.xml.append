@@ -154,7 +154,10 @@
 		<color r="215" g="255" b="200" a="1"/>
 	</beaconType>
 	<text>You expect to find a well stocked Federation market at this Merchant's beacon, but instead, there's only a small station, and one singular patrol ship. Hopefully, there is enough to stock up on for your journey here.</text>
-	<ship load="MU_GHOST_FED_BOMBER" hostile = "false"/>
+	<ship name="SHIP_FED_BOMBER_STORE" auto_blueprint="MU_FED_BOMBER" hostile="false"><!--was MU_GHOST_FED_BOMBER-->
+		<destroyed load="DESTROYED_FEDERATION"/>
+		<deadCrew load="DEAD_CREW_FEDERATION"/>
+	</ship>
 	<choice>
 		<text>Visit the store.</text>
 		<event>
@@ -321,7 +324,7 @@
 		<text>Trade with the Separatist.</text>
 		<event>
 			<text>"These guns: vital in defense against the [Harmony]. The Harmony: Harms many. These [guns] also harm many. I have many guns. Purchase or I shall [harm]."</text>
-			<ship load="LIST_SHIPS_SEPARATIST_GENERIC" hostile="false"/>
+			<ship load="SHIP_SEPERATIST_GENERIC" hostile="false"/>
 			<choice hidden="true">
 				<text>Shop.</text>
 				<event>
@@ -335,7 +338,7 @@
 		<text>Trade with the Federation veteran.</text>
 		<event>
 			<text>The highly decorated soldier attempts to instill you with Federation patriotism and fervor as he tries to convince you to buy surplus Autocannons, however you begin to doubt he even served at all when you notice his medals are crafted from tinfoil and bottlecaps.</text>
-			<ship load="LIST_SHIPS_FED_GENERIC" hostile="false"/>
+			<ship load="SHIP_FED_GENERIC" hostile="false"/>
 			<choice hidden="true">
 				<text>Shop.</text>
 				<event>
@@ -349,7 +352,7 @@
 		<text>Trade with the Free Mantis.</text>
 		<event>
 			<text>The Free Mantis chatters and trills excitedly at you. "Other traders, they don't like me. They think me a thief! But you are from Federation yes-yes? You come trade with me. Come see, I have thingies to sell!"</text>
-			<ship load="LIST_SHIPS_FREEMANTIS_GENERIC" hostile="false"/>
+			<ship load="SHIP_FREEMANTIS_GENERIC" hostile="false"/>
 			<choice hidden="true">
 				<text>Shop.</text>
 				<event>
