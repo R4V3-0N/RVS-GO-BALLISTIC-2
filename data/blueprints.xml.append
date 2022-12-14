@@ -1895,7 +1895,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	weaponArt>GB_Autocannon_1_Elite_HV</weaponArt>
+	<weaponArt>GB_Autocannon_1_Elite_HV</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
 
