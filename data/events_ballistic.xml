@@ -1060,17 +1060,17 @@
     ••••••••••••••••••••••••••••••••••••••••••-->
     <event name="GB_CACHE_AUTOCANNON_1_ELITE">
         <text>Upon closer examination, the cache seems to have been stocked with light autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
-        <weapon name="GB_AC_3_E"/>
+        <weapon name="GB_AC_3_ELITE"/>
         <autoReward level="HIGH">missiles</autoReward>
     </event>
     <event name="GB_CACHE_AUTOCANNON_2_ELITE">
         <text>Upon closer examination, the cache seems to have been stocked with autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
-        <weapon name="GB_AC_3_E"/>
+        <weapon name="GB_AC_3_ELITE"/>
         <autoReward level="MED">missiles</autoReward>
     </event>
     <event name="GB_CACHE_AUTOCANNON_3_ELITE">
         <text>Upon closer examination, the cache seems to have been stocked with heavy autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
-        <weapon name="GB_AC_3_E"/>
+        <weapon name="GB_AC_3_ELITE"/>
         <autoReward level="LOW">missiles</autoReward>
     </event>
     <!--<event name="GB_CACHE_AUTOCANNON_4_ELITE">
@@ -1299,7 +1299,7 @@
                 </choice>
             </event>
         </choice>
-        <choice hidden="false" req="GB_LIST_REPAIR_WEAPONS_AMMO"> <!--This list does not exist-->
+        <choice hidden="false" req="BLUELIST_BOMB_REPAIR"> <!--This list does not exist-->
             <text>(Repair Ammo Weapon) Use your munition based equipment to repair the ship efficiently.</text>
             <event>
                 <item_modify steal="true">
