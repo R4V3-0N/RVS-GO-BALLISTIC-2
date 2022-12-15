@@ -21,7 +21,7 @@
             <text>Dock with one of the escorts and investigate.</text>
             <event load="GB_CARAVAN_ABANDONED_ESCORT" />
         </choice>
-        <choice hidden="true" req="GB_LIST_RECON_DRONES">
+        <choice hidden="true" req="LIST_CREW_MORPH_RECON"> <!-- JUlk: usually there is just an option using any boarding drones-->
             <text>(Recon Drone) Use a Recon Drone to quickly investigate each ship.</text>
             <event load="GB_CARAVAN_ABANDONED_RECON" />
         </choice>

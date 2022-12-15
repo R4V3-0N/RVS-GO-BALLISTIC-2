@@ -380,16 +380,16 @@ created from scratch using the components or techniques of them to create odd an
 </blueprintList>
 
 <blueprintList name = "GB_GIFTLIST_AUTOCANNONS_LIGHT_ELITE">
-	<name>GB_AC_1</name>
-	<name>GB_AC_2</name>
+	<name>GB_AC_1_ELITE</name>
+	<name>GB_AC_2_ELITE</name>
 </blueprintList>
 <blueprintList name = "GB_GIFTLIST_AUTOCANNONS_MODERATE_ELITE">
-	<name>GB_AC_2</name>
-	<name>GB_AC_3</name>
+	<name>GB_AC_2_ELITE</name>
+	<name>GB_AC_3_ELITE</name>
 </blueprintList>
 <blueprintList name = "GB_GIFTLIST_AUTOCANNONS_HEAVY_ELITE">
-	<name>GB_AC_3</name>
-	<!--<name>GB_AC_4</name>-->
+	<name>GB_AC_3_ELITE</name>
+	<!--<name>GB_AC_4_ELITE</name>-->
 </blueprintList>
 
 
@@ -410,11 +410,6 @@ created from scratch using the components or techniques of them to create odd an
 <blueprintList name = "GB_CARAVAN_REWARD">  <!-- R4: Todo, change this to "GB_GIFTLIST_AUTOCANNONS_MODERATE -->
 	<name>GB_AC_2</name>
 	<name>GB_AC_3</name>
-</blueprintList>
-
-<blueprintList name = "GB_LIST_RECON_DRONES">
-	<name>RECON_BOARDER</name>
-	<name>RECON_DEFENSE</name>
 </blueprintList>
 
 <blueprintList name = "GB_GIFTLIST_MG">  <!-- R4: Machine Guns -->
@@ -651,7 +646,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 <blueprintList name="GB_LIST_REPAIR_WEAPONS"> <!-- repair spec weapons-->
 	<name>BEAM_REPAIR</name>
-	<name>BOMB_HEAL</name>
+	<name>BOMB_HEAL</name><!-- this doesn't repair tho? it just heals crew-->
 	<name>BOMB_HEAL_SYSTEM</name>
 	<name>BOMB_HEAL_SYSTEM_STRONG</name>
 </blueprintList>
@@ -662,6 +657,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>HEKTAR_GEL</name>
 	<name>SYLVAN_GEL</name>
 	<name>UPG_ARM_REPAIR</name>
+	<name>COMBAT_REPAIR</name>
 </blueprintList>
 
 <blueprintList name="GB_LIST_REPAIR_DRONES" type="any"> <!-- repair spec drones-->
@@ -692,7 +688,12 @@ Post update content might change these to "Federation"/Elite versions instead wh
         <mod:setAttributes missiles="5" />
     </mod:findLike>
 </mod:findLike>
-
+<mod:findName type="shipBlueprint" name="MU_BEAM_MASTER_MISSILES"><!-- preventing leah from being OP-->
+    <mod:findLike type="weaponList">
+        <mod:selector missiles="5" />
+        <mod:setAttributes missiles="0" />
+    </mod:findLike>
+</mod:findName>
 
 <!--
 ////////////////////////////////////////////////////////////////////////////////////
@@ -977,10 +978,10 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 <!--RIGGER-->
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_RIGGER">
-<mod-overwrite:weaponList missiles="5" count="3" load="LIST_WEAPONS_SEPARATIST" />
+	<mod-overwrite:weaponList missiles="5" count="3" load="LIST_WEAPONS_SEPARATIST" />
 </mod:findName>
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_RIGGER_NO2">
-<mod-overwrite:weaponList missiles="5" count="3" load="LIST_WEAPONS_SEPARATIST" />
+	<mod-overwrite:weaponList missiles="5" count="3" load="LIST_WEAPONS_SEPARATIST" />
 </mod:findName>
 
 <!--ENFORCER-->
@@ -1035,14 +1036,14 @@ Post update content might change these to "Federation"/Elite versions instead wh
 <!--TRAPPER-->
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_TRAPPER">
 	<mod-overwrite:weaponList missiles="10" count="2">
-		<mod-overwrite:weapon name="LIST_WEAPONS_TRAPPER" />
-		<mod-overwrite:weapon name="LIST_WEAPONS_SEPARATIST" />
+		<weapon name="LIST_WEAPONS_TRAPPER" />
+		<weapon name="LIST_WEAPONS_SEPARATIST" />
 	</mod-overwrite:weaponList>
 </mod:findName>
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_TRAPPER_NO2">
 	<mod-overwrite:weaponList missiles="10" count="2">
-		<mod-overwrite:weapon name="LIST_WEAPONS_TRAPPER" />
-		<mod-overwrite:weapon name="LIST_WEAPONS_SEPARATIST" />
+		<weapon name="LIST_WEAPONS_TRAPPER" />
+		<weapon name="LIST_WEAPONS_SEPARATIST" />
 	</mod-overwrite:weaponList>
 </mod:findName>
 
