@@ -21,7 +21,7 @@
             <text>Dock with one of the escorts and investigate.</text>
             <event load="GB_CARAVAN_ABANDONED_ESCORT" />
         </choice>
-        <choice hidden="true" req="GB_LIST_RECON_DRONES">
+        <choice hidden="true" req="LIST_CREW_MORPH_RECON"> <!-- JUlk: usually there is just an option using any boarding drones-->
             <text>(Recon Drone) Use a Recon Drone to quickly investigate each ship.</text>
             <event load="GB_CARAVAN_ABANDONED_RECON" />
         </choice>
@@ -901,7 +901,7 @@
         <choice hidden="true">
             <text>Secure the cache.</text>
             <event>
-                <event load = "GB_CACHE_REWARD"/>
+                <loadEvent>GB_CACHE_REWARD</loadEvent>
             </event>
         </choice>
         <choice>
@@ -921,7 +921,7 @@
         <choice hidden="true">
             <text>Secure the cache.</text>
             <event>
-                <event load = "GB_CACHE_REWARD_AC_ELITE"/>
+                <loadEvent>GB_CACHE_REWARD_AC_ELITE</loadEvent>
             </event>
         </choice>
         <choice>
@@ -945,7 +945,28 @@
             <text>Enter the asteroid field and secure the cache.</text> <!-- R4: Describes how you have to enter the asteroid field -->
             <event>
                 <environment type="asteroid"/> <!-- R4: Does this work when I do it like this?--><!--julk: *doubt*-->
-                <event load = "GB_CACHE_REWARD"/>
+                <loadEvent>GB_CACHE_REWARD</loadEvent>
+            </event>
+        </choice>
+        <choice>
+            <text>Enter the asteroid field and booby trap the cache.</text>
+            <event>
+                <environment type="asteroid"/> <!-- R4: Does this work when I do it like this?--><!--julk: i think so-->
+                <text>This Federation cache inside of the trojan would make the perfect bait for a trap to help throw off the Rebel fleet from their pursuit. You order to rig the stowages inside the asteroid before setting a distress signal to attract the fleet's attention.</text>
+                <item_modify>
+                    <item type="missiles" min="-2" max="-2"/>
+                </item_modify>
+                <modifyPursuit amount="-3"/> <!-- 3 instead of 2 due to location of the cache-->
+            </event>
+        </choice>
+    </event>
+    <event name="GB_CACHE_ASTEROID_SUCCESS_WEAPON_ELITE_SCAN">
+        <text>After a thorough scan through the trojan you can find what appears to be the cache is well hidden inside of one of the larger asteroids crators!</text> <!-- R4: Changes search with scan because yes.-->
+        <choice hidden="true">
+            <text>Enter the asteroid field and secure the cache.</text> <!-- R4: Describes how you have to enter the asteroid field -->
+            <event>
+                <environment type="asteroid"/>
+                <loadEvent>GB_CACHE_REWARD_AC_ELITE</loadEvent>
             </event>
         </choice>
         <choice>
@@ -976,7 +997,7 @@
 
         <!-- Specific items -->
         <event load="GB_CACHE_AUTOCANNON_1"/> <!-- AC1 is cheap, so this gives high reward alongside the AC1 -->
-        <event load="GB_CACHE_TROOPER DRONE"/> <!-- Trooper Drone is cheap, so this gives high reward alongside the Trooper Drone -->
+        <event load="GB_CACHE_TROOPER_DRONE"/> <!-- Trooper Drone is cheap, so this gives high reward alongside the Trooper Drone -->
         <event load="GB_CACHE_MACHINEGUN"/> <!-- Machinegun isn't a standard ship weapon and is cheap, so this gives a high reward and narrative focus -->
         <!--<event load="GB_CACHE_AC_DRONE"/>--> <!-- Gives the Ballistic AC drone out specifically -->
     </eventList>
@@ -1030,7 +1051,7 @@
         <autoReward level="HIGH">droneparts</autoReward>
     </event>
 
-    <event name="GB_CACHE_AUGB_CACHE_AUTOCANNON_1" unused="true">
+    <event name="GB_CACHE_AUTOCANNON_1">
         <text>There is an unoridnarily high supply of light autocannons and supplies left over from the old war inside this cache that is still more than fit to be installed onto your ship.</text>
         <weapon name="GB_AC_1"/>
         <autoReward level="MED">stuff</autoReward> <!-- R4: Missiles to go with the AC and some scrap-->
@@ -1039,6 +1060,18 @@
             <event>
                 <weapon name="GB_AC_1"/>
                 <autoReward level="MED">missiles</autoReward>
+            </event>
+        </choice>
+    </event>
+    <event name="GB_CACHE_TROOPER_DRONE"><!-- Julk: Someone should tweak this text stuff-->
+        <text>There is an unoridnarily high supply of trooper drones and supplies left over from the old war inside this cache that is still more than fit to be installed onto your ship.</text>
+        <drone name="RVS_TROOPERTOG_DEFEND"/>
+        <autoReward level="MED">stuff</autoReward> <!-- R4: Missiles to go with the AC and some scrap-->
+        <choice>
+            <text>The rest of the supplies and equipment is brought onboard before the Rebel fleet catches up.</text>
+            <event>
+                <drone name="RVS_TROOPERTOG_DEFEND"/>
+                <autoReward level="MED">droneparts</autoReward>
             </event>
         </choice>
     </event>
@@ -1060,12 +1093,12 @@
     ••••••••••••••••••••••••••••••••••••••••••-->
     <event name="GB_CACHE_AUTOCANNON_1_ELITE">
         <text>Upon closer examination, the cache seems to have been stocked with light autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
-        <weapon name="GB_AC_3_ELITE"/>
+        <weapon name="GB_AC_1_ELITE"/>
         <autoReward level="HIGH">missiles</autoReward>
     </event>
     <event name="GB_CACHE_AUTOCANNON_2_ELITE">
         <text>Upon closer examination, the cache seems to have been stocked with autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
-        <weapon name="GB_AC_3_ELITE"/>
+        <weapon name="GB_AC_2_ELITE"/>
         <autoReward level="MED">missiles</autoReward>
     </event>
     <event name="GB_CACHE_AUTOCANNON_3_ELITE">
