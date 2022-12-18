@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--Copyright (c) 2012 by Subset Games. All rights reserved.-->
-<img x="-30" y="-32" w="571" h="555" />
+<img x="-30" y="-34" w="571" h="555" />
 <offsets>
-	<floor x="24" y="26" />
+	<floor x="24" y="28" />
 	<cloak x="-20" y="-22" />
 </offsets>
 <weaponMounts>
@@ -13,5 +13,11 @@
 	<mount x="378" y="497" rotate="true" mirror="false" gib="-1" slide="down" />
 	<mount x="612" y="261" rotate="true" mirror="false" gib="-1" slide="no" />
 </weaponMounts>
+<thrusters sync="true">
+    <thruster x="18" y="142">thruster_GB</thruster>
+	<thruster x="18" y="345">thruster_GB</thruster>
+	<thruster x="93" y="66">thruster_freighter</thruster>
+	<thruster x="93" y="466">thruster_freighter</thruster>
+</thrusters>
 <explosion />
 
