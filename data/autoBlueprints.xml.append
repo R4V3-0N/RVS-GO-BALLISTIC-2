@@ -465,6 +465,12 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_GAUSS_2</name>
 	<name>GB_GAUSS_3</name>
 </blueprintList>
+<blueprintList name="GB_SHOP_FEDERATION_ITEM_WEAPONS_AC">
+	<name>GB_AC_1</name>
+	<name>GB_AC_2</name>
+	<name>GB_AC_3</name>
+	<name>GB_ROTARY_AC</name>
+</blueprintList>
 <!--<blueprintList name="LIST_DRONES_FED">
 	<name>COMBAT_1_LASER</name>
 	<name>COMBAT_1_BEAM</name>
