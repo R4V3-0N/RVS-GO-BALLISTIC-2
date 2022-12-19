@@ -1801,6 +1801,38 @@
 			<human room="28"/> <!--engines-->
 			<engi_separatist room="0"/> <!--pilot-->
 		</crew>
+		<rooms>
+			<room id="3">
+				<roomAnim renderLayer="1">2x3_cargo_airlock_fed_striped</roomAnim>
+			</room>
+			<room id="4">
+				<roomAnim renderLayer="1">2x2_fuel_and_crate_fed_striped</roomAnim>
+			</room>
+			<room id="2">
+				<roomAnim renderLayer="1">2x2_loading_bay_striped</roomAnim>
+			</room>
+			<room id="9">
+				<roomAnim renderLayer="1">2x2_l_cargo_fed_striped</roomAnim>
+			</room>
+			<room id="12">
+				<roomAnim renderLayer="1">2x2_fuel_cell_2</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="1">2x2_missiles_and_crates</roomAnim>
+			</room>
+			<room id="16">
+				<roomAnim renderLayer="1">2x2_s_crate_cluster</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="1">2x2_fuel_cell_1</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="1">2x2_mixed_crates</roomAnim>
+			</room>	
+			<room id="6">
+				<roomAnim renderLayer="1">2x2_s_crate_1</roomAnim>
+			</room>	
+		</rooms>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_RVSP_FED_FREIGHTER_2">
