@@ -52,9 +52,9 @@
 		
 		<mod-append:blueprint name="GB_ROTARY_AC" rarity="4"/>	<!-- R4, 29/11/2022: was4-->
 
-		<mod-append:blueprint name="GB_AC_1_E" rarity="3"/>
-		<mod-append:blueprint name="GB_AC_2_E" rarity="3"/>
-		<mod-append:blueprint name="GB_AC_3_E" rarity="3"/>
+		<mod-append:blueprint name="GB_AC_1_ELITE" rarity="3"/>
+		<mod-append:blueprint name="GB_AC_2_ELITE" rarity="3"/>
+		<mod-append:blueprint name="GB_AC_3_ELITE" rarity="3"/>
 
 		<mod-append:blueprint name="GB_GAUSS_1" rarity="4"/>	<!-- R4, 29/11/2022: was 5-->
 		<mod-append:blueprint name="GB_GAUSS_2" rarity="3"/>	<!-- R4, 29/11/2022: was 4-->
