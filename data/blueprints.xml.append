@@ -4477,7 +4477,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 				<number>1</number>
 			</slot>
 		</doors>
-		<drones power="2" room="6" start="false" img="room_drones_6" />
+		<drones max="8" power="2" room="6" start="false" img="room_drones_6" />
 		<engines power="2" room="12" start="true" img="room_engines_5">
 			<slot>
 				<direction>up</direction>

@@ -1093,4 +1093,82 @@
 	<desc length="4" x="0" y="0"/>
 	<time>0.8</time>
 </anim>
+
+
+<!-- ROOM DECOR -->
+
+<animSheet name="2x2_fuel_cell_1" w="70" h="70" fw="70" fh="70">decor/2x2_fuel_cell_1.png</animSheet>
+<animSheet name="2x2_fuel_cell_2" w="70" h="70" fw="70" fh="70">decor/2x2_fuel_cell_2.png</animSheet>
+<anim name="2x2_fuel_cell_1">
+	<sheet>2x2_fuel_cell_1</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<anim name="2x2_fuel_cell_2">
+	<sheet>2x2_fuel_cell_2</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="2x2_missiles_and_crates" w="70" h="70" fw="70" fh="70">decor/2x2_missiles_and_crates.png</animSheet>
+<anim name="2x2_missiles_and_crates">
+	<sheet>2x2_missiles_and_crates</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="2x2_mixed_crates" w="70" h="70" fw="70" fh="70">decor/2x2_mixed_crates.png</animSheet>
+<anim name="2x2_mixed_crates">
+	<sheet>2x2_missiles_and_crates</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="2x2_s_crate_1" w="70" h="70" fw="70" fh="70">decor/2x2_s_crate_1.png</animSheet>
+<animSheet name="2x2_s_crate_2" w="70" h="70" fw="70" fh="70">decor/2x2_s_crate_2.png</animSheet>
+<animSheet name="2x2_s_crate_cluster" w="70" h="70" fw="70" fh="70">decor/2x2_s_crate_cluster.png</animSheet>
+<anim name="2x2_s_crate_1">
+	<sheet>2x2_s_crate_1</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<anim name="2x2_s_crate_2">
+	<sheet>2x2_s_crate_2</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<anim name="2x2_s_crate_cluster">
+	<sheet>2x2_s_crate_cluster</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="2x2_l_cargo_fed_striped" w="70" h="70" fw="70" fh="70">decor/2x2_l_cargo_fed_striped.png</animSheet>
+<anim name="2x2_l_cargo_fed_striped">
+	<sheet>2x2_l_cargo_fed_striped</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="2x2_fuel_and_crate_fed_striped" w="70" h="70" fw="70" fh="70">decor/2x2_fuel_and_crate_fed_striped.png</animSheet>
+<anim name="2x2_fuel_and_crate_fed_striped">
+	<sheet>2x2_fuel_and_crate_fed_striped</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="2x2_loading_bay_striped" w="70" h="70" fw="70" fh="70">decor/2x2_loading_bay_striped.png</animSheet>
+<anim name="2x2_loading_bay_striped">
+	<sheet>2x2_loading_bay_striped</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="2x3_cargo_airlock_fed_striped" w="105" h="70" fw="105" fh="70">decor/2x3_cargo_airlock_fed_striped.png</animSheet>
+<anim name="2x3_cargo_airlock_fed_striped">
+	<sheet>2x3_cargo_airlock_fed_striped</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
 </FTL>
