@@ -68,12 +68,12 @@
 			<autoReward level="HIGH">standard</autoReward>
 			<choice hidden="true">
 				<text>Wait...</text>
-				<event load="STOREEVENT_FED_MARKET_WAIT"/>
+				<event load="GB_STOREEVENT_FED_VOLUNTEER_WAIT"/>
 			</choice>
 		</event>
 	</choice>
 </event>
-<eventList name="STOREEVENT_FED_MARKET_WAIT"><!--TODO: do we keep this clobber?-->
+<eventList name="GB_STOREEVENT_FED_VOLUNTEER_WAIT">
 	<event>
 		<text>Fortunately for you, there are no sight of any enemy hostiles during your watch. You collect your pay and prepare to leave.</text>
 		<store>GB_STORE_FED</store>
