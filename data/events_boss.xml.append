@@ -20,3 +20,29 @@
 		</event>
 	</choice>
 </event>
+
+<mod:findName type = "event" name = "BOSS_EVACUATIONS"> <!-- R4: I just added this here, hopefully it works fine. Is there a way for me to make this mutually exclusive with the first option? -->
+    <choice hidden="true">
+	<mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
+		<text>(Expanded Cargo Bay) Pick up as many civilians as possible and bring them to the Carryships.</text>
+		<event>
+			<text>You manage to rescue a dozens civilians. It's rather spatious in the cargobay between the large cargo containers inside, it is far from luxurious but it's all worth it. Most of the civilians hurry out of your storage into the safety of the Carryships, except for one, who offers to stay behind and aid you in your mission.</text>
+            <crewMember amount="1" class="human"/>
+            <choice hidden="true">
+                <text>Continue...</text>
+				<event>
+					<text>For your considerable efforts in helping to evacuate the people of this forsakened world the Carryships offer to offload some of their unnecessary cargo and materials onto your ship once all of the refugees are transfered over.</text>
+					<autoReward level="HIGH">standard</autoReward>
+					<event>
+						<text>As you're undocking from the Carryships, you notice an Elite Rebel ship tailing you. It is rather you or the Carryships, with your choice already made you order to engage the elite!</text>
+						<ship load="SHIP_REBEL_ELITE_FIGHT" hostile="true"/>
+						<choice hidden="true">
+							<text>Continue...</text>
+							<event load="COMBAT_CHECK"/>
+						</choice>
+					</event>
+				</event>
+            </choice>
+		</event>
+	</mod-append:choice>
+</mod:findName>
