@@ -1348,7 +1348,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="3" count="4"> <!--- might set ammo lower later, it should intentionally run out of ammo early into a fight -->
 		<weapon name="GB_AC_2" />
-		<weapon name="BOMB_1" />
+		<weapon name="BOMB_1_ENEMY" />
 		<weapon name="GB_ANTIQUE_FEDERATION" />
 		<weapon name="GB_ANTIQUE_FEDERATION" />
 	</weaponList>
@@ -1479,7 +1479,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<weaponList missiles="10" count="4">
 		<weapon name="GB_ROTARY_AC"/>
 		<weapon name="FOCUS_1"/>
-		<weapon name="BOMB_1"/>
+		<weapon name="BOMB_1_ENEMY"/>
 		<weapon name="MISSILES_2_ENEMY"/>
 	</weaponList>
 	<droneList drones="0" count="0" />
@@ -1507,7 +1507,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<weaponList missiles="10" count="4">
 		<weapon name="GB_ROTARY_AC"/>
 		<weapon name="FOCUS_1"/>
-		<weapon name="BOMB_1"/>
+		<weapon name="BOMB_1_ENEMY"/>
 		<weapon name="MISSILES_3_ENEMY"/>
 	</weaponList>
 	<droneList drones="0" count="0" />
@@ -1535,7 +1535,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<weaponList missiles="10" count="4">
 		<weapon name="GB_ROTARY_AC"/>
 		<weapon name="FOCUS_CHAIN"/>
-		<weapon name="BOMB_1"/>
+		<weapon name="BOMB_1_ENEMY"/>
 		<weapon name="MISSILES_3_ENEMY"/>
 	</weaponList>
 	<droneList drones="0" count="0" />
@@ -1543,6 +1543,35 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<maxPower amount="27" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AUTO_LOADER_LOW_SHIELD"/>
+	<crewCount amount="1" max="1" class="human_soldier"/>
+</shipBlueprint>
+<shipBlueprint name="MT_BOSS_GB_R4_BALLISTIC_C_CHAOS" layout="mt_boss_gb_r4_ballistic" img="mt_boss_gb_r4_ballistic">
+	<class>Renegade Cruiser</class>
+	<minSector>5</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<clonebay power="3" max="3" room="12" start="true" />
+		<doors power="3" max="3" room="4" start="true" />
+		<engines power="3" max="3" room="15" start="true" />
+		<oxygen power="1" max="2" room="13" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="4" max="11" room="11" start="true" />
+		<weapons power="13" max="13" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4">
+		<weapon name="GB_ROTARY_AC"/>
+		<weapon name="GB_ROTARY_AC"/>
+		<weapon name="BOMB_CLUSTER"/>
+		<weapon name="GB_AC_3_ELITE_INCENDIARY"/>
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="25" />
+	<maxPower amount="27" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AUTO_LOADER_LOW_SHIELD"/>
+	<aug name="AUTO_COOLDOWN"/>
 	<crewCount amount="1" max="1" class="human_soldier"/>
 </shipBlueprint>
 </FTL>
