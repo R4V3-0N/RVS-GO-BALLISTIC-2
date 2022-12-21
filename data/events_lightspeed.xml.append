@@ -8,7 +8,7 @@
 
 
 <!-- 	•••••••••••••••••••••
-         DISPATCH EVENTS
+         DISPATCHER EVENTS
 		•••••••••••••••••••••
 -->
 <!-- Julk: some of this isn't fully functional anymore (outdated) should i add inferno-core stuff? -->
@@ -749,21 +749,21 @@
 
 
 <!-----------------------
-	Dispatch Delivery Generic Text Lists
+	Dispatcher Delivery Generic Text Lists
 ------------------------>
 
 <textList name="GB_TEXT_DISPATCH_DELIVERY">
-	<text>You contact the dispatch for another mission.</text>
+	<text>You contact the dispatcher for another mission.</text>
 	<text>The faint glow on your terminal alerts you of a mission update, looks like you'll be making another delivery.</text>
 	<text>You received a hail from your dispatcher, it seems they have lined you up for another job.</text>
-	<text>"Dispatch here. Got a mission for you."</text>
-	<text>"Hey! This is dispatch. Got another client that could use a delivery."</text>
-	<text>"Got a new delivery order... Transmitting co-ords. Dispatch over."</text>
+	<text>"Dispatcher here. Got a mission for you."</text>
+	<text>"Hey! This is dispatcher. Got another client that could use a delivery."</text>
+	<text>"Got a new delivery order... Transmitting co-ords. Dispatcher over."</text>
 	<!-- <text>"So, have you found a reason to fight yet? Buddy."</text> not an AC reference sshshh-->
 	<text>Better keep your inventory organised, looks like we've got another mission awaiting our approval.</text>
 	<text>"So, do you ever get bored doing the same thing over and over across the Multiverse, Renegade?... Anyway, allotted small talk time over, got another mission lined up for you."</text>
 	<text>Another mission just came in courtesy of our dispatcher, time to plot our course.</text>
-	<text>"Dispatch here... Y'know I haven't the faintest clue how that thing can carry so much cargo. 'splains why your jump drive is the worst out of the entire fleet... anyway. Anotherones up."</text>
+	<text>"Dispatcher here... Y'know I haven't the faintest clue how that thing can carry so much cargo. 'splains why your jump drive is the worst out of the entire fleet... anyway. Anotherones up."</text>
 	<text>"How much cargo are you carrying in that ship anyway? I swear more often than not you already have exactly what we need... guess that's why these heavy freighters are perfect for the job of which speaking about that another jobs available for you."</text>
 </textList>
 <textList name="GB_TEXT_DISPATCH_RESPONSE">
@@ -773,12 +773,12 @@
 	<text>Coordinates recieved, time to earn your pay.</text>
 	<text>You wonder if this time it'll be a Rebel ambush, a no-show, a pirate shakedown, a disgruntled client, or perhaps all of them at the same time. Regardless you recieved your coordinates. Time to make it there to find out.</text>
 	<text>A request for basic goods and resources has just came through. Time to plot a route to the marked beacon on your starmap.</text>
-	<text>"just make sure you get there before the Rebels, Dispatch out."</text>
-	<text>"Don't take too long, the sooner you get there the sooner we can move on. Dispatch out."</text>
+	<text>"just make sure you get there before the Rebels, Dispatcher out."</text>
+	<text>"Don't take too long, the sooner you get there the sooner we can move on. Dispatcher out."</text>
 	<text>"I feel rather confident that I am not getting my fair share out of these deliveries. However with how many times you run into Rebels, Pirates, Rebel Pirates, etcetera, etcetera... guess we'll just call this hazard pay."</text>
 	<text>"Alright, same as before with one exception. We are technically a military vessel and in this sector we would be in breach of protocol-S14-W which ambiguously states that all military vessels exceeding the maximum hull vibrancy allocated for this system are to be destroyed. I have not a single clue what this means but it's the law... apparently."</text>
 	<text>It took awhile but the coordinates are finally recieved. Shouldn't be too challenging to reach it in time.</text>
-	<text>"Alright, here are the co-ordinates. Good luck on this one. Dispatch out."</text>
+	<text>"Alright, here are the co-ordinates. Good luck on this one. Dispatcher out."</text>
 	<text>Unfortunately for this one you are given only a vague set of directions. However upon referencing the star map you think you have a good idea of where your target is and plan a route accordingly.</text>
 </textList>
 
@@ -1040,7 +1040,26 @@
 	</choice>
 </event>
 
-
+<!-- WIP
+	Orchid water delivery, orchid sector requirement. Unique sector?
+-->
+<event name="NAME">
+  <text>Your terminal lights up with an urgent message with your dispatcher waiting on the other end of the line. “Dispatcher here. Priority delivery this time ‘round. We’ve got word of a floral settlement that needs some heavy lifting. Water tanks, you're interested?”</text>
+  <choice hidden="true">
+    <text>Accept the mission.</text>
+    <event>
+      <quest event="GB_DISPATCH_QUEST_ORCHID_WATER"/>
+      <text>Water is vital across the universe to help settlements grow and prosper. This is even more true for the Orchids who depend on it for their health and well being both physically and spiritually. With the ongoing conflicts throughout the galaxy there has never been a higher demand for water than in these parts during these trying times. The Florals depend on the Federations Spacelift Command to aid them whenever their reserves run dry. Unfortunately, our ship doesn’t carry nearly enough water for the delivery so we must rendezvous with a contact to make a pick up and delivery. Your dispatcher has already gone ahead and plotted the location of the contact, as well as giving you a warning: “The floral settlement is depending on this delivery but they are not the only ones who are desperate. These are dangerous times so keep your head on a swivel. Dispatcher, out.”</text>
+      <choice hidden="true">
+        <text>Plot a course to the rendezvous site.</text>
+        <event load="GB_CALL_QUESTION"/>
+      </choice>
+    </event>
+  </choice>
+  <choice hidden="true">
+    <text>Decline the mission and do something else.</text>
+  </choice>
+</event>
 
 
 

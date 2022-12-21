@@ -239,12 +239,12 @@
 	<beaconType id="map_icon_store_federation" global="false">
 		<color r="215" g="255" b="200" a="1"/>
 	</beaconType>
-	<text>You expected to see a large supply depot and patrols in this area, but to your surprise you initially couldn't find anything worth of note at this beacon, and started to charge the FTL drive until you've picked up a signal coming from a derelict vessel in a nearby thick asteroid belt. Worth taking a look?</text>
+	<text>You expected to see a large supply depot and patrols in this area, but to your surprise you initially couldn't find anything worth of note at this beacon, and started to charge the FTL drive until you've picked up a signal coming from a derelict vessel in a nearby thick asteroid belt. Should be worth investigating.</text>
 	<choice>
-		<text>Head over into the asteroid belt and investigate.</text>
+		<text>Investigate the asteroid belt.</text> <!-- R4: Changed this to sound a little better  -->
 		<event>
 			<environment type = "asteroid"/>
-			<text>You are surprised to see a derelict outpost inside a crater of a dwarf planet within the asteroid field. As you approach for a landing they hail you on Federation channels. "Wasn't expecting a Federation vessel coming this way into our area of operations for another couple of months. We're short on munitions, and we're struggling to provide for the strikes this far deep in enemy territory with how infrequent supply runs have been. Perhaps we can come to an arrangement?"</text>
+			<text>You are surprised to see a derelict outpost inside a crater of a dwarf planet within the asteroid belt. As you approach for a landing they hail you on Federation channels. "Wasn't expecting a Federation vessel coming this way into our area of operations for another couple of months. We're short on munitions, and we're struggling to provide for the strikes this far deep in enemy territory with how infrequent supply runs have been. Perhaps we can come to an arrangement?"</text>
 			<choice>
 				<text>Hand over some ammunition to access a store.</text>
 				<event>
@@ -276,6 +276,14 @@
                             <store>GB_STORE_FED_NO_AMMO</store>
                         </event>
                     </choice>
+					<!-- R4: not sure how to write it up to go for the no ammo store -->
+					<choice hidden="true" req="GB_PHONE" lvl="1" blue="true">
+						<text>(Expanded Cargo Bay) Deliver a spare shipment of resources to the outpost.</text> 
+						<event>
+							<text>Their expressions lighten with relief as you make a delivery of standard Federation supply shipment filled with various resources from uniforms, ammunition, to rations. With this they have everything they need to hold out and continue their penetration strikes deep in enemy territory. With their stocks replenished they grant you full access to their stores as well as a warm mug of replicator coffee.</text>
+							<store>GB_STORE_FED</store>
+						</event>
+					</choice>
                     <choice>
                         <text>We are not interested.</text>
                         <event>
@@ -284,10 +292,18 @@
                     </choice>
 				</event>
 			</choice>
+			<choice hidden="true" req="GB_PHONE" lvl="1" blue="true">
+				<text>(Expanded Cargo Bay) Deliver a spare shipment of resources to the outpost.</text> 
+				<event>
+					<text>Their expressions lighten with relief as you make a delivery of standard Federation supply shipment filled with various resources from uniforms, ammunition, to rations. With this they have everything they need to hold out and continue their penetration strikes deep in enemy territory. With their stocks replenished they grant you full access to their stores as well as a warm mug of replicator coffee.</text>
+					<store>GB_STORE_FED</store>
+				</event>
+			</choice>
 			<choice>
 				<text>If they're low on ammo than they are an easy target, attack!</text>
 				<event>
 					<text>As you begin to charge up your weapons, you detect a vessel coming in fast, must be one of the interdictors returning from their mission. You get ready for battle!</text>
+					<!--<text>Space is a very dangerous place when you do not have any ammunition, even more so if your arsenal depends on it completely. This outpost here is no exception to those risks and you are eager to exploit their weakness in a way a Renegade would - to the dismay of your crew.</text>-->
 					<ship load = "GB_FED_INTERDICTOR" hostile = "true"/>
 					<choice>
 						<text>Continue...</text>
@@ -329,7 +345,7 @@
 				<text>Shop.</text>
 				<event>
 					<text>The Separatist directs you over to their many wares.</text>
-					<store>STORE_BALLISTIC_STANDARD_COILGUN</store>
+					<store>STORE_BALLISTIC_STANDARD_COILGUN</store> <!-- change to a Separatist store someday with coilguns -->
 				</event>
 			</choice>
 		</event>
@@ -449,9 +465,8 @@
 <!-- store event storage check thing -->
 
 
-<!-- R4: ROBIN! Pay attention to this area please! --> 
 <event name="GB_STORE_LOAD_FED">
-	<store>GB_STORE_FED</store> <!-- R4: Robin, delete this comment as you make sure each store exists, Fed store! -->
+	<store>GB_STORE_FED</store>
 	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
 	<choice>
 		<text>Do something onboard the ship.</text>
@@ -463,7 +478,7 @@
 	</choice>
 </event>
 <event name="GB_STORE_LOAD_NOSYS" unused="true"> <!-- R4: unused currently -->
-	<store>GB_STORE_FED_NOSYS</store> <!-- R4: Robin, delete this comment as you make sure each store exists, This one ofers no systems -->
+	<store>GB_STORE_FED_NOSYS</store>
 	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
 	<choice>
 		<text>Do something onboard the ship.</text>
@@ -475,7 +490,7 @@
 	</choice>
 </event>
 <event name="GB_STORE_LOAD_NOCREW" unused="true"> 
-	<store>GB_STORE_FED_NOCREW</store> <!-- R4: Robin, delete this comment as you make sure each store exists, this one offers no crew -->
+	<store>GB_STORE_FED_NOCREW</store>
 	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
 	<choice>
 		<text>Do something onboard the ship.</text>
@@ -695,7 +710,6 @@
 			</choice>
 			<choice>
 				<text>Do nothing.</text>
-				<event />
 			</choice>
 		</event>
 	</choice>
