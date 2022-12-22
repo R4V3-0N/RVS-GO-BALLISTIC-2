@@ -1043,25 +1043,169 @@
 <!-- WIP
 	Orchid water delivery, orchid sector requirement. Unique sector?
 -->
-<event name="NAME">
-  <text>Your terminal lights up with an urgent message with your dispatcher waiting on the other end of the line. “Dispatcher here. Priority delivery this time ‘round. We’ve got word of a floral settlement that needs some heavy lifting. Water tanks, you're interested?”</text>
-  <choice hidden="true">
-    <text>Accept the mission.</text>
-    <event>
-      <quest event="GB_DISPATCH_QUEST_ORCHID_WATER"/>
-      <text>Water is vital across the universe to help settlements grow and prosper. This is even more true for the Orchids who depend on it for their health and well being both physically and spiritually. With the ongoing conflicts throughout the galaxy there has never been a higher demand for water than in these parts during these trying times. The Florals depend on the Federations Spacelift Command to aid them whenever their reserves run dry. Unfortunately, our ship doesn’t carry nearly enough water for the delivery so we must rendezvous with a contact to make a pick up and delivery. Your dispatcher has already gone ahead and plotted the location of the contact, as well as giving you a warning: “The floral settlement is depending on this delivery but they are not the only ones who are desperate. These are dangerous times so keep your head on a swivel. Dispatcher, out.”</text>
-      <choice hidden="true">
-        <text>Plot a course to the rendezvous site.</text>
-        <event load="GB_CALL_QUESTION"/>
-      </choice>
-    </event>
-  </choice>
-  <choice hidden="true">
-    <text>Decline the mission and do something else.</text>
-  </choice>
+<event name="GB_DISPATCH_ORCHID_WATER">
+	<text>Your terminal lights up with an urgent message with your dispatcher waiting on the other end of the line. “Dispatcher here. Priority delivery this time ‘round. We’ve got word of a floral settlement that needs some heavy lifting. Water tanks, you're interested?”</text>
+	<choice hidden="true">
+		<text>Accept the mission.</text>
+		<event>
+			<quest event="GB_DISPATCH_QUEST_ORCHID_WATER"/>
+			<text>Water is vital across the universe to help settlements grow and prosper. This is even more true for the Orchids who depend on it for their health and well being both physically and spiritually. With the ongoing conflicts throughout the galaxy there has never been a higher demand for water than in these parts during these trying times. The Florals depend on the Federations Spacelift Command to aid them whenever their reserves run dry. Unfortunately, our ship doesn’t carry nearly enough water for the delivery so we must rendezvous with a contact to make a pick up the shipment before you can deliver it to the settlement. Your dispatcher has already gone ahead and plotted the location of the contact, as well as giving you a warning: “The floral settlement is depending on this delivery but they are not the only ones who are desperate. These are dangerous times so keep your head on a swivel. Dispatcher, out.”</text>
+			<choice hidden="true">
+				<text>Plot a course to the rendezvous site.</text>
+				<event load="GB_CALL_QUESTION"/>
+			</choice>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Decline the mission and do something else.</text>
+	</choice>
+</event>
+
+<event name="GB_ORCHID_DESPERATE_PIRATES_WATER">
+	<preventQuest/>
+	<beaconType id="map_icon_none" global="false"> <!-- no map beacon-->
+		<color r="0" g="0" b="0" a="0"/>
+		<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+	</beaconType>
+	<text>The serenity of this beacon has been disrupted violently by an explosion off the port bow! It came from what was an unidentified ship, now made clear to be a pirate which fired a warning shot to catch your attention. The ship hails you and a feed flicks on of a dry and wilted Orchid crew onboard, “These droughts have been relentless and very harsh on our people. I... we are sorry, sir, but we have heard of your shipment and we’ll be taking it. Please, we don’t want to fight! We want to save our people!” As hard as it may be, you simply do not have enough water tanks to distribute between these desperate pirates and the settlement. Perhaps there could be a compromise but regardless it’ll be a difficult choice to make.</text>
+	<ship load="SHIP_PIRATE_ALL" hostile="false"/> <!-- R4: We should change to an orchid pirate specifically-->
+	
+	<choice hidden="true" req="water_delivered" lvl="1" max_group="0" blue="false">
+		<text>Explain that you have already delivered your shipment, you have no shipment for them to take.</text>
+		<event load="GB_WATER_PIRATE_SHIPMENT_DELIVERED"/>
+	</choice>
+	
+	<choice hidden="true" req="water_delivered" lvl="0" max_group="0" blue="false">
+		<text>Try and explain to them that the settlement is also in dire need of water, you can't make a detour.</text>
+		<event load="GB_WATER_PIRATE_CHOICE_1"/>
+	</choice>
+	
+	<choice hidden="true" req="water_delivered" lvl="0" max_group="0" blue="false">
+		<text>Promise that their people will get a delivery in due time, the federation won't forsaken this system.</text>
+		<event load="GB_WATER_PIRATE_CHOICE_2"/>
+	</choice>
+	
+	<choice hidden="true" req="water_delivered" lvl="0" max_group="0" blue="false">
+		<text>The settlement could go for another couple months if they ration their supply, divert course to the 'pirates' home system!</text>
+		<event load="GB_WATER_PIRATE_CHOICE_3"/>
+	</choice>
+	
+	<choice hidden="true"> <!-- R4: For those who want to play morally gray, will allow them to attack these poor sods regardless -->
+		<text>We do not negogiate with pirates, order a general alert: All crews to battle stations!</text>
+		<event>
+			<text>"No, please! Our planet is dying! Famines! Droughts! We don't have mu-" "you cut communications. We need to keep our heads focused. We've got a mission to complete and we won't let a few pirates get in our way. Weapons charging! 
+		</event>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
+
+<event name="GB_WATER_PIRATE_SHIPMENT_DELIVERED">
+	<text>You try to explain to them that you have already delivered your shipment and that there is no shipment they can take from you. Though they say nothing to you they begin speaking to each other in their orchid sign language. Moving slowly with their wilted and dry bodies in an almost heart wrenching display before they eventually recompose themselves and begin speaking to you once more. “We… I do not understand… What are we supposed to do now? Our people… our world is dying…”</text>
+	<choice hidden="true" req="ITEM_ID" lvl="0" max_group="0">
+		<text>Promise that the Federation will not forsaken their world. Support will come!</text>
+		<event load="GB_WATER_PIRATE_PROMISE_LIST"/>
+	</choice>
+	<choice hidden="true" req="ITEM_ID" lvl="1" max_group="0">
+		<text>(Federation Elite Crew) Promise that the Federation will not forsaken their world. Support will come!</text>
+		<event>
+			<text>Though they do not seem confident</text>
+			<weapon name="WEP_ITEM_ID" />
+			<autoReward level="MED">missiles</autoReward>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Promise that you will go out of your way to help their world.</text>
+		<event>
+			<text>It will most likely come out of our own pockets, but we can not ignore their pleas and abandon their world. The orchids seem tentatively thankful and transmit the coordinates to their system for you to deliver the shipment too once you have acquired the goods.</text>
+			<quest event="GB_WATER_PICKUP_PIRATE"/>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>We can't do anything here. Prepare to leave.</text>
+		<event load="GB_WATER_PIRATE_LEAVE_LIST"/>
+	</choice>
 </event>
 
 
+
+<eventList name="GB_WATER_PIRATE_PROMISE_LIST">
+	<event load="GB_WATER_PIRATE_FIGHT"/>
+	<event>
+		<text>You try to assure them that the Federation will not abandon their system but they are uncertain of the legitimacy of your claim or are otherwise unconfident in the Federation itself. Thankfully, however, they do not escalate the situation further and despite the impasse they eventually powered down their weapons and eventually jumped away.</text>
+		<instantEscape />		 <!-- R4: Is this what I use to make them jump away?-->
+	</event>
+	
+	<event>
+		<text>Communications begin to break down as the orchids erupt in fury “The Federation has already abandoned us! While the war rages on the Federation has turned a blind eye to this sector! Millions are dying and the Federation has done nothing to aid us!” Things escalate as another explosion goes off - and this time it was not a warning shot. All hands, battle stations!</text>
+		<ship hostile="true"/>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="COMBAT_CHECK"/>
+		</choice>
+	</event>
+	
+	<event>
+		<text>In spite of their initial scepticism, you were able to convince them that the Federation will come to their worlds and will do everything that they can to provide aid. Though they do not seem fully confident they are happy enough to let you go, and are even willing to part ways with one of their kernel launchers as a sign of appreciation and a return to their peaceful ways with hopes that some support will come soon.</text>
+		<weapon name="WEP_ITEM_ID" />
+		<autoReward level="LOW">missiles</autoReward>
+	</event>
+</eventList>
+
+<eventList name="GB_WATER_PIRATE_CHOICE_1_LIST">
+	<event>
+		<text>You try to explain that you have orders to follow and that attacking this ship will do nothing but reduce the effectiveness and frequency of whatever support the Federation will be able to extend to this sector. Though it doesn’t seem to make the orchids any more comfortable with their state they seem to understand and resign, leaving you to continue on your mission without further incident.</text>
+	</event>
+	<event load="GB_WATER_PIRATE_FIGHT"/>
+</eventList>
+
+<eventList name="GB_WATER_PIRATE_LEAVE_LIST">
+	<event>
+		<text>You attempt to escape further confrontation and begin charging your FTL drive.Though the Orchids seem deeply upset they seem defeated and do not make any attempts to pursue you and allow you to depart without further escalation.</text>
+	</event>
+	<event>
+		<text>You attempt to escape further confrontation and begin charging your FTL drive.Though the Orchids seem deeply upset they seem defeated and do not make any attempts to pursue you and allow you to depart without further escalation.</text>
+	</event>
+	<event>
+		<text>The Orchids do not seem to wish to allow you to escape. Rather it is to hold your ship hostage or in protest of your departure they have fired another shot and this time it wasn’t a warning shot.	All hands, battle stations!</text>
+		<ship hostile="true"/>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="COMBAT_CHECK"/>
+		</choice>		
+	</event>
+</eventList>
+
+<event name="GB_WATER_PIRATE_CHOICE_2">
+  <text>You try to assure them that the Federation will not abandon their system and that help will be on their way but they are uncertain of the legitimacy of your claim or are otherwise not confident in the Federation itself. They stare aimlessly at the video display of you before hunching over the terminal and speaking with a soft and pained tone. “Where has the Federation been? It has been many months since a single ship had landed on our worlds… We were told that when we joined the Federation that they were here to offer us help and protection… where are they now?”</text>
+  <choice hidden="true">
+    <text>Federation ships has been protecting these worlds!</text>
+    <event>
+		<text>"They do and that is fair... but we need help here too! We need help!".... they sigh and lay over the furled over the console to test.</text>
+	</event>
+  </choice>
+  <choice hidden="true" blue="false" req="ITEM_ID" lvl="0" max_group="0">
+    <text>Federation ships will be coming to give aid to these worlds!</text>
+    <event load="GB_WATER_PIRATE_PROMISE_LIST"/>
+  </choice>
+  <choice hidden="true" req="ITEM_ID" lvl="1" max_group="0">
+    <text>(Federation Elite Crew) Promise them the Federation will come to these worlds..</text>
+    <event>
+      <text>With an Orchid Chieftain lecturing them about the orders, priorities, and importance of our mission, but, in due time the worlds will grow and flourish. The orchids seem to have calmed down and listen to every word the Chieftain has said, taking it to heart. By the end of it they are happy and confident that things will improve soon enough. The Orchids' demeanour seemed to have softened and they ended transmission. Allowing you to pass without further incident, they even passed a scarce amount of resources over before departing.</text>
+      <autoReward level="LOW">missiles</autoReward>
+    </event>
+  </choice>
+</event>
+
+<event name="GB_WATER_PIRATE_FIGHT">
+	<text>The Orchids do not seem to wish to allow you to escape. Rather it is to hold your ship hostage or in protest of your departure they have fired another shot and this time it wasn’t a warning shot.	All hands, battle stations!</text>
+	<ship hostile="true"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>		
+</event>
 
 
 <!--    ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
