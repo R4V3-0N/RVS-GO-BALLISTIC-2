@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--<mod:findName type = "event" name = "STORAGE_CHECK_REAL">
-	<mod-append:choice req = "GB_CANNONS_AMMOSELECT" blue = "false">
+<!--<mod:findName type="event" name="STORAGE_CHECK_REAL">
+	<mod-append:choice req="GB_CANNONS_AMMOSELECT" blue="false">
 		<text>(Autocannon) ammo</text>
 		<event load="STORAGE_CHECK_GB_AMMO"/>
 	</mod-append:choice>
@@ -9,19 +9,19 @@
 <!--old toggle events?
 <event name="STORAGE_CHECK_GB_AMMO" unused="true">
 	<text>which autocannon do you want to config</text>
-	<choice req="GB_AC_1_LIST" blue = "false" hidden="true">
+	<choice req="GB_AC_1_LIST" blue="false" hidden="true">
 		<text>AC1</text>
 		<event load="STORAGE_CHECK_GB_AMMO_AC1"/>
 	</choice>
-	<choice req="GB_AC_2_LIST" blue = "false" hidden="true">
+	<choice req="GB_AC_2_LIST" blue="false" hidden="true">
 		<text>AC2</text>
 		<event load="STORAGE_CHECK_GB_AMMO_AC2"/>
 	</choice>
-	<choice req="GB_AC_3_LIST" blue = "false" hidden="true">
+	<choice req="GB_AC_3_LIST" blue="false" hidden="true">
 		<text>AC3</text>
 		<event load="STORAGE_CHECK_GB_AMMO_AC3"/>
 	</choice>
-	<choice req="GB_AC_4_LIST" blue = "false" hidden="true">
+	<choice req="GB_AC_4_LIST" blue="false" hidden="true">
 		<text>AC4</text>
 		<event load="STORAGE_CHECK_GB_AMMO_AC4"/>
 	</choice>
@@ -33,27 +33,27 @@
 
 <event name="STORAGE_CHECK_GB_AMMO_AC1">
 	<text>choose gun you want to change</text>
-	<choice req="GB_AC_1" blue = "false">
+	<choice req="GB_AC_1" blue="false">
 		<text>AC1 [Standard ammo in use].</text>
 		<event load="STORAGE_CHECK_GB_AMMO_AC1_NORMAL"/>
 	</choice>
-	<choice req="GB_AC_1_HE" blue = "false">
+	<choice req="GB_AC_1_HE" blue="false">
 		<text>AC1 [High Explosive ammo in use].</text>
 		<event load="STORAGE_CHECK_GB_AMMO_AC1_HE"/>
 	</choice>
-	<choice req="GB_AC_1_CASELESS" blue = "false">
+	<choice req="GB_AC_1_CASELESS" blue="false">
 		<text>AC1 [Caseless ammo in use].</text>
 		<event load="STORAGE_CHECK_GB_AMMO_AC1_CASELESS"/>
 	</choice>
-	<choice req="GB_AC_1_FLECHETTE" blue = "false">
+	<choice req="GB_AC_1_FLECHETTE" blue="false">
 		<text>AC1 [Flechette ammo in use].</text>
 		<event load="STORAGE_CHECK_GB_AMMO_AC1_FLECHETTE"/>
 	</choice>
-	<choice req="GB_AC_1_INCENDIARY" blue = "false">
+	<choice req="GB_AC_1_INCENDIARY" blue="false">
 		<text>AC1 [Incendiary ammo in use].</text>
 		<event load="STORAGE_CHECK_GB_AMMO_AC1_INCENDIARY"/>
 	</choice>
-	<choice req="GB_AC_1_HV" blue = "false">
+	<choice req="GB_AC_1_HV" blue="false">
 		<text>AC1 [High Velocity ammo in use].</text>
 		<event load="STORAGE_CHECK_GB_AMMO_AC1_HV"/>
 	</choice>
@@ -65,7 +65,7 @@
 
 
 <!--Autocannon Ammo Types -->
-<mod:findName type = "event" name = "COMBAT_CHECK_TOGGLE">
+<mod:findName type="event" name="COMBAT_CHECK_TOGGLE">
 
 	<!--TROOPER DRONE-->
 	<mod-append:choice req="RVS_TROOPERTOG_DEFEND" blue="false">
@@ -95,7 +95,7 @@
 		<event load="COMBAT_CHECK_GB_DEFENSE_AC"/>
 	</mod-append:choice>
 	<!--AUTOCANNON AMMO TOGGLE-->
-	<mod-append:choice req = "GB_AC_1" blue = "false"> <!--Autocannon MK I Ammo Types -->
+	<mod-append:choice req="GB_AC_1" blue="false"> <!--Autocannon MK I Ammo Types -->
 		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Standard, 1 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
@@ -103,7 +103,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="1"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_1_CASELESS" blue = "false">
+	<mod-append:choice req="GB_AC_1_CASELESS" blue="false">
 		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Caseless, 1 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
@@ -111,7 +111,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="2"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_1_HV" blue = "false">
+	<mod-append:choice req="GB_AC_1_HV" blue="false">
 		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: High Velocity, 1 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
@@ -119,7 +119,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="3"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_1_FREE" blue = "false">
+	<mod-append:choice req="GB_AC_1_FREE" blue="false">
 		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Recycler, 1 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
@@ -127,7 +127,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="4"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_1_HE" blue = "false">
+	<mod-append:choice req="GB_AC_1_HE" blue="false">
 		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Concussive, 1 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
@@ -135,7 +135,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="5"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_1_EMP" blue = "false">
+	<mod-append:choice req="GB_AC_1_EMP" blue="false">
 		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: EMP, 1 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
@@ -143,7 +143,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="6"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_1_HEAT" blue = "false">
+	<mod-append:choice req="GB_AC_1_HEAT" blue="false">
 		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Particle, 1 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
@@ -151,7 +151,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="7"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_1_INCENDIARY" blue = "false">
+	<mod-append:choice req="GB_AC_1_INCENDIARY" blue="false">
 		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Incendiary, 1 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
@@ -159,7 +159,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="8"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_1_FLECHETTE" blue = "false">
+	<mod-append:choice req="GB_AC_1_FLECHETTE" blue="false">
 		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Flechette, 1 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
@@ -167,7 +167,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="9"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_1_RAD" blue = "false">
+	<mod-append:choice req="GB_AC_1_RAD" blue="false">
 		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Rad, 1 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
@@ -175,10 +175,106 @@
 			<variable name="gb_ammo_toggle" op="set" val="10"/>
 		</event>
 	</mod-append:choice>
-
+	<mod-append:choice req="GB_AC_1_TIB" blue="false">
+		<text>(Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Tib, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
+			<remove name="GB_AC_1_TIB"/>
+			<variable name="gb_ammo_toggle" op="set" val="20"/>
+		</event>
+	</mod-append:choice>
+	<!--ELITE AUTOCANNON AMMO TOGGLE-->
+	<mod-append:choice req="GB_AC_1_ELITE" blue="false"> <!--Autocannon MK I Ammo Types -->
+		<text>(Elite Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Standard, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1_ELITE</loadEvent>
+			<remove name="GB_AC_1_ELITE"/>
+			<variable name="gb_ammo_toggle" op="set" val="1"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_1_ELITE_CASELESS" blue="false">
+		<text>(Elite Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Caseless, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1_ELITE</loadEvent>
+			<remove name="GB_AC_1_ELITE_CASELESS"/>
+			<variable name="gb_ammo_toggle" op="set" val="2"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_1_ELITE_HV" blue="false">
+		<text>(Elite Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: High Velocity, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1_ELITE</loadEvent>
+			<remove name="GB_AC_1_ELITE_HV"/>
+			<variable name="gb_ammo_toggle" op="set" val="3"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_1_ELITE_FREE" blue="false">
+		<text>(Elite Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Recycler, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1_ELITE</loadEvent>
+			<remove name="GB_AC_1_ELITE_FREE"/>
+			<variable name="gb_ammo_toggle" op="set" val="4"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_1_ELITE_HE" blue="false">
+		<text>(Elite Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Concussive, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1_ELITE</loadEvent>
+			<remove name="GB_AC_1_ELITE_HE"/>
+			<variable name="gb_ammo_toggle" op="set" val="5"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_1_ELITE_EMP" blue="false">
+		<text>(Elite Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: EMP, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1_ELITE</loadEvent>
+			<remove name="GB_AC_1_ELITE_EMP"/>
+			<variable name="gb_ammo_toggle" op="set" val="6"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_1_ELITE_HEAT" blue="false">
+		<text>(Elite Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Particle, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1_ELITE</loadEvent>
+			<remove name="GB_AC_1_ELITE_HEAT"/>
+			<variable name="gb_ammo_toggle" op="set" val="7"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_1_ELITE_INCENDIARY" blue="false">
+		<text>(Elite Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Incendiary, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1_ELITE</loadEvent>
+			<remove name="GB_AC_1_ELITE_INCENDIARY"/>
+			<variable name="gb_ammo_toggle" op="set" val="8"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_1_ELITE_FLECHETTE" blue="false">
+		<text>(Elite Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Flechette, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1_ELITE</loadEvent>
+			<remove name="GB_AC_1_ELITE_FLECHETTE"/>
+			<variable name="gb_ammo_toggle" op="set" val="9"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_1_ELITE_RAD" blue="false">
+		<text>(Elite Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Rad, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1_ELITE</loadEvent>
+			<remove name="GB_AC_1_ELITE_RAD"/>
+			<variable name="gb_ammo_toggle" op="set" val="10"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_1_ELITE_TIB" blue="false">
+		<text>(Elite Autocannon Mark I) Change the ammo loaded for your Autocannon [Current mode: Tib, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_1_ELITE</loadEvent>
+			<remove name="GB_AC_1_ELITE_TIB"/>
+			<variable name="gb_ammo_toggle" op="set" val="20"/>
+		</event>
+	</mod-append:choice>
 
 	<!--Autocannon MK II Ammo Types -->
-	<mod-append:choice req = "GB_AC_2" blue = "false"> <!--Autocannon MK II Ammo Types -->
+	<mod-append:choice req="GB_AC_2" blue="false"> <!--Autocannon MK II Ammo Types -->
 		<text>(Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Standard, 2 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
@@ -186,7 +282,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="1"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_2_CASELESS" blue = "false">
+	<mod-append:choice req="GB_AC_2_CASELESS" blue="false">
 		<text>(Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Caseless, 2 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
@@ -194,7 +290,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="2"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_2_HV" blue = "false">
+	<mod-append:choice req="GB_AC_2_HV" blue="false">
 		<text>(Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: High Velocity, 2 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
@@ -202,7 +298,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="3"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_2_FREE" blue = "false">
+	<mod-append:choice req="GB_AC_2_FREE" blue="false">
 		<text>(Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Recycler, 2 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
@@ -210,7 +306,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="4"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_2_HE" blue = "false">
+	<mod-append:choice req="GB_AC_2_HE" blue="false">
 		<text>(Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Concussive, 2 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
@@ -218,7 +314,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="5"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_2_EMP" blue = "false">
+	<mod-append:choice req="GB_AC_2_EMP" blue="false">
 		<text>(Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: EMP, 2 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
@@ -226,7 +322,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="6"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_2_HEAT" blue = "false">
+	<mod-append:choice req="GB_AC_2_HEAT" blue="false">
 		<text>(Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Particle, 2 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
@@ -234,7 +330,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="7"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_2_INCENDIARY" blue = "false">
+	<mod-append:choice req="GB_AC_2_INCENDIARY" blue="false">
 		<text>(Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Incendiary, 2 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
@@ -242,7 +338,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="8"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_2_FLECHETTE" blue = "false">
+	<mod-append:choice req="GB_AC_2_FLECHETTE" blue="false">
 		<text>(Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Flechette, 2 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
@@ -250,7 +346,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="9"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_2_RAD" blue = "false">
+	<mod-append:choice req="GB_AC_2_RAD" blue="false">
 		<text>(Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Rad, 2 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
@@ -258,10 +354,107 @@
 			<variable name="gb_ammo_toggle" op="set" val="10"/>
 		</event>
 	</mod-append:choice>
-
+	<mod-append:choice req="GB_AC_2_TIB" blue="false">
+		<text>(Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Tib, 2 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
+			<remove name="GB_AC_2_TIB"/>
+			<variable name="gb_ammo_toggle" op="set" val="20"/>
+		</event>
+	</mod-append:choice>
+	
+	<!--Elite Autocannon MK II Ammo Types-->
+	<mod-append:choice req="GB_AC_2_ELITE" blue="false"> <!--Autocannon MK II Ammo Types -->
+		<text>(Elite Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Standard, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2_ELITE</loadEvent>
+			<remove name="GB_AC_2_ELITE"/>
+			<variable name="gb_ammo_toggle" op="set" val="1"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_2_ELITE_CASELESS" blue="false">
+		<text>(Elite Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Caseless, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2_ELITE</loadEvent>
+			<remove name="GB_AC_2_ELITE_CASELESS"/>
+			<variable name="gb_ammo_toggle" op="set" val="2"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_2_ELITE_HV" blue="false">
+		<text>(Elite Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: High Velocity, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2_ELITE</loadEvent>
+			<remove name="GB_AC_2_ELITE_HV"/>
+			<variable name="gb_ammo_toggle" op="set" val="3"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_2_ELITE_FREE" blue="false">
+		<text>(Elite Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Recycler, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2_ELITE</loadEvent>
+			<remove name="GB_AC_2_ELITE_FREE"/>
+			<variable name="gb_ammo_toggle" op="set" val="4"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_2_ELITE_HE" blue="false">
+		<text>(Elite Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Concussive, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2_ELITE</loadEvent>
+			<remove name="GB_AC_2_ELITE_HE"/>
+			<variable name="gb_ammo_toggle" op="set" val="5"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_2_ELITE_EMP" blue="false">
+		<text>(Elite Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: EMP, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2_ELITE</loadEvent>
+			<remove name="GB_AC_2_ELITE_EMP"/>
+			<variable name="gb_ammo_toggle" op="set" val="6"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_2_ELITE_HEAT" blue="false">
+		<text>(Elite Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Particle, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2_ELITE</loadEvent>
+			<remove name="GB_AC_2_ELITE_HEAT"/>
+			<variable name="gb_ammo_toggle" op="set" val="7"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_2_ELITE_INCENDIARY" blue="false">
+		<text>(Elite Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Incendiary, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2_ELITE</loadEvent>
+			<remove name="GB_AC_2_ELITE_INCENDIARY"/>
+			<variable name="gb_ammo_toggle" op="set" val="8"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_2_ELITE_FLECHETTE" blue="false">
+		<text>(Elite Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Flechette, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2_ELITE</loadEvent>
+			<remove name="GB_AC_2_ELITE_FLECHETTE"/>
+			<variable name="gb_ammo_toggle" op="set" val="9"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_2_ELITE_RAD" blue="false">
+		<text>(Elite Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Rad, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2_ELITE</loadEvent>
+			<remove name="GB_AC_2_ELITE_RAD"/>
+			<variable name="gb_ammo_toggle" op="set" val="10"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_2_ELITE_TIB" blue="false">
+		<text>(Elite Autocannon Mark II) Change the ammo loaded for your Autocannon [Current mode: Tib, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_2_ELITE</loadEvent>
+			<remove name="GB_AC_2_ELITE_TIB"/>
+			<variable name="gb_ammo_toggle" op="set" val="20"/>
+		</event>
+	</mod-append:choice>
 
 	<!--Autocannon MK III Ammo Types -->
-	<mod-append:choice req = "GB_AC_3" blue = "false"> <!--Autocannon MK III Ammo Types -->
+	<mod-append:choice req="GB_AC_3" blue="false"> <!--Autocannon MK III Ammo Types -->
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Standard, 3 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
@@ -269,7 +462,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="1"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_3_CASELESS" blue = "false">
+	<mod-append:choice req="GB_AC_3_CASELESS" blue="false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Caseless, 3 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
@@ -277,7 +470,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="2"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_3_HV" blue = "false">
+	<mod-append:choice req="GB_AC_3_HV" blue="false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: High Velocity, 3 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
@@ -285,7 +478,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="3"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_3_FREE" blue = "false">
+	<mod-append:choice req="GB_AC_3_FREE" blue="false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Recycler, 3 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
@@ -293,7 +486,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="4"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_3_HE" blue = "false">
+	<mod-append:choice req="GB_AC_3_HE" blue="false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Concussive, 3 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
@@ -301,7 +494,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="5"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_3_EMP" blue = "false">
+	<mod-append:choice req="GB_AC_3_EMP" blue="false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: EMP, 3 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
@@ -309,7 +502,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="6"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_3_HEAT" blue = "false">
+	<mod-append:choice req="GB_AC_3_HEAT" blue="false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Particle, 3 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
@@ -317,7 +510,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="7"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_3_INCENDIARY" blue = "false">
+	<mod-append:choice req="GB_AC_3_INCENDIARY" blue="false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Incendiary, 3 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
@@ -325,7 +518,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="8"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_3_FLECHETTE" blue = "false">
+	<mod-append:choice req="GB_AC_3_FLECHETTE" blue="false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Flechette, 3 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
@@ -333,7 +526,7 @@
 			<variable name="gb_ammo_toggle" op="set" val="9"/>
 		</event>
 	</mod-append:choice>
-	<mod-append:choice req = "GB_AC_3_RAD" blue = "false">
+	<mod-append:choice req="GB_AC_3_RAD" blue="false">
 		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Rad, 3 power]</text>
 		<event>
 			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
@@ -341,13 +534,111 @@
 			<variable name="gb_ammo_toggle" op="set" val="10"/>
 		</event>
 	</mod-append:choice>
-
+	<mod-append:choice req="GB_AC_3_TIB" blue="false">
+		<text>(Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Tib, 3 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
+			<remove name="GB_AC_3_TIB"/>
+			<variable name="gb_ammo_toggle" op="set" val="20"/>
+		</event>
+	</mod-append:choice>
+	
+	<!--Autocannon MK III Ammo Types -->
+	<mod-append:choice req="GB_AC_3_ELITE" blue="false"> <!--Autocannon MK II Ammo Types -->
+		<text>(Elite Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Standard, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3_ELITE</loadEvent>
+			<remove name="GB_AC_3_ELITE"/>
+			<variable name="gb_ammo_toggle" op="set" val="1"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_3_ELITE_CASELESS" blue="false">
+		<text>(Elite Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Caseless, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3_ELITE</loadEvent>
+			<remove name="GB_AC_3_ELITE_CASELESS"/>
+			<variable name="gb_ammo_toggle" op="set" val="2"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_3_ELITE_HV" blue="false">
+		<text>(Elite Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: High Velocity, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3_ELITE</loadEvent>
+			<remove name="GB_AC_3_ELITE_HV"/>
+			<variable name="gb_ammo_toggle" op="set" val="3"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_3_ELITE_FREE" blue="false">
+		<text>(Elite Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Recycler, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3_ELITE</loadEvent>
+			<remove name="GB_AC_3_ELITE_FREE"/>
+			<variable name="gb_ammo_toggle" op="set" val="4"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_3_ELITE_HE" blue="false">
+		<text>(Elite Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Concussive, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3_ELITE</loadEvent>
+			<remove name="GB_AC_3_ELITE_HE"/>
+			<variable name="gb_ammo_toggle" op="set" val="5"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_3_ELITE_EMP" blue="false">
+		<text>(Elite Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: EMP, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3_ELITE</loadEvent>
+			<remove name="GB_AC_3_ELITE_EMP"/>
+			<variable name="gb_ammo_toggle" op="set" val="6"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_3_ELITE_HEAT" blue="false">
+		<text>(Elite Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Particle, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3_ELITE</loadEvent>
+			<remove name="GB_AC_3_ELITE_HEAT"/>
+			<variable name="gb_ammo_toggle" op="set" val="7"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_3_ELITE_INCENDIARY" blue="false">
+		<text>(Elite Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Incendiary, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3_ELITE</loadEvent>
+			<remove name="GB_AC_3_ELITE_INCENDIARY"/>
+			<variable name="gb_ammo_toggle" op="set" val="8"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_3_ELITE_FLECHETTE" blue="false">
+		<text>(Elite Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Flechette, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3_ELITE</loadEvent>
+			<remove name="GB_AC_3_ELITE_FLECHETTE"/>
+			<variable name="gb_ammo_toggle" op="set" val="9"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_3_ELITE_RAD" blue="false">
+		<text>(Elite Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Rad, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3_ELITE</loadEvent>
+			<remove name="GB_AC_3_ELITE_RAD"/>
+			<variable name="gb_ammo_toggle" op="set" val="10"/>
+		</event>
+	</mod-append:choice>
+	<mod-append:choice req="GB_AC_3_ELITE_TIB" blue="false">
+		<text>(Elite Autocannon Mark III) Change the ammo loaded for your Autocannon [Current mode: Tib, 1 power]</text>
+		<event>
+			<loadEvent>COMBAT_CHECK_GB_AC_3_ELITE</loadEvent>
+			<remove name="GB_AC_3_ELITE_TIB"/>
+			<variable name="gb_ammo_toggle" op="set" val="20"/>
+		</event>
+	</mod-append:choice>
 </mod:findName>
 <!--
 - selecting the thing to toggle ammo like the option in toggle combat check will remove the gun and set a var
--  load 1 menu  (3 total menus) that then shows the different options, replacing the current ammo type with just saying "current ammo [effects]"
--  having the return give the gun you previously had (depending on the previous var)
-- the ammo options list the effects and direct to the ammo loading event for that event listing the stats and giving gun preview to look at exact stats
+	- load 1 menu  regardless of ammo type (1 per AC type, not 1 per gun you toggle from) that then shows the different options, replacing the current ammo type with just saying "current ammo [ammotype]"
+	- ammo options can be conditionally hidden and be unlocked with a req, if not met a message can be displayed
+	- not locked options display gun right away, the text just names the ammo type using glovally set texts
+	- the return gives back the gun you previously had (depending on the previously set var)
 -->
 
 <event name="GB_COMBAT_CHECK_TROOPERTOG_BATTLE">
@@ -421,115 +712,217 @@
 	<event name="COMBAT_CHECK_GB_AC_1">
 		<text>Select an ammo type to load into your Autocannon MK I</text>
 		<choice req="gb_ammo_toggle" lvl="1" max_lvl="1" blue="false" hidden="true"> <!-- Standard Ammo Type -->
-			<text>Current: Standard ammo. [default]</text>
+			<text id="text_GB_AMMO_CURRENT_1"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="2" max_lvl="2" blue="false" hidden="true"> <!-- Caseless Ammo Type -->
-			<text>Current: Caseless ammo. [-2s cd, 20% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_2"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="3" max_lvl="3" blue="false" hidden="true"> <!-- High Velocity Ammo Type -->
-			<text>Current: High Velocity ammo. [+10% breach, faster, 17% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_3"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="4" max_lvl="4" blue="false" hidden="true"> <!-- Recycler Ammo Type -->
-			<text>Current: Recycler ammo. [no status, 7% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_4"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="5" max_lvl="5" blue="false" hidden="true"> <!-- Concussive Ammo Type -->
-			<text>Current: Concussive ammo. [stuns, debuffs, hullbust, 17% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_5"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="6" max_lvl="6" blue="false" hidden="true"> <!-- EMP Ammo Type -->
-			<text>Current: EMP ammo. [no sys dmg, 1 ion dmg on room hit, 23% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_6"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="7" max_lvl="7" blue="false" hidden="true"> <!-- Particle Ammo Type -->
-			<text>Current: Particle ammo. [no hull dmg, 2 sys dmg, 15 crew dmg, 10% fire chance, 18% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_7"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="8" max_lvl="8" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
-			<text>Current: Incendiary ammo. [40% fire, 17% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_8"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="9" max_lvl="9" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Current: Flechette ammo. [+10% breach, only DoT crew dmg(+1 frag projectile), 0 sys dmg, 18% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_9"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="10" max_lvl="10" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
-			<text>Current: Radiation ammo. [+20% breach, rad effects, +15 crew dmg, 22% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_10"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_CURRENT_AMMO1" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Standard Ammo Type -->
-			<text>Standard ammo. [default]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_STANDARD</loadEvent>
+		<choice req="gb_ammo_toggle" lvl="20" max_lvl="20" blue="false" hidden="true"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_CURRENT_20"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_CURRENT_AMMO1" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Standard Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_1"/>
+			<event name="GET_AC_1_STANDARD">
+				<weapon name="GB_AC_1"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO2" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Caseless Ammo Type -->
-			<text>Caseless ammo. [-2s cd, 20% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_CASELESS</loadEvent>
+		<choice req="GB_CURRENT_AMMO2" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Caseless Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_2"/>
+			<event name="GET_AC_1_CASELESS">
+				<weapon name="GB_AC_1_CASELESS"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO3" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- High Velocity Ammo Type -->
-			<text>High Velocity ammo. [+10% breach, faster, 17% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_HV</loadEvent>
+		<choice req="GB_CURRENT_AMMO3" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- High Velocity Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_3"/>
+			<event name="GET_AC_1_HV">
+				<weapon name="GB_AC_1_HV"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 		<choice req="GB_AMMO_4_NO" blue="false" hidden="true"> <!-- Recycler Ammo Type -->
-			<text>To load recycler ammo a recycler or ammo replicator is needed.</text>
+			<text id="text_GB_AMMO_LOAD_4_NO"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_AMMO_4_YES"  blue="false" hidden="true"> <!-- Recycler Ammo Type -->
-			<text>Recycler ammo. [no status, 7% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_FREE</loadEvent>
+		<choice req="GB_AMMO_4_YES"  blue="false" hidden="false"> <!-- Recycler Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_4"/>
+			<event name="GET_AC_1_FREE">
+				<weapon name="GB_AC_1_FREE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO5" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Concussive Ammo Type -->
-			<text>Concussive ammo. [stuns, debuffs crew, 17% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_HE</loadEvent>
+		<choice req="GB_CURRENT_AMMO5" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Concussive Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_5"/>
+			<event name="GET_AC_1_HE">
+				<weapon name="GB_AC_1_HE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO6" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- EMP Ammo Type -->
-			<text>EMP ammo. [no sys dmg, 1 ion dmg on room hit, 23% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_EMP</loadEvent>
+		<choice req="GB_CURRENT_AMMO6" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- EMP Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_6"/>
+			<event name="GET_AC_1_EMP">
+				<weapon name="GB_AC_1_EMP"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO7" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Particle Ammo Type -->
-			<text>Particle ammo. [no hull dmg, 2 sys dmg, 15 crew dmg, 10% fire chance, 18% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_HEAT</loadEvent>
+		<choice req="GB_CURRENT_AMMO7" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Particle Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_7"/>
+			<event name="GET_AC_1_HEAT">
+				<weapon name="GB_AC_1_HEAT"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 		<choice req="GB_AMMO_8_NO" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
-			<text>To load incendiary ammo a lost sun crew is needed.</text>
+			<text id="text_GB_AMMO_LOAD_8_NO"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_AMMO_8_YES"  blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
-			<text>Incendiary ammo. [40% fire, 17% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_INCENDIARY</loadEvent>
+		<choice req="GB_AMMO_8_YES"  blue="false" hidden="false"> <!-- Incendiary Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_8"/>
+			<event name="GET_AC_1_INCENDIARY">
+				<weapon name="GB_AC_1_INCENDIARY"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Flechette ammo. [+10% breach, only DoT crew dmg(+1 frag projectile), 0 sys dmg, 18% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_FLECHETTE</loadEvent>
+		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Flechette Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_9"/>
+			<event name="GET_AC_1_FLECHETTE">
+				<weapon name="GB_AC_1_FLECHETTE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 		<choice req="GB_AMMO_10_NO" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
-			<text>To load radiation ammo a slug clansman is needed.</text>
+			<text id="text_GB_AMMO_LOAD_10_NO"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_AMMO_10_YES"  blue="false" hidden="true"> <!-- Radiation Ammo Type -->
-			<text>Radiation ammo. [+20% breach, rad effects, +15 crew dmg, 22% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_1_LOAD_RAD</loadEvent>
+		<choice req="GB_AMMO_10_YES"  blue="false" hidden="false"> <!-- Radiation Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_10"/>
+			<event name="GET_AC_1_RAD">
+				<weapon name="GB_AC_1_RAD"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
+		</choice>
+		<choice req="GB_AMMO_20_NO" blue="false" hidden="true"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_20_NO"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_AMMO_20_YES"  blue="false" hidden="false"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_20"/>
+			<event name="GET_AC_1_TIB">
+				<weapon name="GB_AC_1_TIB"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 
@@ -547,164 +940,16 @@
 					<event load="GET_AC_1_INCENDIARY" req="GB_CURRENT_AMMO8"/>
 					<event load="GET_AC_1_FLECHETTE" req="GB_CURRENT_AMMO9"/>
 					<event load="GET_AC_1_RAD" req="GB_CURRENT_AMMO10"/>
+					<event load="GET_AC_1_TIB" req="GB_CURRENT_AMMO20"/>
 				</loadEventList>
 			</event>
 		</choice>
 	</event>
+</FTL>
 
-	<event name="COMBAT_CHECK_GB_AC_1_LOAD_STANDARD">
-		<text>Standard rounds: [6s cd, 1 hull dmg, 1 sys dmg, 15 crew dmg, 10% breach chance, 15% ammo consumption]
-			Load into the Autocannon MK I?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_1_STANDARD"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_1_LOAD_CASELESS">
-		<text>Caseless rounds: [4s cd, 1 hull dmg, 1 sys dmg, 15 crew dmg, 10% breach chance, 20% ammo consumption]
-			Load into the Autocannon MK I?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_1_CASELESS"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_1_LOAD_HV">
-		<text>High Velocity rounds: [6s cd, 1 hull dmg, 1 sys dmg, 15 crew dmg, 20% breach chance, +10% accuracy, +33% velocity, 17% ammo consumption]
-			Load into the Autocannon MK I?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_1_HV"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_1_LOAD_FREE">
-		<text>Recycler rounds: [6s cd, 1 hull dmg, 1 sys dmg, 15 crew dmg, 7% ammo consumption]
-			Load into the Autocannon MK I?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_1_FREE"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_1_LOAD_HE">
-		<text>Concussion rounds: [6s cd, 1 hull dmg, 1 sys dmg, 15 crew dmg, 4s stun, enemies lose power charge and take 90% more damage for 5s, 10% breach chance, 17% ammo consumption]
-			Load into the Autocannon MK I?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_1_HE"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_1_LOAD_EMP">
-		<text>EMP rounds: [6s cd, 1 hull dmg, 0 sys dmg, 15 crew dmg, 1 ion dmg on rooms, 10% breach chance, 23% ammo consumption]
-			Load into the Autocannon MK I?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_1_EMP"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_1_LOAD_HEAT">
-		<text>Particle rounds: [6s cd, 0 hull dmg, 2 sys dmg, 15 crew dmg, 10% fire chance, 18% ammo consumption]
-			Load into the Autocannon MK I?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_1_HEAT"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_1_LOAD_INCENDIARY">
-		<text>Incendiary rounds: [6s cd, 1 hull dmg, 1 sys dmg, 15 crew dmg, 40% fire chance, 17% ammo consumption]
-			Load into the Autocannon MK I?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_1_INCENDIARY"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_1_LOAD_FLECHETTE">
-		<text>Flechette rounds: [6s cd, 1 hull dmg, 0 sys dmg, 1 dps DoT(25s) crew dmg, 20% breach chance, 30 px radius, 1 frag projectile, 18% ammo consumption]
-			Load into the Autocannon MK I?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_1_FLECHETTE"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_1_LOAD_RAD">
-		<text>Rad rounds: [6s cd, 1 hull dmg, 1 sys dmg, 30 crew dmg, rad debuffs, 30% breach chance, 22% ammo consumption, illegal :)]
-			Load into the Autocannon MK I?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_1_RAD"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_1</loadEvent>
-			</event>
-		</choice>
-	</event>
-	
-	<event name="COMBAT_CHECK_GB_AC_1">
-		<text>Select an ammo type to load into your Autocannon MK I</text>
+<FTL><!--Elite Autocannon MK I Ammo Types -->
+	<event name="COMBAT_CHECK_GB_AC_1_ELITE">
+		<text>Select an ammo type to load into your Elite Autocannon MK I</text>
 		<choice req="gb_ammo_toggle" lvl="1" max_lvl="1" blue="false" hidden="true"> <!-- Standard Ammo Type -->
 			<text id="text_GB_AMMO_CURRENT_1"/>
 			<event load="OPTION_INVALID"/>
@@ -745,17 +990,51 @@
 			<text id="text_GB_AMMO_CURRENT_10"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
+		<choice req="gb_ammo_toggle" lvl="20" max_lvl="20" blue="false" hidden="true"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_CURRENT_20"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
 		<choice req="GB_CURRENT_AMMO1" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Standard Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_1"/>
-			<event load="GET_AC_1_STANDARD"/>
+			<event name="GET_AC_1_ELITE_STANDARD">
+				<weapon name="GB_AC_1_ELITE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO2" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Caseless Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_2"/>
-			<event load="GET_AC_1_CASELESS"/>
+			<event name="GET_AC_1_ELITE_CASELESS">
+				<weapon name="GB_AC_1_ELITE_CASELESS"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO3" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- High Velocity Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_3"/>
-			<event load="GET_AC_1_HV"/>
+			<event name="GET_AC_1_ELITE_HV">
+				<weapon name="GB_AC_1_ELITE_HV"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_AMMO_4_NO" blue="false" hidden="true"> <!-- Recycler Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_4_NO"/>
@@ -763,19 +1042,59 @@
 		</choice>
 		<choice req="GB_AMMO_4_YES"  blue="false" hidden="false"> <!-- Recycler Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_4"/>
-			<event load="GET_AC_1_FREE"/>
+			<event name="GET_AC_1_ELITE_FREE">
+				<weapon name="GB_AC_1_ELITE_FREE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO5" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Concussive Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_5"/>
-			<event load="GET_AC_1_HE"/>
+			<event name="GET_AC_1_ELITE_HE">
+				<weapon name="GB_AC_1_ELITE_HE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO6" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- EMP Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_6"/>
-			<event load="GET_AC_1_EMP"/>
+			<event name="GET_AC_1_ELITE_EMP">
+				<weapon name="GB_AC_1_ELITE_EMP"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO7" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Particle Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_7"/>
-			<event load="GET_AC_1_HEAT"/>
+			<event name="GET_AC_1_ELITE_HEAT">
+				<weapon name="GB_AC_1_ELITE_HEAT"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_AMMO_8_NO" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_8_NO"/>
@@ -783,11 +1102,31 @@
 		</choice>
 		<choice req="GB_AMMO_8_YES"  blue="false" hidden="false"> <!-- Incendiary Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_8"/>
-			<event load="GET_AC_1_INCENDIARY"/>
+			<event name="GET_AC_1_ELITE_INCENDIARY">
+				<weapon name="GB_AC_1_ELITE_INCENDIARY"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Flechette Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_9"/>
-			<event load="GET_AC_1_FLECHETTE"/>
+			<event name="GET_AC_1_ELITE_FLECHETTE">
+				<weapon name="GB_AC_1_ELITE_FLECHETTE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_AMMO_10_NO" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_10_NO"/>
@@ -795,253 +1134,274 @@
 		</choice>
 		<choice req="GB_AMMO_10_YES"  blue="false" hidden="false"> <!-- Radiation Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_10"/>
-			<event load="GET_AC_1_RAD"/>
+			<event name="GET_AC_1_ELITE_RAD">
+				<weapon name="GB_AC_1_ELITE_RAD"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
+		<!-- Tiberium Ammo Type
+		<choice req="GB_AMMO_20_NO" blue="false" hidden="true">
+			<text id="text_GB_AMMO_LOAD_20_NO"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_AMMO_20_YES"  blue="false" hidden="false">
+			<text id="text_GB_AMMO_LOAD_20"/>
+			<event name="GET_AC_1_ELITE_TIB">
+				<weapon name="GB_AC_1_ELITE_TIB"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
+		</choice>-->
 
 		<choice>
 			<text>Do something else instead.</text>
 			<event>
 				<loadEventList seeded="false" generate="false">
-					<event load="GET_AC_1_STANDARD" req="GB_CURRENT_AMMO1"/>
-					<event load="GET_AC_1_CASELESS" req="GB_CURRENT_AMMO2"/>
-					<event load="GET_AC_1_HV" req="GB_CURRENT_AMMO3"/>
-					<event load="GET_AC_1_FREE" req="GB_CURRENT_AMMO4"/>
-					<event load="GET_AC_1_HE" req="GB_CURRENT_AMMO5"/>
-					<event load="GET_AC_1_EMP" req="GB_CURRENT_AMMO6"/>
-					<event load="GET_AC_1_HEAT" req="GB_CURRENT_AMMO7"/>
-					<event load="GET_AC_1_INCENDIARY" req="GB_CURRENT_AMMO8"/>
-					<event load="GET_AC_1_FLECHETTE" req="GB_CURRENT_AMMO9"/>
-					<event load="GET_AC_1_RAD" req="GB_CURRENT_AMMO10"/>
+					<event load="GET_AC_1_ELITE_STANDARD" req="GB_CURRENT_AMMO1"/>
+					<event load="GET_AC_1_ELITE_CASELESS" req="GB_CURRENT_AMMO2"/>
+					<event load="GET_AC_1_ELITE_HV" req="GB_CURRENT_AMMO3"/>
+					<event load="GET_AC_1_ELITE_FREE" req="GB_CURRENT_AMMO4"/>
+					<event load="GET_AC_1_ELITE_HE" req="GB_CURRENT_AMMO5"/>
+					<event load="GET_AC_1_ELITE_EMP" req="GB_CURRENT_AMMO6"/>
+					<event load="GET_AC_1_ELITE_HEAT" req="GB_CURRENT_AMMO7"/>
+					<event load="GET_AC_1_ELITE_INCENDIARY" req="GB_CURRENT_AMMO8"/>
+					<event load="GET_AC_1_ELITE_FLECHETTE" req="GB_CURRENT_AMMO9"/>
+					<event load="GET_AC_1_ELITE_RAD" req="GB_CURRENT_AMMO10"/>
+					<event load="GET_AC_1_ELITE_TIB" req="GB_CURRENT_AMMO20"/>
 				</loadEventList>
 			</event>
 		</choice>
-	</event>
-	
-	<event name="GET_AC_1_STANDARD">
-		<weapon name="GB_AC_1"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_1_CASELESS">
-		<weapon name="GB_AC_1_CASELESS"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_1_HV">
-		<weapon name="GB_AC_1_HV"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_1_FREE">
-		<weapon name="GB_AC_1_FREE"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_1_HE">
-		<weapon name="GB_AC_1_HE"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_1_EMP">
-		<weapon name="GB_AC_1_EMP"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_1_HEAT">
-		<weapon name="GB_AC_1_HEAT"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_1_INCENDIARY">
-		<weapon name="GB_AC_1_INCENDIARY"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_1_FLECHETTE">
-		<weapon name="GB_AC_1_FLECHETTE"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_1_RAD">
-		<weapon name="GB_AC_1_RAD"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
+	</event>	
 </FTL>
 
 <FTL><!--Autocannon MK II Ammo Types -->
 	<event name="COMBAT_CHECK_GB_AC_2">
 		<text>Select an ammo type to load into your Autocannon MK II</text>
 		<choice req="gb_ammo_toggle" lvl="1" max_lvl="1" blue="false" hidden="true"> <!-- Standard Ammo Type -->
-			<text>Current: Standard ammo. [default]</text>
+			<text id="text_GB_AMMO_CURRENT_1"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="2" max_lvl="2" blue="false" hidden="true"> <!-- Caseless Ammo Type -->
-			<text>Current: Caseless ammo. [-2s cd, 22% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_2"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="3" max_lvl="3" blue="false" hidden="true"> <!-- High Velocity Ammo Type -->
-			<text>Current: High Velocity ammo. [+20% breach, faster, 20% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_3"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="4" max_lvl="4" blue="false" hidden="true"> <!-- Recycler Ammo Type -->
-			<text>Current: Recycler ammo. [no status, 9% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_4"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="5" max_lvl="5" blue="false" hidden="true"> <!-- Concussive Ammo Type -->
-			<text>Current: Concussive ammo. [stuns, debuffs, hullbust, 22% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_5"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="6" max_lvl="6" blue="false" hidden="true"> <!-- EMP Ammo Type -->
-			<text>Current: EMP ammo. [no sys dmg, 2 ion dmg on room hit, 27% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_6"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="7" max_lvl="7" blue="false" hidden="true"> <!-- Particle Ammo Type -->
-			<text>Current: Particle ammo. [no hull dmg, 4 sys dmg, 30 crew dmg, 20% fire chance, 22% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_7"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="8" max_lvl="8" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
-			<text>Current: Incendiary ammo. [70% fire, 20% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_8"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="9" max_lvl="9" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Current: Flechette ammo. [+10% breach, only DoT crew dmg(+4 frag projectiles), 1 sys dmg, 22% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_9"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="10" max_lvl="10" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
-			<text>Current: Radiation ammo. [+20% breach, rad effects, +15 crew dmg, 25% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_10"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_CURRENT_AMMO1" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Standard Ammo Type -->
-			<text>Standard ammo. [default]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_STANDARD</loadEvent>
+		<choice req="gb_ammo_toggle" lvl="20" max_lvl="20" blue="false" hidden="true"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_CURRENT_20"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_CURRENT_AMMO1" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Standard Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_1"/>
+			<event name="GET_AC_2_STANDARD">
+				<weapon name="GB_AC_2"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO2" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Caseless Ammo Type -->
-			<text>Caseless ammo. [-2s cd, 22% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_CASELESS</loadEvent>
+		<choice req="GB_CURRENT_AMMO2" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Caseless Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_2"/>
+			<event name="GET_AC_2_CASELESS">
+				<weapon name="GB_AC_2_CASELESS"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO3" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- High Velocity Ammo Type -->
-			<text>High Velocity ammo. [+20% breach, faster, 20% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_HV</loadEvent>
+		<choice req="GB_CURRENT_AMMO3" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- High Velocity Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_3"/>
+			<event name="GET_AC_2_HV">
+				<weapon name="GB_AC_2_HV"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 		<choice req="GB_AMMO_4_NO" blue="false" hidden="true"> <!-- Recycler Ammo Type -->
-			<text>To load recycler ammo a recycler or ammo replicator is needed.</text>
+			<text id="text_GB_AMMO_LOAD_4_NO"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_AMMO_4_YES"  blue="false" hidden="true"> <!-- Recycler Ammo Type -->
-			<text>Recycler ammo. [no status, 9% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_FREE</loadEvent>
+		<choice req="GB_AMMO_4_YES"  blue="false" hidden="false"> <!-- Recycler Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_4"/>
+			<event name="GET_AC_2_FREE">
+				<weapon name="GB_AC_2_FREE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO5" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Concussive Ammo Type -->
-			<text>Concussive ammo. [stuns, debuffs, hullbust, 22% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_HE</loadEvent>
+		<choice req="GB_CURRENT_AMMO5" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Concussive Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_5"/>
+			<event name="GET_AC_2_HE">
+				<weapon name="GB_AC_2_HE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO6" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- EMP Ammo Type -->
-			<text>EMP ammo. [no sys dmg, 2 ion dmg on room hit, 27% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_EMP</loadEvent>
+		<choice req="GB_CURRENT_AMMO6" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- EMP Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_6"/>
+			<event name="GET_AC_2_EMP">
+				<weapon name="GB_AC_2_EMP"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO7" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Particle Ammo Type -->
-			<text>Particle ammo. [no hull dmg, 4 sys dmg, 30 crew dmg, 20% fire chance, 22% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_HEAT</loadEvent>
+		<choice req="GB_CURRENT_AMMO7" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Particle Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_7"/>
+			<event name="GET_AC_2_HEAT">
+				<weapon name="GB_AC_2_HEAT"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 		<choice req="GB_AMMO_8_NO" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
-			<text>To load incendiary ammo a lost sun crew is needed.</text>
+			<text id="text_GB_AMMO_LOAD_8_NO"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_AMMO_8_YES"  blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
-			<text>Incendiary ammo. [70% fire, 20% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_INCENDIARY</loadEvent>
+		<choice req="GB_AMMO_8_YES"  blue="false" hidden="false"> <!-- Incendiary Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_8"/>
+			<event name="GET_AC_2_INCENDIARY">
+				<weapon name="GB_AC_2_INCENDIARY"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Flechette ammo. [+10% breach, only DoT crew dmg(+4 frag projectiles), 1 sys dmg, 22% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_FLECHETTE</loadEvent>
+		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Flechette Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_9"/>
+			<event name="GET_AC_2_FLECHETTE">
+				<weapon name="GB_AC_2_FLECHETTE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 		<choice req="GB_AMMO_10_NO" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
-			<text>To load radiation ammo a slug clansman is needed.</text>
+			<text id="text_GB_AMMO_LOAD_10_NO"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_AMMO_10_YES"  blue="false" hidden="true"> <!-- Radiation Ammo Type -->
-			<text>Radiation ammo. [+20% breach, rad effects, +15 crew dmg, 25% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_2_LOAD_RAD</loadEvent>
+		<choice req="GB_AMMO_10_YES"  blue="false" hidden="false"> <!-- Radiation Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_10"/>
+			<event name="GET_AC_2_RAD">
+				<weapon name="GB_AC_2_RAD"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
+		</choice>
+		<choice req="GB_AMMO_20_NO" blue="false" hidden="true"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_20_NO"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_AMMO_20_YES"  blue="false" hidden="false"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_20"/>
+			<event name="GET_AC_2_TIB">
+				<weapon name="GB_AC_2_TIB"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 
@@ -1059,164 +1419,16 @@
 					<event load="GET_AC_2_INCENDIARY" req="GB_CURRENT_AMMO8"/>
 					<event load="GET_AC_2_FLECHETTE" req="GB_CURRENT_AMMO9"/>
 					<event load="GET_AC_2_RAD" req="GB_CURRENT_AMMO10"/>
+					<event load="GET_AC_2_TIB" req="GB_CURRENT_AMMO20"/>
 				</loadEventList>
 			</event>
 		</choice>
 	</event>
+</FTL>
 
-	<event name="COMBAT_CHECK_GB_AC_2_LOAD_STANDARD">
-		<text>Standard rounds: [6s cd, 2 hull dmg, 2 sys dmg, 30 crew dmg, 20% stun(3s), 20% breach chance, 17% ammo consumption]
-			Load into the Autocannon MK II?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_2_STANDARD"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_2_LOAD_CASELESS">
-		<text>Caseless rounds: [4s cd, 2 hull dmg, 2 sys dmg, 30 crew dmg, 20% stun(3s), 20% breach chance, 22% ammo consumption]
-			Load into the Autocannon MK II?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_2_CASELESS"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_2_LOAD_HV">
-		<text>High Velocity rounds: [6s cd, 2 hull dmg, 2 sys dmg, 30 crew dmg, 20% stun(3s), 40% breach chance, +10% accuracy, +33% velocity, 20% ammo consumption]
-			Load into the Autocannon MK II?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_2_HV"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_2_LOAD_FREE">
-		<text>Recycler rounds: [6s cd, 2 hull dmg, 2 sys dmg, 30 crew dmg, 9% ammo consumption]
-			Load into the Autocannon MK II?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_2_FREE"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_2_LOAD_HE">
-		<text>Concussion rounds: [6s cd, 1 hull dmg(hullbust), 1 sys dmg, 30 crew dmg, 4s stun, enemies lose power charge and take 90% more damage for 10s, 20% breach chance, 22% ammo consumption]
-			Load into the Autocannon MK II?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_2_HE"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_2_LOAD_EMP">
-		<text>EMP rounds: [6s cd, 2 hull dmg, 0 sys dmg, 30 crew dmg, 2 ion dmg on rooms, 20% stun(3s), 20% breach chance, 27% ammo consumption]
-			Load into the Autocannon MK II?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_2_EMP"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_2_LOAD_HEAT">
-		<text>Particle rounds: [6s cd, 0 hull dmg, 4 sys dmg, 30 crew dmg, 20% fire chance, 8% breach chance, 22% ammo consumption]
-			Load into the Autocannon MK II?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_2_HEAT"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_2_LOAD_INCENDIARY">
-		<text>Incendiary rounds: [6s cd, 2 hull dmg, 2 sys dmg, 30 crew dmg, 20% stun(3s), 70% fire chance, 3% breach chance, 20% ammo consumption]
-			Load into the Autocannon MK II?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_2_INCENDIARY"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_2_LOAD_FLECHETTE">
-		<text>Flechette rounds: [6s cd, 2 hull dmg, 1 sys dmg, 1 dps DoT(25s) crew dmg, 20% stun(3s), 30% breach chance, 40 px radius, 4 frag projectiles, 22% ammo consumption]
-			Load into the Autocannon MK II?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_2_FLECHETTE"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_2_LOAD_RAD">
-		<text>Rad rounds: [6s cd, 2 hull dmg, 2 sys dmg, 45 crew dmg, rad debuffs, 20% stun(3s), 40% breach chance, 25% ammo consumption, illegal :)]
-			Load into the Autocannon MK II?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_2_RAD"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_2</loadEvent>
-			</event>
-		</choice>
-	</event>
-	
-	<event name="COMBAT_CHECK_GB_AC_2">
-		<text>Select an ammo type to load into your Autocannon MK I</text>
+<FTL><!--Elite Autocannon MK II Ammo Types -->
+	<event name="COMBAT_CHECK_GB_AC_2_ELITE">
+		<text>Select an ammo type to load into your Elite Autocannon MK II</text>
 		<choice req="gb_ammo_toggle" lvl="1" max_lvl="1" blue="false" hidden="true"> <!-- Standard Ammo Type -->
 			<text id="text_GB_AMMO_CURRENT_1"/>
 			<event load="OPTION_INVALID"/>
@@ -1257,17 +1469,51 @@
 			<text id="text_GB_AMMO_CURRENT_10"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
+		<choice req="gb_ammo_toggle" lvl="20" max_lvl="20" blue="false" hidden="true"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_CURRENT_20"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
 		<choice req="GB_CURRENT_AMMO1" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Standard Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_1"/>
-			<event load="GET_AC_2_STANDARD"/>
+			<event name="GET_AC_2_ELITE_STANDARD">
+				<weapon name="GB_AC_2_ELITE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO2" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Caseless Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_2"/>
-			<event load="GET_AC_2_CASELESS"/>
+			<event name="GET_AC_2_ELITE_CASELESS">
+				<weapon name="GB_AC_2_ELITE_CASELESS"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO3" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- High Velocity Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_3"/>
-			<event load="GET_AC_2_HV"/>
+			<event name="GET_AC_2_ELITE_HV">
+				<weapon name="GB_AC_2_ELITE_HV"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_AMMO_4_NO" blue="false" hidden="true"> <!-- Recycler Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_4_NO"/>
@@ -1275,19 +1521,59 @@
 		</choice>
 		<choice req="GB_AMMO_4_YES"  blue="false" hidden="false"> <!-- Recycler Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_4"/>
-			<event load="GET_AC_2_FREE"/>
+			<event name="GET_AC_2_ELITE_FREE">
+				<weapon name="GB_AC_2_ELITE_FREE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO5" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Concussive Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_5"/>
-			<event load="GET_AC_2_HE"/>
+			<event name="GET_AC_2_ELITE_HE">
+				<weapon name="GB_AC_2_ELITE_HE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO6" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- EMP Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_6"/>
-			<event load="GET_AC_2_EMP"/>
+			<event name="GET_AC_2_ELITE_EMP">
+				<weapon name="GB_AC_2_ELITE_EMP"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO7" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Particle Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_7"/>
-			<event load="GET_AC_2_HEAT"/>
+			<event name="GET_AC_2_ELITE_HEAT">
+				<weapon name="GB_AC_2_ELITE_HEAT"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_AMMO_8_NO" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_8_NO"/>
@@ -1295,11 +1581,31 @@
 		</choice>
 		<choice req="GB_AMMO_8_YES"  blue="false" hidden="false"> <!-- Incendiary Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_8"/>
-			<event load="GET_AC_2_INCENDIARY"/>
+			<event name="GET_AC_2_ELITE_INCENDIARY">
+				<weapon name="GB_AC_2_ELITE_INCENDIARY"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Flechette Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_9"/>
-			<event load="GET_AC_2_FLECHETTE"/>
+			<event name="GET_AC_2_ELITE_FLECHETTE">
+				<weapon name="GB_AC_2_ELITE_FLECHETTE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_AMMO_10_NO" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_10_NO"/>
@@ -1307,253 +1613,274 @@
 		</choice>
 		<choice req="GB_AMMO_10_YES"  blue="false" hidden="false"> <!-- Radiation Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_10"/>
-			<event load="GET_AC_2_RAD"/>
+			<event name="GET_AC_2_ELITE_RAD">
+				<weapon name="GB_AC_2_ELITE_RAD"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
+		<!-- Tiberium Ammo Type
+		<choice req="GB_AMMO_20_NO" blue="false" hidden="true">
+			<text id="text_GB_AMMO_LOAD_20_NO"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_AMMO_20_YES"  blue="false" hidden="false">
+			<text id="text_GB_AMMO_LOAD_20"/>
+			<event name="GET_AC_2_ELITE_TIB">
+				<weapon name="GB_AC_2_ELITE_TIB"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
+		</choice>-->
 
 		<choice>
 			<text>Do something else instead.</text>
 			<event>
 				<loadEventList seeded="false" generate="false">
-					<event load="GET_AC_2_STANDARD" req="GB_CURRENT_AMMO1"/>
-					<event load="GET_AC_2_CASELESS" req="GB_CURRENT_AMMO2"/>
-					<event load="GET_AC_2_HV" req="GB_CURRENT_AMMO3"/>
-					<event load="GET_AC_2_FREE" req="GB_CURRENT_AMMO4"/>
-					<event load="GET_AC_2_HE" req="GB_CURRENT_AMMO5"/>
-					<event load="GET_AC_2_EMP" req="GB_CURRENT_AMMO6"/>
-					<event load="GET_AC_2_HEAT" req="GB_CURRENT_AMMO7"/>
-					<event load="GET_AC_2_INCENDIARY" req="GB_CURRENT_AMMO8"/>
-					<event load="GET_AC_2_FLECHETTE" req="GB_CURRENT_AMMO9"/>
-					<event load="GET_AC_2_RAD" req="GB_CURRENT_AMMO10"/>
+					<event load="GET_AC_2_ELITE_STANDARD" req="GB_CURRENT_AMMO1"/>
+					<event load="GET_AC_2_ELITE_CASELESS" req="GB_CURRENT_AMMO2"/>
+					<event load="GET_AC_2_ELITE_HV" req="GB_CURRENT_AMMO3"/>
+					<event load="GET_AC_2_ELITE_FREE" req="GB_CURRENT_AMMO4"/>
+					<event load="GET_AC_2_ELITE_HE" req="GB_CURRENT_AMMO5"/>
+					<event load="GET_AC_2_ELITE_EMP" req="GB_CURRENT_AMMO6"/>
+					<event load="GET_AC_2_ELITE_HEAT" req="GB_CURRENT_AMMO7"/>
+					<event load="GET_AC_2_ELITE_INCENDIARY" req="GB_CURRENT_AMMO8"/>
+					<event load="GET_AC_2_ELITE_FLECHETTE" req="GB_CURRENT_AMMO9"/>
+					<event load="GET_AC_2_ELITE_RAD" req="GB_CURRENT_AMMO10"/>
+					<event load="GET_AC_2_ELITE_TIB" req="GB_CURRENT_AMMO20"/>
 				</loadEventList>
 			</event>
 		</choice>
-	</event>
-
-	<event name="GET_AC_2_STANDARD">
-		<weapon name="GB_AC_2"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_2_CASELESS">
-		<weapon name="GB_AC_2_CASELESS"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_2_HV">
-		<weapon name="GB_AC_2_HV"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_2_FREE">
-		<weapon name="GB_AC_2_FREE"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_2_HE">
-		<weapon name="GB_AC_2_HE"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_2_EMP">
-		<weapon name="GB_AC_2_EMP"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_2_HEAT">
-		<weapon name="GB_AC_2_HEAT"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_2_INCENDIARY">
-		<weapon name="GB_AC_2_INCENDIARY"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_2_FLECHETTE">
-		<weapon name="GB_AC_2_FLECHETTE"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_2_RAD">
-		<weapon name="GB_AC_2_RAD"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
+	</event>	
 </FTL>
 
 <FTL><!--Autocannon MK III Ammo Types -->
 	<event name="COMBAT_CHECK_GB_AC_3">
 		<text>Select an ammo type to load into your Autocannon MK III</text>
 		<choice req="gb_ammo_toggle" lvl="1" max_lvl="1" blue="false" hidden="true"> <!-- Standard Ammo Type -->
-			<text>Current: Standard ammo. [default]</text>
+			<text id="text_GB_AMMO_CURRENT_1"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="2" max_lvl="2" blue="false" hidden="true"> <!-- Caseless Ammo Type -->
-			<text>Current: Caseless ammo. [-2s cd, 30% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_2"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="3" max_lvl="3" blue="false" hidden="true"> <!-- High Velocity Ammo Type -->
-			<text>Current: High Velocity ammo. [+30% breach, faster, 30% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_3"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="4" max_lvl="4" blue="false" hidden="true"> <!-- Recycler Ammo Type -->
-			<text>Current: Recycler ammo. [no status, 13% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_4"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="5" max_lvl="5" blue="false" hidden="true"> <!-- Concussive Ammo Type -->
-			<text>Current: Concussive ammo. [stuns, debuffs, hullbust, 35% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_5"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="6" max_lvl="6" blue="false" hidden="true"> <!-- EMP Ammo Type -->
-			<text>Current: EMP ammo. [no sys dmg, 3 ion dmg on room hit, 38% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_6"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="7" max_lvl="7" blue="false" hidden="true"> <!-- Particle Ammo Type -->
-			<text>Current: Particle ammo. [1 hull dmg, 6 sys dmg, 45 crew dmg, 40% fire chance, 33% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_7"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="8" max_lvl="8" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
-			<text>Current: Incendiary ammo. [100% fire, 30% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_8"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="9" max_lvl="9" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Current: Flechette ammo. [+10% breach, only DoT crew dmg(+6 frag projectiles), 2 sys dmg, 33% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_9"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
 		<choice req="gb_ammo_toggle" lvl="10" max_lvl="10" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
-			<text>Current: Radiation ammo. [+20% breach, rad effects, +15 crew dmg, 35% ammo consumption]</text>
+			<text id="text_GB_AMMO_CURRENT_10"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_CURRENT_AMMO1" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Standard Ammo Type -->
-			<text>Standard ammo. [default]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_STANDARD</loadEvent>
+		<choice req="gb_ammo_toggle" lvl="20" max_lvl="20" blue="false" hidden="true"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_CURRENT_20"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_CURRENT_AMMO1" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Standard Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_1"/>
+			<event name="GET_AC_3_STANDARD">
+				<weapon name="GB_AC_3"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO2" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Caseless Ammo Type -->
-			<text>Caseless ammo. [-2s cd, 30% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_CASELESS</loadEvent>
+		<choice req="GB_CURRENT_AMMO2" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Caseless Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_2"/>
+			<event name="GET_AC_3_CASELESS">
+				<weapon name="GB_AC_3_CASELESS"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO3" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- High Velocity Ammo Type -->
-			<text>High Velocity ammo. [+30% breach, faster, 30% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_HV</loadEvent>
+		<choice req="GB_CURRENT_AMMO3" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- High Velocity Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_3"/>
+			<event name="GET_AC_3_HV">
+				<weapon name="GB_AC_3_HV"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 		<choice req="GB_AMMO_4_NO" blue="false" hidden="true"> <!-- Recycler Ammo Type -->
-			<text>To load recycler ammo a recycler or ammo replicator is needed.</text>
+			<text id="text_GB_AMMO_LOAD_4_NO"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_AMMO_4_YES"  blue="false" hidden="true"> <!-- Recycler Ammo Type -->
-			<text>Recycler ammo. [no status, 13% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_FREE</loadEvent>
+		<choice req="GB_AMMO_4_YES"  blue="false" hidden="false"> <!-- Recycler Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_4"/>
+			<event name="GET_AC_3_FREE">
+				<weapon name="GB_AC_3_FREE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO5" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Concussive Ammo Type -->
-			<text>Concussive ammo. [stuns, debuffs, hullbust, 35% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_HE</loadEvent>
+		<choice req="GB_CURRENT_AMMO5" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Concussive Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_5"/>
+			<event name="GET_AC_3_HE">
+				<weapon name="GB_AC_3_HE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO6" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- EMP Ammo Type -->
-			<text>EMP ammo. [no sys dmg, 3 ion dmg on room hit, 38% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_EMP</loadEvent>
+		<choice req="GB_CURRENT_AMMO6" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- EMP Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_6"/>
+			<event name="GET_AC_3_EMP">
+				<weapon name="GB_AC_3_EMP"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO7" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Particle Ammo Type -->
-			<text>Particle ammo. [1 hull dmg , 6 sys dmg, 45 crew dmg, 40% fire chance, 33% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_HEAT</loadEvent>
+		<choice req="GB_CURRENT_AMMO7" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Particle Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_7"/>
+			<event name="GET_AC_3_HEAT">
+				<weapon name="GB_AC_3_HEAT"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 		<choice req="GB_AMMO_8_NO" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
-			<text>To load incendiary ammo a lost sun crew is needed.</text>
+			<text id="text_GB_AMMO_LOAD_8_NO"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_AMMO_8_YES"  blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
-			<text>Incendiary ammo. [100% fire, 30% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_INCENDIARY</loadEvent>
+		<choice req="GB_AMMO_8_YES"  blue="false" hidden="false"> <!-- Incendiary Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_8"/>
+			<event name="GET_AC_3_INCENDIARY">
+				<weapon name="GB_AC_3_INCENDIARY"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
-		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="true"> <!-- Flechette Ammo Type -->
-			<text>Flechette ammo. [+10% breach, only DoT crew dmg(+6 frag projectiles), 1 sys dmg, 33% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_FLECHETTE</loadEvent>
+		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Flechette Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_9"/>
+			<event name="GET_AC_3_FLECHETTE">
+				<weapon name="GB_AC_3_FLECHETTE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 		<choice req="GB_AMMO_10_NO" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
-			<text>To load radiation ammo a slug clansman is needed.</text>
+			<text id="text_GB_AMMO_LOAD_10_NO"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
-		<choice req="GB_AMMO_10_YES"  blue="false" hidden="true"> <!-- Radiation Ammo Type -->
-			<text>Radiation ammo. [+20% breach, rad effects, +15 crew dmg, 35% ammo consumption]</text>
-			<event>
-			  <loadEvent>COMBAT_CHECK_GB_AC_3_LOAD_RAD</loadEvent>
+		<choice req="GB_AMMO_10_YES"  blue="false" hidden="false"> <!-- Radiation Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_10"/>
+			<event name="GET_AC_3_RAD">
+				<weapon name="GB_AC_3_RAD"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
+		</choice>
+		<choice req="GB_AMMO_20_NO" blue="false" hidden="true"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_20_NO"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_AMMO_20_YES"  blue="false" hidden="false"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_LOAD_20"/>
+			<event name="GET_AC_3_TIB">
+				<weapon name="GB_AC_3_TIB"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
 			</event>
 		</choice>
 
@@ -1571,164 +1898,26 @@
 					<event load="GET_AC_3_INCENDIARY" req="GB_CURRENT_AMMO8"/>
 					<event load="GET_AC_3_FLECHETTE" req="GB_CURRENT_AMMO9"/>
 					<event load="GET_AC_3_RAD" req="GB_CURRENT_AMMO10"/>
+					<event load="GET_AC_3_TIB" req="GB_CURRENT_AMMO20"/>
 				</loadEventList>
 			</event>
 		</choice>
 	</event>
 
-	<event name="COMBAT_CHECK_GB_AC_3_LOAD_STANDARD">
-		<text>Standard rounds: [6s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 40% stun(3s), 40% breach chance, 25% ammo consumption]
-			Load into the Autocannon MK III?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_3_STANDARD"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_3_LOAD_CASELESS">
-		<text>Caseless rounds: [4s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 40% stun(3s), 40% breach chance, 30% ammo consumption]
-			Load into the Autocannon MK III?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_3_CASELESS"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_3_LOAD_HV">
-		<text>High Velocity rounds: [6s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 40% stun(3s), 70% breach chance, +10% accuracy, +33% velocity, 30% ammo consumption]
-			Load into the Autocannon MK III?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_3_HV"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_3_LOAD_FREE">
-		<text>Recycler rounds: [6s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 13% ammo consumption]
-			Load into the Autocannon MK III?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_3_FREE"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_3_LOAD_HE">
-		<text>Concussion rounds: [6s cd, 2 hull dmg(hullbust), 2 sys dmg, 30 crew dmg, 4s stun, enemies lose power charge and take 90% more damage for 10s, 40% breach chance, 35% ammo consumption]
-			Load into the Autocannon MK III?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_3_HE"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_3_LOAD_EMP">
-		<text>EMP rounds: [6s cd, 3 hull dmg, 0 sys dmg, 45 crew dmg, 3 ion dmg on rooms, 40% stun(3s), 40% breach chance, 38% ammo consumption]
-			Load into the Autocannon MK III?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_3_EMP"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_3_LOAD_HEAT">
-		<text>Particle rounds: [6s cd, 1 hull dmg, 6 sys dmg, 45 crew dmg, 40% fire chance, 12% breach chance, 33% ammo consumption]
-			Load into the Autocannon MK III?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_3_HEAT"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_3_LOAD_INCENDIARY">
-		<text>Incendiary rounds: [6s cd, 3 hull dmg, 3 sys dmg, 45 crew dmg, 40% stun(3s), 100% fire chance, 0% breach chance, 30% ammo consumption]
-			Load into the Autocannon MK III?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_3_INCENDIARY"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_3_LOAD_FLECHETTE">
-		<text>Flechette rounds: [6s cd, 3 hull dmg, 2 sys dmg, 1 dps DoT(25s) crew dmg, 40% stun(3s), 50% breach chance, 40 px radius, 6 frag projectiles, 33% ammo consumption]
-			Load into the Autocannon MK III?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_3_FLECHETTE"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
-			</event>
-		</choice>
-	</event>
-	<event name="COMBAT_CHECK_GB_AC_3_LOAD_RAD">
-		<text>Rad rounds: [6s cd, 3 hull dmg, 3 sys dmg, 60 crew dmg, rad debuffs, 40% stun(3s), 60% breach chance, 35% ammo consumption, illegal :)]
-			Load into the Autocannon MK III?
-		</text>
-		<choice>
-			<text>Proceed.</text>
-			<event load="GET_AC_3_RAD"/>
-		</choice>
-		<choice>
-			<text>Nevermind.</text>
-			<event>
-				<loadEvent>COMBAT_CHECK_GB_AC_3</loadEvent>
-			</event>
-		</choice>
-	</event>
 	
-	<event name="COMBAT_CHECK_GB_AC_3">
-		<text>Select an ammo type to load into your Autocannon MK I</text>
+	
+	
+	
+	
+	
+	
+	
+	
+</FTL>
+
+<FTL><!--Elite Autocannon MK III Ammo Types -->
+	<event name="COMBAT_CHECK_GB_AC_3_ELITE">
+		<text>Select an ammo type to load into your Elite Autocannon MK III</text>
 		<choice req="gb_ammo_toggle" lvl="1" max_lvl="1" blue="false" hidden="true"> <!-- Standard Ammo Type -->
 			<text id="text_GB_AMMO_CURRENT_1"/>
 			<event load="OPTION_INVALID"/>
@@ -1769,17 +1958,51 @@
 			<text id="text_GB_AMMO_CURRENT_10"/>
 			<event load="OPTION_INVALID"/>
 		</choice>
+		<choice req="gb_ammo_toggle" lvl="20" max_lvl="20" blue="false" hidden="true"> <!-- Tiberium Ammo Type -->
+			<text id="text_GB_AMMO_CURRENT_20"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
 		<choice req="GB_CURRENT_AMMO1" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Standard Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_1"/>
-			<event load="GET_AC_3_STANDARD"/>
+			<event name="GET_AC_3_ELITE_STANDARD">
+				<weapon name="GB_AC_3_ELITE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO2" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Caseless Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_2"/>
-			<event load="GET_AC_3_CASELESS"/>
+			<event name="GET_AC_3_ELITE_CASELESS">
+				<weapon name="GB_AC_3_ELITE_CASELESS"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO3" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- High Velocity Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_3"/>
-			<event load="GET_AC_3_HV"/>
+			<event name="GET_AC_3_ELITE_HV">
+				<weapon name="GB_AC_3_ELITE_HV"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_AMMO_4_NO" blue="false" hidden="true"> <!-- Recycler Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_4_NO"/>
@@ -1787,19 +2010,59 @@
 		</choice>
 		<choice req="GB_AMMO_4_YES"  blue="false" hidden="false"> <!-- Recycler Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_4"/>
-			<event load="GET_AC_3_FREE"/>
+			<event name="GET_AC_3_ELITE_FREE">
+				<weapon name="GB_AC_3_ELITE_FREE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO5" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Concussive Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_5"/>
-			<event load="GET_AC_3_HE"/>
+			<event name="GET_AC_3_ELITE_HE">
+				<weapon name="GB_AC_3_ELITE_HE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO6" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- EMP Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_6"/>
-			<event load="GET_AC_3_EMP"/>
+			<event name="GET_AC_3_ELITE_EMP">
+				<weapon name="GB_AC_3_ELITE_EMP"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO7" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Particle Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_7"/>
-			<event load="GET_AC_3_HEAT"/>
+			<event name="GET_AC_3_ELITE_HEAT">
+				<weapon name="GB_AC_3_ELITE_HEAT"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_AMMO_8_NO" blue="false" hidden="true"> <!-- Incendiary Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_8_NO"/>
@@ -1807,11 +2070,31 @@
 		</choice>
 		<choice req="GB_AMMO_8_YES"  blue="false" hidden="false"> <!-- Incendiary Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_8"/>
-			<event load="GET_AC_3_INCENDIARY"/>
+			<event name="GET_AC_3_ELITE_INCENDIARY">
+				<weapon name="GB_AC_3_ELITE_INCENDIARY"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_CURRENT_AMMO9" lvl="0" max_lvl="0" blue="false" hidden="false"> <!-- Flechette Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_9"/>
-			<event load="GET_AC_3_FLECHETTE"/>
+			<event name="GET_AC_3_ELITE_FLECHETTE">
+				<weapon name="GB_AC_3_ELITE_FLECHETTE"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
 		<choice req="GB_AMMO_10_NO" blue="false" hidden="true"> <!-- Radiation Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_10_NO"/>
@@ -1819,141 +2102,58 @@
 		</choice>
 		<choice req="GB_AMMO_10_YES"  blue="false" hidden="false"> <!-- Radiation Ammo Type -->
 			<text id="text_GB_AMMO_LOAD_10"/>
-			<event load="GET_AC_3_RAD"/>
+			<event name="GET_AC_3_ELITE_RAD">
+				<weapon name="GB_AC_3_ELITE_RAD"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
 		</choice>
+		<!-- Tiberium Ammo Type
+		<choice req="GB_AMMO_20_NO" blue="false" hidden="true">
+			<text id="text_GB_AMMO_LOAD_20_NO"/>
+			<event load="OPTION_INVALID"/>
+		</choice>
+		<choice req="GB_AMMO_20_YES"  blue="false" hidden="false">
+			<text id="text_GB_AMMO_LOAD_20"/>
+			<event name="GET_AC_3_ELITE_TIB">
+				<weapon name="GB_AC_3_ELITE_TIB"/>
+				<loadEventList>
+					<event req="loc_flagship" lvl="0">
+						<loadEvent>COMBAT_CHECK</loadEvent>
+					</event>
+					<event req="loc_flagship" lvl="1">
+						<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
+					</event>
+				</loadEventList>
+			</event>
+		</choice>-->
 
 		<choice>
 			<text>Do something else instead.</text>
 			<event>
 				<loadEventList seeded="false" generate="false">
-					<event load="GET_AC_3_STANDARD" req="GB_CURRENT_AMMO1"/>
-					<event load="GET_AC_3_CASELESS" req="GB_CURRENT_AMMO2"/>
-					<event load="GET_AC_3_HV" req="GB_CURRENT_AMMO3"/>
-					<event load="GET_AC_3_FREE" req="GB_CURRENT_AMMO4"/>
-					<event load="GET_AC_3_HE" req="GB_CURRENT_AMMO5"/>
-					<event load="GET_AC_3_EMP" req="GB_CURRENT_AMMO6"/>
-					<event load="GET_AC_3_HEAT" req="GB_CURRENT_AMMO7"/>
-					<event load="GET_AC_3_INCENDIARY" req="GB_CURRENT_AMMO8"/>
-					<event load="GET_AC_3_FLECHETTE" req="GB_CURRENT_AMMO9"/>
-					<event load="GET_AC_3_RAD" req="GB_CURRENT_AMMO10"/>
+					<event load="GET_AC_3_ELITE_STANDARD" req="GB_CURRENT_AMMO1"/>
+					<event load="GET_AC_3_ELITE_CASELESS" req="GB_CURRENT_AMMO2"/>
+					<event load="GET_AC_3_ELITE_HV" req="GB_CURRENT_AMMO3"/>
+					<event load="GET_AC_3_ELITE_FREE" req="GB_CURRENT_AMMO4"/>
+					<event load="GET_AC_3_ELITE_HE" req="GB_CURRENT_AMMO5"/>
+					<event load="GET_AC_3_ELITE_EMP" req="GB_CURRENT_AMMO6"/>
+					<event load="GET_AC_3_ELITE_HEAT" req="GB_CURRENT_AMMO7"/>
+					<event load="GET_AC_3_ELITE_INCENDIARY" req="GB_CURRENT_AMMO8"/>
+					<event load="GET_AC_3_ELITE_FLECHETTE" req="GB_CURRENT_AMMO9"/>
+					<event load="GET_AC_3_ELITE_RAD" req="GB_CURRENT_AMMO10"/>
+					<event load="GET_AC_3_ELITE_TIB" req="GB_CURRENT_AMMO20"/>
 				</loadEventList>
 			</event>
 		</choice>
-	</event>
-
-	<event name="GET_AC_3_STANDARD">
-		<weapon name="GB_AC_3"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_3_CASELESS">
-		<weapon name="GB_AC_3_CASELESS"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_3_HV">
-		<weapon name="GB_AC_3_HV"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_3_FREE">
-		<weapon name="GB_AC_3_FREE"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_3_HE">
-		<weapon name="GB_AC_3_HE"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_3_EMP">
-		<weapon name="GB_AC_3_EMP"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_3_HEAT">
-		<weapon name="GB_AC_3_HEAT"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_3_INCENDIARY">
-		<weapon name="GB_AC_3_INCENDIARY"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_3_FLECHETTE">
-		<weapon name="GB_AC_3_FLECHETTE"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
-	<event name="GET_AC_3_RAD">
-		<weapon name="GB_AC_3_RAD"/>
-		<loadEventList>
-			<event req="loc_flagship" lvl="0">
-				<loadEvent>COMBAT_CHECK</loadEvent>
-			</event>
-			<event req="loc_flagship" lvl="1">
-				<loadEvent>COMBAT_CHECK_FLAGSHIP</loadEvent>
-			</event>
-		</loadEventList>
-	</event>
+	</event>	
 </FTL>
-
-
 
 <event name="COMBAT_CHECK_GB_COMBAT_AC_1" unused="true">
 	<text>Are you sure you want to change the drone's settings?</text>

@@ -14,6 +14,10 @@
 		<mod-append:blueprint name="GB_ROTARY_AC" rarity="5"/>
 		<mod-append:blueprint name="GB_COMBAT_AC_1" rarity="4"/>
 		<mod-append:blueprint name="RVS_TROOPERTOG_DEFEND" rarity="3"/>
+		
+		<mod-append:blueprint name="GB_AC_1_E" rarity="5"/>
+		<mod-append:blueprint name="GB_AC_2_E" rarity="5"/>
+		<mod-append:blueprint name="GB_AC_3_E" rarity="5"/>
 	</mod:findLike>
 	<mod-append:event name="GB_GENERIC_EVENTS" min="1" max="2"/>
 </mod:findName>
@@ -52,9 +56,9 @@
 		
 		<mod-append:blueprint name="GB_ROTARY_AC" rarity="4"/>	<!-- R4, 29/11/2022: was4-->
 
-		<mod-append:blueprint name="GB_AC_1_E" rarity="3"/>
-		<mod-append:blueprint name="GB_AC_2_E" rarity="3"/>
-		<mod-append:blueprint name="GB_AC_3_E" rarity="3"/>
+		<mod-append:blueprint name="GB_AC_1_ELITE" rarity="3"/>
+		<mod-append:blueprint name="GB_AC_2_ELITE" rarity="3"/>
+		<mod-append:blueprint name="GB_AC_3_ELITE" rarity="3"/>
 
 		<mod-append:blueprint name="GB_GAUSS_1" rarity="4"/>	<!-- R4, 29/11/2022: was 5-->
 		<mod-append:blueprint name="GB_GAUSS_2" rarity="3"/>	<!-- R4, 29/11/2022: was 4-->
@@ -111,7 +115,7 @@
 		<mod-append:blueprint name="GB_AC_1" rarity="4"/>
 		<mod-append:blueprint name="GB_AC_2" rarity="4"/>
 		<mod-append:blueprint name="GB_AC_3" rarity="5"/>
-		<mod-append:blueprint name="GB_COMBAT_AC_1" rarity="3"/>
+		<mod-append:blueprint name="GB_COMBAT_AC_1" rarity="2"/>	<!-- R4, 17/12/2022: was 3-->
 	</mod:findLike>
 </mod:findName>
 
@@ -137,6 +141,11 @@
 
 <mod:findName type="sectorDescription" name="SECTOR_ZOLTAN">   <!--RAILS PLACEHOLDER-->
 	<mod:findLike type = "rarityList">
+		<!-- added gauss rifles as part of generic fed aligned weapons -->
+		<mod-append:blueprint name="GB_GAUSS_1" rarity="4"/>
+		<mod-append:blueprint name="GB_GAUSS_2" rarity="4"/>
+		<mod-append:blueprint name="GB_GAUSS_3" rarity="5"/>
+	
 		<mod-append:blueprint name="GB_RAIL_1" rarity="5"/>
 		<mod-append:blueprint name="GB_RAIL_2" rarity="5"/>
 		<mod-append:blueprint name="GB_RAIL_3" rarity="5"/>
@@ -153,9 +162,9 @@
 
 <mod:findName type="sectorDescription" name="SECTOR_ENGI">  <!--GAUSS-->
 	<mod:findLike type = "rarityList">
-		<mod-append:blueprint name="GB_GAUSS_1" rarity="4"/>
+		<mod-append:blueprint name="GB_GAUSS_1" rarity="3"/>	<!-- R4, 17/12/2022: was 3-->
 		<mod-append:blueprint name="GB_GAUSS_2" rarity="3"/>	<!-- R4, 29/11/2022: was 4-->
-		<mod-append:blueprint name="GB_GAUSS_3" rarity="5"/>
+		<mod-append:blueprint name="GB_GAUSS_3" rarity="4"/>	<!-- R4, 17/12/2022: was 5-->
 		<mod-append:blueprint name="RVS_TROOPERTOG_DEFEND" rarity="5"/>
 		<!--<mod-append:blueprint name="GB_GAUSS_AP" rarity="5"/>-->
 	</mod:findLike>
@@ -205,3 +214,17 @@
 <mod:findName type="sectorDescription" name="SECTOR_ORCHID">
     <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS_ORCHID" min="0" max="1"/>
 </mod:findName>
+
+<mod:findName type="sectorDescription" name="SECTOR_MANTIS">  <!--Remnants of FMW-->
+	<mod:findLike type = "rarityList">
+		<mod-append:blueprint name="GB_AC_1" rarity="4"/>
+		<mod-append:blueprint name="GB_AC_2" rarity="5"/>
+		<mod-append:blueprint name="GB_AC_3" rarity="5"/>
+		
+		<mod-append:blueprint name="GB_COMBAT_AC_1" rarity="5"/>
+		<mod-append:blueprint name="RVS_TROOPERTOG_DEFEND" rarity="5"/>
+		
+		<mod-append:blueprint name="GB_ROTARY_AC" rarity="5"/>	<!-- R4, 29/11/2022: was4-->
+	</mod:findLike>
+</mod:findName>
+

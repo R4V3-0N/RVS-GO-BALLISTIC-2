@@ -68,12 +68,12 @@
 			<autoReward level="HIGH">standard</autoReward>
 			<choice hidden="true">
 				<text>Wait...</text>
-				<event load="STOREEVENT_FED_MARKET_WAIT"/>
+				<event load="GB_STOREEVENT_FED_VOLUNTEER_WAIT"/>
 			</choice>
 		</event>
 	</choice>
 </event>
-<eventList name="STOREEVENT_FED_MARKET_WAIT">
+<eventList name="GB_STOREEVENT_FED_VOLUNTEER_WAIT">
 	<event>
 		<text>Fortunately for you, there are no sight of any enemy hostiles during your watch. You collect your pay and prepare to leave.</text>
 		<store>GB_STORE_FED</store>
@@ -135,7 +135,7 @@
 		</choice>
 	</event>
 	<event>
-		<text>Everything seems to be going fine and you were about to collect your pay and leave as a small fleet of Federation ships returning from a recent battle. But it doesn't take long for that to change as within the fleet combat seems to have been initiated and the open channels begin to be flooded. Breaking the cacophony a priority message breaks through: "Alert! Several ships have been identified as intruders. Update your IFF's and double check them. Requesting immediate support!" - the concealed anti-ship battery seems to be unable to help us out in this fight and can't distinguish between who's who and won't be able to support you.</text>		<store>STORE_STANDARD</store>
+		<text>Everything seems to be going fine and you were about to collect your pay and leave as a small fleet of Federation ships returning from a recent battle. But it doesn't take long for that to change as within the fleet combat seems to have been initiated and the open channels begin to be flooded. Breaking the cacophony a priority message breaks through: "Alert! Several ships have been identified as intruders. Update your IFF's and double check them. Requesting immediate support!" - the concealed anti-ship battery seems to be unable to help us out in this fight and can't distinguish between who's who and won't be able to support you.</text>
 		<store>GB_STORE_FED</store>
 		<modifyPursuit amount="1"/>
 		<ship load="GB_SHIP_REBEL_FED_GENERIC" hostile="true"/>
@@ -154,12 +154,15 @@
 		<color r="215" g="255" b="200" a="1"/>
 	</beaconType>
 	<text>You expect to find a well stocked Federation market at this Merchant's beacon, but instead, there's only a small station, and one singular patrol ship. Hopefully, there is enough to stock up on for your journey here.</text>
-	<ship load="MU_GHOST_FED_BOMBER" hostile = "false"/>
+	<ship name="SHIP_FED_BOMBER_STORE" auto_blueprint="MU_FED_BOMBER" hostile="false"><!--was MU_GHOST_FED_BOMBER-->
+		<destroyed load="DESTROYED_FEDERATION"/>
+		<deadCrew load="DEAD_CREW_FEDERATION"/>
+	</ship>
 	<choice>
 		<text>Visit the store.</text>
 		<event>
 			<text>You meet a friendly face as you approach the store. "Welcome, welcome. I haven't seen many folks around here on my rotation at this here posting. I assume you're looking to trade?"</text>
-			<store>STORE_STANDARD</store>
+			<store>GB_STORE_FED</store>
 		</event>
 	</choice>
 	<choice>
@@ -177,7 +180,7 @@
 				<text>We'd rather see some up to date weapons.</text>
 				<event>
 					<text>"If you insist. You're missing out, you know, these newfangled weapons just lack a certain something."</text>
-					<store>STORE_STANDARD</store>
+					<store>GB_STORE_FED</store>
 				</event>
 			</choice>
 		</event>
@@ -231,24 +234,24 @@
 </event>
 
 <!-- only used in hostile territory -->
-<event name = "GB_STOREEVENT_ASTEROID_AUTOCANNON_STORE" unique = "true">
+<event name = "GB_STOREEVENT_ASTEROID_AUTOCANNON_STORE" unique="true">
 	<preventQuest/>
 	<beaconType id="map_icon_store_federation" global="false">
 		<color r="215" g="255" b="200" a="1"/>
 	</beaconType>
-	<text>You expected to see a large supply depot and patrols in this area, but to your surprise you initially couldn't find anything worth of note at this beacon, and started to charge the FTL drive until you've picked up a signal coming from a derelict vessel in a nearby thick asteroid belt. Worth taking a look?</text>
+	<text>You expected to see a large supply depot and patrols in this area, but to your surprise you initially couldn't find anything worth of note at this beacon, and started to charge the FTL drive until you've picked up a signal coming from a derelict vessel in a nearby thick asteroid belt. Should be worth investigating.</text>
 	<choice>
-		<text>Head over into the asteroid belt and investigate.</text>
+		<text>Investigate the asteroid belt.</text> <!-- R4: Changed this to sound a little better  -->
 		<event>
 			<environment type = "asteroid"/>
-			<text>You are surprised to see a derelict outpost inside a crater of a dwarf planet within the asteroid field. As you approach for a landing they hail you on Federation channels. "Wasn't expecting a Federation vessel coming this way into our area of operations for another couple of months. We're short on munitions, and we're struggling to provide for the strikes this far deep in enemy territory with how infrequent supply runs have been. Perhaps we can come to an arrangement?"</text>
+			<text>You are surprised to see a derelict outpost inside a crater of a dwarf planet within the asteroid belt. As you approach for a landing they hail you on Federation channels. "Wasn't expecting a Federation vessel coming this way into our area of operations for another couple of months. We're short on munitions, and we're struggling to provide for the strikes this far deep in enemy territory with how infrequent supply runs have been. Perhaps we can come to an arrangement?"</text>
 			<choice>
 				<text>Hand over some ammunition to access a store.</text>
 				<event>
 					<item_modify>
 						<item type="missiles" min="-5" max="-5"/>
 					</item_modify>
-					<store>STORE_STANDARD</store>
+					<store>GB_STORE_FED_NO_AMMO</store>
 				</event>
 			</choice>
 			<choice>
@@ -270,9 +273,17 @@
                             <item_modify>
                                 <item type="missiles" min="-5" max="-5"/>
                             </item_modify>
-                            <store>STORE_STANDARD_NO_AMMO</store>
+                            <store>GB_STORE_FED_NO_AMMO</store>
                         </event>
                     </choice>
+					<!-- R4: not sure how to write it up to go for the no ammo store -->
+					<choice hidden="true" req="GB_PHONE" lvl="1" blue="true">
+						<text>(Expanded Cargo Bay) Deliver a spare shipment of resources to the outpost.</text> 
+						<event>
+							<text>Their expressions lighten with relief as you make a delivery of standard Federation supply shipment filled with various resources from uniforms, ammunition, to rations. With this they have everything they need to hold out and continue their penetration strikes deep in enemy territory. With their stocks replenished they grant you full access to their stores as well as a warm mug of replicator coffee.</text>
+							<store>GB_STORE_FED</store>
+						</event>
+					</choice>
                     <choice>
                         <text>We are not interested.</text>
                         <event>
@@ -281,10 +292,18 @@
                     </choice>
 				</event>
 			</choice>
+			<choice hidden="true" req="GB_PHONE" lvl="1" blue="true">
+				<text>(Expanded Cargo Bay) Deliver a spare shipment of resources to the outpost.</text> 
+				<event>
+					<text>Their expressions lighten with relief as you make a delivery of standard Federation supply shipment filled with various resources from uniforms, ammunition, to rations. With this they have everything they need to hold out and continue their penetration strikes deep in enemy territory. With their stocks replenished they grant you full access to their stores as well as a warm mug of replicator coffee.</text>
+					<store>GB_STORE_FED</store>
+				</event>
+			</choice>
 			<choice>
 				<text>If they're low on ammo than they are an easy target, attack!</text>
 				<event>
 					<text>As you begin to charge up your weapons, you detect a vessel coming in fast, must be one of the interdictors returning from their mission. You get ready for battle!</text>
+					<!--<text>Space is a very dangerous place when you do not have any ammunition, even more so if your arsenal depends on it completely. This outpost here is no exception to those risks and you are eager to exploit their weakness in a way a Renegade would - to the dismay of your crew.</text>-->
 					<ship load = "GB_FED_INTERDICTOR" hostile = "true"/>
 					<choice>
 						<text>Continue...</text>
@@ -321,12 +340,12 @@
 		<text>Trade with the Separatist.</text>
 		<event>
 			<text>"These guns: vital in defense against the [Harmony]. The Harmony: Harms many. These [guns] also harm many. I have many guns. Purchase or I shall [harm]."</text>
-			<ship load="LIST_SHIPS_SEPARATIST_GENERIC" hostile="false"/>
+			<ship load="SHIP_SEPERATIST_GENERIC" hostile="false"/>
 			<choice hidden="true">
 				<text>Shop.</text>
 				<event>
 					<text>The Separatist directs you over to their many wares.</text>
-					<store>STORE_BALLISTIC_STANDARD_COILGUN</store>
+					<store>STORE_BALLISTIC_STANDARD_COILGUN</store> <!-- change to a Separatist store someday with coilguns -->
 				</event>
 			</choice>
 		</event>
@@ -335,7 +354,7 @@
 		<text>Trade with the Federation veteran.</text>
 		<event>
 			<text>The highly decorated soldier attempts to instill you with Federation patriotism and fervor as he tries to convince you to buy surplus Autocannons, however you begin to doubt he even served at all when you notice his medals are crafted from tinfoil and bottlecaps.</text>
-			<ship load="LIST_SHIPS_FED_GENERIC" hostile="false"/>
+			<ship load="SHIP_FED_GENERIC" hostile="false"/>
 			<choice hidden="true">
 				<text>Shop.</text>
 				<event>
@@ -349,7 +368,7 @@
 		<text>Trade with the Free Mantis.</text>
 		<event>
 			<text>The Free Mantis chatters and trills excitedly at you. "Other traders, they don't like me. They think me a thief! But you are from Federation yes-yes? You come trade with me. Come see, I have thingies to sell!"</text>
-			<ship load="LIST_SHIPS_FREEMANTIS_GENERIC" hostile="false"/>
+			<ship load="SHIP_FREEMANTIS_GENERIC" hostile="false"/>
 			<choice hidden="true">
 				<text>Shop.</text>
 				<event>
@@ -446,9 +465,8 @@
 <!-- store event storage check thing -->
 
 
-<!-- R4: ROBIN! Pay attention to this area please! --> 
 <event name="GB_STORE_LOAD_FED">
-	<store>GB_STORE_FED</store> <!-- R4: Robin, delete this comment as you make sure each store exists, Fed store! -->
+	<store>GB_STORE_FED</store>
 	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
 	<choice>
 		<text>Do something onboard the ship.</text>
@@ -460,7 +478,7 @@
 	</choice>
 </event>
 <event name="GB_STORE_LOAD_NOSYS" unused="true"> <!-- R4: unused currently -->
-	<store>GB_STORE_FED_NOSYS</store> <!-- R4: Robin, delete this comment as you make sure each store exists, This one ofers no systems -->
+	<store>GB_STORE_FED_NOSYS</store>
 	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
 	<choice>
 		<text>Do something onboard the ship.</text>
@@ -472,7 +490,7 @@
 	</choice>
 </event>
 <event name="GB_STORE_LOAD_NOCREW" unused="true"> 
-	<store>GB_STORE_FED_NOCREW</store> <!-- R4: Robin, delete this comment as you make sure each store exists, this one offers no crew -->
+	<store>GB_STORE_FED_NOCREW</store>
 	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
 	<choice>
 		<text>Do something onboard the ship.</text>
@@ -481,6 +499,17 @@
 	<choice>
 		<text>Do nothing.</text>
 		<event/>
+	</choice>
+</event>
+<event name="GB_TRADELIST_RESOURCES_FUEL_FED">
+	<text id="trade_purchase" />
+	<item_modify>
+		<item type="scrap" min="-12" max="-12" />
+		<item type="fuel" min="5" max="5" />
+	</item_modify>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="GB_STORE_LOAD_FED" />
 	</choice>
 </event>
 
@@ -681,7 +710,6 @@
 			</choice>
 			<choice>
 				<text>Do nothing.</text>
-				<event />
 			</choice>
 		</event>
 	</choice>
@@ -841,33 +869,81 @@
 
 <!-- R4: These append Fed stores to use a Fed store list -->
 <mod:findName type="event" name="STOREEVENT_FED_OUTPOSTDAMAGE">
-		<mod:findLike type="choice" start="0" limit="1">
-			<mod-overwrite:event load="GB_STORE_LOAD_FED"/>
-		</mod:findLike>
-    
-	<mod:findLike type="choice"><mod:selector hidden="true"  req="SHIP_REPAIR"/>
+	<mod:findLike type="choice" start="0" limit="1">
+		<mod-overwrite:event load="GB_STORE_LOAD_FED"/>
+	</mod:findLike>
+	<mod:findLike type="choice">
+		<mod:findWithChildLike type="event" child-type="store">
+			<mod:selector>STORE_STANDARD</mod:selector>
+			<mod-overwrite:store>GB_STORE_FED</mod-overwrite:store>          
+		</mod:findWithChildLike>
+	</mod:findLike>
+</mod:findName>
+
+<mod:findName type="event" name="STOREEVENT_FED_AUTO">
+	<mod:findLike type="choice" start="0" limit="1">
 		<mod:findLike type="event">
-			<mod-overwrite:store>GB_STORE_FED</mod-overwrite:store>
-          
+			<mod-overwrite:store>GB_STORE_FED_NOCREW</mod-overwrite:store>
 		</mod:findLike>
 	</mod:findLike>
-    
-	<mod:findLike type="choice"><mod:selector hidden="true"  req="REPAIR_ARM"/>
+</mod:findName>
+<mod:findName type="eventList" name="TRADELIST_DEFENSE_COMMON">
+	<mod:findWithChildLike type="event" child-type="store">
+		<mod:selector>STORE_STANDARD</mod:selector>
+		<mod-overwrite:store>GB_STORE_FED</mod-overwrite:store>          
+	</mod:findWithChildLike>
+</mod:findName>
+<mod:findName type="eventList" name="TRADELIST_BEAM_COMMON">
+	<mod:findWithChildLike type="event" child-type="store">
+		<mod:selector>STORE_STANDARD</mod:selector>
+		<mod-overwrite:store>GB_STORE_FED</mod-overwrite:store>          
+	</mod:findWithChildLike>
+</mod:findName>
+<mod:findName type="eventList" name="TRADELIST_MISSILE_COMMON">
+	<mod:findWithChildLike type="event" child-type="store">
+		<mod:selector>STORE_STANDARD</mod:selector>
+		<mod-overwrite:store>GB_STORE_FED</mod-overwrite:store>          
+	</mod:findWithChildLike>
+</mod:findName>
+
+<mod:findName type="event" name="STOREEVENT_FED_MARKET">
+	<mod:findWithChildLike type="choice" child-type="event">
+		<mod:selector load="STORE_LOAD_GENERIC"/>
+		<mod-overwrite:event load="GB_STORE_LOAD_FED"/>       
+	</mod:findWithChildLike>
+</mod:findName>
+
+<mod:findName type="eventList" name="STOREEVENT_FED_MARKET_WAIT">
+	<mod:findWithChildLike type="event" child-type="store">
+		<mod:selector>STORE_STANDARD</mod:selector>
+		<mod-overwrite:store>GB_STORE_FED</mod-overwrite:store>        
+	</mod:findWithChildLike>
+	<mod:findLike type="event">
+		<mod:findWithChildLike type="choice" child-type="event">
+			<mod:selector load="STORE_LOAD_GENERIC"/>
+			<mod-overwrite:event load="GB_STORE_LOAD_FED"/>       
+		</mod:findWithChildLike>
+	</mod:findLike>
+</mod:findName>
+
+<mod:findName type="event" name="STOREEVENT_FED_NOTFREE">
+	<mod:findWithChildLike type="choice" child-type="event">
+		<mod:selector load="STORE_LOAD_GENERIC"/>
+		<mod-overwrite:event load="GB_STORE_LOAD_FED"/>       
+	</mod:findWithChildLike>
+	<mod:findLike type="choice">
 		<mod:findLike type="event">
-			<mod-overwrite:store>GB_STORE_FED</mod-overwrite:store>
+			<mod:findWithChildLike type="choice" child-type="event">
+				<mod:selector load="STORE_LOAD_GENERIC"/>
+				<mod-overwrite:event load="GB_STORE_LOAD_FED"/>       
+			</mod:findWithChildLike>
+			<mod:findWithChildLike type="choice" child-type="event">
+				<mod:selector load="TRADELIST_RESOURCES_FUEL_GENERIC"/>
+				<mod-overwrite:event load="GB_TRADELIST_RESOURCES_FUEL_FED"/>       
+			</mod:findWithChildLike>
 		</mod:findLike>
-    </mod:findLike>
+	</mod:findLike>
 </mod:findName>
-
-<mod:findName type="event" name="STOREEVENT_FED_OUTPOSTDAMAGE">
-  <mod:findLike type="choice" start="0" limit="1">
-    <mod:findLike type="event">
-      <mod-overwrite:event>GB_STORE_FED_NOCREW</mod-overwrite:event>
-    </mod:findLike>
-  </mod:findLike>
-</mod:findName>
-
-
 <!-- R4: attempt to add requisition things to stores -->
 <mod:findName type="event" name="STOREEVENT_OUTPOST">
     <mod-append:choice req="LIST_CREW_FEDERATION_ELITE" blue="true" hidden="true">

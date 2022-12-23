@@ -380,16 +380,16 @@ created from scratch using the components or techniques of them to create odd an
 </blueprintList>
 
 <blueprintList name = "GB_GIFTLIST_AUTOCANNONS_LIGHT_ELITE">
-	<name>GB_AC_1</name>
-	<name>GB_AC_2</name>
+	<name>GB_AC_1_ELITE</name>
+	<name>GB_AC_2_ELITE</name>
 </blueprintList>
 <blueprintList name = "GB_GIFTLIST_AUTOCANNONS_MODERATE_ELITE">
-	<name>GB_AC_2</name>
-	<name>GB_AC_3</name>
+	<name>GB_AC_2_ELITE</name>
+	<name>GB_AC_3_ELITE</name>
 </blueprintList>
 <blueprintList name = "GB_GIFTLIST_AUTOCANNONS_HEAVY_ELITE">
-	<name>GB_AC_3</name>
-	<!--<name>GB_AC_4</name>-->
+	<name>GB_AC_3_ELITE</name>
+	<!--<name>GB_AC_4_ELITE</name>-->
 </blueprintList>
 
 
@@ -400,9 +400,9 @@ created from scratch using the components or techniques of them to create odd an
 	<!--<name>GB_AC_4</name>-->
 </blueprintList>
 <blueprintList name = "GB_GIFTLIST_AUTOCANNONS_ELITE">
-	<name>GB_AC_1_E</name>
-	<name>GB_AC_2_E</name>
-	<name>GB_AC_3_E</name>
+	<name>GB_AC_1_ELITE</name>
+	<name>GB_AC_2_ELITE</name>
+	<name>GB_AC_3_ELITE</name>
 	<!--<name>GB_AC_4_E</name>-->
 </blueprintList>
 
@@ -410,11 +410,6 @@ created from scratch using the components or techniques of them to create odd an
 <blueprintList name = "GB_CARAVAN_REWARD">  <!-- R4: Todo, change this to "GB_GIFTLIST_AUTOCANNONS_MODERATE -->
 	<name>GB_AC_2</name>
 	<name>GB_AC_3</name>
-</blueprintList>
-
-<blueprintList name = "GB_LIST_RECON_DRONES">
-	<name>RECON_BOARDER</name>
-	<name>RECON_DEFENSE</name>
 </blueprintList>
 
 <blueprintList name = "GB_GIFTLIST_MG">  <!-- R4: Machine Guns -->
@@ -469,6 +464,12 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_GAUSS_1</name>
 	<name>GB_GAUSS_2</name>
 	<name>GB_GAUSS_3</name>
+</blueprintList>
+<blueprintList name="GB_SHOP_FEDERATION_ITEM_WEAPONS_AC">
+	<name>GB_AC_1</name>
+	<name>GB_AC_2</name>
+	<name>GB_AC_3</name>
+	<name>GB_ROTARY_AC</name>
 </blueprintList>
 <!--<blueprintList name="LIST_DRONES_FED">
 	<name>COMBAT_1_LASER</name>
@@ -651,7 +652,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 <blueprintList name="GB_LIST_REPAIR_WEAPONS"> <!-- repair spec weapons-->
 	<name>BEAM_REPAIR</name>
-	<name>BOMB_HEAL</name>
+	<name>BOMB_HEAL</name><!-- this doesn't repair tho? it just heals crew-->
 	<name>BOMB_HEAL_SYSTEM</name>
 	<name>BOMB_HEAL_SYSTEM_STRONG</name>
 </blueprintList>
@@ -662,6 +663,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>HEKTAR_GEL</name>
 	<name>SYLVAN_GEL</name>
 	<name>UPG_ARM_REPAIR</name>
+	<name>COMBAT_REPAIR</name>
 </blueprintList>
 
 <blueprintList name="GB_LIST_REPAIR_DRONES" type="any"> <!-- repair spec drones-->
@@ -692,7 +694,12 @@ Post update content might change these to "Federation"/Elite versions instead wh
         <mod:setAttributes missiles="5" />
     </mod:findLike>
 </mod:findLike>
-
+<mod:findName type="shipBlueprint" name="MU_BEAM_MASTER_MISSILES"><!-- preventing leah from being OP-->
+    <mod:findLike type="weaponList">
+        <mod:selector missiles="5" />
+        <mod:setAttributes missiles="0" />
+    </mod:findLike>
+</mod:findName>
 
 <!--
 ////////////////////////////////////////////////////////////////////////////////////
@@ -800,9 +807,9 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<mod-append:name>GB_AC_2</mod-append:name>
 	<mod-append:name>GB_AC_3</mod-append:name>
 	<!--<mod-append:name>GB_AC_4</mod-append:name> --> <!-- Perhaps best left for specific encounter? -->
-	<mod-append:name>GB_AC_1_E</mod-append:name>
-	<mod-append:name>GB_AC_2_E</mod-append:name>
-	<mod-append:name>GB_AC_3_E</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE</mod-append:name>
+	<mod-append:name>GB_AC_2_ELITE</mod-append:name>
+	<mod-append:name>GB_AC_3_ELITE</mod-append:name>
 	<!--<mod-append:name>GB_AC_4_E</mod-append:name> --> <!-- Perhaps best left for specific encounter? -->
 	<mod-append:name>GB_ROTARY_AC</mod-append:name>
 	<!--<mod-append:name>GB_BURST_CANNON_1</mod-append:name>
@@ -850,7 +857,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>ION_HEAVY</name>
 
 	<!--GB Content-->
-	<name>GB_AC_3_E</name>
+	<name>GB_AC_3_ELITE</name>
 	<name>GB_RAIL_1_ENEMY</name>
 	<name>GB_RAIL_2_ENEMY</name>
 	<name>GB_RAIL_3_ENEMY</name> <!-- R4: Mercy be upon whomever be the first to face this in combat -->
@@ -977,10 +984,10 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 <!--RIGGER-->
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_RIGGER">
-<mod-overwrite:weaponList missiles="5" count="3" load="LIST_WEAPONS_SEPARATIST" />
+	<mod-overwrite:weaponList missiles="5" count="3" load="LIST_WEAPONS_SEPARATIST" />
 </mod:findName>
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_RIGGER_NO2">
-<mod-overwrite:weaponList missiles="5" count="3" load="LIST_WEAPONS_SEPARATIST" />
+	<mod-overwrite:weaponList missiles="5" count="3" load="LIST_WEAPONS_SEPARATIST" />
 </mod:findName>
 
 <!--ENFORCER-->
@@ -1035,14 +1042,14 @@ Post update content might change these to "Federation"/Elite versions instead wh
 <!--TRAPPER-->
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_TRAPPER">
 	<mod-overwrite:weaponList missiles="10" count="2">
-		<mod-overwrite:weapon name="LIST_WEAPONS_TRAPPER" />
-		<mod-overwrite:weapon name="LIST_WEAPONS_SEPARATIST" />
+		<weapon name="LIST_WEAPONS_TRAPPER" />
+		<weapon name="LIST_WEAPONS_SEPARATIST" />
 	</mod-overwrite:weaponList>
 </mod:findName>
 <mod:findName type = "shipBlueprint" name="MU_SEPARATIST_TRAPPER_NO2">
 	<mod-overwrite:weaponList missiles="10" count="2">
-		<mod-overwrite:weapon name="LIST_WEAPONS_TRAPPER" />
-		<mod-overwrite:weapon name="LIST_WEAPONS_SEPARATIST" />
+		<weapon name="LIST_WEAPONS_TRAPPER" />
+		<weapon name="LIST_WEAPONS_SEPARATIST" />
 	</mod-overwrite:weaponList>
 </mod:findName>
 
@@ -1341,7 +1348,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="3" count="4"> <!--- might set ammo lower later, it should intentionally run out of ammo early into a fight -->
 		<weapon name="GB_AC_2" />
-		<weapon name="BOMB_1" />
+		<weapon name="BOMB_1_ENEMY" />
 		<weapon name="GB_ANTIQUE_FEDERATION" />
 		<weapon name="GB_ANTIQUE_FEDERATION" />
 	</weaponList>
@@ -1472,7 +1479,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<weaponList missiles="10" count="4">
 		<weapon name="GB_ROTARY_AC"/>
 		<weapon name="FOCUS_1"/>
-		<weapon name="BOMB_1"/>
+		<weapon name="BOMB_1_ENEMY"/>
 		<weapon name="MISSILES_2_ENEMY"/>
 	</weaponList>
 	<droneList drones="0" count="0" />
@@ -1500,7 +1507,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<weaponList missiles="10" count="4">
 		<weapon name="GB_ROTARY_AC"/>
 		<weapon name="FOCUS_1"/>
-		<weapon name="BOMB_1"/>
+		<weapon name="BOMB_1_ENEMY"/>
 		<weapon name="MISSILES_3_ENEMY"/>
 	</weaponList>
 	<droneList drones="0" count="0" />
@@ -1528,7 +1535,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<weaponList missiles="10" count="4">
 		<weapon name="GB_ROTARY_AC"/>
 		<weapon name="FOCUS_CHAIN"/>
-		<weapon name="BOMB_1"/>
+		<weapon name="BOMB_1_ENEMY"/>
 		<weapon name="MISSILES_3_ENEMY"/>
 	</weaponList>
 	<droneList drones="0" count="0" />
@@ -1536,6 +1543,35 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<maxPower amount="27" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="AUTO_LOADER_LOW_SHIELD"/>
+	<crewCount amount="1" max="1" class="human_soldier"/>
+</shipBlueprint>
+<shipBlueprint name="MT_BOSS_GB_R4_BALLISTIC_C_CHAOS" layout="mt_boss_gb_r4_ballistic" img="mt_boss_gb_r4_ballistic">
+	<class>Renegade Cruiser</class>
+	<minSector>5</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<clonebay power="3" max="3" room="12" start="true" />
+		<doors power="3" max="3" room="4" start="true" />
+		<engines power="3" max="3" room="15" start="true" />
+		<oxygen power="1" max="2" room="13" start="true" />
+		<pilot power="2" max="2" room="0" start="true" />
+		<shields power="4" max="11" room="11" start="true" />
+		<weapons power="13" max="13" room="6" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="10" count="4">
+		<weapon name="GB_ROTARY_AC"/>
+		<weapon name="GB_ROTARY_AC"/>
+		<weapon name="BOMB_CLUSTER"/>
+		<weapon name="GB_AC_3_ELITE_INCENDIARY"/>
+	</weaponList>
+	<droneList drones="0" count="0" />
+	<health amount="25" />
+	<maxPower amount="27" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="AUTO_LOADER_LOW_SHIELD"/>
+	<aug name="AUTO_COOLDOWN"/>
 	<crewCount amount="1" max="1" class="human_soldier"/>
 </shipBlueprint>
 </FTL>

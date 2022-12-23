@@ -8,7 +8,7 @@
 
 
 <!-- 	•••••••••••••••••••••
-         DISPATCH EVENTS
+         DISPATCHER EVENTS
 		•••••••••••••••••••••
 -->
 <!-- Julk: some of this isn't fully functional anymore (outdated) should i add inferno-core stuff? -->
@@ -37,83 +37,25 @@
 					<text>Accept the job.</text>
 					<event>
 						<text>You accept the job and run double checks on your inventory for the delivery. Seems like you have everything you need already.</text>
-							<quest event="GB_DISPATCH_QUEST_1"/>
-							<hiddenAug>GB_MARKER_1</hiddenAug>
-							<choice hidden="true">
-								<text>Continue...</text>
-								<event>
+						<quest event="GB_DISPATCH_QUEST_1"/>
+						<hiddenAug>GB_MARKER_1</hiddenAug>
+						<choice hidden="true">
+							<text>Continue...</text>
+							<event>
 								<loadEvent>GB_CALL_QUESTION</loadEvent>
-								</event>
-							</choice>
-						</event>
-					</choice>
-				</event>
-			</choice>
-		<choice hidden="true" req="pilot" lvl="1"  max_group="4" blue="false">
-			<text>Nevermind. I don't want to do any jobs. </text>
-			<event>
-				<loadEvent>GB_CALL_QUESTION</loadEvent>
+							</event>
+						</choice>
+					</event>
+				</choice>
 			</event>
 		</choice>
-	</event>
-
-<event name="GB_DISPATCH_QUEST_1">
-	<text>You arrive at the beacon. There's already a ship there, waiting for you. "So...are you the delivery vessel?"</text>
-	<ship load="QUEST_MERCENARY_DELIVER_SHIP" hostile="false"/>
-	<choice hidden="true">
-		<text>Transfer the delivery over.</text>
-		<event load="GB_DISPATCH_DELIVERY_LIST_1"/>
+	<choice hidden="true" req="pilot" lvl="1"  max_group="4" blue="false">
+		<text>Nevermind. I don't want to do any jobs. </text>
+		<event>
+			<loadEvent>GB_CALL_QUESTION</loadEvent>
+		</event>
 	</choice>
 </event>
-
-<eventList name="GB_DISPATCH_DELIVERY_LIST_1">
-
-	<event>
-		<text>You pass over the shipment, and wait while the other ship looks them over. "Everything seems to be in check... job well done. Thanks for this it helps our colony out."</text>
-		<autoReward level="MED">scrap_only</autoReward>
-	</event>
-
-	<event>
-		<text>You pass over the shipment, and wait while the other ship looks them over. "Everything seems to be in check... job well done.Thank you so much we don't know what we'd do without your service"</text>
-		<autoReward level="MED">scrap_only</autoReward>
-	</event>
-
-	<event>
-		<text>You pass over the shipment, and wait while the other ship looks them over. "Everything seems to be in check... job well done.Thank you so much we don't know what we'd do without your service"</text>
-		<autoReward level="MED">scrap_only</autoReward>
-	</event>
-
-	<event>
-		<text>You pass over the milk, and wait while the other ship looks them over. "Everything seems to be in check... but I don't think we'll be paying. We are the dreaded calcium addicts. We will take ALL your milk"</text>
-		<choice hidden="true">
-			<text>Raise your weapons and prepare to take the payment from them yourself.</text>
-			<event>
-				<text>The other ship raises it's own weapons in response. "Big mistake."</text>
-				<ship hostile="true"/>
-				<choice hidden="true">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-
-	<event>
-		<text>You pass over the shipment, and wait while the other ship looks them over. "Um....why did you bring us 300 crates of milk? We ordered 300 crates of metal alloy. That's it, I've had enough of mistakes, this is the 3rd time my order was wrong."</text>
-		<choice hidden="true">
-			<text>Uh....oops?</text>
-			<event>
-				<text>Uh....oops?</text>
-				<ship hostile="true"/>
-				<choice hidden="true">
-					<text>Continue...</text>
-					<event load="COMBAT_CHECK"/>
-				</choice>
-			</event>
-		</choice>
-	</event>
-</eventList>
-
 
 <event name="GB_DISPATCH_QUEST_1">
 	<text>You arrive at the beacon. There's already a ship there, waiting for you. "So...are you the delivery vessel?"</text>
@@ -175,32 +117,32 @@
 
 <!-- R4: I think this is the generic event -->
 <event name="GB_DISPATCH_6">
-		<text load="GB_TEXT_DISPATCH_DELIVERY"/>
-		<choice hidden="false">
-			<text>Continue...</text>
-			<event>
-				<text load="GB_TEXT_DISPATCH_RESPONSE"/>
-				<choice hidden="false">
-					<text>Accept the job.</text>
-					<event>
+	<text load="GB_TEXT_DISPATCH_DELIVERY"/>
+	<choice hidden="false">
+		<text>Continue...</text>
+		<event>
+			<text load="GB_TEXT_DISPATCH_RESPONSE"/>
+			<choice hidden="false">
+				<text>Accept the job.</text>
+				<event>
 					<text>You accept the job and run double checks on your inventory for the delivery. Seems like you have everything you need already.</text>
-						<quest event="GB_DISPATCH_QUEST_LIST"/>
-						<hiddenAug>GB_MARKER_6</hiddenAug>
-							<choice hidden="true">
-							<text>Continue...</text>
-							<event load="ATLAS_MENU_NOEQUIPMENT"/>
-							</choice>
-						</event>
+					<quest event="GB_DISPATCH_QUEST_LIST"/>
+					<hiddenAug>GB_MARKER_6</hiddenAug>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="ATLAS_MENU_NOEQUIPMENT"/>
 					</choice>
-				<choice hidden="true" req="pilot" lvl="1"  max_group="4" blue="false">
-					<text>Nevermind. I don't want to do any jobs. </text>
-					<event>
+				</event>
+			</choice>
+			<choice hidden="true" req="pilot" lvl="1"  max_group="4" blue="false">
+				<text>Nevermind. I don't want to do any jobs. </text>
+				<event>
 					<loadEvent>GB_CALL_QUESTION</loadEvent>
-					</event>
-				</choice>
-			</event>
-		</choice>
-	</event>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
 <eventList name="GB_DISPATCH_QUEST_LIST">
 	<event load="GB_DISPATCH_QUEST_LIST_FED"/>
 	<event load="GB_DISPATCH_QUEST_LIST_FED_STATION"/>
@@ -218,7 +160,7 @@
 
 <eventList name="GB_DISPATCH_QUEST_LIST_FED">
 	<event>
-		<ship load="LIST_SHIPS_FED_GENERIC" hostile="false"/>
+		<ship load="SHIP_FED_GENERIC" hostile="false"/>
 		<text>Just as expected you have arrived to see a Federation ship awaiting to recieve the much needed supplies. "Much appreciated, Renegade! We wouldn't have lasted much longer without these supplies. Take this on my behalf."</text>
 		<autoReward level="MED">scrap_only</autoReward>
 			<choice>
@@ -228,7 +170,7 @@
 	</event>
 
 	<event>
-		<ship load="LIST_SHIPS_FED_GENERIC" hostile="false"/>
+		<ship load="SHIP_FED_GENERIC" hostile="false"/>
 		<text>Just as expected you have arrived to see a Federation ship awaiting to recieve the much needed supplies. "Much appreciated, Renegade! We wouldn't have lasted much longer without these supplies. We can't spare much but with these supplies I'll see to it if we can harrass the Rebel fleet and buy you a little extra time."</text>
 		<modifyPursuit amount="-2"/>
 			<choice>
@@ -238,7 +180,7 @@
 	</event>
 
 	<event>
-		<ship load="LIST_SHIPS_FED_BIG" hostile="false"/>
+		<ship load="SHIP_FED_BIG" hostile="false"/>
 		<text>To your surprise, the flotilla of ships you expected here is instead a rather heavy fleet of ships running on fumes. The heaviest ship makes a lumbering turn towards you before halting part way through the maneuover... Seems that it took a momment for the IFF to register you as a friendly. "Pardon for scaring you Renegade. We haven't had some good RnR in a long time and it's beginning to show, but with this delivery I reckon we can patch these ships up and get back into fighting condition. Once that's done we'll launch a counter offensive on the approaching fleet! They'll won't know what hit 'em."</text>
 		<modifyPursuit amount="-3"/>
 			<choice>
@@ -248,7 +190,7 @@
 	</event>
 
 	<event>
-		<ship load="LIST_SHIPS_STATIONS_FED" hostile="false"/>
+		<ship load="SHIP_FED_STATION_ALL" hostile="false"/>
 		<text>A Federation station surrounded by a few token defence patrols greets you upon your arrival. "We're reading you clear Renagade. Alright, dock at hanger bay two - zero. Our team will handle the cargo transfer and give your ship a few repairs as thanks."</text>
 		<damage amount="-10"/>
 			<choice>
@@ -258,7 +200,7 @@
 	</event>
 
 	<event>
-		<ship load="LIST_SHIPS_STATIONS_FED" hostile="false"/>
+		<ship load="SHIP_FED_STATION_ALL" hostile="false"/>
 		<text>A Federation station surrounded by a few token defence patrols greets you upon your arrival. "We're reading you clear Renagade. Alright, dock at hanger bay zero - niner. Thank you for the timely delivery. Take our excess supplies for your paymment."</text>
 		<autoReward level="HIGH">standard</autoReward>
 			<choice>
@@ -278,7 +220,7 @@
 
 <eventList name="GB_DISPATCH_QUEST_LIST_FED_STATION">
 	<event>
-		<ship load="MU_FED_STATION" hostile="false"/>
+		<ship load="SHIP_FED_STATION" hostile="false"/>
 		<text>A Federation station surrounded by a few token defence patrols greets you upon your arrival. "We're reading you clear Renagade. Alright, dock at hanger bay two - zero. Our team will handle the cargo transfer and give your ship a few repairs as thanks."</text>
 		<damage amount="-10"/>
 			<choice>
@@ -288,7 +230,7 @@
 	</event>
 
 	<event>
-		<ship load="LIST_SHIPS_STATIONS_FED" hostile="false"/>
+		<ship load="SHIP_FED_STATION_ALL" hostile="false"/>
 		<text>A Federation station surrounded by a few token defence patrols greets you upon your arrival. "We're reading you clear Renagade. Alright, dock at hanger bay zero - niner. Thank you for the timely delivery. Take our excess supplies for your paymment."</text>
 		<autoReward level="HIGH">standard</autoReward>
 			<choice>
@@ -298,7 +240,7 @@
 	</event>
 
 	<event>
-		<ship load="MU_FED_REFUEL" hostile="false"/>
+		<ship load="SHIP_FED_REFUEL" hostile="false"/>
 		<text>The Federation fuel depot gives you a warm welcome. "Please do tell me these crates are the updated make of Rations? I am really getting sick of stiff dough and replicator coffee." You check the inventory and it does seem to be the newer types of space rations of which the crew of the depot cheer in jubilation. "Alright. </text>
 		<item type="fuel" min="3" max="9"/>
 			<choice>
@@ -318,7 +260,7 @@
 
 <eventList name="GB_DISPATCH_QUEST_LIST_MILITIA">
 	<event>
-		<ship load="LIST_SHIPS_MILITIA_GENERIC" hostile="false"/>
+		<ship load="SHIP_MILITIA_GENERIC" hostile="false"/>
 		<text>Sometimes it is hard to distinguish Militia ships between their dedicated combat ships and their haulers. Though a quick hail guides you to the correct ship to drop off the much needed supplies. Another job well done.</text>
 		<autoReward level="MED">scrap_only</autoReward>
 			<choice>
@@ -328,7 +270,7 @@
 	</event>
 
 	<event>
-		<ship load="MU_MILITIA_STATION" hostile="false"/>
+		<ship load="SHIP_MILITIA_STATION" hostile="false"/>
 		<text>A Militia station welcomes you as you arrive to the beacon. After a brief time of negociating the delivery is made and you've earned your pay.</text>
 		<autoReward level="HIGH">scrap_only</autoReward>
 			<choice>
@@ -339,7 +281,7 @@
 </eventList>
 <eventList name="GB_DISPATCH_QUEST_LIST_GENERIC">
 	<event>
-		<ship load="LIST_SHIPS_GENERIC" hostile="false"/>
+		<ship load="SHIP_GENERIC" hostile="false"/>
 		<text>Another delivery, another happy client.</text>
 		<autoReward level="MED">scrap_only</autoReward>
 			<choice>
@@ -349,7 +291,7 @@
 	</event>
 
 	<event>
-		<ship load="LIST_SHIPS_GENERIC" hostile="false"/>
+		<ship load="SHIP_GENERIC" hostile="false"/>
 		<text>As expected a ship has arrived to rendezvous to transfer your cargo and pay.</text>
 		<autoReward level="MED">stuff</autoReward>
 			<choice>
@@ -359,7 +301,7 @@
 	</event>
 
 	<event>
-	<ship load="LIST_SHIPS_GENERIC" hostile="false"/>
+	<ship load="SHIP_GENERIC" hostile="false"/>
 		<text>As expected there is a ship here ready to accept their parcel.</text>
 		<autoReward level="MED">standard</autoReward>
 			<choice>
@@ -372,7 +314,7 @@
 
 <eventList name="GB_DISPATCH_QUEST_LIST_PIRATE">
 	<event>
-		<ship load="LIST_SHIPS_PIRATE_ALL" hostile="false"/>
+		<ship load="SHIP_PIRATE_ALL" hostile="false"/>
 		<text>Another delivery, another happy client.</text>
 		<autoReward level="MED">scrap_only</autoReward>
 			<choice>
@@ -382,7 +324,7 @@
 	</event>
 
 	<event>
-		<ship load="LIST_SHIPS_PIRATE_TRANSPORT" hostile="false"/>
+		<ship load="SHIP_SMUGGLER_ALL" hostile="false"/>
 		<text>As expected a pirate transport ship is ready to prepare to dock with your ship and transfer your pay after they receive </text>
 		<autoReward level="MED">stuff</autoReward>
 			<choice>
@@ -392,7 +334,7 @@
 	</event>
 
 	<event>
-	<ship load="LIST_SHIPS_PIRATE_STATIONS" hostile="false"/>
+	<ship load="SHIP_PIRATE_STATION" hostile="false"/>
 		<text>A blackmarket is open at this here Pirate Station and onboard your client awaits. The question is do you wish to risk docking your ship at the station?</text>
 		<choice>
 			<text>Dock with the station.</text>
@@ -807,21 +749,21 @@
 
 
 <!-----------------------
-	Dispatch Delivery Generic Text Lists
+	Dispatcher Delivery Generic Text Lists
 ------------------------>
 
 <textList name="GB_TEXT_DISPATCH_DELIVERY">
-	<text>You contact the dispatch for another mission.</text>
+	<text>You contact the dispatcher for another mission.</text>
 	<text>The faint glow on your terminal alerts you of a mission update, looks like you'll be making another delivery.</text>
 	<text>You received a hail from your dispatcher, it seems they have lined you up for another job.</text>
-	<text>"Dispatch here. Got a mission for you."</text>
-	<text>"Hey! This is dispatch. Got another client that could use a delivery."</text>
-	<text>"Got a new delivery order... Transmitting co-ords. Dispatch over."</text>
+	<text>"Dispatcher here. Got a mission for you."</text>
+	<text>"Hey! This is dispatcher. Got another client that could use a delivery."</text>
+	<text>"Got a new delivery order... Transmitting co-ords. Dispatcher over."</text>
 	<!-- <text>"So, have you found a reason to fight yet? Buddy."</text> not an AC reference sshshh-->
 	<text>Better keep your inventory organised, looks like we've got another mission awaiting our approval.</text>
 	<text>"So, do you ever get bored doing the same thing over and over across the Multiverse, Renegade?... Anyway, allotted small talk time over, got another mission lined up for you."</text>
 	<text>Another mission just came in courtesy of our dispatcher, time to plot our course.</text>
-	<text>"Dispatch here... Y'know I haven't the faintest clue how that thing can carry so much cargo. 'splains why your jump drive is the worst out of the entire fleet... anyway. Anotherones up."</text>
+	<text>"Dispatcher here... Y'know I haven't the faintest clue how that thing can carry so much cargo. 'splains why your jump drive is the worst out of the entire fleet... anyway. Anotherones up."</text>
 	<text>"How much cargo are you carrying in that ship anyway? I swear more often than not you already have exactly what we need... guess that's why these heavy freighters are perfect for the job of which speaking about that another jobs available for you."</text>
 </textList>
 <textList name="GB_TEXT_DISPATCH_RESPONSE">
@@ -831,12 +773,12 @@
 	<text>Coordinates recieved, time to earn your pay.</text>
 	<text>You wonder if this time it'll be a Rebel ambush, a no-show, a pirate shakedown, a disgruntled client, or perhaps all of them at the same time. Regardless you recieved your coordinates. Time to make it there to find out.</text>
 	<text>A request for basic goods and resources has just came through. Time to plot a route to the marked beacon on your starmap.</text>
-	<text>"just make sure you get there before the Rebels, Dispatch out."</text>
-	<text>"Don't take too long, the sooner you get there the sooner we can move on. Dispatch out."</text>
+	<text>"just make sure you get there before the Rebels, Dispatcher out."</text>
+	<text>"Don't take too long, the sooner you get there the sooner we can move on. Dispatcher out."</text>
 	<text>"I feel rather confident that I am not getting my fair share out of these deliveries. However with how many times you run into Rebels, Pirates, Rebel Pirates, etcetera, etcetera... guess we'll just call this hazard pay."</text>
 	<text>"Alright, same as before with one exception. We are technically a military vessel and in this sector we would be in breach of protocol-S14-W which ambiguously states that all military vessels exceeding the maximum hull vibrancy allocated for this system are to be destroyed. I have not a single clue what this means but it's the law... apparently."</text>
 	<text>It took awhile but the coordinates are finally recieved. Shouldn't be too challenging to reach it in time.</text>
-	<text>"Alright, here are the co-ordinates. Good luck on this one. Dispatch out."</text>
+	<text>"Alright, here are the co-ordinates. Good luck on this one. Dispatcher out."</text>
 	<text>Unfortunately for this one you are given only a vague set of directions. However upon referencing the star map you think you have a good idea of where your target is and plan a route accordingly.</text>
 </textList>
 
@@ -853,11 +795,11 @@
 		<text>Attempt to sneak into the station.</text>
 		<event load="GB_SMUGGLE_DELIVERY_RISK_LIST"/>
 	</choice>
-	<choice hidden="true" req="CLOAKING" max_lvl="1" max_group="0">
+	<choice hidden="true" req="cloaking" max_lvl="1" max_group="0">
 		<text>(Cloaking) Attempt to stealthily enter the station.</text>
 		<event load="GB_SMUGGLE_DELIVERY_CLOAK_LIST"/>
 	</choice>
-	<choice hidden="true" req="CLOAKING" lvl="2" max_group="0">
+	<choice hidden="true" req="cloaking" lvl="2" max_group="0">
 		<text>(Improved Cloaking) Use your stealth to enter the station.</text>
 		<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
 	</choice>
@@ -1008,6 +950,7 @@
 	<choice>
 		<text>Bribe them to let you continue.</text>
 		<event>
+			<text>can someone finally put some text here, like seriously, there is supposed to be actual text here</text><!--someone gotta put a text here-->
 			<item_modify steal="true">
 				<item type="scrap" min="15" max="15"/>
 			</item_modify>
@@ -1097,7 +1040,26 @@
 	</choice>
 </event>
 
-
+<!-- WIP
+	Orchid water delivery, orchid sector requirement. Unique sector?
+-->
+<event name="NAME">
+  <text>Your terminal lights up with an urgent message with your dispatcher waiting on the other end of the line. “Dispatcher here. Priority delivery this time ‘round. We’ve got word of a floral settlement that needs some heavy lifting. Water tanks, you're interested?”</text>
+  <choice hidden="true">
+    <text>Accept the mission.</text>
+    <event>
+      <quest event="GB_DISPATCH_QUEST_ORCHID_WATER"/>
+      <text>Water is vital across the universe to help settlements grow and prosper. This is even more true for the Orchids who depend on it for their health and well being both physically and spiritually. With the ongoing conflicts throughout the galaxy there has never been a higher demand for water than in these parts during these trying times. The Florals depend on the Federations Spacelift Command to aid them whenever their reserves run dry. Unfortunately, our ship doesn’t carry nearly enough water for the delivery so we must rendezvous with a contact to make a pick up and delivery. Your dispatcher has already gone ahead and plotted the location of the contact, as well as giving you a warning: “The floral settlement is depending on this delivery but they are not the only ones who are desperate. These are dangerous times so keep your head on a swivel. Dispatcher, out.”</text>
+      <choice hidden="true">
+        <text>Plot a course to the rendezvous site.</text>
+        <event load="GB_CALL_QUESTION"/>
+      </choice>
+    </event>
+  </choice>
+  <choice hidden="true">
+    <text>Decline the mission and do something else.</text>
+  </choice>
+</event>
 
 
 
