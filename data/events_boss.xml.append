@@ -22,7 +22,6 @@
 </event>
 
 <mod:findName type = "event" name = "BOSS_EVACUATIONS"> <!-- R4: I just added this here, hopefully it works fine. Is there a way for me to make this mutually exclusive with the first option? -->
-    <choice hidden="true">
 	<mod-append:choice hidden="true" req="GB_PHONE" lvl="1" max_group="10" blue="true">
 		<text>(Expanded Cargo Bay) Pick up as many civilians as possible and bring them to the Carryships.</text>
 		<event>
