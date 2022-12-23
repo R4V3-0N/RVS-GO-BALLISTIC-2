@@ -207,7 +207,7 @@
 
     
     <!-- fed freighter boss stuff -->
-    <bossShip>RVS_FED_FREIGHTER</bossShip>
+    <bossShip yOffset="40">RVS_FED_FREIGHTER</bossShip>
     <bossShip>RVS_REBEL_CRUISER</bossShip>
 	<fleetDef name="CUSTOM_FLEET_FED_DESTROYED">
         <ship layer="0">fleetfed_2_small_wreck</ship>
