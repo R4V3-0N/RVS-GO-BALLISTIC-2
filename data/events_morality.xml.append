@@ -1,0 +1,10 @@
+<event name="MORALITY_UPDATE_GENERAL_DOUBLE_FIGHT">
+	<text>[NOTORIETY INCREASED X2 - GENERAL]
+	Your actions here, justifiable or not, will not reflect well in the eyes of the Federation or its citizens. Continuously perform actions like this and you might start to see negative reactions from the Federation and its allies.
+	For your extra egregious actions, your notoriety was increased twice.</text>
+	<variable name="rep_general" op="add" val="2"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event load="COMBAT_CHECK"/>
+	</choice>
+</event>
