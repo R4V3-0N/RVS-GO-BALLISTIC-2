@@ -207,6 +207,7 @@
 
     
     <!-- fed freighter boss stuff -->
+    <bossShip>RVS_FED_FREIGHTER</bossShip>
     <bossShip>RVS_REBEL_CRUISER</bossShip>
 	<fleetDef name="CUSTOM_FLEET_FED_DESTROYED">
         <ship layer="0">fleetfed_2_small_wreck</ship>
@@ -1918,6 +1919,12 @@
 		</crew>
 		<noFuelStalemate/>
 	</mod-append:customShip>
+    <mod-append:customShip name="RVS_FED_FREIGHTER">
+        <shipIcons>
+            <shipIcon>icon_threat</shipIcon>
+        </shipIcons>
+        <noFuelStalemate/>
+    </mod-append:customShip>
     <mod-append:customShip name="RVS_REBEL_CRUISER">
         <shipIcons>
             <shipIcon>icon_threat</shipIcon>

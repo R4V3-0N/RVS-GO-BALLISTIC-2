@@ -1496,12 +1496,20 @@
         </choice>
     </event>
 
+
+
+    <ship name="SHIP_GB_FREIGHTER_BOSS" auto_blueprint="RVS_FED_FREIGHTER">
+        <destroyed load="RVS_FREIGHTER_CONVOY_WIN" />
+        <deadCrew load="RVS_FREIGHTER_CONVOY_WIN" />
+    </ship>
+
     <event name="RVS_FREIGHTER_CONVOY">
         <customFleet right="false" firing="false" autoDarkening="false">CUSTOM_FLEET_FED</customFleet>
         <text>You arrive at the coordinates given to you by the escort to find a Federation military checkpoint. Federation vessels patrol the area, protecting a couple of armed orbital facilities. Outside of the heavy military traffic at this beacon it's a relatively unremarkable star system, though you can't seem to locate the convoy.</text>
         <choice hidden="true">
             <text>Wait.</text>
             <event>
+                <ship load="SHIP_GB_FREIGHTER_BOSS" hostile="false"/>
                 <text>It doesn't take long before ships begin jumping into the system. A few freighters and transports arrive along with their escorts trickling in one after the other, until well over a dozen ships arrive. This must be the convoy you were sent to escort! "Multiverse Renegade, this is Supply Officer Kyrylo in command of the Federation ship Grebe. If I understand correctly, you are assigned to provide this convoy an additional escort, correct? Good. We've taken hits at nearly every turn and the Federation Fleet can't spare any of their ships in this sector. We can use all the help we can get, even if it's from a Renegade."</text>
                 <choice hidden="true">
                     <text>Accept the mission.</text>
@@ -1516,15 +1524,14 @@
                         <text>You're sick and tired of anti-Renegade prejudice. You flip Kyrylo the bird and cut comms before he can respond.</text>
                     </event>
                 </choice>
-                <!-- R4: hard fight innitiated.    You are up against the Freighter while you are getting bombed, ASB'ed, and fighting the Freighter.    Crew killing can give you the weapon it's carrying which I will make for this event in a bit.    Destroying it you can get it if you got a mag arm --> 
-                <!--
+                <!-- R4: hard fight innitiated.    You are up against the Freighter while you are getting bombed, ASB'ed, and fighting the Freighter.    Crew killing can give you the weapon it's carrying which I will make for this event in a bit.    Destroying it you can get it if you got a mag arm -->
                 <choice hidden="true">
                     <text>Attack the convoy!</text>
                     <event>
+                        <ship hostile="true"/>
                         <text>If this convoy is important enough for the Rebels to try and prevent it from reaching its destination, it must be carrying something very valuable or powerful.    [Note to Dalv, I haven't finished this option. I reckon you can finish writing it up with a self justification for this action followed by a moral hit general and combat menu, ship turned hostile!]</text>
                     </event>
                 </choice>
-                -->
             </event>
         </choice>
     </event>

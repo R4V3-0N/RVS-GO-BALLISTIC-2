@@ -1044,12 +1044,12 @@
 	Orchid water delivery, orchid sector requirement. Unique sector?
 -->
 <event name="NAME">
-  <text>Your terminal lights up with an urgent message with your dispatcher waiting on the other end of the line. “Dispatcher here. Priority delivery this time ‘round. We’ve got word of a floral settlement that needs some heavy lifting. Water tanks, you're interested?”</text>
+  <text>Your terminal lights up with an urgent message with your dispatcher waiting on the other end of the line. "Dispatcher here. Priority delivery this time 'round. We've got word of a floral settlement that needs some heavy lifting. Water tanks, you're interested?"</text>
   <choice hidden="true">
     <text>Accept the mission.</text>
     <event>
       <quest event="GB_DISPATCH_QUEST_ORCHID_WATER"/>
-      <text>Water is vital across the universe to help settlements grow and prosper. This is even more true for the Orchids who depend on it for their health and well being both physically and spiritually. With the ongoing conflicts throughout the galaxy there has never been a higher demand for water than in these parts during these trying times. The Florals depend on the Federations Spacelift Command to aid them whenever their reserves run dry. Unfortunately, our ship doesn’t carry nearly enough water for the delivery so we must rendezvous with a contact to make a pick up and delivery. Your dispatcher has already gone ahead and plotted the location of the contact, as well as giving you a warning: “The floral settlement is depending on this delivery but they are not the only ones who are desperate. These are dangerous times so keep your head on a swivel. Dispatcher, out.”</text>
+      <text>Water is vital across the universe to help settlements grow and prosper. This is even more true for the Orchids who depend on it for their health and well being both physically and spiritually. With the ongoing conflicts throughout the galaxy there has never been a higher demand for water than in these parts during these trying times. The Florals depend on the Federations Spacelift Command to aid them whenever their reserves run dry. Unfortunately, our ship doesn't carry nearly enough water for the delivery so we must rendezvous with a contact to make a pick up and delivery. Your dispatcher has already gone ahead and plotted the location of the contact, as well as giving you a warning: "The floral settlement is depending on this delivery but they are not the only ones who are desperate. These are dangerous times so keep your head on a swivel. Dispatcher, out."</text>
       <choice hidden="true">
         <text>Plot a course to the rendezvous site.</text>
         <event load="GB_CALL_QUESTION"/>
