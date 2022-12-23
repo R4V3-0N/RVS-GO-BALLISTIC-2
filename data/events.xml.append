@@ -31,4 +31,27 @@
         <event load="GB_REQUISITION" />
     </mod-append:choice>
 </mod:findName>
+
+<mod:findName type="event" name="FINISH_BEACON">
+    <mod:findLike type="loadEventList">
+        <mod:findName type="event" name="FINISH_BEACON_REAL" panic="true">
+            <mod:removeTag/>
+        </mod:findName>
+        <mod-append:event name="FINISH_BEACON_FED_FREIGHTER_DEAD" req="loc_fedfreighter_killed" lvl="1"/>
+        <mod-append:event name="FINISH_BEACON_REAL"/>
+    </mod:findLike>
+</mod:findName>
+<ship name="SHIP_GB_STEALTH_FIGHTER" auto_blueprint="RVS_STEALTH_FIGHTER">
+	<destroyed load="DESTROYED_FEDERATION"/>
+	<deadCrew load="DEAD_CREW_FEDERATION"/>
+</ship>
+<event name="FINISH_BEACON_FED_FREIGHTER_DEAD">
+    <variable name="loc_fedfreighter_killed" op="set" val="0"/>
+    <ship load="SHIP_GB_STEALTH_FIGHTER" hostile="true"/>
+    <text>You've arrived at the Long-Range Beacon. Unfortunately, a ship is already waiting for you. A Federation stealth fighter approaches, and on screen appears a well-kempt human soldier. "Renegade vessel, you've been identified as the ship which attacked a high-value Federation shipment. Power down your weapons and prepare to be boarded. You will be transported to the nearest Federation world where you and your crew will stand trial." Looks like there's only one way out of this.</text>
+    <choice>
+        <text>Continue...</text>
+        <event load="COMBAT_CHECK"/>
+    </choice>
+</event>
 </FTL>

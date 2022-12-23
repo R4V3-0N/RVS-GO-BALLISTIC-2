@@ -16,3 +16,5 @@ Reimagining the niche of these weapons using new Hyperspace functionality that d
 
 <text name="loot_federation_freighter_1">FEDERATION LOOT
 +40% breach chance, +1 shield piercing</text>
+
+<text name="warning_support_enemy">HOSTILE FIRE SUPPORT\nINBOUND</text>

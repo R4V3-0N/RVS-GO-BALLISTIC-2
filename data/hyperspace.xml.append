@@ -76,6 +76,7 @@
 	<event name="GB_CALL_QUESTION" recursive="true"/>
 	<variable name="loc_fedfreighter_repaired" op="set" val="0"/>
 	<variable name="loc_fedfreighter_damaged" op="set" val="0"/>
+	<variable name="loc_fedfreighter_killed" op="set" val="0"/>
 	<variable name="gb_ammo_toggle" op="set" val="0"/>
 	<variable name="gb_gave_fuel" op="set" val="0"/>
 	<variable name="loc_foundsafe" op="set" val="0"/>

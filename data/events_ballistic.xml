@@ -1499,10 +1499,9 @@
 
 
     <ship name="SHIP_GB_FREIGHTER_BOSS" auto_blueprint="RVS_FED_FREIGHTER">
-        <destroyed load="RVS_FREIGHTER_CONVOY_WIN" />
-        <deadCrew load="RVS_FREIGHTER_CONVOY_WIN" />
+        <destroyed load="RVS_FREIGHTER_DESTROYED" />
+        <deadCrew load="RVS_FREIGHTER_DEAD_CREW" />
     </ship>
-
     <event name="RVS_FREIGHTER_CONVOY">
         <customFleet right="false" firing="false" autoDarkening="false">CUSTOM_FLEET_FED</customFleet>
         <text>You arrive at the coordinates given to you by the escort to find a Federation military checkpoint. Federation vessels patrol the area, protecting a couple of armed orbital facilities. Outside of the heavy military traffic at this beacon it's a relatively unremarkable star system, though you can't seem to locate the convoy.</text>
@@ -1529,12 +1528,72 @@
                     <text>Attack the convoy!</text>
                     <event>
                         <ship hostile="true"/>
-                        <text>If this convoy is important enough for the Rebels to try and prevent it from reaching its destination, it must be carrying something very valuable or powerful.    [Note to Dalv, I haven't finished this option. I reckon you can finish writing it up with a self justification for this action followed by a moral hit general and combat menu, ship turned hostile!]</text>
+                        <environment type="PDS" target="player"/>
+                        <text>If this convoy is important enough for the Rebels to try and prevent it from reaching its destination, it must be carrying something very valuable or powerful.
+
+Kyrylo only looks somewhat suprised when you power your weapons and target the freighter. "Frankly, I don't understand why Universe 0 uses Renegades. You lot are no better than pirates." You detect weapons signatures all around you as the convoy's escort turns toward your ship. Hopefully the cargo is worth it...</text>
+                        <triggeredEvent event="RVS_FREIGHTER_ESCORT_AIRSTRIKE_ENEMY" seeded="false" loops="999999999" thisFight="true" minTime="25.0" maxTime="25.0">
+                            <warningMessage id="warning_support_enemy" x="692" y="84" time="5.0" centerText="true" flash="true" sound="surgeWarning" useWarningLine="true"/>
+                        </triggeredEvent>
+                        <choice hidden="true">
+                            <text>Continue...</text>
+                            <event load="MORALITY_UPDATE_GENERAL_DOUBLE_FIGHT"/>
+                        </choice>
                     </event>
                 </choice>
             </event>
         </choice>
     </event>
+    <event name="RVS_FREIGHTER_ESCORT_AIRSTRIKE_ENEMY">
+        <superBarrage player="false" name="RVS_FREIGHTER_ESCORT_AIRSTRIKE"/>
+    </event>
+    <event name="RVS_FREIGHTER_DESTROYED">
+        <variable name="loc_fedfreighter_killed" op="set" val="1"/>
+        <text>The freighter's cargo is scattered into space as it's blown apart. Without the right equipment, you won't be able to recover most of it before the Federation fleet blows your ship up too.</text>
+        <autoReward level="LOW">standard</autoReward>
+        <choice hidden="true" req="MAGNET_ARM">
+            <text>(Magnetic Arm) Recover the cargo.</text>
+            <event>
+                <text>The magnet arm gathers some crates from the wreckage. Among the spoils you find an advanced ballistic weapon!</text>
+                <autoReward level="MED">standard</autoReward>
+                <weapon name="GB_GAUSS_2_LOOT"/>
+            </event>
+        </choice>
+        <choice hidden="true">
+            <text>Continue...</text>
+            <event/>
+        </choice>
+    </event>
+    <event name="RVS_FREIGHTER_DEAD_CREW">
+        <variable name="loc_fedfreighter_killed" op="set" val="1"/>
+        <text>With the crew of the freighter dead you can loot its cargo, but you'll likely take a beating from its escort while you do so.</text>
+        <choice hidden="true">
+            <text>Loot the freighter.</text>
+            <event>
+                <text>You board the freighter and retrieve its cargo, your ship taking a few hits as you do. Among the spoils you find an advanced ballistic weapon!</text>
+                <damage amount="3" system="room" effect="breach"/>
+                <damage amount="2" system="random" effect="breach"/>
+                <autoReward level="HIGH">standard</autoReward>
+                <weapon name="GB_GAUSS_2_LOOT"/>
+            </event>
+        </choice>
+		<choice hidden="true" req="teleporter"> 
+			<text>(Teleporter) Use your Teleporter to get in and out quickly.</text>
+			<event>
+				<text>Using the teleporter, you manage to relieve the freighter of its cargo before your ship can take any more of a beating. Among the spoils you find an advanced ballistic weapon!</text>
+                <autoReward level="HIGH">standard</autoReward>
+                <weapon name="GB_GAUSS_2_LOOT"/>
+			</event>
+		</choice>
+        <choice hidden="true">
+            <text>Just scrap the hull.</text>
+            <event>
+                <text>You peal several chunks off the freighter's hull and prepare to jump away.</text>
+                <autoReward level="HIGH">standard</autoReward>
+            </event>
+        </choice>
+    </event>
+    
     <event name="RVS_FREIGHTER_CONVOY_CHECKPOINT">
         <beaconType text="CHECKPOINT" global="true" persist="false" hideVanillaLabel="true"> 
             <color r="233" g="123" b="74" a="1" /> <!-- CV: made this the same as supply depots -->
