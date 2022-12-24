@@ -5737,7 +5737,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 				<number>1</number>
 			</slot>
 		</doors>
-		<drones power="2" room="21" start="true" img="room_drones_4" />
+		<drones max="8" power="2" room="21" start="true" img="room_drones_4" />
 		<engines power="3" room="6" start="true" img="room_engines">
 			<slot>
 				<direction>down</direction>
@@ -5764,14 +5764,14 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 				<number>1</number>
 			</slot>
 		</sensors>
-		<shields power="2" room="23" start="true" img="room_shields_6">
+		<shields max="8" power="2" room="23" start="true" img="room_shields_6">
 			<slot>
 				<direction>left</direction>
 				<number>0</number>
 			</slot>
 		</shields>
 		<teleporter power="1" room="13" start="false" />
-		<weapons power="3" room="10" start="true" img="room_weapons_6">
+		<weapons max="8" power="3" room="10" start="true" img="room_weapons_6">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
