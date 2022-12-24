@@ -6,6 +6,12 @@
 	<floor x="279" y="285" />
 	<cloak x="-20" y="-20" />
 </offsets>
+<thrusters sync="true">
+    <thruster x="66" y="456">thruster_freighter_enemy</thruster>
+    <thruster x="142" y="531">thruster_GB_enemy</thruster>
+    <thruster x="345" y="531">thruster_GB_enemy</thruster>
+    <thruster x="466" y="456">thruster_freighter_enemy</thruster>
+</thrusters>
 <weaponMounts>
 	<mount x="180" y="64" rotate="false" mirror="true" gib="-1" slide="up" />
 	<mount x="378" y="64" rotate="false" mirror="false" gib="-1" slide="up" />
@@ -13,4 +19,3 @@
 	<mount x="516" y="226" rotate="false" mirror="false" gib="-1" slide="right" />
 </weaponMounts>
 <explosion />
-
