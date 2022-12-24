@@ -5722,6 +5722,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <shipBlueprint name="PLAYER_SHIP_RVSP_FED_FREIGHTER_3" layout="rvsp_fed_freighter_c" img="rvsp_fed_freighter_c">
 	<class>Federation Freighter</class>
 	<name>Ngowo</name> <!-- One of the aboriginal names for the Malleefowl. A bird that incubates its egg for a very long time -->
+	<unlock id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_3_unlock"/>
 	<desc>This model has been used to smuggle and sell exotic spices to worlds afar and to defend itself from anyone who isn't willing to pay for it.</desc>
 	<systemList>
 		<artillery power="1" room="19" start="false" weapon="ARTILLERY_BOSS_1" img="room_artillery" />

@@ -1196,13 +1196,13 @@ This is the maximum value of your spices, it will not increase further the next 
 	Orchid water delivery, orchid sector requirement. Unique sector?
 -->
 <event name="GB_DISPATCH_ORCHID_WATER">
-	<text>Your terminal lights up with an urgent message with your dispatcher waiting on the other end of the line. “Dispatcher here. Priority delivery this time ‘round. We’ve got word of a floral settlement that needs some heavy lifting. Water tanks, you're interested?”</text>
+	<text>Your terminal lights up with an urgent message with your dispatcher waiting on the other end of the line. "Dispatcher here. Priority delivery this time 'round. We've got word of a floral settlement that needs some heavy lifting. Water tanks, you're interested?"</text>
 	<choice hidden="true">
 		<text>Accept the mission.</text>
 		<event>
 			<quest event="GB_DISPATCH_QUEST_ORCHID_WATER"/>
 			<!-- R4: Note, need to find out how to give an internal water augment under the "water_supply_list" list here. Making an aug list to future proof this with anything in the future-->
-			<text>Water is vital across the universe to help settlements grow and prosper. This is even more true for the Orchids who depend on it for their health and well being both physically and spiritually. With the ongoing conflicts throughout the galaxy there has never been a higher demand for water than in these parts during these trying times. The Florals depend on the Federations Spacelift Command to aid them whenever their reserves run dry. Unfortunately, our ship doesn’t carry nearly enough water for the delivery so we must rendezvous with a contact to make a pick up the shipment before you can deliver it to the settlement. Your dispatcher has already gone ahead and plotted the location of the contact, as well as giving you a warning: “The floral settlement is depending on this delivery but they are not the only ones who are desperate. These are dangerous times so keep your head on a swivel. Dispatcher, out.”</text>
+			<text>Water is vital across the universe to help settlements grow and prosper. This is even more true for the Orchids who depend on it for their health and well being both physically and spiritually. With the ongoing conflicts throughout the galaxy there has never been a higher demand for water than in these parts during these trying times. The Florals depend on the Federations Spacelift Command to aid them whenever their reserves run dry. Unfortunately, our ship doesn't carry nearly enough water for the delivery so we must rendezvous with a contact to make a pick up the shipment before you can deliver it to the settlement. Your dispatcher has already gone ahead and plotted the location of the contact, as well as giving you a warning: "The floral settlement is depending on this delivery but they are not the only ones who are desperate. These are dangerous times so keep your head on a swivel. Dispatcher, out."</text>
 			<choice hidden="true">
 				<text>Plot a course to the rendezvous site.</text>
 				<event load="GB_CALL_QUESTION"/>
@@ -1222,7 +1222,7 @@ This is the maximum value of your spices, it will not increase further the next 
 		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
 		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
 	</beaconType>
-	<text>The serenity of this beacon has been disrupted violently by an explosion off the port bow! It came from what was an unidentified ship, now made clear to be a pirate which fired a warning shot to catch your attention. The ship hails you and a feed flicks on of a dry and wilted Orchid crew onboard, “These droughts have been relentless and very harsh on our people. I... we are sorry, sir, but we have heard of your shipment and we’ll be taking it. Please, we don’t want to fight! We want to save our people!” As hard as it may be, you simply do not have enough water tanks to distribute between these desperate pirates and the settlement. Perhaps there could be a compromise but regardless it’ll be a difficult choice to make.</text>
+	<text>The serenity of this beacon has been disrupted violently by an explosion off the port bow! It came from what was an unidentified ship, now made clear to be a pirate which fired a warning shot to catch your attention. The ship hails you and a feed flicks on of a dry and wilted Orchid crew onboard, "These droughts have been relentless and very harsh on our people. I... we are sorry, sir, but we have heard of your shipment and we'll be taking it. Please, we don't want to fight! We want to save our people!" As hard as it may be, you simply do not have enough water tanks to distribute between these desperate pirates and the settlement. Perhaps there could be a compromise but regardless it'll be a difficult choice to make.</text>
 	<ship load="SHIP_PIRATE_ALL" hostile="false"/> <!-- R4: We should change to an orchid pirate specifically-->
 	
 	<choice hidden="true" req="water_supply_list" lvl="0" max_group="0" blue="false">
@@ -1248,14 +1248,14 @@ This is the maximum value of your spices, it will not increase further the next 
 	<choice hidden="true"> <!-- R4: For those who want to play morally gray, will allow them to attack these poor sods regardless -->
 		<text>We do not negogiate with pirates, order a general alert: All crews to battle stations!</text>
 		<event>
-			<text>"No, please! Our planet is dying! Famines! Droughts! We don't have mu-" "you cut communications. We need to keep our heads focused. We've got a mission to complete and we won't let a few pirates get in our way. Weapons charging! 
+			<text>"No, please! Our planet is dying! Famines! Droughts! We don't have mu-" "you cut communications. We need to keep our heads focused. We've got a mission to complete and we won't let a few pirates get in our way. Weapons charging!</text>
 		</event>
 		<event load="COMBAT_CHECK"/>
 	</choice>
 </event>
 
 <event name="GB_WATER_PIRATE_SHIPMENT_DELIVERED">
-	<text>You try to explain to them that you have already delivered your shipment and that there is no shipment they can take from you. Though they say nothing to you they begin speaking to each other in their orchid sign language. Moving slowly with their wilted and dry bodies in an almost heart wrenching display before they eventually recompose themselves and begin speaking to you once more. “We… I do not understand… What are we supposed to do now? Our people… our world is dying…”</text>
+	<text>You try to explain to them that you have already delivered your shipment and that there is no shipment they can take from you. Though they say nothing to you they begin speaking to each other in their orchid sign language. Moving slowly with their wilted and dry bodies in an almost heart wrenching display before they eventually recompose themselves and begin speaking to you once more. "We... I do not understand... What are we supposed to do now? Our people... our world is dying..."</text>
 	<choice hidden="true" req="LIST_CREW_FEDERATION_ELITE" lvl="0" max_group="0">
 		<text>Promise that the Federation will not forsaken their world. Support will come!</text>
 		<event load="GB_WATER_PIRATE_PROMISE_LIST"/>
@@ -1286,12 +1286,12 @@ This is the maximum value of your spices, it will not increase further the next 
 	<event load="GB_WATER_PIRATE_FIGHT"/>
 	<event>
 		<!--<text>You try to assure them that the Federation will not abandon their system but they are uncertain of the legitimacy of your claim or are otherwise unconfident in the Federation itself. Thankfully, however, they do not escalate the situation further and despite the impasse they eventually powered down their weapons and eventually jumped away.</text> -->
-		<text>No matter how much you try to convince them that there is hope you can see nothing but despair on their wilted faces. After a long pause during the standoff they eventually cut communications completely. You assumed that a fight was imminent, but they began to charge up their FTL drives shortly before jumping away  without further incident. A sad day to see the once peaceful orchid sectors tainted by the increase of pirate activity, even more so to see such despairing orchids turning to such desperate measures…</text>
+		<text>No matter how much you try to convince them that there is hope you can see nothing but despair on their wilted faces. After a long pause during the standoff they eventually cut communications completely. You assumed that a fight was imminent, but they began to charge up their FTL drives shortly before jumping away  without further incident. A sad day to see the once peaceful orchid sectors tainted by the increase of pirate activity, even more so to see such despairing orchids turning to such desperate measures...</text>
 		<instantEscape />
 	</event>
 	
 	<event>
-		<text>Communications begin to break down as the orchids erupt in fury “The Federation has already abandoned us! While the war rages on the Federation has turned a blind eye to this sector! Millions are dying and the Federation has done nothing to aid us!” Things escalate as another explosion goes off - and this time it was not a warning shot. All hands, battle stations!</text>
+		<text>Communications begin to break down as the orchids erupt in fury "The Federation has already abandoned us! While the war rages on the Federation has turned a blind eye to this sector! Millions are dying and the Federation has done nothing to aid us!" Things escalate as another explosion goes off - and this time it was not a warning shot. All hands, battle stations!</text>
 		<ship hostile="true"/>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -1308,7 +1308,7 @@ This is the maximum value of your spices, it will not increase further the next 
 
 <eventList name="GB_WATER_PIRATE_CHOICE_1_LIST">
 	<event>
-		<text>You try to explain that you have orders to follow and that attacking this ship will do nothing but reduce the effectiveness and frequency of whatever support the Federation will be able to extend to this sector. Though it doesn’t seem to make the orchids any more comfortable with their state they seem to understand and resign, leaving you to continue on your mission without further incident.</text>
+		<text>You try to explain that you have orders to follow and that attacking this ship will do nothing but reduce the effectiveness and frequency of whatever support the Federation will be able to extend to this sector. Though it doesn't seem to make the orchids any more comfortable with their state they seem to understand and resign, leaving you to continue on your mission without further incident.</text>
 	</event>
 	<event load="GB_WATER_PIRATE_FIGHT"/>
 </eventList>
@@ -1321,7 +1321,7 @@ This is the maximum value of your spices, it will not increase further the next 
 		<text>You attempt to escape further confrontation and begin charging your FTL drive.Though the Orchids seem deeply upset they seem defeated and do not make any attempts to pursue you and allow you to depart without further escalation.</text>
 	</event>
 	<event>
-		<text>The Orchids do not seem to wish to allow you to escape. Rather it is to hold your ship hostage or in protest of your departure they have fired another shot and this time it wasn’t a warning shot.	All hands, battle stations!</text>
+		<text>The Orchids do not seem to wish to allow you to escape. Rather it is to hold your ship hostage or in protest of your departure they have fired another shot and this time it wasn't a warning shot.	All hands, battle stations!</text>
 		<ship hostile="true"/>
 		<choice hidden="true">
 			<text>Continue...</text>
@@ -1330,7 +1330,7 @@ This is the maximum value of your spices, it will not increase further the next 
 	</event>
 </eventList>
 <event name="GB_WATER_PIRATE_CHOICE_2">
-	<text>You try to assure them that the Federation will not abandon their system and that help will be on their way but they are uncertain of the legitimacy of your claim or are otherwise not confident in the Federation itself. They stare aimlessly at the video display of you before hunching over the terminal and speaking with a soft and pained tone. “Where has the Federation been? It has been many months since a single ship had landed on our worlds… We were told that when we joined the Federation that they were here to offer us help and protection… where are they now?”</text>
+	<text>You try to assure them that the Federation will not abandon their system and that help will be on their way but they are uncertain of the legitimacy of your claim or are otherwise not confident in the Federation itself. They stare aimlessly at the video display of you before hunching over the terminal and speaking with a soft and pained tone. "Where has the Federation been? It has been many months since a single ship had landed on our worlds... We were told that when we joined the Federation that they were here to offer us help and protection... where are they now?"</text>
 	<choice hidden="true">
 		<text>Federation ships has been protecting these worlds!</text>
 		<event>
@@ -1355,7 +1355,7 @@ This is the maximum value of your spices, it will not increase further the next 
 </event>
 
 <event name="GB_WATER_PIRATE_FIGHT">
-	<text>The Orchids do not seem to wish to allow you to escape. Rather it is to hold your ship hostage or in protest of your departure they have fired another shot and this time it wasn’t a warning shot.	All hands, battle stations!</text>
+	<text>The Orchids do not seem to wish to allow you to escape. Rather it is to hold your ship hostage or in protest of your departure they have fired another shot and this time it wasn't a warning shot.	All hands, battle stations!</text>
 	<ship hostile="true"/>
 	<choice hidden="true">
 		<text>Continue...</text>
@@ -1395,7 +1395,7 @@ This is the maximum value of your spices, it will not increase further the next 
 
 
 <event name="GB_WATER_PICKUP_PIRATE">
-	<text>A rather boring node compared to the others commonly found within orchid space. An old trade hub set up around one of the moons around a gas giant where ice haulers frequently bring in their latest haul. As good a place as any to find a seller for water, however, it doesn’t look like the station is full of the charitable type.</text>
+	<text>A rather boring node compared to the others commonly found within orchid space. An old trade hub set up around one of the moons around a gas giant where ice haulers frequently bring in their latest haul. As good a place as any to find a seller for water, however, it doesn't look like the station is full of the charitable type.</text>
 	<choice hidden="true">
 		<event>
 			<item_modify>
@@ -1422,7 +1422,7 @@ This is the maximum value of your spices, it will not increase further the next 
 
 <eventList name="GB_BARTER_WATER">
 	<event>
-		<text>You go back and forth with the trader trying to barter the prices lower, even bringing up how the Federation rewards those who help it, but it wasn’t enough to change the prices any lower than the market value with demand being as high as it is in this sector. They present you their final offer, take it or leave it.</text>
+		<text>You go back and forth with the trader trying to barter the prices lower, even bringing up how the Federation rewards those who help it, but it wasn't enough to change the prices any lower than the market value with demand being as high as it is in this sector. They present you their final offer, take it or leave it.</text>
 		<choice hidden="true">
 			<text>Purchase the water for the full market price. [-30 scrap]</text>
 			<event>
@@ -1472,7 +1472,7 @@ This is the maximum value of your spices, it will not increase further the next 
 		</choice>
 	</event>
 	<event>
-		<text>You barter back and forth with the trader trying to broker a deal. Rather you pushed too hard or got on their bad side. They noticed they had the price wrong for the water and instead raised it by a few scrap for ‘tax’.</text>
+		<text>You barter back and forth with the trader trying to broker a deal. Rather you pushed too hard or got on their bad side. They noticed they had the price wrong for the water and instead raised it by a few scrap for 'tax'.</text>
 		<choice hidden="true">
 			<text>Purchase the water for the full market price. [-35 scrap]</text>
 			<event>
