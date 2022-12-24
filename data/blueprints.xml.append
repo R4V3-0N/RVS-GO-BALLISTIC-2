@@ -4700,6 +4700,46 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
  <!-- R4 2022/11/24: With the Vert blcak magics. I want this weapon to have a low chance of doing hull damage but not pop shields. Something in the realms of low enough that it doesn't work every time it shoots but at least every other volley-->
 <weaponBlueprint name="GB_MG">
+	<type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+    <flavorType>Laser</flavorType>
+	<title>Machine Gun</title>
+	<short>MG</short>
+	<desc>This weapon is an antiquated anti-ship weapon no longer capable of damaging the hulls of modern ships. They can however still hurt the crew inside those hulls.</desc>
+	<tooltip>5 shots 15 crew damage weapon</tooltip>
+	<damage>0</damage>
+	<persDamage>1</persDamage>
+	<shots>5</shots>
+	<sp>0</sp>
+	<cooldown>6</cooldown>
+	<power>0</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>10</cost>
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_MG">GB_shot_light</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Machinegun</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_MG_NOCRIT">
 	<type>LASER</type>
 	<title>Machine Gun</title>
 	<short>MG</short>
@@ -4735,8 +4775,86 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<weaponArt>GB_Machinegun</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
+<weaponBlueprint name="GB_MG_CRIT">
+	<type>LASER</type>
+	<title>Machine Gun</title>
+	<short>MG</short>
+	<desc>This weapon is an antiquated anti-ship weapon no longer capable of damaging the hulls of modern ships. They can however still hurt the crew inside those hulls.</desc>
+	<tooltip>5 shots 15 crew damage weapon</tooltip>
+	<damage>1</damage>
+	<shots>5</shots>
+	<sp>0</sp>
+	<cooldown>6</cooldown>
+	<power>0</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>10</cost>
+	<image>GB_shot_light</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Machinegun</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
 
 <weaponBlueprint name="GB_HMG">
+	<type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+    <flavorType>Laser</flavorType>
+	<title>Heavy Machine Gun</title>
+	<short>HMG</short>
+	<desc>This weapon is an antiquated anti-ship weapon no longer capable of damaging the hulls of modern ships. They can however still hurt the crew inside those hulls.</desc>
+	<tooltip>3 shot 30 crew damage weapon, 10% chance to cause a breach, 10% chance to stun for 2 seconds</tooltip>
+	<damage>0</damage>
+	<persDamage>2</persDamage>
+	<shots>3</shots> <!-- R4 2022/11/24: was 1, an error-->
+	<sp>0</sp>
+	<breachChance>1</breachChance>
+	<stunChance>1</stunChance>
+	<stun>2</stun>
+	<cooldown>6</cooldown>
+	<power>0</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>15</cost>
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_HMG">GB_magnetic_slug_light</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Machinegun_Heavy</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_HMG_NOCRIT">
 	<type>LASER</type>
 	<title>Heavy Machine Gun</title>
 	<short>HMG</short>
@@ -4744,6 +4862,45 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<tooltip>3 shot 30 crew damage weapon, 10% chance to cause a breach, 10% chance to stun for 2 seconds</tooltip>
 	<damage>0</damage>
 	<persDamage>2</persDamage>
+	<shots>3</shots> <!-- R4 2022/11/24: was 1, an error-->
+	<sp>0</sp>
+	<breachChance>1</breachChance>
+	<stunChance>1</stunChance>
+	<stun>2</stun>
+	<cooldown>6</cooldown>
+	<power>0</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>15</cost>
+	<image>GB_magnetic_slug_light</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Machinegun_Heavy</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_HMG_CRIT">
+	<type>LASER</type>
+	<title>Heavy Machine Gun</title>
+	<short>HMG</short>
+	<desc>This weapon is an antiquated anti-ship weapon no longer capable of damaging the hulls of modern ships. They can however still hurt the crew inside those hulls.</desc>
+	<tooltip>3 shot 30 crew damage weapon, 10% chance to cause a breach, 10% chance to stun for 2 seconds</tooltip>
+	<damage>1</damage>
+	<persDamage>1</persDamage>
 	<shots>3</shots> <!-- R4 2022/11/24: was 1, an error-->
 	<sp>0</sp>
 	<breachChance>1</breachChance>

@@ -395,6 +395,34 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_AC_3_ELITE_HE_CRIT</name>
 </blueprintList>
 
+<!-----------------------
+	Machine Gun Crits
+------------------------>
+<blueprintList name="GB_CRIT_LIST_MG">
+	<name>GB_MG_NOCRIT</name>
+	<name>GB_MG_NOCRIT</name>
+	<name>GB_MG_NOCRIT</name>
+	<name>GB_MG_NOCRIT</name>
+	<name>GB_MG_NOCRIT</name>
+	<name>GB_MG_NOCRIT</name>
+	<name>GB_MG_NOCRIT</name>
+	<name>GB_MG_NOCRIT</name>
+	<name>GB_MG_NOCRIT</name>
+	<name>GB_MG_CRIT</name>
+</blueprintList>
+<blueprintList name="GB_CRIT_LIST_HMG">
+	<name>GB_HMG_NOCRIT</name>
+	<name>GB_HMG_NOCRIT</name>
+	<name>GB_HMG_NOCRIT</name>
+	<name>GB_HMG_NOCRIT</name>
+	<name>GB_HMG_NOCRIT</name>
+	<name>GB_HMG_NOCRIT</name>
+	<name>GB_HMG_NOCRIT</name>
+	<name>GB_HMG_NOCRIT</name>
+	<name>GB_HMG_NOCRIT</name>
+	<name>GB_HMG_CRIT</name>
+</blueprintList>
+
 <!-- 	••••••••••••••••••••••••••••••••••••••••••
 					 Rewards and Gifts
 		••••••••••••••••••••••••••••••••••••••••••
