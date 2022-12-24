@@ -5792,7 +5792,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<maxPower amount="9" />
 	<crewCount amount="1" class="slug" />
 	<crewCount amount="1" class="engi_separatist" />
-	<aug name="NEBULA_GASSES" /> <!-- R4: Replace this with the unique cargo. Something along the line of Exotic Spices -->
+	<aug name="EXOTIC_SPICES_1" />
 	<shieldImage>mupc_a55</shieldImage>
 	<cloakImage>rvsp_fed_freighter</cloakImage>
 	<floorImage>rvsp_fed_freighter</floorImage>
@@ -5918,5 +5918,101 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 		</layer>
 	</colorList>
 </crewBlueprint>
+
+<!--    ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+               AUGMENTS
+		◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+-->
+
+<augBlueprint name="EXOTIC_SPICES_1">
+    <title>Exotic Spices</title>
+    <desc>These spices have a higher market value the farther from the Multiverse Drop Point you travel. Because they take up a large portion of your cargo bay, they will reduce the amount of scrap you can collect in later sectors.
+
+Scrap Reduction: 0%</desc>
+    <cost>40</cost>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <bp>0</bp>
+</augBlueprint>
+<augBlueprint name="EXOTIC_SPICES_2">
+    <title>Exotic Spices</title>
+    <desc>These spices have a higher market value the farther from the Multiverse Drop Point you travel. Because they take up a large portion of your cargo bay, they will reduce the amount of scrap you can collect in later sectors.
+
+Scrap Reduction: 0%</desc>
+    <cost>60</cost>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <bp>0</bp>
+</augBlueprint>
+<augBlueprint name="EXOTIC_SPICES_3">
+    <title>Exotic Spices</title>
+    <desc>These spices have a higher market value the farther from the Multiverse Drop Point you travel. Because they take up a large portion of your cargo bay, they will reduce the amount of scrap you can collect in later sectors.
+
+Scrap Reduction: -1%</desc>
+    <cost>100</cost>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <bp>0</bp>
+</augBlueprint>
+<augBlueprint name="EXOTIC_SPICES_4">
+    <title>Exotic Spices</title>
+    <desc>These spices have a higher market value the farther from the Multiverse Drop Point you travel. Because they take up a large portion of your cargo bay, they will reduce the amount of scrap you can collect in later sectors.
+
+Scrap Reduction: -2%</desc>
+    <cost>160</cost>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <bp>0</bp>
+</augBlueprint>
+<augBlueprint name="EXOTIC_SPICES_5">
+    <title>Exotic Spices</title>
+    <desc>These spices have a higher market value the farther from the Multiverse Drop Point you travel. Because they take up a large portion of your cargo bay, they will reduce the amount of scrap you can collect in later sectors.
+
+Scrap Reduction: -5%</desc>
+    <cost>260</cost>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <bp>0</bp>
+</augBlueprint>
+<augBlueprint name="EXOTIC_SPICES_6">
+    <title>Exotic Spices</title>
+    <desc>These spices have a higher market value the farther from the Multiverse Drop Point you travel. Because they take up a large portion of your cargo bay, they will reduce the amount of scrap you can collect in later sectors.
+
+Scrap Reduction: -15%</desc>
+    <cost>420</cost>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <bp>0</bp>
+</augBlueprint>
+<augBlueprint name="EXOTIC_SPICES_7">
+    <title>Exotic Spices</title>
+    <desc>These spices have a higher market value the farther from the Multiverse Drop Point you travel. Because they take up a large portion of your cargo bay, they will reduce the amount of scrap you can collect in later sectors.
+
+Scrap Reduction: -15%</desc>
+    <cost>680</cost>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <bp>0</bp>
+</augBlueprint>
+<augBlueprint name="EXOTIC_SPICES_8">
+    <title>Exotic Spices</title>
+    <desc>These spices have a higher market value the farther from the Multiverse Drop Point you travel. Because they take up a large portion of your cargo bay, they will reduce the amount of scrap you can collect in later sectors.
+
+Scrap Reduction: -15%</desc>
+    <cost>1100</cost>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <bp>0</bp>
+</augBlueprint>
+<augBlueprint name="EXOTIC_SPICES_9">
+    <title>Exotic Spices</title>
+    <desc>These spices have a higher market value the farther from the Multiverse Drop Point you travel. Because they take up a large portion of your cargo bay, they will reduce the amount of scrap you can collect in later sectors.
+
+Scrap Reduction: -15%</desc>
+    <cost>1780</cost>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <bp>0</bp>
+</augBlueprint>
 
 </FTL>
