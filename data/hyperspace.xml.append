@@ -1782,7 +1782,6 @@
             <shipReq>PLAYER_SHIP_RVSP_FED_FREIGHTER</shipReq>
             <value>5</value>
         </unlock>
-        <!--
 		<unlock variant="c" silent="false">
             <type>1</type>
             <shipReq>PLAYER_SHIP_RVSP_FED_FREIGHTER_2</shipReq>
@@ -1792,7 +1791,6 @@
             <type>2</type>
             <shipReq>PLAYER_SHIP_RVSP_FED_FREIGHTER</shipReq>
         </unlock>
-        -->
     </mod-append:ship>
 	<mod-append:customShip name="PLAYER_SHIP_RVSP_FED_FREIGHTER">
 		<hiddenAug>SHIP_FEDERATION</hiddenAug> <!-- R4: Placeholder -->
