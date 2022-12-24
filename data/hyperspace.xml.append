@@ -2101,25 +2101,25 @@
 	</mod:findLike>
 </mod:findLike>
 <mod:findLike type="augments" limit="1">
-    <mod-append:aug name="EXOTIC_SPICES_3">
+    <mod-append:aug name="GB_EXOTIC_SPICES_3">
         <function name="SCRAP_COLLECTOR" value="-0.01" useForReqs="false"/>
     </mod-append:aug>
-    <mod-append:aug name="EXOTIC_SPICES_4">
+    <mod-append:aug name="GB_EXOTIC_SPICES_4">
         <function name="SCRAP_COLLECTOR" value="-0.02" useForReqs="false"/>
     </mod-append:aug>
-    <mod-append:aug name="EXOTIC_SPICES_5">
+    <mod-append:aug name="GB_EXOTIC_SPICES_5">
         <function name="SCRAP_COLLECTOR" value="-0.05" useForReqs="false"/>
     </mod-append:aug>
-    <mod-append:aug name="EXOTIC_SPICES_6">
+    <mod-append:aug name="GB_EXOTIC_SPICES_6">
         <function name="SCRAP_COLLECTOR" value="-0.15" useForReqs="false"/>
     </mod-append:aug>
-    <mod-append:aug name="EXOTIC_SPICES_7">
+    <mod-append:aug name="GB_EXOTIC_SPICES_7">
         <function name="SCRAP_COLLECTOR" value="-0.15" useForReqs="false"/>
     </mod-append:aug>
-    <mod-append:aug name="EXOTIC_SPICES_8">
+    <mod-append:aug name="GB_EXOTIC_SPICES_8">
         <function name="SCRAP_COLLECTOR" value="-0.15" useForReqs="false"/>
     </mod-append:aug>
-    <mod-append:aug name="EXOTIC_SPICES_9">
+    <mod-append:aug name="GB_EXOTIC_SPICES_9">
         <function name="SCRAP_COLLECTOR" value="-0.15" useForReqs="false"/>
     </mod-append:aug>
 </mod:findLike>

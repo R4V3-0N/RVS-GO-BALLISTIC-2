@@ -19,28 +19,30 @@ SCRAP RECOVERY: 0%   0%  -1%  -2%  -5% -15% -15% -15% -15%
 <mod:findName type="event" name="LOAD_ATLAS_MARKER">
     <mod:findLike type="loadEvent" panic="true">
         <mod:selector>ATLAS_MENU</mod:selector>
-        <mod:removeTag />
+        <mod:setValue>GB_ATLAS_MENU</mod:setValue>
     </mod:findLike>
-    <mod-append:loadEventList default="ATLAS_MENU">
-        <event name="ATLAS_UPGRADE_SPICES_1" req="EXOTIC_SPICES_1"/>
-        <event name="ATLAS_UPGRADE_SPICES_2" req="EXOTIC_SPICES_2"/>
-        <event name="ATLAS_UPGRADE_SPICES_3" req="EXOTIC_SPICES_3"/>
-        <event name="ATLAS_UPGRADE_SPICES_4" req="EXOTIC_SPICES_4"/>
-        <event name="ATLAS_UPGRADE_SPICES_5" req="EXOTIC_SPICES_5"/>
-        <event name="ATLAS_UPGRADE_SPICES_6" req="EXOTIC_SPICES_6"/>
-        <event name="ATLAS_UPGRADE_SPICES_7" req="EXOTIC_SPICES_7"/>
-        <event name="ATLAS_UPGRADE_SPICES_8" req="EXOTIC_SPICES_8"/>
-    </mod-append:loadEventList>
 </mod:findName>
+<event name="GB_ATLAS_MENU">
+    <loadEventList default="ATLAS_MENU">
+        <event name="GB_ATLAS_UPGRADE_SPICES_1" req="GB_EXOTIC_SPICES_1"/>
+        <event name="GB_ATLAS_UPGRADE_SPICES_2" req="GB_EXOTIC_SPICES_2"/>
+        <event name="GB_ATLAS_UPGRADE_SPICES_3" req="GB_EXOTIC_SPICES_3"/>
+        <event name="GB_ATLAS_UPGRADE_SPICES_4" req="GB_EXOTIC_SPICES_4"/>
+        <event name="GB_ATLAS_UPGRADE_SPICES_5" req="GB_EXOTIC_SPICES_5"/>
+        <event name="GB_ATLAS_UPGRADE_SPICES_6" req="GB_EXOTIC_SPICES_6"/>
+        <event name="GB_ATLAS_UPGRADE_SPICES_7" req="GB_EXOTIC_SPICES_7"/>
+        <event name="GB_ATLAS_UPGRADE_SPICES_8" req="GB_EXOTIC_SPICES_8"/>
+    </loadEventList>
+</event>
 
-<event name="ATLAS_UPGRADE_SPICES_1">
+<event name="GB_ATLAS_UPGRADE_SPICES_1">
     <text>While at hyperspeed, you check what the value of your exotic spices will be in the coming sector...</text>
-    <remove name="EXOTIC_SPICES_1"/>
+    <remove name="GB_EXOTIC_SPICES_1"/>
     <choice hidden="true">
         <text>Continue...</text>
         <event>
             <text>The sell value of your spices has increased to 30~.</text>
-            <augment name="EXOTIC_SPICES_2"/>
+            <augment name="GB_EXOTIC_SPICES_2"/>
             <choice hidden="true">
                 <text>Continue...</text>
                 <event load="ATLAS_MENU"/>
@@ -48,14 +50,14 @@ SCRAP RECOVERY: 0%   0%  -1%  -2%  -5% -15% -15% -15% -15%
         </event>
     </choice>
 </event>
-<event name="ATLAS_UPGRADE_SPICES_2">
+<event name="GB_ATLAS_UPGRADE_SPICES_2">
     <text>While at hyperspeed, you check what the value of your exotic spices will be in the coming sector...</text>
-    <remove name="EXOTIC_SPICES_2"/>
+    <remove name="GB_EXOTIC_SPICES_2"/>
     <choice hidden="true">
         <text>Continue...</text>
         <event>
             <text>The sell value of your spices has increased to 50~.</text>
-            <augment name="EXOTIC_SPICES_3"/>
+            <augment name="GB_EXOTIC_SPICES_3"/>
             <choice hidden="true">
                 <text>Continue...</text>
                 <event load="ATLAS_MENU"/>
@@ -63,14 +65,14 @@ SCRAP RECOVERY: 0%   0%  -1%  -2%  -5% -15% -15% -15% -15%
         </event>
     </choice>
 </event>
-<event name="ATLAS_UPGRADE_SPICES_3">
+<event name="GB_ATLAS_UPGRADE_SPICES_3">
     <text>While at hyperspeed, you check what the value of your exotic spices will be in the coming sector...</text>
-    <remove name="EXOTIC_SPICES_3"/>
+    <remove name="GB_EXOTIC_SPICES_3"/>
     <choice hidden="true">
         <text>Continue...</text>
         <event>
             <text>The sell value of your spices has increased to 80~.</text>
-            <augment name="EXOTIC_SPICES_4"/>
+            <augment name="GB_EXOTIC_SPICES_4"/>
             <choice hidden="true">
                 <text>Continue...</text>
                 <event load="ATLAS_MENU"/>
@@ -78,14 +80,14 @@ SCRAP RECOVERY: 0%   0%  -1%  -2%  -5% -15% -15% -15% -15%
         </event>
     </choice>
 </event>
-<event name="ATLAS_UPGRADE_SPICES_4">
+<event name="GB_ATLAS_UPGRADE_SPICES_4">
     <text>While at hyperspeed, you check what the value of your exotic spices will be in the coming sector...</text>
-    <remove name="EXOTIC_SPICES_4"/>
+    <remove name="GB_EXOTIC_SPICES_4"/>
     <choice hidden="true">
         <text>Continue...</text>
         <event>
             <text>The sell value of your spices has increased to 130~.</text>
-            <augment name="EXOTIC_SPICES_5"/>
+            <augment name="GB_EXOTIC_SPICES_5"/>
             <choice hidden="true">
                 <text>Continue...</text>
                 <event load="ATLAS_MENU"/>
@@ -93,14 +95,14 @@ SCRAP RECOVERY: 0%   0%  -1%  -2%  -5% -15% -15% -15% -15%
         </event>
     </choice>
 </event>
-<event name="ATLAS_UPGRADE_SPICES_5">
+<event name="GB_ATLAS_UPGRADE_SPICES_5">
     <text>While at hyperspeed, you check what the value of your exotic spices will be in the coming sector...</text>
-    <remove name="EXOTIC_SPICES_5"/>
+    <remove name="GB_EXOTIC_SPICES_5"/>
     <choice hidden="true">
         <text>Continue...</text>
         <event>
             <text>The sell value of your spices has increased to 210~.</text>
-            <augment name="EXOTIC_SPICES_6"/>
+            <augment name="GB_EXOTIC_SPICES_6"/>
             <choice hidden="true">
                 <text>Continue...</text>
                 <event load="ATLAS_MENU"/>
@@ -108,14 +110,14 @@ SCRAP RECOVERY: 0%   0%  -1%  -2%  -5% -15% -15% -15% -15%
         </event>
     </choice>
 </event>
-<event name="ATLAS_UPGRADE_SPICES_6">
+<event name="GB_ATLAS_UPGRADE_SPICES_6">
     <text>While at hyperspeed, you check what the value of your exotic spices will be in the coming sector...</text>
-    <remove name="EXOTIC_SPICES_6"/>
+    <remove name="GB_EXOTIC_SPICES_6"/>
     <choice hidden="true">
         <text>Continue...</text>
         <event>
             <text>The sell value of your spices has increased to 340~.</text>
-            <augment name="EXOTIC_SPICES_7"/>
+            <augment name="GB_EXOTIC_SPICES_7"/>
             <choice hidden="true">
                 <text>Continue...</text>
                 <event load="ATLAS_MENU"/>
@@ -123,14 +125,14 @@ SCRAP RECOVERY: 0%   0%  -1%  -2%  -5% -15% -15% -15% -15%
         </event>
     </choice>
 </event>
-<event name="ATLAS_UPGRADE_SPICES_7">
+<event name="GB_ATLAS_UPGRADE_SPICES_7">
     <text>While at hyperspeed, you check what the value of your exotic spices will be in the coming sector...</text>
-    <remove name="EXOTIC_SPICES_7"/>
+    <remove name="GB_EXOTIC_SPICES_7"/>
     <choice hidden="true">
         <text>Continue...</text>
         <event>
             <text>The sell value of your spices has increased to 550~.</text>
-            <augment name="EXOTIC_SPICES_8"/>
+            <augment name="GB_EXOTIC_SPICES_8"/>
             <choice hidden="true">
                 <text>Continue...</text>
                 <event load="ATLAS_MENU"/>
@@ -138,16 +140,16 @@ SCRAP RECOVERY: 0%   0%  -1%  -2%  -5% -15% -15% -15% -15%
         </event>
     </choice>
 </event>
-<event name="ATLAS_UPGRADE_SPICES_8">
+<event name="GB_ATLAS_UPGRADE_SPICES_8">
     <text>While at hyperspeed, you check what the value of your exotic spices will be in the coming sector...</text>
-    <remove name="EXOTIC_SPICES_8"/>
+    <remove name="GB_EXOTIC_SPICES_8"/>
     <choice hidden="true">
         <text>Continue...</text>
         <event>
             <text>The sell value of your spices has increased to 890~.
 
 This is the maximum value of your spices, it will not increase further the next time you jump to a new sector.</text>
-            <augment name="EXOTIC_SPICES_9"/>
+            <augment name="GB_EXOTIC_SPICES_9"/>
             <choice hidden="true">
                 <text>Continue...</text>
                 <event load="ATLAS_MENU"/>
