@@ -45,3 +45,12 @@
 		</event>
 	</mod-append:choice>
 </mod:findName>
+
+<mod:findName type="event" name="LAST_STAND_START">
+    <mod:findLike type="choice" panic="true">
+        <mod:findLike type="event" panic="true">
+            <mod:selector load="ATLAS_MENU"/>
+            <mod:setAttributes load="GB_ATLAS_MENU"/>
+        </mod:findLike>
+    </mod:findLike>
+</mod:findName>
