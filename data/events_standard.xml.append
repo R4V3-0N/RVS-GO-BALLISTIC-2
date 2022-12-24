@@ -710,6 +710,7 @@
 			</choice>
 			<choice>
 				<text>Do nothing.</text>
+                <event/>
 			</choice>
 		</event>
 	</choice>
