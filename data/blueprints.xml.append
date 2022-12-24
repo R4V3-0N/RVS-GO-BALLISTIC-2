@@ -236,6 +236,67 @@
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity.
 -->
 <weaponBlueprint name="GB_AC_1_HE"> <!-- Hull damage focus, stuns crew and makes them more vulnerable -->
+	<type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+    <flavorType>Laser</flavorType>
+	<title>Autocannon Mark I [Concussive]</title>
+	<short>AC I [HE]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
+	<damage>1</damage>
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>5</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>5</duration>
+		</statBoost>
+	</statBoosts>
+	<shots>1</shots>
+	<stun>4</stun>
+	<sp>0</sp>
+	<breachChance>1</breachChance>
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_1_HE">GB_shot_light_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_1_HE_NOCRIT"> <!-- Hull damage focus, stuns crew and makes them more vulnerable -->
 	<type>LASER</type>
 	<title>Autocannon Mark I [Concussive]</title>
 	<short>AC I [HE]</short>
@@ -244,6 +305,63 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
 	<damage>1</damage>
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>5</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>5</duration>
+		</statBoost>
+	</statBoosts>
+	<shots>1</shots>
+	<stun>4</stun>
+	<sp>0</sp>
+	<breachChance>1</breachChance>
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
+	<image>GB_shot_light_HE</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_1_HE_CRIT"> <!-- Hull damage focus, stuns crew and makes them more vulnerable -->
+	<type>LASER</type>
+	<title>Autocannon Mark I [Concussive]</title>
+	<short>AC I [HE]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
+	<damage>2</damage>
 	<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
@@ -786,6 +904,70 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too TWO in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
 -->
 <weaponBlueprint name="GB_AC_2_HE"> <!-- from mk 2 on, -1 damage, gains hullbust -->
+    <type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+    <flavorType>Laser</flavorType>
+	<title>Autocannon Mark II [Concussive]</title>
+	<short>AC II [HE]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
+	<damage>1</damage>
+	<!--<sysDamage>1</sysDamage>-->
+	<persDamage>1</persDamage>
+	<hullBust>1</hullBust>
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>10</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>10</duration>
+		</statBoost>
+	</statBoosts>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<stun>4</stun>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_2_HE">GB_shot_medium_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_2_HE_NOCRIT"> <!-- from mk 2 on, -1 damage, gains hullbust -->
 	<type>LASER</type>
 	<title>Autocannon Mark II [Concussive]</title>
 	<short>AC II [HE]</short>
@@ -794,6 +976,66 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
 	<damage>1</damage>
+	<!--<sysDamage>1</sysDamage>-->
+	<persDamage>1</persDamage>
+	<hullBust>1</hullBust>
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>10</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>10</duration>
+		</statBoost>
+	</statBoosts>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<stun>4</stun>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>40</cost> <!-- R4 2022/11/24: was 20 -->
+	<image>GB_shot_medium_HE</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_2_HE_CRIT"> <!-- from mk 2 on, -1 damage, gains hullbust -->
+	<type>LASER</type>
+	<title>Autocannon Mark II [Concussive]</title>
+	<short>AC II [HE]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
+	<damage>2</damage>
 	<!--<sysDamage>1</sysDamage>-->
 	<persDamage>1</persDamage>
 	<hullBust>1</hullBust>
@@ -1341,6 +1583,68 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too THREE in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
 -->
 <weaponBlueprint name="GB_AC_3_HE">
+    <type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+    <flavorType>Laser</flavorType>
+	<title>Autocannon Mark III [Concussive]</title>
+	<short>AC III [HE]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
+	<damage>2</damage>
+	<hullBust>1</hullBust>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>8</stunChance>
+	<cooldown>6</cooldown>
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+	</statBoosts>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_3_HE">GB_shot_heavy_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_3_HE_NOCRIT">
 	<type>LASER</type>
 	<title>Autocannon Mark III [Concussive]</title>
 	<short>AC III [HE]</short>
@@ -1349,6 +1653,64 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
 	<damage>2</damage>
+	<hullBust>1</hullBust>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>8</stunChance>
+	<cooldown>6</cooldown>
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+	</statBoosts>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 40 -->
+	<image>GB_shot_heavy_HE</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_3_HE_CRIT">
+	<type>LASER</type>
+	<title>Autocannon Mark III [Concussive]</title>
+	<short>AC III [HE]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
+	<damage>4</damage>
 	<hullBust>1</hullBust>
 	<shots>1</shots>
 	<sp>0</sp>
@@ -1942,6 +2304,68 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity.
 -->
 <weaponBlueprint name="GB_AC_1_ELITE_HE"> <!-- R4: Will be a chance to crit doing +1 damage, Elite version does +1 system damage to non-crits, might add a separate crit with hullbust, IDK -->
+    <type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+    <flavorType>Laser</flavorType>
+	<title>Elite Autocannon Mark I [Squash head]</title>
+	<short>€ AC I [HESH]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
+	<damage>1</damage>
+	<sysDamage>1</sysDamage> <!-- R4 Added System damage -->
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>5</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>5</duration>
+		</statBoost>
+	</statBoosts>
+	<shots>1</shots>
+	<stun>4</stun>
+	<sp>0</sp>
+	<breachChance>4</breachChance> <!-- Standard was 2-->
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost>
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_1_ELITE_HE">GB_shot_light_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_1_ELITE_HE_NOCRIT"> <!-- R4: Will be a chance to crit doing +1 damage, Elite version does +1 system damage to non-crits, might add a separate crit with hullbust, IDK -->
 	<type>LASER</type>
 	<title>Elite Autocannon Mark I [Squash head]</title>
 	<short>€ AC I [HESH]</short>
@@ -1950,6 +2374,64 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
 	<damage>1</damage>
+	<sysDamage>1</sysDamage> <!-- R4 Added System damage -->
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>5</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>5</duration>
+		</statBoost>
+	</statBoosts>
+	<shots>1</shots>
+	<stun>4</stun>
+	<sp>0</sp>
+	<breachChance>4</breachChance> <!-- Standard was 2-->
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost>
+	<image>GB_shot_light_HE</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_1_ELITE_HE_CRIT"> <!-- R4: Will be a chance to crit doing +1 damage, Elite version does +1 system damage to non-crits, might add a separate crit with hullbust, IDK -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [Squash head]</title>
+	<short>€ AC I [HESH]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
+	<damage>2</damage>
 	<sysDamage>1</sysDamage> <!-- R4 Added System damage -->
 	<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
@@ -2494,6 +2976,68 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too TWO in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
 -->
 <weaponBlueprint name="GB_AC_2_ELITE_HE"> <!-- Chance to crit, Elite has bonus system damage when not critting -->
+    <type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+    <flavorType>Laser</flavorType>
+	<title>Elite Autocannon Mark II [Squash Head]</title>
+	<short>€ AC II [HESH]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
+	<damage>2</damage>
+	<sysDamage>1</sysDamage> <!-- Elite gets system damage, not sure if it should be 1 or 2-->
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>10</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>10</duration>
+		</statBoost>
+	</statBoosts>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<stun>4</stun>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_2_ELITE_HE">GB_shot_medium_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_2_ELITE_HE_NOCRIT"> <!-- Chance to crit, Elite has bonus system damage when not critting -->
 	<type>LASER</type>
 	<title>Elite Autocannon Mark II [Squash Head]</title>
 	<short>€ AC II [HESH]</short>
@@ -2502,6 +3046,64 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
 	<damage>2</damage>
+	<sysDamage>1</sysDamage> <!-- Elite gets system damage, not sure if it should be 1 or 2-->
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>10</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>10</duration>
+		</statBoost>
+	</statBoosts>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<stun>4</stun>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> <!-- R4 2022/11/24: was 20 -->
+	<image>GB_shot_medium_HE</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_2_ELITE_HE_CRIT"> <!-- Chance to crit, Elite has bonus system damage when not critting -->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II [Squash Head]</title>
+	<short>€ AC II [HESH]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
+	<damage>4</damage>
 	<sysDamage>1</sysDamage> <!-- Elite gets system damage, not sure if it should be 1 or 2-->
 	<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
@@ -3056,6 +3658,68 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too THREE in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
 -->
 <weaponBlueprint name="GB_AC_3_ELITE_HE"> <!-- Same as above, crit chance shenanigary-->
+    <type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+    <flavorType>Laser</flavorType>
+	<title>Elite Autocannon Mark III [Squash Head]</title>
+	<short>€ AC III [HESH]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
+	<damage>3</damage>
+	<sysDamage>1</sysDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>8</stunChance>
+	<cooldown>6</cooldown>
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+	</statBoosts>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_3_ELITE_HE">GB_shot_heavy_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_3_ELITE_HE_NOCRIT"> <!-- Same as above, crit chance shenanigary-->
 	<type>LASER</type>
 	<title>Elite Autocannon Mark III [Squash Head]</title>
 	<short>€ AC III [HESH]</short>
@@ -3064,6 +3728,64 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
 	<damage>3</damage>
+	<sysDamage>1</sysDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>8</stunChance>
+	<cooldown>6</cooldown>
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+	</statBoosts>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> <!-- R4 2022/11/24: was 40 -->
+	<image>GB_shot_heavy_HE</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+<weaponBlueprint name="GB_AC_3_ELITE_HE_CRIT"> <!-- Same as above, crit chance shenanigary-->
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [Squash Head]</title>
+	<short>€ AC III [HESH]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
+	<damage>6</damage>
 	<sysDamage>1</sysDamage>
 	<shots>1</shots>
 	<sp>0</sp>

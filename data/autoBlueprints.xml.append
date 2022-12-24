@@ -361,6 +361,40 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_DEFENSE_AC</name>
 </blueprintList>
 
+<!-----------------------
+		HE Crits
+------------------------>
+<blueprintList name="GB_CRIT_LIST_AC_1_HE">
+	<name>GB_AC_1_HE_NOCRIT</name>
+	<name>GB_AC_1_HE_NOCRIT</name>
+	<name>GB_AC_1_HE_CRIT</name>
+</blueprintList>
+<blueprintList name="GB_CRIT_LIST_AC_2_HE">
+	<name>GB_AC_2_HE_NOCRIT</name>
+	<name>GB_AC_2_HE_NOCRIT</name>
+	<name>GB_AC_2_HE_CRIT</name>
+</blueprintList>
+<blueprintList name="GB_CRIT_LIST_AC_3_HE">
+	<name>GB_AC_3_HE_NOCRIT</name>
+	<name>GB_AC_3_HE_NOCRIT</name>
+	<name>GB_AC_3_HE_CRIT</name>
+</blueprintList>
+<blueprintList name="GB_CRIT_LIST_AC_1_ELITE_HE">
+	<name>GB_AC_1_ELITE_HE_NOCRIT</name>
+	<name>GB_AC_1_ELITE_HE_NOCRIT</name>
+	<name>GB_AC_1_ELITE_HE_CRIT</name>
+</blueprintList>
+<blueprintList name="GB_CRIT_LIST_AC_2_ELITE_HE">
+	<name>GB_AC_2_ELITE_HE_NOCRIT</name>
+	<name>GB_AC_2_ELITE_HE_NOCRIT</name>
+	<name>GB_AC_2_ELITE_HE_CRIT</name>
+</blueprintList>
+<blueprintList name="GB_CRIT_LIST_AC_3_ELITE_HE">
+	<name>GB_AC_3_ELITE_HE_NOCRIT</name>
+	<name>GB_AC_3_ELITE_HE_NOCRIT</name>
+	<name>GB_AC_3_ELITE_HE_CRIT</name>
+</blueprintList>
+
 <!-- 	••••••••••••••••••••••••••••••••••••••••••
 					 Rewards and Gifts
 		••••••••••••••••••••••••••••••••••••••••••
