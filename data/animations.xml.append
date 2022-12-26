@@ -1129,15 +1129,23 @@
 	<time>1</time>
 </anim>
 
+<animSheet name="2x2_m_crate_stack" w="70" h="70" fw="70" fh="70">decor/2x2_m_crate_stack.png</animSheet>
+<anim name="2x2_m_crate_stack">
+	<sheet>2x2_m_crate_stack</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
 <animSheet name="2x2_mixed_crates" w="70" h="70" fw="70" fh="70">decor/2x2_mixed_crates.png</animSheet>
 <anim name="2x2_mixed_crates">
-	<sheet>2x2_missiles_and_crates</sheet>
+	<sheet>2x2_mixed_crates</sheet>
 	<desc length="1" x="0" y="0"/>
 	<time>1</time>
 </anim>
 
 <animSheet name="2x2_s_crate_1" w="70" h="70" fw="70" fh="70">decor/2x2_s_crate_1.png</animSheet>
 <animSheet name="2x2_s_crate_2" w="70" h="70" fw="70" fh="70">decor/2x2_s_crate_2.png</animSheet>
+<animSheet name="1x1_s_crate_cluster" w="35" h="35" fw="35" fh="35">decor/1x1_s_crate_cluster.png</animSheet>
 <animSheet name="2x2_s_crate_cluster" w="70" h="70" fw="70" fh="70">decor/2x2_s_crate_cluster.png</animSheet>
 <anim name="2x2_s_crate_1">
 	<sheet>2x2_s_crate_1</sheet>
@@ -1146,6 +1154,11 @@
 </anim>
 <anim name="2x2_s_crate_2">
 	<sheet>2x2_s_crate_2</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<anim name="1x1_s_crate_cluster">
+	<sheet>1x1_s_crate_cluster</sheet>
 	<desc length="1" x="0" y="0"/>
 	<time>1</time>
 </anim>
@@ -1179,6 +1192,31 @@
 <animSheet name="2x3_cargo_airlock_fed_striped" w="105" h="70" fw="105" fh="70">decor/2x3_cargo_airlock_fed_striped.png</animSheet>
 <anim name="2x3_cargo_airlock_fed_striped">
 	<sheet>2x3_cargo_airlock_fed_striped</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="2x2_blue_cargo_bay_1" w="70" h="70" fw="70" fh="70">decor/2x2_blue_cargo_bay_1.png</animSheet>
+<animSheet name="2x2_blue_cargo_bay_2" w="70" h="70" fw="70" fh="70">decor/2x2_blue_cargo_bay_2.png</animSheet>
+<animSheet name="2x2_blue_cargo_bay_3" w="70" h="70" fw="70" fh="70">decor/2x2_blue_cargo_bay_3.png</animSheet>
+<animSheet name="2x2_blue_cargo_bay_4" w="70" h="70" fw="70" fh="70">decor/2x2_blue_cargo_bay_4.png</animSheet>
+<anim name="2x2_blue_cargo_bay_1">
+	<sheet>2x2_blue_cargo_bay_1</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<anim name="2x2_blue_cargo_bay_2">
+	<sheet>2x2_blue_cargo_bay_2</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<anim name="2x2_blue_cargo_bay_3">
+	<sheet>2x2_blue_cargo_bay_3</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<anim name="2x2_blue_cargo_bay_4">
+	<sheet>2x2_blue_cargo_bay_4</sheet>
 	<desc length="1" x="0" y="0"/>
 	<time>1</time>
 </anim>

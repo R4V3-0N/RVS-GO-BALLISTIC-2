@@ -5692,7 +5692,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			</slot>
 		</shields>
 		<teleporter power="1" room="7" start="false" />
-		<weapons power="1" max="8" room="27" start="false" img="room_weapons_8">
+		<weapons power="1" max="6" room="27" start="false" img="room_weapons_8">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -5726,6 +5726,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<desc id="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_3_desc"/>
 	<systemList>
 		<artillery power="1" room="19" start="false" weapon="ARTILLERY_BOSS_1" img="room_artillery" />
+		<battery max="2" power="1" room="28" start="false" img="room_battery_17" />
 		<cloaking power="1" room="16" start="false" img="room_cloaking" />
 		<clonebay power="1" room="12" start="true">
 			<slot>
@@ -5772,7 +5773,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			</slot>
 		</shields>
 		<teleporter power="1" room="13" start="false" />
-		<weapons max="8" power="3" room="10" start="true" img="room_weapons_6">
+		<weapons max="6" power="3" room="10" start="true" img="room_weapons_6">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>

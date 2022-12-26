@@ -1160,3 +1160,4 @@ This is the maximum value of your spices, it will not increase further the next 
 	Orchid water delivery, orchid sector requirement. Unique sector?
 -->
 <!-- CV: WIP events shouldn't be in loaded event files. After I did some fixes for these, they started causing the game to crash on startup. I've moved them to lightspeed_events_new.xml for the time being. -->
+<!-- R4: :mantis_thumbsup: -->
