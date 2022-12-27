@@ -15,9 +15,9 @@
 		<mod-append:blueprint name="GB_COMBAT_AC_1" rarity="4"/>
 		<mod-append:blueprint name="RVS_TROOPERTOG_DEFEND" rarity="3"/>
 		
-		<mod-append:blueprint name="GB_AC_1_E" rarity="5"/>
-		<mod-append:blueprint name="GB_AC_2_E" rarity="5"/>
-		<mod-append:blueprint name="GB_AC_3_E" rarity="5"/>
+		<mod-append:blueprint name="GB_AC_1_ELITE" rarity="5"/>
+		<mod-append:blueprint name="GB_AC_2_ELITE" rarity="5"/>
+		<mod-append:blueprint name="GB_AC_3_ELITE" rarity="5"/>
 	</mod:findLike>
 	<mod-append:event name="GB_GENERIC_EVENTS" min="1" max="2"/>
 </mod:findName>
@@ -81,7 +81,7 @@
 		<mod-append:blueprint name="RVS_TROOPERTOG_DEFEND" rarity="3"/>
 
 		<!-- smuggled goods-->
-		<mod-append:blueprint name="GB_RAC" rarity="5"/>
+		<mod-append:blueprint name="GB_ROTARY_AC" rarity="5"/>
 		<mod-append:blueprint name="GB_COIL_1" rarity="3"/>
 		<mod-append:blueprint name="GB_GAUSS_1" rarity="3"/>	
 		<mod-append:blueprint name="GB_GAUSS_2" rarity="5"/>
@@ -98,7 +98,7 @@
 		<mod-append:blueprint name="RVS_TROOPERTOG_DEFEND" rarity="3"/>
 
 		<!-- smuggled goods-->
-		<mod-append:blueprint name="GB_RAC" rarity="4"/>
+		<mod-append:blueprint name="GB_ROTARY_AC" rarity="4"/>
 		<mod-append:blueprint name="GB_COIL_1" rarity="3"/>
 		<mod-append:blueprint name="GB_COIL_2" rarity="5"/>
 		<mod-append:blueprint name="GB_COIL_2" rarity="5"/>
