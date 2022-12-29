@@ -239,7 +239,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<type>BURST</type>
     <drone_targetable>0</drone_targetable>
     <flavorType>Laser</flavorType>
-	<title>Autocannon Mark I [Concussive]</title>
+	<title>Autocannon Mark I [High Explosive]</title>
 	<short>AC I [HE]</short>
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
@@ -267,7 +267,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<shots>1</shots>
 	<stun>4</stun>
 	<sp>0</sp>
-	<breachChance>1</breachChance>
+	<breachChance>2</breachChance>
 	<cooldown>6</cooldown>
 	<power>1</power>
 	<bp>4</bp>
@@ -298,7 +298,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 <weaponBlueprint name="GB_AC_1_HE_NOCRIT"> <!-- Hull damage focus, stuns crew and makes them more vulnerable -->
 	<type>LASER</type>
-	<title>Autocannon Mark I [Concussive]</title>
+	<title>Autocannon Mark I [High Explosive]</title>
 	<short>AC I [HE]</short>
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
@@ -355,7 +355,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 <weaponBlueprint name="GB_AC_1_HE_CRIT"> <!-- Hull damage focus, stuns crew and makes them more vulnerable -->
 	<type>LASER</type>
-	<title>Autocannon Mark I [Concussive]</title>
+	<title>Autocannon Mark I [High Explosive]</title>
 	<short>AC I [HE]</short>
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
@@ -383,7 +383,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<shots>1</shots>
 	<stun>4</stun>
 	<sp>0</sp>
-	<breachChance>1</breachChance>
+	<breachChance>2</breachChance>
 	<cooldown>6</cooldown>
 	<power>1</power>
 	<bp>4</bp>
@@ -903,20 +903,20 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <!--  
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too TWO in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
 -->
-<weaponBlueprint name="GB_AC_2_HE"> <!-- from mk 2 on, -1 damage, gains hullbust -->
+<weaponBlueprint name="GB_AC_2_HE">
     <type>BURST</type>
     <drone_targetable>0</drone_targetable>
     <flavorType>Laser</flavorType>
-	<title>Autocannon Mark II [Concussive]</title>
+	<title>Autocannon Mark II [High Explosive]</title>
 	<short>AC II [HE]</short>
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
 	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
-	<damage>1</damage>
+	<damage>2</damage>	<!-- R4 2022/12/30: was 1 -->
 	<!--<sysDamage>1</sysDamage>-->
-	<persDamage>1</persDamage>
-	<hullBust>1</hullBust>
+	<persDamage>2</persDamage>	<!-- R4 2022/12/30: was 1 -->
+	<!--<hullBust>1</hullBust>	R4 2022/12/30:-->
 	<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
@@ -967,18 +967,18 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<weaponArt>GB_Autocannon_2_HE</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
-<weaponBlueprint name="GB_AC_2_HE_NOCRIT"> <!-- from mk 2 on, -1 damage, gains hullbust -->
+<weaponBlueprint name="GB_AC_2_HE_NOCRIT"> 
 	<type>LASER</type>
-	<title>Autocannon Mark II [Concussive]</title>
+	<title>Autocannon Mark II [High Explosive]</title>
 	<short>AC II [HE]</short>
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
 	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
-	<damage>1</damage>
+	<damage>2</damage>	<!-- R4 2022/12/30: was 1 -->
 	<!--<sysDamage>1</sysDamage>-->
-	<persDamage>1</persDamage>
-	<hullBust>1</hullBust>
+	<persDamage>2</persDamage>	<!-- R4 2022/12/30: was 1 -->
+	<!--<hullBust>1</hullBust> R4 2022/12/30-->
 	<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
@@ -1029,16 +1029,16 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 <weaponBlueprint name="GB_AC_2_HE_CRIT"> <!-- from mk 2 on, -1 damage, gains hullbust -->
 	<type>LASER</type>
-	<title>Autocannon Mark II [Concussive]</title>
+	<title>Autocannon Mark II [High Explosive]</title>
 	<short>AC II [HE]</short>
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
 	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
-	<damage>2</damage>
+	<damage>4</damage>
 	<!--<sysDamage>1</sysDamage>-->
-	<persDamage>1</persDamage>
-	<hullBust>1</hullBust>
+	<persDamage>4</persDamage>
+	<!--<hullBust>1</hullBust>-->
 	<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
@@ -1059,8 +1059,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	</statBoosts>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>2</breachChance>
-	<stun>4</stun>
+	<breachChance>5</breachChance>
+	<stun>10</stun>
 	<cooldown>6</cooldown>
 	<power>2</power>
 	<bp>4</bp>
@@ -1586,14 +1586,14 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
     <type>BURST</type>
     <drone_targetable>0</drone_targetable>
     <flavorType>Laser</flavorType>
-	<title>Autocannon Mark III [Concussive]</title>
+	<title>Autocannon Mark III [High Explosive]</title>
 	<short>AC III [HE]</short>
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
 	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
-	<damage>2</damage>
-	<hullBust>1</hullBust>
+	<damage>3</damage>
+	<!--<hullBust>1</hullBust>-->
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>4</breachChance>
@@ -1646,14 +1646,14 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 <weaponBlueprint name="GB_AC_3_HE_NOCRIT">
 	<type>LASER</type>
-	<title>Autocannon Mark III [Concussive]</title>
+	<title>Autocannon Mark III [High Explosive]</title>
 	<short>AC III [HE]</short>
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
 	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
-	<damage>2</damage>
-	<hullBust>1</hullBust>
+	<damage>3</damage>
+	<!--<hullBust>1</hullBust>-->
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>4</breachChance>
@@ -1711,11 +1711,11 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
 	<damage>4</damage>
-	<hullBust>1</hullBust>
+	<!--<hullBust>1</hullBust>-->
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>4</breachChance>
-	<stunChance>8</stunChance>
+	<breachChance>10</breachChance>
+	<stunChance>10</stunChance>
 	<cooldown>6</cooldown>
 	<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
@@ -2432,7 +2432,6 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
 	<damage>2</damage>
-	<sysDamage>1</sysDamage> <!-- R4 Added System damage -->
 	<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
@@ -2454,7 +2453,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<shots>1</shots>
 	<stun>4</stun>
 	<sp>0</sp>
-	<breachChance>4</breachChance> <!-- Standard was 2-->
+	<breachChance>6</breachChance> <!-- Standard was 2-->
 	<cooldown>6</cooldown>
 	<power>1</power>
 	<bp>4</bp>
@@ -3007,7 +3006,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	</statBoosts>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>2</breachChance>
+	<breachChance>5</breachChance>
 	<stun>4</stun>
 	<cooldown>6</cooldown>
 	<power>2</power>
@@ -3067,7 +3066,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	</statBoosts>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>2</breachChance>
+	<breachChance>5</breachChance>
 	<stun>4</stun>
 	<cooldown>6</cooldown>
 	<power>2</power>
@@ -3104,7 +3103,6 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
 	<damage>4</damage>
-	<sysDamage>1</sysDamage> <!-- Elite gets system damage, not sure if it should be 1 or 2-->
 	<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
@@ -3125,7 +3123,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	</statBoosts>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>2</breachChance>
+	<breachChance>8</breachChance>
 	<stun>4</stun>
 	<cooldown>6</cooldown>
 	<power>2</power>
@@ -3671,7 +3669,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sysDamage>1</sysDamage>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>4</breachChance>
+	<breachChance>8</breachChance>
 	<stunChance>8</stunChance>
 	<cooldown>6</cooldown>
 	<statBoosts>
@@ -3731,7 +3729,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sysDamage>1</sysDamage>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>4</breachChance>
+	<breachChance>8</breachChance>
 	<stunChance>8</stunChance>
 	<cooldown>6</cooldown>
 	<statBoosts>
@@ -3786,11 +3784,10 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>50</freeMissileChance>	<!-- R4 2022/11/24: was 65 -->
 	<damage>6</damage>
-	<sysDamage>1</sysDamage>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>4</breachChance>
-	<stunChance>8</stunChance>
+	<breachChance>10</breachChance>
+	<stunChance>10</stunChance>
 	<cooldown>6</cooldown>
 	<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
@@ -4720,9 +4717,12 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
         <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_MG">GB_shot_light</projectile>
     </projectiles>
 	<launchSounds>
-		<sound>GB_cannonLight1</sound>
+		<sound>detectiveShoot1</sound>
+		<sound>detectiveShoot2</sound>
+		<sound>detectiveShoot3</sound>
+		<!--<sound>GB_cannonLight1</sound>
 		<sound>GB_cannonLight2</sound>
-		<sound>GB_cannonLight3</sound>
+		<sound>GB_cannonLight3</sound>-->
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>
@@ -4756,9 +4756,12 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<cost>10</cost>
 	<image>GB_shot_light</image>
 	<launchSounds>
-		<sound>GB_cannonLight1</sound>
+		<sound>detectiveShoot1</sound>
+		<sound>detectiveShoot2</sound>
+		<sound>detectiveShoot3</sound>
+		<!--<sound>GB_cannonLight1</sound>
 		<sound>GB_cannonLight2</sound>
-		<sound>GB_cannonLight3</sound>
+		<sound>GB_cannonLight3</sound>-->
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>
@@ -4791,9 +4794,12 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<cost>10</cost>
 	<image>GB_shot_light</image>
 	<launchSounds>
-		<sound>GB_cannonLight1</sound>
+		<sound>detectiveShoot1</sound>
+		<sound>detectiveShoot2</sound>
+		<sound>detectiveShoot3</sound>
+		<!--<sound>GB_cannonLight1</sound>
 		<sound>GB_cannonLight2</sound>
-		<sound>GB_cannonLight3</sound>
+		<sound>GB_cannonLight3</sound>-->
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>
@@ -4821,23 +4827,26 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<tooltip>3 shot 30 crew damage weapon, 10% chance to cause a breach, 10% chance to stun for 2 seconds</tooltip>
 	<damage>0</damage>
 	<persDamage>2</persDamage>
-	<shots>3</shots> <!-- R4 2022/11/24: was 1, an error-->
+	<shots>5</shots> <!-- R4 2022/12/30 increased from 3 to 5-->
 	<sp>0</sp>
 	<breachChance>1</breachChance>
 	<stunChance>1</stunChance>
 	<stun>2</stun>
 	<cooldown>6</cooldown>
-	<power>0</power>
+	<power>1</power>	<!-- R4 2022/12/30 increased power from 0 to 1-->
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>15</cost>
+	<cost>25</cost>
     <projectiles>
         <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_HMG">GB_magnetic_slug_light</projectile>
     </projectiles>
 	<launchSounds>
-		<sound>GB_cannonLight1</sound>
+		<sound>detectiveShoot1</sound>
+		<sound>detectiveShoot2</sound>
+		<sound>detectiveShoot3</sound>
+		<!--<sound>GB_cannonLight1</sound>
 		<sound>GB_cannonLight2</sound>
-		<sound>GB_cannonLight3</sound>
+		<sound>GB_cannonLight3</sound>-->
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>
@@ -4862,21 +4871,24 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<tooltip>3 shot 30 crew damage weapon, 10% chance to cause a breach, 10% chance to stun for 2 seconds</tooltip>
 	<damage>0</damage>
 	<persDamage>2</persDamage>
-	<shots>3</shots> <!-- R4 2022/11/24: was 1, an error-->
+	<shots>4</shots> <!-- R4 2022/12/30 increased from 3 to 4-->
 	<sp>0</sp>
 	<breachChance>1</breachChance>
 	<stunChance>1</stunChance>
 	<stun>2</stun>
 	<cooldown>6</cooldown>
-	<power>0</power>
+	<power>1</power>	<!-- R4 2022/12/30 increased power from 0 to 1-->
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<cost>15</cost>
 	<image>GB_magnetic_slug_light</image>
 	<launchSounds>
-		<sound>GB_cannonLight1</sound>
+		<sound>detectiveShoot1</sound>
+		<sound>detectiveShoot2</sound>
+		<sound>detectiveShoot3</sound>
+		<!--<sound>GB_cannonLight1</sound>
 		<sound>GB_cannonLight2</sound>
-		<sound>GB_cannonLight3</sound>
+		<sound>GB_cannonLight3</sound>-->
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>
@@ -4901,21 +4913,24 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<tooltip>3 shot 30 crew damage weapon, 10% chance to cause a breach, 10% chance to stun for 2 seconds</tooltip>
 	<damage>1</damage>
 	<persDamage>1</persDamage>
-	<shots>3</shots> <!-- R4 2022/11/24: was 1, an error-->
+	<shots>4</shots> <!-- R4 2022/12/30 increased from 3 to 4-->
 	<sp>0</sp>
 	<breachChance>1</breachChance>
 	<stunChance>1</stunChance>
 	<stun>2</stun>
 	<cooldown>6</cooldown>
-	<power>0</power>
+	<power>1</power>	<!-- R4 2022/12/30 increased power from 0 to 1-->
 	<bp>4</bp>
 	<rarity>0</rarity>
 	<cost>15</cost>
 	<image>GB_magnetic_slug_light</image>
 	<launchSounds>
-		<sound>GB_cannonLight1</sound>
+		<sound>detectiveShoot1</sound>
+		<sound>detectiveShoot2</sound>
+		<sound>detectiveShoot3</sound>
+		<!--<sound>GB_cannonLight1</sound>
 		<sound>GB_cannonLight2</sound>
-		<sound>GB_cannonLight3</sound>
+		<sound>GB_cannonLight3</sound>-->
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>
@@ -5108,7 +5123,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<power>1</power>
 	<cost>40</cost>
 	<bp>3</bp>
-	<rarity>2</rarity> <!-- R4: was 2, set to 0-->
+	<rarity>0</rarity> <!-- R4: was 2, set to 0-->
 	<iconImage>battle</iconImage>
 </droneBlueprint>
 <droneBlueprint name="RVS_TROOPERTOG_BOARDER">
