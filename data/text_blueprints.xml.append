@@ -2,17 +2,17 @@
 
 <text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_class">Antique Kestrel Cruiser</text>
 <text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_name">The Falco</text>
-<text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_unlock">Have every Kestrel Cruiser variant to get unlock ship.</text> <!--This is only what I belive the unlock will be from what I can read in the hyperspace file, or whart I expect to be the unlock -Dino -->
+<text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_unlock">Beat the game with the Kestrel Cruiser Type C to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_desc">A boring and outdated human vessel originally produced by the Federation. In its stock original configeration during the Federation-Mantis War.</text>
 
 <text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_2_class">Antique Kestrel Cruiser</text>
 <text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_2_name">Warhawk</text>
-<text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_2_unlock">Reach sector 5 with the Antique Kestrel Cruiser type A to unlock this ship.</text> <!--This is only what I belive the unlock will be from what I can read in the hyperspace file, or whart I expect to be the unlock -Dino -->
+<text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_2_unlock">Get to Sector 5 with the Antique Kestrel Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_2_desc">This old modified Kestrel class ship designed to destroy enemy ships with an amassment of autocannons.</text>
 
 <text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_3_class">Antique Kestrel Cruiser</text>
 <text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_3_name">The Martlet</text>
-<text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_3_unlock">Reach sector 5 with the Antique Kestrel Cruiser type B to unlock this ship.</text> <!--This is only what I belive the unlock will be from what I can read in the hyperspace file, or whart I expect to be the unlock -Dino -->
+<text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_3_unlock">Get to Sector 5 with the Antique Kestrel Cruiser Type B or beat the game with the Antique Kestrel Cruiser Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_RVSP_GB_KESTREL_3_desc">An old battlehardened Kestrel that is the embodiment that a good offense is a good defence.</text>
 
 <text name="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_class">Federation Freighter</text>
