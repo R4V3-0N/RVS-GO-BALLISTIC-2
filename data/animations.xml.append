@@ -290,6 +290,14 @@
 	<time>0.5</time>
 </anim>
 
+<animSheet name="rvs_debris_massive_strip3" w="96" h="32" fw="32" fh="32">projectiles/rvs_debris_massive_strip3.png</animSheet>
+<anim name="rvs_debris_massive">
+	<sheet>rvs_debris_massive</sheet>
+	<desc length="3" x="0" y="0"/>
+	<time>1.0</time>
+</anim>
+
+
 <!-- WEAPONS -->
 <animSheet name="GB_Autocannon_1" w="119" h="67" fw="17" fh="67">weapons_autocannon/GB_Autocannon_1_strip7.png</animSheet>
 <weaponAnim name="GB_Autocannon_1">
@@ -1077,6 +1085,31 @@
 	<desc length="1" x="0" y="0"/>
 	<time>1.0</time>
 </anim>
+
+
+
+
+
+<animSheet name="rvs_shotgun_heavy" w="423" h="63" fw="47" fh="63">weapons_flak/rvs_flak_heavy_strip9.png</animSheet>
+<animSheet name="rvs_shotgun_heavy_2" w="580" h="83" fw="58" fh="83">weapons_flak/rvs_flak_heavy_2_strip10.png</animSheet>
+<weaponAnim name="rvs_shotgun_heavy">
+	<sheet>rvs_shotgun_heavy</sheet>
+	<desc length="9" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>3</fireFrame>
+	<firePoint  x="22" y="3"/>
+	<mountPoint x="6" y="38"/>
+	<chargeImage>weapons_flak/rvs_shotgun_heavy_glow.png</chargeImage>
+</weaponAnim>
+<weaponAnim name="rvs_shotgun_heavy_2">
+	<sheet>rvs_shotgun_heavy_2</sheet>
+	<desc length="10" x="0" y="0"/>
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>3</fireFrame>
+	<firePoint  x="27" y="3"/>
+	<mountPoint x="6" y="44"/>
+	<chargeImage>weapons_flak/rvs_shotgun_heavy_2_glow.png</chargeImage>
+</weaponAnim>
 
 <!-- THRUSTERS -->
 

@@ -1803,16 +1803,16 @@
 		</crew>
 		<rooms>
 			<room id="3">
-				<roomAnim renderLayer="1">2x3_cargo_airlock_fed_striped</roomAnim>
+				<roomAnim renderLayer="0">2x3_cargo_airlock_fed_striped</roomAnim>
 			</room>
 			<room id="4">
-				<roomAnim renderLayer="1">2x2_fuel_and_crate_fed_striped</roomAnim>
+				<roomAnim renderLayer="0">2x2_fuel_and_crate_fed_striped</roomAnim>
 			</room>
 			<room id="2">
 				<roomAnim renderLayer="0">2x2_loading_bay_striped</roomAnim> <!-- R4: changed this to 0 to help with low O2 graphics-->
 			</room>
 			<room id="9">
-				<roomAnim renderLayer="1">2x2_l_cargo_fed_striped</roomAnim>
+				<roomAnim renderLayer="0">2x2_l_cargo_fed_striped</roomAnim>
 			</room>
 			<room id="12">
 				<roomAnim renderLayer="1">2x2_fuel_cell_2</roomAnim>
@@ -1861,16 +1861,16 @@
 			
 			<!-- Striped rooms -->
 			<room id="8">
-				<roomAnim renderLayer="1">2x2_blue_cargo_bay_1</roomAnim>
+				<roomAnim renderLayer="0">2x2_blue_cargo_bay_1</roomAnim>
 			</room>
 			<room id="11">
-				<roomAnim renderLayer="1">2x2_blue_cargo_bay_2</roomAnim>
+				<roomAnim renderLayer="0">2x2_blue_cargo_bay_2</roomAnim>
 			</room>
 			<room id="4">
-				<roomAnim renderLayer="1">2x2_blue_cargo_bay_3</roomAnim>
+				<roomAnim renderLayer="0">2x2_blue_cargo_bay_3</roomAnim>
 			</room>
 			<room id="6">
-				<roomAnim renderLayer="1">2x2_blue_cargo_bay_4</roomAnim>
+				<roomAnim renderLayer="0">2x2_blue_cargo_bay_4</roomAnim>
 			</room>
 		</rooms>
 	</mod-append:customShip>
