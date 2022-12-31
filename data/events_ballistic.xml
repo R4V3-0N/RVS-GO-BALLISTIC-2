@@ -1316,8 +1316,8 @@
     <event name="RVS_FREIGHTER_ESCORT_DISTRESS" unique="true">
         <beaconType text="ENCRYPTED DISTRESS" global="false" persist="false" hideVanillaLabel="true"> 
             <color r="233" g="123" b="74" a="1" /> <!-- CV: made this the same as supply depots -->
-            <undiscoveredTooltip>Encrypted distress beacon. Someone might need help.</undiscoveredTooltip> 
-            <unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+            <undiscoveredTooltip>Encrypted distress beacon. Someone might need help.</undiscoveredTooltip>
+            <unvisitedTooltip>Encrypted distress beacon. Someone might need help.</unvisitedTooltip>
             <visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
         </beaconType>
         <ship load="GB_FED_FREIGHTER_EVENT_FED_ESCORT" hostile="false"/> <!-- Currently like judges, nothing set up for hostility -->
