@@ -5014,15 +5014,15 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<spin>720</spin>
 	<fireChance>0</fireChance>
 	<breachChance>2</breachChance>
-	<cooldown>20</cooldown>
+	<cooldown>17</cooldown>
 	<power>2</power>
 	<cost>77</cost>
-	<speed>30</speed>
+	<speed>24</speed>
 	<rarity>3</rarity>
-	<projectiles>
-		<projectile count="1" fake="false" blueprint="RVS_DEBRIS_MASSIVE">rvs_debris_massive</projectile>
+	<projectiles>	<!-- total damage in salvo, 6-->
+		<projectile count="2" fake="false" blueprint="RVS_DEBRIS_MASSIVE">rvs_debris_massive</projectile>
 		<projectile count="1" fake="false">debris_large</projectile>
-		<projectile count="2" fake="false">debris_med</projectile>
+		<projectile count="1" fake="false">debris_med</projectile>
 		<projectile count="4" fake="true">debris_small</projectile>
 	</projectiles>
 	<launchSounds>
@@ -5064,15 +5064,15 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<fireChance>0</fireChance>
 	<breachChance>2</breachChance>
 	<cooldown>20</cooldown>
-	<power>2</power>
-	<cost>77</cost>
-	<speed>30</speed>
+	<power>4</power>
+	<cost>100</cost>
+	<speed>24</speed>
 	<rarity>4</rarity>
-	<projectiles>
-		<projectile count="2" fake="false" blueprint="RVS_DEBRIS_MASSIVE">rvs_debris_massive</projectile>
-		<projectile count="2" fake="false">debris_large</projectile>
+	<projectiles>	<!-- total damage in salvo, 11-->
+		<projectile count="3" fake="false" blueprint="RVS_DEBRIS_MASSIVE">rvs_debris_massive</projectile>
+		<projectile count="3" fake="false">debris_large</projectile>
 		<projectile count="2" fake="false">debris_med</projectile>
-		<projectile count="6" fake="true">debris_small</projectile>
+		<projectile count="7" fake="true">debris_small</projectile>
 	</projectiles>
 	<launchSounds>
 		<sound>flak</sound>
@@ -5094,7 +5094,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<weaponArt>rvs_shotgun_heavy_2</weaponArt> 
 	<iconImage>flak</iconImage>
 </weaponBlueprint>
-<weaponBlueprint name="RVS_DEBRIS_LARGE">
+<weaponBlueprint name="RVS_DEBRIS_MASSIVE">
 	<type>BURST</type>
 	<title>Flak large debris</title>
 	<short>Flak large debris</short>
@@ -5103,11 +5103,11 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<shots>1</shots>
 	<sp>0</sp>
 	<spin>720</spin>
-	<speed>29</speed> <!-- R4: will see if this is noticeable-->
+	<speed>23</speed> <!-- R4: will see if this is noticeable-->
 	<breachChance>4</breachChance>
 	<stunChance>3</stunChance>
 	<rarity>0</rarity>
-	<image>gb_debris_massive</image>
+	<image>rvs_debris_massive</image>
 	<launchSounds>
 		<sound>flak</sound>
 	</launchSounds>
@@ -5261,7 +5261,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<power>1</power>
 	<cost>40</cost>
 	<bp>3</bp>
-	<rarity>0</rarity> <!-- R4: was 2, set to 0-->
+	<rarity>4</rarity>
 	<iconImage>battle</iconImage>
 </droneBlueprint>
 <droneBlueprint name="RVS_TROOPERTOG_BOARDER">

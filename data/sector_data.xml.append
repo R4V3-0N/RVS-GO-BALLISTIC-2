@@ -228,3 +228,56 @@
 	</mod:findLike>
 </mod:findName>
 
+<!-- Flak gun rarity increased in Abandoned/ Lanius sectors -->
+<mod:findName type="sectorDescription" name="SECTOR_ABANDONED">
+	<mod:findLike type = "rarityList">
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="1"/>
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="2"/>
+	</mod:findLike>
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_ABANDONED_HEKTAR">
+	<mod:findLike type = "rarityList">
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="2"/>
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="3"/>
+	</mod:findLike>
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_LANIUS">
+	<mod:findLike type = "rarityList">
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="1"/>
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="2"/>
+	</mod:findLike>
+</mod:findName>
+
+<mod:findName type="sectorDescription" name="SECTOR_LEECH">
+	<mod:findLike type = "rarityList">
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="2"/>
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="3"/>
+	</mod:findLike>
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_LEECH_UNIQUE">
+	<mod:findLike type = "rarityList">
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="2"/>
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="2"/>
+	</mod:findLike>
+</mod:findName>
+
+
+<!-- Ancient sector -->
+<mod:findName type="sectorDescription" name="SECRET_ANCIENT">
+	<mod:findLike type = "rarityList">
+		<mod-append:blueprint name="RVS_TROOPERTOG_DEFEND" rarity="0"/>
+		
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="0"/>
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="0"/>
+	</mod:findLike>
+</mod:findName>
+
+<mod:findName type="sectorDescription" name="SECRET_ROYAL">
+	<mod:findLike type = "rarityList">
+		<mod-append:blueprint name="RVS_TROOPERTOG_DEFEND" rarity="0"/>
+		
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="0"/>
+		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="0"/>
+	</mod:findLike>
+</mod:findName>
+
