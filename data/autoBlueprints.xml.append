@@ -143,8 +143,12 @@ created from scratch using the components or techniques of them to create odd an
 	<mod-append:name>GB_AC_1</mod-append:name>
 	<mod-append:name>GB_AC_2</mod-append:name>
 	<mod-append:name>GB_AC_3</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE</mod-append:name>
+	<mod-append:name>GB_AC_2_ELITE</mod-append:name>
+	<mod-append:name>GB_AC_3_ELITE</mod-append:name>
 	<!-- <mod-append:name>GB_AC_4</mod-append:name> -->
 	<mod-append:name>GB_ROTARY_AC</mod-append:name>
+	<mod-append:name>GB_ROTARY_AC_ELITE</mod-append:name>
 	<mod-append:name>GB_GAUSS_1</mod-append:name>
 	<mod-append:name>GB_GAUSS_2</mod-append:name>
 	<mod-append:name>GB_GAUSS_2_LOOT</mod-append:name>
@@ -224,6 +228,111 @@ created from scratch using the components or techniques of them to create odd an
 	<mod-append:name>GB_GAUSS_2_LOOT</mod-append:name>
 </mod:findName>
 
+<mod:findName type="blueprintList" name="GIFTLIST_FLAK">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+
+
+<mod:findName type="blueprintList" name="BLUELIST_WEAPONS_HEAVY">
+	<mod-append:name>GB_AC_3</mod-append:name>
+	<mod-append:name>GB_AC_3</mod-append:name>
+	<mod-append:name>GB_AC_3_CASELESS</mod-append:name>
+	<mod-append:name>GB_AC_3_HV</mod-append:name>
+	<mod-append:name>GB_AC_3_FREE</mod-append:name>
+	<mod-append:name>GB_AC_3_EMP</mod-append:name>
+	<mod-append:name>GB_AC_3_HEAT</mod-append:name>
+	<mod-append:name>GB_AC_3_INCENDIARY</mod-append:name>
+	<mod-append:name>GB_AC_3_FLECHETTE</mod-append:name>
+	<mod-append:name>GB_AC_3_RAD</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="SHOP_LANIUS_ITEM_WEAPONS_FLAK">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="SHOP_HARDSCIFI">
+	<mod-append:name>GB_AC_1</mod-append:name>
+	<mod-append:name>GB_AC_2</mod-append:name>
+	<mod-append:name>GB_AC_3</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE</mod-append:name>
+	<mod-append:name>GB_AC_2_ELITE</mod-append:name>
+	<mod-append:name>GB_AC_3_ELITE</mod-append:name>
+	<!-- <mod-append:name>GB_AC_4</mod-append:name> -->
+	<mod-append:name>GB_ROTARY_AC</mod-append:name>
+	<mod-append:name>GB_ROTARY_AC_ELITE</mod-append:name>
+	<mod-append:name>GB_GAUSS_1</mod-append:name>
+	<mod-append:name>GB_GAUSS_2</mod-append:name>
+	<mod-append:name>GB_GAUSS_3</mod-append:name>
+	<mod-append:name>GB_GAUSS_AP</mod-append:name>
+	<mod-append:name>GB_RAIL_1</mod-append:name>
+	<mod-append:name>GB_RAIL_2</mod-append:name>
+	<mod-append:name>GB_RAIL_3</mod-append:name>
+	<mod-append:name>GB_COIL_1</mod-append:name>
+	<mod-append:name>GB_COIL_2</mod-append:name>
+	<mod-append:name>GB_COIL_3</mod-append:name>
+	<mod-append:name>GB_MG</mod-append:name>
+	<mod-append:name>GB_HMG</mod-append:name>
+	<mod-append:name>GB_MG_LOOT</mod-append:name>
+	<!-- <mod-append:name>GB_RIFLED_CANNON</mod-append:name>
+	<mod-append:name>GB_BURST_CANNON_1</mod-append:name>
+	<mod-append:name>GB_BURST_CANNON_2</mod-append:name>
+	<mod-append:name>GB_MASS_ACCELERATOR</mod-append:name>-->
+</mod:findName>
+
+<mod:findName type="blueprintList" name="SHOP_ITEM_SYLVAN_FLAK">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_WEAPONS_FLAK_BOSS">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="LIST_WEAPONS_POWERFUL_BOSS">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+
+<mod:findName type="blueprintList" name="JUDGELIST_ELITE">
+	<mod-append:name>GB_AC_1_ELITE</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE_CASELESS</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE_HV</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE_HE</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE_FREE</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE_EMP</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE_HEAT</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE_INCENDIARY</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE_FLECHETTE</mod-append:name>
+	<mod-append:name>GB_AC_1_ELITE_RAD</mod-append:name>
+
+
+	<mod-append:name>GB_AC_2_ELITE</mod-append:name>
+	<mod-append:name>GB_AC_2_ELITE_CASELESS</mod-append:name>
+	<mod-append:name>GB_AC_2_ELITE_HV</mod-append:name>
+	<mod-append:name>GB_AC_2_ELITE_FREE</mod-append:name>
+	<mod-append:name>GB_AC_2_ELITE_EMP</mod-append:name>
+	<mod-append:name>GB_AC_2_ELITE_HEAT</mod-append:name>
+	<mod-append:name>GB_AC_2_ELITE_INCENDIARY</mod-append:name>
+	<mod-append:name>GB_AC_2_ELITE_FLECHETTE</mod-append:name>
+	<mod-append:name>GB_AC_2_ELITE_RAD</mod-append:name>
+
+	<mod-append:name>GB_AC_3_ELITE</mod-append:name>
+	<mod-append:name>GB_AC_3_ELITE_CASELESS</mod-append:name>
+	<mod-append:name>GB_AC_3_ELITE_HV</mod-append:name>
+	<mod-append:name>GB_AC_3_ELITE_FREE</mod-append:name>
+	<mod-append:name>GB_AC_3_ELITE_EMP</mod-append:name>
+	<mod-append:name>GB_AC_3_ELITE_HEAT</mod-append:name>
+	<mod-append:name>GB_AC_3_ELITE_INCENDIARY</mod-append:name>
+	<mod-append:name>GB_AC_3_ELITE_FLECHETTE</mod-append:name>
+	<mod-append:name>GB_AC_3_ELITE_RAD</mod-append:name>
+</mod:findName>
+
+
 
 
 <!-- 	••••••••••••••••••••••••••••••••••••••••••
@@ -268,7 +377,8 @@ created from scratch using the components or techniques of them to create odd an
 <blueprintList name="GB_AC_1_AMMO">
 	<name>GB_AC_1</name>
 	<name>GB_AC_1_CASELESS</name>
-	<name>GB_AC_1_HV</name>
+	<name>GB_AC_1_HV_ENEMY</name> <!-- R4: changed it to enemy version -->
+	<name>GB_AC_1_HE</name> <!-- R4: added HE -->
 	<name>GB_AC_1_FREE</name>
 	<name>GB_AC_1_EMP</name>
 	<name>GB_AC_1_HEAT</name>
@@ -276,11 +386,11 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_AC_1_FLECHETTE</name>
 	<name>GB_AC_1_RAD</name>
 </blueprintList>
-
 <blueprintList name="GB_AC_2_AMMO">
 	<name>GB_AC_2</name>
 	<name>GB_AC_2_CASELESS</name>
-	<name>GB_AC_2_HV</name>
+	<name>GB_AC_2_HV_ENEMY</name>	<!-- R4: changed it to enemy version -->
+	<name>GB_AC_2_HE</name> <!-- R4: added HE -->
 	<name>GB_AC_2_FREE</name>
 	<name>GB_AC_2_EMP</name>
 	<name>GB_AC_2_HEAT</name>
@@ -288,17 +398,55 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_AC_2_FLECHETTE</name>
 	<name>GB_AC_2_RAD</name>
 </blueprintList>
-
 <blueprintList name="GB_AC_3_AMMO">
 	<name>GB_AC_3</name>
 	<name>GB_AC_3_CASELESS</name>
-	<name>GB_AC_3_HV</name>
+	<name>GB_AC_3_HV_ENEMY</name>	<!-- R4: changed it to enemy version -->
+	<name>GB_AC_3_HE</name> <!-- R4: added HE -->
 	<name>GB_AC_3_FREE</name>
 	<name>GB_AC_3_EMP</name>
 	<name>GB_AC_3_HEAT</name>
 	<name>GB_AC_3_INCENDIARY</name>
 	<name>GB_AC_3_FLECHETTE</name>
 	<name>GB_AC_3_RAD</name>
+</blueprintList>
+
+<!-- R4: not currently in use, delete this comment if when in use -->
+<blueprintList name="GB_AC_1_ELITE_AMMO">
+	<name>GB_AC_1_ELITE</name>
+	<name>GB_AC_1_ELITE_CASELESS</name>
+	<name>GB_AC_1_ELITE_HV_ENEMY</name>
+	<name>GB_AC_1_ELITE_HE</name>
+	<name>GB_AC_1_ELITE_FREE</name>
+	<name>GB_AC_1_ELITE_EMP</name>
+	<name>GB_AC_1_ELITE_HEAT</name>
+	<name>GB_AC_1_ELITE_INCENDIARY</name>
+	<name>GB_AC_1_ELITE_FLECHETTE</name>
+	<name>GB_AC_1_ELITE_RAD</name>
+</blueprintList>
+
+<blueprintList name="GB_AC_2_AMMO">
+	<name>GB_AC_2_ELITE</name>
+	<name>GB_AC_2_ELITE_CASELESS</name>
+	<name>GB_AC_2_ELITE_HV_ENEMY</name>
+	<name>GB_AC_2_ELITE_FREE</name>
+	<name>GB_AC_2_ELITE_EMP</name>
+	<name>GB_AC_2_ELITE_HEAT</name>
+	<name>GB_AC_2_ELITE_INCENDIARY</name>
+	<name>GB_AC_2_ELITE_FLECHETTE</name>
+	<name>GB_AC_2_ELITE_RAD</name>
+</blueprintList>
+
+<blueprintList name="GB_AC_3_ELITE_AMMO">
+	<name>GB_AC_3_ELITE</name>
+	<name>GB_AC_3_ELITE_CASELESS</name>
+	<name>GB_AC_3_ELITE_HV_ENEMY</name>
+	<name>GB_AC_3_ELITE_FREE</name>
+	<name>GB_AC_3_ELITE_EMP</name>
+	<name>GB_AC_3_ELITE_HEAT</name>
+	<name>GB_AC_3_ELITE_INCENDIARY</name>
+	<name>GB_AC_3_ELITE_FLECHETTE</name>
+	<name>GB_AC_3_ELITE_RAD</name>
 </blueprintList>
 
 
@@ -479,6 +627,8 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_HMG</name>
 	<!--	<name>GB_MGA</name>-->
 </blueprintList>
+
+
 
 
 <!-- 	••••••••••••••••••••••••••••••••••••••••••
@@ -1133,6 +1283,99 @@ Post update content might change these to "Federation"/Elite versions instead wh
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
+			VAMPWEED SHIPS
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<mod:findName type="blueprintList" name="LIST_WEAPONS_VAMPWEED">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<!--<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>-->
+</mod:findName>
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+			LEECH SHIPS
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<mod:findName type="blueprintList" name="LIST_WEAPONS_LEECH">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+			REVOLUTIONARY SHIPS
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<mod:findName type="blueprintList" name="LIST_WEAPONS_REVOLUTIONARY">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+			AMPERE SHIPS
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<mod:findName type="blueprintList" name="LIST_WEAPONS_LEECH_ELITE">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+			LANIUS SHIPS
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<mod:findName type="blueprintList" name="LIST_WEAPONS_LANIUS">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+			COALITION SHIPS
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<mod:findName type="blueprintList" name="LIST_WEAPONS_COALITION">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<!--<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>-->
+</mod:findName>
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
 			MULTIVERSE RENEGADES
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -1174,6 +1417,32 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>GB_AC_3_INCENDIARY</name>
 	<name>GB_AC_3_CASELESS</name>
 </blueprintList>
+
+<mod:findName type="blueprintList" name="MV_WEAPONS_ALL">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+	<!-- add autocannons, gauss, and coilgun weapons? -->
+</mod:findName>
+<mod:findName type="blueprintList" name="MV_WEAPONS_SHIELDBREAKER">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+	
+	<!-- add Autocannons weapons? -->
+	<mod-append:name>GB_ROTARY_AC</mod-append:name>
+</mod:findName>
+<mod:findName type="blueprintList" name="MV_WEAPONS_FLAK">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+<mod:findName type="blueprintList" name="MV_WEAPONS_FLAK_ALL">
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+<mod:findName type="blueprintList" name="MV_WEAPONS_PHYSICAL"> <!-- R4: not sure of this one, also maybe include GB autocannons? -->
+	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
+	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
+</mod:findName>
+
 
 <!--
 ////////////////////////////////////////////////////////////////////////////////////
