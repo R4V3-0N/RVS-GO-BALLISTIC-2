@@ -30,6 +30,61 @@
 <!-- R4: Who ever convinced me to do more than 2 additional ammo types, who ever made it go up to as many as it did and still more to come, I will find you, and I will slap you-->
 <!-- R4: 2022/11/24 13:00, Julk I swear to god we're going to add 5 more ammo types at some point and it's all your fault. Thank you <3 --> 
 
+<!-- Bleed fragments for flechette ammo, DO NOT REMOVE -->
+<weaponBlueprint name="GB_AC_FLECHETTE_FRAG"> <!-- flechettes that cause bleed damage -->
+	<type>BURST</type>
+	<title>Autocannon Mark I [Flechette]</title>
+	<short>AC I [F]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<damage>0</damage>
+	<persDamage>0</persDamage> <!-- no Pers damage from projectile, only via bleed-->
+	<sysDamage>0</sysDamage> <!--minus 1, flat, for all flechette AC marks-->
+	<shots>1</shots>
+	<sp>0</sp>
+	<speed>50</speed>
+	<breachChance>2</breachChance>
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<radius>30</radius>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
+	<statBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>25</duration>
+			<boostAnim>blood_effect</boostAnim>
+		</statBoost>
+	</statBoosts>
+	<projectiles>
+		<projectile count="1" fake="false">GB_shot_tiny_flechette</projectile>
+	</projectiles>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_FLECHETTE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
 
 <!--AUTOCANNON 1-->
 
