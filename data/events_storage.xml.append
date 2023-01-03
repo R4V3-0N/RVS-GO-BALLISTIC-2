@@ -69,11 +69,11 @@
 
 	<!--TROOPER DRONE-->
 	<mod-append:choice req="RVS_TROOPERTOG_DEFEND" blue="false">
-		<text>(Battle Drone) Set the state of the drone. [Current mode: Anti-Person]</text>
+		<text>(Trooper Drone) Set the state of the drone. [Current mode: Anti-Person]</text>
 		<event load="GB_COMBAT_CHECK_TROOPERTOG_BATTLE"/>
 	</mod-append:choice>
 	<mod-append:choice req="RVS_TROOPERTOG_BOARDER" blue="false">
-		<text>(Battle Drone) Set the state of the drone. [Current mode: Boarder]</text>
+		<text>(Trooper Drone) Set the state of the drone. [Current mode: Boarder]</text>
 		<event load="GB_COMBAT_CHECK_TROOPERTOG_BOARDER"/>
 	</mod-append:choice>
 
@@ -653,25 +653,17 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="RVS_TROOPERTOG_BOARDER"/>
-					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
+					<choice hidden="true">
 						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD"/>
 					</choice>
 				</event>
 			</choice>
 		</event>
 	</choice>
-	<choice blue="false" req="loc_flagship" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD"/>
 	</choice>
 </event>
 <event name="GB_COMBAT_CHECK_TROOPERTOG_BOARDER">
@@ -686,25 +678,17 @@
 				<event>
 					<text>You finish calibrating the drone successfully.</text>
 					<drone name="RVS_TROOPERTOG_DEFEND"/>
-					<choice blue="false" req="loc_flagship" lvl="0" max_group="1">
+					<choice hidden="true">
 						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-					<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK_FLAGSHIP"/>
+						<event load="COMBAT_CHECK_TOGGLE_LOAD"/>
 					</choice>
 				</event>
 			</choice>
 		</event>
 	</choice>
-	<choice blue="false" req="loc_flagship" lvl="0" max_group="1"  >
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice blue="false" req="loc_flagship" lvl="1" max_group="1">
-		<text>Do something else instead.</text>
-		<event load="COMBAT_CHECK_FLAGSHIP"/>
+	<choice hidden="true">
+		<text>Return to the toggle menu.</text>
+		<event load="COMBAT_CHECK_TOGGLE_LOAD"/>
 	</choice>
 </event>
 
