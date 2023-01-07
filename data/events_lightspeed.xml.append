@@ -295,7 +295,7 @@ This is the maximum value of your spices, it will not increase further the next 
 		</event>
 	</choice>
 </event>
-<eventList name="GB_DISPATCH_QUEST_LIST">
+<eventList name="GB_DISPATCH_QUEST_LIST"> <!-- R4: This is where you add more eventsto the general deliver to A deliveries -->
 	<event load="GB_DISPATCH_QUEST_LIST_FED"/>
 	<event load="GB_DISPATCH_QUEST_LIST_FED_STATION"/>
 	<event load="GB_DISPATCH_QUEST_LIST_MILITIA"/>
@@ -434,7 +434,7 @@ This is the maximum value of your spices, it will not increase further the next 
 <eventList name="GB_DISPATCH_QUEST_LIST_GENERIC">
 	<event>
 		<ship load="SHIP_GENERIC" hostile="false"/>
-		<text>Another delivery, another happy client.</text>
+		<text load="GB_TEXT_GENERIC_DELIVERY"/>
 		<autoReward level="MED">scrap_only</autoReward>
 			<choice>
 			<text>Continue...</text>
@@ -444,7 +444,7 @@ This is the maximum value of your spices, it will not increase further the next 
 
 	<event>
 		<ship load="SHIP_GENERIC" hostile="false"/>
-		<text>As expected a ship has arrived to rendezvous to transfer your cargo and pay.</text>
+		<text load="GB_TEXT_GENERIC_DELIVERY"/>
 		<autoReward level="MED">stuff</autoReward>
 			<choice>
 			<text>Continue...</text>
@@ -454,20 +454,27 @@ This is the maximum value of your spices, it will not increase further the next 
 
 	<event>
 	<ship load="SHIP_GENERIC" hostile="false"/>
-		<text>As expected there is a ship here ready to accept their parcel.</text>
+		<text load="GB_TEXT_GENERIC_DELIVERY"/>
 		<autoReward level="MED">standard</autoReward>
 			<choice>
 			<text>Continue...</text>
 				<event/>
 			</choice>
 	</event>
-
 </eventList>
+<textList name="GB_TEXT_GENERIC_DELIVERY">
+	<text>Without any surprises you easily can make out the client and make preperations to dock for delivery. Another job well done.</text>
+	<text>As expected you find your target ready to accept their parcel of goods without any quarrels.</text>
+	<text>Nothing out of the ordinary occurs as you arrive to this beacon and in good time you encounter the ship you are meant to deliver your goods too.</text>
+	<text>You arrive at the node and with no sights of pirates thankfully. Instead a friendly vessel awaits your delivery.</text>
+	<text>A vessel awaits you at this beacon ready to accept your parcel delivery. After some brief communications all seems in order and the delivery runs smoothly with no interruptions.</text>
+</textList>
+
 
 <eventList name="GB_DISPATCH_QUEST_LIST_PIRATE">
 	<event>
 		<ship load="SHIP_PIRATE_ALL" hostile="false"/>
-		<text>Another delivery, another happy client.</text>
+		<text>It's always difficult working with pirates. But you were assured that you were doing the right thing with this delivery. You just hope that the cargo doesn't end up in the wrong hands.</text>
 		<autoReward level="MED">scrap_only</autoReward>
 			<choice>
 			<text>Continue...</text>
@@ -477,7 +484,7 @@ This is the maximum value of your spices, it will not increase further the next 
 
 	<event>
 		<ship load="SHIP_SMUGGLER_ALL" hostile="false"/>
-		<text>As expected a pirate transport ship is ready to prepare to dock with your ship and transfer your pay after they receive </text>
+		<text>Sometimes the Federation has to make deals with less than reputable people to get the intell they need. So it comes to no surprise that a pirate transport ship hiding on the outskirts of this node awaited for your arrival and ushers you to make your clandestine delivery further away from the local beacon traffic. Though trusting people who thrive on backstabbing is always risky the exchange goes smoothly without incident.</text>
 		<autoReward level="MED">stuff</autoReward>
 			<choice>
 			<text>Continue...</text>
