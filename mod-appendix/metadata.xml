@@ -18,15 +18,18 @@ Making this mod work perfectly with Captain's Edition is a bit of a pain, but it
 	V Any ship mods you are using
 ]]>
   </description> -->
+  
+  
+  
   <description>
-<![CDATA[ This mod adds 16 new ballistic weapons and 1 new toggle drone themed around out dated ballistic weaponry of the Federation during its foundation during the Federation-Mantis War.
+<![CDATA[ This mod adds 18 new ballistic weapons and 2 new toggle drones, with in addition various "elite" and "loot" weapons too all themed around ballistic weaponry ranging from the modern gauss rifles and rail guns of the Federation to the antiquated Autocannons of the Federation-Mantis War.
 
 This version is built for use with Multiverse 5.3. The mod is a redevelopment and update of the original GO BALLISTIC!, a mod made by R4V3-0N with significant help from Chrono Vortex. It features new art, sound effects, and a complete rebalance of the weapons and drones of the original. 
 
 Reimagining the niche of these weapons using new Hyperspace functionality that did not exist at the time of the original mod and with a small team of friends.
 
-This is the first beta release of udpdate 2.1 acting as a vertical slice of the ammo swapping functionality.
-On release not all of these ammunitions will be free to switch too or unlocked from the start but for the purpose of this playtest they are free to switch to and from!
+This is the first open beta test of Update 2.3 which should finally update the mod to Multiverse v5.3! This update brings the new "Federation Freighter", the standard workhorse of the Federation logistics fleet which has stood the test of time carrying heavy freight for the Federation alongside is brand new ship specific augment that allows it to engage in blue event options and transport missions at the end of each sector. It's still work in progress and will slowly be added to over time and suggestions are welcomed!
+In addition elite ammo swapping has been added as well as a rework of Federation stores.
 
 Please give all feedback - possitive, neutral, or negative, to me on Discord (R4V3-0N#4065), you can find me on the FTL: Multiverse (Public Server) or the FTL: Multiverse Addon Megashipyard.
 Please report any and all bugs and suggestions to me or to the Go Ballistic Bug Report section in the Multiverse Addon Megashipyard.

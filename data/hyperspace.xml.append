@@ -1824,15 +1824,19 @@
 		<rooms>
 			<room id="3">
 				<roomAnim renderLayer="0">2x3_cargo_airlock_fed_striped</roomAnim>
+				<roomAnim renderLayer="1">2x3_crate_cluster_striped</roomAnim>
 			</room>
 			<room id="4">
-				<roomAnim renderLayer="0">2x2_fuel_and_crate_fed_striped</roomAnim>
+				<roomAnim renderLayer="0">2x2_fed_stripe</roomAnim>
+				<roomAnim renderLayer="1">2x2_fuel_and_crate_fed_striped</roomAnim>
 			</room>
 			<room id="2">
-				<roomAnim renderLayer="0">2x2_loading_bay_striped</roomAnim> <!-- R4: changed this to 0 to help with low O2 graphics-->
+				<roomAnim renderLayer="0">2x2_bay_fed_stripe</roomAnim>
+				<roomAnim renderLayer="1">2x2_loading_bay_striped</roomAnim> <!-- R4: changed this to 0 to help with low O2 graphics-->
 			</room>
 			<room id="9">
-				<roomAnim renderLayer="0">2x2_l_cargo_fed_striped</roomAnim>
+				<roomAnim renderLayer="0">2x2_fed_stripe</roomAnim>
+				<roomAnim renderLayer="1">2x2_l_cargo_fed_striped</roomAnim>
 			</room>
 			<room id="12">
 				<roomAnim renderLayer="1">2x2_fuel_cell_2</roomAnim>

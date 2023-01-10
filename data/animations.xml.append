@@ -1201,6 +1201,14 @@
 	<time>1</time>
 </anim>
 
+<animSheet name="2x2_fed_stripe" w="70" h="70" fw="70" fh="70">decor/2x2_fed_stripe.png</animSheet>
+<anim name="2x2_fed_stripe">
+	<sheet>2x2_fed_stripe</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+
 <animSheet name="2x2_l_cargo_fed_striped" w="70" h="70" fw="70" fh="70">decor/2x2_l_cargo_fed_striped.png</animSheet>
 <anim name="2x2_l_cargo_fed_striped">
 	<sheet>2x2_l_cargo_fed_striped</sheet>
@@ -1216,15 +1224,29 @@
 </anim>
 
 <animSheet name="2x2_loading_bay_striped" w="70" h="70" fw="70" fh="70">decor/2x2_loading_bay_striped.png</animSheet>
+<animSheet name="2x2_bay_fed_stripe" w="70" h="70" fw="70" fh="70">decor/2x2_bay_fed_stripe.png</animSheet>
 <anim name="2x2_loading_bay_striped">
 	<sheet>2x2_loading_bay_striped</sheet>
 	<desc length="1" x="0" y="0"/>
 	<time>1</time>
 </anim>
+<anim name="2x2_bay_fed_stripe">
+	<sheet>2x2_bay_fed_stripe</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+
 
 <animSheet name="2x3_cargo_airlock_fed_striped" w="105" h="70" fw="105" fh="70">decor/2x3_cargo_airlock_fed_striped.png</animSheet>
+<animSheet name="2x3_crate_cluster_striped" w="105" h="70" fw="105" fh="70">decor/2x3_crate_cluster_striped.png</animSheet>
 <anim name="2x3_cargo_airlock_fed_striped">
 	<sheet>2x3_cargo_airlock_fed_striped</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<anim name="2x3_crate_cluster_striped">
+	<sheet>2x3_crate_cluster_striped</sheet>
 	<desc length="1" x="0" y="0"/>
 	<time>1</time>
 </anim>
