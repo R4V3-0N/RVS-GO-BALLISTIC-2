@@ -58,11 +58,11 @@
 <drones>
 	<drone name="RVS_TROOPERTOG_BOARDER">
 		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
-		<tooltipName>Battle Drone Mk I</tooltipName>
+		<tooltipName>Trooper Drone</tooltipName>
 	</drone>
 	<drone name="RVS_TROOPERTOG_DEFEND">
 		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
-		<tooltipName>Battle Drone Mk I</tooltipName>
+		<tooltipName>Trooper Drone</tooltipName>
 	</drone>
 </drones>
 
