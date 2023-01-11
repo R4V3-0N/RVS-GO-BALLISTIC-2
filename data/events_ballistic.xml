@@ -1299,17 +1299,25 @@
     <eventList name="RVS_FREIGHTER_ESCORT_DISTRESS_ZOLTAN">
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS"/>
         <event load="EMPTY_ZOLTAN"/>
+        <event load="EMPTY_ZOLTAN"/>
+        <event load="EMPTY_ZOLTAN"/>
     </eventList>
     <eventList name="RVS_FREIGHTER_ESCORT_DISTRESS_ENGI">
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS"/>
+        <event load="EMPTY_ENGI"/>
+        <event load="EMPTY_ENGI"/>
         <event load="EMPTY_ENGI"/>
     </eventList>
     <eventList name="RVS_FREIGHTER_ESCORT_DISTRESS_FREEMANTIS">
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS"/>
         <event load="EMPTY_FREEMANTIS"/>
+        <event load="EMPTY_FREEMANTIS"/>
+        <event load="EMPTY_FREEMANTIS"/>
     </eventList>
     <eventList name="RVS_FREIGHTER_ESCORT_DISTRESS_ORCHID">
         <event load="RVS_FREIGHTER_ESCORT_DISTRESS"/>
+        <event load="EMPTY_ORCHID"/>
+        <event load="EMPTY_ORCHID"/>
         <event load="EMPTY_ORCHID"/>
     </eventList>
 
