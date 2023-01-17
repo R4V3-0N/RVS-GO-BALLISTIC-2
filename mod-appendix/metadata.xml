@@ -2,7 +2,7 @@
   <title><![CDATA[ GO BALLISTIC 2! ]]></title>
   <threadUrl><![CDATA[ https://www.subsetgames.com/forum/viewtopic.php?f=11&t=38203 ]]></threadUrl>
   <author><![CDATA[ R4V3-0N, porcu93, cgjunior, laszlogasd, Madoktor, RobintheDragon2, Kommandant_Julk, Vertaalfout, Chrono Vortex ]]></author>
-  <version><![CDATA[ 2.1 PUBLIC BETA 1.2]]></version>
+  <version><![CDATA[ 2.2]]></version>
 <!--  <description> 1.3 version description 
 <![CDATA[ This mod adds several sets of ballistic weapons and drones to the game, including autocannons, gauss, coil guns and railguns, all with unique animations and sounds.
 
@@ -22,20 +22,22 @@ Making this mod work perfectly with Captain's Edition is a bit of a pain, but it
   
   
   <description>
-<![CDATA[ This mod adds 18 new ballistic weapons and 2 new toggle drones, with in addition various "elite" and "loot" weapons too all themed around ballistic weaponry ranging from the modern gauss rifles and rail guns of the Federation to the antiquated Autocannons of the Federation-Mantis War.
+<![CDATA[ This mod adds ballistic weaponry from multiple eras of the Federation, ranging from the Federation-Mantis War's old kinetic weaponry to the Federation Civil War's magnetically driven Gauss Rifles, and even some bleeding edge technologies such as Rail Guns!
 
-This version is built for use with Multiverse 5.3. The mod is a redevelopment and update of the original GO BALLISTIC!, a mod made by R4V3-0N with significant help from Chrono Vortex. It features new art, sound effects, and a complete rebalance of the weapons and drones of the original. 
+This version is built for use with Multiverse 5.3 and introduces mechanics, events, encounters, stores, and features that help immerse and implement it into the overhaul's setting.
+LOAD ORDER: Load this after the respective Multiverse files in slipstream mod manager.
 
-Reimagining the niche of these weapons using new Hyperspace functionality that did not exist at the time of the original mod and with a small team of friends.
+Features
+    • 18 new ballistic weapons
+    • 4 elite weapon versions
+    • 3 ballistic weapons with the ability to swap ammo during combat
+    • 3 new multiverse renegades including cruiser encounter with its corresponding multiverse renegade loot weapon
+    • Various new events, stores, and encounters
+    • Early implementation of a few new factions and enemies that will be expanded upon in later updates
+    • Compatibility with the Multiverse add-on mod Forgemaster including a cross-over weapon recipe
 
-This is the first open beta test of Update 2.3 which should finally update the mod to Multiverse v5.3! This update brings the new "Federation Freighter", the standard workhorse of the Federation logistics fleet which has stood the test of time carrying heavy freight for the Federation alongside is brand new ship specific augment that allows it to engage in blue event options and transport missions at the end of each sector. It's still work in progress and will slowly be added to over time and suggestions are welcomed!
-In addition elite ammo swapping has been added as well as a rework of Federation stores.
-
-Please give all feedback - possitive, neutral, or negative, to me on Discord (R4V3-0N#4065), you can find me on the FTL: Multiverse (Public Server) or the FTL: Multiverse Addon Megashipyard.
-Please report any and all bugs and suggestions to me or to the Go Ballistic Bug Report section in the Multiverse Addon Megashipyard.
-
-Original weapon idea is from the Foundation of the Federation incomplete mod overhaul by WhaleCancer.
-Spell checked by BetelgeuseBear and JerC.
-]]>
+Based on my previous GO BALLISTIC! 1 developed by Chrono Vortex and myself.
+Original autocannon weapon concepts based on the unfinished Foundation of the Federation mod overhaul with permission from WhaleCancer.
+Spell checked by BetelgeuseBear, Skye, and JerC.]]>
   </description>
 </metadata>
