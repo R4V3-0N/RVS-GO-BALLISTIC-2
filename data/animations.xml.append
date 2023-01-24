@@ -1117,26 +1117,26 @@
 <anim name="thruster_GB">
 	<sheet>thruster_GB</sheet>
 	<desc length="4" x="0" y="0"/>
-	<time>0.8</time>
+	<time>0.5</time>
 </anim>
 <animSheet name="thruster_GB_enemy" w="280" h="22" fw="70" fh="22">thrusters/thrusters_GB_enemy.png</animSheet>
 <anim name="thruster_GB_enemy">
 	<sheet>thruster_GB_enemy</sheet>
 	<desc length="4" x="0" y="0"/>
-	<time>0.8</time>
+	<time>0.5</time>
 </anim>
 
 <animSheet name="thruster_freighter" w="88" h="27" fw="22" fh="27">thrusters/thrusters_freighter.png</animSheet>
 <anim name="thruster_freighter">
 	<sheet>thruster_freighter</sheet>
 	<desc length="4" x="0" y="0"/>
-	<time>0.8</time>
+	<time>0.5</time>
 </anim>
 <animSheet name="thruster_freighter_enemy" w="108" h="22" fw="27" fh="22">thrusters/thrusters_freighter_enemy.png</animSheet>
 <anim name="thruster_freighter_enemy">
 	<sheet>thruster_freighter_enemy</sheet>
 	<desc length="4" x="0" y="0"/>
-	<time>0.8</time>
+	<time>0.5</time>
 </anim>
 
 
