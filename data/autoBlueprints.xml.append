@@ -496,7 +496,10 @@ created from scratch using the components or techniques of them to create odd an
 </blueprintList>
 
 <blueprintList name="GB_LIST_REQUISITIONED_WEAPONS"><!-- this list was missing and i dunno waht to put hre, so its just mirroring basic AC list-->
-	<name>GB_AC_BASIC_LIST</name>
+	<name>GB_AC_1</name>
+    <name>GB_AC_2</name>
+    <name>GB_AC_3</name>
+    <!--<name>GB_AC_4</name> -->
 </blueprintList>
 
 <!-----------------------
