@@ -1759,7 +1759,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 <weaponBlueprint name="GB_AC_3_HE_CRIT">
 	<type>LASER</type>
-	<title>Autocannon Mark III [Concussive]</title>
+	<title>Autocannon Mark III [High Explosive]</title>
 	<short>AC III [HE]</short>
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
@@ -4757,7 +4757,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
     <flavorType>Laser</flavorType>
 	<title>Machine Gun</title>
 	<short>MG</short>
-	<desc>This weapon is an antiquated anti-ship weapon no longer capable of damaging the hulls of modern ships. They can however still hurt the crew inside those hulls.</desc>
+	<desc>This antiquated weapon is no longer capable of damaging the hulls of modern ships efficiently. It is, however, capable of harming crew, and can occationally inflict hull and system damage.</desc>
 	<tooltip>5 shots 15 crew damage weapon</tooltip>
 	<damage>0</damage>
 	<persDamage>1</persDamage>
