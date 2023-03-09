@@ -425,7 +425,7 @@ created from scratch using the components or techniques of them to create odd an
 	<name>GB_AC_1_ELITE_RAD</name>
 </blueprintList>
 
-<blueprintList name="GB_AC_2_AMMO_ELITE">
+<blueprintList name="GB_AC_2_ELITE_AMMO">
 	<name>GB_AC_2_ELITE</name>
 	<name>GB_AC_2_ELITE_CASELESS</name>
 	<name>GB_AC_2_ELITE_HV_ENEMY</name>
