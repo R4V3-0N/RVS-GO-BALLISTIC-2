@@ -4772,12 +4772,9 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
         <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_MG">GB_shot_light</projectile>
     </projectiles>
 	<launchSounds>
-		<sound>detectiveShoot1</sound>
-		<sound>detectiveShoot2</sound>
-		<sound>detectiveShoot3</sound>
-		<!--<sound>GB_cannonLight1</sound>
-		<sound>GB_cannonLight2</sound>
-		<sound>GB_cannonLight3</sound>-->
+		<sound>GB_machineGun1</sound>
+		<sound>GB_machineGun2</sound>
+		<sound>GB_machineGun3</sound>
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>
@@ -4878,7 +4875,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
     <flavorType>Laser</flavorType>
 	<title>Heavy Machine Gun</title>
 	<short>HMG</short>
-	<desc>This weapon is an antiquated anti-ship weapon no longer capable of damaging the hulls of modern ships. They can however still hurt the crew inside those hulls.</desc>
+	<desc>This antiquated weapon is no longer capable of damaging the hulls of modern ships efficiently. It is, however, capable of harming crew, and can occationally inflict hull and system damage.</desc>
 	<tooltip>3 shot 30 crew damage weapon, 10% chance to cause a breach, 10% chance to stun for 2 seconds</tooltip>
 	<damage>0</damage>
 	<persDamage>2</persDamage>
@@ -4896,12 +4893,9 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
         <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_HMG">GB_shot_light</projectile>
     </projectiles>
 	<launchSounds>
-		<sound>detectiveShoot1</sound>
-		<sound>detectiveShoot2</sound>
-		<sound>detectiveShoot3</sound>
-		<!--<sound>GB_cannonLight1</sound>
-		<sound>GB_cannonLight2</sound>
-		<sound>GB_cannonLight3</sound>-->
+		<sound>GB_machineGun1</sound>
+		<sound>GB_machineGun2</sound>
+		<sound>GB_machineGun3</sound>
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>

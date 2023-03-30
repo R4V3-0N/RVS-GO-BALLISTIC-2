@@ -18,3 +18,6 @@
 <GB_gaussHeavy1 volume="7">weapons/GB_gaussHeavy1.wav</GB_gaussHeavy1>
 <GB_gaussHeavy2 volume="7">weapons/GB_gaussHeavy2.wav</GB_gaussHeavy2>
 <GB_gaussHeavy3 volume="7">weapons/GB_gaussHeavy3.wav</GB_gaussHeavy3>
+<GB_machineGun1 volume="4">weapons/GB_machineGun1.ogg</GB_machineGun1>
+<GB_machineGun2 volume="4">weapons/GB_machineGun2.ogg</GB_machineGun2>
+<GB_machineGun3 volume="4">weapons/GB_machineGun3.ogg</GB_machineGun3>
