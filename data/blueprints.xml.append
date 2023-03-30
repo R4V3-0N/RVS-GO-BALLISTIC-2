@@ -4893,7 +4893,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<rarity>0</rarity>
 	<cost>25</cost>
     <projectiles>
-        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_HMG">GB_magnetic_slug_light</projectile>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_HMG">GB_shot_light</projectile>
     </projectiles>
 	<launchSounds>
 		<sound>detectiveShoot1</sound>
