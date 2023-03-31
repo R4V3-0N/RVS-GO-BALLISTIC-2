@@ -1,3 +1,6 @@
 <roomLayout name="RVSP_room_weapons_1">
 	<computerGlow x="19" y="41" dir="RIGHT" />
 </roomLayout>
+<roomLayout name="weapons_11">
+	<computerGlow x="19" y="40" dir="RIGHT" />
+</roomLayout>
