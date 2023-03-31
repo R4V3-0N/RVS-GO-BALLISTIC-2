@@ -5103,7 +5103,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<title>Heavy Flak Gun Mark II</title>
 	<short>Heavy Flak II</short>
 	<tip>tip_flak</tip>
-	<desc>Fires a massive blast of debris of various sizes across a random area doing up to 5 damage. Good at taking down shields but hard to aim.</desc>
+	<desc>Fires a massive blast of debris of various sizes across a random area doing up to 11 damage. Good at taking down shields but hard to aim.</desc>
 	<tooltip>Fires a blast of debris of various sizes across a random area doing up to 5 damage.</tooltip>
 	<radius>80</radius>
 	<damage>1</damage>
