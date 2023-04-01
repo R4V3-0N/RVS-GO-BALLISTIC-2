@@ -1717,7 +1717,7 @@
 		<mod-append:empty/>
 		<mod-append:empty/>
 		<mod-append:empty/>
-		<mod-append:empty/>
+		<mod-append:empty>PLAYER_SHIP_RVSPE_KESTREL</mod-append:empty> <!-- R4: I hope this is right -->
 		<mod-append:empty/>
 	</mod:findLike>
 
@@ -1924,6 +1924,25 @@
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 		<crewLimit>8</crewLimit>
 	</mod-append:customShip>
+	
+
+	<mod-append:ship name="PLAYER_SHIP_RVSPE_KESTREL" b="true" c="true">
+		<!-- R4: uuuh. not sure if I did this right 
+		<unlock variant="a" silent="false">
+            <type>2</type> 
+            <shipReq>PLAYER_SHIP_RVSP_GB_KESTREL</shipReq>
+            <shipReq>PLAYER_SHIP_RVSP_GB_KESTREL_2</shipReq>
+            <shipReq>PLAYER_SHIP_RVSP_GB_KESTREL_3</shipReq>			
+        </unlock>
+		-->
+		<mod-append:customShip name="PLAYER_SHIP_RVSPE_KESTREL">
+			<hiddenAug>SHIP_KESTREL</hiddenAug>
+			<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+			<crewLimit>11</crewLimit>
+		</mod-append:customShip>
+    </mod-append:ship>
+
+	
 	
 
 

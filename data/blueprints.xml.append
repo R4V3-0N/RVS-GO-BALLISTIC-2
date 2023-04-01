@@ -6004,6 +6004,84 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 
 
+<shipBlueprint name="PLAYER_SHIP_RVSPE_KESTREL" layout="rvspe_kestrel" img="rvspe_kestrel">
+	<class>Antique Elite Kestrel Cruiser</class>
+	<name>Goshawk</name>
+	<desc>Formerly crewed by the best of the best of the Federation-Mantis War. This ship is brought back to life from its prestine preservation to fight once more against a new galactic threat.</desc>
+	<systemList>
+		<artillery max="4" power="1" room="5" start="false" weapon="ARTILLERY_BOSS_1" img="room_artillery" />
+		<battery max="2" power="1" room="6" start="false" img="room_battery_nod_c" />
+		<cloaking power="1" room="12" start="false" img="room_cloaking_orchid_2" />
+		<clonebay power="1" room="13" start="false">
+			<slot>
+				<number>2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="16" start="true" img="room_doors_5">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones power="2" room="1" start="false" img="room_drones" />
+		<engines max="8" power="2" room="17" start="true" img="room_engines_6">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="3" start="false" img="room_hacking_4" />
+		<medbay power="1" room="13" start="true" img="room_medbay_7">
+			<slot>
+				<number>2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="10" start="false" img="room_mind_9" />
+		<oxygen power="1" room="15" start="true" img="room_oxygen_12" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="2" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="11" start="true" img="room_shields_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="9" start="false" />
+		<weapons max="8" power="3" room="4" start="true" img="room_weapons">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="20" count="4">
+		<weapon name="GB_AC_2_ELITE" />
+		<weapon name="GB_AC_1_ELITE" />
+		<weapon name="MISSILES_1" />
+		<weapon name="MISSILES_1" />
+	</weaponList>
+	<droneList drones="2" count="2" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="human_soldier" /> <!-- not sure on exact crew, maybe just soldiers and humans? I am also missing orchids representation here too -->
+	<crewCount amount="1" class="engi_defender" />
+	<crewCount amount="1" class="zoltan_peacekeeper" />
+	<aug name="COMIC_WAR" /> <!-- honestly no clue what this is but I think its fitting -->
+</shipBlueprint>
+
+
 
 
 <!--    ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
