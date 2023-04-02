@@ -1,0 +1,5 @@
+Gauss Rifle mk 1 increased cooldown (14 -> 15)
+Gauss Rifle mk 2 increased cooldown (16 -> 17)
+Enemy Gauss Rifle mk 2 cooldown fixed (was 13, now 17)
+Trooper drone description and stat update (now does 1.55 damage for melee and range)
+Added Super Elite Vintage Kestrel (unlock requirement, win in all 3 Antique Kestrels)

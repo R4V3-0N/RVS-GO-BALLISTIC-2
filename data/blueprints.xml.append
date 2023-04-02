@@ -4199,7 +4199,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>2</sp>
 	<breachChance>3</breachChance>
 	<stunChance>2</stunChance>
-	<cooldown>14</cooldown> <!--- was 10 -->
+	<cooldown>15</cooldown> <!--- was 10, 14 -->
 	<power>1</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4240,7 +4240,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>2</sp>
 	<breachChance>3</breachChance>
 	<stunChance>2</stunChance>
-	<cooldown>14</cooldown> <!--- was 10 -->
+	<cooldown>15</cooldown> <!--- was 10, 14 -->
 	<power>1</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4282,7 +4282,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>2</sp>
 	<breachChance>4</breachChance>
 	<stunChance>3</stunChance>
-	<cooldown>16</cooldown> <!--- was 13 -->
+	<cooldown>17</cooldown> <!--- was 13, 16 -->
 	<power>2</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4324,7 +4324,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>3</sp>
 	<breachChance>8</breachChance>
 	<stunChance>3</stunChance>
-	<cooldown>16</cooldown> <!--- was 13 -->
+	<cooldown>17</cooldown> <!--- was 13, 16 -->
 	<power>2</power>
 	<speed>200</speed>
 	<bp>4</bp>
@@ -4365,7 +4365,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>2</sp>
 	<breachChance>4</breachChance>
 	<stunChance>3</stunChance>
-	<cooldown>14</cooldown> <!--- was 13 -->
+	<cooldown>17</cooldown> <!--- fixed, was 13 when the others were 16, now 17 to match above rebalance -->
 	<power>2</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4407,7 +4407,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>2</sp>
 	<breachChance>5</breachChance>
 	<stunChance>4</stunChance>
-	<cooldown>20</cooldown>
+	<cooldown>20</cooldown> <!-- R4: cooldown not edited -->
 	<power>3</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -5300,7 +5300,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<short>Trooper [S]</short>
 	<desc>[CURRENT MODE: Security] Controllable, a personnel drone that can be toggled to act as either a Defensive security or boarding drone before battle.
 
-		-100 HP, 1.1x combat damage, 2.2x range combat damage.
+		-100 HP, 1.55x combat damage.
 		-1.2x movement speed
 	</desc>
 	<!--<desc>[CURRENT MODE: Anti-Personnel] Controllable, a personnel drone that can be toggled to act as either a Defensive Anti-Person or Boarding drone before Trooper.
@@ -5321,7 +5321,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<short>Trooper [B]</short>
 	<desc>[CURRENT MODE: Boarding] Controllable, a personnel drone that can be toggled to act as either a Defensive security or boarding drone before battle.
 
-		-100 HP, 1.1x combat damage, 2.2x range combat damage.
+		-100 HP, 1.55x combat damage.
 		-1.2x movement speed
 	</desc>
 	<power>1</power>
@@ -6068,16 +6068,14 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="20" count="4">
 		<weapon name="GB_AC_2_ELITE" />
+		<weapon name="MISSILES_1" />
 		<weapon name="GB_AC_1_ELITE" />
-		<weapon name="MISSILES_1" />
-		<weapon name="MISSILES_1" />
 	</weaponList>
 	<droneList drones="2" count="2" />
 	<health amount="30" />
 	<maxPower amount="8" />
-	<crewCount amount="1" class="human_soldier" /> <!-- not sure on exact crew, maybe just soldiers and humans? I am also missing orchids representation here too -->
-	<crewCount amount="1" class="engi_defender" />
-	<crewCount amount="1" class="zoltan_peacekeeper" />
+	<crewCount amount="2" class="human_soldier" /> <!-- not sure on exact crew, maybe just soldiers and humans? I am also missing orchids representation here too -->
+	<crewCount amount="1" class="human_medic" />
 	<aug name="COMIC_WAR" /> <!-- honestly no clue what this is but I think its fitting -->
 </shipBlueprint>
 

@@ -33,10 +33,9 @@
 			<fightAI/>
 			<returnToDroneRoom/>
 		</droneAI>
-		<damageMultiplier>1.1</damageMultiplier>
-		<rangedDamageMultiplier>2.2</rangedDamageMultiplier>
-		<!--<damageMultiplier>1.1</damageMultiplier>					When canPunch is on-->
-		<!--<rangedDamageMultiplier>2.2</rangedDamageMultiplier>		When canPunch is on-->
+		<damageMultiplier>1.55</damageMultiplier>
+		<!--<damageMultiplier>1.1</damageMultiplier>					When I can be bothered to make melee work-->
+		<!--<rangedDamageMultiplier>2.2</rangedDamageMultiplier>		When I can be bothered to make melee work-->
 		<fireDamageMultiplier>0.25</fireDamageMultiplier>
 		<moveSpeedMultiplier>1.2</moveSpeedMultiplier>
 		<shootingSounds> <!-- placeholder sound-->
@@ -1717,7 +1716,7 @@
 		<mod-append:empty/>
 		<mod-append:empty/>
 		<mod-append:empty/>
-		<mod-append:empty>PLAYER_SHIP_RVSPE_KESTREL</mod-append:empty> <!-- R4: I hope this is right -->
+		<mod-append:ship>PLAYER_SHIP_RVSPE_KESTREL</mod-append:ship> <!-- R4: I hope this is right --> <!-- R4: ANOTHER ATTEMPT! -->
 		<mod-append:empty/>
 	</mod:findLike>
 
@@ -1926,22 +1925,15 @@
 	</mod-append:customShip>
 	
 
-	<mod-append:ship name="PLAYER_SHIP_RVSPE_KESTREL" b="true" c="true">
-		<!-- R4: uuuh. not sure if I did this right 
-		<unlock variant="a" silent="false">
-            <type>2</type> 
-            <shipReq>PLAYER_SHIP_RVSP_GB_KESTREL</shipReq>
-            <shipReq>PLAYER_SHIP_RVSP_GB_KESTREL_2</shipReq>
-            <shipReq>PLAYER_SHIP_RVSP_GB_KESTREL_3</shipReq>			
-        </unlock>
-		-->
-		<mod-append:customShip name="PLAYER_SHIP_RVSPE_KESTREL">
-			<hiddenAug>SHIP_KESTREL</hiddenAug>
-			<hiddenAug>FOR_MULTIVERSE</hiddenAug>
-			<crewLimit>11</crewLimit>
-		</mod-append:customShip>
+    <mod-append:ship name="PLAYER_SHIP_RVSPE_KESTREL" b="false" c="false">
+		<!-- R4: typical unlocks for elites Chronklo go! -->
     </mod-append:ship>
-
+    
+    <mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL">
+        <hiddenAug>SHIP_KESTREL</hiddenAug>
+        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
+        <crewLimit>11</crewLimit>
+    </mod-append:customShip>
 	
 	
 
