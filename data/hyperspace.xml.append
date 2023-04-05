@@ -2043,136 +2043,6 @@
 	</aug>
 </augments>
 
-<crew> <!-- AC1 EMP crew, 1 ion damage -->
-	<race name="gb_ion_instant_1">
-		<maxHealth>0</maxHealth>
-		<repairSpeed>0</repairSpeed>
-		<canFight>false</canFight>
-		<canRepair>false</canRepair>
-		<canSabotage>false</canSabotage>
-		<canSuffocate>false</canSuffocate>
-		<fireDamageMultiplier>0</fireDamageMultiplier>
-		<canMan>false</canMan>
-		<noClone>true</noClone>
-		<noSlot>true</noSlot>
-		<controllable>false</controllable>
-		<selectable>false</selectable>
-		<canPhaseThroughDoors>true</canPhaseThroughDoors>
-		<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
-		<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
-		<damageMultiplier>0</damageMultiplier>
-		<damageTakenMultiplier>0.0</damageTakenMultiplier>
-		<animBase>mantis</animBase>
-		<validTarget>false</validTarget>
-		<canMove>false</canMove>
-		<snapToSlot>true</snapToSlot>
-		<deathSounds>
-			<deathSound>energyDeath</deathSound>
-		</deathSounds>
-		<shootingSounds>
-			<shootingSound>mantisSpit1</shootingSound>
-			<shootingSound>mantisSpit2</shootingSound>
-			<shootingSound>mantisSpit3</shootingSound>
-		</shootingSounds>
-		<hasCustomDeathAnimation>true</hasCustomDeathAnimation>
-		<hasDeathExplosion>true</hasDeathExplosion>
-		<deathEffect>
-			<ion>1</ion>
-			<stun>3</stun>
-			<friendlyFire>true</friendlyFire>
-			<shipFriendlyFire>true</shipFriendlyFire>
-		</deathEffect>
-
-
-
-	</race>
-</crew>
-
-<crew> <!-- EMP AC2 Ion crew, 2 ion damage -->
-	<race name="gb_ion_instant_2">
-		<maxHealth>0</maxHealth>
-		<repairSpeed>0</repairSpeed>
-		<canFight>false</canFight>
-		<canRepair>false</canRepair>
-		<canSabotage>false</canSabotage>
-		<canSuffocate>false</canSuffocate>
-		<fireDamageMultiplier>0</fireDamageMultiplier>
-		<canMan>false</canMan>
-		<noClone>true</noClone>
-		<noSlot>true</noSlot>
-		<controllable>false</controllable>
-		<selectable>false</selectable>
-		<canPhaseThroughDoors>true</canPhaseThroughDoors>
-		<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
-		<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
-		<damageMultiplier>0</damageMultiplier>
-		<damageTakenMultiplier>0.0</damageTakenMultiplier>
-		<animBase>mantis</animBase>
-		<validTarget>false</validTarget>
-		<canMove>false</canMove>
-		<snapToSlot>true</snapToSlot>
-		<deathSounds>
-			<deathSound>energyDeath</deathSound>
-		</deathSounds>
-		<shootingSounds>
-			<shootingSound>mantisSpit1</shootingSound>
-			<shootingSound>mantisSpit2</shootingSound>
-			<shootingSound>mantisSpit3</shootingSound>
-		</shootingSounds>
-		<deathEffect>
-			<ion>2</ion>
-			<stun>3</stun>
-			<friendlyFire>true</friendlyFire>
-			<shipFriendlyFire>true</shipFriendlyFire>
-		</deathEffect>
-
-
-
-	</race>
-</crew>
-
-<crew> <!-- EMP AC3 Ion crew, 3 ion damage-->
-	<race name="gb_ion_instant_3">
-		<maxHealth>0</maxHealth>
-		<repairSpeed>0</repairSpeed>
-		<canFight>false</canFight>
-		<canRepair>false</canRepair>
-		<canSabotage>false</canSabotage>
-		<canSuffocate>false</canSuffocate>
-		<fireDamageMultiplier>0</fireDamageMultiplier>
-		<canMan>false</canMan>
-		<noClone>true</noClone>
-		<noSlot>true</noSlot>
-		<controllable>false</controllable>
-		<selectable>false</selectable>
-		<canPhaseThroughDoors>true</canPhaseThroughDoors>
-		<moveSpeedMultiplier>0.00</moveSpeedMultiplier>
-		<sabotageSpeedMultiplier>0.0</sabotageSpeedMultiplier>
-		<damageMultiplier>0</damageMultiplier>
-		<damageTakenMultiplier>0.0</damageTakenMultiplier>
-		<animBase>mantis</animBase>
-		<validTarget>false</validTarget>
-		<canMove>false</canMove>
-		<snapToSlot>true</snapToSlot>
-		<deathSounds>
-			<deathSound>energyDeath</deathSound>
-		</deathSounds>
-		<shootingSounds>
-			<shootingSound>mantisSpit1</shootingSound>
-			<shootingSound>mantisSpit2</shootingSound>
-			<shootingSound>mantisSpit3</shootingSound>
-		</shootingSounds>
-		<deathEffect>
-			<ion>3</ion>
-			<stun>5</stun>
-			<friendlyFire>true</friendlyFire>
-			<shipFriendlyFire>true</shipFriendlyFire>
-		</deathEffect>
-
-
-
-	</race>
-</crew>
 <mod:findLike type="achievements">
 	<mod:findLike type="page">
 		<mod:findLike type="section">
@@ -2208,6 +2078,10 @@
     <mod-append:aug name="GB_EXOTIC_SPICES_9">
         <function name="SCRAP_COLLECTOR" value="-0.15" useForReqs="false"/>
     </mod-append:aug>
+</mod:findLike>
+
+<mod:findLike type="scripts">
+    <mod-append:script>data/gb_scripts/weapons.lua</mod-append:script>
 </mod:findLike>
 
 </FTL>

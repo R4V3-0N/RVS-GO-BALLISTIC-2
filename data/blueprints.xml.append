@@ -506,12 +506,6 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<freeMissileChance>77</freeMissileChance>
 	<damage>1</damage>
 	<sysDamage>-1</sysDamage>
-	<spawnCrew>
-		<race>gb_ion_instant_1</race>
-		<lifetime>0</lifetime>
-		<number>1</number>
-		<noSlot>true</noSlot>
-	</spawnCrew>
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>1</breachChance>
@@ -1185,12 +1179,6 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>0</sp>
 	<breachChance>2</breachChance>
 	<stunChance>2</stunChance>
-	<spawnCrew>
-		<race>gb_ion_instant_2</race>
-		<lifetime>0</lifetime>
-		<number>1</number>
-		<noSlot>true</noSlot>
-	</spawnCrew>
 	<cooldown>6</cooldown>
 	<power>2</power>
 	<bp>4</bp>
@@ -1860,12 +1848,6 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<breachChance>4</breachChance>
 	<stunChance>4</stunChance>
 	<cooldown>6</cooldown>
-	<spawnCrew>
-		<race>gb_ion_instant_3</race>
-		<lifetime>0</lifetime>
-		<number>1</number>
-		<noSlot>true</noSlot>
-	</spawnCrew>
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
@@ -3222,7 +3204,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 		Base Hull Damage: 2
 		Total Crew Damage: 30
-		Ion Damage: 2 (Rooms Only)
+		Ion Damage: 2 (only 1 to shields)
 
 		Breach Chance: 20% (Adjusted: 20%)
 		Stun Chance: 20% (3 seconds long)
@@ -3237,7 +3219,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 		Base Hull Damage: 2
 		Total Crew Damage: 30
-		Ion Damage: 2 (Rooms Only)
+		Ion Damage: 2 (only 1 to shields)
 
 		Breach Chance: 20% (Adjusted: 20%)
 		Stun Chance: 20% (3 seconds long)
@@ -3245,16 +3227,11 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>72</freeMissileChance>	<!-- R4 2022/11/24: was 73 -->
 	<damage>2</damage>
+    <ion>1</ion>
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>2</breachChance>
 	<stunChance>2</stunChance>
-	<spawnCrew>
-		<race>gb_ion_instant_2</race>
-		<lifetime>0</lifetime>
-		<number>1</number>
-		<noSlot>true</noSlot>
-	</spawnCrew>
 	<cooldown>6</cooldown>
 	<power>2</power>
 	<bp>4</bp>
@@ -3904,7 +3881,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 		Base Hull Damage: 3
 		Total Crew Damage: 45
-		Ion Damage: 3 (Rooms Only)
+		Ion Damage: 3 (only 1 to shields)
 
 		Breach Chance: 40% (Adjusted: 40%)
 		Stun Chance: 40% (3 seconds long)
@@ -3919,7 +3896,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 		Base Hull Damage: 3
 		Total Crew Damage: 45
-		Ion Damage: 3 (Rooms Only)
+		Ion Damage: 3 (only 1 to shields)
 
 		Breach Chance: 40% (Adjusted: 40%)
 		Stun Chance: 40% (3 seconds long)
@@ -3927,17 +3904,12 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>60</freeMissileChance>	<!-- R4 2022/11/24: was 62 -->
 	<damage>3</damage>
+    <ion>1</ion>
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>4</breachChance>
 	<stunChance>4</stunChance>
 	<cooldown>6</cooldown>
-	<spawnCrew>
-		<race>gb_ion_instant_3</race>
-		<lifetime>0</lifetime>
-		<number>1</number>
-		<noSlot>true</noSlot>
-	</spawnCrew>
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
@@ -6132,77 +6104,6 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
     <rarity>0</rarity>
     <stackable>false</stackable>
 </augBlueprint>
-
-<!--    ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
-          CREW WEAPON JANK
-		◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
--->
-
-<!-----------------------
-	EMP AMMO
------------------------->
-
-<!--HI CYRUS-->
-<crewBlueprint name="gb_ion_instant_1"> <!--EMP AC1 ion-->
-
-	<desc>Ion Pulse</desc>
-	<title>Ion Pulse</title>
-	<short>Ion Pulse</short>
-	<cost>50</cost>
-	<bp>2</bp>
-	<rarity>0</rarity>
-	<powerList>
-       <power>: -how'd you actually manage to select this</power>
-       <power>: -seriously, it is quite impressive</power>
-	</powerList>
-	<colorList>
-		<layer>
-		<color r="17" g="255" b="0" a="0.7"/>
-		</layer>
-	</colorList>
-</crewBlueprint>
-
-<crewBlueprint name="gb_ion_instant_2"> <!--EMP AC2 ion-->
-
-	<desc>Ion Pulse</desc>
-	<title>Ion Pulse</title>
-	<short>Ion Pulse</short>
-	<cost>50</cost>
-	<bp>2</bp>
-	<rarity>0</rarity>
-	<powerList>
-       <power>: -how'd you actually manage to select this</power>
-       <power>: -seriously, it is quite impressive</power>
-	</powerList>
-	<colorList>
-		<layer>
-		<color r="17" g="255" b="0" a="0.7"/>
-		</layer>
-	</colorList>
-</crewBlueprint>
-
-<crewBlueprint name="gb_ion_instant_3"> <!--EMP AC3 ion-->
-	<desc>Ion Pulse</desc>
-	<title>Ion Pulse</title>
-	<short>Ion Pulse</short>
-	<cost>50</cost>
-	<bp>2</bp>
-	<rarity>0</rarity>
-	<powerList>
-       <power>: -how'd you actually manage to select this</power>
-       <power>: -seriously, it is quite impressive</power>
-	</powerList>
-	<colorList>
-		<layer>
-		<color r="17" g="255" b="0" a="0.7"/>
-		</layer>
-	</colorList>
-</crewBlueprint>
-
-<!--    ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
-               AUGMENTS
-		◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
--->
 
 <augBlueprint name="GB_EXOTIC_SPICES_1">
     <title>Exotic Spices</title>
