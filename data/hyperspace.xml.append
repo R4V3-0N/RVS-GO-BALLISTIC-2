@@ -18,8 +18,8 @@
 	</mod:findLike>
 </FTL>
 <FTL>
-<crew>
-	<race name="rvs_drone_trooper">
+<mod:findLike type="crew">
+	<mod-append:race name="rvs_drone_trooper">
 		<controllable>true</controllable>
 		<canFight>true</canFight>
 		<canSabotage>true</canSabotage>
@@ -43,7 +43,7 @@
 			<shootingSound>detectiveShoot2</shootingSound>
 			<shootingSound>detectiveShoot3</shootingSound>
 		</shootingSounds>
-	</race>
+	</mod-append:race>
 	<!--<mod-append:race name="rvs_trooper_board">
 		<animSheet>drone_trooper</animSheet>
 		<controllable>true</controllable>
@@ -70,56 +70,56 @@
 			<shootingSound>detectiveShoot3</shootingSound>
 		</shootingSounds>
 	</mod-append:race>-->
-</crew>
-<drones>
-	<drone name="RVS_TROOPERTOG_BOARDER">
+</mod:findLike>
+<mod:findLike type="drones">
+	<mod-append:drone name="RVS_TROOPERTOG_BOARDER">
 		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
 		<tooltipName>Trooper Drone</tooltipName>
-	</drone>
-	<drone name="RVS_TROOPERTOG_DEFEND">
+	</mod-append:drone>
+	<mod-append:drone name="RVS_TROOPERTOG_DEFEND">
 		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
 		<tooltipName>Trooper Drone</tooltipName>
-	</drone>
-</drones>
+	</mod-append:drone>
+</mod:findLike>
 
-<events>
-	<eventFile>ballistic</eventFile>
-	<variable name="ach_mv_ballistic" op="set" val="0"/>
+<mod:findLike type="events" limit="1">
+	<mod-append:eventFile>ballistic</mod-append:eventFile>
+	<mod-append:variable name="ach_mv_ballistic" op="set" val="0"/>
 
-	<variable name="gb_marker_1" op="set" val="0"/>
-	<variable name="gb_marker_2" op="set" val="0"/>
-	<variable name="gb_marker_3" op="set" val="0"/>
-	<variable name="gb_marker_4" op="set" val="0"/>
-	<variable name="gb_marker_5" op="set" val="0"/>
-	<variable name="gb_marker_6" op="set" val="0"/>
-	<variable name="loc_fedfreighter_repaired" op="set" val="0"/>
-	<variable name="loc_fedfreighter_damaged" op="set" val="0"/>
-	<variable name="loc_fedfreighter_killed" op="set" val="0"/>
-	<variable name="gb_ammo_toggle" op="set" val="0"/>
-	<variable name="gb_gave_fuel" op="set" val="0"/>
-	<variable name="loc_foundsafe" op="set" val="0"/>
-	<variable name="loc_foundhostile" op="set" val="0"/>
-	<req name="GB_CURRENT_AMMO1" lvl="1" max_lvl="1"><!--standard-->
+	<mod-append:variable name="gb_marker_1" op="set" val="0"/>
+	<mod-append:variable name="gb_marker_2" op="set" val="0"/>
+	<mod-append:variable name="gb_marker_3" op="set" val="0"/>
+	<mod-append:variable name="gb_marker_4" op="set" val="0"/>
+	<mod-append:variable name="gb_marker_5" op="set" val="0"/>
+	<mod-append:variable name="gb_marker_6" op="set" val="0"/>
+	<mod-append:variable name="loc_fedfreighter_repaired" op="set" val="0"/>
+	<mod-append:variable name="loc_fedfreighter_damaged" op="set" val="0"/>
+	<mod-append:variable name="loc_fedfreighter_killed" op="set" val="0"/>
+	<mod-append:variable name="gb_ammo_toggle" op="set" val="0"/>
+	<mod-append:variable name="gb_gave_fuel" op="set" val="0"/>
+	<mod-append:variable name="loc_foundsafe" op="set" val="0"/>
+	<mod-append:variable name="loc_foundhostile" op="set" val="0"/>
+	<mod-append:req name="GB_CURRENT_AMMO1" lvl="1" max_lvl="1"><!--standard-->
 		<req type="sum" >
 			<name>gb_ammo_toggle</name>
 		</req>
-	</req>
-	<req name="GB_CURRENT_AMMO2" lvl="2" max_lvl="2"><!--caseless-->
+	</mod-append:req>
+	<mod-append:req name="GB_CURRENT_AMMO2" lvl="2" max_lvl="2"><!--caseless-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
-	</req>
-	<req name="GB_CURRENT_AMMO3" lvl="3" max_lvl="3"><!--hv-->
+	</mod-append:req>
+	<mod-append:req name="GB_CURRENT_AMMO3" lvl="3" max_lvl="3"><!--hv-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
-	</req>
-	<req name="GB_CURRENT_AMMO4" lvl="4" max_lvl="4"><!--recycler-->
+	</mod-append:req>
+	<mod-append:req name="GB_CURRENT_AMMO4" lvl="4" max_lvl="4"><!--recycler-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
-	</req>
-	<req name="GB_AMMO_4_YES" type="all">
+	</mod-append:req>
+	<mod-append:req name="GB_AMMO_4_YES" type="all">
 		<req lvl="0" max_lvl="0">
 			<name>GB_CURRENT_AMMO4</name>
 		</req>
@@ -129,8 +129,8 @@
 			<name>ANCIENT_REPLICATOR</name>
 			<name>EXPLOSIVE_REPLICATOR</name>
 		</req>
-	</req>
-	<req name="GB_AMMO_4_NO" type="all">
+	</mod-append:req>
+	<mod-append:req name="GB_AMMO_4_NO" type="all">
 		<req lvl="0" max_lvl="0">
 			<name>GB_CURRENT_AMMO4</name>
 		</req>
@@ -140,81 +140,81 @@
 			<name>ANCIENT_REPLICATOR</name>
 			<name>EXPLOSIVE_REPLICATOR</name>
 		</req>
-	</req>
-	<req name="GB_CURRENT_AMMO5" lvl="5" max_lvl="5"><!--Concusive-->
+	</mod-append:req>
+	<mod-append:req name="GB_CURRENT_AMMO5" lvl="5" max_lvl="5"><!--Concusive-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
-	</req>
-	<req name="GB_CURRENT_AMMO6" lvl="6" max_lvl="6"><!--EMP-->
+	</mod-append:req>
+	<mod-append:req name="GB_CURRENT_AMMO6" lvl="6" max_lvl="6"><!--EMP-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
-	</req>
-	<req name="GB_CURRENT_AMMO7" lvl="7" max_lvl="7"><!--particle-->
+	</mod-append:req>
+	<mod-append:req name="GB_CURRENT_AMMO7" lvl="7" max_lvl="7"><!--particle-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
-	</req>
-	<req name="GB_CURRENT_AMMO8" lvl="8" max_lvl="8"><!--Incediary-->
+	</mod-append:req>
+	<mod-append:req name="GB_CURRENT_AMMO8" lvl="8" max_lvl="8"><!--Incediary-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
-	</req>
-	<req name="GB_AMMO_8_YES" type="all">
+	</mod-append:req>
+	<mod-append:req name="GB_AMMO_8_YES" type="all">
 		<req lvl="0" max_lvl="0">
 			<name>GB_CURRENT_AMMO8</name>
 		</req>
 		<req>
 			<name>LIST_CREW_LOSTSUN</name>
 		</req>
-	</req>
-	<req name="GB_AMMO_8_NO" type="all">
+	</mod-append:req>
+	<mod-append:req name="GB_AMMO_8_NO" type="all">
 		<req lvl="0" max_lvl="0">
 			<name>GB_CURRENT_AMMO8</name>
 		</req>
 		<req lvl="0" max_lvl="0">
 			<name>LIST_CREW_LOSTSUN</name>
 		</req>
-	</req>
-	<req name="GB_CURRENT_AMMO9" lvl="9" max_lvl="9"><!--flechette-->
+	</mod-append:req>
+	<mod-append:req name="GB_CURRENT_AMMO9" lvl="9" max_lvl="9"><!--flechette-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
-	</req>
-	<req name="GB_CURRENT_AMMO10" lvl="10" max_lvl="10"><!--rad-->
+	</mod-append:req>
+	<mod-append:req name="GB_CURRENT_AMMO10" lvl="10" max_lvl="10"><!--rad-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
-	</req>
-	<req name="GB_AMMO_10_YES" type="all">
+	</mod-append:req>
+	<mod-append:req name="GB_AMMO_10_YES" type="all">
 		<req lvl="0" max_lvl="0">
 			<name>GB_CURRENT_AMMO10</name>
 		</req>
 		<name>LIST_CREW_CLAN</name>
-	</req>
-	<req name="GB_AMMO_10_NO" type="all">
+	</mod-append:req>
+	<mod-append:req name="GB_AMMO_10_NO" type="all">
 		<req lvl="0" max_lvl="0">
 			<name>GB_CURRENT_AMMO10</name>
 		</req>
 		<req lvl="0" max_lvl="0">
 			<name>LIST_CREW_CLAN</name>
 		</req>
-	</req>
+	</mod-append:req>
 	
-	<req name="GB_CURRENT_AMMO20" lvl="20" max_lvl="20"><!--Tiberium-->
+	<mod-append:req name="GB_CURRENT_AMMO20" lvl="20" max_lvl="20"><!--Tiberium-->
 		<req type="sum">
 			<name>gb_ammo_toggle</name>
 		</req>
-	</req>
-	<req name="GB_AMMO_20_YES" type="all">
+	</mod-append:req>
+	<mod-append:req name="GB_AMMO_20_YES" type="all">
 		<req lvl="0" max_lvl="0">
 			<name>GB_CURRENT_AMMO20</name>
 		</req>
 		<name>LIST_TIBERIUM_ALL</name>
 		<name>var_installed_tiberium</name>
-	</req>
-	<req name="GB_AMMO_20_NO" type="all">
+	</mod-append:req>
+	<mod-append:req name="GB_AMMO_20_NO" type="all">
 		<req lvl="0" max_lvl="0">
 			<name>GB_CURRENT_AMMO20</name>
 		</req>
@@ -222,21 +222,21 @@
 			<name>LIST_TIBERIUM_ALL</name>
 		</req>
 		<name>var_installed_tiberium</name>
-	</req>
+	</mod-append:req>
 
     
     <!-- fed freighter boss stuff -->
-    <bossShip yOffset="40">RVS_FED_FREIGHTER</bossShip>
-    <bossShip>RVS_REBEL_CRUISER</bossShip>
-	<fleetDef name="CUSTOM_FLEET_FED_DESTROYED">
+    <mod-append:bossShip yOffset="40">RVS_FED_FREIGHTER</mod-append:bossShip>
+    <mod-append:bossShip>RVS_REBEL_CRUISER</mod-append:bossShip>
+	<mod-append:fleetDef name="CUSTOM_FLEET_FED_DESTROYED">
         <ship layer="0">fleetfed_2_small_wreck</ship>
 		<ship layer="1">fleetfed_1_med_wreck</ship>
         <numShips layer="1">1</numShips>
 		<numShips layer="0">2</numShips>
-    </fleetDef>
+    </mod-append:fleetDef>
 
 
-</events>
+</mod:findLike>
 
 <mod:findLike type="boss">
     <mod-append:surgeBarrage name="RVS_FREIGHTER_ESCORT_AIRSTRIKE">
@@ -246,10 +246,9 @@
 </mod:findLike>
 
 
-
-<store>
+<mod:findLike type="store">
 	<!-- Go Ballistics generic Federation store, based on the Zoltan store-->
-	<customStore id="GB_STORE_FED">
+	<mod-append:customStore id="GB_STORE_FED">
 		<hullRepair>
 			<price min="2" max="4"/>
 			<sectorScaled/>
@@ -416,8 +415,8 @@
 			</item>
 			<chance>65</chance>
 		</category>
-	</customStore>
-	<customStore id="GB_STORE_FED_NOCREW">
+	</mod-append:customStore>
+	<mod-append:customStore id="GB_STORE_FED_NOCREW">
 		<hullRepair>
 			<price min="2" max="4"/>
 			<sectorScaled/>
@@ -574,8 +573,8 @@
 			</item>
 			<chance>65</chance>
 		</category>
-	</customStore>
-	<customStore id="GB_STORE_FED_NO_AMMO">
+	</mod-append:customStore>
+	<mod-append:customStore id="GB_STORE_FED_NO_AMMO">
 		<hullRepair>
 			<price min="2" max="4"/>
 			<sectorScaled/>
@@ -742,9 +741,9 @@
 			</item>
 			<chance>65</chance>
 		</category>
-	</customStore>
+	</mod-append:customStore>
 	<!-- Note:  -->
-	<customStore id="STORE_BALLISTIC_AUTOCANNON">
+	<mod-append:customStore id="STORE_BALLISTIC_AUTOCANNON">
         <hullRepair>
 			<price min="3" max="5"/>
 			<sectorScaled/>
@@ -840,9 +839,9 @@
             </item>
 			<chance>65</chance>
         </category>
-    </customStore>
+    </mod-append:customStore>
 
-	<customStore id="STORE_BALLISTIC_STANDARD_AUTOCANNON">
+	<mod-append:customStore id="STORE_BALLISTIC_STANDARD_AUTOCANNON">
         <hullRepair>
 			<price min="3" max="5"/>
 			<sectorScaled/>
@@ -991,10 +990,10 @@
             </item>
 			<chance>65</chance>
         </category>
-    </customStore>
+    </mod-append:customStore>
 
 	<!-- the Federation trifecta store, will be used in a unique event at some point -->
-	<customStore id="STORE_BALLISTIC_FED_ENGI_ZOLTAN">
+	<mod-append:customStore id="STORE_BALLISTIC_FED_ENGI_ZOLTAN">
         <hullRepair>
 			<price min="3" max="5"/>
 			<sectorScaled/>
@@ -1105,9 +1104,9 @@
             </item>
 			<chance>65</chance>
         </category>
-    </customStore>
+    </mod-append:customStore>
 
-	<customStore id="STORE_BALLISTIC_STANDARD_COILGUN">
+	<mod-append:customStore id="STORE_BALLISTIC_STANDARD_COILGUN">
         <hullRepair>
 			<price min="3" max="5"/>
 			<sectorScaled/>
@@ -1196,9 +1195,9 @@
             </item>
 			<chance>65</chance>
         </category>
-    </customStore>
+    </mod-append:customStore>
 
-	<customStore id="STORE_BALLISTIC_STANDARD_GAUSS">
+	<mod-append:customStore id="STORE_BALLISTIC_STANDARD_GAUSS">
         <hullRepair>
 			<price min="3" max="5"/>
 			<sectorScaled/>
@@ -1283,9 +1282,9 @@
             </item>
 			<chance>65</chance>
         </category>
-    </customStore>
+    </mod-append:customStore>
 
-	<customStore id="STORE_BALLISTIC_AUTOCANNON_BOMB">
+	<mod-append:customStore id="STORE_BALLISTIC_AUTOCANNON_BOMB">
         <hullRepair>
 			<price min="3" max="5"/>
 			<sectorScaled/>
@@ -1381,9 +1380,9 @@
             </item>
 			<chance>65</chance>
         </category>
-    </customStore>
+    </mod-append:customStore>
 
-	<customStore id="STORE_BALLISTIC_AUTOCANNON_BOMB_NO_AMMO">
+	<mod-append:customStore id="STORE_BALLISTIC_AUTOCANNON_BOMB_NO_AMMO">
         <hullRepair>
 			<price min="3" max="5"/>
 			<sectorScaled/>
@@ -1475,9 +1474,9 @@
             </item>
 			<chance>65</chance>
         </category>
-    </customStore>
+    </mod-append:customStore>
 
-	<customStore id="STORE_STANDARD_NO_AMMO">
+	<mod-append:customStore id="STORE_STANDARD_NO_AMMO">
         <hullRepair>
 			<price min="3" max="5"/>
 			<sectorScaled/>
@@ -1609,9 +1608,9 @@
             </item>
 			<chance>65</chance>
         </category>
-    </customStore>
+    </mod-append:customStore>
 
-	<customStore id="STORE_SYLVAN_AC">
+	<mod-append:customStore id="STORE_SYLVAN_AC">
 		<itemPurchaseLimit>2</itemPurchaseLimit>
 		<resource>
 			<type>missiles</type>
@@ -1653,9 +1652,9 @@
                 <price>-1</price>
             </item>
         </category>
-    </customStore>
+    </mod-append:customStore>
 
-	<customStore id="STORE_SYLVAN_GAUSS">
+	<mod-append:customStore id="STORE_SYLVAN_GAUSS">
 		<itemPurchaseLimit>2</itemPurchaseLimit>
 		<resource>
 			<type>missiles</type>
@@ -1697,9 +1696,9 @@
                 <price>-1</price>
             </item>
         </category>
-    </customStore>
+    </mod-append:customStore>
 
-</store>
+</mod:findLike>
 
 
 <mod:findLike type="ships">
@@ -2022,27 +2021,6 @@
 
 
 
-
-
-
-<augments>
-	<aug name="AUTO_LOADER_LOW_SHIELD_LOCKED"> <!-- R4: Robin, let's get a proper prefix on these augments, delete when done -->
-		<locked/>
-		<function name="AUTO_COOLDOWN" value="0.20" />
-		<function name="SHIELD_RECHARGE" value="-0.4" />
-		<function name="ROCK_ARMOR" value="0.1" useForReqs="false" warning="false"/>
-	</aug>
-	<aug name="AUTO_LOADER_LOW_SHIELD"> <!-- R4: Robin, let's get a proper prefix on these augments, delete when done -->
-		<function name="AUTO_COOLDOWN" value="0.20" />
-		<function name="SHIELD_RECHARGE" value="-0.4" />
-		<function name="ROCK_ARMOR" value="0.1" useForReqs="false" warning="false"/>
-	</aug>
-	<aug name="GB_PHONE">
-		<function name="FTL_BOOSTER" value="-0.15" useForReqs="false" warning="false"/>
-		<locked/>
-	</aug>
-</augments>
-
 <mod:findLike type="achievements">
 	<mod:findLike type="page">
 		<mod:findLike type="section">
@@ -2057,6 +2035,22 @@
 	</mod:findLike>
 </mod:findLike>
 <mod:findLike type="augments" limit="1">
+	<mod-append:aug name="AUTO_LOADER_LOW_SHIELD_LOCKED"> <!-- R4: Robin, let's get a proper prefix on these augments, delete when done -->
+		<locked/>
+		<function name="AUTO_COOLDOWN" value="0.20" />
+		<function name="SHIELD_RECHARGE" value="-0.4" />
+		<function name="ROCK_ARMOR" value="0.1" useForReqs="false" warning="false"/>
+	</mod-append:aug>
+	<mod-append:aug name="AUTO_LOADER_LOW_SHIELD"> <!-- R4: Robin, let's get a proper prefix on these augments, delete when done -->
+		<function name="AUTO_COOLDOWN" value="0.20" />
+		<function name="SHIELD_RECHARGE" value="-0.4" />
+		<function name="ROCK_ARMOR" value="0.1" useForReqs="false" warning="false"/>
+	</mod-append:aug>
+	<mod-append:aug name="GB_PHONE">
+		<function name="FTL_BOOSTER" value="-0.15" useForReqs="false" warning="false"/>
+		<locked/>
+	</mod-append:aug>
+    
     <mod-append:aug name="GB_EXOTIC_SPICES_3">
         <function name="SCRAP_COLLECTOR" value="-0.01" useForReqs="false"/>
     </mod-append:aug>
