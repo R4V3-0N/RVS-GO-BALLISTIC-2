@@ -5979,10 +5979,11 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <shipBlueprint name="PLAYER_SHIP_RVSPE_KESTREL" layout="rvspe_kestrel" img="rvspe_kestrel">
 	<class>Antique Elite Kestrel Cruiser</class>
 	<name>Goshawk</name>
-	<desc>Formerly crewed by the best of the best of the Federation-Mantis War. This ship is brought back to life from its prestine preservation to fight once more against a new galactic threat.</desc>
+	<unlock>Beat the game with all variants of the Antique Kestrel Cruiser to unlock this ship.</unlock>
+	<desc>Formerly crewed by the best of the best of the Federation-Mantis War, this ship was brought back into service from its preservation as a history museum to fight once more against a new galactic threat.</desc>
 	<systemList>
 		<artillery max="4" power="1" room="5" start="false" weapon="ARTILLERY_BOSS_1" img="room_artillery" />
-		<battery max="2" power="1" room="6" start="false" img="room_battery_nod_c" />
+		<battery max="2" power="1" room="6" start="false" img="room_battery_kestrel_elite" />
 		<cloaking power="1" room="12" start="false" img="room_cloaking_orchid_2" />
 		<clonebay power="1" room="13" start="false">
 			<slot>
@@ -5995,7 +5996,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 				<number>0</number>
 			</slot>
 		</doors>
-		<drones power="2" room="1" start="false" img="room_drones" />
+		<drones max="8" power="2" room="1" start="false" img="room_drones" />
 		<engines max="8" power="2" room="17" start="true" img="room_engines_6">
 			<slot>
 				<direction>down</direction>
