@@ -89,6 +89,8 @@
 <!--AUTOCANNON 1-->
 
 <weaponBlueprint name="GB_AC_1"> <!-- standard-->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark I</title>
 	<short>AC I</short>
@@ -129,6 +131,8 @@
 
 <!--<weaponBlueprint name="GB_AC_1_DPS">-->
 <weaponBlueprint name="GB_AC_1_CASELESS"> <!-- lower cooldown, higher DPS -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark I [Caseless]</title>
 	<short>AC I [CL]</short>
@@ -168,6 +172,8 @@
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_1_HV"> <!-- Higher shot speed, higher accuracy, minor breach increase -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark I [High Velocity]</title>
 	<short>AC I [HV]</short>
@@ -249,6 +255,8 @@
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_1_FREE"> <!-- better ammo duplication chance, no 'effects' -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark I [Recycler]</title>
 	<short>AC I [Re]</short>
@@ -291,9 +299,10 @@
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity.
 -->
 <weaponBlueprint name="GB_AC_1_HE"> <!-- Hull damage focus, stuns crew and makes them more vulnerable -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>BURST</type>
     <drone_targetable>0</drone_targetable>
-    <flavorType>Laser</flavorType>
 	<title>Autocannon Mark I [High Explosive]</title>
 	<short>AC I [HE]</short>
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
@@ -470,6 +479,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 <!--<weaponBlueprint name="GB_AC_1_ION"> -->
 <weaponBlueprint name="GB_AC_1_EMP"> <!-- Ions enemy rooms but not shields, thus can't supress shield -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark I [EMP]</title>
 	<short>AC I [EMP]</short>
@@ -538,6 +549,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_1_HEAT"> <!-- System damage amplified and focused -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark I [Particle]</title>
 	<short>AC I [Part]</short>
@@ -579,6 +592,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 <!--<weaponBlueprint name="GB_AC_1_FIRE"> ?-->
 <weaponBlueprint name="GB_AC_1_INCENDIARY"> <!-- Fire chance -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark I [Incendiary]</title>
 	<short>AC I [I]</short>
@@ -619,6 +634,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 <!--<weaponBlueprint name="GB_AC_1_BLEED">-->
 <weaponBlueprint name="GB_AC_1_FLECHETTE"> <!-- flechettes that cause bleed damage -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>BURST</type>
 	<title>Autocannon Mark I [Flechette]</title>
 	<short>AC I [F]</short>
@@ -676,6 +693,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_1_RAD"> <!-- anti crew, rad, illegal -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark I [Rad]</title>
 	<short>AC I [R]</short>
@@ -749,6 +768,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <!--AUTOCANNON 2-->
 
 <weaponBlueprint name="GB_AC_2">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark II</title>
 	<short>AC II</short>
@@ -789,6 +810,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_CASELESS">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark II [Caseless]</title>
 	<short>AC II [CL]</short>
@@ -829,6 +852,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_HV">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark II [High Velocity]</title>
 	<short>AC II [HV]</short>
@@ -912,6 +937,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_FREE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark II [Recycler]</title>
 	<short>AC II [Re]</short>
@@ -953,9 +980,10 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too TWO in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
 -->
 <weaponBlueprint name="GB_AC_2_HE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
     <type>BURST</type>
     <drone_targetable>0</drone_targetable>
-    <flavorType>Laser</flavorType>
 	<title>Autocannon Mark II [High Explosive]</title>
 	<short>AC II [HE]</short>
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
@@ -1138,6 +1166,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_EMP">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark II [Electromagnetic Pulse]</title>
 	<short>AC II [EMP]</short>
@@ -1207,6 +1237,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_HEAT">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark II [Particle]</title>
 	<short>AC II [Part]</short>
@@ -1248,6 +1280,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_INCENDIARY">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark II [Incendiary]</title>
 	<short>AC II [I]</short>
@@ -1289,6 +1323,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_FLECHETTE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>BURST</type>
 	<title>Autocannon Mark II [Flechette]</title>
 	<short>AC II [F]</short>
@@ -1348,6 +1384,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_RAD">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark II [Radiation]</title>
 	<short>AC II [Rad]</short>
@@ -1422,6 +1460,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <!--AUTOCANNON 3-->
 
 <weaponBlueprint name="GB_AC_3">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark III</title>
 	<short>AC III</short>
@@ -1462,6 +1502,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_CASELESS">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark III [Caseless]</title>
 	<short>AC III [Cl]</short>
@@ -1502,6 +1544,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_HV">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark III [High Velocity]</title>
 	<short>AC III [HV]</short>
@@ -1585,6 +1629,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_FREE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark III [Recycler]</title>
 	<short>AC III [Re]</short>
@@ -1626,9 +1672,10 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too THREE in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
 -->
 <weaponBlueprint name="GB_AC_3_HE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
     <type>BURST</type>
     <drone_targetable>0</drone_targetable>
-    <flavorType>Laser</flavorType>
 	<title>Autocannon Mark III [High Explosive]</title>
 	<short>AC III [HE]</short>
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
@@ -1806,6 +1853,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 
 <weaponBlueprint name="GB_AC_3_EMP">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark III [Electro-magnetic pulse]</title>
 	<short>AC III [EMP]</short>
@@ -1875,6 +1924,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_HEAT">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark III [Particle]</title>
 	<short>AC III [Part.]</short>
@@ -1917,6 +1968,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_INCENDIARY">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark III [Incendiary]</title>
 	<short>AC III [I]</short>
@@ -1958,6 +2011,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_FLECHETTE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>BURST</type>
 	<title>Autocannon Mark III [Flechette]</title>
 	<short>AC III [F]</short>
@@ -2017,6 +2072,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_RAD">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Autocannon Mark III [Radiation]</title>
 	<short>AC III [R]</short>
@@ -2138,6 +2195,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 
 <weaponBlueprint name="GB_AC_1_ELITE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark I</title>
 	<short>€ AC I</short>
@@ -2179,6 +2238,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_1_ELITE_CASELESS"> <!-- lower cooldown, higher DPS -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark I [Caseless]</title>
 	<short>€ AC I [CL]</short>
@@ -2218,6 +2279,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_1_ELITE_HV"> <!-- Higher shot speed, higher accuracy, minor breach increase -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark I [High Velocity]</title>
 	<short>€ AC I [HV]</short>
@@ -2299,6 +2362,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_1_ELITE_FREE"> <!-- better ammo duplication chance, no 'effects' -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark I [Recycler]</title>
 	<short>€ AC I [Re]</short>
@@ -2341,9 +2406,10 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity.
 -->
 <weaponBlueprint name="GB_AC_1_ELITE_HE"> <!-- R4: Will be a chance to crit doing +1 damage, Elite version does +1 system damage to non-crits, might add a separate crit with hullbust, IDK -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
     <type>BURST</type>
     <drone_targetable>0</drone_targetable>
-    <flavorType>Laser</flavorType>
 	<title>Elite Autocannon Mark I [Squash head]</title>
 	<short>€ AC I [HESH]</short>
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
@@ -2520,6 +2586,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 
 <weaponBlueprint name="GB_AC_1_ELITE_EMP"> <!-- Ions enemy rooms but not shields, thus can't supress shield -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark I [EMP]</title>
 	<short>€ AC I [EMP]</short>
@@ -2595,6 +2663,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_1_ELITE_HEAT"> <!-- System damage amplified and focused -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark I [Particle]</title>
 	<short>€ AC I [Part]</short>
@@ -2636,6 +2706,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 <!--<weaponBlueprint name="GB_AC_1_FIRE"> ?-->
 <weaponBlueprint name="GB_AC_1_ELITE_INCENDIARY"> <!-- Fire chance -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark I [Incendiary]</title>
 	<short>€ AC I [I]</short>
@@ -2675,6 +2747,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_1_ELITE_FLECHETTE"> <!-- flechettes that cause bleed damage -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>BURST</type>
 	<title>Elite Autocannon Mark I [Flechette]</title>
 	<short>€ AC I [F]</short>
@@ -2731,6 +2805,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_1_ELITE_RAD"> <!-- anti crew, rad, illegal -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark I [Rad]</title>
 	<short>€ AC I [R]</short>
@@ -2805,6 +2881,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <!-- Elite Autocannon 2-->
 
 <weaponBlueprint name="GB_AC_2_ELITE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark II</title>
 	<short>€ AC II</short>
@@ -2848,6 +2926,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 
 <weaponBlueprint name="GB_AC_2_ELITE_CASELESS">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark II [Caseless]</title>
 	<short>€ AC II [CL]</short>
@@ -2888,6 +2968,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_ELITE_HV">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark II [High Velocity]</title>
 	<short>€ AC II [HV]</short>
@@ -2971,6 +3053,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_ELITE_FREE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark II [Recycler]</title>
 	<short>€ AC II [Re]</short>
@@ -3012,9 +3096,10 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too TWO in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
 -->
 <weaponBlueprint name="GB_AC_2_ELITE_HE"> <!-- Chance to crit, Elite has bonus system damage when not critting -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
     <type>BURST</type>
     <drone_targetable>0</drone_targetable>
-    <flavorType>Laser</flavorType>
 	<title>Elite Autocannon Mark II [Squash Head]</title>
 	<short>€ AC II [HESH]</short>
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
@@ -3190,6 +3275,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_ELITE_EMP"> <!-- R4: I do not know what to do with this ATM so for now it's the same as standard -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark II [Electromagnetic Pulse]</title>
 	<short>€ AC II [EMP]</short>
@@ -3260,6 +3347,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_ELITE_HEAT">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark II [Particle]</title>
 	<short>€ AC II [Part]</short>
@@ -3301,6 +3390,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_ELITE_INCENDIARY">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark II [Incendiary]</title>
 	<short>€ AC II [I]</short>
@@ -3342,6 +3433,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_ELITE_FLECHETTE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>BURST</type>
 	<title>Elite Autocannon Mark II [Flechette]</title>
 	<short>€ AC II [F]</short>
@@ -3400,6 +3493,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_2_ELITE_RAD">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark II [Radiation]</title>
 	<short>€ AC II [Rad]</short>
@@ -3481,6 +3576,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 
 <weaponBlueprint name="GB_AC_3_ELITE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark III</title>
 	<short>€ AC III</short>
@@ -3524,6 +3621,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 
 <weaponBlueprint name="GB_AC_3_ELITE_CASELESS">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark III [Caseless]</title>
 	<short>€ AC III [Cl]</short>
@@ -3564,6 +3663,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_ELITE_HV">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark III [High Velocity]</title>
 	<short>€ AC III [HV]</short>
@@ -3647,6 +3748,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_ELITE_FREE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark III [Recycler]</title>
 	<short>€ AC III [Re]</short>
@@ -3688,9 +3791,10 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system damage too THREE in a 1 room radius (slug style) from point of impact. We might ditch the concussive stat boost in exchange for this for simplicity. As well as remove the -1 damage
 -->
 <weaponBlueprint name="GB_AC_3_ELITE_HE"> <!-- Same as above, crit chance shenanigary-->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
     <type>BURST</type>
     <drone_targetable>0</drone_targetable>
-    <flavorType>Laser</flavorType>
 	<title>Elite Autocannon Mark III [Squash Head]</title>
 	<short>€ AC III [HESH]</short>
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
@@ -3867,6 +3971,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 
 <weaponBlueprint name="GB_AC_3_ELITE_EMP"> <!-- As with the AC 2, no clue how to tackle the stats of these things. I might make the Elites a Stun Ion instead but that won't fit with the graphics... -->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark III [Electro-magnetic pulse]</title>
 	<short>€ AC III [EMP]</short>
@@ -3937,6 +4043,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_ELITE_HEAT">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark III [Particle]</title>
 	<short>€ AC III [Part.]</short>
@@ -3979,6 +4087,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_ELITE_INCENDIARY">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark III [Incendiary]</title>
 	<short>€ AC III [I]</short>
@@ -4020,6 +4130,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_ELITE_FLECHETTE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>BURST</type>
 	<title>Elite Autocannon Mark III [Flechette]</title>
 	<short>€ AC III [F]</short>
@@ -4078,6 +4190,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 <weaponBlueprint name="GB_AC_3_ELITE_RAD">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
 	<title>Elite Autocannon Mark III [Radiation]</title>
 	<short>€ AC III [R]</short>
@@ -4726,7 +4840,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <weaponBlueprint name="GB_MG">
 	<type>BURST</type>
     <drone_targetable>0</drone_targetable>
-    <flavorType>Laser</flavorType>
+    <flavorType>Machine Gun</flavorType>
 	<title>Machine Gun</title>
 	<short>MG</short>
 	<desc>This antiquated weapon is no longer capable of damaging the hulls of modern ships efficiently. It is, however, capable of harming crew, and can occationally inflict hull and system damage.</desc>
@@ -4844,7 +4958,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <weaponBlueprint name="GB_HMG">
 	<type>BURST</type>
     <drone_targetable>0</drone_targetable>
-    <flavorType>Laser</flavorType>
+    <flavorType>Machine Gun</flavorType>
 	<title>Heavy Machine Gun</title>
 	<short>HMG</short>
 	<desc>This antiquated weapon is no longer capable of damaging the hulls of modern ships efficiently. It is, however, capable of harming crew, and can occationally inflict hull and system damage.</desc>
