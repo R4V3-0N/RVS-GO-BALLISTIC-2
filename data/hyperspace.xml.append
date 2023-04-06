@@ -11,14 +11,14 @@
 			</req>
 		</req>
 	</events>
-	<mod:findLike type="events">
+	<mod:findLike type="events" limit="1">
 		<mod:findName type="req" name="FMCORE_LIST_JUMPSPACE_EQUIPMENT">
 			<mod-append:name>GB_PHONE</mod-append:name>
 		</mod:findName>
 	</mod:findLike>
 </FTL>
 <FTL>
-<mod:findLike type="crew">
+<mod:findLike type="crew" limit="1">
 	<mod-append:race name="rvs_drone_trooper">
 		<controllable>true</controllable>
 		<canFight>true</canFight>
@@ -71,7 +71,7 @@
 		</shootingSounds>
 	</mod-append:race>-->
 </mod:findLike>
-<mod:findLike type="drones">
+<mod:findLike type="drones" limit="1">
 	<mod-append:drone name="RVS_TROOPERTOG_BOARDER">
 		<crewBlueprint>rvs_drone_trooper</crewBlueprint>
 		<tooltipName>Trooper Drone</tooltipName>
@@ -238,7 +238,7 @@
 
 </mod:findLike>
 
-<mod:findLike type="boss">
+<mod:findLike type="boss" limit="1">
     <mod-append:surgeBarrage name="RVS_FREIGHTER_ESCORT_AIRSTRIKE">
 		<weapon name="BOMB_1" count="3"/>
 		<weapon name="BOMB_BREACH_1" count="1"/>
@@ -246,7 +246,7 @@
 </mod:findLike>
 
 
-<mod:findLike type="store">
+<mod:findLike type="store" limit="1">
 	<!-- Go Ballistics generic Federation store, based on the Zoltan store-->
 	<mod-append:customStore id="GB_STORE_FED">
 		<hullRepair>
@@ -1701,7 +1701,7 @@
 </mod:findLike>
 
 
-<mod:findLike type="ships">
+<mod:findLike type="ships" limit="1">
 
 	<!--PLAYER SHIPS-->
 
@@ -2028,7 +2028,7 @@
 
 
 
-<mod:findLike type="achievements">
+<mod:findLike type="achievements" limit="1">
 	<mod:findLike type="page">
 		<mod:findLike type="section">
 			<mod:selector text="Renegade Cruisers"/>
@@ -2081,7 +2081,7 @@
     </mod-append:aug>
 </mod:findLike>
 
-<mod:findLike type="scripts">
+<mod:findLike type="scripts" limit="1">
     <mod-append:script>data/gb_scripts/weapons.lua</mod-append:script>
 </mod:findLike>
 
