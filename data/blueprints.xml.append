@@ -2719,6 +2719,27 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<shots>1</shots>
 	<sp>0</sp>
 	<fireChance>6</fireChance> <!-- Standard was 4-->
+	<statBoosts>
+		<statBoost name="canBurn">
+			<boostType>SET</boostType>
+			<value>true</value>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+			<boostAnim>ultraburn_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="fireDamageMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.5</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+		</statBoost>
+	</statBoosts>
 	<cooldown>6</cooldown>
 	<power>1</power>
 	<bp>4</bp>
@@ -3403,6 +3424,27 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<shots>1</shots>
 	<sp>0</sp>
 	<fireChance>9</fireChance> <!-- Standard was 7 -->
+	<statBoosts>
+		<statBoost name="canBurn">
+			<boostType>SET</boostType>
+			<value>true</value>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+			<boostAnim>ultraburn_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="fireDamageMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.5</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+		</statBoost>
+	</statBoosts>
 	<breachChance>1</breachChance>
 	<stunChance>2</stunChance>
 	<cooldown>6</cooldown>
@@ -4100,6 +4142,27 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<shots>1</shots>
 	<sp>0</sp>
 	<fireChance>10</fireChance> <!-- How do I make this do more than 100% fire for an Elite AC? For now will opt for a more generous missile usage -->
+	<statBoosts>
+		<statBoost name="canBurn">
+			<boostType>SET</boostType>
+			<value>true</value>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+			<boostAnim>ultraburn_debuff</boostAnim>
+		</statBoost>
+		<statBoost name="fireDamageMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.5</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+		</statBoost>
+	</statBoosts>
 	<breachChance>2</breachChance> <!--half breach chance to help keep incendiary effect while making it feel umphfy! -->
 	<stunChance>4</stunChance>
 	<cooldown>6</cooldown>

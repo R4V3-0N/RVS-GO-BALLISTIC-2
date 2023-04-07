@@ -1276,4 +1276,11 @@
 	<time>1</time>
 </anim>
 
+<animSheet name="ultraburn_debuff" w="35" h="35" fw="35" fh="35">people/ultraburn_debuff.png</animSheet>
+<anim name="ultraburn_debuff">
+	<sheet>ultraburn_debuff</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1.0</time>
+</anim>
+
 </FTL>
