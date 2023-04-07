@@ -6101,7 +6101,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 		<cloaking power="1" room="12" start="false" img="room_cloaking_orchid_2" />
 		<clonebay power="1" room="13" start="false">
 			<slot>
-				<number>2</number>
+				<number>0</number>
 			</slot>
 		</clonebay>
 		<doors power="1" room="16" start="true" img="room_doors_5">
@@ -6118,9 +6118,9 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			</slot>
 		</engines>
 		<hacking power="1" room="3" start="false" img="room_hacking_4" />
-		<medbay power="1" room="13" start="true" img="room_medbay_7">
+		<medbay power="1" room="13" start="true" img="room_medbay_4">
 			<slot>
-				<number>2</number>
+				<number>0</number>
 			</slot>
 		</medbay>
 		<mind power="1" room="10" start="false" img="room_mind_9" />
