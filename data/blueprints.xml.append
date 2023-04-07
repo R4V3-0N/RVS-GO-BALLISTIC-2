@@ -2411,7 +2411,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
     <type>BURST</type>
     <drone_targetable>0</drone_targetable>
 	<title>Elite Autocannon Mark I [Squash head]</title>
-	<short>€ AC I [HESH]</short>
+	<short>€ AC I [HE]</short>
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
@@ -2471,7 +2471,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <weaponBlueprint name="GB_AC_1_ELITE_HE_NOCRIT"> <!-- R4: Will be a chance to crit doing +1 damage, Elite version does +1 system damage to non-crits, might add a separate crit with hullbust, IDK -->
 	<type>LASER</type>
 	<title>Elite Autocannon Mark I [Squash head]</title>
-	<short>€ AC I [HESH]</short>
+	<short>€ AC I [HE]</short>
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
@@ -2529,7 +2529,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <weaponBlueprint name="GB_AC_1_ELITE_HE_CRIT"> <!-- R4: Will be a chance to crit doing +1 damage, Elite version does +1 system damage to non-crits, might add a separate crit with hullbust, IDK -->
 	<type>LASER</type>
 	<title>Elite Autocannon Mark I [Squash head]</title>
-	<short>€ AC I [HESH]</short>
+	<short>€ AC I [HE]</short>
 	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
 	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
@@ -2978,8 +2978,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>77</freeMissileChance> <!-- R4 2022/11/24: was 80 -->
 	<damage>2</damage>
+	<sp>1</sp> <!-- Gave Elites Shield Pierce -->
 	<shots>1</shots>
-	<sp>0</sp>
 	<speed>80</speed>
 	<accuracyMod>10</accuracyMod>
 	<breachChance>4</breachChance>
@@ -3101,7 +3101,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
     <type>BURST</type>
     <drone_targetable>0</drone_targetable>
 	<title>Elite Autocannon Mark II [Squash Head]</title>
-	<short>€ AC II [HESH]</short>
+	<short>€ AC II [HE]</short>
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
@@ -3161,7 +3161,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <weaponBlueprint name="GB_AC_2_ELITE_HE_NOCRIT"> <!-- Chance to crit, Elite has bonus system damage when not critting -->
 	<type>LASER</type>
 	<title>Elite Autocannon Mark II [Squash Head]</title>
-	<short>€ AC II [HESH]</short>
+	<short>€ AC II [HE]</short>
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
@@ -3219,7 +3219,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <weaponBlueprint name="GB_AC_2_ELITE_HE_CRIT"> <!-- Chance to crit, Elite has bonus system damage when not critting -->
 	<type>LASER</type>
 	<title>Elite Autocannon Mark II [Squash Head]</title>
-	<short>€ AC II [HESH]</short>
+	<short>€ AC II [HE]</short>
 	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
 	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
 	<missiles>1</missiles>
@@ -3796,7 +3796,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
     <type>BURST</type>
     <drone_targetable>0</drone_targetable>
 	<title>Elite Autocannon Mark III [Squash Head]</title>
-	<short>€ AC III [HESH]</short>
+	<short>€ AC III [HE]</short>
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
@@ -3856,7 +3856,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <weaponBlueprint name="GB_AC_3_ELITE_HE_NOCRIT"> <!-- Same as above, crit chance shenanigary-->
 	<type>LASER</type>
 	<title>Elite Autocannon Mark III [Squash Head]</title>
-	<short>€ AC III [HESH]</short>
+	<short>€ AC III [HE]</short>
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
@@ -3914,7 +3914,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <weaponBlueprint name="GB_AC_3_ELITE_HE_CRIT"> <!-- Same as above, crit chance shenanigary-->
 	<type>LASER</type>
 	<title>Elite Autocannon Mark III [Squash Head]</title>
-	<short>€ AC III [HESH]</short>
+	<short>€ AC III [HE]</short>
 	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
 	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
 	<missiles>1</missiles>
@@ -6155,15 +6155,17 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="20" count="4">
 		<weapon name="GB_AC_2_ELITE" />
-		<weapon name="MISSILES_1" />
 		<weapon name="GB_AC_1_ELITE" />
+		<weapon name="MISSILES_1" />
 	</weaponList>
 	<droneList drones="2" count="2" />
 	<health amount="30" />
 	<maxPower amount="8" />
 	<crewCount amount="2" class="human_soldier" /> <!-- not sure on exact crew, maybe just soldiers and humans? I am also missing orchids representation here too -->
 	<crewCount amount="1" class="human_medic" />
-	<aug name="COMIC_WAR" /> <!-- honestly no clue what this is but I think its fitting -->
+	<aug name="GB_INTEGRATED_BALLISTICS" />
+	<shieldImage>rvsp_gb_kestrel_a</shieldImage>
+	<cloakImage>rvsp_gb_kestrel_b</cloakImage>
 </shipBlueprint>
 
 
@@ -6214,6 +6216,15 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 <augBlueprint name="GB_FED_REQUISITION_LICENSE"> <!--This is a inaccessible item, ONLY used to test a event-->
     <title>Federation Member License</title>
 	<desc>This license certifies your Federation membership.</desc>
+    <cost>0</cost>
+    <bp>0</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="GB_INTEGRATED_BALLISTICS">
+    <title>Integrated Ballistics</title>
+	<desc>Though your ship is unable to support more than one weapon which doesn't consume ammo at a time, all wepons have a 15% chance not to consume ammo. This bonus stacks with other ammo replicators.</desc>
     <cost>0</cost>
     <bp>0</bp>
     <rarity>0</rarity>

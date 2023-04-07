@@ -1935,7 +1935,7 @@
         </unlock>
     </mod-append:ship>
     
-    <mod-append:customShip name="PLAYER_SHIP_RVSP_GB_KESTREL">
+    <mod-append:customShip name="PLAYER_SHIP_RVSPE_KESTREL">
         <hiddenAug>SHIP_KESTREL</hiddenAug>
         <hiddenAug>FOR_MULTIVERSE</hiddenAug>
         <crewLimit>11</crewLimit>
@@ -2053,6 +2053,9 @@
 		<function name="SHIELD_RECHARGE" value="-0.4" />
 		<function name="ROCK_ARMOR" value="0.1" useForReqs="false" warning="false"/>
 	</mod-append:aug>
+	<mod-append:aug name="GB_INTEGRATED_BALLISTICS">
+		<locked/>
+	</mod-append:aug>
 	<mod-append:aug name="GB_PHONE">
 		<function name="FTL_BOOSTER" value="-0.15" useForReqs="false" warning="false"/>
 		<locked/>
@@ -2082,6 +2085,8 @@
 </mod:findLike>
 
 <mod:findLike type="scripts" limit="1">
+    <mod-append:script>data/gb_scripts/dependency.lua</mod-append:script>
+    <mod-append:script>data/gb_scripts/augments.lua</mod-append:script>
     <mod-append:script>data/gb_scripts/weapons.lua</mod-append:script>
 </mod:findLike>
 
