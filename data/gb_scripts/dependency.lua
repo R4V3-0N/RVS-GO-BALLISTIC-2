@@ -1,4 +1,4 @@
-if not Hyperspace.version or Hyperspace.version.major < 1 or Hyperspace.version.minor < 3 then
+if not (Hyperspace.version and Hyperspace.version.major == 1 and Hyperspace.version.minor >= 3) then
     error("Incorrect Hyperspace version detected! Go Ballistic requires Hyperspace 1.3+")
 end
 if not mods or not mods.inferno then
