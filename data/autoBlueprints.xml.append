@@ -1429,6 +1429,20 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>GB_AC_3_CASELESS</name>
 </blueprintList>
 
+<blueprintList name="GB_MV_WEAPONS_GAUSS_COIL_FOCUS"> <!--- R4: Gauss Rifles, Coil Guns, and Focus Beams for the Federation Light Cruiser Multiverse Renigade, someone lemme know if I should convert this into lists in lists instead -->
+	<name>GB_COIL_1_ENEMY</name>
+	<name>GB_COIL_2_ENEMY</name>
+	<name>GB_COIL_3_ENEMY</name>
+	<name>GB_GAUSS_1_ENEMY</name>
+	<name>GB_GAUSS_2_ENEMY</name>
+	<name>GB_GAUSS_3_ENEMY</name>
+	<name>FOCUS_1</name>
+	<name>FOCUS_2</name>
+	<name>FOCUS_3</name>
+	<name>FOCUS_CHAIN</name>
+</blueprintList>
+
+
 <mod:findName type="blueprintList" name="MV_WEAPONS_ALL">
 	<mod-append:name>RVS_SHOTGUN_HEAVY</mod-append:name>
 	<mod-append:name>RVS_SHOTGUN_HEAVY_2</mod-append:name>
@@ -1791,11 +1805,8 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>0</droneSlots>
-	<weaponList missiles="3" count="4"> <!--- this may require a lot of rebalancing, the idea is that it has to have a coilgun and gauss rifle. Subject to rebalancing, this may be the main enemy to test if these mass drivers are OP in enemy hands and require enemy variants-->
-		<weapon name="GB_COILGUNS_ENEMY" />
-		<weapon name="GB_GAUSS_ENEMY" />
-		<weapon name="MV_WEAPONS_BEAMS_DAMAGE" />
-		<weapon name="BEAM_LONG" />
+	<weaponList missiles="3" count="4"> 
+		<weaponList missiles="8" count="4" load="GB_MV_WEAPONS_GAUSS_COIL_FOCUS" />
 	</weaponList>
 	<droneList drones="0" count="0" />
 	<health amount="10" />
@@ -1808,7 +1819,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 <!-- This Multiverse Renegade is themed on using single shot lasers and autocannons, as we introduce them we will add in Rifles, when and if it ever comes recoilless rifles may work too-->
 <shipBlueprint name="GB_R4_MR_MILITIA_GUARD" layout="R4_MR_militia_guard" img="R4_MR_militia_guard">
 	<class>Multiverse Renegade</class>
-	<minSector>1</minSector>
+	<minSector>3</minSector> <!-- R4: Setting min sector up to 3 if that does anything-->
 	<maxSector>8</maxSector>
 	<systemList>
 		<battery power="1" max="2" room="8" start="true" />
@@ -1823,7 +1834,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	</systemList>
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
-	<weaponList missiles="3" count="4" load="GB_MV_WEAPONS_LASER_AND_CANNONS" />
+	<weaponList missiles="8" count="4" load="GB_MV_WEAPONS_LASER_AND_CANNONS" /> <!-- R4: Due to a chance to just run out of ammo in the first volley i increased the missiles count to 8 from 3-->
 	<droneList drones="3" count="2" load="GB_DRONES_COMBAT_CANNONS" />
 	<health amount="10" />
 	<maxPower amount="7" />
@@ -1918,7 +1929,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<aug name="AUTO_LOADER_LOW_SHIELD"/>
 	<crewCount amount="1" max="1" class="human_soldier"/>
 </shipBlueprint>
-<shipBlueprint name="MT_BOSS_GB_R4_BALLISTIC_C_CHAOS" layout="mt_boss_gb_r4_ballistic" img="mt_boss_gb_r4_ballistic">
+<shipBlueprint name="MT_BOSS_GB_R4_BALLISTIC_C_CHAOS" layout="mt_boss_gb_r4_ballistic" img="mt_boss_gb_r4_ballistic"> <!-- R4: Oh heck, who ever did the Chaos version for me you really REALLY didn't want the player to have a fun time did you?-->
 	<class>Renegade Cruiser</class>
 	<minSector>5</minSector>
 	<maxSector>8</maxSector>

@@ -2961,7 +2961,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>0</sp>
 	<breachChance>2</breachChance>
 	<stunChance>2</stunChance>
-	<cooldown>4</cooldown>
+	<cooldown>3</cooldown>
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
@@ -5781,8 +5781,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 				<number>1</number>
 			</slot>
 		</doors>
-		<drones power="2" room="13" start="false" img="room_drones_10" />
-		<engines power="2" room="5" start="true" img="room_engines_9">
+		<drones max="8" power="2" room="13" start="false" img="room_drones_10" />
+		<engines max="8" power="2" room="5" start="true" img="room_engines_9">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>

@@ -1,0 +1,221 @@
+
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ENGI
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<sectorDescription name="SECTOR_ENGI" unique="false">  
+	<nameList>
+		<name>Neutral Sector</name>
+		<name>Neutral Colonies</name>
+		<name>Neutral Space</name>
+		<name>Neutral Settlements</name>
+		<name>Neutral Possessions</name>
+		<name>Neutral Frontier</name>
+		<name>Neutral Borderworlds</name>
+		<name>Neutral Boundry Systems</name>
+		<name>Neutral Territory</name>
+		<name>Neutral Rimworlds</name>
+		<name>Neutral Outworlds</name>
+		<name>Neutral Periphery</name>
+		<name>Neutral Regions</name>
+		<name>Neutral Quarter</name>
+		<name>Neutral Shire</name>
+		<name>Neutral Outreaches</name>
+		<name>Neutral Parts</name>
+	</nameList>
+	<trackList>
+		<track>beacon</track> <!-- GB OST -->
+		<track>cosmos</track>
+		<track>hacking</track>
+		<track>spaceass</track> 
+	</trackList>
+	<rarityList>
+		<!--
+		\\\\\\\\\\\
+		   CREW
+		\\\\\\\\\\\
+		-->
+		<!--human-->
+		<blueprint name="human" rarity="1"/>
+		<blueprint name="human_medic" rarity="0"/>
+		<blueprint name="human_engineer" rarity="0"/>
+		<blueprint name="human_soldier" rarity="0"/>
+		<!--engi-->
+		<blueprint name="engi" rarity="1"/>
+		<blueprint name="engi_separatist" rarity="5"/>
+		<blueprint name="engi_defender" rarity="0"/>
+		<!--zoltan-->
+		<blueprint name="zoltan" rarity="3"/>
+		<blueprint name="zoltan_monk" rarity="0"/>
+		<blueprint name="zoltan_devotee" rarity="0"/>
+		<blueprint name="zoltan_peace" rarity="0"/>
+		<!--rock-->
+		<blueprint name="rock" rarity="0"/>
+		<blueprint name="rock_outcast" rarity="0"/>
+		<blueprint name="rock_commando" rarity="0"/>
+		<blueprint name="rock_crusader" rarity="0"/>
+		<!--mantis-->
+		<blueprint name="mantis" rarity="3"/>
+		<blueprint name="mantis_free" rarity="5"/>
+		<blueprint name="mantis_suzerain" rarity="0"/>
+		<!--slug-->
+		<blueprint name="slug" rarity="0"/>
+		<blueprint name="slug_saboteur" rarity="0"/>
+		<!--crystal-->
+		<blueprint name="crystal" rarity="0"/>
+		<blueprint name="crystal_liberator" rarity="0"/>
+		<blueprint name="crystal_sentinel" rarity="0"/>
+		<!--orchid-->
+		<blueprint name="orchid" rarity="5"/>
+		<blueprint name="orchid_vampweed" rarity="0"/>
+		<!--leech-->
+		<blueprint name="leech" rarity="0"/>
+		<!--lanius-->
+		<blueprint name="lanius" rarity="5"/>
+		<blueprint name="lanius_welder" rarity="0"/>
+		<!--ghost-->
+		<blueprint name="phantom" rarity="0"/>
+	</rarityList>
+	<startEvent>ENTER_ENGI</startEvent>
+	<exitBeacon  event="FINISH_BEACON_ENGI" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE"/>
+	<rebelBeacon event="FLEET_THREAT_LOW" nebulaEvent="FLEET_THREAT_LOW_NEBULA"/>
+	<removeFirstBeaconNebula/>
+	<!-- This is only for WIP purposes, I am aware that the order of the bellow list matters, but for now I will separate them out to make sure I get a good ratio of events for this sector-->
+	
+	<!-- Habitated Beacons, 7 to 10-->
+	<event name="RVS_STORELIST_OUTWORLDS" min="1" max="2"/>
+	<event name="RVS_ITEMS_OUTWORLDS" min="2" max="4"/>
+	<event name="RVS_NEUTRAL_OUTWORLDS" min="2" max="3"/>	<!-- -->
+	<event name="RVS_PIRATES_OUTWORLDS" min="2" max="2"/>	<!-- -->
+	<event name="RVS_HOSTILE_OUTWORLDS" min="1" max="2"/>	<!-- A Duskbringer installation that wants you to GTFO or make you GTFO, ASB.-->
+	<!-- Uninhabitated Beacons 7 to 10-->
+	<event name="RVS_RUINS_CRYSTAL" min="0" max="1"/>
+	<event name="RVS_GUARDED_LRB" min="0" max="1"/>
+	<!-- Nebulae 6 to 10-->
+	<event name="RVS_RUINS_DYNASTY" min="0" max="1"/>
+	<event name="RVS_ABANDONED_LRB_NEBULA" min="1" max="1"/>	
+	<!-- Other-->
+	<event name="MV_TRAVELER" min="0" max="1"/>	
+	<event name="RVS_MV_TRAVELER" min="1" max="1"/>
+
+	
+	<event name="RVS_STORELIST_OUTWORLDS" min="2" max="3"/>
+	
+
+	
+	<!-- R4: Long Range Beacon events, guaranteed abandoned one in the nebula, chance for a general protected one in the open -->
+
+	
+	<!--
+	MIN = 12
+	MAX = 29
+	-->
+	
+	
+	
+	
+	
+	
+	
+	<!--
+	MIN = 20
+	MAX = 30
+	-->
+	<event name="HARMONY_LINK_DEFAULT" min="1" max="1"/>
+	<event name="RUINS_ENGI" min="0" max="1"/>
+	<event name="OUTPOST_LIST_ENGI" min="0" max="1"/>
+	<event name="STORELIST_ENGI" min="2" max="3"/>
+	<event name="ITEMS" min="2" max="2"/>
+	<event name="MV_TRAVELER" min="1" max="1"/>
+	<event name="ITEMS_ENGI" min="3" max="3"/>
+	<event name="DISTRESS_BEACON_ENGI" min="1" max="3"/>
+	<event name="QUESTS_ENGI" min="1" max="1"/>
+	<event name="NEUTRAL_ENGI" min="4" max="6"/>
+	<event name="PIRACY_LIST" min="0" max="1"/>
+	<event name="HOSTILE_ENGI" min="5" max="7"/>
+	
+	
+	<!--
+</sectorDescription>
+
+
+
+
+
+<sectorDescription name="SECTOR_ENGI_UNIQUE" unique="true"> 
+	<nameList>
+		<name>S-1 [Harmony Coreworlds] [!]</name>
+	</nameList>
+	<trackList>
+		<track>engi</track>
+		<track>cosmos</track>
+		<track>hacking</track>
+		<track>spaceass</track> 
+	</trackList>
+	<rarityList>
+		<!--
+		\\\\\\\\\\\
+		   CREW
+		\\\\\\\\\\\
+		-->
+		<!--human-->
+		<blueprint name="human" rarity="1"/>
+		<blueprint name="human_medic" rarity="0"/>
+		<blueprint name="human_engineer" rarity="0"/>
+		<blueprint name="human_soldier" rarity="0"/>
+		<!--engi-->
+		<blueprint name="engi" rarity="1"/>
+		<blueprint name="engi_separatist" rarity="5"/>
+		<blueprint name="engi_defender" rarity="0"/>
+		<!--zoltan-->
+		<blueprint name="zoltan" rarity="3"/>
+		<blueprint name="zoltan_monk" rarity="0"/>
+		<blueprint name="zoltan_devotee" rarity="0"/>
+		<blueprint name="zoltan_peace" rarity="0"/>
+		<!--rock-->
+		<blueprint name="rock" rarity="0"/>
+		<blueprint name="rock_outcast" rarity="0"/>
+		<blueprint name="rock_commando" rarity="0"/>
+		<blueprint name="rock_crusader" rarity="0"/>
+		<!--mantis-->
+		<blueprint name="mantis" rarity="4"/>
+		<blueprint name="mantis_free" rarity="5"/>
+		<blueprint name="mantis_suzerain" rarity="0"/>
+		<!--slug-->
+		<blueprint name="slug" rarity="0"/>
+		<blueprint name="slug_saboteur" rarity="0"/>
+		<!--crystal-->
+		<blueprint name="crystal" rarity="0"/>
+		<blueprint name="crystal_liberator" rarity="0"/>
+		<blueprint name="crystal_sentinel" rarity="0"/>
+		<!--orchid-->
+		<blueprint name="orchid" rarity="5"/>
+		<blueprint name="orchid_vampweed" rarity="0"/>
+		<!--leech-->
+		<blueprint name="leech" rarity="0"/>
+		<!--lanius-->
+		<blueprint name="lanius" rarity="0"/>
+		<blueprint name="lanius_welder" rarity="0"/>
+		<!--ghost-->
+		<blueprint name="phantom" rarity="0"/>
+	</rarityList>
+	<startEvent>ENTER_ENGI_UNIQUE</startEvent>
+	<exitBeacon event="FINISH_BEACON_HARMONY" nebulaEvent="FINISH_BEACON_NEBULA" rebelEvent="FINISH_BEACON_FLEET_ELITE"/>
+	<rebelBeacon event="FLEET_THREAT_LOW" nebulaEvent="FLEET_THREAT_LOW_NEBULA"/>
+	<removeFirstBeaconNebula/>
+	<event name="HARMONY_LINK_UNIQUE" min="1" max="1"/>
+	<event name="TURZIL_PIRATE_TRANSPORT" min="1" max="1"/>
+	<event name="TRAPPER_ENGI" min="1" max="1"/>
+	<event name="MV_TRAVELER" min="1" max="2"/>
+	<event name="TRANSPORT_ENGI_LOOT" min="1" max="1"/>
+	<event name="STORELIST_ENGI" min="2" max="3"/>
+	<event name="ITEMS_HARMONY" min="2" max="4"/>
+	<event name="DISTRESS_BEACON_HARMONY" min="1" max="3"/>
+	<event name="QUESTS_HARMONY" min="1" max="1"/>
+	<event name="NEUTRAL_HARMONY" min="5" max="7"/>
+	<event name="PIRACY_LIST" min="0" max="1"/>
+	<event name="HOSTILE_HARMONY" min="4" max="6"/>
+</sectorDescription>
+
+<!--
