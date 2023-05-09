@@ -11,7 +11,7 @@
 			</req>
 		</req>
 	</events>
-	<mod:findLike type="events" limit="1">
+	<mod:findLike type="events">
 		<mod:findName type="req" name="FMCORE_LIST_JUMPSPACE_EQUIPMENT">
 			<mod-append:name>GB_PHONE</mod-append:name>
 		</mod:findName>
