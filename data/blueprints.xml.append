@@ -5459,7 +5459,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<power>1</power>
 	<cost>40</cost>
 	<bp>3</bp>
-	<rarity>4</rarity>
+	<rarity>0</rarity>
 	<iconImage>battle</iconImage>
 </droneBlueprint>
 <droneBlueprint name="RVS_TROOPERTOG_BOARDER">
