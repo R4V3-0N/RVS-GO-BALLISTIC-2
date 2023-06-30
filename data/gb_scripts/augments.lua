@@ -4,24 +4,29 @@ local vter = mods.inferno.vter
 -- we have to read the blueprints and make our own list to reference
 local ammoWeapons = {}
 do
-    local function read_blueprint_file(file)
-        local blueprintNode = RapidXML.xml_document(file):first_node("FTL"):first_node()
-        while blueprintNode do
-            if blueprintNode:name() == "weaponBlueprint" then
-                local missilesNode = blueprintNode:first_node("missiles")
-                if missilesNode then
-                    local numMissiles = tonumber(missilesNode:value())
-                    if numMissiles and numMissiles > 0 then
-                        ammoWeapons[blueprintNode:first_attribute("name"):value()] = numMissiles
+    function ammoWeaponScan()
+        if #ammoWeapons == 0 then
+            local function read_blueprint_file(file)
+                local blueprintNode = RapidXML.xml_document(file):first_node("FTL"):first_node("weaponBlueprint")
+                while blueprintNode do
+                    local missilesNode = blueprintNode:first_node("missiles")
+                    if missilesNode then
+                        local numMissiles = tonumber(missilesNode:value())
+                        if numMissiles and numMissiles > 0 then
+                            ammoWeapons[blueprintNode:first_attribute("name"):value()] = numMissiles
+                        end
                     end
+                    blueprintNode = blueprintNode:next_sibling("weaponBlueprint")
                 end
             end
-            blueprintNode = blueprintNode:next_sibling()
+            read_blueprint_file("data/blueprints.xml")
+            read_blueprint_file("data/dlcBlueprints.xml")
         end
     end
-    read_blueprint_file("data/blueprints.xml")
-    read_blueprint_file("data/dlcBlueprints.xml")
 end
+script.on_init(ammoWeaponScan)
+script.on_game_event("TUTORIAL_START", false, ammoWeaponScan)
+script.on_game_event("START_BEACON", false, ammoWeaponScan)
 
 -- Force ships with integrated ballistics to only use one non-ballistic weapon
 local function handle_integrated_ballistics(weapons, ship)
