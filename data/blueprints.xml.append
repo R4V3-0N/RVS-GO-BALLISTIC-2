@@ -6043,7 +6043,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			</slot>
 		</shields>
 		<teleporter power="1" room="7" start="false" />
-		<weapons power="1" max="6" room="27" start="false" img="room_weapons_8">
+		<weapons power="2" max="6" room="27" start="false" img="room_weapons_8">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>

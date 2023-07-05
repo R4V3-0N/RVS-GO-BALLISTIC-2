@@ -270,31 +270,19 @@ This is the maximum value of your spices, it will not increase further the next 
 
 		<event>
 			<text>You pass over the milk, and wait while the other ship looks them over. "Everything seems to be in check... but I don't think we'll be paying. We are the dreaded calcium addicts. We will take ALL your milk"</text>
+			<ship hostile="true"/>
 			<choice hidden="true">
 				<text>Raise your weapons and prepare to take the payment from them yourself.</text>
-				<event>
-					<text>Raise your weapons and prepare to take the payment from them yourself.</text>
-					<ship hostile="true"/>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-				</event>
+				<event load="COMBAT_CHECK"/>
 			</choice>
 		</event>
 
 		<event>
 			<text>You pass over the shipment, and wait while the other ship looks them over. "Um....why did you bring us 300 crates of milk? We ordered 300 crates of metal alloy. That's it, I've had enough of mistakes, this is the 3rd time my order was wrong."</text>
+			<ship hostile="true"/>
 			<choice hidden="true">
 				<text>Uh....oops?</text>
-				<event>
-					<text>Uh....oops?</text>
-					<ship hostile="true"/>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-				</event>
+				<event load="COMBAT_CHECK"/>
 			</choice>
 		</event>
 	</eventList>
