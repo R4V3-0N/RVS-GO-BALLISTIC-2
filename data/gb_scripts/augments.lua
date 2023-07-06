@@ -3,23 +3,22 @@ local vter = mods.inferno.vter
 -- Since none of the stuff is exposed to actually check how many missiles a weapon uses,
 -- we have to read the blueprints and make our own list to reference
 local ammoWeapons = nil
-script.on_init(function()
+script.on_internal_event(Defines.InternalEvents.MAIN_MENU, function()
+    log("MAIN MENU")
     if not ammoWeapons then
+        log("COLLECTING AMMO WEAPONS")
         ammoWeapons = {}
         local function read_blueprint_file(file)
-            local blueprintNode = RapidXML.xml_document(file):first_node("FTL"):first_node()
+            local blueprintNode = RapidXML.xml_document(file):first_node("FTL"):first_node("weaponBlueprint")
             while blueprintNode do
-                if blueprintNode:name() == "weaponBlueprint" then
-                    local missilesNode = blueprintNode:first_node("missiles")
-                    if missilesNode then
-                        local numMissiles = tonumber(missilesNode:value())
-                        if numMissiles and numMissiles > 0 then
-                            ammoWeapons[blueprintNode:first_attribute("name"):value()] = numMissiles
-                        end
+                local missilesNode = blueprintNode:first_node("missiles")
+                if missilesNode then
+                    local numMissiles = tonumber(missilesNode:value())
+                    if numMissiles and numMissiles > 0 then
+                        ammoWeapons[blueprintNode:first_attribute("name"):value()] = numMissiles
                     end
-                    blueprintNode = blueprintNode:next_sibling("weaponBlueprint")
                 end
-                blueprintNode = blueprintNode:next_sibling()
+                blueprintNode = blueprintNode:next_sibling("weaponBlueprint")
             end
         end
         read_blueprint_file("data/blueprints.xml")
@@ -31,7 +30,7 @@ end)
 local function handle_integrated_ballistics(weapons, ship)
     local firstAmmoWeaponFound = false
     for weapon in vter(weapons) do
-        if weapon.powered and not ammoWeapons[weapon.blueprint.name] then
+        if weapon.powered and ammoWeapons and not ammoWeapons[weapon.blueprint.name] then
             if firstAmmoWeaponFound then
                 weapon.cooldown.first = 0
                 weapon.chargeLevel = 0
