@@ -17,6 +17,7 @@ script.on_init(function()
                             ammoWeapons[blueprintNode:first_attribute("name"):value()] = numMissiles
                         end
                     end
+                    blueprintNode = blueprintNode:next_sibling("weaponBlueprint")
                 end
                 blueprintNode = blueprintNode:next_sibling()
             end

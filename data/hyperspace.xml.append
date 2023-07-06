@@ -11,7 +11,7 @@
 			</req>
 		</req>
 	</events>
-	<mod:findLike type="events" limit="1">
+	<mod:findLike type="events">
 		<mod:findName type="req" name="FMCORE_LIST_JUMPSPACE_EQUIPMENT">
 			<mod-append:name>GB_PHONE</mod-append:name>
 		</mod:findName>
@@ -228,6 +228,10 @@
     <!-- fed freighter boss stuff -->
     <mod-append:bossShip yOffset="40">RVS_FED_FREIGHTER</mod-append:bossShip>
     <mod-append:bossShip>RVS_REBEL_CRUISER</mod-append:bossShip>
+	<mod-append:bossShip yOffset="50">MT_BOSS_KESTREL_NORMAL</mod-append:bossShip>
+	<mod-append:bossShip yOffset="50">MT_BOSS_KESTREL_CHALLENGE</mod-append:bossShip>
+	<mod-append:bossShip yOffset="50">MT_BOSS_KESTREL_EXTREME</mod-append:bossShip>
+	<mod-append:bossShip yOffset="50">MT_BOSS_KESTREL_CHAOS</mod-append:bossShip>
 	<mod-append:fleetDef name="CUSTOM_FLEET_FED_DESTROYED">
         <ship layer="0">fleetfed_2_small_wreck</ship>
 		<ship layer="1">fleetfed_1_med_wreck</ship>
@@ -774,7 +778,7 @@
 			<chance>100</chance>
 		</category>
 		<category type="WEAPONS">
-           <customTitle>BALLISTIC WEAPONS</customTitle>
+           	<customTitle>BALLISTIC WEAPONS</customTitle>
 			<item>
                 <blueprint>GB_SHOP_ITEM_WEAPONS_CANNONS_PLUS</blueprint>
             </item>
@@ -1315,7 +1319,7 @@
 			<chance>100</chance>
 		</category>
 		<category type="WEAPONS">
-           <customTitle>BOMB WEAPONS</customTitle>
+           	<customTitle>BOMB WEAPONS</customTitle>
 			<item>
                 <blueprint>GIFTLIST_BOMBS</blueprint>
             </item>
@@ -1409,7 +1413,7 @@
 			<chance>100</chance>
 		</category>
 		<category type="WEAPONS">
-           <customTitle>BOMB WEAPONS</customTitle>
+           	<customTitle>BOMB WEAPONS</customTitle>
 			<item>
                 <blueprint>GIFTLIST_BOMBS</blueprint>
             </item>
@@ -1754,8 +1758,12 @@
 
 	<mod-append:ship name="PLAYER_SHIP_RVSP_GB_KESTREL" b="true" c="true">
 		<unlock variant="a" silent="false">
-            <type>2</type>
-            <shipReq>PLAYER_SHIP_KESTREL_3</shipReq>
+            <type>5</type>
+			<victories>
+				<victory>PLAYER_SHIP_KESTREL</victory>
+				<victory>PLAYER_SHIP_KESTREL_2</victory>
+				<victory>PLAYER_SHIP_KESTREL_3</victory>
+			</victories>
         </unlock>
 		<unlock variant="b" silent="false">
             <type>1</type>

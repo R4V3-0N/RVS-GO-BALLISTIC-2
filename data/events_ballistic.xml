@@ -1218,7 +1218,7 @@
                             </event>
                         </choice>
                         <choice hidden="true" req="LIST_ENGIS_CONVOY">
-                            <text>Send one of your engis to do repairs and promise to escort the convoy.</text>
+                            <text>Send one of your engi to do repairs and promise to escort the convoy.</text>
                             <event>
                                 <text>Thanks these damages could not been fixed that fast without help.</text>
                                 <quest event="GB_ESCORT_CONVOY_1"/>

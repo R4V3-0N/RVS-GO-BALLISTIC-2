@@ -310,7 +310,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
 	<damage>1</damage>
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -327,7 +327,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>5</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<stun>4</stun>
 	<sp>0</sp>
@@ -369,7 +369,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
 	<damage>1</damage>
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -386,7 +386,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>5</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<stun>4</stun>
 	<sp>0</sp>
@@ -426,7 +426,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
 	<damage>2</damage>
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -443,7 +443,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>5</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<stun>4</stun>
 	<sp>0</sp>
@@ -994,7 +994,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<!--<sysDamage>1</sysDamage>-->
 	<persDamage>2</persDamage>	<!-- R4 2022/12/30: was 1 -->
 	<!--<hullBust>1</hullBust>	R4 2022/12/30:-->
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -1011,7 +1011,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>10</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>2</breachChance>
@@ -1056,7 +1056,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<!--<sysDamage>1</sysDamage>-->
 	<persDamage>2</persDamage>	<!-- R4 2022/12/30: was 1 -->
 	<!--<hullBust>1</hullBust> R4 2022/12/30-->
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -1073,7 +1073,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>10</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>2</breachChance>
@@ -1116,7 +1116,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<!--<sysDamage>1</sysDamage>-->
 	<persDamage>4</persDamage>
 	<!--<hullBust>1</hullBust>-->
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -1133,7 +1133,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>10</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>5</breachChance>
@@ -2418,7 +2418,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
 	<damage>1</damage>
 	<sysDamage>1</sysDamage> <!-- R4 Added System damage -->
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -2435,7 +2435,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>5</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<stun>4</stun>
 	<sp>0</sp>
@@ -2478,7 +2478,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
 	<damage>1</damage>
 	<sysDamage>1</sysDamage> <!-- R4 Added System damage -->
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -2495,7 +2495,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>5</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<stun>4</stun>
 	<sp>0</sp>
@@ -2535,7 +2535,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>75</freeMissileChance> <!-- R4 2022/11/24: was 83 -->
 	<damage>2</damage>
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -2552,7 +2552,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>5</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<stun>4</stun>
 	<sp>0</sp>
@@ -2961,7 +2961,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>0</sp>
 	<breachChance>2</breachChance>
 	<stunChance>2</stunChance>
-	<cooldown>4</cooldown>
+	<cooldown>3</cooldown>
 	<power>2</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
@@ -3129,7 +3129,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
 	<damage>2</damage>
 	<sysDamage>1</sysDamage> <!-- Elite gets system damage, not sure if it should be 1 or 2-->
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -3146,7 +3146,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>10</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>5</breachChance>
@@ -3189,7 +3189,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
 	<damage>2</damage>
 	<sysDamage>1</sysDamage> <!-- Elite gets system damage, not sure if it should be 1 or 2-->
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -3206,7 +3206,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>10</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>5</breachChance>
@@ -3246,7 +3246,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<missiles>1</missiles>
 	<freeMissileChance>66</freeMissileChance>	<!-- R4 2022/11/24: was 78 -->
 	<damage>4</damage>
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -3263,7 +3263,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>10</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<shots>1</shots>
 	<sp>0</sp>
 	<breachChance>8</breachChance>
@@ -3850,7 +3850,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<breachChance>8</breachChance>
 	<stunChance>8</stunChance>
 	<cooldown>6</cooldown>
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -3867,7 +3867,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>15</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
@@ -3910,7 +3910,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<breachChance>8</breachChance>
 	<stunChance>8</stunChance>
 	<cooldown>6</cooldown>
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -3927,7 +3927,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>15</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
@@ -3967,7 +3967,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<breachChance>10</breachChance>
 	<stunChance>10</stunChance>
 	<cooldown>6</cooldown>
-	<statBoosts>
+	<!--<statBoosts>
 		<statBoost name="powerRechargeMultiplier">
 			<boostType>MULT</boostType>
 			<amount>-1</amount>
@@ -3984,7 +3984,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			<affectsSelf>true</affectsSelf>
 			<duration>15</duration>
 		</statBoost>
-	</statBoosts>
+	</statBoosts>-->
 	<power>3</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
@@ -5459,7 +5459,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<power>1</power>
 	<cost>40</cost>
 	<bp>3</bp>
-	<rarity>4</rarity>
+	<rarity>0</rarity>
 	<iconImage>battle</iconImage>
 </droneBlueprint>
 <droneBlueprint name="RVS_TROOPERTOG_BOARDER">
@@ -5781,8 +5781,8 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 				<number>1</number>
 			</slot>
 		</doors>
-		<drones power="2" room="13" start="false" img="room_drones_10" />
-		<engines power="2" room="5" start="true" img="room_engines_9">
+		<drones max="8" power="2" room="13" start="false" img="room_drones_10" />
+		<engines max="8" power="2" room="5" start="true" img="room_engines_9">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -6043,7 +6043,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 			</slot>
 		</shields>
 		<teleporter power="1" room="7" start="false" />
-		<weapons power="1" max="6" room="27" start="false" img="room_weapons_8">
+		<weapons power="2" max="6" room="27" start="false" img="room_weapons_8">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
