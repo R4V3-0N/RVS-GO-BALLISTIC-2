@@ -4,9 +4,7 @@ local vter = mods.inferno.vter
 -- we have to read the blueprints and make our own list to reference
 local ammoWeapons = nil
 script.on_internal_event(Defines.InternalEvents.MAIN_MENU, function()
-    log("MAIN MENU")
     if not ammoWeapons then
-        log("COLLECTING AMMO WEAPONS")
         ammoWeapons = {}
         local function read_blueprint_file(file)
             local blueprintNode = RapidXML.xml_document(file):first_node("FTL"):first_node("weaponBlueprint")
