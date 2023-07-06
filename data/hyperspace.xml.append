@@ -1124,7 +1124,7 @@
 			<count min="2" max="7"/>
 		</resource>
 		<category type = "WEAPONS" group = "2">
-			<customTitle>engi_separatist WEAPONS</customTitle>
+			<customTitle>SEPARATIST WEAPONS</customTitle>
 			<item>
                 <blueprint>GB_COILGUNS</blueprint>
             </item>
