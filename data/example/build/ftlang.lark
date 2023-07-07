@@ -1,0 +1,31 @@
+start: stmt+
+
+stmt: eq_assign | co_assign | weapon
+
+weapon: "weapon" "{" stmt* "}"
+
+eq_assign: target EQOP addexpr
+co_assign: target ":" WORDS
+
+addexpr: (addexpr ADDOP)? mulexpr
+
+mulexpr: (mulexpr MULOP)? dotexpr
+
+dotexpr: single ("." NAME)*
+
+single: NAME | NUMBER | STRING
+
+target: NAME ("." NAME)*
+
+EQOP: "+=" | "*=" | "-=" | "/=" | "="
+ADDOP: "+" | "-"
+MULOP: "*" | "//"
+
+WORDS: /[^\n]+\n/
+
+%ignore SPACE
+
+%import common.CNAME -> NAME
+%import common.NUMBER -> NUMBER
+%import common.ESCAPED_STRING -> STRING
+%import common.WS -> SPACE

@@ -1,0 +1,11 @@
+variant = particle
+name = append " (Particle)"
+short = append " (Particle)"
+damage = n*0
+sysDamage = n*2
+perseDamage = n*1
+
+variant = bio
+name = append " (Anti-Bio)"
+short = append " (Bio)"
+perseDamage = n + n*0.5
