@@ -1,6 +1,0 @@
-
-weapon {
-    type: LASER
-    title.full: Autocannon Mark IV
-    title.short: AC IV
-}

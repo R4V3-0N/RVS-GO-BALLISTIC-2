@@ -1,8 +1,8 @@
 start: stmt+
 
-stmt: eq_assign | co_assign | weapon
+stmt: eq_assign | co_assign | block
 
-weapon: "weapon" "{" stmt* "}"
+block: NAME "{" (stmt | addexpr)* "}"
 
 eq_assign: target EQOP addexpr
 co_assign: target ":" WORDS
@@ -21,11 +21,16 @@ EQOP: "+=" | "*=" | "-=" | "/=" | "="
 ADDOP: "+" | "-"
 MULOP: "*" | "//"
 
-WORDS: /[^\n]+\n/
+WORDS: /[^\n]+/
 
 %ignore SPACE
 
+%ignore /\s*(\/\/|--|#)[^\n]*/
+
+NUMBER: SIGNED_NUMBER | UNSIGNED_NUMBER
+
 %import common.CNAME -> NAME
-%import common.NUMBER -> NUMBER
+%import common.NUMBER -> UNSIGNED_NUMBER
+%import common.SIGNED_NUMBER -> SIGNED_NUMBER
 %import common.ESCAPED_STRING -> STRING
 %import common.WS -> SPACE

@@ -1,28 +1,27 @@
-
-
-<weaponBlueprint name="GB_AC_4">
+<weaponBlueprint name="GB_AC_1"> <!-- standard-->
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
-	<title>Autocannon Mark IV</title>
-	<short>AC IV</short>
-	<desc>A super heavy Autocannon that only ever was in limited production before the end of the war before being cancelled. Scarcely seen in the modern Universe.</desc>
-	<tooltip>1 shot 4 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<title>Autocannon Mark I</title>
+	<short>AC I</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
 	<missiles>1</missiles>
-	<freeMissileChance>65</freeMissileChance> 
-	<damage>4</damage>
+	<freeMissileChance>85</freeMissileChance>
+	<damage>1</damage>
 	<shots>1</shots>
 	<sp>0</sp>
-	<breachChance>4</breachChance>
-	<stunChance>4</stunChance>
+	<breachChance>1</breachChance>
 	<cooldown>6</cooldown>
-	<power>3</power>
+	<power>1</power>
 	<bp>4</bp>
 	<rarity>0</rarity>
-	<cost>80</cost>
-	<image>GB_shot_heavy</image>
+	<cost>20</cost> <!-- R4 2022/11/24: was 10 -->
+	<image>GB_shot_light</image>
 	<launchSounds>
-		<sound>GB_cannonHeavy1</sound>
-		<sound>GB_cannonHeavy2</sound>
-		<sound>GB_cannonHeavy3</sound>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
 	</launchSounds>
 	<hitShipSounds>
 		<sound>hitHull2</sound>
@@ -36,6 +35,6 @@
 	<missSounds>
 		<sound>miss</sound>
 	</missSounds>
-	<weaponArt>GB_Autocannon_4</weaponArt>
+	<weaponArt>GB_Autocannon_1</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
