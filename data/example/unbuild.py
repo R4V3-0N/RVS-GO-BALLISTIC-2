@@ -41,12 +41,23 @@ for wb in ftl_xml.findall('weaponBlueprint'):
     for sound_type in sound_map:
         sounds_xml = wb.find(sound_type)
         if sound_type is not None:
-            add(sound_map[sound_type], '{')
+            add(sound_map[sound_type] + ': {')
             indent()
             for sound in sorted(sounds_xml.findall('sound'), key=lambda x: x.text):
                 add(sound.text)
             dedent()
             add('}')
+    projs_xml = wb.find('projectiles')
+    if projs_xml is not None:
+        for proj_xml in sorted(projs_xml.findall('projectile'), key=lambda x: x.text):
+            add('projectile {')
+            indent()
+            if 'fake' in proj_xml.attrib and not proj_xml.attrib['fake']:
+                add('fake: false')
+            add('texture:', proj_xml.text)
+            dedent()
+            add('}')
+    
     dedent()
     add('}')
 

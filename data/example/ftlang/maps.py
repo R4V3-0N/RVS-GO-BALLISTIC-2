@@ -9,6 +9,10 @@ simple_map = {
         'tag': 'title',
         'flags': ['opt'],
     },
+    'short': {
+        'tag': 'short',
+        'flags': ['opt'],
+    },
     'description': {
         'tag': 'desc',
         'flags': ['opt'],

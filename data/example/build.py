@@ -58,8 +58,6 @@ class Converter:
             
             wb = SubElement(ftl, "weaponBlueprint", {'name': name})
 
-            print(weapon['name'])
-
             for key in simple_map:
                 value = simple_map[key]
                 result = weapon
@@ -98,6 +96,10 @@ class Converter:
                 args = {}
                 args['count'] = str(require_prop(projectile, 'count', 1))
                 args['fake'] = str(require_prop(projectile, 'fake', 'false'))
+                no_blueprint = object()
+                blueprint = require_prop(projectile, 'blueprint', no_blueprint) 
+                if blueprint != no_blueprint:
+                    args['blueprint'] = blueprint
                 texture = str(require_prop(projectile, 'texture'))
                 SubElement(projectiles_xml, 'projectile', args).text = texture
             sounds = require_prop(weapon, 'sounds', {})
