@@ -6,8 +6,9 @@ from fractions import Fraction
 from xml.etree.ElementTree import Element, SubElement, indent, tostring
 
 from lark import Lark, Token
+from ftlang.maps import simple_map
 
-parser = Lark.open("./build/ftlang.lark")
+parser = Lark.open("./ftlang/ftlang.lark")
 
 def require_prop(obj, prop, default=None):
     assert len(prop) != 0
@@ -44,75 +45,6 @@ def require_props(obj, *props):
             ret.append(obj[prop])
     return ret
 
-simple_map = {
-    'type': {
-        'tag': 'type',
-    },
-    'tooltip': {
-        'tag': 'tooltip',
-        'deafult': '',
-        'unless': [''],
-    },
-    'speed': {
-        'tag': 'speed',
-    },
-    'shots': {
-        'tag': 'shots',
-        'default': 1,
-    },
-    'breach': {
-        'tag': 'breachChance',
-        'default': 0,
-        'unless': [0],
-    },
-    'subtype': {
-        'tag': 'flavor',
-        'default': '',
-        'unless': [''],
-    },
-    'damage.hull': {
-        'tag': 'damage',
-        'default': 0,
-    },
-    'damage.system': {
-        'tag': 'sysDamage',
-        'default': 0,
-    },
-    'damage.crew': {
-        'tag': 'persDamage',
-        'default': 0,
-    },
-    'pierce': {
-        'tag': 'sp',
-        'default': 0,
-    },
-    'breach': {
-        'tag': 'breachChance',
-        'default': 0,
-        'unless': [0],
-    },
-    'rarity': {
-        'tag': 'rarity',
-        'default': 0,
-    },
-    'power': {
-        'tag': 'power',
-        'default': 1,
-    },
-    'cooldown': {
-        'tag': 'colldown',
-    },
-    'cost': {
-        'tag': 'cost',
-    },
-    'art': {
-        'tag': 'weaponArt',
-    },
-    'icon': {
-        'tag': 'iconImage',
-    }
-}
-
 class Converter:
     def __init__(self):
         self.weapons = []
@@ -126,34 +58,8 @@ class Converter:
             
             wb = SubElement(ftl, "weaponBlueprint", {'name': name})
 
-            title = require_prop(weapon, 'title')
-            title_full = require_prop(title, 'full') if isinstance(title, dict) else title
-            SubElement(wb, "title").text = title_full
-            title_short = require_prop(title, 'short', title_full)
-            SubElement(wb, "short").text = title_short
+            print(weapon['name'])
 
-            description = require_prop(weapon, ('description', 'desc'))
-            SubElement(wb, "desc").text = description
-
-            ammo = require_prop(weapon, ('missiles', 'ammo'), {})
-            if isinstance(ammo, str):
-                free_chance = (1 - float(ammo)) * 100
-                SubElement(wb, 'missiles').text = '1'
-                SubElement(wb, 'freeMissileChance').text = str(int(free_chance))
-            else:
-                missiles = require_prop(ammo, 'base', 0)
-                free_chance = require_prop(ammo, 'free', 0)
-                if missiles < 0:
-                    raise Exception("weapon missile base usage souldn't be negative (i don't think)")
-                elif missiles == 0:
-                    pass
-                elif missiles % 1 == 0:
-                    SubElement(wb, 'missiles').text = str(int(missiles))
-                    if free_chance != 0:
-                        SubElement(wb, 'freeMissileChance').text = str(int(free_chance))
-                else:
-                    raise Exception("the developer of this program math'd wrong")
-            
             for key in simple_map:
                 value = simple_map[key]
                 result = weapon
@@ -166,10 +72,9 @@ class Converter:
                         if 'default' in value:
                             result = value['default']
                             break
-                        else:
+                        elif 'opt' not in value['flags']:
                             raise Exception(f"you need to set {key}.")
-                if 'conv' in value:
-                    result = value['conv'](result)
+                result = value['conv'](result)
                 if 'unless' not in value or result not in value['unless']:
                     SubElement(wb, value['tag']).text = str(result)
 
@@ -308,6 +213,8 @@ class Converter:
                         case "weapon":
                             self.stmts(ch[1:])
                             self.weapons.append(self.vars)
+                        case "with":
+                            self.stmts(ch[1:])
                         case _:
                             last_vars = self.scopes[-1]
                             if block_name not in last_vars:

@@ -1,16 +1,10 @@
 
-weapon {
-    name: GB_AC_FLECHETTE_FRAG
+TODO: The developer of this weapon was lazy
+
+with {
     rarity = 0
-    cost = 20
     
     type: LASER
-    power = 1
-    shots = 1
-    cooldown = 6
-
-    title.full: Autocannon Mark I [Flechette]
-    title.short: AC I [F]
 
     description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
 
@@ -51,5 +45,26 @@ weapon {
     sounds.hit.shield: {
         hitHull1
         hitHull2
+    }
+
+    power = 1
+    shots = 1
+    cost = 20
+    cooldown = 6
+
+    weapon {
+        name: GB_AC_FLECHETTE_FRAG
+        title: Autocannon Mark I [Flechette]
+        short: AC I [F]
+    }
+
+    weapon {
+        name: GB_AC_BALLBUSTER_FRAG
+        title: Autocannon BallBuster [Flechette]
+        short: AC BB [F]
+        power *= 2
+        shots *= 2
+        cost *= 4
+        cooldown += 4
     }
 }
