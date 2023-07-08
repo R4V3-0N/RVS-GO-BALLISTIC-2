@@ -83,12 +83,16 @@ class Converter:
                 name = require_prop(stats_boost, 'name')
                 single_xml = SubElement(sboosts_xml, 'statBoost', {'name': name})
                 SubElement(single_xml, 'boostType').text = str(require_prop(stats_boost, 'type'))
-                SubElement(single_xml, 'amount').text = str(require_prop(stats_boost, 'amount'))
                 SubElement(single_xml, 'shipTarget').text = str(require_prop(stats_boost, 'ships', 'ALL'))
                 SubElement(single_xml, 'crewTarget').text = str(require_prop(stats_boost, 'crew', 'ALL'))
                 SubElement(single_xml, 'affectsSelf').text = str(require_prop(stats_boost, 'impacts_self'))
                 SubElement(single_xml, 'duration').text = str(require_prop(stats_boost, 'duration'))
-                SubElement(single_xml, 'animation').text = str(require_prop(stats_boost, 'animation'))
+                amount = require_prop(stats_boost, 'amount', '')
+                if amount is not None:
+                    SubElement(single_xml, 'amount').text = str(amount)
+                animation = require_prop(stats_boost, 'animation', '')
+                if animation is not None:
+                    SubElement(single_xml, 'animation').text = str(animation)
             projectiles = require_prop(weapon, 'projectile', [])
             if len(projectiles) != 0:
                 projectiles_xml = SubElement(wb, 'projectiles')
@@ -112,7 +116,7 @@ class Converter:
                 'launchSounds': sounds_launch,
                 'hitShipSounds': sounds_hit_ship,
                 'hitShieldsSounds': sounds_hit_shield,
-                'missSoudns': sounds_miss
+                'missSounds': sounds_miss
             }
             for key in map_sounds:
                 value = map_sounds[key]

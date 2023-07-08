@@ -97,6 +97,34 @@ sound_map = {
     'missSounds': 'sounds.miss',
 }
 
+stats_boost_map = {
+    'type': {
+        'tag': 'boostType',
+    },
+    'amount': {
+        'tag': 'amount',
+        'flags': ['opt'],
+    },
+    'impacts_self': {
+        'tag': 'affectsSelf',
+    },
+    'ships': {
+        'tag': 'shipTarget',
+        'unless': ['ALL'],
+    },
+    'crew': {
+        'tag': 'crewTarget',
+        'unless': ['ALL'],
+    },
+    'duration': {
+        'tag': 'duration',
+    },
+    'animation': {
+        'tag': 'boostAnim',
+        'flags': ['opt'],
+    },
+}
+
 def auto_str(s=''):
     if isinstance(s, Fraction):
         if s % 1 == 0:
