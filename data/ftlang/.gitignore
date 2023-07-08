@@ -3,6 +3,8 @@ __pycache__
 .vscode
 gen/*.ftlang
 gen/*.xml
+gen/*.temp
+gen/*.tmp
 gen/*.append
 *.txt
 *.out
