@@ -4,5 +4,5 @@ __pycache__
 gen/*.ftlang
 gen/*.xml
 gen/*.append
-gen/*.txt
-gen/*.out
+*.txt
+*.out
