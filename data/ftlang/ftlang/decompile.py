@@ -2,9 +2,38 @@
 
 import sys
 import re
+import functools
 from xml.etree.ElementTree import XMLParser, fromstring
 
 from prop_maps import simple_map, sound_map, stats_boost_map
+
+def cmp(a, b):
+    if a > b:
+        return 1
+    if a == b:
+        return 0
+    if a < b:
+        return -1
+
+# no sorting at all
+# def weapons_cmp(w1, w2):
+#     return 0
+
+# type
+# def weapons_cmp(w1, w2):
+#     return cmp(w1.find('type').text, w2.find('type').text)
+
+def weapons_cmp(w1, w2):
+    n1 = w1.attrib['name']
+    n2 = w2.attrib['name']
+    r = cmp('ELITE' in n1, 'ELITE' in n2)
+    if r != 0:
+        return r
+    return 0
+
+sort_keys = {
+    'weapons': functools.cmp_to_key(weapons_cmp),
+}
 
 def decompile(string):
     string = re.sub(re.compile('<!---+'), '<!--', string)
@@ -29,7 +58,13 @@ def decompile(string):
     def add(*s):
         output.append('    ' * indent_level + ' '.join(s) + '\n')
 
-    for wb in ftl_xml.findall('weaponBlueprint'):
+    def pair(key, value):
+        if value.isnumeric():
+            add(key, '=', value)
+        else:
+            add(key + ':', str(value))
+
+    for wb in sorted(ftl_xml.findall('weaponBlueprint'), key=sort_keys['weapons']):
         add('weapon {')
         indent()
         add(f'name: {wb.attrib["name"]}')
@@ -37,10 +72,10 @@ def decompile(string):
             value = simple_map[key]
             title_xml = wb.find(value['tag'])
             if title_xml is not None:
-                add(f'{key}: {title_xml.text}')
+                pair(key, title_xml.text)
             elif 'opt' not in value['flags']:
                 if 'default' in value:
-                    add(f'{key}: {value["default"]}')
+                    pair(key, value["default"])
                 else:
                     raise Exception(f'undefined {value["tag"]} on {wb.find("title").text}')
         
@@ -54,7 +89,7 @@ def decompile(string):
                     found = stat_xml.find(value['tag'])
                     if found is not None:
                         if 'unless' not in value or found not in value['unless']:
-                            add(key + ':',  found.text)
+                            pair(key, found.text)
                     elif 'flags' not in value or 'opt' not in value['flags']:
                         raise Exception(f'undefined stats boost {value["tag"]} on {wb.find("title").text}')
                 dedent()
@@ -65,10 +100,10 @@ def decompile(string):
                 add('projectile {')
                 indent()
                 if 'fake' in proj_xml.attrib and not proj_xml.attrib['fake']:
-                    add('fake: false')
+                    pair('fake', 'false')
                 if 'blueprint' in proj_xml.attrib:
-                    add('blueprint:', proj_xml.attrib['blueprint'])
-                add('texture:', proj_xml.text)
+                    pair('blueprint', proj_xml.attrib['blueprint'])
+                pair('texture', proj_xml.text)
                 dedent()
                 add('}')
         for sound_type in sound_map:
