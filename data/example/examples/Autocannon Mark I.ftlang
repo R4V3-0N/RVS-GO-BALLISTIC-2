@@ -1,0 +1,55 @@
+
+weapon {
+    name: GB_AC_FLECHETTE_FRAG
+    rarity = 0
+    cost = 20
+    
+    type: LASER
+    power = 1
+    shots = 1
+    cooldown = 6
+
+    title.full: Autocannon Mark I [Flechette]
+    title.short: AC I [F]
+
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+
+    speed = 50
+    breach = 2
+    radius = 30
+
+    art: GB_Autocannon_1_FLECHETTE
+    
+    icon: laser
+
+    stats_boost {
+        name: trueHealAmmount
+        type: FLAT
+        amount = -1
+        impacts_self = 1
+        duration = 25
+        animation: blood_effect 
+    }
+
+    projectile {
+        texture: GB_shot_tiny_flechette
+    }
+
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+
+    sounds.hit.ship:  {
+        hitHull2
+        hutHull3
+    }
+
+    sounds.hit.shield: {
+        hitHull1
+        hitHull2
+    }
+}

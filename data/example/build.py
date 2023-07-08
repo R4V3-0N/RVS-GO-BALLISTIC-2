@@ -44,6 +44,75 @@ def require_props(obj, *props):
             ret.append(obj[prop])
     return ret
 
+simple_map = {
+    'type': {
+        'tag': 'type',
+    },
+    'tooltip': {
+        'tag': 'tooltip',
+        'deafult': '',
+        'unless': [''],
+    },
+    'speed': {
+        'tag': 'speed',
+    },
+    'shots': {
+        'tag': 'shots',
+        'default': 1,
+    },
+    'breach': {
+        'tag': 'breachChance',
+        'default': 0,
+        'unless': [0],
+    },
+    'subtype': {
+        'tag': 'flavor',
+        'default': '',
+        'unless': [''],
+    },
+    'damage.hull': {
+        'tag': 'damage',
+        'default': 0,
+    },
+    'damage.system': {
+        'tag': 'sysDamage',
+        'default': 0,
+    },
+    'damage.crew': {
+        'tag': 'persDamage',
+        'default': 0,
+    },
+    'pierce': {
+        'tag': 'sp',
+        'default': 0,
+    },
+    'breach': {
+        'tag': 'breachChance',
+        'default': 0,
+        'unless': [0],
+    },
+    'rarity': {
+        'tag': 'rarity',
+        'default': 0,
+    },
+    'power': {
+        'tag': 'power',
+        'default': 1,
+    },
+    'cooldown': {
+        'tag': 'colldown',
+    },
+    'cost': {
+        'tag': 'cost',
+    },
+    'art': {
+        'tag': 'weaponArt',
+    },
+    'icon': {
+        'tag': 'iconImage',
+    }
+}
+
 class Converter:
     def __init__(self):
         self.weapons = []
@@ -57,9 +126,6 @@ class Converter:
             
             wb = SubElement(ftl, "weaponBlueprint", {'name': name})
 
-            _type = require_prop(weapon, 'type')
-            SubElement(wb, "type").text = _type
-
             title = require_prop(weapon, 'title')
             title_full = require_prop(title, 'full') if isinstance(title, dict) else title
             SubElement(wb, "title").text = title_full
@@ -68,14 +134,6 @@ class Converter:
 
             description = require_prop(weapon, ('description', 'desc'))
             SubElement(wb, "desc").text = description
-
-            tooltip = require_prop(weapon, 'tooltip', '')
-            if len(tooltip) != 0:
-                SubElement(wb, 'tooltip').text = tooltip
-            
-            flavor = require_prop(weapon, ('flavor', 'flavour'), '')
-            if len(flavor) != 0:
-                SubElement(wb, 'flavorType').text = flavor
 
             ammo = require_prop(weapon, ('missiles', 'ammo'), {})
             if isinstance(ammo, str):
@@ -96,18 +154,66 @@ class Converter:
                 else:
                     raise Exception("the developer of this program math'd wrong")
             
-            damage = require_prop(weapon, 'damage', {})
-            damage_hull = require_prop(damage, 'hull', 0)
-            damage_system = require_prop(damage, ('system', 'room'), 0)
-            damage_crew = require_prop(damage, ('crew', 'pers', 'personnel'), 0)
-            if damage_hull != 0:
-                SubElement(wb, 'damage').text = str(int(damage_hull))
-            if damage_system != 0:
-                SubElement(wb, 'sysDamage').text = str(int(damage_system))
-            if damage_crew != 0:
-                SubElement(wb, 'persDamage').text = str(int(damage_system))
+            for key in simple_map:
+                value = simple_map[key]
+                result = weapon
+                for path in key.split('.'):
+                    if not isinstance(result, dict):
+                        raise Exception(f"you need to set {key} differently.")
+                    elif path in result:
+                        result = result[path]
+                    else:
+                        if 'default' in value:
+                            result = value['default']
+                            break
+                        else:
+                            raise Exception(f"you need to set {key}.")
+                if 'conv' in value:
+                    result = value['conv'](result)
+                if 'unless' not in value or result not in value['unless']:
+                    SubElement(wb, value['tag']).text = str(result)
 
-
+            stats_boosts = require_prop(weapon, 'stats_boost', [])
+            if len(stats_boosts) != 0:
+                sboosts_xml = SubElement(wb, 'statBoosts')
+            for stats_boost in stats_boosts:
+                name = require_prop(stats_boost, 'name')
+                single_xml = SubElement(sboosts_xml, 'statBoost', {'name': name})
+                SubElement(single_xml, 'boostType').text = str(require_prop(stats_boost, 'type'))
+                SubElement(single_xml, 'amount').text = str(require_prop(stats_boost, 'amount'))
+                SubElement(single_xml, 'shipTarget').text = str(require_prop(stats_boost, 'ships', 'ALL'))
+                SubElement(single_xml, 'crewTarget').text = str(require_prop(stats_boost, 'crew', 'ALL'))
+                SubElement(single_xml, 'affectsSelf').text = str(require_prop(stats_boost, 'impacts_self'))
+                SubElement(single_xml, 'duration').text = str(require_prop(stats_boost, 'duration'))
+                SubElement(single_xml, 'animation').text = str(require_prop(stats_boost, 'animation'))
+            projectiles = require_prop(weapon, 'projectile', [])
+            if len(projectiles) != 0:
+                projectiles_xml = SubElement(wb, 'projectiles')
+            for projectile in projectiles:
+                args = {}
+                args['count'] = str(require_prop(projectile, 'count', 1))
+                args['fake'] = str(require_prop(projectile, 'fake', 'false'))
+                texture = str(require_prop(projectile, 'texture'))
+                SubElement(projectiles_xml, 'projectile', args).text = texture
+            sounds = require_prop(weapon, 'sounds', {})
+            sounds_launch = require_prop(sounds, 'launch', [])
+            sounds_miss = require_prop(sounds, 'miss', [])
+            sounds_hit = require_prop(sounds, 'hit', {})
+            sounds_hit_ship = require_prop(sounds_hit, 'ship', [])
+            sounds_hit_shield = require_prop(sounds_hit, 'shield', [])
+            map_sounds = {
+                'launchSounds': sounds_launch,
+                'hitShipSounds': sounds_hit_ship,
+                'hitShieldsSounds': sounds_hit_shield,
+                'missSoudns': sounds_miss
+            }
+            for key in map_sounds:
+                value = map_sounds[key]
+                sounds_xml = SubElement(wb, key)
+                for sound in value:
+                    SubElement(sounds_xml, 'sound').text = sound
+                    
+                
         return ftl
         
     def get(self, *args):
@@ -177,12 +283,16 @@ class Converter:
                 for i in ch[1:]:
                     obj = obj[i]
                 return obj
+            case "array" | "words_array":
+                return [self.expr(i) for i in ch]
             case "single":
                 return self.expr(ch[0])
             case _:
                 raise Exception("bad type: " + kind)
 
     def stmt(self, ast):
+        if isinstance(ast, Token):
+            raise Exception(f"bad syntax: {str(ast)}")
         kind = ast.data
         ch = ast.children
         match kind:
@@ -193,21 +303,27 @@ class Converter:
                 try:
                     self.scopes.append(self.vars)
                     self.vars = deepcopy(self.vars)
-                    match str(ch[0]):
+                    block_name = str(ch[0])
+                    match block_name:
                         case "weapon":
-                            self.stmts(ch)
+                            self.stmts(ch[1:])
                             self.weapons.append(self.vars)
-                        case "stats_boost":
+                        case _:
                             last_vars = self.scopes[-1]
-                            if 'stats_boosts' not in last_vars:
-                                last_vars['stats_boosts'] = []
-                            self.scopes[-1]['stats_boosts'].append(self.vars)
+                            if block_name not in last_vars:
+                                last_vars[block_name] = []
+                            self.stmts(ch[1:])
+                            last_vars[block_name].append(self.vars)
                 finally:
                     self.vars = self.scopes.pop()
             case "stmt":
                 self.stmts(ch)
             case "variant":
                 raise Exception("bad variant")
+            case "co_arr_assign":
+                varname = [str(i) for i in ch[-2].children]
+                value = [str(i) for i in ch[-1].children]
+                self.set(*varname, '=', value)
             case "co_assign":
                 varname = [str(i) for i in ch[-2].children]
                 value = str(ch[-1]).strip()
@@ -228,7 +344,6 @@ convert.stmt(ast)
 xml = convert.toxml()
 indent(xml, space="\t", level=0)
 result = tostring(xml).decode('utf-8')
-print(result)
 
 with open(sys.argv[2], "w") as file:
     file.write(result)

@@ -1,11 +1,12 @@
 start: stmt+
 
-stmt: eq_assign | co_assign | block
+stmt: eq_assign | co_assign | co_arr_assign | block
 
-block: NAME "{" (stmt | addexpr)* "}"
+block: BLOCK_NAME "{" (stmt | ":" WORDS)* "}"
 
 eq_assign: target EQOP addexpr
 co_assign: target ":" WORDS
+co_arr_assign: target ":" words_array
 
 addexpr: (addexpr ADDOP)? mulexpr
 
@@ -13,7 +14,10 @@ mulexpr: (mulexpr MULOP)? dotexpr
 
 dotexpr: single ("." NAME)*
 
-single: NAME | NUMBER | STRING
+single: NAME | NUMBER | STRING | array
+
+array: "{" addexpr "}"
+words_array: "{" WORDS* "}"
 
 target: NAME ("." NAME)*
 
@@ -21,7 +25,9 @@ EQOP: "+=" | "*=" | "-=" | "/=" | "="
 ADDOP: "+" | "-"
 MULOP: "*" | "//"
 
-WORDS: /[^\n]+/
+WORDS: /[^\n{}]+/
+
+BLOCK_NAME: /[a-z\._]+/
 
 %ignore SPACE
 
