@@ -6,7 +6,7 @@ from fractions import Fraction
 from xml.etree.ElementTree import Element, SubElement, indent, tostring
 
 from lark import Lark, Token
-from ftlang.maps import simple_map
+from prop_maps import simple_map
 
 parser = Lark.open("./ftlang/ftlang.lark")
 
@@ -249,14 +249,21 @@ class Converter:
             case _:
                 raise Exception("bad type: " + kind)
 
-with open(sys.argv[1]) as file:
-    ast = parser.parse(file.read())
 
-convert = Converter()
-convert.stmt(ast)
-xml = convert.toxml()
-indent(xml, space="\t", level=0)
-result = tostring(xml).decode('utf-8')
+def compile(src):
+    ast = parser.parse(src)
+    convert = Converter()
+    convert.stmt(ast)
+    xml = convert.toxml()
+    indent(xml, space="\t", level=0)
+    return tostring(xml).decode('utf-8')
 
-with open(sys.argv[2], "w") as file:
-    file.write(result)
+def main():
+    with open(sys.argv[1]) as file:
+        src = file.read()
+    res = compile(src)
+    with open(sys.argv[2], "w") as file:
+        file.write(res)
+
+if __name__ == '__main__':
+    main()
