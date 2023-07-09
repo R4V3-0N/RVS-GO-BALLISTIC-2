@@ -108,13 +108,15 @@ stats_boost_map = {
     'impacts_self': {
         'tag': 'affectsSelf',
     },
+    'max_stacks': {
+        'tag': 'maxStacks',
+        'flags': ['opt'],
+    },
     'ships': {
         'tag': 'shipTarget',
-        'unless': ['ALL'],
     },
     'crew': {
         'tag': 'crewTarget',
-        'unless': ['ALL'],
     },
     'duration': {
         'tag': 'duration',
@@ -140,4 +142,4 @@ for v in simple_map.values():
         v['flags'] = []
     if 'opt' in v['flags'] and 'default' not in v:
         v['default'] = v['conv']()
-        v['unless'] = v['conv']()
+        v['unless'] = [v['conv']()]

@@ -5,7 +5,7 @@ import re
 import functools
 from xml.etree.ElementTree import XMLParser, fromstring
 
-from prop_maps import simple_map, sound_map, stats_boost_map
+from ftlang.prop_maps import simple_map, sound_map, stats_boost_map
 
 def cmp(a, b):
     if a > b:
@@ -59,7 +59,7 @@ def decompile(string):
         output.append('    ' * indent_level + ' '.join(s) + '\n')
 
     def pair(key, value):
-        if value.isnumeric():
+        if str(value).isnumeric():
             add(key, '=', value)
         else:
             add(key + ':', str(value))
@@ -84,6 +84,7 @@ def decompile(string):
             for stat_xml in sorted(stats_xml.findall('statBoost'), key=lambda x: x.attrib['name']):
                 add('stats_boost {')
                 indent()
+                pair('name', stat_xml.attrib['name'])
                 for key in stats_boost_map:
                     value = stats_boost_map[key]
                     found = stat_xml.find(value['tag'])
@@ -108,7 +109,7 @@ def decompile(string):
                 add('}')
         for sound_type in sound_map:
             sounds_xml = wb.find(sound_type)
-            if sound_type is not None:
+            if sounds_xml is not None:
                 add(sound_map[sound_type] + ': {')
                 indent()
                 for sound in sorted(sounds_xml.findall('sound'), key=lambda x: x.text):
@@ -118,12 +119,13 @@ def decompile(string):
         dedent()
         add('}')
         add()
-    return ''.join(output)
+    return output
 
 def main():
     with open(sys.argv[1]) as file:
         string = file.read()
-    out = decompile(string)
+    lines = decompile(string)
+    out = ''.join(lines)
     with open(sys.argv[2], 'w') as file:
         file.write(out)
 

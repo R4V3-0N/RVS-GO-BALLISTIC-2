@@ -8,3 +8,7 @@ gen/*.tmp
 gen/*.append
 *.txt
 *.out
+*.app
+*.spec
+build
+dist

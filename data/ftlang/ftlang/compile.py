@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 
 import sys
-from copy import deepcopy
+from ftlang.refdict import ProtoDict
 from fractions import Fraction
 from xml.etree.ElementTree import Element, SubElement, indent, tostring
 
 from lark import Lark, Token
-from prop_maps import simple_map
+from ftlang.prop_maps import simple_map
+from ftlang.data import larkfile
 
-parser = Lark.open("./ftlang/ftlang.lark")
+parser = Lark(larkfile, parser='lalr')
 
 def require_prop(obj, prop, default=None):
     assert len(prop) != 0
@@ -49,7 +50,7 @@ class Converter:
     def __init__(self):
         self.weapons = []
         self.scopes = []
-        self.vars = {}
+        self.vars = ProtoDict()
 
     def toxml(self):
         ftl = Element("FTL")
@@ -62,7 +63,7 @@ class Converter:
                 value = simple_map[key]
                 result = weapon
                 for path in key.split('.'):
-                    if not isinstance(result, dict):
+                    if not isinstance(result, ProtoDict):
                         raise Exception(f"you need to set {key} differently.")
                     elif path in result:
                         result = result[path]
@@ -87,12 +88,15 @@ class Converter:
                 SubElement(single_xml, 'crewTarget').text = str(require_prop(stats_boost, 'crew', 'ALL'))
                 SubElement(single_xml, 'affectsSelf').text = str(require_prop(stats_boost, 'impacts_self'))
                 SubElement(single_xml, 'duration').text = str(require_prop(stats_boost, 'duration'))
+                max_stacks = require_prop(stats_boost, 'max_stacks', '')
+                if max_stacks != '':
+                    SubElement(single_xml, 'maxStacks').text = str(max_stacks)
                 amount = require_prop(stats_boost, 'amount', '')
-                if amount is not None:
+                if amount != '':
                     SubElement(single_xml, 'amount').text = str(amount)
                 animation = require_prop(stats_boost, 'animation', '')
-                if animation is not None:
-                    SubElement(single_xml, 'animation').text = str(animation)
+                if animation != '':
+                    SubElement(single_xml, 'boostAnim').text = str(animation)
             projectiles = require_prop(weapon, 'projectile', [])
             if len(projectiles) != 0:
                 projectiles_xml = SubElement(wb, 'projectiles')
@@ -123,8 +127,6 @@ class Converter:
                 sounds_xml = SubElement(wb, key)
                 for sound in value:
                     SubElement(sounds_xml, 'sound').text = sound
-                    
-                
         return ftl
         
     def get(self, *args):
@@ -139,7 +141,7 @@ class Converter:
         vars = self.vars
         for i in args[:-3]:
             if i not in vars:
-                vars[i] = {}
+                vars[i] = ProtoDict()
             vars = vars[i]
         key = args[-3]
         match str(op):
@@ -169,26 +171,34 @@ class Converter:
                 case "NAME":
                     return self.get(str(ast))
                 case "STRING":
-                    return str(ast)
+                    return str(ast)[1:-1]
                 case _:
                     raise Exception("bad type: " + ast.type)
         kind = ast.data
         ch = ast.children
         match kind:
             case "addexpr":
-                if len(ch) == 1:
-                    return self.expr(ch[0])
-                elif str(ch[1]) == '+':
-                    return self.expr(ch[0]) + self.expr(ch[2])
-                elif str(ch[1]) == '-':
-                    return self.expr(ch[0]) - self.expr(ch[2])
+                res = self.expr(ch[0])
+                i = 1
+                while i < len(ch):
+                    match str(ch[i]):
+                        case '*':
+                            res *= self.expr(ch[i+1])
+                        case '/':
+                            res /= self.expr(ch[i+1])
+                    i += 2
+                return res
             case "mulexpr":
-                if len(ch) == 1:
-                    return self.expr(ch[0])
-                elif str(ch[1]) == '*':
-                    return self.expr(ch[0]) * self.expr(ch[2])
-                elif str(ch[1]) == '/':
-                    return self.expr(ch[0]) / self.expr(ch[2])
+                res = self.expr(ch[0])
+                i = 1
+                while i < len(ch):
+                    match str(ch[i]):
+                        case '+':
+                            res += self.expr(ch[i+1])
+                        case '-':
+                            res -= self.expr(ch[i+1])
+                    i += 2
+                return res
             case "dotexpr":
                 obj = self.expr(ch[0])
                 for i in ch[1:]:
@@ -213,8 +223,8 @@ class Converter:
             case "block":
                 try:
                     self.scopes.append(self.vars)
-                    self.vars = deepcopy(self.vars)
-                    block_name = str(ch[0])
+                    self.vars = self.vars.copy()
+                    block_name = '.'.join(str(i) for i in ch[0].children)
                     match block_name:
                         case "weapon":
                             self.stmts(ch[1:])
@@ -223,7 +233,7 @@ class Converter:
                             self.stmts(ch[1:])
                         case _:
                             last_vars = self.scopes[-1]
-                            if block_name not in last_vars:
+                            if block_name not in last_vars.dict:
                                 last_vars[block_name] = []
                             self.stmts(ch[1:])
                             last_vars[block_name].append(self.vars)
