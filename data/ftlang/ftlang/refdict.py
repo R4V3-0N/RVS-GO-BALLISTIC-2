@@ -17,6 +17,6 @@ class ProtoDict:
         if key in self.dict:
             return self.dict[key]
         elif self.parent is not None:
-            return self.parent
+            return self.parent[key]
         else:
             raise KeyError(key)

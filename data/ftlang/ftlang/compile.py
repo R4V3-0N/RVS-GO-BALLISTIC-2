@@ -63,7 +63,7 @@ class Converter:
                 value = simple_map[key]
                 result = weapon
                 for path in key.split('.'):
-                    if not isinstance(result, ProtoDict):
+                    if not isinstance(result, (ProtoDict, dict)):
                         raise Exception(f"you need to set {key} differently.")
                     elif path in result:
                         result = result[path]
@@ -233,7 +233,7 @@ class Converter:
                             self.stmts(ch[1:])
                         case _:
                             last_vars = self.scopes[-1]
-                            if block_name not in last_vars.dict:
+                            if block_name not in last_vars:
                                 last_vars[block_name] = []
                             self.stmts(ch[1:])
                             last_vars[block_name].append(self.vars)
