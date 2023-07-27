@@ -1,34 +1,10 @@
 local vter = mods.inferno.vter
 
--- Since none of the stuff is exposed to actually check how many missiles a weapon uses,
--- we have to read the blueprints and make our own list to reference
-local ammoWeapons = nil
-script.on_internal_event(Defines.InternalEvents.MAIN_MENU, function()
-    if not ammoWeapons then
-        ammoWeapons = {}
-        local function read_blueprint_file(file)
-            local blueprintNode = RapidXML.xml_document(file):first_node("FTL"):first_node("weaponBlueprint")
-            while blueprintNode do
-                local missilesNode = blueprintNode:first_node("missiles")
-                if missilesNode then
-                    local numMissiles = tonumber(missilesNode:value())
-                    if numMissiles and numMissiles > 0 then
-                        ammoWeapons[blueprintNode:first_attribute("name"):value()] = numMissiles
-                    end
-                end
-                blueprintNode = blueprintNode:next_sibling("weaponBlueprint")
-            end
-        end
-        read_blueprint_file("data/blueprints.xml")
-        read_blueprint_file("data/dlcBlueprints.xml")
-    end
-end)
-
 -- Force ships with integrated ballistics to only use one non-ballistic weapon
 local function handle_integrated_ballistics(weapons, ship)
     local firstAmmoWeaponFound = false
     for weapon in vter(weapons) do
-        if weapon.powered and ammoWeapons and not ammoWeapons[weapon.blueprint.name] then
+        if weapon.powered and weapon.blueprint.missiles > 0 then
             if firstAmmoWeaponFound then
                 weapon.cooldown.first = 0
                 weapon.chargeLevel = 0

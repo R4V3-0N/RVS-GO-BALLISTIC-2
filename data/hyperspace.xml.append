@@ -18,6 +18,9 @@
 	</mod:findLike>
 </FTL>
 <FTL>
+
+<version>^1.6.0</version>
+
 <mod:findLike type="crew" limit="1">
 	<mod-append:race name="rvs_drone_trooper">
 		<controllable>true</controllable>
