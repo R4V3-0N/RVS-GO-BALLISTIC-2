@@ -4,7 +4,7 @@ local vter = mods.inferno.vter
 local function handle_integrated_ballistics(weapons, ship)
     local firstAmmoWeaponFound = false
     for weapon in vter(weapons) do
-        if weapon.powered and weapon.blueprint.missiles > 0 then
+        if weapon.powered and weapon.blueprint.missiles <= 0 then
             if firstAmmoWeaponFound then
                 weapon.cooldown.first = 0
                 weapon.chargeLevel = 0
