@@ -10,7 +10,6 @@
 				<name>gb_called_dispatch</name>
 			</req>
 		</req>
-		<eventFile>sector_frontier</eventFile>
 	</events>
 	<mod:findLike type="events">
 		<mod:findName type="req" name="FMCORE_LIST_JUMPSPACE_EQUIPMENT">
@@ -88,6 +87,7 @@
 
 <mod:findLike type="events" limit="1">
 	<mod-append:eventFile>ballistic</mod-append:eventFile>
+	<mod-append:eventFile>sector_frontier</mod-append:eventFile>
 	<mod-append:variable name="ach_mv_ballistic" op="set" val="0"/>
 
 	<mod-append:variable name="gb_marker_1" op="set" val="0"/>
