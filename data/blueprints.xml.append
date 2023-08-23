@@ -2148,7 +2148,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 
 
-<!--<weaponBlueprint name="GB_AC_4">
+<weaponBlueprint name="GB_AC_4">
 	<type>LASER</type>
 	<title>Autocannon Mark IV</title>
 	<short>AC IV</short>
@@ -2186,7 +2186,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	</missSounds>
 	<weaponArt>GB_Autocannon_4</weaponArt>
 	<iconImage>laser</iconImage>
-</weaponBlueprint>-->
+</weaponBlueprint>
 
 
 <!--

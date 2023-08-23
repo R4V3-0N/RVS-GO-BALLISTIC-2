@@ -145,8 +145,6 @@ FRONTIER SECTOR
 	<event name="FILLER_LIST" min="999" max="999"/>
 </sectorDescription>
 
-Min = 18 max 30
-
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1019,13 +1017,16 @@ Min = 18 max 30
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
+
+<!--
 <eventList name="RVS_HOSTILE_FRONTIER_HAZARD">
 	<event load="">
 	<event load="">
 	<event load="">
 </eventList>
+-->
 
-<eventList name="RVS_HOSTILE_FRONTIER">					
+<eventList name="RVS_HOSTILE_FRONTIER">
 	<event load="RVS_ENCOUNTER_ROCK_FRONTIER"/>			<!-- MIGHT NEED MORE TEXTS / NEEDS TESTING -->
 	<event load="RVS_ENCOUNTER_OUTCAST_FRONTIER"/>		<!-- TO DO -->
 	<event load="RVS_ENCOUNTER_ZOLTAN_FRONTIER"/>		<!-- TO DO -->
@@ -1054,14 +1055,14 @@ Min = 18 max 30
 		<event load="COMBAT_CHECK"/>
 	</choice>
 </event>
-<textList name="RVS_TEXT_ENCOUNTER_AUTO_FRONTIER" unique="false">
+<textList name="RVS_TEXT_ENCOUNTER_ROCK_FRONTIER" unique="false">
 	<!-- nature -->
 	<text back="BACKGROUND">A lone rock vessel is lost in the distant stars far from their colonies. Instead of turning to you for salvation, they've decided to take their frustration out on you.</text>
 	<text back="BG_NEBULA">Sensors indicate a single Rock vessel holding in an attack stance broadcasting to you on open channels. "The Gods have blessed me with the beauty of this sector and I won't let you spread the Federations blight here. Perish!"</text>	
 	<text planet="PLANET_UNPOPULATED">A rock ship has taken a journey through this sector on a pilgramage in search of their place in the universe. Your attempts to hail them interrupts their meditation. Taking offense at your act, they arm their weapons!</text>
 	
 	<!-- colonies-->
-	<text planet="PLANET_LAVA">The Rockmen are hardy people: What may look like a completely uninhabitable planet below is actually in the process of having a colony established. However, a Rock patrol ship protecting the colony considers you a pirate and decides to ward you off with extreme prejudice./text>
+	<text planet="PLANET_LAVA">The Rockmen are hardy people: What may look like a completely uninhabitable planet below is actually in the process of having a colony established. However, a Rock patrol ship protecting the colony considers you a pirate and decides to ward you off with extreme prejudice.</text>
 	<text>The Theocracy often takes no chances with outsiders and this is even more so evident out in the frontier. They arm their weapons and you follow in kind.</text>
 	<text planet="PLANET_POPULATED_SMALL">"Outsider! These lands are claimed by the Theocracy! You have insulted us with your presence, prepare to die!" A fight is unavoidable.</text>
 

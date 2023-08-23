@@ -10,6 +10,7 @@
 				<name>gb_called_dispatch</name>
 			</req>
 		</req>
+		<eventFile>sector_frontier</eventFile>
 	</events>
 	<mod:findLike type="events">
 		<mod:findName type="req" name="FMCORE_LIST_JUMPSPACE_EQUIPMENT">
