@@ -177,7 +177,7 @@ FRONTIER SECTOR
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->	
 <eventList name="RVS_ITEMS_FRONTIER">
-	<event load="RVS_FRONTIER_PRISTINE"/>	<!-- nature -->		<!-- NEEDS TEST -->		
+	<event load="RVS_FRONTIER_PRISTINE"/>	<!-- nature -->		<!-- TESTED/ FAILED TEST, FREEZE/CRASH -->		
 	<event load="RVS_FRONTIER_A"/>			<!-- nature -->		<!-- TO DO -->
 	<event load="RVS_FRONTIER_MIXED_SETTLEMENT"/><!-- colonised --><!-- NEEDS TEST -->
 	<event load="RVS_FRONTIER_C"/>		<!-- colonised -->	<!-- TO DO -->
@@ -1029,18 +1029,14 @@ FRONTIER SECTOR
 <eventList name="RVS_HOSTILE_FRONTIER">
 	<event load="RVS_ENCOUNTER_ROCK_FRONTIER"/>			<!-- MIGHT NEED MORE TEXTS / NEEDS TESTING -->
 	<event load="RVS_ENCOUNTER_OUTCAST_FRONTIER"/>		<!-- TO DO -->
-	<event load="RVS_ENCOUNTER_ZOLTAN_FRONTIER"/>		<!-- TO DO -->
 	<event load="RVS_ENCOUNTER_DUSKBRINGER_FRONTIER"/>	<!-- TO DO -->
-	<event load="RVS_ENCOUNTER_ORCHID_FRONTIER"/>		<!-- TO DO -->
 	<event load="RVS_ENCOUNTER_VAMPWEED_FRONTIER"/>		<!-- TO DO -->
 	<event load="RVS_ENCOUNTER_LEECH_FRONTIER"/>		<!-- TO DO -->
-	<event load="RVS_ENCOUNTER_SLAVER_FRONTIER"/>		<!-- TO DO -->
 
-	
 	<event load="RVS_ENCOUNTER_TURNCOAT_FRONTIER"/>		<!-- TO DO -->
 	<event load="RVS_ENCOUNTER_PIRATE_FRONTIER"/>		<!-- TO DO -->
-	<event load="RVS_ENCOUNTER_AUTO_FRONTIER"/>			<!-- MIGHT NEED MORE TEXTS / NEEDS TESTING -->
-	<event load="RVS_ENCOUNTER_REBEL_FRONTIER"/>		<!-- NEEDS TESTING -->
+	<event load="RVS_ENCOUNTER_AUTO_FRONTIER"/>			<!-- MIGHT NEED MORE TEXTS / TESTED and WORKS! -->
+	<event load="RVS_ENCOUNTER_REBEL_FRONTIER"/>		<!-- TESTED and WORKS! -->
 </eventList>
 
 <!-- LONELY TEXT
@@ -1092,7 +1088,7 @@ FRONTIER SECTOR
 	
 	<!-- colonies-->
 	<text planet="PLANET_POPULATED_SMALL">You discover a nearby planet speckled with settlements, although none respond to your hails and you come to realize why; as an automated Rebel Ship comes speeding towards you..</text>
-	<text planet="PLANET_POPULATED_SMALL">You discover a nearby planet speckled with settlements, one of them hails you. “Caution! The Rebels have claimed this system. It isn’t safe for-” the transmissions begins to break up. A Rebel Automated ship seems to be the source of the disruption and now it locks onto you and begins its assault.</text>
+	<text planet="PLANET_POPULATED_SMALL">You discover a nearby planet speckled with settlements, one of them hails you. "Caution! The Rebels have claimed this system. It isn’t safe for-" the transmissions begins to break up. A Rebel Automated ship seems to be the source of the disruption and now it locks onto you and begins its assault.</text>
 
 	<!-- normal -->
 	<text>A Rebel autonomous scout is exploring this beacon. You attempt to hide behind a nearby moon, but the ship finds you and begins its assault.</text>
