@@ -1,10 +1,12 @@
 local vter = mods.inferno.vter
 
 -- Force ships with integrated ballistics to only use one non-ballistic weapon
+local intBallisticWhitelist = {}
+intBallisticWhitelist.RECYCLER_CORE = true
 local function handle_integrated_ballistics(weapons, ship)
     local firstAmmoWeaponFound = false
     for weapon in vter(weapons) do
-        if weapon.powered and weapon.blueprint.missiles <= 0 then
+        if weapon.powered and weapon.blueprint.missiles <= 0 and not intBallisticWhitelist[weapon.blueprint.name] then
             if firstAmmoWeaponFound then
                 weapon.cooldown.first = 0
                 weapon.chargeLevel = 0
