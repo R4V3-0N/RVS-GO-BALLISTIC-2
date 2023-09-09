@@ -1,0 +1,4355 @@
+cooldown_bonus_caseless = 2
+
+weapon {
+    name: GB_AC_FLECHETTE_FRAG
+    type: BURST
+    title: Autocannon Mark I [Flechette]
+    short: AC I [F]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    speed = 50
+    shots = 1
+    breach = 2
+    damage.hull = 0
+    damage.system = 0
+    damage.crew = 0
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_FLECHETTE
+    icon: laser
+    stats_boost {
+        type: FLAT
+        amount: -1
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 25
+        animation: blood_effect
+    }
+    projectile {
+        texture: GB_shot_tiny_flechette
+    }
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1
+    type: LASER
+    title: Autocannon Mark I
+    short: AC I
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 1
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_CASELESS
+    type: LASER
+    title: Autocannon Mark I [Caseless]
+    short: AC I [CL]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 1
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 4
+    cost = 20
+    art: GB_Autocannon_1_CASELESS
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_HV
+    type: LASER
+    title: Autocannon Mark I [High Velocity]
+    short: AC I [HV]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 80% chance to not use ammo, 10% chance to cause a breach
+    speed = 80
+    shots = 1
+    breach = 2
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_HV_ENEMY
+    type: LASER
+    title: Autocannon Mark I [High Velocity]
+    short: AC I [HV]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    speed = 80
+    shots = 1
+    breach = 2
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_FREE
+    type: LASER
+    title: Autocannon Mark I [Recycler]
+    short: AC I [Re]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, requires 10 ammunition to fire but doesn't consume it.
+    shots = 1
+    breach = 0
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_FREE
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_HE
+    type: BURST
+    title: Autocannon Mark I [High Explosive]
+    short: AC I [HE]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 2
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_HE
+    icon: laser
+    projectile {
+        blueprint: GB_CRIT_LIST_AC_1_HE
+        texture: GB_shot_light_HE
+    }
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_HE_NOCRIT
+    type: LASER
+    title: Autocannon Mark I [High Explosive]
+    short: AC I [HE]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 1
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_HE
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_HE_CRIT
+    type: LASER
+    title: Autocannon Mark I [High Explosive]
+    short: AC I [HE]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 2
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_HE
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_EMP
+    type: LASER
+    title: Autocannon Mark I [EMP]
+    short: AC I [EMP]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 77% chance to not use ammo, 10% chance to cause a breach
+    speed = 80
+    shots = 1
+    breach = 1
+    damage.hull = 1
+    damage.system: -1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_emp
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_HEAT
+    type: LASER
+    title: Autocannon Mark I [Particle]
+    short: AC I [Part]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    damage.system = 2
+    damage.crew = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_HEAT
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_INCENDIARY
+    type: LASER
+    title: Autocannon Mark I [Incendiary]
+    short: AC I [I]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_Incendiary
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_FLECHETTE
+    type: BURST
+    title: Autocannon Mark I [Flechette]
+    short: AC I [F]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    speed = 60
+    shots = 1
+    breach = 2
+    damage.hull = 1
+    damage.system: -1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_FLECHETTE
+    icon: laser
+    stats_boost {
+        type: FLAT
+        amount: -1
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 25
+        animation: blood_effect
+    }
+    projectile {
+        texture: GB_shot_light_flechette
+    }
+    projectile {
+        blueprint: GB_AC_FLECHETTE_FRAG
+        texture: GB_shot_tiny_flechette
+    }
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_RAD
+    type: LASER
+    title: Autocannon Mark I [Rad]
+    short: AC I [R]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means. (FT: Warcrimes!)
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 3
+    damage.hull = 1
+    damage.crew = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_RAD
+    icon: laser
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+        animation: bio_poison
+    }
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+    }
+    stats_boost {
+        type: MULT
+        amount: 1.75
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+    }
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2
+    type: LASER
+    title: Autocannon Mark II
+    short: AC II
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 2
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_CASELESS
+    type: LASER
+    title: Autocannon Mark II [Caseless]
+    short: AC II [CL]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 2
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 4
+    cost = 40
+    art: GB_Autocannon_2_CASELESS
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_HV
+    type: LASER
+    title: Autocannon Mark II [High Velocity]
+    short: AC II [HV]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    speed = 80
+    shots = 1
+    breach = 4
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_HV_ENEMY
+    type: LASER
+    title: Autocannon Mark II [High Velocity]
+    short: AC II [HV]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    speed = 80
+    shots = 1
+    breach = 4
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_FREE
+    type: LASER
+    title: Autocannon Mark II [Recycler]
+    short: AC II [Re]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2_FREE
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_HE
+    type: BURST
+    title: Autocannon Mark II [High Explosive]
+    short: AC II [HE]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 2
+    damage.hull = 2
+    damage.crew = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2_HE
+    icon: laser
+    projectile {
+        blueprint: GB_CRIT_LIST_AC_2_HE
+        texture: GB_shot_medium_HE
+    }
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_HE_NOCRIT
+    type: LASER
+    title: Autocannon Mark II [High Explosive]
+    short: AC II [HE]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 2
+    damage.hull = 2
+    damage.crew = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2_HE
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_HE_CRIT
+    type: LASER
+    title: Autocannon Mark II [High Explosive]
+    short: AC II [HE]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 5
+    damage.hull = 4
+    damage.crew = 4
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2_HE
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_EMP
+    type: LASER
+    title: Autocannon Mark II [Electromagnetic Pulse]
+    short: AC II [EMP]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 73% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 2
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2_EMP
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_HEAT
+    type: LASER
+    title: Autocannon Mark II [Particle]
+    short: AC II [Part]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 1
+    damage.system = 4
+    damage.crew = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2_HEAT
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_INCENDIARY
+    type: LASER
+    title: Autocannon Mark II [Incendiary]
+    short: AC II [I]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 1
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2_INCENDIARY
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_FLECHETTE
+    type: BURST
+    title: Autocannon Mark II [Flechette]
+    short: AC II [F]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    speed = 60
+    shots = 1
+    breach = 3
+    damage.hull = 2
+    damage.system: -1
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2_FLECHETTE
+    icon: laser
+    stats_boost {
+        type: FLAT
+        amount: -1
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 25
+        animation: blood_effect
+    }
+    projectile {
+        texture: GB_shot_medium_flechette
+    }
+    projectile {
+        blueprint: GB_AC_FLECHETTE_FRAG
+        texture: GB_shot_tiny_flechette
+    }
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_RAD
+    type: LASER
+    title: Autocannon Mark II [Radiation]
+    short: AC II [Rad]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 4
+    damage.hull = 2
+    damage.crew = 1
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 40
+    art: GB_Autocannon_2_RAD
+    icon: laser
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 10
+        animation: bio_poison
+    }
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 10
+    }
+    stats_boost {
+        type: MULT
+        amount: 1.75
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 10
+    }
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3
+    type: LASER
+    title: Autocannon Mark III
+    short: AC III
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 4
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_CASELESS
+    type: LASER
+    title: Autocannon Mark III [Caseless]
+    short: AC III [Cl]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 4
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 4
+    cost = 60
+    art: GB_Autocannon_3_CASELESS
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_HV
+    type: LASER
+    title: Autocannon Mark III [High Velocity]
+    short: AC III [HV]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    speed = 80
+    shots = 1
+    breach = 7
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_HV_ENEMY
+    type: LASER
+    title: Autocannon Mark III [High Velocity]
+    short: AC III [HV]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    speed = 80
+    shots = 1
+    breach = 7
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_FREE
+    type: LASER
+    title: Autocannon Mark III [Recycler]
+    short: AC III [Re]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3_FREE
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_HE
+    type: BURST
+    title: Autocannon Mark III [High Explosive]
+    short: AC III [HE]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 4
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3_HE
+    icon: laser
+    stats_boost {
+        type: MULT
+        amount: 1.9
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+    }
+    stats_boost {
+        type: MULT
+        amount: -1
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+    }
+    projectile {
+        blueprint: GB_CRIT_LIST_AC_3_HE
+        texture: GB_shot_heavy_HE
+    }
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_HE_NOCRIT
+    type: LASER
+    title: Autocannon Mark III [High Explosive]
+    short: AC III [HE]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 4
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3_HE
+    icon: laser
+    stats_boost {
+        type: MULT
+        amount: 1.9
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+    }
+    stats_boost {
+        type: MULT
+        amount: -1
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+    }
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_HE_CRIT
+    type: LASER
+    title: Autocannon Mark III [High Explosive]
+    short: AC III [HE]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 10
+    damage.hull = 4
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3_HE
+    icon: laser
+    stats_boost {
+        type: MULT
+        amount: 1.9
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+    }
+    stats_boost {
+        type: MULT
+        amount: -1
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+    }
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_EMP
+    type: LASER
+    title: Autocannon Mark III [Electro-magnetic pulse]
+    short: AC III [EMP]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 62% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 4
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3_EMP
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_HEAT
+    type: LASER
+    title: Autocannon Mark III [Particle]
+    short: AC III [Part.]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 2
+    damage.hull = 0
+    damage.system = 6
+    damage.crew = 2
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3_HEAT
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_INCENDIARY
+    type: LASER
+    title: Autocannon Mark III [Incendiary]
+    short: AC III [I]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 2
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3_INCENDIARY
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_FLECHETTE
+    type: BURST
+    title: Autocannon Mark III [Flechette]
+    short: AC III [F]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    speed = 60
+    shots = 1
+    breach = 5
+    damage.hull = 3
+    damage.system: -1
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3_FLECHETTE
+    icon: laser
+    stats_boost {
+        type: FLAT
+        amount: -1
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 25
+        animation: blood_effect
+    }
+    projectile {
+        texture: GB_shot_heavy_flechette
+    }
+    projectile {
+        blueprint: GB_AC_FLECHETTE_FRAG
+        texture: GB_shot_tiny_flechette
+    }
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_RAD
+    type: LASER
+    title: Autocannon Mark III [Radiation]
+    short: AC III [R]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 6
+    damage.hull = 3
+    damage.crew = 2
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_3_RAD
+    icon: laser
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+        animation: bio_poison
+    }
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+    }
+    stats_boost {
+        type: MULT
+        amount: 1.75
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+    }
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+with {
+    name: GB_AC_4
+    type: LASER
+    title: Autocannon Mark IV
+    short: AC IV
+    description: A super heavy Autocannon that only ever was in limited production before the end of the war before being cancelled. Scarcely seen in the modern Universe.
+    tooltip: 1 shot 4 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    freeMissileChance = 65
+    breach = 4
+    damage.hull = 4
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_4
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+    weapon{
+        name_ext: _CASELESS
+        name += name_ext
+        title_ext: [Caseless]
+        title += " "
+        title += title_ext
+        short_ext: [CL]
+        short += " "
+        short += short_ext
+        rarity = 0
+        cooldown /=3
+        cooldown *=2
+        freeMissileChance /=3
+        freeMissileChance *=2
+    }
+    weapon{}
+}
+
+weapon {
+    name: GB_GAUSS_1
+    type: LASER
+    title: Gauss Rifle Mark I
+    short: Gauss I
+    description: One of the first mass drivers in service, capable of firing a shield piercing kinetic round with extreme precision.
+    tooltip: 1 shot 2 damage weapon, 75% chance to not use ammo, 30% chance to cause a breach, 20% chance to stun, pierces 2 shields, 25% more accurate
+    speed = 180
+    shots = 1
+    breach = 3
+    damage.hull = 2
+    pierce = 2
+    rarity = 0
+    power = 1
+    cooldown = 15
+    cost = 55
+    art: GB_Gauss_1
+    icon: laser
+    sounds.launch: {
+        GB_gaussLight1
+        GB_gaussLight2
+        GB_gaussLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_GAUSS_1_ENEMY
+    type: LASER
+    title: Gauss Rifle Mark I
+    short: Gauss I
+    description: One of the first mass drivers in service, capable of firing a shield piercing kinetic round with extreme precision.
+    tooltip: 1 shot 2 damage weapon, 75% chance to not use ammo, 30% chance to cause a breach, 20% chance to stun, pierces 2 shields, 25% more accurate
+    speed = 180
+    shots = 1
+    breach = 3
+    damage.hull = 2
+    pierce = 2
+    rarity = 0
+    power = 1
+    cooldown = 15
+    cost = 55
+    art: GB_Gauss_1
+    icon: laser
+    sounds.launch: {
+        GB_gaussLight1
+        GB_gaussLight2
+        GB_gaussLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_GAUSS_2
+    type: LASER
+    title: Gauss Rifle Mark II
+    short: Gauss II
+    description: This mass driver is capable of firing a shield piercing kinetic projectile capable of destroying targets with little assistance.
+    tooltip: 1 shot 3 damage weapon, 75% chance to not use ammo, 40% chance to cause a breach, 30% chance to stun, pierces 2 shields, 25% more accurate
+    speed = 180
+    shots = 1
+    breach = 4
+    damage.hull = 3
+    pierce = 2
+    rarity = 0
+    power = 2
+    cooldown = 17
+    cost = 70
+    art: GB_Gauss_2
+    icon: laser
+    sounds.launch: {
+        GB_gaussMedium1
+        GB_gaussMedium2
+        GB_gaussMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_GAUSS_2_LOOT
+    type: LASER
+    title: Gauss Rifle Mark II
+    short: Gauss II
+    description: Special loot weapon. See tooltip in the inventory to check the improvements over the base version.
+    tooltip: 1 shot 3 damage weapon, 75% chance to not use ammo, 80% chance to cause a breach, 30% chance to stun, pierces 2 shields, 25% more accurate
+    speed = 200
+    shots = 1
+    breach = 8
+    damage.hull = 3
+    pierce = 3
+    rarity = 0
+    power = 2
+    cooldown = 17
+    cost = 70
+    art: GB_Gauss_2_loot
+    icon: laser
+    sounds.launch: {
+        GB_gaussMedium1
+        GB_gaussMedium2
+        GB_gaussMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_GAUSS_2_ENEMY
+    type: LASER
+    title: Gauss Rifle Mark II
+    short: Gauss II
+    description: This mass driver is capable of firing a shield piercing kinetic projectile capable of destroying targets with little assistance.
+    tooltip: 1 shot 3 damage weapon, 75% chance to not use ammo, 40% chance to cause a breach, 30% chance to stun, pierces 2 shields, 25% more accurate
+    speed = 180
+    shots = 1
+    breach = 4
+    damage.hull = 3
+    pierce = 2
+    rarity = 0
+    power = 2
+    cooldown = 17
+    cost = 70
+    art: GB_Gauss_2
+    icon: laser
+    sounds.launch: {
+        GB_gaussMedium1
+        GB_gaussMedium2
+        GB_gaussMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_GAUSS_3
+    type: LASER
+    title: Gauss Rifle Mark III
+    short: Gauss III
+    description: A powerful shield piercing weapon of war capable of crippling ships with precise shots.
+    tooltip: 1 shot 4 damage weapon, 75% chance to not use ammo, 50% chance to cause a breach, 40% chance to stun, pierces 2 shields, 30% more accurate
+    speed = 180
+    shots = 1
+    breach = 5
+    damage.hull = 4
+    pierce = 2
+    rarity = 0
+    power = 3
+    cooldown = 20
+    cost = 80
+    art: GB_Gauss_3
+    icon: laser
+    sounds.launch: {
+        GB_gaussHeavy1
+        GB_gaussHeavy2
+        GB_gaussHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_GAUSS_3_ENEMY
+    type: LASER
+    title: Gauss Rifle Mark III
+    short: Gauss III
+    description: A powerful shield piercing weapon of war capable of crippling ships with precise shots.
+    tooltip: 1 shot 4 damage weapon, 75% chance to not use ammo, 50% chance to cause a breach, 40% chance to stun, pierces 2 shields, 30% more accurate
+    speed = 180
+    shots = 1
+    breach = 5
+    damage.hull = 4
+    pierce = 2
+    rarity = 0
+    power = 3
+    cooldown = 20
+    cost = 80
+    art: GB_Gauss_3
+    icon: laser
+    sounds.launch: {
+        GB_gaussHeavy1
+        GB_gaussHeavy2
+        GB_gaussHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_RAIL_1
+    type: LASER
+    title: Rail Gun Mark I
+    short: Rail Gun I
+    description: This rare heavy mass driver is capable of firing heavy shield piercing kinetic projectiles designed to maximize hull damage.
+    tooltip: 1 shot 2 damage weapon, double damage on systemless rooms, 75% chance to not use ammo, 40% chance to cause a breach, 30% chance to stun for 3 seconds, pierces 2 shields, 25% more accurate
+    speed = 180
+    shots = 1
+    breach = 4
+    damage.hull = 2
+    pierce = 2
+    rarity = 0
+    power = 2
+    cooldown = 14
+    cost = 70
+    art: GB_Railgun_1
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_RAIL_1_ENEMY
+    type: LASER
+    title: Rail Gun Mark I
+    short: Rail Gun I
+    description: This rare heavy mass driver is capable of firing heavy shield piercing kinetic projectiles designed to maximize hull damage.
+    tooltip: 1 shot 2 damage weapon, double damage on systemless rooms, 75% chance to not use ammo, 40% chance to cause a breach, 30% chance to stun for 3 seconds, pierces 2 shields, 25% more accurate
+    speed = 180
+    shots = 1
+    breach = 4
+    damage.hull = 2
+    pierce = 2
+    rarity = 0
+    power = 2
+    cooldown = 14
+    cost = 70
+    art: GB_Railgun_1
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_RAIL_2
+    type: LASER
+    title: Rail Gun Mark II
+    short: Rail Gun II
+    description: This rare heavy mass driver is capable of piercing even greater layers of shields, and is designed to maximize hull damage.
+    tooltip: 1 shot 3 damage weapon, double damage on systemless rooms, 75% chance to not use ammo, 50% chance to cause a breach, 30% chance to stun for 3 seconds, pierces 3 shields, 25% more accurate
+    speed = 180
+    shots = 1
+    breach = 5
+    damage.hull = 3
+    pierce = 3
+    rarity = 0
+    power = 3
+    cooldown = 16
+    cost = 75
+    art: GB_Railgun_2
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_RAIL_2_ENEMY
+    type: LASER
+    title: Rail Gun Mark II
+    short: Rail Gun II
+    description: This rare heavy mass driver is capable of piercing even greater layers of shields, and is designed to maximize hull damage.
+    tooltip: 1 shot 3 damage weapon, double damage on systemless rooms, 75% chance to not use ammo, 50% chance to cause a breach, 30% chance to stun for 3 seconds, pierces 3 shields, 25% more accurate
+    speed = 180
+    shots = 1
+    breach = 5
+    damage.hull = 3
+    pierce = 3
+    rarity = 0
+    power = 3
+    cooldown = 16
+    cost = 75
+    art: GB_Railgun_2
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_RAIL_3
+    type: LASER
+    title: Rail Gun Mark III
+    short: Rail Gun III
+    description: One of the heaviest mass drivers available in the Federation. Known for its absolutely devastating hull damage capabilities that can destroy lesser ships in a single blow.
+    tooltip: 1 shot 4 damage weapon, double damage on systemless rooms, 75% chance to not use ammo, 60% chance to cause a breach, 40% chance to stun for 3 seconds, pierces 4 shields, 30% more accurate
+    speed = 180
+    shots = 1
+    breach = 6
+    damage.hull = 4
+    pierce = 4
+    rarity = 0
+    power = 4
+    cooldown = 24
+    cost = 100
+    art: GB_Railgun_3
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_RAIL_3_ENEMY
+    type: LASER
+    title: Rail Gun Mark III
+    short: Rail Gun III
+    description: One of the heaviest mass drivers available in the Federation. Known for its absolutely devastating hull damage capabilities that can destroy lesser ships in a single blow.
+    tooltip: 1 shot 4 damage weapon, double damage on systemless rooms, 75% chance to not use ammo, 60% chance to cause a breach, 40% chance to stun for 3 seconds, pierces 4 shields, 30% more accurate
+    speed = 180
+    shots = 1
+    breach = 6
+    damage.hull = 4
+    pierce = 4
+    rarity = 0
+    power = 4
+    cooldown = 24
+    cost = 100
+    art: GB_Railgun_3
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_MG
+    type: BURST
+    title: Machine Gun
+    short: MG
+    description: This antiquated weapon is no longer capable of damaging the hulls of modern ships efficiently. It is, however, capable of harming crew, and can occationally inflict hull and system damage.
+    tooltip: 5 shots 15 crew damage weapon
+    shots = 5
+    damage.hull = 0
+    damage.crew = 1
+    pierce = 0
+    rarity = 0
+    power = 0
+    cooldown = 6
+    cost = 10
+    art: GB_Machinegun
+    icon: laser
+    projectile {
+        blueprint: GB_CRIT_LIST_MG
+        texture: GB_shot_light
+    }
+    sounds.launch: {
+        GB_machineGun1
+        GB_machineGun2
+        GB_machineGun3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_MG_NOCRIT
+    type: LASER
+    title: Machine Gun
+    short: MG
+    description: This weapon is an antiquated anti-ship weapon no longer capable of damaging the hulls of modern ships. They can however still hurt the crew inside those hulls.
+    tooltip: 5 shots 15 crew damage weapon
+    shots = 5
+    damage.hull = 0
+    damage.crew = 1
+    pierce = 0
+    rarity = 0
+    power = 0
+    cooldown = 6
+    cost = 10
+    art: GB_Machinegun
+    icon: laser
+    sounds.launch: {
+        detectiveShoot1
+        detectiveShoot2
+        detectiveShoot3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_MG_CRIT
+    type: LASER
+    title: Machine Gun
+    short: MG
+    description: This weapon is an antiquated anti-ship weapon no longer capable of damaging the hulls of modern ships. They can however still hurt the crew inside those hulls.
+    tooltip: 5 shots 15 crew damage weapon
+    shots = 5
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 0
+    cooldown = 6
+    cost = 10
+    art: GB_Machinegun
+    icon: laser
+    sounds.launch: {
+        detectiveShoot1
+        detectiveShoot2
+        detectiveShoot3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_HMG
+    type: BURST
+    title: Heavy Machine Gun
+    short: HMG
+    description: This antiquated weapon is no longer capable of damaging the hulls of modern ships efficiently. It is, however, capable of harming crew, and can occationally inflict hull and system damage.
+    tooltip: 3 shot 30 crew damage weapon, 10% chance to cause a breach, 10% chance to stun for 2 seconds
+    shots = 5
+    breach = 1
+    damage.hull = 0
+    damage.crew = 2
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 25
+    art: GB_Machinegun_Heavy
+    icon: laser
+    projectile {
+        blueprint: GB_CRIT_LIST_HMG
+        texture: GB_shot_light
+    }
+    sounds.launch: {
+        GB_machineGun1
+        GB_machineGun2
+        GB_machineGun3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_HMG_NOCRIT
+    type: LASER
+    title: Heavy Machine Gun
+    short: HMG
+    description: This weapon is an antiquated anti-ship weapon no longer capable of damaging the hulls of modern ships. They can however still hurt the crew inside those hulls.
+    tooltip: 3 shot 30 crew damage weapon, 10% chance to cause a breach, 10% chance to stun for 2 seconds
+    shots = 4
+    breach = 1
+    damage.hull = 0
+    damage.crew = 2
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 15
+    art: GB_Machinegun_Heavy
+    icon: laser
+    sounds.launch: {
+        detectiveShoot1
+        detectiveShoot2
+        detectiveShoot3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_HMG_CRIT
+    type: LASER
+    title: Heavy Machine Gun
+    short: HMG
+    description: This weapon is an antiquated anti-ship weapon no longer capable of damaging the hulls of modern ships. They can however still hurt the crew inside those hulls.
+    tooltip: 3 shot 30 crew damage weapon, 10% chance to cause a breach, 10% chance to stun for 2 seconds
+    shots = 4
+    breach = 1
+    damage.hull = 1
+    damage.crew = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 15
+    art: GB_Machinegun_Heavy
+    icon: laser
+    sounds.launch: {
+        detectiveShoot1
+        detectiveShoot2
+        detectiveShoot3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_GAUSS_AP
+    type: LASER
+    title: Anti-Personnel Gauss
+    short: AP Gauss
+    description: This weapon is a light anti-personnel weapon capable of taking pot shots at enemy crew with shield piercing kinetic strikes.
+    tooltip: 1 shot 30 crew damage weapon, 30% chance to cause a breach, 10% chance to stun, pierces 2 shields, 25% more accurate
+    speed = 180
+    shots = 1
+    breach = 3
+    damage.hull = 0
+    damage.crew = 2
+    pierce = 2
+    rarity = 0
+    power = 1
+    cooldown = 7
+    cost = 45
+    art: GB_AP_Gauss
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: RVS_SHOTGUN_HEAVY
+    type: BURST
+    title: Heavy Flak Gun Mark I
+    short: Heavy Flak I
+    description: Fires a blast of debris of various sizes across a random area doing up to 5 damage. Good at taking down shields but hard to aim.
+    tooltip: Fires a blast of debris of various sizes across a random area doing up to 5 damage.
+    speed = 24
+    shots = 1
+    breach = 2
+    damage.hull = 1
+    pierce = 0
+    rarity = 3
+    power = 2
+    cooldown = 17
+    cost = 77
+    art: rvs_shotgun_heavy
+    icon: flak
+    projectile {
+        texture: debris_large
+    }
+    projectile {
+        texture: debris_med
+    }
+    projectile {
+        texture: debris_small
+    }
+    projectile {
+        blueprint: RVS_DEBRIS_MASSIVE
+        texture: rvs_debris_massive
+    }
+    sounds.launch: {
+        flak
+    }
+    sounds.hit.ship: {
+        flakImpact1
+        flakImpact2
+        flakImpact3
+        flakImpact4
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: RVS_SHOTGUN_HEAVY_2
+    type: BURST
+    title: Heavy Flak Gun Mark II
+    short: Heavy Flak II
+    description: Fires a massive blast of debris of various sizes across a random area doing up to 11 damage. Good at taking down shields but hard to aim.
+    tooltip: Fires a blast of debris of various sizes across a random area doing up to 5 damage.
+    speed = 24
+    shots = 1
+    breach = 2
+    damage.hull = 1
+    pierce = 0
+    rarity = 4
+    power = 4
+    cooldown = 20
+    cost = 100
+    art: rvs_shotgun_heavy_2
+    icon: flak
+    projectile {
+        texture: debris_large
+    }
+    projectile {
+        texture: debris_med
+    }
+    projectile {
+        texture: debris_small
+    }
+    projectile {
+        blueprint: RVS_DEBRIS_MASSIVE
+        texture: rvs_debris_massive
+    }
+    sounds.launch: {
+        flak
+    }
+    sounds.hit.ship: {
+        flakImpact1
+        flakImpact2
+        flakImpact3
+        flakImpact4
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: RVS_DEBRIS_MASSIVE
+    type: BURST
+    title: Flak large debris
+    short: Flak large debris
+    description: YOU SHOULD NEVER SEE THIS
+    speed = 23
+    shots = 1
+    breach = 4
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    art: shotgun
+    icon: flak
+    sounds.launch: {
+        flak
+    }
+    sounds.hit.ship: {
+        flakImpact1
+        flakImpact2
+        flakImpact3
+        flakImpact4
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_MG_LOOT
+    type: BURST
+    title: 'Spray'n'Pray'
+    short: 'S.A.P.'
+    description: Name says it all, dakka-dakka-dakka-dakka-dakka-dakka
+    tooltip: Boss loot.
+    speed = 60
+    shots = 8
+    breach = 1
+    damage.hull = 1
+    rarity = 0
+    power = 0
+    cooldown = 30
+    cost = 80
+    art: GB_MG_loot
+    icon: laser
+    projectile {
+        texture: GB_shot_light
+    }
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_RAIL_ARTILLERY
+    type: LASER
+    title: Enemy Rail Gun Artillery
+    description: Enemy artillery weapon. Base cooldown: 40 seconds.
+    tooltip: Artillery: 1 shot 5 damage weapon, 80% chance to cause a breach, stuns for 3 seconds, pierces 5 shields, 25% more accurate
+    speed = 180
+    shots = 1
+    breach = 8
+    damage.hull = 5
+    pierce = 5
+    rarity = 0
+    cooldown = 40
+    art: GB_Railgun_Artillery
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: DRONE_AC_1
+    type: LASER
+    title: Drone Autocannon I
+    shots = 1
+    breach = 1
+    damage.hull = 1
+    rarity = 0
+    art: laser_burst_1
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull1
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: DRONE_AC_2
+    type: LASER
+    title: Drone Autocannon II
+    shots = 1
+    breach = 2
+    damage.hull = 2
+    rarity = 0
+    art: laser_burst_1
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull1
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: DRONE_AC_3
+    type: LASER
+    title: Drone Autocannon III
+    shots = 1
+    breach = 6
+    damage.hull = 3
+    rarity = 0
+    art: laser_burst_1
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull1
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE
+    type: LASER
+    title: Elite Autocannon Mark I
+    short: € AC I
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 2
+    damage.hull = 1
+    damage.crew = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 30
+    art: GB_Autocannon_1_Elite
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_CASELESS
+    type: LASER
+    title: Elite Autocannon Mark I [Caseless]
+    short: € AC I [CL]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 1
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 3
+    cost = 30
+    art: GB_Autocannon_1_Elite_CASELESS
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_HV
+    type: LASER
+    title: Elite Autocannon Mark I [High Velocity]
+    short: € AC I [HV]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 80% chance to not use ammo, 10% chance to cause a breach
+    speed = 95
+    shots = 1
+    breach = 2
+    damage.hull = 1
+    pierce = 1
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 30
+    art: GB_Autocannon_1_Elite_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_HV_ENEMY
+    type: LASER
+    title: Elite Autocannon Mark I [High Velocity]
+    short: € AC I [HV]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    speed = 80
+    shots = 1
+    breach = 2
+    damage.hull = 1
+    pierce = 1
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 30
+    art: GB_Autocannon_1_Elite_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_FREE
+    type: LASER
+    title: Elite Autocannon Mark I [Recycler]
+    short: € AC I [Re]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, requires 10 ammunition to fire but doesn't consume it.
+    shots = 1
+    breach = 1
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 30
+    art: GB_Autocannon_1_Elite_FREE
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_HE
+    type: BURST
+    title: Elite Autocannon Mark I [Squash head]
+    short: € AC I [HE]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 4
+    damage.hull = 1
+    damage.system = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 30
+    art: GB_Autocannon_1_Elite_HE
+    icon: laser
+    projectile {
+        blueprint: GB_CRIT_LIST_AC_1_ELITE_HE
+        texture: GB_shot_light_HE
+    }
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_HE_NOCRIT
+    type: LASER
+    title: Elite Autocannon Mark I [Squash head]
+    short: € AC I [HE]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 4
+    damage.hull = 1
+    damage.system = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 30
+    art: GB_Autocannon_1_Elite_HE
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_HE_CRIT
+    type: LASER
+    title: Elite Autocannon Mark I [Squash head]
+    short: € AC I [HE]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 6
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 30
+    art: GB_Autocannon_1_Elite_HE
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_EMP
+    type: LASER
+    title: Elite Autocannon Mark I [EMP]
+    short: € AC I [EMP]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 77% chance to not use ammo, 10% chance to cause a breach
+    speed = 80
+    shots = 1
+    breach = 1
+    damage.hull = 1
+    damage.system: -1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 30
+    art: GB_Autocannon_1_Elite_emp
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_HEAT
+    type: LASER
+    title: Elite Autocannon Mark I [Particle]
+    short: € AC I [Part]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    damage.system = 2
+    damage.crew = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 30
+    art: GB_Autocannon_1_Elite_HEAT
+    icon: laser
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_INCENDIARY
+    type: LASER
+    title: Elite Autocannon Mark I [Incendiary]
+    short: € AC I [I]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 30
+    art: GB_Autocannon_1_Elite_Incendiary
+    icon: laser
+    stats_boost {
+        type: SET
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+        animation: ultraburn_debuff
+    }
+    stats_boost {
+        type: MULT
+        amount: 1.5
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+    }
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_FLECHETTE
+    type: BURST
+    title: Elite Autocannon Mark I [Flechette]
+    short: € AC I [F]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    speed = 60
+    shots = 1
+    breach = 2
+    damage.hull = 1
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 20
+    art: GB_Autocannon_1_Elite_FLECHETTE
+    icon: laser
+    stats_boost {
+        type: FLAT
+        amount: -1
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 25
+        animation: blood_effect
+    }
+    projectile {
+        texture: GB_shot_light_flechette
+    }
+    projectile {
+        blueprint: GB_AC_FLECHETTE_FRAG
+        texture: GB_shot_tiny_flechette
+    }
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_1_ELITE_RAD
+    type: LASER
+    title: Elite Autocannon Mark I [Rad]
+    short: € AC I [R]
+    description: The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means. (FT: Warcrimes!)
+    tooltip: 1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach
+    shots = 1
+    breach = 3
+    damage.hull = 1
+    damage.crew = 2
+    pierce = 0
+    rarity = 0
+    power = 1
+    cooldown = 6
+    cost = 30
+    art: GB_Autocannon_1_Elite_RAD
+    icon: laser
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+        animation: bio_poison
+    }
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+    }
+    stats_boost {
+        type: MULT
+        amount: 1.75
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+    }
+    sounds.launch: {
+        GB_cannonLight1
+        GB_cannonLight2
+        GB_cannonLight3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE
+    type: LASER
+    title: Elite Autocannon Mark II
+    short: € AC II
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 4
+    damage.hull = 2
+    damage.crew = 1
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_CASELESS
+    type: LASER
+    title: Elite Autocannon Mark II [Caseless]
+    short: € AC II [CL]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 2
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 3
+    cost = 60
+    art: GB_Autocannon_2_Elite_CASELESS
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_HV
+    type: LASER
+    title: Elite Autocannon Mark II [High Velocity]
+    short: € AC II [HV]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    speed = 80
+    shots = 1
+    breach = 4
+    damage.hull = 2
+    pierce = 1
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_HV_ENEMY
+    type: LASER
+    title: Elite Autocannon Mark II [High Velocity]
+    short: € AC II [HV]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    speed = 80
+    shots = 1
+    breach = 4
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_FREE
+    type: LASER
+    title: Elite Autocannon Mark II [Recycler]
+    short: € AC II [Re]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite_FREE
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_HE
+    type: BURST
+    title: Elite Autocannon Mark II [Squash Head]
+    short: € AC II [HE]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 5
+    damage.hull = 2
+    damage.system = 1
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite_HE
+    icon: laser
+    projectile {
+        blueprint: GB_CRIT_LIST_AC_2_ELITE_HE
+        texture: GB_shot_medium_HE
+    }
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_HE_NOCRIT
+    type: LASER
+    title: Elite Autocannon Mark II [Squash Head]
+    short: € AC II [HE]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 5
+    damage.hull = 2
+    damage.system = 1
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite_HE
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_HE_CRIT
+    type: LASER
+    title: Elite Autocannon Mark II [Squash Head]
+    short: € AC II [HE]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 8
+    damage.hull = 4
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite_HE
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_EMP
+    type: LASER
+    title: Elite Autocannon Mark II [Electromagnetic Pulse]
+    short: € AC II [EMP]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 73% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 2
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite_EMP
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_HEAT
+    type: LASER
+    title: Elite Autocannon Mark II [Particle]
+    short: € AC II [Part]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 1
+    damage.system = 4
+    damage.crew = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite_HEAT
+    icon: laser
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_INCENDIARY
+    type: LASER
+    title: Elite Autocannon Mark II [Incendiary]
+    short: € AC II [I]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 1
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite_INCENDIARY
+    icon: laser
+    stats_boost {
+        type: SET
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+        animation: ultraburn_debuff
+    }
+    stats_boost {
+        type: MULT
+        amount: 1.5
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+    }
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_FLECHETTE
+    type: BURST
+    title: Elite Autocannon Mark II [Flechette]
+    short: € AC II [F]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    speed = 60
+    shots = 1
+    breach = 3
+    damage.hull = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite_FLECHETTE
+    icon: laser
+    stats_boost {
+        type: FLAT
+        amount: -1
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 25
+        animation: blood_effect
+    }
+    projectile {
+        texture: GB_shot_medium_flechette
+    }
+    projectile {
+        blueprint: GB_AC_FLECHETTE_FRAG
+        texture: GB_shot_tiny_flechette
+    }
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_2_ELITE_RAD
+    type: LASER
+    title: Elite Autocannon Mark II [Radiation]
+    short: € AC II [Rad]
+    description: The standard Autocannon of the Federation during its founding. Outdated but still effective.
+    tooltip: 1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun
+    shots = 1
+    breach = 4
+    damage.hull = 2
+    damage.crew = 2
+    pierce = 0
+    rarity = 0
+    power = 2
+    cooldown = 6
+    cost = 60
+    art: GB_Autocannon_2_Elite_RAD
+    icon: laser
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 10
+        animation: bio_poison
+    }
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 10
+    }
+    stats_boost {
+        type: MULT
+        amount: 1.75
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 10
+    }
+    sounds.launch: {
+        GB_cannonMedium1
+        GB_cannonMedium2
+        GB_cannonMedium3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE
+    type: LASER
+    title: Elite Autocannon Mark III
+    short: € AC III
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 6
+    damage.hull = 3
+    damage.crew = 1
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_CASELESS
+    type: LASER
+    title: Elite Autocannon Mark III [Caseless]
+    short: € AC III [Cl]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 4
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 3
+    cost = 80
+    art: GB_Autocannon_3_Elite_CASELESS
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_HV
+    type: LASER
+    title: Elite Autocannon Mark III [High Velocity]
+    short: € AC III [HV]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    speed = 95
+    shots = 1
+    breach = 7
+    damage.hull = 3
+    pierce = 1
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_HV_ENEMY
+    type: LASER
+    title: Elite Autocannon Mark III [High Velocity]
+    short: € AC III [HV]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    speed = 95
+    shots = 1
+    breach = 7
+    damage.hull = 3
+    pierce = 1
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite_HV
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_FREE
+    type: LASER
+    title: Elite Autocannon Mark III [Recycler]
+    short: € AC III [Re]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite_FREE
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_HE
+    type: BURST
+    title: Elite Autocannon Mark III [Squash Head]
+    short: € AC III [HE]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 8
+    damage.hull = 3
+    damage.system = 1
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite_HE
+    icon: laser
+    projectile {
+        blueprint: GB_CRIT_LIST_AC_3_ELITE_HE
+        texture: GB_shot_heavy_HE
+    }
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_HE_NOCRIT
+    type: LASER
+    title: Elite Autocannon Mark III [Squash Head]
+    short: € AC III [HE]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 8
+    damage.hull = 3
+    damage.system = 1
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite_HE
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_HE_CRIT
+    type: LASER
+    title: Elite Autocannon Mark III [Squash Head]
+    short: € AC III [HE]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 10
+    damage.hull = 6
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite_HE
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_EMP
+    type: LASER
+    title: Elite Autocannon Mark III [Electro-magnetic pulse]
+    short: € AC III [EMP]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 62% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 4
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite_EMP
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_HEAT
+    type: LASER
+    title: Elite Autocannon Mark III [Particle]
+    short: € AC III [Part.]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 2
+    damage.hull = 0
+    damage.system = 6
+    damage.crew = 2
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite_HEAT
+    icon: laser
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_INCENDIARY
+    type: LASER
+    title: Elite Autocannon Mark III [Incendiary]
+    short: € AC III [I]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 2
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite_INCENDIARY
+    icon: laser
+    stats_boost {
+        type: SET
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+        animation: ultraburn_debuff
+    }
+    stats_boost {
+        type: MULT
+        amount: 1.5
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 5
+    }
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_FLECHETTE
+    type: BURST
+    title: Elite Autocannon Mark III [Flechette]
+    short: € AC III [F]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    speed = 60
+    shots = 1
+    breach = 5
+    damage.hull = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite_FLECHETTE
+    icon: laser
+    stats_boost {
+        type: FLAT
+        amount: -1
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 25
+        animation: blood_effect
+    }
+    projectile {
+        texture: GB_shot_heavy_flechette
+    }
+    projectile {
+        blueprint: GB_AC_FLECHETTE_FRAG
+        texture: GB_shot_tiny_flechette
+    }
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+
+weapon {
+    name: GB_AC_3_ELITE_RAD
+    type: LASER
+    title: Elite Autocannon Mark III [Radiation]
+    short: € AC III [R]
+    description: The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.
+    tooltip: 1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun
+    shots = 1
+    breach = 6
+    damage.hull = 3
+    damage.crew = 3
+    pierce = 0
+    rarity = 0
+    power = 3
+    cooldown = 6
+    cost = 80
+    art: GB_Autocannon_3_Elite_RAD
+    icon: laser
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+        animation: bio_poison
+    }
+    stats_boost {
+        type: MULT
+        amount: 0.33
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+    }
+    stats_boost {
+        type: MULT
+        amount: 1.75
+        impacts_self: true
+        ships: ALL
+        crew: ALL
+        duration = 15
+    }
+    sounds.launch: {
+        GB_cannonHeavy1
+        GB_cannonHeavy2
+        GB_cannonHeavy3
+    }
+    sounds.hit.ship: {
+        hitHull2
+        hitHull3
+    }
+    sounds.hit.shield: {
+        hitShield1
+        hitShield2
+        hitShield3
+    }
+    sounds.miss: {
+        miss
+    }
+}
+

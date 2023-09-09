@@ -1502,8 +1502,49 @@ Post update content might change these to "Federation"/Elite versions instead wh
 
 
 
-
-
+<!--
+◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+								AUTO BLUEPRINT THINGY THINK OF BETTER TITLE LATER
+◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+-->
+<blueprintList name="RVS_LIST_SHIPS_GENERIC"> <!-- Meant to appear as a multiracial generic list for events like distress events that is no race specifically -->
+	<name>MU_CIVILIAN_SCOUT</name>
+	<name>MU_CIVILIAN_OUTRIDER</name>
+	<name>MU_CIVILIAN_HARVESTER</name>
+	<name>MU_CIVILIAN_SHUTTLE</name>
+	<name>MU_CIVILIAN_INVESTIGATOR</name>
+	<name>MU_CIVILIAN_TRANSPORT</name>
+	<!--<name>MU_MILITIA_SCOUT</name>
+	<name>MU_MILITIA_OUTRIDER</name>
+	<name>MU_MILITIA_FIGHTER</name>
+	<name>MU_MILITIA_ESCORT</name>-->
+	<name>MU_ENGI_SCOUT</name>
+	<name>MU_ENGI_BOMBER</name>
+	<name>MU_ENGI_OUTRIDER</name>
+	<name>MU_ENGI_FIGHTER</name>
+	<name>MU_ENGI_INVESTIGATOR</name>
+	<name>MU_ENGI_PROTECTOR</name>
+	<name>MU_ZOLTAN_SCOUT</name>
+	<name>MU_ZOLTAN_FIGHTER</name>
+	<name>MU_ZOLTAN_BOMBER</name>
+	<name>MU_ZOLTAN_INSTIGATOR</name>
+	<name>MU_ZOLTAN_TRANSPORT</name>
+	<name>MU_ZOLTAN_ESCORT</name>
+	<name>MU_ROCK_SCOUT</name>
+	<name>MU_ROCK_OUTRIDER</name>
+	<name>MU_ROCK_FIGHTER</name>
+	<name>MU_ROCK_INTERCEPTOR</name>
+	<name>MU_ROCK_SKIRMISHER</name>
+	<name>MU_ROCK_PROTECTOR</name>
+	<name>MU_ROCK_TRANSPORT</name>
+	<name>MU_ORCHID_SCOUT</name>
+	<name>MU_ORCHID_FIGHTER</name>
+	<name>MU_ORCHID_OUTRIDER</name>
+	<name>MU_ORCHID_BOMBARD</name>
+	<name>MU_ORCHID_TRANSPORT</name>
+</blueprintList>
 
 <!--
 ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
@@ -1526,11 +1567,11 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<maxSector>7</maxSector>-->
 	<systemList>
 		<cloaking power="1" max="3" room="3" start="true" />
-		<engines power="3" max="8" room="6" start="true" />
+		<engines power="2" max="4" room="6" start="true" />	<!-- R4: 2023.08.27 balanced more around MV, reduced from max 6, intended to co-operate with Julks LUA engine rebuffer -->
 		<medbay power="1" max="2" room="1" start="false" />
 		<oxygen power="1" max="2" room="2" start="true" />
 		<pilot power="2" max="3" room="0" start="true" />
-		<shields power="2" max="5" room="5" start="false" />
+		<shields power="2" max="5" room="5" start="false" />	<!-- R4: 2023.08.27 max of 5 leaves it at 2 shields and a buffer as its a stealth ship -->
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
@@ -1539,7 +1580,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<droneList drones="0" count="0" />
 	<health amount="8" />
 	<maxPower amount="28" />
-	<crewCount amount="2" max="4" class="human_soldier" />
+	<crewCount amount="2" max="4" class="human_soldier" />	<!-- R4: 2023.08.27 maybe should add some elite feds to this list? -->
 	<boardingAI>sabotage</boardingAI>
 	<aug name="SYSTEM_CASING_NEW" />
 </shipBlueprint>

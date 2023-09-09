@@ -24,6 +24,7 @@ FRONTIER SECTOR
 -->
 <sectorDescription name="SECTOR_FRONTIER_SEMI_UNIQUE" unique="false">
 	<nameList>
+		<!--
 		<name>Neutral Sector</name>
 		<name>Neutral Colonies</name>
 		<name>Neutral Space</name>
@@ -42,7 +43,7 @@ FRONTIER SECTOR
 		<name>Neutral Outreaches</name>
 		<name>Neutral Parts</name>
 		<name>Neutral Frontier</name>
-		<!--
+		-->
 		<name>The Frontier</name>
 		
 		<name>The Outer Frontier</name>
@@ -60,7 +61,6 @@ FRONTIER SECTOR
 		<name>New Worlds</name>
 		<name>New Systems</name>
 		<name>New Colonies</name>
-		-->
 	</nameList>
 	<trackList>
 		<track>voyager</track>
@@ -125,8 +125,8 @@ FRONTIER SECTOR
 	<event name="FILLER_LIST" min="999" max="999"/>
 	-->
 	
-	<event name="RVS_FRONTIER_CRYSTAL_RUIN" min="1" max="1"/>
-	<event name="RVS_FRONTIER_AETHER_RUIN" min="1" max="1"/>
+	<event name="RVS_FRONTIER_CRYSTAL_RUIN" min="1" max="1"/>	<!-- NEBULA -->
+	<event name="RVS_FRONTIER_AETHER_RUIN" min="1" max="1"/>	<!-- NEBULA -->
 	
 	<event name="MV_TRAVELER" min="1" max="2"/>
 	<event name="SYLVAN" min="0" max="1"/>
@@ -136,9 +136,9 @@ FRONTIER SECTOR
 	
 	<event name="RVS_ITEMS_FRONTIER" min="3" max="4"/>			<!-- WIP -->
 	<event name="RVS_NEUTRAL_FRONTIER" min="4" max="5"/>		<!-- TO DO -->
-	<event name="RVS_DISTRESS_FRONTIER" min="2" max="3"/>		<!-- TO DO -->
+	<event name="RVS_DISTRESS_FRONTIER" min="1" max="3"/>		<!-- TO DO -->
 	<event name="RVS_QUEST_FRONTIER" min="1" max="1"/>			<!-- TO DO -->
-	
+	<event name="RVS_FRONTIER_NEBULA" min="5" max="7"/>			<!-- WIP -->
 	<event name="RVS_HOSTILE_FRONTIER" min="3" max="7"/>		<!-- WIP-->
 	
 	<event name="PIRACY_LIST" min="1" max="2"/>
@@ -157,11 +157,15 @@ FRONTIER SECTOR
 	<text id="finish_beacon"/>
 	<choice hidden="true">
 		<text>Explore.</text>
-		<event load="EXIT_LIST"/>
+		<event>
+    		<loadEvent>EXIT_LIST</loadEvent>
+		</event>
 	</choice>
 	<choice hidden="true">
 		<text>Check the storage.</text>
-		<event load="STORAGE_CHECK"/>
+		<event>
+    		<loadEvent>STORAGE_CHECK</loadEvent>
+		</event>
 	</choice>
 	<choice hidden="true">
 		<text>Do nothing.</text>
@@ -189,7 +193,9 @@ FRONTIER SECTOR
 	<text>Emerging from your jump, you find yourself in the embrace of a pristine star system, still untouched by the tide of colonists that sweep through this sector. The ethereal beauty of this unspoiled expanse is a fleeting treasure you know won't remain hidden for long. Before you lies a mineral-rich ring, its untouched splendor encircling a majestic gas giant, a sight rarely seen in the reaches of space you traverse but one that tempts you to spoil it.</text>
 	<choice hidden="true">
 		<text>Attempt to harvest the ring.</text>
-		<event load="RVS_LIST_FRONTIER_RING"/>
+		<event>
+    		<loadEvent>RVS_LIST_FRONTIER_RING</loadEvent>
+		</event>
 	</choice>
 	<choice hidden="true" req="LIST_BEAM_DRONES">
 		<text>(Beam Drones) Attempt to harvest the ring.</text>
@@ -207,7 +213,9 @@ FRONTIER SECTOR
 			<text>Opting to momentarily set aside the allure of riches, you choose instead to focus on your ship's upkeep. Against the backdrop of the mineral-rich ring's beauty, you take a moment to appreciate the untouched serenity of the cosmos. The interplay of particles becomes a soothing reminder of the universe's majesty, offering a respite from the clamor of ambition as our FTL drive hums in the background as it charges.</text>
 			<choice hidden="true">
 				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
+				<event>
+    				<loadEvent>STORAGE_CHECK</loadEvent>
+				</event>
 			</choice>
 			<choice hidden="true">
 				<text>Do nothing.</text>
@@ -232,244 +240,7 @@ FRONTIER SECTOR
 	<text>Emerging from your jump, you find yourself amidst a remarkable tableau. A lush planet stretches before you, transformed into a testament of unity. Alien races, once estranged, now work together, their ships repurposed into temporary shelters and structures within their budding settlements. Various alien races such as the Orchids, Rockmen, Aquarians, Slugs, and Humans have gathered here and call this land their home, a rare and heartening sight in a universe often marked by strife.&#10;&#10;You are left to wonder if it is a fleeting collaboration or perhaps it may hold the answers to a more peaceful universe. The latter may hold some merit, as the settlers have offered an invitation to land and join them for some freshly made pastries and a small helping of left over scrap materials from their ships' conversions.</text>
 </event>
 
-<event name="ASTEROID_REFINERY" unique="true">
-	<text>A small Union refinery is operating away from all the asteroids. Though they mostly just process raw ores, you can probably pay them to refine some of your scrap.</text>
-	<ship load="SHIP_UNION_STATION" hostile="false"/>
-	<choice>
-		<text>Pay them to create a weapon.</text>
-		<event>
-			<text>"Bit of an unconventional request, but we appreciate the donation. We'll see what we can do."</text>
-			<item_modify>
-				<item type="scrap" min="-45" max="-60"/>
-			</item_modify>
-			<weapon name="RANDOM"/>
-		</event>
-	</choice>
-	<choice>
-		<text>Pay them to create an augment.</text>
-		<event>
-			<text>"Bit of an unconventional request, but we appreciate the donation. We'll see what we can do."</text>
-			<item_modify>
-				<item type="scrap" min="-35" max="-50"/>
-			</item_modify>
-			<augment name="RANDOM"/>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Attack the refinery!</text>
-		<event>
-			<text>"Wait wait! What did we do?!" You mute the civilians and open fire.</text>
-			<ship hostile="true"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event load="MORALITY_UPDATE_GENERAL_FIGHT"/>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Ignore the refinery.</text>
-		<event>
-			<text>There likely isn't anything good to come out of exploring this place. Let's move on.</text>
-			<choice>
-				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
-			</choice>
-			<choice>
-				<text>Do nothing.</text>
-				<event/>
-			</choice>
-		</event>
-	</choice>
-</event>
 
-<event name="ASTEROID_CACHE" unique="true">
-	<text>Unfortunately, the beacon here has been engulfed by an intense swarm of asteroids. You're about to prepare to leave when you notice several radar blips. An artificial object, hollow, is drifting amongst the rocks. If you had to guess, it's likely a supply cache.</text>
-	<environment type="asteroid"/>
-	<choice hidden="true">
-		<text>Raid the cache.</text>
-		<event load="ASTEROID_CACHE_OPEN"/>
-	</choice>
-	<choice hidden="true">
-		<text>We're already getting pelted. We should just leave.</text>
-		<event>
-			<text>Too risky trying to access the cache. You distance yourself away from the swarm of asteroids.</text>
-			<choice>
-				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
-			</choice>
-			<choice>
-				<text>Do nothing.</text>
-				<event/>
-			</choice>
-		</event>
-	</choice>
-</event>
-<eventList name="ASTEROID_CACHE_OPEN">
-	<event>
-		<text>You take some damage trying to open the cache, but fortunately it's nothing too major. Inside, it seems it's mostly drone parts and schematics. You don't have time to pull apart the whole thing, but you do take back an impressive haul.</text>
-		<damage amount="3"/>
-		<drone name="RANDOM"/>
-		<autoReward level="HIGH">droneparts_only</autoReward>
-	</event>
-	<event>
-		<text>You make it to the cache without a scratch. Inside, it seems it's mostly drone parts and schematics. You don't have time to pull apart the whole thing, but you do take back an impressive haul.</text>
-		<drone name="RANDOM"/>
-		<autoReward level="HIGH">droneparts_only</autoReward>
-	</event>
-	<event>
-		<text>You take some damage trying to open the cache, but fortunately it's nothing too major. Inside, it seems it's mostly ammo and weapons. You don't have time to pull apart the whole thing, but you do take back an impressive haul.</text>
-		<damage amount="3"/>
-		<weapon name="RANDOM"/>
-		<autoReward level="HIGH">missiles_only</autoReward>
-	</event>
-	<event>
-		<text>You make it to the cache without a scratch. Inside, it seems it's mostly ammo and weapons. You don't have time to pull apart the whole thing, but you do take back an impressive haul.</text>
-		<weapon name="RANDOM"/>
-		<autoReward level="HIGH">missiles_only</autoReward>
-	</event>
-	<event>
-		<text>You take some damage trying to open the cache, but fortunately it's nothing too major. Inside, it seems it's mostly fuel and augments. You don't have time to pull apart the whole thing, but you do take back an impressive haul.</text>
-		<damage amount="3"/>
-		<augment name="RANDOM"/>
-		<autoReward level="HIGH">fuel_only</autoReward>
-	</event>
-	<event>
-		<text>You make it to the cache without a scratch. Inside, it seems it's mostly fuel and augments. You don't have time to pull apart the whole thing, but you do take back an impressive haul.</text>
-		<augment name="RANDOM"/>
-		<autoReward level="HIGH">fuel_only</autoReward>
-	</event>
-</eventList>
-
-<event name="ASTEROID_DEADPLATFORM" unique="true">
-	<text>A rather large mining platform has been embedded on the side of a hollowed-out asteroid. It's not returning any hails and shows no signs of activity, but you aren't sure just how long it has been abandoned, or for what reasons.</text>
-	<choice hidden="true">
-		<text>Board the platform.</text>
-		<event load="ASTEROID_DEADPLATFORM_BOARD"/>
-	</choice>
-	<choice hidden="true">
-		<text>Ignore the platform.</text>
-		<event>
-			<text>There likely isn't anything good to come out of exploring this place. Let's move on.</text>
-			<choice>
-				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
-			</choice>
-			<choice>
-				<text>Do nothing.</text>
-				<event/>
-			</choice>
-		</event>
-	</choice>
-</event>
-<eventList name="ASTEROID_DEADPLATFORM_BOARD">
-	<event>
-		<text>You land on the platform and move to investigate, when a pirate vessel appears from behind the asteroid! It was using the platform as a trap!</text>
-		<environment type="asteroid"/>
-		<ship load="SHIP_PIRATE_ALL" hostile="true"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="COMBAT_CHECK"/>
-		</choice>
-	</event>
-	<event>
-		<text>The platform is more battered than you originally thought. The shield generator is running on fumes, and the crew are long since gone. You aren't sure why they left, but a substantial amount of fuel is left over.</text>
-		<autoReward level="HIGH">fuel</autoReward>
-	</event>
-	<event>
-		<text>You step aboard the station only to find a Rockman, a former resident of the platform, locked in the cargo bay. He's terrified when you open the doors, but you manage to calm him. He explains that a pirate raid slaughtered the crew, and that he was the only survivor.</text>
-		<crewMember amount="1" class="rock"/>
-	</event>
-	<event>
-		<text>You board the station only to notice the shield generator is still functional. You strip it of parts and use them to upgrade your own shields, though you're uncertain what led to the station being abandoned.</text>
-		<upgrade amount="1" system="shields"/>
-	</event>
-</eventList>
-
-<event name="ASTEROID_HURTMINER" unique="true">
-	<text>It seems another ship is exploring the beacon through the dense asteroid field. However, moments after you spot them, a large asteroid strikes their ship, crippling their engines and sending them flying!</text>
-	<environment type="asteroid"/>
-	<ship load="SHIP_GENERIC" hostile="false"/>
-	<choice hidden="true">
-		<text>Try to rescue the civilians.</text>
-		<event load="ASTEROID_HURTMINER_HELP"/>
-	</choice>
-	<choice hidden="true">
-		<text>Attempt to salvage some of the wreckage from the collision.</text>
-		<event load="ASTEROID_HURTMINER_STEAL"/>
-	</choice>
-	<choice hidden="true" req="pilot" lvl="2">
-		<text>(Upg. Piloting) Use your advanced auto-pilot to correct their trajectory.</text>
-		<event load="ASTEROID_HURTMINER_HELP_GOOD"/>
-	</choice>
-	<choice hidden="true" req="BLUELIST_ARM">
-		<text>(Arm Upgrade) Use your arm to correct their trajectory.</text>
-		<event>
-			<text>You latch onto the ship and pull them out of the path of the larger asteroids. You take a little bit of a beating, but the captain is very grateful for your help and, considering his ship is totaled, he offers to help you instead.</text>
-			<crewMember amount="1" pilot="2"/>
-			<damage amount="3"/>
-		</event>
-	</choice>
-	<choice>
-		<text>Ignore the ship.</text>
-		<event>
-			<text>You're not willing to put yourself through the same risk.</text>
-			<choice>
-				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
-			</choice>
-			<choice>
-				<text>Do nothing.</text>
-				<event/>
-			</choice>
-		</event>
-	</choice>
-</event>
-<eventList name="ASTEROID_HURTMINER_HELP_GOOD">
-	<event>
-		<text>You reach the civilian ship using some cables and manage to correct their trajectory just in time to avoid collision. Their ship is toast, but you convince them to come with you until you can transport them to a safe location. One of them offers to remain behind to help you.</text>
-		<crewMember amount="1"/>
-	</event>
-	<event>
-		<text>You reach the civilian ship using some cables and manage to correct their trajectory just in time to avoid collision. Their ship is heavily beaten up but they insist they'll be fine. They pay you for saving them.</text>
-		<autoReward level="MED">stuff</autoReward>
-	</event>
-</eventList>
-<eventList name="ASTEROID_HURTMINER_HELP">
-	<event>
-		<text>You chase after the civilians, but several more asteroids strike your hull. You manage to reach their ship - just as it collides with a massive asteroid, obliterating it entirely. You pull away in time, but there's nothing to do but pick up some of the salvage and get out.</text>
-		<autoReward level="LOW">scrap_only</autoReward>
-		<damage amount="4"/>
-	</event>
-	<event>
-		<text>You reach the civilian ship and using some cables manage to correct their trajectory just in time to avoid collision. Their ship is toast, but you convince them to come with you until you can transport them to a safe location. One of them offers to remain behind to help you.</text>
-		<crewMember amount="1"/>
-	</event>
-	<event>
-		<text>You reach the civilian ship and using some cables manage to correct their trajectory just in time to avoid collision. Their ship is heavily beaten up but they insist they'll be fine. They pay you for saving them.</text>
-		<autoReward level="MED">stuff</autoReward>
-	</event>
-</eventList>
-<eventList name="ASTEROID_HURTMINER_STEAL">
-	<event>
-		<text>You move closer to try and pick up some of the scrap metal, but it seems the ship has corrected its trajectory on its own. They don't take very kindly to you trying to screw them over, and open fire!</text>
-		<autoReward level="MED">stuff</autoReward>
-		<enemyDamage amount="3" system="engines" effect="breach"/>
-		<ship hostile="true"/>
-		<choice hidden="true">
-			<text>Continue...</text>
-			<event load="COMBAT_CHECK"/>
-		</choice>
-	</event>
-	<event>
-		<text>You move closer to try and pick up some of the scrap metal, but it seems the ship has corrected its trajectory on its own. "Damn Renegades! All you care about is scrap! Don't think we won't tell the Rebels about this!"</text>
-		<autoReward level="MED">stuff</autoReward>
-		<modifyPursuit amount="1"/>
-	</event>
-	<event>
-		<text>The civilian ship spirals away, crashing into a much larger asteroid. Nothing else disturbs you as you collect the wreckage.</text>
-		<autoReward level="HIGH">stuff</autoReward>
-	</event>
-</eventList>
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -482,71 +253,73 @@ FRONTIER SECTOR
 
 <eventList name="RVS_STORELIST_FRONTIER">
 	<event load="RVS_STORE_FRONTIER_NEUTRAL_ENFORCED"/>
-	<event load=""/>
-	<event load=""/>
-	<event load=""/>
-	<event load=""/>
+
+	
 </eventList>
 
 <event name="RVS_STORE_FRONTIER_NEUTRAL_ENFORCED">
-  <text>The space station here is of extraordinary size, a marvel of engineering. It appears to function as a permanent orbital habitat. You consider docking here for some well-deserved respite and to browse the stores. However, you catch the familiar orange hue of a Rebel ship comes into view, already docked at the station. An automated transmission interrupts your thoughts: "You have entered a no-fire zone. Weapon discharge will not be tolerated." It seems that you shouldn’t find any trouble here, yet the prospect of sharing the same space with a Rebel ship leaves you feeling conflicted.</text>
-  <choice hidden="true">
-    <text>Dock at the station to trade and ignore the Rebel.</text>
-    <event>
-      <store>STORE_STANDARD</store>      <!-- Place holder store. Is STORE_STANDARD even a thing in MV? -->
-      <text>You secure your ship at the station, situated adjacent to a bustling trade depot. You commence your inspection of the array of valuable technologies on offer for purchase.</text>
-    </event>
-  </choice>
-  <choice hidden="true">
-    <text>Attack the Rebel.</text>
-    <event load="RVS_STORE_FRONTIER_NEUTRAL_ATTACK"/>
-  </choice>
-  <choice hidden="true">
-    <text>Avoid the station.</text>
-    <event>
-      <text>You decide to pass on docking at the station and decide to do something else.</text>
-      <choice hidden="true">
-        <text>Do something on-board the ship.</text>
-        <event load="STORAGE_CHECK"/>
-      </choice>
-      <choice hidden="true">
-        <text>Do nothing.</text>
-      </choice>
-    </event>
-  </choice>
+	<text>The space station here is of extraordinary size, a marvel of engineering. It appears to function as a permanent orbital habitat. You consider docking here for some well-deserved respite and to browse the stores. However, you catch the familiar orange hue of a Rebel ship comes into view, already docked at the station. An automated transmission interrupts your thoughts: "You have entered a no-fire zone. Weapon discharge will not be tolerated." It seems that you shouldn’t find any trouble here, yet the prospect of sharing the same space with a Rebel ship leaves you feeling conflicted.</text>
+	<choice hidden="true">
+		<text>Dock at the station to trade and ignore the Rebel.</text>
+		<event>
+			<store>STORE_STANDARD</store>			<!-- Place holder store. Is STORE_STANDARD even a thing in MV? -->
+			<text>You secure your ship at the station, situated adjacent to a bustling trade depot. You commence your inspection of the array of valuable technologies on offer for purchase.</text>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Attack the Rebel.</text>
+		<event>
+    		<loadEvent>RVS_STORE_FRONTIER_NEUTRAL_ATTACK</loadEvent>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Avoid the station.</text>
+		<event>
+			<text>You decide to pass on docking at the station and decide to do something else.</text>
+			<choice hidden="true">
+				<text>Do something on-board the ship.</text>
+				<event>
+    				<loadEvent>STORAGE_CHECK</loadEvent>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+			</choice>
+		</event>
+	</choice>
 </event>
 
 <eventList name="RVS_STORE_FRONTIER_NEUTRAL_ATTACK">
-  <event load="RVS_STORE_FRONTIER_ATTACK_REBEL"/>
-  <event load="RVS_STORE_FRONTIER_ATTACK_ENGINEER"/>
-  <event load="RVS_STORE_FRONTIER_ATTACK_TURNCOAT"/>
-  
-  <event load="RVS_STORE_FRONTIER_ATTACK_GUARD"/>
-  <event load="RVS_STORE_FRONTIER_ATTACK_GUARD"/>
-  <event load="RVS_STORE_FRONTIER_ATTACK_GUARD"/>
+	<event load="RVS_STORE_FRONTIER_ATTACK_REBEL"/>
+	<event load="RVS_STORE_FRONTIER_ATTACK_ENGINEER"/>
+	<event load="RVS_STORE_FRONTIER_ATTACK_TURNCOAT"/>
+	
+	<event load="RVS_STORE_FRONTIER_ATTACK_GUARD"/>
+	<event load="RVS_STORE_FRONTIER_ATTACK_GUARD"/>
+	<event load="RVS_STORE_FRONTIER_ATTACK_GUARD"/>
 </eventList>
 
 <event name="RVS_STORE_FRONTIER_ATTACK_REBEL">
-  <environment type="PDS" target="player"/>
-  <text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To compound the situation, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
-  <ship load="SHIP_REBEL_FIGHT" hostile="true"/>
+	<environment type="PDS" target="player"/>
+	<text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To compound the situation, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
+	<ship load="SHIP_REBEL_FIGHT" hostile="true"/>
 </event>
 
 <event name="RVS_STORE_FRONTIER_ATTACK_ENGINEER">
-  <environment type="PDS" target="player"/>
-  <text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To compound the situation, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
-  <ship load="SHIP_ENGINEER" hostile="true"/>
+	<environment type="PDS" target="player"/>
+	<text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To compound the situation, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
+	<ship load="SHIP_ENGINEER" hostile="true"/>
 </event>
 
 <event name="RVS_STORE_FRONTIER_ATTACK_TURNCOAT">
-  <environment type="PDS" target="player"/>
-  <text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To compound the situation, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
-  <ship load="GB_SHIP_REBEL_FED_GENERIC" hostile="true"/>
+	<environment type="PDS" target="player"/>
+	<text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To compound the situation, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
+	<ship load="GB_SHIP_REBEL_FED_GENERIC" hostile="true"/>
 </event>
 
 <event name="RVS_STORE_FRONTIER_ATTACK_GUARD">
-  <text>Despite the warnings, you attempt to engage the Rebel ship presuming the station would turn a blind eye to your transgression. Yet, to your surprise the station's guards swiftly spring to action and move in to intercept you! grants the Rebel ship the opportunity to undock and escape, leaving you in the clutches of the station's guards.</text>
-  <ship load="SHIP_MILITIA_FIGHT" hostile="true"/>
+	<text>Despite the warnings, you attempt to engage the Rebel ship presuming the station would turn a blind eye to your transgression. Yet, to your surprise the station's guards swiftly spring to action and move in to intercept you! grants the Rebel ship the opportunity to undock and escape, leaving you in the clutches of the station's guards.</text>
+	<ship load="SHIP_MILITIA_FIGHT" hostile="true"/>
 </event>
 
 
@@ -557,263 +330,138 @@ FRONTIER SECTOR
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->	
-<eventList name="NEUTRAL_ASTEROID">
-	<event load="ASTEROID_LENNY"/>
-	<event load="ASTEROID_ABUSE"/>
-	<event load="ASTEROID_REBELOUTPOST"/>
-	<event load="ASTEROID_STANDOFF"/>
-	<event load="ASTEROID_ENGILAB"/>
+<eventList name="RVS_NEUTRAL_FRONTIER">
+	<!-- Nature -->
+	<event load="RVS_FRONTIER_OUTCAST_HANDOVER"/>	<!-- TO DO --> <!-- Rockmen focused -->
+	<event load="RVS_FRONTIER_ASTEROID_STUCK"/>		<!-- TO DO --> <!-- Someone stuck in asteroids -->
+	<event load="RVS_FRONTIER_ARCHEOLOGY"/>			<!-- TO DO --> <!-- Zoltan archeology -->
+
+	<!-- Colony-->
+	<event load="RVS_FRONTIER_SHRINEWORLD"/>	<!-- NEEDS TEST -->
+	<event load="RVS_FRONTIER_DISAGREEMENT"/>	<!-- TO DO --> <!-- Disagreement between two races focused -->
+	<event load="RVS_FRONTIER_LANDFILL"/>		<!-- TO DO --> <!-- Leech focused -->
+	<event load="RVS_FRONTIER_SAFARI"/>			<!-- TO DO --> <!-- Clansmen Safari / hunting native wildlife for sport -->
+	
+
+	<event load="PIRATE_BRIBER"/>	
 </eventList>
 
 
-<event name="ASTEROID_ABUSE" unique="true">
-	<text>Despite not having authority to do so in the Free Excavation Act, a Coalition station is operating in full view, harvesting the asteroids near this beacon.</text>
-	<environment type="asteroid"/>
-	<ship load="SHIP_COALITION_STATION" hostile="false"/>
+<eventList name="RVS_FRONTIER_NEBULA">
+	<event load="RVS_FRONTIER_NEBULA_GENERIC"/>
+	<!-- Nebula -->
+	<event load="RVS_FRONTIER_MONK_HIDING"/>	<!--TO DO--> <!-- Monk Refugee -->
+	<event load="RVS_FRONTIER_NEBULA_COLONY_DEAD"/><!-- NEEDS TEST -->
+	
+	<!-- MVanilla events-->
+	<event load="NEBULA_REBEL_UNDETECTED"/>		<!-- Nebula Encounter -->
+	<event load="NEBULA_PIRATE_SMUGGLE"/>		<!-- Nebula Encounter -->
+</eventList>
+-->
+
+
+<eventList name="RVS_FRONTIER_NEBULA">
+	<event>
+    	<loadEvent>RVS_FRONTIER_NEBULA_GENERIC</loadEvent>
+	</event>
+	<!-- Nebula -->
+	<event>
+    	<loadEvent>RVS_FRONTIER_MONK_HIDING</loadEvent>
+	</event>	<!--TO DO--> <!-- Monk Refugee -->
+	<event>
+    	<loadEvent>RVS_FRONTIER_NEBULA_COLONY_DEAD</loadEvent>
+	</event><!-- NEEDS TEST -->
+	
+	<!-- MVanilla events-->
+	<event>
+    	<loadEvent>NEBULA_REBEL_UNDETECTED</loadEvent>
+	</event>		<!-- Nebula Encounter -->
+	<event>
+    	<loadEvent>NEBULA_PIRATE_SMUGGLE</loadEvent>
+	</event>		<!-- Nebula Encounter -->
+</eventList>
+-->
+
+<event name="RVS_FRONTIER_SHRINEWORLD" unique="true">
+	<text>The world below stands transformed into a Cathedral World, a luminous testament to rockmen's faith and stonemasonry. Yet, there's no time to fully appreciate the sight. A theocracy ship emerges from the atmosphere, intent on intercepting you. Their reception isn't warm; alien vessels orbiting their sacred ground raise concerns which are met with extreme prejudice.</text>
 	<choice hidden="true">
-		<text>Hey, you can't be here!</text>
+		<text>Stand your ground and fight!</text>
 		<event>
-			<text>A Mantis captain, wearing a smug grin, appears on your camera. "Hahah, are you thinking of so, captain? Big riot, FREE Excavation act! You forgetting doctrine saying nothing of Federation, but you exploiting merely of Union and Ministry benefits. Well, funny pebble man and gross worm thing sign act too! And if you are noticing, we are having funny pebble man AND gross worm thing on board. Thus, Coalition having as much right as you are! Hahah! Dumb dumb!"</text>
+			<ship load="LIST_SHIPS_ROCK_SMALL" hostile="true"/>
+			<text>The Theocracy ship hurtles toward you with unwavering determination, poised to expel you from this beacon.</text>
 			<choice hidden="true">
-				<text>Attack these smug bastards.</text>
+				<text>Continue...</text>
 				<event>
-					<text>"Hahahah, yes, fight me infant brain man! I welcome your slaughter! Hahah!"</text>
-					<ship hostile="true"/>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-				</event>
-			</choice>
-			<choice hidden="true">
-				<text>Fair point.</text>
-				<event>
-					<text>"What?! No! No no! You aren't supposed to be agreeing! You getting mad! Madder! Agh! Curses you! Hmph. Well, uh, not knowing what to do now. Uh... you needing sell and buy things?"</text>
-					<store>STORE_COALITION</store>
-				</event>
-			</choice>
-			<choice hidden="true" req="BLUELIST_ANTIBIO">
-				<text>(Anti-Bio Weapon) Snipe the Rockman and Leech.</text>
-				<event>
-					<text>You configure your weapon and lock onto both of the crew the Mantis had proudly displayed, near instantly killing them both. The Mantis gawks in horror. "You are... how?! This cheating! Agh!" From offscreen the Slug aboard shuffles on. "Heh. You kinda sssuck. I'm outta here, Fed dude'sss got cooler gunsss."</text>
-					<crewMember amount="1" class="slug"/>
+    				<loadEvent>COMBAT_CHECK</loadEvent>
 				</event>
 			</choice>
 		</event>
+	</choice><!-- I want to add options to pay tribute, attempt to run away at various engine strengths, and cloak -->
+	<choice hidden="true" req="LIST_CREW_ROCK_FAITHFUL">
+		<text>(Theocracy Crew) Pray for forgiveness.</text>
+		<event>
+			<weapon name="GIFTLIST_ROCK" />
+			<item_modify>
+				<item type="missiles" min="3" max="6"/>
+			</item_modify>
+		</event>
+	</choice>
+	<choice hidden="true" req="zoltan_monk">
+		<text>(Monk Crew) Plea for safe passage.</text>
+		<event>
+			<autoReward level="HIGH">scrap_only</autoReward>
+			<text>The Rockmen hold deep reverence for the Zoltan. The ship hesitates, thrown off by the monks' earnest plea. "Perhaps we have erred in our judgment, alien. Your words ring with wisdom, and we are willing to pardon your transgression, even though you do not share our faith. Accept these alms as a symbol of our forgiveness."</text>
+		</event>
+	</choice>
+</event>
+
+<event name="RVS_FRONTIER_NEBULA_GENERIC">
+	<text load="TEXT_LIST_NAME"/>
+</event>
+
+<event name="RVS_FRONTIER_NEBULA_COLONY_DEAD">
+	<text>Swirling nebula clouds obscure your view, compounded without inoperable sensors adds to the difficulty of seeing anything. Amid this, your hull tiny debris sparks off your hull giving hint that there is something. Cracks in the clouds reveal a battered, abandoned installation before you.</text>
+	<choice hidden="true">
+		<text>Investigate the structure.</text>
+		<event>
+    		<loadEvent>RVS_FRONTIER_NEBULA_COLONY_DEAD_INSPECT</loadEvent>
+		</event>
 	</choice>
 	<choice hidden="true">
-		<text>Ignore the station.</text>
+		<text>Avoid it.</text>
 		<event>
-			<text>You have nothing to gain but conflict from bothering these guys. Better to stay away.</text>
-			<choice>
+			<text>You are uncertain what may lay beyond into the clouds and decide to stay put while your FTL drive charges instead.</text>
+			<choice hidden="true">
 				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
+				<event>
+    				<loadEvent>STORAGE_CHECK</loadEvent>
+				</event>
 			</choice>
-			<choice>
+			<choice hidden="true">
 				<text>Do nothing.</text>
-				<event/>
 			</choice>
 		</event>
 	</choice>
 </event>
 
-<event name="ASTEROID_REBELOUTPOST" unique="true">
-	<text>Seems a small Rebel outpost has been stealthily placed between the asteroids here. By law they aren't meant to be here, but mining operations aren't exactly known for hurting anyone.</text>
-	<ship load="SHIP_REBEL_STATION" hostile="false"/>
-	<environment type="asteroid"/>
-	<choice hidden="true">
-		<text>Contact them.</text>
-		<event load="ASTEROID_REBELOUTPOST_CONTACT"/>
-	</choice>
-	<choice hidden="true">
-		<text>Take the law into your own hands!</text>
-		<event>
-			<text>"Damn you! And you wonder why there was ever a Rebellion! This isn't law, this is corruption!"</text>
-			<ship hostile="true"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true" req="REBEL_ID">
-		<text>(Forged ID) Pretend to be Rebels to trade.</text>
-		<event>
-			<text>You can tell the Rebels are skeptical, but apparently they're desperate to sell off some old equipment thanks to a lack of support this far from Rebel space.</text>
-			<store>STORE_REBEL</store>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Ignore the Rebels.</text>
-		<event>
-			<text>Harmless or not, bothering these Rebels is risky. Better not to get involved.</text>
-			<choice>
-				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
-			</choice>
-			<choice>
-				<text>Do nothing.</text>
-				<event/>
-			</choice>
-		</event>
-	</choice>
-</event>
-<eventList name="ASTEROID_REBELOUTPOST_CONTACT">
-	<event>
-		<text>The Rebels seem extremely cautious speaking with you. You start to catch on and decide to leave quickly. Chances are with the way that went they probably won't be very reluctant to give the fleet information about this sighting.</text>
-		<modifyPursuit amount="1"/>
-	</event>
-	<event>
-		<text>"You're a Renegade, no? I can't say we could see eye to eye on everything, but I can see the allure. Sometimes I want to leave this place behind too, but I have a duty to fulfill. Still, it's rare seeing someone like you who doesn't rush into combat. Take care, friend. May we never have to draw guns against each other."</text>
-		<autoReward level="MED">fuel</autoReward>
-	</event>
-	<event>
-		<text>"From the moment you jumped in I thought we were dead. Glad to see a friendly face, even if you are a Fed... Yeah, I know we're breaking the rules, but what's a little rock mining going to do? If you aren't too worried about the legality, maybe we could strike a trade?"</text>
-		<store>STORE_REBEL</store>
-	</event>
+<eventList name="RVS_FRONTIER_NEBULA_COLONY_DEAD_INSPECT">
+	<event load="RVS_FRONTIER_NEBULA_COLONY_GAS_MINE"/>
+	<event load="RVS_FRONTIER_NEBULA_COLONY_SCIENCE"/>
+	<!-- Ran out of ideas to put here with acompanying rewards-->
 </eventList>
 
-
-<event name="ASTEROID_STANDOFF" unique="true">
-	<text>Despite the presence of a large approaching asteroid storm, two ships appear to be in the middle of a standoff. A Ministry and Theocracy ship are squaring off over access to some sort of depot. As expected, the Rockmen are using offensive racial slurs and the Zoltans are spewing legal jargon. What else is new?</text>
-	<choice hidden="true">
-		<text>Assist the Zoltan.</text>
-		<event>
-			<text>You think for a moment the Zoltans are considering helping you, until they suddenly jump away! The reason is obvious moments later when the beacon is engulfed by the approaching asteroid storm!</text>
-			<environment type="asteroid"/>
-			<ship load="SHIP_ASTEROID_ROCK_STANDOFF" hostile="true"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Assist the Rockmen.</text>
-		<event>
-			<text>As you lock onto the Zoltan ship, the Rockmen continue to provide 'support' by shouting more obscenities at the Zoltan. That is, until the asteroids engulf the beacon and the Rockmen give up and abandon the depot!</text>
-			<environment type="asteroid"/>
-			<ship load="SHIP_ASTEROID_ZOLTAN_STANDOFF" hostile="true"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event load="COMBAT_CHECK"/>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true" req="cloaking" lvl="2">
-		<text>(Upg. Cloaking) Stealthily raid the depot yourself.</text>
-		<event>
-			<text>You slip past the two squabbling ships and storm the depot, grabbing everything that isn't nailed down that's within reach, and quickly leave.</text>
-			<weapon name="RANDOM"/>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>These two can duke it out alone.</text>
-		<event>
-			<text>Coming between two vessels like these is pointless. Best let them handle each other like the manchildren they are.</text>
-			<choice>
-				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
-			</choice>
-			<choice>
-				<text>Do nothing.</text>
-				<event/>
-			</choice>
-		</event>
-	</choice>
-</event>
-<event name="ASTEROID_STANDOFF_DEPOT">
-	<text>With the ship out of the way, you have the opportunity to go after the depot yourself - but you might take some extra damage from the asteroids!</text>
-	<choice hidden="true">
-		<text>Raid the depot.</text>
-		<event>
-			<text>You storm the depot, grabbing everything that isn't nailed down that's within reach and quickly leave. Some asteroids strike your hull, but hopefully it was worth it.</text>
-			<damage amount="3"/>
-			<autoReward level="MED">standard</autoReward>
-			<weapon name="RANDOM"/>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Leave now.</text>
-		<event/>
-	</choice>
+<event name="RVS_FRONTIER_NEBULA_COLONY_GAS_MINE">
+	<augment name="NEBULA_GASSES" />
+	<autoReward level="MED">standard</autoReward>
+	<text>Clouds swirling past as you make your approach to the structure. The frequency of the sparks escalated as you came closer to the site. Now in clearer view the installation is identified as a Class-C Gas Extraction and Processing Facility that was abandoned some time after completion for reasons unknown. There is potential scrap and leftover cargo offer an opportunity for salvage which you’re not willing to let go to waste.</text>
 </event>
 
-<event name="ASTEROID_ENGILAB" unique="true">
-	<text>You receive a hail from a nearby Engi station monitoring the nearby asteroid fields. "Engi presence is with permission of Ministry. Goals: test and establish remote mining operation through use of drone technology. Problem: Vagabond settlement continues to steal tech. Solution: Federation vessel may 'blow shit up'. Can a deal be made?"</text>
-	<choice hidden="true">
-		<text>Agree to help.</text>
-		<event>
-			<text>"There is an understanding - you are at a lack of the limited resource of time. Three Vagabond ships have been identified as problematic. We request you defeat one."</text>
-			<choice hidden="true">
-				<text>Take on the ship populated by Gouls.</text>
-				<event>
-					<text>"Understood. Coordinates for target are being transfered."</text>
-					<environment type="asteroid"/>
-					<ship load="SHIP_ASTEROID_ENGILAB_GOUL" hostile="true"/>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-				</event>
-			</choice>
-			<choice hidden="true">
-				<text>Take on the ship populated by Mares.</text>
-				<event>
-					<text>"Understood. Coordinates for target are being transfered."</text>
-					<environment type="asteroid"/>
-					<ship load="SHIP_ASTEROID_ENGILAB_MARE" hostile="true"/>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-				</event>
-			</choice>
-			<choice hidden="true">
-				<text>Take on the ship populated by Wraiths.</text>
-				<event>
-					<text>"Understood. Coordinates for target are being transfered."</text>
-					<environment type="asteroid"/>
-					<ship load="SHIP_ASTEROID_ENGILAB_WRAITH" hostile="true"/>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Ignore the Engi and attack them instead!</text>
-		<event>
-			<text>"Critical error. Unexpected hostility from Federation vessel. Appropriate response: 'oh shit'. Activating combat protocols."</text>
-			<environment type="asteroid"/>
-			<ship load="SHIP_ENGI_STATION" hostile="true"/>
-			<choice hidden="true">
-				<text>Continue...</text>
-				<event load="MORALITY_UPDATE_ENGI_FIGHT"/>
-			</choice>
-		</event>
-	</choice>
-	<choice>
-		<text>We aren't errand runners.</text>
-		<event>
-			<text>"Your response has been evaluated as: rude. Unfortunate circumstances. We will cease contact with your vessel."</text>
-			<choice>
-				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
-			</choice>
-			<choice>
-				<text>Do nothing.</text>
-				<event/>
-			</choice>
-		</event>
-	</choice>
+<event name="RVS_FRONTIER_NEBULA_COLONY_SCIENCE">
+	<augment name="ADV_SCANNERS" />
+	<autoReward level="MED">standard</autoReward>
+	<text>As you draw nearer to the installation, the sparks grow more frequent. Almost mesmerizing, the beauty of the dancing lights reflects off the glass as you reach the site. It becomes evident that this was once a deep space research facility, now marked by ion storm damage. Abandoned for a considerable time, it offers a rich bounty of scrap and equipment waiting to be claimed.</text>
 </event>
-<event name="ASTEROID_ENGILAB_CONTACT">
-	<text>"Impressive demonstration. Federation vessel has successfully 'kicked ass'. Payment is due. Expect to receive reward momentarily."</text>
-	<autoReward level="MED">drone</autoReward>
-</event>
+
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -822,136 +470,154 @@ FRONTIER SECTOR
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
-<eventList name="RVS_DISTRESS_ASTEROID">
-	<event load="RVS_DISTRESS_FRONTIER_NO_FUEL"/>	<!-- TO DO -->
-	<event load="RVS_DISTRESS_FRONTIER_LOST"/>		<!-- TO DO -->
-	<event load="RVS_DISTRESS_FRONTIER_SICK"/>		<!-- TO DO -->
-	<event load="RVS_DISTRESS_FRONTIER_PIRATE"/>	<!-- TO DO -->
+<eventList name="RVS_DISTRESS_FRONTIER">
+	<event load="RVS_DISTRESS_FRONTIER_NO_FUEL"/>	<!-- NEEDS TESTING -->
+	<!--<event load="RVS_DISTRESS_FRONTIER_LOST"/>		 TO DO -->
+	<!--<event load="RVS_DISTRESS_FRONTIER_SICK"/>		 TO DO -->
+	<!--<event load="RVS_DISTRESS_FRONTIER_PIRATE"/>	 TO DO -->
+	<event load="RVS_DISTRESS_FRONTIER_EMPTY_SHIP"/><!-- NEEDS TESTING -->
 </eventList>
 
-<eventList name="DISTRESS_ASTEROID">
-	<event load="DISTRESS_ASTEROID_FREEDUMB"/>
-	<event load="DISTRESS_ASTEROID_BACTERIA"/>
-
-	<event load="PLACEHOLDER"/>
-</eventList>
-
-<event name="DISTRESS_ASTEROID_FREEDUMB" unique="true">
-	<text>The distress beacon here is coming from a Rock mining platform, which has taken heavy damage. They hail you almost immediately; "We don't care who you are or what your stake is - there are some lunatic Mantis running around here massacring us by the dozen! We need you to track them down and put an end to this murder!"</text>
-	<distressBeacon/>
+<event name="RVS_DISTRESS_FRONTIER_EMPTY_SHIP">
+	<distressBeacon />
+	<text load="RVS_TEXT_DISTRESS_FRONTIER_EMPTY_SHIP"/>
 	<choice hidden="true">
-		<text>Agree to track down the murderers.</text>
+		<text>Salvage the ship.</text>
 		<event>
-			<text>You make some scans of the system and detect another ship some distance away. Moving closer reveals it to be piloted by Free Mantis, who greet you with great jubilation. "Merry day, captain! You are coming here claiming great bounties too?"</text>
+    		<loadEvent>RVS_DISTRESS_FRONTIER_EMPTY_SHIP_SALVAGE</loadEvent>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Leave the ship alone.</text>
+		<event>
+			<text>It would be disrespectful to salvage this vessel so you choose to do something else.</text>
 			<choice hidden="true">
-				<text>Are you the ones killing Theocracy miners?</text>
+				<text>Do something onboard the ship.</text>
 				<event>
-					<text>"Huh? Not knowing what you are talking of. We come here harvest rocks! Many rocks, they tell us! Kill rock, it gives you fuel! And when I am hearing this, I thinking to myself, 'This is making greatest profits!' You are saying words is wrong? Truth be, we not finding any fuel! Doing something wrong I am thinking..."</text>
-					<choice hidden="true">
-						<text>You've been terribly mistaken - the Rockmen are not asteroids.</text>
-						<event>
-							<text>"What? You are saying there is a Rock... AND man? Is this why screaming and running when I slice them open? Huh... Revolutionary ideas! You think big smart, biggest smarter even! Some days I wishing I have biggest smart. So, I come with you, and hoping knowledge coming off with me!"</text>
-							<crewMember amount="1" class="mantis_free"/>
-						</event>
-					</choice>
-					<choice hidden="true">
-						<text>Nope, you're doing just fine.</text>
-						<event>
-							<text>"Oh, okay! Just unlucky supposing. Many thanks, captain! While not having many fuels, we do offering you great basket of assorted metals we pick from bigger rock after small ones dead!"</text>
-							<autoReward level="MED">scrap_only</autoReward>
-						</event>
-					</choice>
+    				<loadEvent>	</loadEvent>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+			</choice>
+		</event>
+	</choice>
+</event>
+<textList name="RVS_TEXT_DISTRESS_FRONTIER_EMPTY_SHIP">
+	<text>You arrive to find a ship floating among some debris. Your hails go unanswered and it isn’t surprising why. The vessel drifts in eerie solitude, crewless and adrift in the expanse of the frontier.</text>
+	<text>Upon your arrival you find the source of the distress signal, a drifting hulk that has since long been abandoned… You are left to your imagination as to what may have happened to their crew.</text>
+	<text>Responding to the distress signal you spot what appears to be the source. Floating motionlessly your scans indicate that every airlock has been left open. Potentially the results of an electronic attack or a very unfortunate series of events following a fire. Once full of life the ship now drifts through the endless expanse.</text>
+	<text>You receive a patchy transmission immediately on arrival “Mayday, Ma-**-ay, Mayday! We have run out of fuel and are awaiting immediate assistance!... We encountered a ******* ***** ****** *-nd **** ** ***... we’re running low o-* rations and we do-** **** much ti-** left… **** starved out just over a week ago… Please if you can hear this please resp-***!” You rush to aid the survivors but to your dismay the ship shows on scans completely empty on closer inspection. You’re listening to a pre-recorded message which only continues to get more and more laden with static until it abruptly stops as the ship's backup generator dies… you are left wondering what had happened here.</text>
+	<text>Rushing to aid the distressed vessel, you assess its plight - their fuel reserves are empty and their reactor has gone cold leaving the ship to be left adrift for a long time now. Despite your best analysis you can not deduce the eventual fate of the crew or their current whereabouts.</text>
+</textList>
+
+<eventList name="RVS_DISTRESS_FRONTIER_EMPTY_SHIP_SALVAGE">
+	<event load="RVS_DISTRESS_EMPTY_SALVAGE_RESOURCE"/>
+	<event load="RVS_DISTRESS_EMPTY_SALVAGE_MAP"/>
+	<event load="RVS_DISTRESS_EMPTY_SALVAGE_WEAPON"/>
+	<event load="RVS_DISTRESS_EMPTY_SALVAGE_SICK"/>
+</eventList>
+
+<event name="RVS_DISTRESS_EMPTY_SALVAGE_RESOURCE">
+	<autoReward level="MED">standard</autoReward>
+	<text>While there is no hope to save them, you opt to salvage what you can from their empty vessel. With the resources you have scoured from the vessel you come to a realization that these materials may help you in your journey, but also a silent echo of the crew’s fate as a lingering reminder of the dangers out in the great expanse.</text>
+</event>
+<event name="RVS_DISTRESS_EMPTY_SALVAGE_MAP">
+	<reveal_map />
+	<autoReward level="LOW">standard</autoReward>
+	<text>You choose to salvage the vessel, recovering what little remains of their once-living ship. You find a small silver lining as their navigation computer is fully intact. Your technicians get to work recovering their sector scans to update your map with.You find it disturbing to find that their flight path almost matches your current one perfectly albeit a few weeks prior.</text>
+</event>
+<event name="RVS_DISTRESS_EMPTY_SALVAGE_WEAPON">
+	<autoReward level="MED">weapon</autoReward>
+	<text>With a salvage operation underway your crew comb through the hulk. No clues as to what may have happened to the crew here. Yet, amid the desolation, a fortunate discovery awaits - a fully operational weapon nestled within their cargo hold! </text>
+</event>
+<event name="RVS_DISTRESS_EMPTY_SALVAGE_SICK">
+	<autoReward level="LOW">standard</autoReward>
+	<text>You choose to salvage the vessel, recovering what little remains of their once-living ship. With your team coming back aboard one of them begins to lose their balance and collapse with a severe cough. With them being rushed out from the airlock to receive medical attention they begin to recover and recompose themselves. Personnel scans indicated that they had only suffered from mild nausea while boarding the vessel. With no risks to infection you release them from quarantine but it does leave you wondering what happened to the ship's original inhabitants…</text>
+</event>
+
+<event name="RVS_DISTRESS_FRONTIER_NO_FUEL">
+	<text load="RVS_TEXT_DISTRESS_FRONTIER_FUEL"/>
+	<distressBeacon/>
+	<ship load="RVS_LIST_SHIPS_GENERIC" hostile="false"/>
+	<status type="limit" target="enemy" system="teleporter" amount="0"/>
+	<choice>
+		<text>Give them the fuel.</text>
+		<event>
+			<text>You give them the fuel.</text>
+			<item_modify>
+				<item type="fuel" min="-4" max="-2"/>
+			</item_modify>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+    				<loadEvent>RANDOM_GIFT</loadEvent>
 				</event>
 			</choice>
 		</event>
 	</choice>
-	<choice hidden="true">
-		<text>Refuse.</text>
+	<choice hidden="true" req="FUEL_CONSERVER">
+		<text>(Fuel Conserver) Show them how to wire up their own conserver.</text>
 		<event>
-			<text>The Rockmen make no attempt to say anything more.</text>
-			<choice>
-				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
+			<text>You break out the manual for your conservation device and give it to the Civilians. Whatever they throw together won't be nearly as efficient, but it should get them somewhere.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+    				<loadEvent>RANDOM_GIFT</loadEvent>
+				</event>
 			</choice>
-			<choice>
+		</event>
+	</choice>
+	<!--<choice hidden="true" req="EXTRA_PREP">
+		<text>(Emergency Manual) Teach the civilians how to produce fuel onboard.</text>
+		<event>
+			<text>You clone the data from the emergency manual and pass it onto the Civilians. Whatever they throw together won't be cost efficient, but it should get them somewhere. This is digital piracy by the way. Scum.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+    				<loadEvent>RANDOM_GIFT</loadEvent>
+				</event>
+			</choice>
+		</event>
+	</choice> I don't like the text for this event after the innitial 'haha that's funny' and I can't bother to think of a way to change it.-->
+	<choice>
+		<text>Apologize, wish them luck, and continue on.</text>
+		<event>
+			<text>"Understandable... Have a nice day, and do send anyone you reckon is trustworthy our way."</text>
+			<choice hidden="true">
+				<text>Check the storage.</text>
+				<event>
+    				<loadEvent>STORAGE_CHECK</loadEvent>
+				</event>
+			</choice>
+			<choice hidden="true">
 				<text>Do nothing.</text>
 				<event/>
 			</choice>
 		</event>
 	</choice>
-</event>
-
-<event name="DISTRESS_ASTEROID_BACTERIA" unique="true">
-	<text>As soon as you arrive a Zoltan science vessel hails you, deeply concerned. "It is a woeful day, captain! You must help us! Despite ordinance section C67I-O23W-B... er... maybe it was C, not B... regardless, despite being in violation of very important rulings, a nearby Confederate outpost has had the AUDACITY to pollute this region, and it has endangered a very rare species of completely useless asteroid-borne microbacteria no one cares about! This cannot stand!"</text>
-	<distressBeacon/>
-	<choice hidden="true">
-		<text>Offer to help.</text>
+	<choice>
+		<text>Attack them.</text>
 		<event>
-			<text>"Oh thank goodness. I was afraid I'd have to do something for myself for once. Welp, here are the co-ordinates. Do whatever it is you renegades do and go murder them or something." You make your way to the outpost, which is protected by a single ship.</text>
-			<environment type="asteroid"/>
-			<ship load="SHIP_VAMPWEED_BACTERIA" hostile="false"/>
+			<text>A helpless ship is an easy target. You move in on an attack vector and engage!</text> 
+			<ship hostile="true"/>
 			<choice hidden="true">
-				<text>Do what you do best.</text>
+				<text>Continue...</text>
 				<event>
-					<text>Words are for pansies. Your job as a mercenary is to kill, and kill you shall. In the name of... useless microbacteria.</text>
-					<ship hostile="true"/>
-					<choice hidden="true">
-						<text>Continue...</text>
-						<event load="COMBAT_CHECK"/>
-					</choice>
-				</event>
-			</choice>
-			<choice hidden="true">
-				<text>Try and explain to the Vampweeds.</text>
-				<event>
-					<text>"I'm afraid I don't understand. Why do these bacteria matter? And what do you mean by 'stop polluting'? What are we polluting? We produce about as much waste, if not less, as any other settlement in this sector."</text>
-					<choice hidden="true">
-						<text>A Zoltan told us all this. We're just mercenaries.</text>
-						<event>
-							<text>"Uhuh... and why should I care? We aren't Ministry citizens. Hell, the Ministry was only included in the Excavation Acts because we knew they'd be the most careful of enforcing them. I understand you have a job to do... but maybe you could just, I dunno, tell the Zoltan you did it anyways?"</text>
-							<choice hidden="true">
-								<text>Lie to the Zoltan.</text>
-								<event>
-									<text>You head back to the Zoltan and inform them the job is complete. Despite having no proof you did anything, the Zoltan lights up. "Incredible work! Now we can all go on to continue not caring about the bacteria in peace! Here's your reward!"</text>
-									<autoReward level="LOW">item</autoReward>
-								</event>
-							</choice>
-							<choice hidden="true">
-								<text>Finish the job properly and kill the Vampweeds.</text>
-								<event>
-									<text>You promised to help the Zoltan, and you'll follow through with it. Prepare for combat!</text>
-									<ship hostile="true"/>
-									<choice hidden="true">
-										<text>Continue...</text>
-										<event load="COMBAT_CHECK"/>
-									</choice>
-								</event>
-							</choice>
-						</event>
-					</choice>
+    				<loadEvent>MORALITY_UPDATE_GENERAL_FIGHT</loadEvent>
 				</event>
 			</choice>
 		</event>
 	</choice>
-	<choice hidden="true">
-		<text>Sorry, we can't help you.</text>
-		<event>
-			<text>"Gah, you're worthless. Why is no one willing to do my work FOR me?!"</text>
-			<choice>
-				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
-			</choice>
-			<choice>
-				<text>Do nothing.</text>
-				<event/>
-			</choice>
-		</event>
-	</choice>
 </event>
-<event name="ASTEROID_BACTERIA_HELP">
-	<text>"Incredible work! Now we can all go on to continue not caring about the bacteria in peace! Here's your reward!"</text>
-	<autoReward level="LOW">item</autoReward>
-</event>
+<textList name="RVS_TEXT_DISTRESS_FRONTIER_FUEL">
+	<text>"Ahoy there! What a sight for sore eyes you are! Our fuel reserves have run dry, and we've been stranded in this desolate sector for what feels like an eternity. The constant dread of pirate raids or the looming presence of those Rebel troublemakers has kept us on edge. Would you be willing to spare some precious fuel to aid us?"</text>
+	<text>"Hey there. We used up the last of our FTL fuel to make a jump to this colony, aiming to find sanctuary in the midst of this uncharted frontier, but, well... it seems we misjudged the distance by a mere jump. Now, stranded in this sector, we've been wrestling with the consequences ever since as we count the days go by."</text>
+	<text>A lone spacecraft drifts far from the beacon, fragments of broken meteoroids around it. A transmission crackles to life: “Greetings. Our hunt for ore-rich asteroids in this uncharted sector had been a lot more draining than we expected, after suffering a missjump we’ve been stranded since.”</text>
+	<text>The ship emitting the distress beacon messages you, "Sorry to bother you, but we're out of fuel and can't get out of this uncharted sector. Could you help us out?</text>
+	<text>A small civilian ship flies over as soon as you arrive. You're prepared to fight but they just inform you that they're out of FTL fuel and can't jump.</text>
+	<text>Deep in the frontier, a survey vessel drifts, its engines dormant. A weak signal breaks the silence: “Tasked with mapping these stars, oh so many stars there are… stars stars stars…, we misjudged our fuel oh we did yes we did. Stranded far from the closest station or civilization!, our engines are silent. Can you assist?"</text>
+</textList>
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -960,55 +626,6 @@ FRONTIER SECTOR
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
-<eventList name="QUEST_ASTEROID">
-	<event load="QUEST_ASTEROID_TRANSPORT"/>
-</eventList>
-
-<event name="QUEST_ASTEROID_TRANSPORT" unique="true">
-	<text>A small Eargen transport hails you, their Leech captain bleeding from a long gash down its back. "You, you can help us. We're supposed to be taking these back to the Capital, but some pirates got in our way and stole the cargo. We're in no fighting order, but maybe you could get it back for us?"</text>
-	<ship hostile="false" load="SHIP_LEECH_TRANSPORT"/>
-	<choice hidden="true">
-		<text>Agree.</text>
-		<event>
-			<text>"Great. We had a tracking beacon in the cargo, and those idiots seem to have grabbed it themselves. Shouldn't be too hard to track them down."</text>
-			<autoReward level="LOW">standard</autoReward>
-			<quest event="ASTEROID_TRANSPORT_PIRATES"/>
-		</event>
-	</choice>
-	<choice hidden="true">
-		<text>Decline.</text>
-		<event>
-			<text>You apologize, but you aren't here to run errands.</text>
-			<choice>
-				<text>Do something onboard the ship.</text>
-				<event load="STORAGE_CHECK"/>
-			</choice>
-			<choice>
-				<text>Do nothing.</text>
-				<event/>
-			</choice>
-		</event>
-	</choice>
-</event>
-<!--<eventList name="ASTEROID_TRANSPORT_LIST">
-	<event load="ASTEROID_TRANSPORT_REVOLUTIONARIES"/>
-	<event load="ASTEROID_TRANSPORT_LIE"/>
-	<event load="ASTEROID_TRANSPORT_PIRATES"/>
-	<event load="ASTEROID_TRANSPORT_PIRATES"/>
-</eventList>-->
-<event name="ASTEROID_TRANSPORT_PIRATES">
-	<beaconType id="map_icon_quest" global="true">
-		<color r="69" g="168" b="235" a="1"/>
-		<unvisitedTooltip>A Leech captain asked for your help to retrieve a stolen cargo from pirates.</unvisitedTooltip>
-	</beaconType>
-	<text>It seems you've found the pirate ship in question. With no time to waste, you engage them immediately. Be careful not to damage the cargo!</text>
-	<environment type="asteroids"/>
-	<ship hostile="true" load="SHIP_ASTEROID_TRANSPORT_PIRATE"/>
-	<choice hidden="true">
-		<text>Continue...</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-</event>
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1027,16 +644,31 @@ FRONTIER SECTOR
 -->
 
 <eventList name="RVS_HOSTILE_FRONTIER">
-	<event load="RVS_ENCOUNTER_ROCK_FRONTIER"/>			<!-- MIGHT NEED MORE TEXTS / NEEDS TESTING -->
-	<event load="RVS_ENCOUNTER_OUTCAST_FRONTIER"/>		<!-- TO DO -->
-	<event load="RVS_ENCOUNTER_DUSKBRINGER_FRONTIER"/>	<!-- TO DO -->
-	<event load="RVS_ENCOUNTER_VAMPWEED_FRONTIER"/>		<!-- TO DO -->
-	<event load="RVS_ENCOUNTER_LEECH_FRONTIER"/>		<!-- TO DO -->
+	<event>
+    	<loadEvent>RVS_ENCOUNTER_ROCK_FRONTIER</loadEvent>
+	</event>			<!-- MIGHT NEED MORE TEXTS / TESTED and WORKS! -->
+	<!-- <event>
+    	<!-- <loadEvent>RVS_ENCOUNTER_DUSKBRINGER_FRONTIER</loadEvent>
+	<!-- </event>	TO DO -->
+	<!-- <event>
+    	<!-- <loadEvent>RVS_ENCOUNTER_VAMPWEED_FRONTIER</loadEvent>
+	<!-- </event>	TO DO -->
+	<!-- <event>
+    	<!-- <loadEvent>RVS_ENCOUNTER_LEECH_FRONTIER</loadEvent>
+	<!-- </event>		TO DO -->
 
-	<event load="RVS_ENCOUNTER_TURNCOAT_FRONTIER"/>		<!-- TO DO -->
-	<event load="RVS_ENCOUNTER_PIRATE_FRONTIER"/>		<!-- TO DO -->
-	<event load="RVS_ENCOUNTER_AUTO_FRONTIER"/>			<!-- MIGHT NEED MORE TEXTS / TESTED and WORKS! -->
-	<event load="RVS_ENCOUNTER_REBEL_FRONTIER"/>		<!-- TESTED and WORKS! -->
+	<!-- <event>
+    	<!-- <loadEvent>RVS_ENCOUNTER_TURNCOAT_FRONTIER</loadEvent>
+	<!-- </event>		<TO DO -->
+	<event>
+    	<loadEvent>RVS_ENCOUNTER_PIRATE_FRONTIER</loadEvent>
+	</event>		<!-- TO DO -->
+	<event>
+    	<loadEvent>RVS_ENCOUNTER_AUTO_FRONTIER</loadEvent>
+	</event>			<!-- MIGHT NEED MORE TEXTS / TESTED and WORKS! -->
+	<event>
+    	<loadEvent>RVS_ENCOUNTER_REBEL_FRONTIER</loadEvent>
+	</event>		<!-- TESTED and WORKS! -->
 </eventList>
 
 <!-- LONELY TEXT
@@ -1048,7 +680,9 @@ FRONTIER SECTOR
 	<ship load="SHIP_ROCK_FIGHT" hostile="true"/> 
 	<choice hidden="true">
 		<text>Continue...</text>
-		<event load="COMBAT_CHECK"/>
+		<event>
+    		<loadEvent>COMBAT_CHECK</loadEvent>
+		</event>
 	</choice>
 </event>
 <textList name="RVS_TEXT_ENCOUNTER_ROCK_FRONTIER" unique="false">
@@ -1074,7 +708,9 @@ FRONTIER SECTOR
 	<ship load="SHIP_AUTO_FIGHT" hostile="true"/> 
 	<choice hidden="true">
 		<text>Continue...</text>
-		<event load="COMBAT_CHECK"/>
+		<event>
+    		<loadEvent>COMBAT_CHECK</loadEvent>
+		</event>
 	</choice>
 </event>
 <textList name="RVS_TEXT_ENCOUNTER_AUTO_FRONTIER" unique="false">
@@ -1102,7 +738,9 @@ FRONTIER SECTOR
 	<!--<environment type="asteroid"/>-->
 	<choice hidden="true">
 		<text>Continue...</text>
-		<event load="COMBAT_CHECK"/>
+		<event>
+    		<loadEvent>COMBAT_CHECK</loadEvent>
+		</event>
 	</choice>
 </event>
 <textList name="RVS_TEXT_ENCOUNTER_REBEL_FRONTIER" unique="false">
@@ -1130,29 +768,7 @@ FRONTIER SECTOR
 	<text>Your arrival coincides almost exactly with that of a Rebel ship. It's hard to know who is more surprised, but there is no option but to fight.</text>
 </textList>
 
-<event name="ENCOUNTER_ZOLTAN_ASTEROID">
-	<text load="TEXT_ENCOUNTER_ZOLTAN"/>
-	<ship load="SHIP_ZOLTAN_FIGHT" hostile="true"/> 
-	<environment type="asteroid"/>
-	<choice hidden="true">
-		<text>Continue...</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-	<choice hidden="true" req="ZOLTAN_DELETER">
-		<text>(Zoltan Deleter) Threaten the Zoltans.</text>
-		<event load="ENCOUNTER_ZOLTAN_THREATEN"/>
-	</choice>
-</event>
 
-<event name="ENCOUNTER_VAMPWEED_ASTEROID">
-	<text load="TEXT_ENCOUNTER_VAMPWEED"/>
-	<ship hostile="true" load="SHIP_VAMPWEED_FIGHT"/>
-	<environment type="asteroid"/>
-	<choice hidden="true">
-		<text>Continue...</text>
-		<event load="COMBAT_CHECK"/>
-	</choice>
-</event>
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
