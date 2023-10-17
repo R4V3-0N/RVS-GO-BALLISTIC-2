@@ -21,6 +21,9 @@
 
 <version>^1.6.0</version>
 
+<!-- placeholder until MV 5.4 -->
+<showShipAchievements enabled="true" toggle="true" hideIfMissing="true" id="hangar_achievements_title_default"/>
+
 <mod:findLike type="crew" limit="1">
 	<mod-append:race name="rvs_drone_trooper">
 		<controllable>true</controllable>
@@ -98,6 +101,7 @@
 	<mod-append:variable name="loc_fedfreighter_repaired" op="set" val="0"/>
 	<mod-append:variable name="loc_fedfreighter_damaged" op="set" val="0"/>
 	<mod-append:variable name="loc_fedfreighter_killed" op="set" val="0"/>
+	<mod-append:variable name="loc_ach_fedfreighter_deliveries" op="set" val="0"/>
 	<mod-append:variable name="gb_ammo_toggle" op="set" val="0"/>
 	<mod-append:variable name="gb_gave_fuel" op="set" val="0"/>
 	<mod-append:variable name="loc_foundsafe" op="set" val="0"/>
@@ -1839,6 +1843,24 @@
             <type>2</type>
             <shipReq>PLAYER_SHIP_RVSP_FED_FREIGHTER</shipReq>
         </unlock>
+        <achievement name="ACH_SHIP_RVSP_FED_FREIGHTER_1" layout="all">
+            <name>[NAME PENDING]</name>
+            <description>Either complete 5 delivery missions in one run OR sell Exotic Spices for their maximum price (890~) using the Federation Freighter.</description>
+            <icon>rvsp_fed_freighter_ach_1</icon>
+            <lockImage>rvsp_fed_freighter_ach_1_lock</lockImage>
+        </achievement>
+        <achievement name="ACH_SHIP_RVSP_FED_FREIGHTER_2" layout="all">
+            <name>Q-Ship in a Pinch</name>
+            <description>Upgrade the Federation Freighter's weapon system to max before reaching sector 3.</description>
+            <icon>rvsp_fed_freighter_ach_2</icon>
+            <lockImage>rvsp_fed_freighter_ach_2_lock</lockImage>
+        </achievement>
+        <achievement name="ACH_SHIP_RVSP_FED_FREIGHTER_3" layout="all">
+            <name>[UNDEFINED]</name>
+            <description>[UNDEFINED]</description>
+            <icon>rvsp_fed_freighter_ach_3</icon>
+            <lockImage>rvsp_fed_freighter_ach_3_lock</lockImage>
+        </achievement>
     </mod-append:ship>
 	<mod-append:customShip name="PLAYER_SHIP_RVSP_FED_FREIGHTER">
 		<hiddenAug>SHIP_FEDERATION</hiddenAug> <!-- R4: Placeholder -->
@@ -2099,6 +2121,7 @@
     <mod-append:script>data/gb_scripts/dependency.lua</mod-append:script>
     <mod-append:script>data/gb_scripts/augments.lua</mod-append:script>
     <mod-append:script>data/gb_scripts/weapons.lua</mod-append:script>
+    <mod-append:script>data/gb_scripts/achivements.lua</mod-append:script>
 </mod:findLike>
 
 </FTL>
