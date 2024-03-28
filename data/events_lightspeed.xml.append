@@ -199,12 +199,14 @@ This is the maximum value of your spices, it will not increase further the next 
 	</event>
 	<event name="GB_ATLAS_EQUIPMENT_LIST">
 		<loadEventList seeded="false" first="false">
-			<event name="GB_DISPATCH_1" req="gb_marker_1" max_lvl="0"/>
-			<!--<event name="GB_DISPATCH_2" req="gb_marker_2" max_lvl="0"/>
+			<!--<event name="GB_DISPATCH_1" req="gb_marker_1" max_lvl="0"/>
+			<event name="GB_DISPATCH_2" req="gb_marker_2" max_lvl="0"/>
 			<event name="GB_DISPATCH_3" req="gb_marker_3" max_lvl="0"/>
 			<event name="GB_DISPATCH_4" req="gb_marker_4" max_lvl="0"/>
-			<event name="GB_DISPATCH_5" req="gb_marker_5" max_lvl="0"/> -->
-			<event name="GB_DISPATCH_6"/>
+			<event name="GB_DISPATCH_5" req="gb_marker_5" max_lvl="0"/>
+			<event name="GB_DISPATCH_6"/> -->
+					
+			<event name="RVS_DISPATCH_MULTIPLE_CHOICE"/>	<!-- NEW GENERIC EVENT -->
 		</loadEventList>
 	</event>
 
@@ -278,7 +280,7 @@ This is the maximum value of your spices, it will not increase further the next 
 		</event>
 
 		<event>
-			<text>You pass over the shipment, and wait while the other ship looks them over. "Um....why did you bring us 300 crates of milk? We ordered 300 crates of metal alloy. That's it, I've had enough of mistakes, this is the 3rd time my order was wrong."</text>
+			<text>You pass over the shipment, and wait while the other ship looks them over. "Um....why did you bring us 300 units of milk? We ordered 300 units of metal alloy. That's it, I've had enough of mistakes, this is the 3rd time my order was wrong."</text>
 			<ship hostile="true"/>
 			<choice hidden="true">
 				<text>Uh....oops?</text>
@@ -286,6 +288,829 @@ This is the maximum value of your spices, it will not increase further the next 
 			</choice>
 		</event>
 	</eventList>
+
+	<!-- WIP
+	
+	----------------------------------
+	
+	-->
+	<event name="RVS_DISPATCH_MULTIPLE_CHOICE">		<!-- Event for multiple CURA style missions available (WIP)-->
+		<text load="RVS_TEXT_DISPATCH_MULTIPLE_CHOICE"/>
+		
+		<choice hidden="false">	<!-- This is the choice for a (A to B) Delivery Mission.-->
+			<text>View a direct delivery mission.</text>
+			<event>
+				<loadEvent>RVS_DISPATCHER_MISSION_DELIVERY</loadEvent>
+			</event>
+		</choice>
+<!--
+		<choice hidden="true">
+			<text>View a pick-up and drop-off delivery mission.</text>
+			<event>
+				<loadEvent>RVS_DISPATCHER_MISSION_PICK_DROP</loadEvent>
+			</event>
+		</choice>
+
+		<choice hidden="true" blue="false" req="rep_pirate" lvl="-1"/>
+			<text>View a more clandestine delivery.</text>
+			<event>
+				<loadEvent>RVS_DISPATCHER_MISSION_PIRACY</loadEvent>
+			</event>
+		</choice>
+-->
+		<choice hidden="true" req="pilot" lvl="1"  max_group="4" blue="false">
+			<text>Nevermind. I don't want to do any jobs.</text>
+			<event>
+				<variable name="gb_called_dispatch" op="set" val="0"/>
+				<loadEvent>FMCORE_ATLAS_EQUIPMENT</loadEvent>
+			</event>
+		</choice>
+	</event>
+
+	<textList name="RVS_TEXT_DISPATCH_MULTIPLE_CHOICE">	<!-- Text from the Dispatcher to Player on multichoice missions-->
+		<text>The Dispatcher appears on screen just as they were finishing a sip of their replicant tea. "Aight, looks like you have several missions lined up for you... lets see here... okay. I forwarded the current listings to your data-pad. Dispatcher out."</text>
+		<text>The Dispatcher appears on screen momentarily turned to chat with someone off-screen. "Alright, it looks like you have several missions lined up. Let me check... Got it. I've sent the current listings to your data-pad. Dispatcher out."</text>
+		<text>The Dispatcher's image flickered to life just as they wrapped up a brief transmission with another captain. "Well, it seems you've got quite a few missions lined up. Let me have a look... Got it. I've forwarded the current listings to your data-pad. Dispatcher out."</text>
+		<text>Your terminal receives a notification from the Dispatcher, several missions have been transmitted to your data-pad for you to deliberate on.</text>
+		<text>"Sometimes I wonder how it would be like to hitch a ride with you. I could do for a good leg stretch and see the Universe... although, I don't really fancy being shot at. Anyway! Here's a few new listings."</text>
+		<text>"I trust you're prepared for the upcoming assignments. I've just concluded reviewing the details. The mission briefings are now available on your data-pad. Best of luck with your endeavors. Dispatcher out."</text>
+	</textList>
+
+
+	<!--				Delivery Missions!
+		Your transport vessel is already equiped with various general goods
+		and supplies in S1 and will only need to go to a target location to
+		convey goods and make a delivery.
+
+						(Go to 'A' Delivery)
+	-->
+
+	<event name="RVS_DISPATCHER_MISSION_DELIVERY">	<!--List of Delivery (Go to A) style missions-->
+		<loadEventList seeded="false" first="false">
+			<!--ROUTINE		(EASY)-->
+			<event name="RVS_DISPATCHER_DELIVERY_FED_ROUTINE_PREVIEW"/>
+			<event name="RVS_DISPATCHER_DELIVERY_MILITIA_PREVIEW"/>
+			<!--<event name="RVS_DISPATCHER_DELIVERY_ZOLTAN_PREVIEW"/>-->
+			<!--<event name="RVS_DISPATCHER_DELIVERY_ZOLTAN_PREVIEW"/>-->
+			
+			<!-- DIFFICULT	(NORMAL)-->
+			<event name="RVS_DISPATCHER_DELIVERY_FED_DIFFICULT_PREVIEW"/>
+			<event name="RVS_DISPATCHER_DELIVERY_MILITIA_PREVIEW_DIFFICULT"/>
+
+			<!-- CRITICAL!	(HARD)-->
+
+		</loadEventList>
+	</event>
+
+	<event name="RVS_DISPATCHER_DELIVERY_FED_ROUTINE_PREVIEW">	<!-- Routine Mission! No extra challenges, always medium reward -->
+		<text>[ROUTINE DELIVERY TASK - CONVEY SUPPLIES FOR THE WAR EFFORT]
+		DESCRIPTION: You will need to convey vital cargo to aid the Federation Fleet for the war effort!
+		REQUIREMENTS: Expanded Cargo Bays (Currently Stocked)
+		WARNING: NO ALERT
+		
+		Payment: Medium reward on delivery.</text>
+		<choice hidden="false">
+			<text>Accept the job.</text>
+			<event>
+				<text>"Alright, I'll submit your request. Transmitting the co-ordinates now. Good luck Renegade."</text>
+				<quest event="RVS_DISPATCHER_DELIVERY_FED"/>
+				<!--<eventAlias name="ATLAS_MENU" jumpClear="true">ATLAS_MENU_NOEQUIPMENT</eventAlias>-->
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event>
+						<variable name="gb_called_dispatch" op="set" val="0"/>
+						<loadEvent>FMCORE_ATLAS_EQUIPMENT</loadEvent>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Go back.</text>
+			<event>
+				<loadEvent>RVS_DISPATCH_MULTIPLE_CHOICE</loadEvent>
+			</event>
+		</choice>
+	</event>
+	
+	<eventList name="RVS_DISPATCHER_DELIVERY_FED">	<!-- List of different Dificult Fed Deliver Targets (Go to A) Missions. Planning on having different list for Stations?-->
+		<event load="RVS_DISPATCHER_QUEST_LIST_FED"/>
+		<!--<event load="RVS_DISPATCH_QUEST_LIST_FED_STATION"/>-->
+	</eventList>
+	
+	<eventList name="RVS_DISPATCHER_DELIVERY_FED_DIFFICULT_PREVIEW">	<!-- List of different Dificult Federation Delivery (Go to A) Missions-->
+		<event load="RVS_DISPATCHER_DELIVERY_FED_PREVIEW_ENCOUNTERS"/>
+		<event load="RVS_DISPATCHER_DELIVERY_FED_PREVIEW_COMPROMISED"/>
+	</eventList>
+
+	<event name="RVS_DISPATCHER_DELIVERY_FED_PREVIEW_COMPROMISED">	<!-- Compromised Location -->
+		<text>[DIFFICULT DELIVERY TASK - CONVEY CRITICAL SUPPLIES TO THE FRONT!]
+		DESCRIPTION: You will need to convey vital cargo to close to the front and support any Federation elements!
+		REQUIREMENTS: Expanded Cargo Bays (Currently Stocked).
+		WARNINGS: Caution - Delivery site may be compromised.
+		
+		Payment: High reward on delivery.</text>
+		<choice hidden="false">
+			<text>Accept the job.</text>
+			<event>
+				<text>"Alright, transmitting the co-ordinates now. I've got word that there has been some hostile activity in sector. Transports and Freighters getting"</text>
+				<quest event="RVS_DISPATCHER_DELIVERY_FED_COMPROMISED"/>
+				<!--<eventAlias name="ATLAS_MENU" jumpClear="true">ATLAS_MENU_NOEQUIPMENT</eventAlias>-->
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event>
+						<variable name="gb_called_dispatch" op="set" val="0"/>
+						<loadEvent>FMCORE_ATLAS_EQUIPMENT</loadEvent>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Go back.</text>
+			<event>
+				<loadEvent>RVS_DISPATCH_MULTIPLE_CHOICE</loadEvent>
+			</event>
+		</choice>
+	</event>
+
+	<event name="RVS_DISPATCHER_DELIVERY_FED_PREVIEW_ENCOUNTERS">	<!-- Fed delivery mission with Rebel intercept-->
+		<text>[DIFFICULT DELIVERY TASK - CONVEY CRITICAL SUPPLIES TO THE FRONT!]
+		Description: You will need to convey vital cargo to close to the front and support any Federation elements! Be advised there is enemy activity in sector.
+		Requirements: Expanded Cargo Bays (Currently Stocked)
+		Warnings: Caution - Hostile activity in Sector.
+		
+		Payment: Medium reward on delivery.</text>	<!-- Will later add a variable that tracks "bounties" and you will be able to redeem every bounty at a Federation Outpost, Base, etc.-->
+		<choice hidden="false">
+			<text>Accept the job.</text>
+			<event>
+				<text>"Alright, transmitting the co-ordinates now. I've got word that there has been some hostile activity in sector. Transports and Freighters getting"</text>
+				<quest event="RVS_DISPATCHER_QUEST_LIST_FED"/>
+				<!--<eventAlias name="ATLAS_MENU" jumpClear="true">ATLAS_MENU_NOEQUIPMENT</eventAlias>-->
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event>
+						<quest event="RVS_INTERCEPT_LIST"/>	<!-- This event spawns an encounter in sector of someone wanting to take your cargo or intercept you -->
+						<variable name="gb_called_dispatch" op="set" val="0"/>
+						<loadEvent>FMCORE_ATLAS_EQUIPMENT</loadEvent>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Go back.</text>
+			<event>
+				<loadEvent>RVS_DISPATCH_MULTIPLE_CHOICE</loadEvent>
+			</event>
+		</choice>
+	</event>
+	
+	<!-- General Delivery List for Fed Locations-->
+	<eventList name="RVS_DISPATCHER_QUEST_LIST_FED">
+		<!-- Simple Fed Encounter scrap-->
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+			<ship load="SHIP_FED_GENERIC" hostile="false"/>
+			<text>Just as expected you have arrived to see a Federation ship awaiting to recieve the much needed supplies. "Much appreciated, Renegade! We wouldn't have lasted much longer without these supplies. Take this on my behalf."</text>
+			<autoReward level="MED">scrap_only</autoReward>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+		<!-- Simple Fed Encounter delay-->
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+			<ship load="SHIP_FED_GENERIC" hostile="false"/>
+			<text>Just as expected you have arrived to see a Federation ship awaiting to recieve the much needed supplies. "Much appreciated, Renegade! We wouldn't have lasted much longer without these supplies. We can't spare much but with these supplies I'll see to it if we can harrass the Rebel fleet and buy you a little extra time."</text>
+			<modifyPursuit amount="-2"/>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+		<!-- Simple Fed Encounter delay-->
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+			<ship load="SHIP_FED_GENERIC" hostile="false"/>
+			<text>Just as expected you have arrived to see a Federation ship awaiting to recieve the much needed supplies. "Much appreciated, Renegade! We wouldn't have lasted much longer without these supplies. We can't spare much but with these supplies I'll see to it if we can harrass the Rebel fleet and buy you a little extra time."</text>
+			<modifyPursuit amount="-2"/>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+			<ship load="SHIP_FED_BIG" hostile="false"/>
+			<text>To your surprise, the flotilla of ships you expected here is instead a rather heavy fleet of ships running on fumes. The heaviest ship makes a lumbering turn towards you before halting part way through the maneuover... Seems that it took a momment for the IFF to register you as a friendly. "Pardon for scaring you Renegade. We haven't had some good RnR in a long time and it's beginning to show, but with this delivery I reckon we can patch these ships up and get back into fighting condition. Once that's done we'll launch a counter offensive on the approaching fleet! They'll won't know what hit 'em."</text>
+			<modifyPursuit amount="-3"/>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+			<ship load="SHIP_FED_STATION_ALL" hostile="false"/>
+			<text>A Federation station surrounded by a few token defence patrols greets you upon your arrival. "We're reading you clear Renagade. Alright, dock at hanger bay zero - niner. Thank you for the timely delivery. Take our excess supplies for your paymment."</text>
+			<autoReward level="HIGH">standard</autoReward>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</eventList>
+
+	<eventList name="RVS_DISPATCHER_DELIVERY_FED_COMPROMISED"> <!-- List of Compromised delivery locations.-->
+		<!-- SAFE: Deliver to a remaining Feds. HIGH + Choice of fleet progress and med reward -->
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+			<ship load="SHIP_FED_GENERIC" hostile="false"/>
+			<text>Indications of a recent battle are evident. Debris, fumes, and casings litter around the indicated drop-off site. A few Federation ships still linger licking their wounds surrounding the remains of a barely functional fire base. An Officer hails you and is put on display "...and here comes Santa Claus!" he jests. Wiping off some grime and stains off their face while one of their crew members off screen breaks composure and chuckles. "I sure hope we're all on the nice list!" you two begin to exchange pleasantries and talk about their recent victory while their men get to work transporting several units of medicines and repair kits to the firebase to distribute between the injured.</text>
+			<autoReward level="HIGH">standard</autoReward>	<!-- R4 2023.10.27		Tempted to set to stuff, or random-->
+			<choice>
+				<text>Continue...</text>
+				<event>
+					<text>For your reward you are granted a portion of what they have salvaged here from the fight. However they extend their offer to help yourself to stick around and help yourself to what ever you can find. You consider your options...</text>
+					<choice hidden="true">
+						<text>Spend some time to salvage here.</text>
+						<event>
+							<autoReward level="MED">stuff</autoReward>	<!-- R4 2023.10.27		Tempted to set this to random.-->
+							<modifyPursuit amount="1"/>
+							<text>You are mostly undisturbed as you scrap the wreckage between a bit of banter here and there with some of the Enlisted Feds near by. You gather most of what you deem is useful before preparing to depart after exchanging some pleasantreis.</text>
+						</event>
+					</choice>
+					<choice>
+						<text>Leave.</text>
+						<event/>
+					</choice>
+				</event>
+			</choice>
+		</event>
+
+		<!-- COMPROMISED: No friendlies, only Rebel!-->
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+			<ship load="SHIP_REBEL_FIGHT" hostile="true"/>
+			<text>It is too late! There is no sign of any friendly contacts nearby. All that remains is a Rebel fighter locking onto your signal and powering up!</text>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+
+		<!-- COMPROMISED: Has friendly present but requires combat-->
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<customFleet right="false" firing="false" autoDarkening="false">CUSTOM_FLEET_FED_DESTROYED</customFleet>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+			<text>Ariving close to the periphery of the star system in proximity to its secondary asteroid belt as marked per your co-ordinates. Though you are unable to transfer the stowage as Federation and Rebel vessels are squaring off around a friendly camoflaged base inside asteroid belt. Recieving a hail on Federation frequencies, "Logistics vessel! You couldn't have arrived at a worst time" the feed cuts do static for a moment as a volley of lasers slags chunks of their outer plating. Returning to a steady feed "We're in a bit of a tight spot. I'm authoritised to provide an additional hazard bonus and ASB support if you can eliminate their command vessel".</text>
+			<choice>
+				<text>Get into the asteroids and target their largest vessel.</text>
+				<event>
+					<ship load="RVS_SHIP_REBEL_BIG_DELIVERY_COMPROMISED" hostile="true"/>
+					<text>The pay is already top notch for delivering the much needed supplies to this outpost. But with hazard pay on top you are convinced to take the risk and lock on what you presume is the command ship as it stands out to be the largest class amongst the Rebels.</text>
+					<environment type="asteroid"/>
+					<choice>
+						<text>Continue...</text>
+						<environment type="PDS" target="enemy"/>
+						<event>
+							<text>With this ship now pre-occupied with you in battle the outposts ASB's are freed up to assist you!</text>
+							<choice>
+								<text>Continue...</text>
+								<event load="COMBAT_CHECK"/>
+							<choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+			<!--	I can't honestly be bothered to write this event better to make it sound nicer.
+			<choice>
+				<text>Get into the asteroids and target one of the smaller vessel.</text>
+				<event>
+					<ship load="SHIP_REBEL_FIGHT" hostile="true"/>
+					<text>You do not want to leave the outpost stranded and you still want to make a shot at making a delivery if things go well. Targeting one of the smaller vessels instead in a bid of self preservation albeit you won't be able to recieve ASB support from the outpost. Lets hope this will make a difference!</text>
+					<environment type="asteroid"/>
+				</event>
+			</choice>-->
+			<choice>
+				<text>Take this oppertunity to leave unnoticed.</text>
+				<event>
+					<text>You aren't getting paid enough to risk it all for some back-water Federation Outpost. You transmit your intentions to the outpost and prepare to take their defence to distract the Rebels during your escape.</text>
+				</event>
+			</choice>
+		</event>
+
+		<!-- COMPROMISED: No friendlies, rondevouz at new co-ordinates.-->
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Heavy Rebel casualties detected.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+			<img back="BACK_EVENT_FEDBASE" planet="PLANET_INVISIBLE"/>
+			<customFleet right="false" firing="false" autoDarkening="false">CUSTOM_FLEET_FED</customFleet>
+			<customFleet right="true" firing="true" autoDarkening="false">CUSTOM_FLEET_REBEL</customFleet>
+			<text>A Federation task force is engaged with a forward Rebel Fleet element sent to eleminate a Federation FOB. A Federation Captain hails you "Logistics asset! The base is heavy damaged. I am uploading new co-ordinates now to a near by Federation Outpos that would be more than happy to get a surprise shipment. We can handle these Rebels just get out of here now!"</text>
+			<choice>
+				<text>Heed by their warning and leave.</text>
+				<quest event="RVS_DELIVERY_NEW_DESTINATION"/>
+				<event/>
+			</choice>
+
+			<!--<choice	req="sensors" lvl="3">
+				<text>(ADV Scanners) Scan</text>
+				<event>
+					<text>This is the shippy
+					<ship load="BIG" hostile="false"/>
+					<choice>
+						<text>Avoid and leave.</text>
+						<event>
+							<text>Attack the big boi!</text>
+							<hostile="true"/>
+						</event>
+					</choice>		
+				<event/>
+			</choice>
+
+			<choice	req="sensors" lvl="3">
+				<text>Attack</text>
+				<event>
+					<ship load="BIG" hostile="true"/>
+					<text>Attack the big boi!</text>
+				</event>
+			</choice>-->
+		</event>
+
+		<!-- SAFE, random reward + 2 fleet delay-->
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<ship load="SHIP_FED_BIG" hostile="false"/>
+			<text>Tugships work tirelessly around a Federation Spacedock helping move the larger Federation ships around into their docks to repair and refit. Though right now they are far from being fit for battle you hope that with this delivery that it would expidite their recovery. The Rebels won't be prepared to take this beacon when the time comes thanks to your efforts.</text>
+			<modifyPursuit amount="-2"/>	<!--Delay due to refitting a bunch of Federation ships that will engage and fend off the Rebels-->
+			<autoReward level="RANDOM">scrap_only</autoReward>	<!-- Random additional reward -->
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+		
+		<!-- SAFE but then attacked, High Scrap-->
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<ship load="SHIP_FED_STATION_ALL" hostile="false"/>
+			<text>A Federation station surrounded by a few token defence patrols greets you upon your arrival. "We're reading you clear Renagade. Alright, dock at hanger bay one - six. We were beginning to loose hope you'd ever show up. You may begin transfer when ready."</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<autoReward level="HIGH">scrap_only</autoReward>
+					<text>Once you have landed the station crew get to unloading the cargo. From what you can gleam the majority of the contents seems to be ship armour plating, power couplings, and the odd heavy machinery. "Alright, your credits should be transfered and all request cargo has been unloaded. You are clear to disengage your docking clamps and exit the station. Good luck Renegade."</text>
+				</event>
+			</choice>
+		</event>
+	</eventList>
+
+	<event name="RVS_DELIVERY_NEW_DESTINATION">
+		<beaconType id="map_icon_delivery" global="true">
+			<color r="255" g="255" b="255" a="1.0"/>
+			<unvisitedTooltip>Your are redirected to deliver goods here.</unvisitedTooltip>
+			<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+			<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+		</beaconType>
+		<text>You arrived to the new co-ordinates. Recieving encrypted message on Federation channels you are able to decypher the message and locate a hidden Federation base. Weary over the recent attack on the near by FOB. A tugship is launched to help direct you to a cramped dock space. Once settled you exchange some pleasantries with the men stationed here and being told some good news that the task force managed to successfuly repell the aggressors although not before the FOB took several hits. Although this base hadn't submitted an order for this cargo they are more than happy to recieve it in their stead and equally so to compensate you for the effort of redirecting the goods here.</text>
+		<autoReward level="HIGH">scrap_only</autoReward>
+	</event>
+
+	<ship name="RVS_SHIP_REBEL_BIG_DELIVERY_COMPROMISED" auto_blueprint="LIST_SHIPS_REBEL_ELITE_MASSIVE">
+		<destroyed>
+			<loadEvent>DEFEAT_REBEL_ELITE</loadEvent>
+			<queueEvent>RVS_DELIVERY_FED_COMPROMISE_AFTERMATH</queueEvent>
+		</destroyed>
+		<deadCrew>
+			<loadEvent>DEFEAT_REBEL_ELITE</loadEvent>
+			<queueEvent>RVS_DELIVERY_FED_COMPROMISE_AFTERMATH</queueEvent>
+		</deadCrew>
+	</ship>
+	<event name="RVS_DELIVERY_FED_COMPROMISE_AFTERMATH">
+		<preventQuest/>
+		<autoReward level="MED">scrap_only</autoReward>
+		<text>With the commanding vessel of this attack destroyed the rest of the Rebels moral has been broken and they begin to break off and disengage. The outpost grants you docking rights and signals for transfer. This should be a pretty sweet haul.</text>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event>
+				<autoReward level="HIGH">scrap_only</autoreward>
+				<text>"and here's your hazard pay. Thanks for saving our hides back there. I know it's outside of your mission parametres. I hope you would find this more than satisfactory for your intervention. Many thanks Renegade." The outpost cuts their transmission.</text>
+			</event>
+		</choice>
+	</event>
+
+
+	<event name="RVS_DISPATCHER_DELIVERY_MILITIA_PREVIEW">
+		<text>[ROUTINE DELIVERY TASK - SUPPORT THE UNION BY CONVEYING SUPPLIES]
+		Description: You will need to convey vital cargo to help assist the Unions armed forces!
+		Requirements: Expanded Cargo Bays (Currently Stocked)
+		Warnings: No Alert
+		
+		Payment: Medium reward on delivery.</text>
+		<choice hidden="false">
+			<text>Accept the job.</text>
+			<event>
+				<text>"Alright, I'll submit your request. Transmitting the co-ordinates now. Good luck Renegade."</text>
+				<quest event="RVS_DISPATCHER_DELIVERY_MILITIA"/>
+				<!--<eventAlias name="ATLAS_MENU" jumpClear="true">ATLAS_MENU_NOEQUIPMENT</eventAlias>-->
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event>
+						<variable name="gb_called_dispatch" op="set" val="0"/>
+						<loadEvent>FMCORE_ATLAS_EQUIPMENT</loadEvent>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Go back.</text>
+			<event>
+				<loadEvent>RVS_DISPATCH_MULTIPLE_CHOICE</loadEvent>
+			</event>
+		</choice>
+	</event>
+	
+	<eventList name="RVS_DISPATCHER_DELIVERY_MILITIA">
+		<event>
+			<beaconType id="map_icon_task" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->	
+			<ship load="SHIP_MILITIA_GENERIC" hostile="false"/>
+			<text>Sometimes it is hard to distinguish Militia ships between their dedicated combat ships and their haulers. Though a quick hail guides you to the correct ship to drop off the much needed supplies. Another job well done.</text>
+			<autoReward level="MED">scrap_only</autoReward>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	
+		<event>
+			<beaconType id="map_icon_task" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->	
+			<ship load="SHIP_MILITIA_GENERIC" hostile="false"/>
+			<text>The Militia helps bolster the defences of the Union in the absense of the Federation during war time. Though their ships are often times conversions of locally produced civilian hulls it's the deliveries of mil-spec equipment and weaponry that helps keep them competetive in a fire fight and continues to aid the defence of the Union territories.</text>
+			<autoReward level="MED">scrap_only</autoReward>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+		
+		<event>
+			<beaconType id="map_icon_task" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->	
+			<ship load="SHIP_MILITIA_STATION" hostile="false"/>
+			<text>A Militia station welcomes you as you arrive to the beacon. After a brief time of negociating the delivery is made and you've earned your pay.</text>
+			<autoReward level="MED">scrap_only</autoReward>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+
+		<event>
+			<beaconType id="map_icon_task" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->	
+			<ship load="SHIP_UNION_ALL" hostile="false"/>
+			<text>The red hue of a Union civilian vessel awaits your delivery. After a brief exchange you prepare for the vessel to dock with yours to begin the transfer of a few dozen units of rations and mediciines for disaster relief that has been ravaging a near by system.</text>
+			<autoReward level="MED">scrap_only</autoReward>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</eventList>
+
+	<event name="RVS_DISPATCHER_DELIVERY_MILITIA_PREVIEW_DIFFICULT">
+		<text>[ROUTINE DELIVERY TASK - PROVIDE MUCH NEEDED RELIEF FOR MILITIA FORCES!]
+		Description: You will need to convey vital cargo to help assist the Unions armed forces!
+		Requirements: Expanded Cargo Bays (Currently Stocked)
+		Warnings: Caution - Hostile activity in sector!
+		
+		Payment: High reward on delivery.</text>
+		<choice hidden="false">
+			<text>Accept the job.</text>
+			<event>
+				<text>"Alright, I'll submit your request. Transmitting the co-ordinates now. Good luck Renegade."</text>
+				<quest event="RVS_DISPATCHER_DELIVERY_MILITIA_DIFFICULT"/>
+				<!--<eventAlias name="ATLAS_MENU" jumpClear="true">ATLAS_MENU_NOEQUIPMENT</eventAlias>-->
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event>
+						<quest event="RVS_INTERCEPT_LIST"/>
+						<variable name="gb_called_dispatch" op="set" val="0"/>
+						<loadEvent>FMCORE_ATLAS_EQUIPMENT</loadEvent>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Go back.</text>
+			<event>
+				<loadEvent>RVS_DISPATCH_MULTIPLE_CHOICE</loadEvent>
+			</event>
+		</choice>
+	</event>
+
+	<eventList name="RVS_DISPATCHER_DELIVERY_MILITIA_DIFFICULT">
+		<event>
+			<beaconType id="map_icon_task" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->	
+			<ship load="SHIP_MILITIA_GENERIC" hostile="false"/>
+			<text>The Militia helps bolster the defences of the Union in the absense of the Federation during war time. Though their ships are often times conversions of locally produced civilian hulls it's the deliveries of mil-spec equipment and weaponry that helps keep them competetive in a fire fight and continues to aid the defence of the Union territories.</text>
+			<autoReward level="HIGH">scrap_only</autoReward>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+		
+		<event>
+			<beaconType id="map_icon_task" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->	
+			<ship load="SHIP_MILITIA_STATION" hostile="false"/>
+			<text>A Militia station welcomes you as you arrive to the beacon. After a brief time of negociating the delivery is made and you've earned your pay.</text>
+			<autoReward level="HIGH">scrap_only</autoReward>
+			<choice>
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+
+		<!-- COMBAT! -->
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+			<ship load="SHIP_REBEL_FIGHT" hostile="true"/>
+			<text>It is too late! There is no sign of any friendly contacts nearby. All that remains is a Rebel fighter locking onto your signal and powering up!</text>
+			<choice>
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+		<event>
+			<beaconType id="map_icon_delivery" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+			<ship load="SHIP_PIRATE_ALL" hostile="true"/>
+			<text>You are unable to find your contact here but you aren't left wondering why for long. You recieve a hail from a pirate vessel! "If you surrender your cargo to us we might even let a few of your crew live!"</text>
+			<choice>
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+
+		<!-- DED -->
+		<event>
+			<beaconType id="map_icon_task" global="true">
+				<color r="255" g="255" b="255" a="1.0"/>
+				<unvisitedTooltip>Your are tasked to deliver goods here.</unvisitedTooltip>
+				<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+				<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+			</beaconType>
+			<preventQuest/>
+			<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->	
+			<text>You won't be making a delivery this cycle. Evident by the debris and wreckage drifting in space here and you can only assume that your contact is amongst that wreckage. There's little you can do here.</text>
+			<choice hidden="true">
+				<text>Attempt to salvage.</text>
+				<event>
+					<autoReward level="RANDOM">standard</autoReward>
+					<text>Attempting to make the most of the situation, you begin salvaging the remains of the recent attack.</text>	
+				</event>
+				<!-- Write an event that lets you use your sensors, you could find some survivors, high reward, etc-->
+			</choice>
+		</event>
+	</eventList>
+
+	<eventList name="RVS_INTERCEPT_LIST">
+		<event>
+			<loadEvent>RVS_INTERCEPT_REBEL</loadEvent>
+		</event>
+		<event>
+			<loadEvent>RVS_INTERCEPT_TURNCOAT</loadEvent>
+		</event>	
+		<event>
+			<loadEvent>RVS_INTERCEPT_PIRATE</loadEvent>
+		</event>
+		<!-- Might add Mantis, Slug, and Rock later -->
+	</eventList>
+
+	<!--Hostile Rebel Event awaiting to intercept your transport ship on higher difficulty missions-->
+	<event name="RVS_INTERCEPT_REBEL">
+		<preventQuest/>
+		<beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
+			<color r="200" g="55" b="82" a="1"/>
+			<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+			<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+			<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+		</beaconType>
+		<text load="RVS_TEXT_INTERCEPT_REBEL"/>
+		<ship load="SHIP_REBEL_FIGHT" hostile="true"/>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="COMBAT_CHECK"/>
+		</choice>
+	</event>
+	<event name="RVS_INTERCEPT_TURNCOAT">
+		<preventQuest/>
+		<beaconType id="map_icon_reinforcements" global="true" req="LOOT_COMPASS">
+			<color r="200" g="55" b="82" a="1"/>
+			<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+			<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+			<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+		</beaconType>
+		<text load="RVS_TEXT_INTERCEPT_REBEL"/>
+		<ship load="SHIP_REBEL_FIGHT" hostile="true"/>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="COMBAT_CHECK"/>
+		</choice>
+	</event>
+	<textList name="RVS_TEXT_INTERCEPT_REBEL">
+		<text>"YOU! You are the transport we've been tipped off on! Surrender! Your cargo is now forfit and you and your crew will be taken as prisoners!" The Rebel ship powers up their weapons.</text>
+		<text>A Rebel ship searches through passerbyers at this beacon. You hope you could've slipped by unnoticed until you detected a cargo-scan being run on your ship. There is no way out of this without a fight.</text>
+		<text>You arrive almost colliding with a near by Rebel ship! "The Federation must be desperate to hire the likes of you to run their little 'erands'. You won't be leaving without your cargo!"</text>
+		<text>This sector is crawling with Rebel ships attempting to cut off the Federations logistics lines through this sector. You can already tell by the way the Rebel ship here turned towards you that you won't be an exception.</text>
+		<text>Rebel checkpoints have been set up throughout this sector attempting to impede any ships transporting goods for the Federation and her allies through this sector. Before you is one of those checkpoints and the Rebel ship posted here has already taken notice of your arrival.</text>
+		<text>A Rebel ship meets you at this beacon, hailing you "I thought this was going to be a boring assignment hunting down freighters and transports. I was never going to expect to find you here! You won't get away this time!"</text>
+	</textList>
+
+	<!--Hostile Pirate Event awaiting to intercept your transport ship on higher difficulty missions-->
+	<event name="RVS_INTERCEPT_PIRATE">
+		<preventQuest/>
+		<beaconType id="map_icon_intercept" global="true" req="LOOT_COMPASS">
+			<color r="200" g="55" b="82" a="1"/>
+			<unvisitedTooltip>An unvisited location.</unvisitedTooltip>
+			<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+			<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+		</beaconType>
+		<text load="RVS_TEXT_INTERCEPT_PIRATE"/>
+		<ship load="SHIP_PIRATE_ALL" hostile="true"/>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="COMBAT_CHECK"/>
+		</choice>
+	</event>
+	<textList name="RVS_TEXT_INTERCEPT_PIRATE">
+		<text>You detect weapon fire almost immediatly as you arrive to see a small hauler being assailed by pirates, but your ship catches their eye!  "Oi! Loo'at te' size of dat wun! All 'ands, let's gettem!".</text>
+		<text>Greeting you is a pirate vessel attempting to dock with your vessel. They are trying to steal your cargo!</text>
+		<text>Thinking you are alone you decided to take a moment to relax while your FTL drive spools. Though the moment passes quickly as the tell-tell signs of a ship with its transponder off rapidly approaching your vessel. It must be pirates hoping to make a quick profit off your cargo.</text>
+		<text>Scattered around this beacon are remnants of a less than fortunate transport and her escorts. From behind a larger piece of debris you are able to identify the perpetrator! Pirates!</text>
+		<text>You verify the legitimacy of the dispatchers reports of pirate activity in this sector as a pirate vessel rushes to intercept you and begins to run a cargo scan on you and begins to threaten your crews lives if you do not begin to eject your goods for them to claim.</text>
+	</textList>
+	
+	<!-- Wanted to make some locations have an attack just as you depart but can't think of a good way to write them in -->
+	<!--
+	<eventList name="RVS_POST_DELIVERY_ATTACK_LIST">
+		<event load="RVS_POST_DELIVERY_ATTACK_REBEL"/>
+		<event load="RVS_POST_DELIVERY_ATTACK_TURNCOAT"/>
+		<event load="RVS_POST_DELIVERY_ATTACK_REBEL_BIG"/>
+
+		<event load="RVS_POST_DELIVERY_ATTACK_PIRATE"/>
+		<event load="RVS_POST_DELIVERY_ATTACK_PIRATE"/>
+		<event load="RVS_POST_DELIVERY_ATTACK_PIRATE"/>	
+	</eventList>-->
+
+	<!--
+	<event name="RVS_DELIVERY_REBEL_ATTACK">
+		<text>Just as you were preparing to depart a few Rebel ships jump in! The </text>
+		<ship load="SHIP_REBEL_FIGHT" hostile="true"/>
+		<choice hidden="true">
+			<text>Continue...</text>
+			<event load="COMBAT_CHECK"/>
+		</choice>
+	</event>
+	 -->
+
+	
+
+			<!-- WIP END
+	
+	----------------------------------
+	
+	-->
+
+
+
 
 
 	<!-- R4: I think this is the generic event -->
@@ -318,22 +1143,27 @@ This is the maximum value of your spices, it will not increase further the next 
 			</event>
 		</choice>
 	</event>
-	<eventList name="GB_DISPATCH_QUEST_LIST"> <!-- R4: This is where you add more eventsto the general deliver to A deliveries -->
-		<event load="GB_DISPATCH_QUEST_LIST_FED"/>
-		<event load="GB_DISPATCH_QUEST_LIST_FED_STATION"/>
+	<eventList name="GB_DISPATCH_QUEST_LIST"> <!-- R4: This is where you add more events to the general deliver to A deliveries -->
+		<event load="RVS_DISPATCH_QUEST_LIST_FED"/>
+		<event load="RVS_DISPATCH_QUEST_LIST_FED_STATION"/>
 		<event load="GB_DISPATCH_QUEST_LIST_MILITIA"/>
+
+		<event load="GB_DISPATCH_QUEST_LIST_ORCHID"/>
+		<event load="GB_DISPATCH_QUEST_LIST_ENGI"/>
+		<event load="GB_DISPATCH_QUEST_LIST_ZOLTAN"/>
+
 		<event load="GB_DISPATCH_QUEST_LIST_GENERIC"/>
 		<event>
 			<text>You fail to find a drop off point or client anywhere near this beacon. However it appears you are not alone as there is a Rebel ship in close proximity!</text>
 			<choice>
-			<text>Continue...</text>
-			<event load="ENCOUNTER_REBEL"/>	 <!-- You did not do this right unfortunately, you were missing a choice and a text tag! -Cyrus -->
+				<text>Continue...</text>
+				<event load="ENCOUNTER_REBEL"/>	 <!-- You did not do this right unfortunately, you were missing a choice and a text tag! -Cyrus --> <!-- R4 2023.10.19: is this still current? my brain no worky-->
 			</choice>
 		</event>
 		<event load="GB_DISPATCH_QUEST_LIST_PIRATE"/>
 	</eventList>
-
-	<eventList name="GB_DISPATCH_QUEST_LIST_FED">
+<!--
+	<eventList name="RVS_DISPATCH_QUEST_LIST_FED">
 		<event>
 			<ship load="SHIP_FED_GENERIC" hostile="false"/>
 			<text>Just as expected you have arrived to see a Federation ship awaiting to recieve the much needed supplies. "Much appreciated, Renegade! We wouldn't have lasted much longer without these supplies. Take this on my behalf."</text>
@@ -349,7 +1179,7 @@ This is the maximum value of your spices, it will not increase further the next 
 			<text>Just as expected you have arrived to see a Federation ship awaiting to recieve the much needed supplies. "Much appreciated, Renegade! We wouldn't have lasted much longer without these supplies. We can't spare much but with these supplies I'll see to it if we can harrass the Rebel fleet and buy you a little extra time."</text>
 			<modifyPursuit amount="-2"/>
 				<choice>
-				<text>Continue...</text>
+					<text>Continue...</text>
 					<event/>
 				</choice>
 		</event>
@@ -359,7 +1189,7 @@ This is the maximum value of your spices, it will not increase further the next 
 			<text>To your surprise, the flotilla of ships you expected here is instead a rather heavy fleet of ships running on fumes. The heaviest ship makes a lumbering turn towards you before halting part way through the maneuover... Seems that it took a momment for the IFF to register you as a friendly. "Pardon for scaring you Renegade. We haven't had some good RnR in a long time and it's beginning to show, but with this delivery I reckon we can patch these ships up and get back into fighting condition. Once that's done we'll launch a counter offensive on the approaching fleet! They'll won't know what hit 'em."</text>
 			<modifyPursuit amount="-3"/>
 				<choice>
-				<text>Continue...</text>
+					<text>Continue...</text>
 					<event/>
 				</choice>
 		</event>
@@ -369,7 +1199,7 @@ This is the maximum value of your spices, it will not increase further the next 
 			<text>A Federation station surrounded by a few token defence patrols greets you upon your arrival. "We're reading you clear Renagade. Alright, dock at hanger bay two - zero. Our team will handle the cargo transfer and give your ship a few repairs as thanks."</text>
 			<damage amount="-10"/>
 				<choice>
-				<text>Continue...</text>
+					<text>Continue...</text>
 					<event/>
 				</choice>
 		</event>
@@ -378,17 +1208,18 @@ This is the maximum value of your spices, it will not increase further the next 
 			<ship load="SHIP_FED_STATION_ALL" hostile="false"/>
 			<text>A Federation station surrounded by a few token defence patrols greets you upon your arrival. "We're reading you clear Renagade. Alright, dock at hanger bay zero - niner. Thank you for the timely delivery. Take our excess supplies for your paymment."</text>
 			<autoReward level="HIGH">standard</autoReward>
-				<choice>
+			<choice>
 				<text>Continue...</text>
-					<event/>
-				</choice>
+				<event/>
+			</choice>
 		</event>
+
 
 		<event>
 			<text>Unfortunately it appears you didn't make it in time! Wrecks of Federation vessels litter this beacon and you feel you are not alone</text>
 			<choice>
-			<text>Continue...</text>
-			<event load="ENCOUNTER_REBEL"/>  <!-- You did not do this right unfortunately, you were missing a choice and a text tag! -Cyrus -->
+				<text>Continue...</text>
+				<event load="ENCOUNTER_REBEL"/>  You did not do this right unfortunately, you were missing a choice and a text tag! -Cyrus 
 			</choice>
 		</event>
 	</eventList>
@@ -427,8 +1258,8 @@ This is the maximum value of your spices, it will not increase further the next 
 		<event>
 			<text>Somethings not right. You expected to see a station at these coordinates but instead you see a debris field still smoldering...</text>
 			<choice>
-			<text>Continue...</text>
-			<event load="ENCOUNTER_REBEL"/>  <!-- You did not do this right unfortunately, you were missing a choice and a text tag! -Cyrus -->
+				<text>Continue...</text>
+				<event load="ENCOUNTER_REBEL"/>  You did not do this right unfortunately, you were missing a choice and a text tag! -Cyrus 
 			</choice>
 		</event>
 	</eventList>
@@ -453,7 +1284,7 @@ This is the maximum value of your spices, it will not increase further the next 
 					<event/>
 				</choice>
 		</event>
-	</eventList>
+	</eventList>-->
 	<eventList name="GB_DISPATCH_QUEST_LIST_GENERIC">
 		<event>
 			<ship load="SHIP_GENERIC" hostile="false"/>
@@ -561,6 +1392,36 @@ This is the maximum value of your spices, it will not increase further the next 
 
 	</eventList>
 
+
+	<event name="GB_DISPATCH_1">
+		<text load="GB_TEXT_DISPATCH_DELIVERY"/>
+			<choice hidden="false">
+				<text>Continue...</text>
+				<event>
+					<text load="GB_TEXT_DISPATCH_RESPONSE"/>
+					<choice hidden="false">
+						<text>Accept the job.</text>
+						<event>
+							<text>You accept the job and run double checks on your inventory for the delivery. Seems like you have everything you need already.</text>
+							<variable name="gb_marker_1" op="set" val="1"/>
+							<choice hidden="true">
+								<text>Continue...</text>
+								<event>
+									<loadEvent>FMCORE_ATLAS_EQUIPMENT</loadEvent>
+								</event>
+							</choice>
+						</event>
+					</choice>
+				</event>
+			</choice>
+		<choice hidden="true" req="pilot" lvl="1"  max_group="4" blue="false">
+			<text>Nevermind. I don't want to do any jobs. </text>
+			<event>
+				<variable name="gb_called_dispatch" op="set" val="0"/>
+				<loadEvent>FMCORE_ATLAS_EQUIPMENT</loadEvent>
+			</event>
+		</choice>
+	</event>
 
 	<!-----------------------
 		Dispatcher Delivery Generic Text Lists

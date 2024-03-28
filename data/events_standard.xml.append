@@ -629,7 +629,7 @@
 	<beaconType id="map_icon_store_separatist" global="false">
 		<color r="215" g="255" b="200" a="1"/>
 	</beaconType>
-	<text>To your surprise, there is indeed a Separatist ship transmitting the trade beacon. Though it doesn't appear that anything's amiss as the Separatist ship simply drifts around silently near you. You attempt to hail but you do not hear anything besides the crackle of the radio communicator and a faint buzzing sound. Preliminary scans does not answer any questions either as the ship, despite being fully functional and responsive, is devoid of any lifesigns.</text>
+	<text>To your surprise, there is indeed a Separatist ship transmitting a trade beacon. Though it doesn't appear that anything's amiss as the Separatist ship simply drifts around silently near you. You attempt to hail but you do not hear anything besides the crackle of the radio communicator and a faint buzzing sound. Preliminary scans does not answer any questions either as the ship, despite being fully functional and responsive, is devoid of any lifesigns.</text>
 	<ship load="SHIP_SEPERATIST_NANOCLOUD" hostile="false" />
 	<choice hidden="true">
 		<text>Attempt to salvage the ship</text>

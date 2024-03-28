@@ -6,7 +6,7 @@
     </eventList>
 
     <eventList name = "GB_ITEMS" unused="true">
-        <event load = "GB_FED_RESEARCH_RAIL"/>
+        <event load = "GB_FED_RESEARCH_RAIL"/>  <!-- VSC says this is not used -->
         <!--<event load = "GB_MUSEUM_TOUR"/> -->
     </eventList>
 
@@ -21,7 +21,7 @@
             <text>Dock with one of the escorts and investigate.</text>
             <event load="GB_CARAVAN_ABANDONED_ESCORT" />
         </choice>
-        <choice hidden="true" req="LIST_CREW_MORPH_RECON"> <!-- JUlk: usually there is just an option using any boarding drones-->
+        <choice hidden="true" req="LIST_CREW_MORPH_RECON"> <!-- JUlk: usually there is just an option using any boarding drones--> <!-- R4 2023.10.19: I want to give a use to Recon drones -->
             <text>(Recon Drone) Use a Recon Drone to quickly investigate each ship.</text>
             <event load="GB_CARAVAN_ABANDONED_RECON" />
         </choice>
@@ -1323,7 +1323,7 @@
 
     <event name="RVS_FREIGHTER_ESCORT_DISTRESS" unique="true">
         <beaconType text="ENCRYPTED DISTRESS" global="false" persist="false" hideVanillaLabel="true"> 
-            <color r="233" g="123" b="74" a="1" /> <!-- CV: made this the same as supply depots -->
+            <color r="233" g="123" b="74" a="1" /> <!-- CV: made this the same as supply depots --> <!-- R4: splendid-->
             <undiscoveredTooltip>Encrypted distress beacon. Someone might need help.</undiscoveredTooltip>
             <unvisitedTooltip>Encrypted distress beacon. Someone might need help.</unvisitedTooltip>
             <visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>

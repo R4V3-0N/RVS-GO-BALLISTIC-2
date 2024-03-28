@@ -69,7 +69,7 @@ FRONTIER SECTOR
 		<track>lostship</track>
 	</trackList>
 	<rarityList>
-		<blueprint name="human" rarity="2"/>
+		<!--<blueprint name="human" rarity="2"/>
 		<blueprint name="human_medic" rarity="0"/>
 		<blueprint name="human_engineer" rarity="5"/>
 		<blueprint name="engi" rarity="0"/>
@@ -97,9 +97,7 @@ FRONTIER SECTOR
 		<blueprint name="phantom" rarity="4"/>
 		<blueprint name="phantom_goul" rarity="5"/>
 		<blueprint name="phantom_mare" rarity="5"/>
-		<blueprint name="phantom_wraith" rarity="5"/>
-		
-		<!--<blueprint name="BEAM_MINING" rarity="2"/> I completely forgot what the heck this is doing here and why-->
+		<blueprint name="phantom_wraith" rarity="5"/>-->
 	</rarityList>
 	<startEvent>ENTER_FRONTIER</startEvent>
 	<removeFirstBeaconNebula/>
@@ -125,12 +123,12 @@ FRONTIER SECTOR
 	<event name="FILLER_LIST" min="999" max="999"/>
 	-->
 	
-	<event name="RVS_FRONTIER_CRYSTAL_RUIN" min="1" max="1"/>	<!-- NEBULA -->
-	<event name="RVS_FRONTIER_AETHER_RUIN" min="1" max="1"/>	<!-- NEBULA -->
+	<event name="RVS_FRONTIER_CRYSTAL_RUIN" min="1" max="1"/>	<!-- TO DO -->
+	<event name="RVS_FRONTIER_AETHER_RUIN" min="1" max="1"/>	<!-- TO DO -->
 	
-	<event name="MV_TRAVELER" min="1" max="2"/>
-	<event name="SYLVAN" min="0" max="1"/>
-	<event name="NEMESIS_ENCOUNTER" min="0" max="1" req="prof_finalsector" lvl="1"/>
+	<event name="MV_TRAVELER" min="1" max="2"/>					<!-- MV -->
+	<event name="SYLVAN" min="0" max="1"/>						<!-- MV -->
+	<event name="NEMESIS_ENCOUNTER" min="0" max="1" req="prof_finalsector" lvl="1"/>	<!-- MV -->
 	
 	<event name="RVS_STORELIST_FRONTIER" min="2" max="2"/>		<!-- TO DO -->
 	
@@ -181,9 +179,9 @@ FRONTIER SECTOR
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->	
 <eventList name="RVS_ITEMS_FRONTIER">
-	<event load="RVS_FRONTIER_PRISTINE"/>	<!-- nature -->		<!-- TESTED/ FAILED TEST, FREEZE/CRASH -->		
+	<event load="RVS_FRONTIER_PRISTINE"/>	<!-- nature -->		<!-- TESTED! may need more blue options-->		
 	<event load="RVS_FRONTIER_A"/>			<!-- nature -->		<!-- TO DO -->
-	<event load="RVS_FRONTIER_MIXED_SETTLEMENT"/><!-- colonised --><!-- NEEDS TEST -->
+	<event load="RVS_FRONTIER_MIXED_SETTLEMENTS"/><!-- colonised --><!-- TESTED! -->
 	<event load="RVS_FRONTIER_C"/>		<!-- colonised -->	<!-- TO DO -->
 </eventList>
 
@@ -197,7 +195,7 @@ FRONTIER SECTOR
     		<loadEvent>RVS_LIST_FRONTIER_RING</loadEvent>
 		</event>
 	</choice>
-	<choice hidden="true" req="LIST_BEAM_DRONES">
+	<choice hidden="true" req="BLUELIST_DRONES_BEAM">
 		<text>(Beam Drones) Attempt to harvest the ring.</text>
 		<event>
 			<item_modify steal="true">
@@ -219,6 +217,7 @@ FRONTIER SECTOR
 			</choice>
 			<choice hidden="true">
 				<text>Do nothing.</text>
+				<event/>
 			</choice>
 		</event>
 	</choice>
@@ -227,7 +226,7 @@ FRONTIER SECTOR
 	<event>
 		<autoReward level="RANDOM">scrap_only</autoReward>
 		<environment type="asteroid"/>
-		<text>Amid the satisfaction of your successful harvest, fate takes an abrupt turn. The ship becomes ensnared within the ring's embrace, and asteroids awaken to pummel your ship. Your ship is unscathed just yet but urgency fills the air as your crew fights to charge their FTL drive to get out before the universe decides to punish us any further.</text>
+		<text>Amid the satisfaction of your successful harvest, fate takes an abrupt turn. The ship becomes ensnared within the ring's embrace, and asteroids awaken to pummel against the hull. Your ship is unscathed just yet, but urgency fills the air as your crew fights to charge their FTL drive to get out before the universe decides to punish us any further.</text>
 	</event>
 	<event>
 		<autoReward level="RANDOM">scrap_only</autoReward>
@@ -258,7 +257,7 @@ FRONTIER SECTOR
 </eventList>
 
 <event name="RVS_STORE_FRONTIER_NEUTRAL_ENFORCED">
-	<text>The space station here is of extraordinary size, a marvel of engineering. It appears to function as a permanent orbital habitat. You consider docking here for some well-deserved respite and to browse the stores. However, you catch the familiar orange hue of a Rebel ship comes into view, already docked at the station. An automated transmission interrupts your thoughts: "You have entered a no-fire zone. Weapon discharge will not be tolerated." It seems that you shouldn’t find any trouble here, yet the prospect of sharing the same space with a Rebel ship leaves you feeling conflicted.</text>
+	<text>The space station here is of extraordinary size, a marvel of engineering. It appears to function as a permanent orbital habitat. You consider docking here for some well-deserved respite and to browse the stores. However, you catch the familiar orange hue of a Rebel ship comes into view, already docked at the station. An automated transmission interrupts your thoughts: "You have entered a no-fire zone. Weapon discharge will not be tolerated." It seems that you shouldn't find any trouble here, yet the prospect of sharing the same space with a Rebel ship leaves you feeling conflicted.</text>
 	<choice hidden="true">
 		<text>Dock at the station to trade and ignore the Rebel.</text>
 		<event>
@@ -284,6 +283,7 @@ FRONTIER SECTOR
 			</choice>
 			<choice hidden="true">
 				<text>Do nothing.</text>
+				<event/>
 			</choice>
 		</event>
 	</choice>
@@ -301,27 +301,28 @@ FRONTIER SECTOR
 
 <event name="RVS_STORE_FRONTIER_ATTACK_REBEL">
 	<environment type="PDS" target="player"/>
-	<text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To compound the situation, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
+	<text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To make matters worse, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
 	<ship load="SHIP_REBEL_FIGHT" hostile="true"/>
 </event>
 
 <event name="RVS_STORE_FRONTIER_ATTACK_ENGINEER">
 	<environment type="PDS" target="player"/>
-	<text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To compound the situation, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
+	<text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To make matters worse, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
 	<ship load="SHIP_ENGINEER" hostile="true"/>
 </event>
 
 <event name="RVS_STORE_FRONTIER_ATTACK_TURNCOAT">
 	<environment type="PDS" target="player"/>
-	<text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To compound the situation, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
+	<text>Defiant in the face of warnings, you refuse to abide the presence of the Rebel ship and launch an assault, eliciting shock from both the Rebel crew and the surrounding civilians. As anticipated, the station's ASB battery springs to life in retaliation, its weaponry converging on your vessel. To make matters worse, an automated message further aggravates the situation by listing an ongoing tally of your past and present infractions.</text>
 	<ship load="GB_SHIP_REBEL_FED_GENERIC" hostile="true"/>
 </event>
 
 <event name="RVS_STORE_FRONTIER_ATTACK_GUARD">
-	<text>Despite the warnings, you attempt to engage the Rebel ship presuming the station would turn a blind eye to your transgression. Yet, to your surprise the station's guards swiftly spring to action and move in to intercept you! grants the Rebel ship the opportunity to undock and escape, leaving you in the clutches of the station's guards.</text>
+	<text>Despite the warnings, you attempt to engage the Rebel ship presuming the station would turn a blind eye to your transgression. Yet, to your surprise the station's guards swiftly spring to action and move in to intercept you! Granting the Rebel ship the opportunity to undock and escape, leaving you in the clutches of the station's guards.</text>
 	<ship load="SHIP_MILITIA_FIGHT" hostile="true"/>
 </event>
 
+<!-- TO DO: Add jump event for the Rebel ship to attempt to attack you!-->
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -337,7 +338,7 @@ FRONTIER SECTOR
 	<event load="RVS_FRONTIER_ARCHEOLOGY"/>			<!-- TO DO --> <!-- Zoltan archeology -->
 
 	<!-- Colony-->
-	<event load="RVS_FRONTIER_SHRINEWORLD"/>	<!-- NEEDS TEST -->
+	<event load="RVS_FRONTIER_SHRINEWORLD"/>	<!-- TESTED, missing enemy ship! doh! -->
 	<event load="RVS_FRONTIER_DISAGREEMENT"/>	<!-- TO DO --> <!-- Disagreement between two races focused -->
 	<event load="RVS_FRONTIER_LANDFILL"/>		<!-- TO DO --> <!-- Leech focused -->
 	<event load="RVS_FRONTIER_SAFARI"/>			<!-- TO DO --> <!-- Clansmen Safari / hunting native wildlife for sport -->
@@ -348,42 +349,114 @@ FRONTIER SECTOR
 
 
 <eventList name="RVS_FRONTIER_NEBULA">
-	<event load="RVS_FRONTIER_NEBULA_GENERIC"/>
+	<event load="RVS_FRONTIER_NEBULA_GENERIC"/> <!-- might delete-->
 	<!-- Nebula -->
 	<event load="RVS_FRONTIER_MONK_HIDING"/>	<!--TO DO--> <!-- Monk Refugee -->
-	<event load="RVS_FRONTIER_NEBULA_COLONY_DEAD"/><!-- NEEDS TEST -->
+	<event load="RVS_FRONTIER_NEBULA_COLONY_DEAD"/><!-- TESTED. missing nebula, inoperable without double negative, lots of tpyos.-->
 	
 	<!-- MVanilla events-->
 	<event load="NEBULA_REBEL_UNDETECTED"/>		<!-- Nebula Encounter -->
 	<event load="NEBULA_PIRATE_SMUGGLE"/>		<!-- Nebula Encounter -->
 </eventList>
--->
 
+<event name="RVS_FRONTIER_SCRAPYARD">
+	<text>It hadn't been long when this sector first began to be colonized but even in such little time, signs of pollution have already marred the planetoids surface below.Large wrecking yards billowing smoke. Although the planetoid isn't fully inhabited, watchtowers and cranes have been erected to oversee and coordinate the reclamation of scrap materials, destined for use in constructing stations and settlements across the system.</text>
+	<choice hidden="true">
+		<text>Stay in orbit to gather some debris.</text>
+		<event>
+			<autoReward level="RANDOM">standard</autoReward>
+			<text>Opting to stay in orbit, directing your ship to carefully gather scattered debris left adrift in orbit. Sifting through the remnants, salvaging various materials and valuable components. It's evident that these fragments once belonged to spacefaring vessels discarded during the early stages of colonization. Your efforts yield a modest but worthwhile haul of resources, providing a small but meaningful boost to your ship's supplies.</text>
+		</event>
+	</choice>
+	<choice hidden="true" req="SENSORS" lvl="3">
+		<text>(Adv. Sensors) Use your sensors</text> <!-- Better text-->
+		<event>
+			<autoReward level="HIGH">standard</autoReward>	<!-- MED? HIGH? -->
+			<text>Utilizing your ship's improved sensor array. It becomes easier to detect where the more dense wreckage from an old Colony Ship that was likely stripped and abandoned upon arriving to this sector. Though mostly already gutted she still has some valuable resources left to be claimed.</text>
+		</event>
+	</choice>
+	<choice hidden="true">
+		<text>Head down into the wrecking yard.</text>
+		<event load="RVS_FRONTIER_SCRAPYARD_ENTER"/>
+	</choice>
+	<choice hidden="true">
+		<text>Do something else.</text>
+		<event>
+			<text>You would rather not commit the time to go comb through someones refuse.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event>
+    				<loadEvent>STORAGE_CHECK</loadEvent>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
 
-<eventList name="RVS_FRONTIER_NEBULA">
-	<event>
-    	<loadEvent>RVS_FRONTIER_NEBULA_GENERIC</loadEvent>
-	</event>
-	<!-- Nebula -->
-	<event>
-    	<loadEvent>RVS_FRONTIER_MONK_HIDING</loadEvent>
-	</event>	<!--TO DO--> <!-- Monk Refugee -->
-	<event>
-    	<loadEvent>RVS_FRONTIER_NEBULA_COLONY_DEAD</loadEvent>
-	</event><!-- NEEDS TEST -->
-	
-	<!-- MVanilla events-->
-	<event>
-    	<loadEvent>NEBULA_REBEL_UNDETECTED</loadEvent>
-	</event>		<!-- Nebula Encounter -->
-	<event>
-    	<loadEvent>NEBULA_PIRATE_SMUGGLE</loadEvent>
-	</event>		<!-- Nebula Encounter -->
+<eventList name="RVS_FRONTIER_SCRAPYARD_ENTER">
+	<event load="RVS_FRONTIER_SCRAPYARD_WEAPON"/>	<!-- TO DO -->	<!-- Unsure what race/ faction-->
+	<event load="RVS_FRONTIER_SCRAPYARD_FEE"/>		<!-- WIP-->		<!-- Engi and Zoltan -->
+	<event load="RVS_FRONTIER_SCRAPYARD_FIGHT"/>	<!--TO DO -->	<!-- Coalition -->
 </eventList>
--->
 
-<event name="RVS_FRONTIER_SHRINEWORLD" unique="true">
-	<text>The world below stands transformed into a Cathedral World, a luminous testament to rockmen's faith and stonemasonry. Yet, there's no time to fully appreciate the sight. A theocracy ship emerges from the atmosphere, intent on intercepting you. Their reception isn't warm; alien vessels orbiting their sacred ground raise concerns which are met with extreme prejudice.</text>
+<event name="RVS_FRONTIER_SCRAPYARD_FEE">	<!-- WIP-->
+	<text>You are hailed by a Zolan who is the acting warden of this facility. After you state your intentions they allow you to continue your approach if you pay an enterance fee and submit yourself through processing at their local office not far from the visitors landing pad.</text>
+	<choice>
+		<text>Pay the enterance fee. [-15~]</text>
+		<item_modify>
+			<item type="scrap" min="-15" max="-15"/>
+		</item_modify>
+		<event>
+			<loadEvent>RVS_FRONTIER_SCRAPYARD_FEE_RESULT</loadEvent>
+		</event>
+	</choice>
+	<choice>
+		<text>Avoid the facility.</text>
+		<event>
+			<text>You weren't prepared to pay an entrance fee and decide to remain in orbit instead.</text>
+			<choice hidden="true">
+				<text>Do something onboard the ship.</text>
+				<event>
+    				<loadEvent>STORAGE_CHECK</loadEvent>
+				</event>
+			</choice>
+			<choice hidden="true">
+				<text>Do nothing.</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+<eventList name="RVS_FRONTIER_SCRAPYARD_FEE_RESULT">
+	<!--<event load="RVS_FRONTIER_SCRAPYARD_FEE_DRONES"/> TO DO -->		<!-- Rogue Drones -->
+	<event load="RVS_FRONTIER_SCRAPYARD_FEE_FUEL"/>		<!--NEEDS TESTING --><!-- Fuel Tanker-->
+	<event load="RVS_FRONTIER_SCRAPYARD_FEE_SCRAP"/>	<!--NEED TESTING-->	<!-- Resources -->
+	<event load="RVS_FRONTIER_SCRAPYARD_FEE_DUD"/>		<!--NEED TESTING--> <!-- Nothing -->
+</eventList>
+
+<!-- Event where you come across an Engi vessel of some kind, but while trying to salavage it their drones activate! Might just be boarding drones like that 1 sector salvage event, but it also could bring up a empty Engi ship wreck like the Vagabonds and have it use only combat drones against you (all other systems disabled)-->
+
+<event name="RVS_FRONTIER_SCRAPYARD_FEE_FUEL">
+	<text>Embedded within the debris lies the battered remnants of a Fermi-class Fuel Tanker, a rarity outside the Ministry space and the Federation Logistics Force. Renowned for its ability to safeguard volatile fuel with its powerful shields, the wreck reveals a trove of well-preserved fuel cells stored within. Allowing you to collect as much fuel can manage before the Rebel Fleet advances any closer.</text>
+	<autoReward level="HIGH">fuel_only</autoReward>
+</event>
+
+<event name="RVS_FRONTIER_SCRAPYARD_FEE_SCRAP">
+	<text>As you explore the remnants of a once-mighty Zoltan Agricultural Ship, its hydroponics and systems stripped bare, you stumble upon an Engi Shipbreaker amidst the mechanical wreckage. Engaging them in conversation, they explain that Engi, renowned for their technical prowess, often grapple with the challenges of planetary gravity, favoring the efficiency of zero-g environments. Grateful for the interaction, the Engi directs your attention toward a valuable cache of machinery, fulfilling your desire for scrap materials.</text>
+	<autoReward level="HIGH">scrap_only</autoReward>
+</event>
+
+<event name="RVS_FRONTIER_SCRAPYARD_FEE_DUD">
+	<text>Through the sprawling wrecking yard you came to discover that it has already been thoroughly picked clean by automated salvage operations. A testament to the remarkable ability of the Engi to clean through the wreckage as efficiently as they do. Taking what little useful materials that were left behind.</text>
+	<autoReward level="LOW">standard</autoReward>
+</event>
+
+	<event name="RVS_FRONTIER_SHRINEWORLD" unique="true">
+	<text>The world below stands transformed into a Cathedral World, a luminous testament to the Rockmen's faith and stonemasonry. Yet, there's no time to fully appreciate the sight. A theocracy ship emerges from the atmosphere, intent on intercepting you. Their reception isn't warm; alien vessels orbiting their sacred ground raise concerns which are met with extreme prejudice.</text>
 	<choice hidden="true">
 		<text>Stand your ground and fight!</text>
 		<event>
@@ -415,12 +488,9 @@ FRONTIER SECTOR
 	</choice>
 </event>
 
-<event name="RVS_FRONTIER_NEBULA_GENERIC">
-	<text load="TEXT_LIST_NAME"/>
-</event>
 
 <event name="RVS_FRONTIER_NEBULA_COLONY_DEAD">
-	<text>Swirling nebula clouds obscure your view, compounded without inoperable sensors adds to the difficulty of seeing anything. Amid this, your hull tiny debris sparks off your hull giving hint that there is something. Cracks in the clouds reveal a battered, abandoned installation before you.</text>
+	<text>Swirling nebula clouds obscure your view, compounded without inoperable sensors adds to the difficulty of seeing anything. Tiny debris sparks off your hull giving hint that there is something inside the nebula. Cracks in the clouds reveal a battered abandoned installation before you.</text>
 	<choice hidden="true">
 		<text>Investigate the structure.</text>
 		<event>
@@ -439,6 +509,7 @@ FRONTIER SECTOR
 			</choice>
 			<choice hidden="true">
 				<text>Do nothing.</text>
+				<event/>
 			</choice>
 		</event>
 	</choice>
@@ -447,13 +518,13 @@ FRONTIER SECTOR
 <eventList name="RVS_FRONTIER_NEBULA_COLONY_DEAD_INSPECT">
 	<event load="RVS_FRONTIER_NEBULA_COLONY_GAS_MINE"/>
 	<event load="RVS_FRONTIER_NEBULA_COLONY_SCIENCE"/>
-	<!-- Ran out of ideas to put here with acompanying rewards-->
+	<!-- Ran out of ideas to put here with acompanying rewards and some duds?-->
 </eventList>
 
 <event name="RVS_FRONTIER_NEBULA_COLONY_GAS_MINE">
 	<augment name="NEBULA_GASSES" />
 	<autoReward level="MED">standard</autoReward>
-	<text>Clouds swirling past as you make your approach to the structure. The frequency of the sparks escalated as you came closer to the site. Now in clearer view the installation is identified as a Class-C Gas Extraction and Processing Facility that was abandoned some time after completion for reasons unknown. There is potential scrap and leftover cargo offer an opportunity for salvage which you’re not willing to let go to waste.</text>
+	<text>Clouds swirling past as you make your approach to the structure. The frequency of the sparks escalated as you came closer to the site. Through the parting in the nebula in clear view is an installation that is identified as a Class-C Gas Extraction and Processing Facility that was abandoned some time after completion for reasons unknown. There is potential scrap and leftover cargo offer an opportunity for salvage which you're not willing to let go to waste.</text>
 </event>
 
 <event name="RVS_FRONTIER_NEBULA_COLONY_SCIENCE">
@@ -471,7 +542,7 @@ FRONTIER SECTOR
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
 <eventList name="RVS_DISTRESS_FRONTIER">
-	<event load="RVS_DISTRESS_FRONTIER_NO_FUEL"/>	<!-- NEEDS TESTING -->
+	<event load="RVS_DISTRESS_FRONTIER_NO_FUEL"/>	<!-- TESTED, it's a rebel ship when being attacked, heck!-->
 	<!--<event load="RVS_DISTRESS_FRONTIER_LOST"/>		 TO DO -->
 	<!--<event load="RVS_DISTRESS_FRONTIER_SICK"/>		 TO DO -->
 	<!--<event load="RVS_DISTRESS_FRONTIER_PIRATE"/>	 TO DO -->
@@ -499,15 +570,16 @@ FRONTIER SECTOR
 			</choice>
 			<choice hidden="true">
 				<text>Do nothing.</text>
+				<event/>
 			</choice>
 		</event>
 	</choice>
 </event>
 <textList name="RVS_TEXT_DISTRESS_FRONTIER_EMPTY_SHIP">
-	<text>You arrive to find a ship floating among some debris. Your hails go unanswered and it isn’t surprising why. The vessel drifts in eerie solitude, crewless and adrift in the expanse of the frontier.</text>
-	<text>Upon your arrival you find the source of the distress signal, a drifting hulk that has since long been abandoned… You are left to your imagination as to what may have happened to their crew.</text>
+	<text>You arrive to find a ship floating among some debris. Your hails go unanswered and it isn't surprising why. The vessel drifts in eerie solitude, crewless and adrift in the expanse of the frontier.</text>
+	<text>Upon your arrival you find the source of the distress signal, a drifting hulk that has since long been abandoned... You are left to your imagination as to what may have happened to their crew.</text>
 	<text>Responding to the distress signal you spot what appears to be the source. Floating motionlessly your scans indicate that every airlock has been left open. Potentially the results of an electronic attack or a very unfortunate series of events following a fire. Once full of life the ship now drifts through the endless expanse.</text>
-	<text>You receive a patchy transmission immediately on arrival “Mayday, Ma-**-ay, Mayday! We have run out of fuel and are awaiting immediate assistance!... We encountered a ******* ***** ****** *-nd **** ** ***... we’re running low o-* rations and we do-** **** much ti-** left… **** starved out just over a week ago… Please if you can hear this please resp-***!” You rush to aid the survivors but to your dismay the ship shows on scans completely empty on closer inspection. You’re listening to a pre-recorded message which only continues to get more and more laden with static until it abruptly stops as the ship's backup generator dies… you are left wondering what had happened here.</text>
+	<text>You receive a patchy transmission immediately on arrival "Mayday, Ma-**-ay, Mayday! We have run out of fuel and are awaiting immediate assistance!... We encountered a ******* ***** ****** *-nd **** ** ***... we're running low o-* rations and we do-** **** much ti-** left... **** starved out just over a week ago... Please if you can hear this please resp-***!" You rush to aid the survivors but to your dismay the ship shows on scans completely empty on closer inspection. You're listening to a pre-recorded message which only continues to get more and more laden with static until it abruptly stops as the ship's backup generator dies... you are left wondering what had happened here.</text>
 	<text>Rushing to aid the distressed vessel, you assess its plight - their fuel reserves are empty and their reactor has gone cold leaving the ship to be left adrift for a long time now. Despite your best analysis you can not deduce the eventual fate of the crew or their current whereabouts.</text>
 </textList>
 
@@ -520,12 +592,12 @@ FRONTIER SECTOR
 
 <event name="RVS_DISTRESS_EMPTY_SALVAGE_RESOURCE">
 	<autoReward level="MED">standard</autoReward>
-	<text>While there is no hope to save them, you opt to salvage what you can from their empty vessel. With the resources you have scoured from the vessel you come to a realization that these materials may help you in your journey, but also a silent echo of the crew’s fate as a lingering reminder of the dangers out in the great expanse.</text>
+	<text>While there is no hope to save them, you opt to salvage what you can from their empty vessel. With the resources you have scoured from the vessel you come to a realization that these materials may help you in your journey, but also a silent echo of the crew's fate as a lingering reminder of the dangers out in the great expanse.</text>
 </event>
 <event name="RVS_DISTRESS_EMPTY_SALVAGE_MAP">
 	<reveal_map />
 	<autoReward level="LOW">standard</autoReward>
-	<text>You choose to salvage the vessel, recovering what little remains of their once-living ship. You find a small silver lining as their navigation computer is fully intact. Your technicians get to work recovering their sector scans to update your map with.You find it disturbing to find that their flight path almost matches your current one perfectly albeit a few weeks prior.</text>
+	<text>You choose to salvage the vessel, recovering what little remains of their once-living ship. You find a small silver lining as their navigation computer is fully intact. Your technicians get to work recovering their sector scans to update your map with. You find it disturbing to find that their flight path almost matches your current one perfectly albeit a few weeks prior.</text>
 </event>
 <event name="RVS_DISTRESS_EMPTY_SALVAGE_WEAPON">
 	<autoReward level="MED">weapon</autoReward>
@@ -533,13 +605,13 @@ FRONTIER SECTOR
 </event>
 <event name="RVS_DISTRESS_EMPTY_SALVAGE_SICK">
 	<autoReward level="LOW">standard</autoReward>
-	<text>You choose to salvage the vessel, recovering what little remains of their once-living ship. With your team coming back aboard one of them begins to lose their balance and collapse with a severe cough. With them being rushed out from the airlock to receive medical attention they begin to recover and recompose themselves. Personnel scans indicated that they had only suffered from mild nausea while boarding the vessel. With no risks to infection you release them from quarantine but it does leave you wondering what happened to the ship's original inhabitants…</text>
+	<text>You choose to salvage the vessel, recovering what little remains of their once-living ship. With your team coming back aboard one of them begins to lose their balance and collapse with a severe cough. With them being rushed out from the airlock to receive medical attention they begin to recover and recompose themselves. Personnel scans indicated that they had only suffered from mild nausea while boarding the vessel. With no risks to infection you release them from quarantine but it does leave you wondering what happened to the ship's original inhabitants...</text>
 </event>
 
 <event name="RVS_DISTRESS_FRONTIER_NO_FUEL">
 	<text load="RVS_TEXT_DISTRESS_FRONTIER_FUEL"/>
 	<distressBeacon/>
-	<ship load="RVS_LIST_SHIPS_GENERIC" hostile="false"/>
+	<ship load="RVS_SHIPS_GENERIC" hostile="false"/>
 	<status type="limit" target="enemy" system="teleporter" amount="0"/>
 	<choice>
 		<text>Give them the fuel.</text>
@@ -604,7 +676,7 @@ FRONTIER SECTOR
 			<choice hidden="true">
 				<text>Continue...</text>
 				<event>
-    				<loadEvent>MORALITY_UPDATE_GENERAL_FIGHT</loadEvent>
+    				<loadEvent>COMBAT_CHECK</loadEvent>
 				</event>
 			</choice>
 		</event>
@@ -613,10 +685,10 @@ FRONTIER SECTOR
 <textList name="RVS_TEXT_DISTRESS_FRONTIER_FUEL">
 	<text>"Ahoy there! What a sight for sore eyes you are! Our fuel reserves have run dry, and we've been stranded in this desolate sector for what feels like an eternity. The constant dread of pirate raids or the looming presence of those Rebel troublemakers has kept us on edge. Would you be willing to spare some precious fuel to aid us?"</text>
 	<text>"Hey there. We used up the last of our FTL fuel to make a jump to this colony, aiming to find sanctuary in the midst of this uncharted frontier, but, well... it seems we misjudged the distance by a mere jump. Now, stranded in this sector, we've been wrestling with the consequences ever since as we count the days go by."</text>
-	<text>A lone spacecraft drifts far from the beacon, fragments of broken meteoroids around it. A transmission crackles to life: “Greetings. Our hunt for ore-rich asteroids in this uncharted sector had been a lot more draining than we expected, after suffering a missjump we’ve been stranded since.”</text>
+	<text>A lone spacecraft drifts far from the beacon, fragments of broken meteoroids around it. A transmission crackles to life: "Greetings. Our hunt for ore-rich asteroids in this uncharted sector had been a lot more draining than we expected, after suffering a missjump we've been stranded since."</text>
 	<text>The ship emitting the distress beacon messages you, "Sorry to bother you, but we're out of fuel and can't get out of this uncharted sector. Could you help us out?</text>
 	<text>A small civilian ship flies over as soon as you arrive. You're prepared to fight but they just inform you that they're out of FTL fuel and can't jump.</text>
-	<text>Deep in the frontier, a survey vessel drifts, its engines dormant. A weak signal breaks the silence: “Tasked with mapping these stars, oh so many stars there are… stars stars stars…, we misjudged our fuel oh we did yes we did. Stranded far from the closest station or civilization!, our engines are silent. Can you assist?"</text>
+	<text>Deep in the frontier, a survey vessel drifts, its engines dormant. A weak signal breaks the silence: "Tasked with mapping these stars, oh so many stars there are... stars stars stars..., we misjudged our fuel oh we did yes we did. Stranded far from the closest station or civilization!, our engines are silent. Can you assist?"</text>
 </textList>
 
 <!--
@@ -635,13 +707,39 @@ FRONTIER SECTOR
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
 
-<!--
+
 <eventList name="RVS_HOSTILE_FRONTIER_HAZARD">
-	<event load="">
-	<event load="">
-	<event load="">
+	<event load="RVS_ENCOUNTER_HAZARD_VAMPWEED_FRONTIER"/>		<!-- Sun, Vampweed, Boarding-->
+
+	<!-- MVanilla Hazard Event Encounters-->
+	<!-- SUN -->
+	<event load="ENCOUNTER_OUTCAST_SUN"/>
+	<!-- PULSAR -->
+	<event load="ENCOUNTER_ZOLTAN_PULSAR"/>
+	<!-- ASTEROID -->
+	<event load="ENCOUNTER_ROCK_ASTEROID"/>
+	<event load="ENCOUNTER_ZOLTAN_ASTEROID"/>
+	<event load="ENCOUNTER_VAMPWEED_ASTEROID"/>
 </eventList>
--->
+
+<event name="RVS_ENCOUNTER_HAZARD_VAMPWEED_FRONTIER" unique="true">
+	<text load="RVS_TEXT_HAZARD_VAMPWEED_FRONTIER"/>
+	<ship load="SHIP_VAMPWEED_FIGHT" hostile="true"/>
+	<boarders min="1" max="3" class="vampweed"/>
+	<environment type="sun"/>
+	<choice hidden="true">
+		<text>Continue...</text>
+		<event>
+    		<loadEvent>COMBAT_CHECK</loadEvent>
+		</event>
+	</choice>
+</event>
+<textList name="RVS_TEXT_HAZARD_VAMPWEED_FRONTIER" unique="false"> <!-- R4: Why did I make this a text list? Welp, guess I am adding more texts -->
+	<!-- nature -->
+	<text>As your ship hovers dangerously close to a blazing star, the searing heat tests your vessel's integrity. Suddenly, a Vampweed ship emerges from behind the star's corona, launching a daring attack. Desperate to escape this beacon, the Vampweeds board your ship attempting to take control of the vessel!</text>
+	<text>The Class-K star scorches your ships' paint upon arrival. The beacon has been unknowingly placed too close to the sun by the automated expeditionary vessels that charted this sector.  Sharing this isolated space with you is a desperate and withered Vampweede vessel. Driven by desperation, they launch an aggressive boarding attempt, seeking to seize your ship by force!</text>
+</textList>
+
 
 <eventList name="RVS_HOSTILE_FRONTIER">
 	<event>
@@ -660,9 +758,6 @@ FRONTIER SECTOR
 	<!-- <event>
     	<!-- <loadEvent>RVS_ENCOUNTER_TURNCOAT_FRONTIER</loadEvent>
 	<!-- </event>		<TO DO -->
-	<event>
-    	<loadEvent>RVS_ENCOUNTER_PIRATE_FRONTIER</loadEvent>
-	</event>		<!-- TO DO -->
 	<event>
     	<loadEvent>RVS_ENCOUNTER_AUTO_FRONTIER</loadEvent>
 	</event>			<!-- MIGHT NEED MORE TEXTS / TESTED and WORKS! -->
@@ -724,7 +819,7 @@ FRONTIER SECTOR
 	
 	<!-- colonies-->
 	<text planet="PLANET_POPULATED_SMALL">You discover a nearby planet speckled with settlements, although none respond to your hails and you come to realize why; as an automated Rebel Ship comes speeding towards you..</text>
-	<text planet="PLANET_POPULATED_SMALL">You discover a nearby planet speckled with settlements, one of them hails you. "Caution! The Rebels have claimed this system. It isn’t safe for-" the transmissions begins to break up. A Rebel Automated ship seems to be the source of the disruption and now it locks onto you and begins its assault.</text>
+	<text planet="PLANET_POPULATED_SMALL">You discover a nearby planet speckled with settlements, one of them hails you. "Caution! The Rebels have claimed this system. It isn't safe for-" the transmissions begins to break up. A Rebel Automated ship seems to be the source of the disruption and now it locks onto you and begins its assault.</text>
 
 	<!-- normal -->
 	<text>A Rebel autonomous scout is exploring this beacon. You attempt to hide behind a nearby moon, but the ship finds you and begins its assault.</text>
@@ -746,8 +841,8 @@ FRONTIER SECTOR
 <textList name="RVS_TEXT_ENCOUNTER_REBEL_FRONTIER" unique="false">
 	<!-- nature -->
 	<text planet="NONE">You are taken aback by the beauty of a nearby eclipse glowing radiantly from a nearby planetoid. You would have considered this a fortuitous moment to arrive just in time to witness such an event; if not for the familiar sounds of a Rebel ship hailing to state their intentions of eliminating you once and for all.</text>
-	<text planet="PLANET_UNPOPULATED">This system is relatively undocumented and to your surprise, your ships sensors have detected various belts and moons rich and abundant of natural resources to any prospective frontiersmen that would be interested in settling in these parts… even more surprisingly your sensors have detected a Rebel ship that doesn’t wish to share with you this systems discovery.</text>
-	<text planet="PLANET_UNPOPULATED">It’s uncommon to see manned Rebel ships this far out from any nearby fleet elements especially in neutral sectors such as these. You receive a transmission: “It’s you! Surrender to the talons of the Rebellion or face our wrath!”</text>
+	<text planet="PLANET_UNPOPULATED">This system is relatively undocumented and to your surprise, your ships sensors have detected various belts and moons rich and abundant of natural resources to any prospective frontiersmen that would be interested in settling in these parts... even more surprisingly your sensors have detected a Rebel ship that doesn't wish to share with you this systems discovery.</text>
+	<text planet="PLANET_UNPOPULATED">It’s uncommon to see manned Rebel ships this far out from any nearby fleet elements especially in neutral sectors such as these. You receive a transmission: "It's you! Surrender to the talons of the Rebellion or face our wrath!"</text>
 	<text planet="NONE" back="BG_NEBULA">A defiant Rebel hail disrupts the harmonious backdrop, declaring, 'Our war won't end until we've shattered your Federation dreams!' Weapons lock on and going hot.</text>
 	<text planet="PLANET_UNPOPULATED">A Rebel ship contacts you near the emerging colonies, promising a 'safer world' for the frontier. Though they must have a different idea of what safe means as their weapons arm.</text>
 	<text planet="PLANET_UNPOPULATED">A Rebel fighter's boastful hail is silenced as you prepare to engage in combat, cutting off their rhetoric against the sector's calm.</text>

@@ -1,3 +1,111 @@
+<eventList name="RVS_DEADCREW_DEFAULT"> <!--DEADCREW_GENERIC COPY-->
+	<event>
+		<text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+		<autoReward level="MED">standard</autoReward>
+	</event>
+	<event>
+		<text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+		<autoReward level="MED">standard</autoReward>
+	</event>
+	<event>
+		<text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+		<autoReward level="MED">standard</autoReward>
+	</event>
+	<event>
+		<text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+		<autoReward level="HIGH">standard</autoReward>
+	</event>
+	<event>
+		<text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+		<autoReward level="HIGH">standard</autoReward>
+	</event>
+	<event>
+		<text>With the crew dead, you are able to take the fuel out of storage. You also take all the scrap you can manage.</text>
+		<autoReward level="HIGH">fuel</autoReward>
+	</event>
+	<event>
+		<text>With the crew dead, you are able to take the fuel out of storage. You also take all the scrap you can manage.</text>
+		<autoReward level="HIGH">fuel</autoReward>
+	</event>
+	<event>
+		<text>Now that their ship has been emptied of hostiles, you search it. Eventually you find a prisoner who offers to join your crew.</text>
+		<crewMember amount="1"/>
+		<autoReward level="LOW">scrap_only</autoReward>
+	</event>
+	<event>
+		<text>You find a weapon system on their ship. With no crew to stop you, you can install it on your own.</text>
+		<autoReward level="LOW">weapon</autoReward>
+	</event>
+</eventList>
+<eventList name="RVS_DESTROYED_DEFAULT">	<!--DESTROYED_DEFAULT COPY-->
+	<event>
+		<text>The ship explodes, leaving behind a substantial collection of useful scrap material.</text>
+		<autoReward level="MED">standard</autoReward>
+	</event>
+	<event>
+		<text>The ship explodes, leaving behind a substantial collection of useful scrap material.</text>
+		<autoReward level="MED">standard</autoReward>
+	</event>
+</eventList>
+
+<event name="RVS_SURRENDER_DEFAULT">
+	<text load="RVS_TEXT_SURRENDER_DEFAULT"/>
+	<choice>
+		<text>Accept their surrender.</text>
+		<event name="SURRENDER_ACCEPT">
+			<ship hostile="false"/>
+			<autoReward level="RANDOM">stuff</autoReward>
+		</event>
+	</choice>
+	<choice>
+		<text load="GENERIC_SURRENDER_CHOICE_NOMERCY"/>
+		<event load="MORALITY_UPDATE_GENERAL"/>
+	</choice>
+</event>
+<textList name="RVS_TEXT_SURRENDER_DEFAULT">
+	<text>The crew attempts to negotiate an immediate cease fire with you wishing to end this battle.</text>
+	<text>You recieve a transmission. The opposing vessel wishes to negotiate a surrender.</text>
+	<text>"Renegade vessel, cease your hostilities at once! we will pay". Ending this without more bloodshed would help keep the Federation off your back for attacking unprovoked.</text>
+	<text>"We could reconcile our differences and go our separate ways, no one needs to know about this".</text>
+	<text>The crew of the opposing vessel is attempting to surrender. If this stops now the Federation doesn't have to hear about this...</text>
+	<text>Your opponent is signalling for a surrender. Ending this now could help save face with the Federation.</text>
+	<text>You recieve white flag signals from your opponent. "We can just go on our separate ways and forget about all this".</text>
+</textList>
+
+
+<event name="RVS_ESCAPE_DEFAULT">
+	<text load="RVS_TEXT_ESCAPE_DEFAULT"/>
+</event>
+<textList name="RVS_TEXT_ESCAPE_DEFAULT">
+	<text>Their ships engines begin to flare. It looks like they are attempting to escape!</text>
+	<text>It looks like they don't want to stick around and are attempting to flee.</text>
+	<text>They are disinterested of sticking around any longer and are beginning to charge their FTL drive.</text>
+	<text>Their FTL drive begins to spool and wish to no longer stay here.</text>
+</textList>
+
+<eventList name="RVS_GOTAWAY_DEFAULT">
+	<event load="RVS_GOTAWAY_DEFAULT_GENERIC"/>
+	<event load="RVS_GOTAWAY_DEFAULT_GENERIC"/>
+	<event load="RVS_GOTAWAY_DEFAULT_GENERIC"/>
+	<event load="RVS_GOTAWAY_DEFAULT_LEFTOVERS"/>
+</eventList>
+
+<event name="RVS_GOTAWAY_DEFAULT_GENERIC">
+	<text load="RVS_TEXT_GOTAWAY_DEFAULT"/>
+</event>
+<textList name="RVS_TEXT_GOTAWAY_DEFAULT">
+	<text>The vessels engines flare one up one last time in anticipation just before they jumped away.</text>
+	<text>You desparately try to stop the ship from fleeing but to no avail. The ship escapes.</text>
+	<text>The vessels engines flare one up one last time in anticipation just before they jumped away.</text>
+	<text>You desparately try to stop the ship from fleeing but to no avail. The ship escapes.</text>
+	<text>The ship flees leaving you alone at this beacon to reflect upon if this unwonted aggression is why Multiverse Renegades and Mercenaries get a bad rep.</text>
+	<text>It's a good thing you are just a Multiversal Merc. Otherwise you would've had a lot of paperwork to explain what just happened.</text>
+</textList>
+<event name="RVS_GOTAWAY_DEFAULT_LEFTOVERS">
+	<text>You couldn't stop the ship in time to impede their escape, however, you are left with the spoils of the aftermath that was left behind.</text>
+	<autoReward level="LOW">standard</autoReward>
+</event>
+
 <eventList name="GB_DESTROYED_REBEL_FED">
 	<event load="GB_DESTROYED_REBEL_FED_GENERIC"/>
 	<event load="GB_DESTROYED_REBEL_FED_GENERIC"/>
@@ -26,7 +134,6 @@
 	<text>The death of your opponents is rarely as satisfying as when it's a Rebel ship. But when it's a former Federation owned ship, it reminds you that the Rebels themselves were once Federation too.</text>
 	<text>The Rebel ship explodes, leaving behind a substantial collection of useful scrap material.</text>
 </textList>
-
 
 <event name="GB_DESTROYED_REBEL_FED_POW_POD">
 	<text>Just before the Rebel ship explodes, an escape pod ejects from it. Unfortunately, it doesn't get far before you collect it and bring it aboard. Once the pod is opened, the Rebel recruit asks to be treated with respect as a prisoner of war and for you to transfer custody to a Federation internment station.</text>

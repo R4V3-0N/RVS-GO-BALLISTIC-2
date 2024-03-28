@@ -47,6 +47,13 @@
 	<deadCrew load="GB_DEAD_CREW_REBEL_FED"/>
 </ship>
 
+<ship name="RVS_SHIPS_GENERIC" auto_blueprint="RVS_LIST_SHIPS_GENERIC">
+	<surrender  chance="0.4" min="2" max="4" load="RVS_SURRENDER_DEFAULT"/> <!-- Set the max to 4 as I feel there's a higher chance for them to surrender over regular rebels -->
+	<escape  chance="0.3" min="3" max="4" load="RVS_ESCAPE_DEFAULT"/>
+	<gotaway load="RVS_GOTAWAY_DEFAULT"/>
+	<destroyed load="RVS_DESTROYED_DEFAULT"/>
+	<deadCrew load="RVS_DEADCREW_DEFAULT"/>
+</ship>
 
 <ship name="GB_FED_FREIGHTER_EVENT_FED_ESCORT" auto_blueprint="MU_FED_ESCORT">
 	<destroyed>

@@ -203,8 +203,6 @@
 	</choice>
 </event>
 
-
-
 <event name="GB_WATER_PICKUP_PIRATE">
 	<text>A rather boring node compared to the others commonly found within orchid space. An old trade hub set up around one of the moons around a gas giant where ice haulers frequently bring in their latest haul. As good a place as any to find a seller for water, however, it doesn't look like the station is full of the charitable type.</text>
 	<choice hidden="true">

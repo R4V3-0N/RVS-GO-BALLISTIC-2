@@ -218,7 +218,10 @@ no clue what sector this is meant to be for.
 
 
 
-<event name="RVS_FED_RND_EVAC_STORE"> <!-- R4: Can someone make sure this is marked on the map as a Fed Store -->
+<event name="RVS_FED_RND_EVAC_STORE">
+	<beaconType id="map_icon_store_federation" global="false">
+		<color r="215" g="255" b="200" a="1"/>
+	</beaconType>
 	<text>You arrive at a Federation Weapons R&amp;D facility that is in the middle of an evacuation with the inevitable arrival of the Rebel Fleet in this sector. Though they are willing to engage in some trade with you to lighten their load, they can not provide any other assistance for the time being.</text>
 	<choice hidden="true">
 		<text>Trade with them.</text>
