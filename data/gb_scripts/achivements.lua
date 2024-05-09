@@ -52,4 +52,29 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(ship)
 end)
 
 -- Hard
--- TODO: come up with and implement a hard achievement
+script.on_game_event("LASTSTAND_WARP", false, function()
+    local ship = Hyperspace.ships.player
+    if should_track_achievement("ACH_SHIP_RVSP_FED_FREIGHTER_3", ship, "PLAYER_SHIP_RVSP_FED_FREIGHTER") and ship.fuel_count >= 40 and ship:GetMissileCount() >= 40 and ship:GetDroneCount() >= 40 then
+        Hyperspace.CustomAchievementTracker.instance:SetAchievement("ACH_SHIP_RVSP_FED_FREIGHTER_3", false)
+    end
+end)
+
+-------------------------------------
+-- LAYOUT UNLOCKS FOR ACHIEVEMENTS --
+-------------------------------------
+
+local achLayoutUnlocks = {
+    {
+        achPrefix = "ACH_SHIP_RVSP_FED_FREIGHTER",
+        unlockShip = "PLAYER_SHIP_RVSP_FED_FREIGHTER_3"
+    }
+}
+
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+    local unlockTracker = Hyperspace.CustomShipUnlocks.instance
+    for _, unlockData in ipairs(achLayoutUnlocks) do
+        if not unlockTracker:GetCustomShipUnlocked(unlockData.unlockShip) and count_ship_achievements(unlockData.achPrefix) >= 2 then
+            unlockTracker:UnlockShip(unlockData.unlockShip, false)
+        end
+    end
+end)

@@ -1830,16 +1830,10 @@
 		<unlock variant="b" silent="false">
             <type>1</type>
             <shipReq>PLAYER_SHIP_RVSP_FED_FREIGHTER</shipReq>
-            <value>5</value>
+            <value>8</value>
         </unlock>
-		<unlock variant="c" silent="false">
-            <type>1</type>
-            <shipReq>PLAYER_SHIP_RVSP_FED_FREIGHTER_2</shipReq>
-            <value>5</value>
-        </unlock>
-		<unlock variant="c" silent="false">
-            <type>2</type>
-            <shipReq>PLAYER_SHIP_RVSP_FED_FREIGHTER</shipReq>
+        <unlock variant="c" silent="false">
+            <type>4</type>
         </unlock>
         <achievement name="ACH_SHIP_RVSP_FED_FREIGHTER_1" layout="all">
             <name>Honest Day's Work</name>
@@ -1854,8 +1848,8 @@
             <lockImage>rvsp_fed_freighter_ach_2_lock</lockImage>
         </achievement>
         <achievement name="ACH_SHIP_RVSP_FED_FREIGHTER_3" layout="all">
-            <name>[UNDEFINED]</name>
-            <description>[UNDEFINED]</description>
+            <name>Just in Case...</name>
+            <description>Reach Node 17 with at least 40 fuel, missiles and drone parts using the Federation Freighter.</description>
             <icon>rvsp_fed_freighter_ach_3</icon>
             <lockImage>rvsp_fed_freighter_ach_3_lock</lockImage>
         </achievement>

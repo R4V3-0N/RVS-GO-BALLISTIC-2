@@ -12,6 +12,7 @@
 		<event>
 			<autoReward level="HIGH">standard</autoReward>
 			<text>It's almost surreal, standing in the centre of the cargo bay viewing one end of the ship to the other. This will go a very long way in helping the Federation out in this universe. Before you can close the bay doors and get ready to take on the Rebel Flagship you hear some clanging just outside. A Logistics officer coyly waving to get your attention. "You most likely know how much this means to me... us... er- everything. We found this little number burried in the back of the hold. A relic of the Federation-Mantis War. Perhaps it could help you against the Flagship more than it could do down here."</text>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 			<weapon name="GB_AC_3_ELITE"/>
 			<choice>
 				<text id="continue"/>

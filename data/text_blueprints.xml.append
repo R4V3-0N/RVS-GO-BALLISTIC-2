@@ -22,12 +22,12 @@
 
 <text name="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_2_class">Federation Freighter</text>
 <text name="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_2_name">Picus</text>
-<text name="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_2_unlock">Get to Sector 5 with the Federation Freighter Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_2_unlock">Get to Sector 8 with the Federation Freighter Type A to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_2_desc">A completely unarmed mercantile freighter that holds excessive trade goods to help fund its militarism.</text>
 
 <text name="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_3_class">Federation Freighter</text>
 <text name="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_3_name">Ngowo</text>
-<text name="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_3_unlock">Get to Sector 5 with the Federation Freighter Type B or beat the game with the Federation Freighter Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_3_unlock">Complete 2/3 of the Federation Freighter Achievements to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_RVSP_FED_FREIGHTER_3_desc">This model has been used to carry and sell exotic spices to worlds afar and to defend itself from anyone who isn't willing to pay for it.</text>
 
 <text name="text_PLAYER_SHIP_RVSPE_KESTREL_class">Antique Elite Kestrel Cruiser</text>
