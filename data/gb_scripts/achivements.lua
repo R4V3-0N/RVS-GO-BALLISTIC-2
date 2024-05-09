@@ -2,34 +2,20 @@
 -- HELPER FUNCTIONS --
 ----------------------
 
-local vter = mods.inferno.vter
-
-local function is_first_shot(weapon, afterFirstShot)
-    local shots = weapon.numShots
-    if weapon.weaponVisual.iChargeLevels > 0 then shots = shots*(weapon.weaponVisual.boostLevel + 1) end
-    if weapon.blueprint.miniProjectiles:size() > 0 then shots = shots*weapon.blueprint.miniProjectiles:size() end
-    if afterFirstShot then shots = shots - 1 end
-    return shots == weapon.queuedProjectiles:size()
-end
-
-local function userdata_table(userdata, tableName)
-    if not userdata.table[tableName] then userdata.table[tableName] = {} end
-    return userdata.table[tableName]
-end
-
-local function string_starts(str, start)
-    return string.sub(str, 1, string.len(start)) == start
-end
+local vter = mods.multiverse.vter
+local is_first_shot = mods.multiverse.is_first_shot
+local userdata_table = mods.multiverse.userdata_table
+local string_starts = mods.multiverse.string_starts
 
 local function should_track_achievement(achievement, ship, shipClassName)
     return ship and
-           Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame and
+           Hyperspace.App.world.bStartedGame and
            Hyperspace.CustomAchievementTracker.instance:GetAchievementStatus(achievement) < Hyperspace.Settings.difficulty and
            string_starts(ship.myBlueprint.blueprintName, shipClassName)
 end
 
 local function current_sector()
-    return Hyperspace.Global.GetInstance():GetCApp().world.starMap.worldLevel + 1
+    return Hyperspace.App.world.starMap.worldLevel + 1
 end
 
 local function count_ship_achievements(achPrefix)

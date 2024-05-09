@@ -19,10 +19,7 @@
 </FTL>
 <FTL>
 
-<version>^1.6.0</version>
-
-<!-- placeholder until MV 5.4 -->
-<showShipAchievements enabled="true" toggle="true" hideIfMissing="true" id="hangar_achievements_title_default"/>
+<version>^1.11.0</version>
 
 <mod:findLike type="crew" limit="1">
 	<mod-append:race name="rvs_drone_trooper">

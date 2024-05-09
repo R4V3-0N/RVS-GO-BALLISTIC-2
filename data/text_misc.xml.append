@@ -20,7 +20,3 @@ Reimagining the niche of these weapons using new Hyperspace functionality that d
 <text name="warning_support_enemy">HOSTILE FIRE SUPPORT\nINBOUND</text>
 
 <text name="rvs_tip_autocannon">Autocannons can be toggled between numerous different ammo types through the toggle menu, making them extremely versatile.</text>
-
-<!-- placeholder until MV 5.4 -->
-<text name="hangar_achievements_title_default">Ship Achievements</text>
-<text name="hangar_no_ship_achievements">No Ship Achievements</text>
