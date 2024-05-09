@@ -21,17 +21,6 @@
     </mod:findLike>
 </mod:findName>
 
-<mod:findName type="event" name="TRADER_CIV">
-    <mod-append:choice req="LIST_CREW_FEDERATION_ELITE" blue="true" hidden="true">
-        <text>(Federation Elite) Under the Federation Requisition Act, commandeer some functional weaponry for the war effort.</text>
-        <event load="GB_REQUISITION" />
-    </mod-append:choice>
-	<mod-append:choice req="GB_FED_REQUISITION_LICENSE" blue="true" hidden="true">
-        <text>(Requisition License) Under the Federation Requisition Act, commandeer some functional weaponry for the war effort.</text>
-        <event load="GB_REQUISITION" />
-    </mod-append:choice>
-</mod:findName>
-
 <mod:findName type="event" name="FINISH_BEACON">
     <mod:findLike type="loadEventList">
         <mod:findName type="event" name="FINISH_BEACON_REAL" panic="true">

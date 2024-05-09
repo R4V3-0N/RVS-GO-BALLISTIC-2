@@ -8,7 +8,7 @@
 	<mod-append:event name = "GB_STOREEVENT_FED_VOLUNTEER"/>
 </mod:findName>
 
-<mod:findName type = "eventList" name = "STORELIST_CIVILIAN">
+<mod:findName type = "eventList" name = "STORELIST_UNION">
 	<mod-append:event name = "GB_STOREEVENT_ALIEN_AUTOCANNONS"/>
 	<mod-append:event name = "GB_STOREEVENT_ENTHUSIAST_CANNONS"/>
 	<mod-append:event name = "GB_STOREEVENT_FED_VOLUNTEER"/>

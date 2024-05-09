@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mod:findName type = "event" name = "FEDERATION_OUTPOST_FED">
+<mod:findName type = "event" name = "OUTPOST_FEDERATION">
 		<mod-append:choice hidden = "true" req="human_soldier">
 			<text>(Soldier Crew) Request a weapon.</text>
 			<event>
