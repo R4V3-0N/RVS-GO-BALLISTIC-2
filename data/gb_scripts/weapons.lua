@@ -7,12 +7,12 @@ empWeapons["GB_AC_2_ELITE_EMP"] = 1
 empWeapons["GB_AC_3_ELITE_EMP"] = 2
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(ship, projectile, damage, response)
     local empAmount = nil
-    if pcall(function() empAmount = empWeapons[Hyperspace.Get_Projectile_Extend(projectile).name] end) and empAmount then
+    if pcall(function() empAmount = empWeapons[projectile.extend.name] end) and empAmount then
        local empHullHit = Hyperspace.Damage()
        empHullHit.iIonDamage = empAmount
-       local weaponName = Hyperspace.Get_Projectile_Extend(projectile).name
-       Hyperspace.Get_Projectile_Extend(projectile).name = ""
+       local weaponName = projectile.extend.name
+       projectile.extend.name = ""
        ship:DamageArea(projectile.position, empHullHit, true)
-       Hyperspace.Get_Projectile_Extend(projectile).name = weaponName
+       projectile.extend.name = weaponName
     end
 end)

@@ -24,9 +24,9 @@
 		◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
 -->
 
-<!-----------------------
+<!--=====================
 	Exotic Spices
------------------------->
+======================-->
 
 <!-- current stats:
 SECTOR:         1    2    3    4    5    6    7    8    9
@@ -210,9 +210,9 @@ This is the maximum value of your spices, it will not increase further the next 
 		</loadEventList>
 	</event>
 
-	<!-----------------------
+	<!--=====================
 		Dispatch Delivery Events
-	------------------------>
+	======================-->
 
 	<event name="GB_DISPATCH_1">
 		<text load="GB_TEXT_DISPATCH_DELIVERY"/>
@@ -258,21 +258,25 @@ This is the maximum value of your spices, it will not increase further the next 
 		<event>
 			<text>You pass over the shipment, and wait while the other ship looks them over. "Everything seems to be in check... job well done. Thanks for this it helps our colony out."</text>
 			<autoReward level="MED">scrap_only</autoReward>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 		</event>
 
 		<event>
 			<text>You pass over the shipment, and wait while the other ship looks them over. "Everything seems to be in check... job well done.Thank you so much we don't know what we'd do without your service"</text>
 			<autoReward level="MED">scrap_only</autoReward>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 		</event>
 
 		<event>
 			<text>You pass over the shipment, and wait while the other ship looks them over. "Everything seems to be in check... job well done.Thank you so much we don't know what we'd do without your service"</text>
 			<autoReward level="MED">scrap_only</autoReward>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 		</event>
 
 		<event>
 			<text>You pass over the milk, and wait while the other ship looks them over. "Everything seems to be in check... but I don't think we'll be paying. We are the dreaded calcium addicts. We will take ALL your milk"</text>
 			<ship hostile="true"/>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 			<choice hidden="true">
 				<text>Raise your weapons and prepare to take the payment from them yourself.</text>
 				<event load="COMBAT_CHECK"/>
@@ -291,7 +295,7 @@ This is the maximum value of your spices, it will not increase further the next 
 
 	<!-- WIP
 	
-	----------------------------------
+	==================================
 	
 	-->
 	<event name="RVS_DISPATCH_MULTIPLE_CHOICE">		<!-- Event for multiple CURA style missions available (WIP)-->
@@ -1105,7 +1109,7 @@ This is the maximum value of your spices, it will not increase further the next 
 
 			<!-- WIP END
 	
-	----------------------------------
+	==================================
 	
 	-->
 
@@ -1144,13 +1148,13 @@ This is the maximum value of your spices, it will not increase further the next 
 		</choice>
 	</event>
 	<eventList name="GB_DISPATCH_QUEST_LIST"> <!-- R4: This is where you add more events to the general deliver to A deliveries -->
-		<event load="RVS_DISPATCH_QUEST_LIST_FED"/>
-		<event load="RVS_DISPATCH_QUEST_LIST_FED_STATION"/>
-		<event load="GB_DISPATCH_QUEST_LIST_MILITIA"/>
+		<!-- <event load="RVS_DISPATCH_QUEST_LIST_FED"/> -->
+		<!-- <event load="RVS_DISPATCH_QUEST_LIST_FED_STATION"/> -->
+		<!-- <event load="GB_DISPATCH_QUEST_LIST_MILITIA"/> -->
 
-		<event load="GB_DISPATCH_QUEST_LIST_ORCHID"/>
-		<event load="GB_DISPATCH_QUEST_LIST_ENGI"/>
-		<event load="GB_DISPATCH_QUEST_LIST_ZOLTAN"/>
+		<!-- <event load="GB_DISPATCH_QUEST_LIST_ORCHID"/> -->
+		<!-- <event load="GB_DISPATCH_QUEST_LIST_ENGI"/> -->
+		<!-- <event load="GB_DISPATCH_QUEST_LIST_ZOLTAN"/> -->
 
 		<event load="GB_DISPATCH_QUEST_LIST_GENERIC"/>
 		<event>
@@ -1289,6 +1293,7 @@ This is the maximum value of your spices, it will not increase further the next 
 		<event>
 			<ship load="SHIP_GENERIC" hostile="false"/>
 			<text load="GB_TEXT_GENERIC_DELIVERY"/>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 			<autoReward level="MED">scrap_only</autoReward>
 				<choice>
 				<text>Continue...</text>
@@ -1299,6 +1304,7 @@ This is the maximum value of your spices, it will not increase further the next 
 		<event>
 			<ship load="SHIP_GENERIC" hostile="false"/>
 			<text load="GB_TEXT_GENERIC_DELIVERY"/>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 			<autoReward level="MED">stuff</autoReward>
 				<choice>
 				<text>Continue...</text>
@@ -1307,8 +1313,9 @@ This is the maximum value of your spices, it will not increase further the next 
 		</event>
 
 		<event>
-		<ship load="SHIP_GENERIC" hostile="false"/>
+			<ship load="SHIP_GENERIC" hostile="false"/>
 			<text load="GB_TEXT_GENERIC_DELIVERY"/>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 			<autoReward level="MED">standard</autoReward>
 				<choice>
 				<text>Continue...</text>
@@ -1329,6 +1336,7 @@ This is the maximum value of your spices, it will not increase further the next 
 		<event>
 			<ship load="SHIP_PIRATE_ALL" hostile="false"/>
 			<text>It's always difficult working with pirates. But you were assured that you were doing the right thing with this delivery. You just hope that the cargo doesn't end up in the wrong hands.</text>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 			<autoReward level="MED">scrap_only</autoReward>
 				<choice>
 				<text>Continue...</text>
@@ -1339,6 +1347,7 @@ This is the maximum value of your spices, it will not increase further the next 
 		<event>
 			<ship load="SHIP_SMUGGLER_ALL" hostile="false"/>
 			<text>Sometimes the Federation has to make deals with less than reputable people to get the intell they need. So it comes to no surprise that a pirate transport ship hiding on the outskirts of this node awaited for your arrival and ushers you to make your clandestine delivery further away from the local beacon traffic. Though trusting people who thrive on backstabbing is always risky the exchange goes smoothly without incident.</text>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 			<autoReward level="MED">stuff</autoReward>
 				<choice>
 				<text>Continue...</text>
@@ -1378,11 +1387,13 @@ This is the maximum value of your spices, it will not increase further the next 
 		<event>
 			<text>All things considered everything is going more smoothly than expected. You meet your contact in one of the brighter alleyways where you try and broker a fair trade at the very least. Eventually an arrangement is made and you prepare to head back to your ship. Job well done!</text>
 			<autoReward level="HIGH">standard</autoReward>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 		</event>
 
 		<event>
 			<text>All things considered everything is going more smoothly than expected. You meet your contact in one of the brighter alleyways where you try and broker a fair trade at the very least. The agreement came with much deliberation but in the end an agrement was met.</text>
 			<autoReward level="MED">scrap_only</autoReward>
+			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 		</event>
 
 		<event>
@@ -1423,9 +1434,9 @@ This is the maximum value of your spices, it will not increase further the next 
 		</choice>
 	</event>
 
-	<!-----------------------
+	<!--=====================
 		Dispatcher Delivery Generic Text Lists
-	------------------------>
+	======================-->
 
 	<textList name="GB_TEXT_DISPATCH_DELIVERY">
 		<text>You contact the dispatcher for another mission.</text>
