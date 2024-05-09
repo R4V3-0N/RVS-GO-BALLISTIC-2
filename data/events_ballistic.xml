@@ -12,7 +12,7 @@
 
     <!-- overly complicated find-and-loot event -->
     <event name="GB_CARAVAN_ABANDONED" unique="true">
-        <text>You arrive to find what was once a supply caravan in a debris field; most likely victims of Pirates. There is no response to your hails.</text>
+        <text>You arrive to find the remnants of a supply caravan scattered throughout the debris field, most likely victims of Pirates. There are no responses to your hails.</text>
         <choice hidden="true">
             <text>Dock with one of the transports and investigate.</text>
             <event load="GB_CARAVAN_ABANDONED_TRANSPORTER" />
@@ -30,7 +30,7 @@
             <event load="GB_CARAVAN_ABANDONED_SCAN" />
         </choice>
         <choice hidden="true">
-            <text>Leave the caravan alone.</text>
+            <text>Leave the caravan alone.</text>   <!--R4 2024.05.09 empty beacon event?-->
             <event />
         </choice>
     </event>
