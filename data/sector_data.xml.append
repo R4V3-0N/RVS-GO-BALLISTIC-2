@@ -23,7 +23,16 @@
 </mod:findName>
 
 
-<mod:findName type="sectorDescription" name="SECTOR_CIVILIAN"> <!--AUTOCANNONS-->
+<mod:findName type="sectorDescription" name="SECTOR_UNION"> <!--AUTOCANNONS-->
+	<mod:findLike type = "rarityList">
+		<mod-append:blueprint name="GB_AC_1" rarity="3"/>	<!-- R4, 29/11/2022: was 4-->
+		<mod-append:blueprint name="GB_AC_2" rarity="4"/>
+		<mod-append:blueprint name="GB_COMBAT_AC_1" rarity="5"/>
+		<mod-append:blueprint name="RVS_TROOPERTOG_DEFEND" rarity="4"/>
+	</mod:findLike>
+	<mod-append:event name="GB_GENERIC_EVENTS" min="1" max="2"/>
+</mod:findName>
+<mod:findName type="sectorDescription" name="SECTOR_UNION_UNIQUE"> <!--AUTOCANNONS-->
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="GB_AC_1" rarity="3"/>	<!-- R4, 29/11/2022: was 4-->
 		<mod-append:blueprint name="GB_AC_2" rarity="4"/>
@@ -33,7 +42,7 @@
 	<mod-append:event name="GB_GENERIC_EVENTS" min="1" max="2"/>
 </mod:findName>
 
-<mod:findName type="sectorDescription" name="SECTOR_MILITIA"> <!--AUTOCANNONS-->
+<mod:findName type="sectorDescription" name="SECTOR_MILITIA_UNIQUE"> <!--AUTOCANNONS-->
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="GB_AC_1" rarity="2"/>	<!-- R4, 29/11/2022: was 3-->
 		<mod-append:blueprint name="GB_AC_2" rarity="2"/>	<!-- R4, 29/11/2022: was 3-->
@@ -139,7 +148,7 @@
 	<mod-append:event name="GB_GENERIC_EVENTS" min="0" max="1"/>
 </mod:findName>
 
-<mod:findName type="sectorDescription" name="SECTOR_ZOLTAN">   <!--RAILS PLACEHOLDER-->
+<mod:findName type="sectorDescription" name="SECTOR_MINISTRY">   <!--RAILS PLACEHOLDER-->
 	<mod:findLike type = "rarityList">
 		<!-- added gauss rifles as part of generic fed aligned weapons -->
 		<mod-append:blueprint name="GB_GAUSS_1" rarity="4"/>
@@ -152,7 +161,7 @@
 	</mod:findLike>
     <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS_ZOLTAN" min="0" max="1"/>
 </mod:findName>
-<mod:findName type="sectorDescription" name="SECTOR_ZOLTAN_UNIQUE">   <!--RAILS PLACEHOLDER-->
+<mod:findName type="sectorDescription" name="SECTOR_MINISTRY_UNIQUE">   <!--RAILS PLACEHOLDER-->
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="GB_RAIL_1" rarity="4"/>	<!-- R4, 29/11/2022: was 4-->
 		<mod-append:blueprint name="GB_RAIL_2" rarity="4"/>	<!-- R4, 29/11/2022: was 4-->
@@ -160,7 +169,7 @@
 	</mod:findLike>
 </mod:findName>
 
-<mod:findName type="sectorDescription" name="SECTOR_ENGI">  <!--GAUSS-->
+<mod:findName type="sectorDescription" name="SECTOR_HARMONY">  <!--GAUSS-->
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="GB_GAUSS_1" rarity="3"/>	<!-- R4, 17/12/2022: was 3-->
 		<mod-append:blueprint name="GB_GAUSS_2" rarity="3"/>	<!-- R4, 29/11/2022: was 4-->
@@ -170,7 +179,7 @@
 	</mod:findLike>
     <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS_ENGI" min="0" max="1"/>
 </mod:findName>
-<mod:findName type="sectorDescription" name="SECTOR_ENGI_UNIQUE">  <!--GAUSS-->
+<mod:findName type="sectorDescription" name="SECTOR_HARMONY_UNIQUE">  <!--GAUSS-->
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="GB_GAUSS_1" rarity="4"/>
 		<mod-append:blueprint name="GB_GAUSS_2" rarity="3"/>	<!-- R4, 29/11/2022: was 4-->
@@ -211,11 +220,11 @@
     <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS_FREEMANTIS" min="0" max="1"/>
 </mod:findName>
 
-<mod:findName type="sectorDescription" name="SECTOR_ORCHID">
+<mod:findName type="sectorDescription" name="SECTOR_GATHERING">
     <mod-append:priorityEvent name="RVS_FREIGHTER_ESCORT_DISTRESS_ORCHID" min="0" max="1"/>
 </mod:findName>
 
-<mod:findName type="sectorDescription" name="SECTOR_MANTIS">  <!--Remnants of FMW-->
+<mod:findName type="sectorDescription" name="SECTOR_HIVE">  <!--Remnants of FMW-->
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="GB_AC_1" rarity="4"/>
 		<mod-append:blueprint name="GB_AC_2" rarity="5"/>
@@ -229,32 +238,32 @@
 </mod:findName>
 
 <!-- Flak gun rarity increased in Abandoned/ Lanius sectors -->
-<mod:findName type="sectorDescription" name="SECTOR_ABANDONED">
+<mod:findName type="sectorDescription" name="SECTOR_ABANDONED_GENERIC">
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="1"/>
 		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="2"/>
 	</mod:findLike>
 </mod:findName>
-<mod:findName type="sectorDescription" name="SECTOR_ABANDONED_HEKTAR">
+<mod:findName type="sectorDescription" name="SECTOR_ABANDONED_GENERIC_HEKTAR">
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="2"/>
 		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="3"/>
 	</mod:findLike>
 </mod:findName>
-<mod:findName type="sectorDescription" name="SECTOR_LANIUS">
+<mod:findName type="sectorDescription" name="SECTOR_LANIUS_UNIQUE">
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="1"/>
 		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="2"/>
 	</mod:findLike>
 </mod:findName>
 
-<mod:findName type="sectorDescription" name="SECTOR_LEECH">
+<mod:findName type="sectorDescription" name="SECTOR_REPUBLIC">
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="2"/>
 		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="3"/>
 	</mod:findLike>
 </mod:findName>
-<mod:findName type="sectorDescription" name="SECTOR_LEECH_UNIQUE">
+<mod:findName type="sectorDescription" name="SECTOR_REPUBLIC_UNIQUE">
 	<mod:findLike type = "rarityList">
 		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY" rarity="2"/>
 		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="2"/>
@@ -280,4 +289,3 @@
 		<mod-append:blueprint name="RVS_SHOTGUN_HEAVY_2" rarity="0"/>
 	</mod:findLike>
 </mod:findName>
-
