@@ -5987,6 +5987,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<maxPower amount="9" />
 	<aug name="GB_PHONE" />
 	<shieldImage>mupc_a55</shieldImage>
+	<mv-mapImage>map_icon_rvs_freighter</mv-mapImage>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_RVSP_FED_FREIGHTER_2" layout="rvsp_fed_freighter_b" img="rvsp_fed_freighter_b">
@@ -6067,6 +6068,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<aug name="CRATE_MISSILES" /> <!-- Similar as Nebula gasses, might just be dumped into an event at first sight or used to get an edge in missiles -->
 	<shieldImage>mupc_a55</shieldImage>
 	<cloakImage>rvsp_fed_freighter</cloakImage>
+	<mv-mapImage>map_icon_rvs_freighter</mv-mapImage>
 </shipBlueprint>
 
 
@@ -6149,6 +6151,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<shieldImage>mupc_a55</shieldImage>
 	<cloakImage>rvsp_fed_freighter</cloakImage>
 	<floorImage>rvsp_fed_freighter</floorImage>
+	<mv-mapImage>map_icon_rvs_freighter</mv-mapImage>
 </shipBlueprint>
 
 
