@@ -5986,7 +5986,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<health amount="35" />
 	<maxPower amount="9" />
 	<aug name="GB_PHONE" />
-	<shieldImage>mupc_a55</shieldImage>
+	<shieldImage>mup_giant</shieldImage>
 	<mv-mapImage>map_icon_rvs_freighter</mv-mapImage>
 </shipBlueprint>
 
@@ -6066,7 +6066,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<aug name="GB_PHONE" />
 	<aug name="NEBULA_GASSES" /> <!-- R4: Might change this later, a trade augment to give a headstart economically -->
 	<aug name="CRATE_MISSILES" /> <!-- Similar as Nebula gasses, might just be dumped into an event at first sight or used to get an edge in missiles -->
-	<shieldImage>mupc_a55</shieldImage>
+	<shieldImage>mup_giant</shieldImage>
 	<cloakImage>rvsp_fed_freighter</cloakImage>
 	<mv-mapImage>map_icon_rvs_freighter</mv-mapImage>
 </shipBlueprint>
@@ -6148,7 +6148,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<crewCount amount="1" class="slug" />
 	<crewCount amount="1" class="engi_separatist" />
 	<aug name="GB_EXOTIC_SPICES_1" />
-	<shieldImage>mupc_a55</shieldImage>
+	<shieldImage>mup_giant</shieldImage>
 	<cloakImage>rvsp_fed_freighter</cloakImage>
 	<floorImage>rvsp_fed_freighter</floorImage>
 	<mv-mapImage>map_icon_rvs_freighter</mv-mapImage>
@@ -6164,7 +6164,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<systemList>
 		<artillery max="4" power="1" room="5" start="false" weapon="ARTILLERY_BOSS_1" img="room_artillery" />
 		<battery max="2" power="1" room="6" start="false" img="room_battery_kestrel_elite" />
-		<cloaking power="1" room="12" start="false" img="room_cloaking_orchid_2" />
+		<cloaking power="1" room="12" start="false" img="room_cloaking_12" />
 		<clonebay power="1" room="13" start="false">
 			<slot>
 				<number>0</number>
@@ -6230,7 +6230,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<crewCount amount="2" class="human_soldier" /> <!-- not sure on exact crew, maybe just soldiers and humans? I am also missing orchids representation here too -->
 	<crewCount amount="1" class="human_medic" />
 	<aug name="GB_INTEGRATED_BALLISTICS" />
-	<shieldImage>rvsp_gb_kestrel_a</shieldImage>
+	<shieldImage>mup_giant</shieldImage>
 	<cloakImage>rvsp_gb_kestrel_b</cloakImage>
 </shipBlueprint>
 
