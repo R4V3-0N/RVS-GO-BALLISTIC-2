@@ -1,8 +1,8 @@
 <metadata>
   <title><![CDATA[ GO BALLISTIC 2! ]]></title>
   <threadUrl><![CDATA[ https://www.subsetgames.com/forum/viewtopic.php?f=11&t=38203 ]]></threadUrl>
-  <author><![CDATA[ R4V3-0N, porcu93, cgjunior, laszlogasd, Madoktor, RobintheDragon2, Kommandant_Julk, Vertaalfout, Chrono Vortex, Pepson ]]></author>
-  <version><![CDATA[ 3.0.0 ]]></version>
+  <author><![CDATA[ R4V3-0N, Chrono Vortex, Kommandant_Julk, and Pepson ]]></author>
+  <version><![CDATA[ 2.3.9 ]]></version>
 <!--  <description> 1.3 version description 
 <![CDATA[ This mod adds several sets of ballistic weapons and drones to the game, including autocannons, gauss, coil guns and railguns, all with unique animations and sounds.
 
@@ -24,20 +24,23 @@ Making this mod work perfectly with Captain's Edition is a bit of a pain, but it
   <description>
 <![CDATA[ This mod adds ballistic weaponry from multiple eras of the Federation, ranging from the Federation-Mantis War's old kinetic weaponry to the Federation Civil War's magnetically driven Gauss Rifles, and even some bleeding edge technologies such as Rail Guns!
 
-This version is built for use with Multiverse 5.3 and introduces mechanics, events, encounters, stores, and features that help immerse and implement it into the overhaul's setting.
-LOAD ORDER: Load this after the respective Multiverse files in slipstream mod manager.
+This version is built for use with Multiverse 5.4+ and introduces mechanics, events, encounters, stores, and features that help immerse and implement it into the overhaul's setting.
+LOAD ORDER: Load this after the respective Multiverse files in slipstream mod manager, before IPS description changer if installed, and after Forgemaster if installed.
 
 Features
-    • 18 new ballistic weapons
-    • 4 elite weapon versions
-    • 3 ballistic weapons with the ability to swap ammo during combat
-    • 3 new multiverse renegades including cruiser encounter with its corresponding multiverse renegade loot weapon
-    • Various new events, stores, and encounters
-    • Early implementation of a few new factions and enemies that will be expanded upon in later updates
-    • Compatibility with the Multiverse add-on mod Forgemaster including a cross-over weapon recipe
+    - 18 new ballistic weapons
+    - 4 elite weapon versions
+    - 3 ballistic weapons  and their elite counterparts with the capability to swap ammo type mid combat.
+    - 3 new multiverse renegades including a cruiser encounter with its corresponding multiverse renegade loot weapon
+    - Various new events, stores, and encounters
+    - Early implementation of a few new factions and enemies that will be expanded upon in later updates
+    - Compatibility with the Multiverse add-on mod Forgemaster including a cross-over weapon recipe
+
+Formerly worked on by porcu93, cgjunior, laszlogasd, MaddieDoktor, RobintheDragon2, and Vertaalfout
 
 Based on my previous GO BALLISTIC! 1 developed by Chrono Vortex and myself.
 Original autocannon weapon concepts based on the unfinished Foundation of the Federation mod overhaul with permission from WhaleCancer.
-Spell checked by BetelgeuseBear, Skye, and JerC.]]>
+Spell checked by BetelgeuseBear, Skye, and JerC.
+Special thanks for Squishieboi for an original soundtrack]]>
   </description>
 </metadata>

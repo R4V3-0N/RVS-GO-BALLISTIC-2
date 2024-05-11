@@ -4,8 +4,8 @@
 		<mod-append:choice req="GB_CAN_CALL_DISPATCH" blue="false">
 			<text>[GB] Contact a dispatcher for a delivery job.</text>
 			<event>
-				<loadEvent>GB_ATLAS_EQUIPMENT_LIST</loadEvent>
 				<variable name="gb_called_dispatch" op="set" val="1"/>
+				<loadEvent>GB_ATLAS_EQUIPMENT_LIST</loadEvent>
 			</event>
 		</mod-append:choice>
 		<mod-append:choice hidden="true" req="gb_called_dispatch" blue="false">
@@ -638,7 +638,7 @@ This is the maximum value of your spices, it will not increase further the next 
 							<choice>
 								<text>Continue...</text>
 								<event load="COMBAT_CHECK"/>
-							<choice>
+							</choice>
 						</event>
 					</choice>
 				</event>
