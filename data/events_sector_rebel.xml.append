@@ -61,7 +61,7 @@
 			<event>
 				<item_modify>
 					<item type="fuel" min="5" max="7"/>
-					<item type="scrap" min="-12" max="-20"/>
+					<item type="scrap" min="-20" max="-12"/>
 				</item_modify>
 			</event>
 		</choice>
