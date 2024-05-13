@@ -47,6 +47,51 @@
 	<iconImage>laser_chain</iconImage>
 </weaponBlueprint>
 
+<weaponBlueprint name="GB_ROTARY_AC_ELITE">
+	<type>LASER</type>
+	<title>Elite Rotary Autocannon</title>
+	<short>€ RAC</short>
+	<tip>tip_chain_laser</tip>
+	<desc>An attempt to utilize modern technology with this old weapon, which takes a long time to warm up. Each time it fires it decreases its cooldown between shots, eventually being able to take down any amount of shields.</desc>
+	<tooltip>3 shots 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach, charges quicker the more it fires</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance>
+	<damage>1</damage>
+	<shots>4</shots>	<!-- 1 shot extra over standard -->
+	<sp>0</sp>
+	<breachChance>1</breachChance>
+	<cooldown>15</cooldown>	<!-- 2 seconds extra over standard -->
+	<boost>
+		<type>cooldown</type>
+		<amount>2</amount>
+		<count>5</count>
+	</boost>
+	<power>4</power>
+	<cost>85</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>GB_shot_light</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Rotary_Autocannon_Elite</weaponArt>
+	<iconImage>laser_chain</iconImage>
+</weaponBlueprint>
+
 <!-- Coil Gun Series -->
 <weaponBlueprint name="GB_COIL_1">
 	<type>LASER</type>
