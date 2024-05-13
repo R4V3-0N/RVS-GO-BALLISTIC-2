@@ -60,7 +60,7 @@ created from scratch using the components or techniques of them to create odd an
 	<name>human_soldier</name>
 	<name>unique_tully</name>
 	<name>zoltan_peacekeeper</name>
-	<name>orchid_chieftain</name>
+	<name>orchid_praetor</name>
 	<name>engi_defender</name>
 	<name>unique_turzil</name> <!-- R4: Despite being a fugitive, I feel he can act in an appropiate capacity for this event-->
 </blueprintList>
@@ -98,7 +98,7 @@ created from scratch using the components or techniques of them to create odd an
 						  Appends
 		••••••••••••••••••••••••••••••••••••••••••
 -->
-<mod:findName type="blueprintList" name="GIFTLIST_CIVILIAN">
+<mod:findName type="blueprintList" name="GIFTLIST_UNION">
 	<mod-append:name>GB_AC_2</mod-append:name>
 </mod:findName>
 
@@ -934,7 +934,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 ////////////////////////////////////////////////////////////////////////////////////
 -->
 
-<mod:findName type="blueprintList" name="LIST_WEAPONS_CIVILIAN">
+<mod:findName type="blueprintList" name="LIST_WEAPONS_UNION">
 	<mod-append:name>GB_AC_1_AMMO</mod-append:name>
 	<mod-append:name>GB_AC_2_AMMO</mod-append:name>
 	<!-- <mod-append:name>GB_RIFLED_CANNON</mod-append:name>
@@ -1089,12 +1089,12 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>GB_GAUSS_3_ENEMY</name>
 </blueprintList>
 
-<mod:findName type="blueprintList" name="LIST_DRONES_FED_STEALTH">
-	<mod-append:name>GB_COMBAT_AC_1</mod-append:name>
-	<mod-append:name>GB_COMBAT_AC_2</mod-append:name>
-	<mod-append:name>GB_COMBAT_AC_3</mod-append:name> <!-- R4: still too much for an Elite? I swear if it ends up being underpowered either way...-->
-	<mod-append:name>GB_DEFENSE_AC</mod-append:name>
-</mod:findName>
+<blueprintList name="LIST_DRONES_FED_STEALTH">
+	<name>GB_COMBAT_AC_1</name>
+	<name>GB_COMBAT_AC_2</name>
+	<name>GB_COMBAT_AC_3</name> <!-- R4: still too much for an Elite? I swear if it ends up being underpowered either way...-->
+	<name>GB_DEFENSE_AC</name>
+</blueprintList>
 
 <!--
 ////////////////////////////////////////////////////////////////////////////////////
@@ -1135,8 +1135,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 -->
-
-<blueprintList name = "LIST_WEAPONS_SEPARATIST">
+<blueprintList name="LIST_WEAPONS_SEPARATIST">
 	<name>LASER_BURST_1</name>
 	<name>LASER_BURST_2_ENEMY</name>
 	<name>LASER_BURST_3</name>
@@ -1163,7 +1162,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>ION_BIO</name>
 	<name>LASER_PIERCE_ENEMY</name>
 	<name>LASER_FROST_1</name>
-	<name>LASER_STUN_ENEMY</name>
+	<name>LASER_STUN</name>
 	<name>BEAM_STUN</name>
 	<name>ENERGY_1</name>
 	<name>ENERGY_2</name>
@@ -1510,16 +1509,15 @@ Post update content might change these to "Federation"/Elite versions instead wh
 ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
 -->
 <blueprintList name="RVS_LIST_SHIPS_GENERIC"> <!-- Meant to appear as a multiracial generic list for events like distress events that is no race specifically -->
-	<name>MU_CIVILIAN_SCOUT</name>
-	<name>MU_CIVILIAN_OUTRIDER</name>
-	<name>MU_CIVILIAN_HARVESTER</name>
-	<name>MU_CIVILIAN_SHUTTLE</name>
-	<name>MU_CIVILIAN_INVESTIGATOR</name>
-	<name>MU_CIVILIAN_TRANSPORT</name>
-	<!--<name>MU_MILITIA_SCOUT</name>
-	<name>MU_MILITIA_OUTRIDER</name>
-	<name>MU_MILITIA_FIGHTER</name>
-	<name>MU_MILITIA_ESCORT</name>-->
+	<name>MU_UNION_OUTRIDER</name>
+	<name>MU_UNION_HARVESTER</name>
+	<name>MU_UNION_SHUTTLE</name>
+	<name>MU_UNION_INVESTIGATOR</name>
+	<name>MU_UNION_TRANSPORT</name>
+		<!--<name>MU_MILITIA_SCOUT</name>
+		<name>MU_MILITIA_OUTRIDER</name>
+		<name>MU_MILITIA_FIGHTER</name>
+		<name>MU_MILITIA_ESCORT</name>-->
 	<name>MU_ENGI_SCOUT</name>
 	<name>MU_ENGI_BOMBER</name>
 	<name>MU_ENGI_OUTRIDER</name>
@@ -1532,13 +1530,18 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<name>MU_ZOLTAN_INSTIGATOR</name>
 	<name>MU_ZOLTAN_TRANSPORT</name>
 	<name>MU_ZOLTAN_ESCORT</name>
-	<name>MU_ROCK_SCOUT</name>
-	<name>MU_ROCK_OUTRIDER</name>
-	<name>MU_ROCK_FIGHTER</name>
-	<name>MU_ROCK_INTERCEPTOR</name>
-	<name>MU_ROCK_SKIRMISHER</name>
-	<name>MU_ROCK_PROTECTOR</name>
-	<name>MU_ROCK_TRANSPORT</name>
+		<!--<name>MU_ROCK_SCOUT</name>
+		<name>MU_ROCK_OUTRIDER</name>
+		<name>MU_ROCK_FIGHTER</name>
+		<name>MU_ROCK_INTERCEPTOR</name>
+		<name>MU_ROCK_SKIRMISHER</name>
+		<name>MU_ROCK_PROTECTOR</name>
+		<name>MU_ROCK_TRANSPORT</name>-->
+	<name>MU_OUTCAST_SCOUT</name>
+	<name>MU_OUTCAST_OUTRIDER</name>
+	<name>MU_OUTCAST_SKIRMISHER</name>
+	<name>MU_OUTCAST_FIGHTER</name>
+	<name>MU_OUTCAST_ENFORCER</name>
 	<name>MU_ORCHID_SCOUT</name>
 	<name>MU_ORCHID_FIGHTER</name>
 	<name>MU_ORCHID_OUTRIDER</name>
@@ -1559,6 +1562,12 @@ Post update content might change these to "Federation"/Elite versions instead wh
 					Stealth Ships
 		••••••••••••••••••••••••••••••••••••••••••
 -->
+
+<blueprintList name="RVS_LIST_SHIPS_FED_STEALTH">
+	<name>RVS_STEALTH_FIGHTER</name>
+	<name>RVS_STEALTH_OUTRIDER</name>
+</blueprintList>
+
 <!-- These ships are the defacto super elites of the Federation. They will be the ships that will make sure certain acts will cause you a great consequence as well as to provide some interesting interactions. -->
 <shipBlueprint name="RVS_STEALTH_FIGHTER" layout="rvs_stealth_fighter" img="rvs_stealth_fighter">
 	<class>Stealth Fighter</class>
@@ -1567,24 +1576,47 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<maxSector>7</maxSector>-->
 	<systemList>
 		<cloaking power="1" max="3" room="3" start="true" />
-		<engines power="2" max="4" room="6" start="true" />	<!-- R4: 2023.08.27 balanced more around MV, reduced from max 6, intended to co-operate with Julks LUA engine rebuffer -->
+		<engines power="2" max="4" room="6" start="true" />		<!-- R4: 2023.08.27 balanced more around MV, reduced from max 6, intended to co-operate with Julks LUA engine rebuffer -->
 		<medbay power="1" max="2" room="1" start="false" />
 		<oxygen power="1" max="2" room="2" start="true" />
-		<pilot power="2" max="3" room="0" start="true" />
+		<pilot power="1" max="2" room="0" start="true" />
 		<shields power="2" max="5" room="5" start="false" />	<!-- R4: 2023.08.27 max of 5 leaves it at 2 shields and a buffer as its a stealth ship -->
 		<weapons power="2" max="8" room="4" start="true" />
 	</systemList>
 	<weaponSlots>4</weaponSlots>
-	<droneSlots>0</droneSlots>
-	<weaponList missiles="0" count="4" load="GB_LIST_WEAPONS_FED_STEALTH" /> <!-- will need to test out how well this list works -->
-	<droneList drones="0" count="0" />
-	<health amount="8" />
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="4" load="GB_LIST_WEAPONS_FED_STEALTH" /> <!-- will need to test out how well this list works -->
+	<droneList drones="6" count="0" />
+	<health amount="10" />
 	<maxPower amount="28" />
-	<crewCount amount="2" max="4" class="human_soldier" />	<!-- R4: 2023.08.27 maybe should add some elite feds to this list? -->
+	<crewCount amount="2" max="4" class="LIST_CREW_FEDERATION_ELITE" />	<!-- R4: 2023.08.27 maybe should add some elite feds to this list? -->
 	<boardingAI>sabotage</boardingAI>
 	<aug name="SYSTEM_CASING_NEW" />
 </shipBlueprint>
 
+<shipBlueprint name="RVS_STEALTH_OUTRIDER" layout="rvs_stealth_outrider" img="rvs_stealth_outrider">
+	<class>Stealth Outrider</class>	<!-- Originally created for ChronoVortex for use as -->
+	<!--<name>Budgerigar</name>  |In keeping with me wanting to give the Stealth Fighter a name this would be a Budgerigar since it's a relatively quite-->
+	<!--<minSector>1</minSector>
+	<maxSector>4</maxSector>-->
+	<systemList>
+		<cloaking power="1" max="3" room="3" start="true" />
+		<engines power="2" max="4" room="0" start="true" />
+		<oxygen power="1" max="2" room="4" start="true" />
+		<pilot power="2" max="3" room="2" start="true" />		<!-- Outriders have more piloting-->
+		<shields power="2" max="6" room="5" start="false" /> 	<!-- Full shield bubble more than Stealth Fighter-->
+		<weapons power="1" max="6" room="1" start="true" />		<!-- 2 levels lower than Fighter -->
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="10" count="2" load="LIST_WEAPONS_ZOLTAN" />
+	<droneList drones="6" count="0" />
+	<health amount="8" />
+	<maxPower amount="7" />
+	<crewCount amount="2" max="3" class="LIST_CREW_FEDERATION_ELITE" /> 
+	<boardingAI>sabotage</boardingAI>
+	<aug name="SYSTEM_CASING_NEW" />
+</shipBlueprint>
 
 
 <!-- 	••••••••••••••••••••••••••••••••••••••••••
