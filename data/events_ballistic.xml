@@ -337,7 +337,7 @@
             <text>Accept.</text>
             <event>
                 <text>"Thank you very much. I'm sure we can arrange some remuneration at the shipyards."</text>
-                <quest event = "GB_QUEST_MILITIA_ESCORT"/>
+                <quest event="GB_QUEST_MILITIA_ESCORT"/>
             </event>
         </choice>
         <choice>
@@ -346,7 +346,7 @@
                 <text>"Ok?... We'll just, uhh, die here then." The Militiamen seem to understand that supplies are tight and your route is already set. They turn off comms.</text> <!-- improved sentence -Dalvy -->
                 <choice>
                     <text>Do something on board the ship.</text>
-                    <event load = "STORAGE_CHECK_REAL"/>
+                    <event load="STORAGE_CHECK_REAL"/>
                 </choice>
                 <choice>
                     <text>Do nothing.</text>
@@ -370,14 +370,14 @@
     <event name="GB_QUEST_MILITIA_ESCORT">
         <text>You've arrived at the shipyards, and receive a message from the Militiamen, thanking you. They dispatch a shipwright to install a specialized piece of equipment on your ship.</text> <!-- tpyo fixed -Dalvy -->
         <weapon name="GB_CARAVAN_REWARD"/>
-        <autoReward level = "MED">standard</autoReward>
+        <autoReward level="MED">standard</autoReward>
     </event>
 
     <event name = "GB_FED_BOMBER_DISTRESS">
         <distressBeacon/>
         <text>You arrive at the beacon, only to find a Federation Bomber with its hull in tatters. Upon hailing, they explain that they had a run-in with some Mantis and are desperately low on munitions.</text>
-        <ship load = "GB_SHIP_FED_BOMBER_LOWAMMO" hostile = "false"/>
-        <choice hidden = "true">
+        <ship load="GB_SHIP_FED_BOMBER_LOWAMMO" hostile = "false"/>
+        <choice hidden="true">
             <text>Give them a small amount of ammo. [-3}]</text>
             <event>
                 <text>It isn't much, but it's all you can spare. Hopefully it'll be enough to keep them alive until a supply convoy finds its way here. The crew offer a few spare droneparts to recompense.</text>
@@ -387,7 +387,7 @@
                 </item_modify>
             </event>
         </choice>
-        <choice hidden = "true">
+        <choice hidden="true">
             <text>Give them a medium amount of ammo. [-5}]</text>
             <event>
                 <text>"Thank you, sir. This should be plenty to get us out of this hellhole." The crew dispense an augment to help you on your mission.</text>
@@ -397,26 +397,26 @@
                 </item_modify>
             </event>
         </choice>
-        <choice hidden = "true">
+        <choice hidden="true">
             <text>Give them a large amount of ammo. [-10}]</text>
             <event>
                 <text>You hand over a significant amount of ammunition to the stranded Federation soldiers. Their captain messages you: "We don't have much to give, but we could probably spare one of our weapons. The other 3 should be plenty."</text>
                 <weapon name = "GB_CARAVAN_REWARD"/>
                 <item_modify>
-                    <item type = "missiles" min = "-10" max = "-10"/>
+                    <item type="missiles" min="-10" max="-10"/>
                 </item_modify>
             </event>
         </choice>
-        <choice hidden = "true" req = "RECYCLER">
+        <choice hidden="true" req="RECYCLER">
             <text>Show them your Recycler module.</text>
             <event>
                 <text>"You can just... make ammo? Man, why haven't we ever got one of these? We'd be happy to buy it off you if you can spare it. We have scrap.</text>
-                <choice hidden = "true">
+                <choice hidden="true">
                     <text>Agree to the trade.</text>
                     <event>
-                        <remove name = "RECYCLER"/>
+                        <remove name="RECYCLER"/>
                         <item_modify>
-                            <item type = "scrap" min = "30" max = "50"/>
+                            <item type="scrap" min="30" max="50"/>
                         </item_modify>
                     </event>
                 </choice>
@@ -428,12 +428,12 @@
                 </choice>
             </event>
         </choice>
-        <choice hidden = "true" req = "CRATE_MISSILES">
+        <choice hidden="true" req="CRATE_MISSILES">
             <text>Give them your ammo crate.</text>
             <event>
                 <text>You hand over your ammo crate to the stranded Federation soldiers. Their captain messages you: "We don't have much to give, but we could probably spare one of our weapons. The other 3 should be plenty."</text>
-                <weapon name = "GB_CARAVAN_REWARD"/>
-                <remove name = "CRATE_MISSILES"/>
+                <weapon name="GB_CARAVAN_REWARD"/>
+                <remove name="CRATE_MISSILES"/>
             </event>
         </choice>
         <choice>
@@ -442,7 +442,7 @@
                 <text>"We understand. Fly safe." The Federation ship terminates the hail. You can hear only the vast nothingness of space.</text> <!-- improved sentence -Dalvy -->
                 <choice>
                     <text>Do something on board the ship.</text>
-                    <event load = "STORAGE_CHECK_REAL"/>
+                    <event load="STORAGE_CHECK_REAL"/>
                 </choice>
                 <choice>
                     <text>Do nothing.</text>
@@ -453,7 +453,7 @@
         <choice>
             <text>If they're low on ammo, they're an easy target. Attack!</text>
             <event>
-                <ship hostile = "true"/>
+                <ship hostile="true"/>
                 <text>You power up your weapons and prepare to obliterate your allies.</text>
                 <choice>
                     <text>Continue...</text>
@@ -533,10 +533,10 @@
 
     <event name="GB_RAILGUN_FIELD_TEST">
         <text>This is where the station reported rebel activity, and sure enough, a scout comes in to intercept you almost immediately. Time to show them who's boss.</text>
-        <ship load = "SHIP_TESTING_RAILGUN" hostile = "true"/>
+        <ship load="SHIP_TESTING_RAILGUN" hostile="true"/>
         <choice>
             <text>Continue...</text>
-            <event load = "COMBAT_CHECK"/>
+            <event load="COMBAT_CHECK"/>
         </choice>
     </event>
 
@@ -550,15 +550,15 @@
     <event name="GB_RAIL_TEST_REBEL_ESCAPE">
         <text>The rebels jump away, and you sense you lost valuable time on the fleet.</text>
         <instantEscape/>
-        <modifyPursuit amount = "1"/>
-        <choice hidden = "true" req = "GB_RAIL_1" lvl="1">
+        <modifyPursuit amount="1"/>
+        <choice hidden="true" req = "GB_RAIL_1" lvl="1">
             <text>Continue...</text>
             <event>
                 <text>The commander of the station is unimpressed, and orders the prototype weapon to be returned immediately.</text>
-                <remove name = "GB_RAIL_1"/>
+                <remove name="GB_RAIL_1"/>
             </event>
         </choice>
-        <choice hidden = "true" req = "GB_RAIL_1" lvl="0">
+        <choice hidden="true" req="GB_RAIL_1" lvl="0">
             <text>Continue...</text>
             <event/>
         </choice>
@@ -567,11 +567,11 @@
     <!-- WIP -->
     <event name = "GB_MUSEUM_TOUR" unused="true">  <!-- CG Jr: I guess I'm trying to evoke Trantor here-->
         <text>This planet hosts a large human settlement, covering a large portion of the surface. The landscape is covered in sprawling urban landscapes cradled between towering peaks on the supercontinent. Standing tall amid the city is a grand building, surrounded by fountains and seemingly the centre of attention.</text>
-        <choice hidden = "true">
+        <choice hidden="true">
             <text>Land and look around the building.</text>
             <event><!--CG Jr: Can I can I use grizzled here?-->
                 <text>A grizzled Federation officer is guarding the front of the complex, allowing select members of the public to pass through into the halls beyond. You and your crew approach, and, recognising your uniforms, the officer stands aside to let you pass.</text>
-                <choice hidden = "true">
+                <choice hidden="true">
                     <text>Continue...</text>
                     <event>
                         <text>You enter into the atrium, where you see many great displays of equipment of various points of the Federation's timespan in this Universe. Some things depicted here, especially the events do not line up perfectly with what you are familiar with in your universe. You aren't sure if that's due to errors of the displays or a divergence in the timeline between this and your universe. Entering the main corridor, you realise that this is a museum, built to contain old Federation memorabilia. A curator scuttles up to you, and, seeing your insignia, asks if they can provide anything to assist with your mission - for a price.</text>
@@ -581,7 +581,7 @@
                         </choice>
                         <choice>
                             <text>Let's get straight to business, shall we?</text>
-                            <event load = "GB_MUSEUM_PURCHASE_DONATE"/>
+                            <event load="GB_MUSEUM_PURCHASE_DONATE"/>
                         </choice>
                     </event>
                 </choice>
@@ -603,19 +603,19 @@
         </choice>
     </event>
 
-    <event name = "GB_MUSEUM_PURCHASE_DONATE">
+    <event name="GB_MUSEUM_PURCHASE_DONATE">
         <text>The curator bows obsequiously, and leads you into a dusty storeroom, where a variety of antique weapons are hanging on the walls, neatly categorised by year and users. You note that the 'Federation' section is rather empty. "I, sir, would be delighted to assist you in any way. Well, any way that helps us both." </text>
         <choice>
             <text>Offer to purchase a weapon from the collection.</text>
             <event>
                 <text>"We've sold and traded many items from our inventory over the years, but never have I thought of something from our collection going out back into battle."</text>
-                <weapon name = "GB_SHOP_ITEM_WEAPONS_CANNONS_OLD"/>
+                <weapon name="GB_SHOP_ITEM_WEAPONS_CANNONS_OLD"/>
                 <item_modify>
                     <item type="scrap" min="-10" max="-35"/>
                 </item_modify>
             </event>
         </choice>
-        <choice req = "LIST_CREW_FEDERATION_ELITE">
+        <choice req="LIST_CREW_FEDERATION_ELITE">
             <text>(Federation Elite Crew) Requisition a weapon from the collection.</text>
             <event>
                 <text>With the Federations supply shortage of weapons, they passed a resolution that allows their Elites and Officers to requisition former Federation equipment.</text> <!-- something after the explanation of how requisition works?-->
@@ -626,7 +626,7 @@
             </event>
         </choice>
         <!-- Have the donate weapons be a single option to donate a weapon, which then plays the event a bit and asks what do you wish to donate, which then prompts the bellow weapons -->
-        <choice req = "GB_SHOP_ITEM_WEAPONS_CANNONS_OLD">
+        <choice req="GB_SHOP_ITEM_WEAPONS_CANNONS_OLD">
             <text>Donate a weapon to the museum.</text>
             <event>
                 <text>The curator seems rather shocked when you offer to donate some of your arsenal. "We thought the military didn't care about us any more... what with this Multiversal conflict going on, the last time a supply ship made it out this far was six months ago. Whilst it may not be food, we at The Federal War Museum would be delighted to take some equipment off you, captain."</text>
@@ -634,26 +634,26 @@
                     <text>Donate your autocannon MK1 to the museum.</text>
                     <event>
                         <text>"Hmm. A mark one autocannon. Quite a poor specimen, as well." They grumble a little, but eventually you talk them into paying you for it.</text>
-                        <autoReward level = "MED">scrap_only</autoReward>
+                        <autoReward level="MED">scrap_only</autoReward>
                     </event>
                 </choice>
                 <choice req="GB_AC_2">
                     <text>Donate your autocannon MK2 to the museum.</text>
                     <event>
                         <text>The curator stares when you offer your donation. "A mark two? In excellent condition, as well. I would be honoured to take this off your hands, captain."</text>
-                        <autoReward level = "HIGH">scrap_only</autoReward>
+                        <autoReward level="HIGH">scrap_only</autoReward>
                     </event>
                 </choice>
                 <choice req="GB_AC_3">
                     <text>Donate your autocannon MK3 to the museum.</text>
                     <event>
                         <text>"Oh my, oh my! A mark three. Gosh, I haven't seen one of these for... oh, must be twenty years. A little beat-up I see, but this would be a prize addition to our collection here." They offer you as much scrap as they can find in their vaults.</text>
-                        <autoReward level = "HIGH">scrap_only</autoReward>
-                        <choice hidden = "true">
+                        <autoReward level="HIGH">scrap_only</autoReward>
+                        <choice hidden="true">
                             <text>Continue...</text>
                             <event>
                                 <text>The museum drop off even more scrap as you leave the building.</text>
-                                <autoReward level = "HIGH">scrap_only</autoReward>
+                                <autoReward level="HIGH">scrap_only</autoReward>
                             </event>
                         </choice>
                     </event>
@@ -1090,7 +1090,7 @@
 
     <!--     ••••••••••••••••••••••••••••••••••••••••••
     CACHE ELITE AUTOCANNON REWARDS
-    ••••••••••••••••••••••••••••••••••••••••••-->
+    •••••••••••••••••••••••••••••••••••••••••• -->
     <event name="GB_CACHE_AUTOCANNON_1_ELITE">
         <text>Upon closer examination, the cache seems to have been stocked with light autocannons and of an upgraded model and make. Most likely used or intended to be by the early Federations Special Forces during the war; now left forgotten for you to exploit.</text>
         <weapon name="GB_AC_1_ELITE"/>

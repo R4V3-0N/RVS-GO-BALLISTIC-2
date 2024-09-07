@@ -20,7 +20,7 @@
 		<autoReward level="MED">standard</autoReward>
 	</deadCrew>
 </ship>
-<ship name="SHIP_GB_MILITIA_ESCORT" auto_blueprint="MU_MILITIA_ESCORT">
+<ship name="SHIP_GB_MILITIA_ESCORT" auto_blueprint="MU_MILITIA_OUTRIDER">
 	<destroyed load="DESTROYED_MILITIA" />
 	<deadCrew load="DEAD_CREW_MILITIA" />
 </ship>

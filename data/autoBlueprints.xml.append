@@ -1572,8 +1572,8 @@ Post update content might change these to "Federation"/Elite versions instead wh
 <shipBlueprint name="RVS_STEALTH_FIGHTER" layout="rvs_stealth_fighter" img="rvs_stealth_fighter">
 	<class>Stealth Fighter</class>
 	<!--<name>Nighthawk</name>  |The ship is inspired by the F-117 Nighthawk dubbed the "Stealth Fighter", while not functionally a Fighter at all it is the first modern stealth aircraft!-->
-	<!--<minSector>2</minSector>
-	<maxSector>7</maxSector>-->
+	<minSector>3</minSector>
+	<maxSector>8</maxSector>
 	<systemList>
 		<cloaking power="1" max="3" room="3" start="true" />
 		<engines power="2" max="4" room="6" start="true" />		<!-- R4: 2023.08.27 balanced more around MV, reduced from max 6, intended to co-operate with Julks LUA engine rebuffer -->
@@ -1589,7 +1589,7 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	<droneList drones="6" count="0" />
 	<health amount="10" />
 	<maxPower amount="28" />
-	<crewCount amount="2" max="4" class="LIST_CREW_FEDERATION_ELITE" />	<!-- R4: 2023.08.27 maybe should add some elite feds to this list? -->
+	<crewCount amount="2" max="4" class="LIST_CREW_FEDERATION_ELITE_RANDOM" />
 	<boardingAI>sabotage</boardingAI>
 	<aug name="SYSTEM_CASING_NEW" />
 </shipBlueprint>
@@ -1597,8 +1597,8 @@ Post update content might change these to "Federation"/Elite versions instead wh
 <shipBlueprint name="RVS_STEALTH_OUTRIDER" layout="rvs_stealth_outrider" img="rvs_stealth_outrider">
 	<class>Stealth Outrider</class>	<!-- Originally created for ChronoVortex for use as -->
 	<!--<name>Budgerigar</name>  |In keeping with me wanting to give the Stealth Fighter a name this would be a Budgerigar since it's a relatively quite-->
-	<!--<minSector>1</minSector>
-	<maxSector>4</maxSector>-->
+	<minSector>1</minSector>
+	<maxSector>4</maxSector>
 	<systemList>
 		<cloaking power="1" max="3" room="3" start="true" />
 		<engines power="2" max="4" room="0" start="true" />
@@ -1609,11 +1609,11 @@ Post update content might change these to "Federation"/Elite versions instead wh
 	</systemList>
 	<weaponSlots>2</weaponSlots>
 	<droneSlots>2</droneSlots>
-	<weaponList missiles="10" count="2" load="LIST_WEAPONS_ZOLTAN" />
+	<weaponList missiles="10" count="2" load="GB_LIST_WEAPONS_FED_STEALTH" />
 	<droneList drones="6" count="0" />
 	<health amount="8" />
 	<maxPower amount="7" />
-	<crewCount amount="2" max="3" class="LIST_CREW_FEDERATION_ELITE" /> 
+	<crewCount amount="2" max="3" class="LIST_CREW_FEDERATION_ELITE_RANDOM" /> 
 	<boardingAI>sabotage</boardingAI>
 	<aug name="SYSTEM_CASING_NEW" />
 </shipBlueprint>
