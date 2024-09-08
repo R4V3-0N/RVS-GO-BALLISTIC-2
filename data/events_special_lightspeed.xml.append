@@ -1022,9 +1022,9 @@ Payment: High reward on delivery.</text>
 				<choice hidden="true">
 					<text>Continue...</text>
 					<event>				
-						<text>We've been cut off from supplies for quiet some time. None of the standard transports can get through under these conditions, but thank the stars you made it. I'm authorized to offer a significant hazard bonus for your discretion. The Rebels won't expect us to be back at full combat strength so soon."</text>
+						<text>"We've been cut off from supplies for quiet some time. None of the standard transports can get through under these conditions, but thank the stars you made it. I'm authorized to offer a significant hazard bonus for your discretion. The Rebels won't expect us to be back at full combat strength so soon."</text>
 						<autoReward level="HIGH">scrap</autoReward>
-						<choice hidden="true">
+						<choice hidden="false">
 							<text>Continue...</text>
 							<event load="RVS_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_HAZARD_PAY"/>
 						</choice>
@@ -1034,7 +1034,7 @@ Payment: High reward on delivery.</text>
 		</choice>
 	</event>
 
-	<event name="RVS_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_HAZARD_PAY">
+	<event name="RVS_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_HAZARD_PAY">	<!-- R4 2024.09.09 : TODO Julk, this isn't worky! Fixy!-->
 		<text>"Time's short. Step out of the cargo bay and take a look at what we've got. Pick what you think is fair for hazard pay, Renegade.</text>
 		<choice>
 			<autoReward level="HIGH">item</autoReward>
@@ -1187,7 +1187,7 @@ Payment: High reward on delivery.</text>
 					<text>Continue...</text>
 					<event>
 						<autoReward level="HIGH">scrap</autoReward>
-						<text>We've been cut off from supplies for quite some time. None of the standard transports could get through, but thank the stars you did. I'm authorized to offer a substantial hazard bonus for taking out that ship. It’ll give us some reprieve before the next assault hits</text>
+						<text>"We've been cut off from supplies for quite some time. None of the standard transports could get through, but thank the stars you did. I'm authorized to offer a substantial hazard bonus for taking out that ship. It'll give us some reprieve before the next assault hits".</text>
 						<choice hidden="true">
 							<text>Continue...</text>
 							<event load="RVS_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_HAZARD_PAY"/>
