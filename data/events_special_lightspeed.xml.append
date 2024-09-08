@@ -1004,6 +1004,7 @@ Payment: High reward on delivery.</text>
 		</choice>
 		<choice>
 			<text>Attempt to flee.</text>
+			<event/>
 		</choice>
 	</event>
 
