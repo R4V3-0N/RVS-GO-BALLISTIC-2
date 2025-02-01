@@ -301,21 +301,28 @@ This is the maximum value of your spices, it will not increase further the next 
 	<event name="RVS_DISPATCH_MULTIPLE_CHOICE">		<!-- Event for multiple CURA style missions available (WIP)-->
 		<text load="RVS_TEXT_DISPATCH_MULTIPLE_CHOICE"/>
 		
-		<choice hidden="false">	<!-- This is the choice for a (A to B) Delivery Mission.-->
+		<choice hidden="false">	<!-- This is the choice for a (Go to A) Delivery Mission.-->
 			<text>View a direct delivery mission.</text>
 			<event>
 				<loadEvent>RVS_DISPATCHER_MISSION_DELIVERY</loadEvent>
 			</event>
 		</choice>
-<!--
-		<choice hidden="true">
+
+		<choice hidden="true">	<!-- This is the choice for a (Go to A then B) Delivery Mission.-->
 			<text>View a pick-up and drop-off delivery mission.</text>
 			<event>
-				<loadEvent>RVS_DISPATCHER_MISSION_PICK_DROP</loadEvent>
+				<loadEvent>RVS_DISPATCHER_MISSION_PICK_UP_DELIVERY</loadEvent>
 			</event>
 		</choice>
 
-		<choice hidden="true" blue="false" req="rep_pirate" lvl="-1"/>
+		<choice hidden="true">	<!-- This is the choice for a (Go to A) Top up Mission.-->
+			<text>View a mission to top up your inventory.</text>
+			<event>
+				<loadEvent>RVS_DISPATCHER_DELIVERY_RESUPPLY_PREVIEW</loadEvent>
+			</event>
+		</choice>
+
+<!--		<choice hidden="true" blue="false" req="rep_pirate" lvl="-1"/>
 			<text>View a more clandestine delivery.</text>
 			<event>
 				<loadEvent>RVS_DISPATCHER_MISSION_PIRACY</loadEvent>
@@ -366,12 +373,61 @@ This is the maximum value of your spices, it will not increase further the next 
 		</loadEventList>
 	</event>
 
+	<event name="RVS_DISPATCHER_MISSION_PICK_UP_DELIVERY">	<!--List of Delivery (Go to A than B) style missions-->
+		<loadEventList seeded="false" first="false">
+			<!--ROUTINE		(EASY)-->
+			<!--<event name="RVS_DISPATCHER_PUD_FED_ROUTINE_PREVIEW"/>-->
+			
+			<!-- DIFFICULT	(NORMAL)-->
+			<event name="RVS_DISPATCHER_PUDO_FED_DIFFICULT_PREVIEW_LIST"/>
+
+			<!-- CRITICAL!	(HARD)-->
+			<!-- <event name="RVS_DISPATCHER_PUDO_FED_CRITICAL_PREVIEW"/> -->
+		</loadEventList>
+	</event>
+
 <!-- 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	DELIVERY PREVIEWS
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
 
+	<event name="RVS_DISPATCHER_DELIVERY_RESUPPLY_PREVIEW">	<!-- Routine Mission! No extra challenges, always medium reward -->
+		<text>[ROUTINE RESUPPLY TASK - PICK UP SUPPLIES FOR YOUR MISSION!]
+
+	DESCRIPTION: Navigate to a friendly support station to resupply your common goods for your mission
+	REQUIREMENTS: Expanded Cargo Bays (Resupply)
+	WARNING: No Alerts
+		
+	Payment: Supplies and goods.</text>
+		<choice hidden="false">
+			<text>Accept the job.</text>
+			<event>
+				<text>"Running a bit dry, huh? Alright, I'll submit your request. Transmitting the co-ordinates now."</text>
+				<quest event="RVS_DISPATCHER_RESUPPLY"/>
+				<!--<eventAlias name="ATLAS_MENU" jumpClear="true">ATLAS_MENU_NOEQUIPMENT</eventAlias>-->
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event>
+						<variable name="gb_called_dispatch" op="set" val="0"/>
+						<loadEvent>FMCORE_ATLAS_EQUIPMENT</loadEvent>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Go back.</text>
+			<event>
+				<loadEvent>RVS_DISPATCH_MULTIPLE_CHOICE</loadEvent>
+			</event>
+		</choice>
+	</event>
+
+	<!--
+		\\\\\\\\\\\\\\\\\\\\\\ 
+		DIRECT DELIVERY QUESTS
+		\\\\\\\\\\\\\\\\\\\\\\
+	-->
 	<!-- FED PREVIEWS -->
 	<event name="RVS_DISPATCHER_DELIVERY_FED_ROUTINE_PREVIEW">	<!-- Routine Mission! No extra challenges, always medium reward -->
 		<text>[ROUTINE DELIVERY TASK - CONVEY SUPPLIES FOR THE WAR EFFORT]
@@ -417,7 +473,7 @@ Payment: Medium reward on delivery.</text>
 	<event name="RVS_DISPATCHER_DELIVERY_FED_PREVIEW_COMPROMISED">	<!-- Compromised Location -->
 		<text>[DIFFICULT DELIVERY TASK - CONVEY CRITICAL SUPPLIES TO THE FRONT!]
 
-		DESCRIPTION: You will need to convey vital cargo to close to the front and support any Federation elements!
+		DESCRIPTION: You will need to convey vital cargo close to the front and support any Federation elements!
 		REQUIREMENTS: Expanded Cargo Bays (Currently Stocked).
 		WARNINGS: Caution - Delivery site may be compromised.
 		
@@ -571,7 +627,99 @@ Payment: High reward on delivery.</text>
 		</choice>
 	</event>
 
-<!-- 
+	<!--
+		\\\\\\\\\\\\\\\\\\\\\\ 
+		PICK UP DROP OFF QUESTS
+		\\\\\\\\\\\\\\\\\\\\\\
+	-->	
+
+	<eventList name="RVS_DISPATCHER_PUDO_FED_DIFFICULT_PREVIEW_LIST">
+		<event load="RVS_DISPATCHER_PUDO_FED_DIFFICULT_SMALL_ARMS_PREVIEW"/>
+		<event load="RVS_DISPATCHER_PUDO_FED_GENERIC_PREVIEW"/>
+		<!-- 2024.11.13 R4: TODO add other PUDO's  -->
+	</eventList>
+
+	<event name="RVS_DISPATCHER_PUDO_FED_DIFFICULT_SMALL_ARMS_PREVIEW">
+		<text>[DIFFICULT PICK-UP DROP-OFF TASK - ARM OUR TROOPS BEFORE AN OFFENSIVE!]
+			Description: Convey small arms from a Federation Outpost to a Federation military base ahead of an invasion!
+			Requirements: Cargo pick up
+			Warnings: Caution - Hostile activity in Sector.
+			
+			Payment: Medium reward on delivery.</text>
+		<choice hidden="false">
+			<text>Accept the job.</text>
+			<event>
+				<text>"Affirmative, uploading co-ordinates now... Alright, better get there quick. I've just recieved a transmission that there are Rebels in the AO searching for you. Good luck, Renegade."</text>
+				<quest event="RVS_DISPATCHER_PUDO_SMALL_ARMS_OUTPOST_START"/>
+				<!--<eventAlias name="ATLAS_MENU" jumpClear="true">ATLAS_MENU_NOEQUIPMENT</eventAlias>-->
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event>
+						<quest event="RVS_INTERCEPT_LIST"/>	<!-- This event spawns an encounter in sector of someone wanting to take your cargo or intercept you -->	<!-- TODO bug, showing up as quest beacons, should be hidden. -->
+						<variable name="gb_called_dispatch" op="set" val="0"/>
+						<loadEvent>FMCORE_ATLAS_EQUIPMENT</loadEvent>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Go back.</text>
+			<event>
+				<loadEvent>RVS_DISPATCH_MULTIPLE_CHOICE</loadEvent>
+			</event>
+		</choice>
+	</event>
+
+	<event name="RVS_DISPATCHER_PUDO_FED_GENERIC_PREVIEW">
+		<text load="RVS_DISPATCHER_PUDO_FED_GENERIC_TEXT_LIST"/>
+		<choice hidden="false">
+			<text>Accept the job.</text>
+			<event>
+				<text>"Affirmative, uploading co-ordinates now... Alright, better get there quick. I've just recieved a transmission that there are Rebels in the AO searching for you. Good luck, Renegade."</text>
+				<quest event="RVS_DISPATCHER_PUDO_GENERIC_START_LIST"/>
+				<!--<eventAlias name="ATLAS_MENU" jumpClear="true">ATLAS_MENU_NOEQUIPMENT</eventAlias>-->
+				<choice hidden="true">
+					<text>Continue...</text>
+					<event>
+						<quest event="RVS_INTERCEPT_LIST"/>	<!-- This event spawns an encounter in sector of someone wanting to take your cargo or intercept you -->	<!-- TODO bug, showing up as quest beacons, should be hidden. -->
+						<variable name="gb_called_dispatch" op="set" val="0"/>
+						<loadEvent>FMCORE_ATLAS_EQUIPMENT</loadEvent>
+					</event>
+				</choice>
+			</event>
+		</choice>
+		<choice hidden="true">
+			<text>Go back.</text>
+			<event>
+				<loadEvent>RVS_DISPATCH_MULTIPLE_CHOICE</loadEvent>
+			</event>
+		</choice>
+	</event>
+	
+	<textList name="RVS_DISPATCHER_PUDO_FED_GENERIC_TEXT_LIST">
+	<text>[DIFFICULT PICK-UP DROP-OFF TASK - DELIVER RESOURCES FOR THE WAR EFFORT]
+		Description: Convey resources between friendly forces to support our war effort.
+		Requirements: Cargo pick up
+		Warnings: Caution - Hostile activity in Sector.
+		
+		Payment: Medium reward on delivery.</text>
+	<text>[DIFFICULT PICK-UP DROP-OFF TASK - DELIVER RELIEF TO OUR ALLIES]
+		Description: Convey resources between friendly forces to provide relief.
+		Requirements: Cargo pick up
+		Warnings: Caution - Hostile activity in Sector.
+		
+		Payment: Medium reward on delivery.</text>
+	<text>[DIFFICULT PICK-UP DROP-OFF TASK - TRANSPORT UNITS FOR DISASTER RELIEF]
+		Description: Convey goods for disaster relief between friendlies in need.
+		Requirements: Cargo pick up
+		Warnings: Caution - Hostile activity in Sector.
+		
+		Payment: Medium reward on delivery.</text>
+	</textList>
+
+<!-- RVS_DISPATCHER_PUDO_FED_CRITICAL_PREVIEW missing-->
+
+<!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 			EVENT LISTS
@@ -906,68 +1054,80 @@ Payment: High reward on delivery.</text>
 		<event load="RVS_DELIVERY_GENERIC_DEAD"/>
 	</eventList>
 
+<!-- FED GENERIC PUDO LIST-->
+
+	<eventList name="RVS_DISPATCHER_PUDO_GENERIC_START_LIST">
+		<event load="RVS_DISPATCHER_PUDO_GENERIC_START_STATION"/>
+	</eventList>
+
+	<eventList name="RVS_DISPATCHER_PUDO_GENERIC_END_LIST">
+		<event load="RVS_DISPATCHER_PUDO_GENERIC_END_STATION"/>
+	</eventList>
+
+	<!-- R4 2024.11.13 Add more things to this later please, TODO -->
+
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	FEDERATION DELIVERY EVENTS
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
 
-<!-- Simple Fed Encounter scrap-->
-<event name="RVS_DISPATCHER_DELIVERY_FED_SIMPLE_SCRAP">
-	<beaconType id="map_icon_delivery" global="true">
-		<color r="255" g="255" b="255" a="1.0"/>
-		<unvisitedTooltip>You are tasked to deliver goods here.</unvisitedTooltip>
-		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
-		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
-	</beaconType>
-	<preventQuest/>
-	<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
-	<ship load="SHIP_FED_GENERIC" hostile="false"/>
-	<text>Just as expected you have arrived to see a Federation ship awaiting to recieve the much needed supplies. "Much appreciated, Renegade! We wouldn't have lasted much longer without these supplies. Take this on my behalf."</text>
-	<autoReward level="MED">scrap_only</autoReward>
-	<choice>
-		<text>Continue...</text>
-		<event/>
-	</choice>
-</event>
+	<!-- Simple Fed Encounter scrap-->
+	<event name="RVS_DISPATCHER_DELIVERY_FED_SIMPLE_SCRAP">
+		<beaconType id="map_icon_delivery" global="true">
+			<color r="255" g="255" b="255" a="1.0"/>
+			<unvisitedTooltip>You are tasked to deliver goods here.</unvisitedTooltip>
+			<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+			<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+		</beaconType>
+		<preventQuest/>
+		<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+		<ship load="SHIP_FED_GENERIC" hostile="false"/>
+		<text>Just as expected you have arrived to see a Federation ship awaiting to recieve the much needed supplies. "Much appreciated, Renegade! We wouldn't have lasted much longer without these supplies. Take this on my behalf."</text>
+		<autoReward level="MED">scrap_only</autoReward>
+		<choice>
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</event>
 
-<!-- Simple Fed Encounter delay-->
-<event name="RVS_DISPATCHER_DELIVERY_FED_SIMPLE_DELAY">
-	<beaconType id="map_icon_delivery" global="true">
-		<color r="255" g="255" b="255" a="1.0"/>
-		<unvisitedTooltip>You are tasked to deliver goods here.</unvisitedTooltip>
-		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
-		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
-	</beaconType>
-	<preventQuest/>
-	<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
-	<ship load="SHIP_FED_GENERIC" hostile="false"/>
-	<text>Just as expected you have arrived to see a Federation ship awaiting to recieve the much needed supplies. "Much appreciated, Renegade! We wouldn't have lasted much longer without these supplies. We can't spare much but with these supplies I'll see to it if we can harrass the Rebel fleet and buy you a little extra time."</text>
-	<modifyPursuit amount="-2"/>
-	<choice>
-		<text>Continue...</text>
-		<event/>
-	</choice>
-</event>
+	<!-- Simple Fed Encounter delay-->
+	<event name="RVS_DISPATCHER_DELIVERY_FED_SIMPLE_DELAY">
+		<beaconType id="map_icon_delivery" global="true">
+			<color r="255" g="255" b="255" a="1.0"/>
+			<unvisitedTooltip>You are tasked to deliver goods here.</unvisitedTooltip>
+			<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+			<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+		</beaconType>
+		<preventQuest/>
+		<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+		<ship load="SHIP_FED_GENERIC" hostile="false"/>
+		<text>Just as expected you have arrived to see a Federation ship awaiting to recieve the much needed supplies. "Much appreciated, Renegade! We wouldn't have lasted much longer without these supplies. We can't spare much but with these supplies I'll see to it if we can harrass the Rebel fleet and buy you a little extra time."</text>
+		<modifyPursuit amount="-2"/>
+		<choice>
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</event>
 
-<!-- Simple Fed Station scrap-->
-<event name="RVS_DISPATCHER_DELIVERY_FED_STATION_SCRAP">
-	<beaconType id="map_icon_delivery" global="true">
-		<color r="255" g="255" b="255" a="1.0"/>
-		<unvisitedTooltip>You are tasked to deliver goods here.</unvisitedTooltip>
-		<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
-		<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
-	</beaconType>
-	<preventQuest/>
-	<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
-	<ship load="SHIP_FED_STATION_ALL" hostile="false"/>
-	<text>A Federation station surrounded by a few token defence patrols greets you upon your arrival. "We're reading you clear Renagade. Alright, dock at hanger bay zero - niner. Thank you for the timely delivery. Take our excess supplies for your paymment."</text>
-	<autoReward level="HIGH">standard</autoReward>
-	<choice>
-		<text>Continue...</text>
-		<event/>
-	</choice>
-</event>
+	<!-- Simple Fed Station scrap-->
+	<event name="RVS_DISPATCHER_DELIVERY_FED_STATION_SCRAP">
+		<beaconType id="map_icon_delivery" global="true">
+			<color r="255" g="255" b="255" a="1.0"/>
+			<unvisitedTooltip>You are tasked to deliver goods here.</unvisitedTooltip>
+			<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+			<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+		</beaconType>
+		<preventQuest/>
+		<!--<jumpEvent>JUMP_WARNING</jumpEvent>-->
+		<ship load="SHIP_FED_STATION_ALL" hostile="false"/>
+		<text>A Federation station surrounded by a few token defence patrols greets you upon your arrival. "We're reading you clear Renagade. Alright, dock at hanger bay zero - niner. Thank you for the timely delivery. Take our excess supplies for your paymment."</text>
+		<autoReward level="HIGH">standard</autoReward>
+		<choice>
+			<text>Continue...</text>
+			<event/>
+		</choice>
+	</event>
 
 <!-- DIFFICULT BATTLE-->
 
@@ -1034,28 +1194,41 @@ Payment: High reward on delivery.</text>
 		</choice>
 	</event>
 
-	<event name="RVS_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_HAZARD_PAY">	<!-- R4 2024.09.09 : TODO Julk, this isn't worky! Fixy!-->
+	<event name="RVS_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_HAZARD_PAY">
 		<text>"Time's short. Step out of the cargo bay and take a look at what we've got. Pick what you think is fair for hazard pay, Renegade.</text>
 		<choice>
-			<autoReward level="HIGH">item</autoReward>
-			<text>Choose this item.</text>
-			<event load="RVS_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_COMPLETED"/>
+			<text>Take this item.</text>
+			<event>
+				<autoReward level="HIGH">item</autoReward>
+				<text load="RVS_TEXT_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_COMPLETED"/>
+			</event>
 		</choice>
 		<choice>
-			<autoReward level="HIGH">weapon</autoReward>
-			<text>Choose this weapon.</text>
-			<event load="RVS_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_COMPLETED"/>
+			<text>Take this item.</text>
+			<event>
+				<autoReward level="HIGH">weapon</autoReward>
+				<text load="RVS_TEXT_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_COMPLETED"/>
+			</event>
 		</choice>
-		<choice>
-			<autoReward level="HIGH">augment</autoReward>
-			<text>Choose this augment.</text>
-			<event load="RVS_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_COMPLETED"/>
+		<choice req="rep_comb_federation" lvl="-999" max_lvl="1" blue="false">			<!-- R4 2024.09.11: Bad Rep? You get one less choice! -->
+			<text>Take this item.</text>
+			<event>
+				<autoReward level="HIGH">item</autoReward>
+				<text load="RVS_TEXT_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_COMPLETED"/>
+			</event>
+		</choice>
+		<choice req="rep_comb_federation" lvl="-999" max_lvl="-1">						<!-- R4 2024.09.11: Good Rep? You get an extra choice! -->
+			<text>(Federation Reputation) Take this item.</text>
+			<event>
+				<autoReward level="HIGH">item</autoReward>
+				<text load="RVS_TEXT_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_COMPLETED"/>
+			</event>
 		</choice>
 	</event>
 
-	<event name="RVS_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_COMPLETED">	<!-- R4 2024.09.05: Event saying goodbye basically to wrap up the event -->
+	<textList name="RVS_TEXT_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_COMPLETED">	<!-- R4 2024.09.05: Event saying goodbye basically to wrap up the event -->
 		<text>"Very well, I will notify the quartermaster in time. Right now we need to get you out of here post haste before the battle esculates."</text>
-	</event>
+	</textList>
 
 	<event name="RVS_DISPATCHER_DELIVERY_FED_CRITICAL_CRUISER_CLOAK_FAIL">
 		<text>Your cloaking has failed to mask your approach, and your system lights up with sensor lock warnings. The lead ship peels off from the formation, turning its guns toward you. You won't be able to avoid this confrontation but taking out the flights leader may help punch a hole open long enough for you to dock with the carrier.</text>
@@ -1076,6 +1249,169 @@ Payment: High reward on delivery.</text>
 	Option to try to run away cloaked (garantee departure)
 	-->
 
+
+	<!--
+		\\\\\\\\\\\\\\\\\\\\\\ 
+		PICK UP DROP OFF QUESTS ORIGINS
+		\\\\\\\\\\\\\\\\\\\\\\
+	-->
+
+	<event name="RVS_DISPATCHER_PUDO_SMALL_ARMS_OUTPOST_START">
+		<beaconType id="map_icon_pick_up" global="true">
+			<color r="255" g="255" b="255" a="1.0"/>
+			<unvisitedTooltip>You are tasked to deliver goods here.</unvisitedTooltip>
+			<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+			<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+		</beaconType>
+		<preventQuest/>
+		<ship load="SHIP_FED_STATION_ALL" hostile="false"/>
+		<quest event="RVS_DISPATCHER_PUDO_SMALL_ARMS_END"/>	<!-- R4 TODO: Make this quest not orange-->
+		<text>The Federation station here has been anticipating your arrival and clears you to dock. While the goods are being transfered you consider what to do.</text>
+		<!-- R4 2024.09.11 EVENT TODO, make an event for idling at Federation Stations. Gossip? Sector Map? Etc.
+		<choice>
+			<text>Do something on board the station.</text>
+			<event load="RVS_FED_STATION_IDLE"/>
+		</choice>-->
+		<choice req="rep_comb_federation" lvl="-999" max_lvl="0">						<!-- R4 2024.09.11: Negative rep? No aid for you! -->
+			<text>Request aid.</text>
+			<event>
+				<autoReward level="RANDOM">stuff</autoReward>
+				<text>You put in a request for supplies and resources. The stations quartermaster reviewed your request and has granted you a few resources that the outpost is able to part with.</text>
+			</event>
+		</choice>			
+		<choice>
+			<text>Do something on board the ship.</text>
+			<event load="STORAGE_CHECK_REAL"/>
+		</choice>
+		<choice>
+			<text>Do nothing.</text>
+			<event/>
+		</choice>
+	</event>
+
+	
+	<event name="RVS_DISPATCHER_PUDO_GENERIC_START_STATION">
+		<beaconType id="map_icon_pickup" global="true">
+			<color r="255" g="255" b="255" a="1.0"/>
+			<unvisitedTooltip>You are tasked to deliver goods here.</unvisitedTooltip>
+			<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+			<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+		</beaconType>
+		<preventQuest/>
+		<ship load="SHIP_STATION_GENERIC" hostile="false"/>	<!-- R4 Generic Station-->
+		<quest event="RVS_DISPATCHER_PUDO_GENERIC_END_LIST"/>
+		<text load="RVS_DISPATCHER_PUDO_GENERIC_START_TEXTLIST"/>
+		<!-- R4 2024.09.11 EVENT TODO, make an event for idling at Federation Stations. Gossip? Sector Map? Etc.
+		<choice>
+			<text>Do something on board the station.</text>
+			<event load="RVS_FED_STATION_IDLE"/>
+		</choice>-->
+		<choice req="rep_comb_federation" lvl="-999" max_lvl="0">						<!-- R4 2024.09.11: Negative rep? No aid for you! -->
+			<text>Request aid.</text>
+			<event>
+				<autoReward level="RANDOM">stuff</autoReward>
+				<text>You put in a request for supplies and resources. The stations quartermaster reviewed your request and has granted you a few resources that the outpost is able to part with.</text>
+			</event>
+		</choice>			
+		<choice>
+			<text>Do something on board the ship.</text>
+			<event load="STORAGE_CHECK_REAL"/>
+		</choice>
+		<choice>
+			<text>Do nothing.</text>
+			<event/>
+		</choice>
+	</event>
+
+	<textList name="RVS_DISPATCHER_PUDO_GENERIC_START_TEXTLIST">
+		<text>The trade hub bustles with activity as you approach. A message directs you to Docking Bay 42. Once docked, dockworkers start loading crates onto your ship.
+"Sign here," one says. "Watch your back—this cargo's heading into a hot zone."</text>
+		<text>As you dock at the secure station, turrets track your ship's every move. A stern officer hails you:
+"Proceed to Bay Alpha-7. Stay onboard."
+Security escorts carefully load the cargo, double-checking each crate.</text>
+		<text>As you maneuver toward the busy depot, a controller's voice comes through: "Renegade, Bay 14 is cleared for you. Quick turnaround, we're on a tight schedule."
+Dockworkers immediately begin loading crates as you finalize the manifest.</text>
+		<text>The port is a hive of activity, with ships crowding every docking bay. "Freighter, Dock 9 is open for five minutes. Get in, load up, and get clear", a dispatcher says briskly. Your cargo is loaded in record time, and you're quickly waved off.</text>
+		<text>As you arrive, your comms crackle with the voice of a harried quartermaster: "Renegade, about time! We're overloaded here. Docking Bay 17", Crates are shoved aboard in a hurry as the quartermaster barks instructions at the crew.</text>
+		<text>Arriving at the crowded supply hub, you're immediately directed to a cramped bay.	"We're running low on space, Renegade—make it fast", a gruff loader instructs. The loading crew works at double-speed, and you're soon ready to depart.</text>
+	</textList>
+
+
+	<!--
+		\\\\\\\\\\\\\\\\\\\\\\ 
+		PICK UP DROP OFF QUESTS ENDINGS
+		\\\\\\\\\\\\\\\\\\\\\\
+	-->
+
+	<event name="RVS_DISPATCHER_PUDO_SMALL_ARMS_END">	<!-- may change planet later-->
+		<beaconType id="map_icon_delivery" global="true">	<!-- R4 2024.11.13, TEST, if works, delete this comment -->
+			<color r="255" g="255" b="255" a="1.0"/>
+			<unvisitedTooltip>You are tasked to deliver goods to a Federation base here.</unvisitedTooltip>
+			<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+			<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+		</beaconType>
+		<preventQuest/>
+		<text planet="PLANET_MOONS">You arrive in orbit around a barren, rocky world. Almost immediately, a hail comes through from a Federation base below, the screen flickering to life with the image of a bustling military outpost. Soldiers scramble to load into dropships, and the distant roar of engines tells you that they're mobilizing for the planned invasion.</text>
+		<choice>
+			<text>Hail the base.</text>
+			<event>
+				<text>A voice crackles over the comms:
+'Glad you made it. We're cutting it close. Those weapons are vital for the next phase. Stand by, transferring you to Aerospace Traffic Control.'
+
+You recieve instructions for the landing procedure and not long after you have made it planet side.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<autoReward level="HIGH">standard</autoReward>
+					<text>A Federation officer greets you at the ramp, offering a brisk nod as the cargo is unloaded. You have been compensated accordingly.</text>
+				</event>
+			</choice>
+			</event>
+		</choice>
+	</event>
+
+	<event name="RVS_DISPATCHER_PUDO_GENERIC_END_STATION">
+		<beaconType id="map_icon_delivery" global="true">
+			<color r="255" g="255" b="255" a="1.0"/>
+			<unvisitedTooltip>You are tasked to deliver goods here.</unvisitedTooltip>
+			<visitedTooltip>Explored location. Nothing left of interest.</visitedTooltip>
+			<undiscoveredTooltip>An unvisited location.</undiscoveredTooltip>
+		</beaconType>
+		<preventQuest/>
+		<text load="RVS_DISPATCHER_PUDO_GENERIC_END_STATION_TEXTLIST"/>
+		<autoReward level="MED">standard</autoReward>
+		<choice>
+			<text>Do something on board the ship.</text>
+			<event load="STORAGE_CHECK_REAL"/>
+		</choice>
+		<choice>
+			<text>Do nothing.</text>
+			<event/>
+		</choice>
+	</event>
+
+	<textList name="RVS_DISPATCHER_PUDO_GENERIC_END_STATION_TEXTLIST">
+		<text>As you dock, a station crew waves you over. "You must be the delivery. We've been waiting for this - unload in Bay 4." You check your data pad to see your scrap credit deposited.</text>
+		<text>You arrive to your destination, a station hails you: "Renegade, you're on time. Docking Bay 7 is ready for the transfer," the station operator says, keeping things brief. "Unload fast; we're expecting another shipment soon."</text>
+		<text>Station personnel hustle to your ship as you dock. "Supply shipment, right? We'll have this sorted and unloaded in minutes. Appreciate the speed, Captain. We'll have the scrap transferred immediately."</text>
+		<text>"Good to see you, Renegade. We've been expecting this load. Take Dock 12 and let our crew handle the rest" comes the swift message from the station terminal.</text>
+		<text>As you dock, a station crew member meanders over. "Ah, the shipment's here. Take your time unloading. We'll get to it soon enough."</text>
+		<text>"Welcome, Renegade," a calm voice greets you from the terminal. "We've cleared Docking Bay 5 for you. No rush; we're well ahead of schedule."</text>
+		<text>After you dock, a worker strolls up. "Oh, the supply run? Perfect timing. Go ahead and unload at Dock 8 when you're ready."</text>
+		<text>"Good to see you made it," a crew member says as they approach. "Take landing pad 3, and let us know when you're finished unloading then we'll transfer your payment immediately."</text>
+	</textList>
+	
+
+	
+
+	<!-- R4 TODO
+	
+		Delivery
+		Fight than Delivery
+		Delivery than Fight
+		Delivery and then do another delivery?
+	
+	-->
 
 <!--
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1216,15 +1552,9 @@ Payment: High reward on delivery.</text>
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
 	<eventList name="RVS_INTERCEPT_LIST">
-		<event>
-			<loadEvent>RVS_INTERCEPT_REBEL</loadEvent>
-		</event>
-		<event>
-			<loadEvent>RVS_INTERCEPT_TURNCOAT</loadEvent>
-		</event>	
-		<event>
-			<loadEvent>RVS_INTERCEPT_PIRATE</loadEvent>
-		</event>
+		<event load="RVS_INTERCEPT_REBEL"/>
+		<event load="RVS_INTERCEPT_TURNCOAT"/>    
+		<event load="RVS_INTERCEPT_PIRATE"/>
 		<!-- TODO add Mantis, Coalition, Smuggler, etc events later-->
 	</eventList>
 
