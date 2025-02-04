@@ -1725,7 +1725,7 @@ You recieve instructions for the landing procedure and not long after you have m
 
 		<event load="GB_DISPATCH_QUEST_LIST_GENERIC"/>
 		<event>
-			<text>You fail to find a drop off point or client anywhere near this beacon. However it appears you are not alone as there is a Rebel ship in close proximity!</text>
+			<text>You fail to find a drop off point or client anywhere near this beacon. However, it appears you are not alone as there is a Rebel ship in close proximity!</text>
 			<choice>
 				<text>Continue...</text>
 				<event load="ENCOUNTER_REBEL"/>	 <!-- You did not do this right unfortunately, you were missing a choice and a text tag! -Cyrus --> <!-- R4 2023.10.19: is this still current? my brain no worky-->
@@ -1912,7 +1912,7 @@ You recieve instructions for the landing procedure and not long after you have m
 		</event>
 
 		<event>
-			<ship load="SHIP_SMUGGLER_ALL" hostile="false"/>
+			<ship load="SHIP__ALL" hostile="false"/>
 			<text>Sometimes the Federation has to make deals with less than reputable people to get the intell they need. So it comes to no surprise that a pirate transport ship hiding on the outskirts of this node awaited for your arrival and ushers you to make your clandestine delivery further away from the local beacon traffic. Though trusting people who thrive on backstabbing is always risky the exchange goes smoothly without incident.</text>
 			<variable name="loc_ach_fedfreighter_deliveries" op="add" val="1"/>
 			<autoReward level="MED">stuff</autoReward>
@@ -2028,11 +2028,11 @@ You recieve instructions for the landing procedure and not long after you have m
 		<text>A request for basic goods and resources has just came through. Time to plot a route to the marked beacon on your starmap.</text>
 		<text>"just make sure you get there before the Rebels, Dispatcher out."</text>
 		<text>"Don't take too long, the sooner you get there the sooner we can move on. Dispatcher out."</text>
-		<text>"I feel rather confident that I am not getting my fair share out of these deliveries. However with how many times you run into Rebels, Pirates, Rebel Pirates, etcetera, etcetera... guess we'll just call this hazard pay."</text>
+		<text>"I feel rather confident that I am not getting my fair share out of these deliveries. However, with how many times you run into Rebels, Pirates, Rebel Pirates, etcetera, etcetera... guess we'll just call this hazard pay."</text>
 		<text>"Alright, same as before with one exception. We are technically a military vessel and in this sector we would be in breach of protocol-S14-W which ambiguously states that all military vessels exceeding the maximum hull vibrancy allocated for this system are to be destroyed. I have not a single clue what this means but it's the law... apparently."</text>
 		<text>It took awhile but the coordinates are finally recieved. Shouldn't be too challenging to reach it in time.</text>
 		<text>"Alright, here are the co-ordinates. Good luck on this one. Dispatcher out."</text>
-		<text>Unfortunately for this one you are given only a vague set of directions. However upon referencing the star map you think you have a good idea of where your target is and plan a route accordingly.</text>
+		<text>Unfortunately for this one you are given only a vague set of directions. However, upon referencing the star map you think you have a good idea of where your target is and plan a route accordingly.</text>
 	</textList>
 
 
@@ -2064,7 +2064,7 @@ You recieve instructions for the landing procedure and not long after you have m
 		</choice>
 	</event>
 	<textList name="GB_SMUGGLE_TEXT_1"> 
-		<text>Bustling with activity as ships regularly enter and depart from the slotted opening in the side of the large trade station. It is equipped with basic sensor equipment and light police patrols making sure no one who is wanted and unwelcomed enters, or those carrying any contraband and illicit goods. There is a chance you could slip past their security with all this traffic here, but you are willing to take the risk?</text>
+		<text>Bustling with activity as ships regularly enter and depart from the slotted opening in the side of the large trade station. It is equipped with basic sensor equipment and light police patrols making sure no one who is wanted and unwelcomed enters, or those carrying any contraband and illicit goods. There is a chance you could slip past their security with all this traffic here, but are you are willing to take the risk?</text>
 		<text>There is a constant stream of ships entering and leaving the large trade station through the slotted opening. The facility is equipped with basic sensor equipment and police patrols that ensure no one unwanted and unwelcome enters, or has contraband or illicit goods with them. With all this traffic here, there is a chance you could slip past their security, but are you willing to take the chance?</text>
 		<text>You arrive at a bustling trade hub. A popular tourist destination it seems as you can tell by all the Union cruise liners, space liners, and taxi ships ferrying people to and from. With the range of ships that enter the large megastation you could slip in without notice to your clandestine delivery. Assuming you aren't scanned by the security patrols that keep this station clean of contraband.</text>
 		<text>At a thriving trade center, you find yourself at a loss with all the activity at this beacon. With all the heavy haulers and mining vessels entering the station it seems to be a zero-G refinery and processing facility. As a result of the frequency of ships entering the mega-refinery, clandestine deliveries could take place without anyone being aware. Providing you do not get scanned by the security patrols that patrol this station for contraband.</text>
@@ -2094,14 +2094,14 @@ You recieve instructions for the landing procedure and not long after you have m
 	</eventList>
 
 	<event name="GB_SMUGGLE_DELIVERY_INSPECTION_FAIL">
-		<text>The security staff board your ship and begin scanning through your cargo hold closely. Suddenly alarms go off and they turn to you. "You are carrying prohibited goods. Surrender your cargo and pay the fine and everything else should be in order. Failure to comply will result in your arrest and the detainment of this vessel."</text>
-		<choice hidden="true">
+		<text>The security staff board your ship and begin scanning through your cargo hold closely. Suddenly alarms go off and they turn to you. "You are carrying prohibited goods. Surrender your cargo and pay the fine and everything else should be in order. Failure to comply will result in your arrest and the seizure of this vessel."</text>
+		<choice>
 			<text>Pay the fine.</text>
 			<event>
 				<item_modify steal="true">
-					<item type="scrap" min="15" max="15"/>
+					<item type="scrap" min="-20" max="-20"/>
 				</item_modify>
-				<text>You decide to cut your losses and pay the fine and surrendering your cargo. Though this means you won't be able to make the delivery anymore you are thankful that it at least things didn't esculate further.</text>
+				<text>You decide to cut your losses, pay the fine, and surrender your cargo. Though this means you won't be able to make the delivery anymore; You are thankful that it at least things didn't esculate further.</text>	<!-- IDEA: Penalty loss to who ever was meant to recieve your cargo? -->
 			</event>
 		</choice>
 		<choice hidden="true">
@@ -2111,7 +2111,7 @@ You recieve instructions for the landing procedure and not long after you have m
 	</event>
 
 	<event name="GB_SMUGGLE_DELIVERY_INSPECTION_CLEAR">
-		<text>The security staff board your ship and begin scanning through your cargo hold closely. However for one reason or another it seems they didn't find the contraband in your cargo hold at all and eventually they return back to their ship and give you the all clear.</text>
+		<text>The security staff board your ship and begin scanning through your cargo hold closely. However, for one reason or another it seems they didn't find the contraband in your cargo hold at all, and eventually they return back to their ship and give you the all clear.</text>
 		<choice hidden="true">
 			<text>Phew, that was close.</text>
 			<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
@@ -2163,37 +2163,37 @@ You recieve instructions for the landing procedure and not long after you have m
 	</event>
 
 	<event name="GB_SMUGGLE_DELIVERY_BRIBE">
-		<text>Despite your best efforts to slip in undetected, but your hopes are dashed when your voice warning system cuts into the silence onboard your ship with the words: "Ship scan detected", however, instead of being pulled aside for an inspection by an enforcer you are instead offered an opportunity to help 'incentivise' them to turn a blind eye and let you walk away. You didn't know that bribery was so rampant in these parts but it could be worth dealing with a corrupt enforcer instead of an infallible one.</text>
+		<text>Despite your best efforts, you hear your voice warning system cut into the silence of your ship: "Ship scan detected". You are prepared to be pulled aside for an inspection by an enforcer, however instead you are offered an opportunity to help 'incentivise' them to turn a blind eye and let you walk away. You didn't know that bribery was so rampant in these parts but it could be worth dealing with a corrupt enforcer instead of an infallible one.</text>
 		<choice>
 			<text>Bribe them to let you continue.</text>
 			<event>
-				<text>can someone finally put some text here, like seriously, there is supposed to be actual text here</text><!--someone gotta put a text here-->
+				<text>After paying your 'fee' you are waved on in by the so called Enforcer.</text>
 				<item_modify steal="true">
-					<item type="scrap" min="15" max="15"/>
+					<item type="scrap" min="-15" max="-15"/>
 				</item_modify>
-				<choice>
+				<choice hidden="true">
 					<text>Continue...</text>
 					<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
 				</choice>
 			</event>
 		</choice>
 		<choice req="mind" lvl="1" max_group="0">
-			<text>(Mind Control) Make the enforcer lower the 'fee' to access the station.</text>
+			<text>(Mind Control) Convince the enforcer lower the 'fee' to access the station.</text>
 			<event>
 				<text>You 'convince' the enforcer to be in a more charitable mood and lower the price to pay them off.</text>
 				<item_modify steal="true">
 					<item type="scrap" min="3" max="8"/>
 				</item_modify>
-				<choice>
+				<choice hidden="true">
 					<text>Continue...</text>
 					<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
 				</choice>
 			</event>
 		</choice>
 		<choice hidden="true" req="mind" lvl="2" max_group="0">
-			<text>(Improved Mind Control) Convince the enforcer to let you go without a bribe.</text>
+			<text>(Improved Mind Control) Make the enforcer to let you go without a bribe.</text>
 			<event>
-				<text>You 'convince' the enforcer to be in a more charitable mood and decide to let you go without the need of any bribes.</text>
+				<text>You 'convince' the enforcer the error of their ways. Realising their mistake they decide to let you go without the need of any bribes.</text>
 				<choice hidden="true">
 					<text>Phew, that was close.</text>
 					<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
@@ -2203,7 +2203,7 @@ You recieve instructions for the landing procedure and not long after you have m
 		<choice hidden="true">
 			<text>Refuse to bribe them.</text>
 			<event>
-				<text>Without the incentive there is nothing stopping them from continuing with their job, and that is to take you out of the queue into the station and bring you in for a cargo inspection.</text>
+				<text>Without the incentive, there is nothing stopping them from continuing with their job; and that is to take you out of the queue into the station, and bring you in for a cargo inspection.</text>	<!-- SPELLCHECK: Too many commas? proper grammar?-->
 				<choice hidden="true">
 					<text>Allow them to inspect your cargo hold.</text>
 					<event load="GB_SMUGGLE_DELIVERY_INSPECTION"/>
@@ -2221,7 +2221,7 @@ You recieve instructions for the landing procedure and not long after you have m
 	</event>
 
 	<event name="GB_SMUGGLE_DELIVERY_CAUGHT">
-		<text>Despite your best efforts to slip in undetected, but your hopes are dashed when your voice warning system cuts into the silence onboard your ship with the words: "Ship scan detected" and any hopes they would miss anything is lost when the stations enforcer demands your ship to pull aside from the traffic entering the station and surrender to a cargo inspection.</text>
+		<text>Despite your best efforts, you hear your voice warning system cut into the silence of your ship: "Ship scan detected". Any hopes that they would miss anything is lost when the stations enforcer demands your ship to be pulled aside from the traffic entering the station and surrender to a cargo inspection.</text>
 		<choice hidden="true">
 			<text>Allow them to inspect your cargo hold.</text>
 			<event load="GB_SMUGGLE_DELIVERY_INSPECTION"/>
@@ -2233,18 +2233,18 @@ You recieve instructions for the landing procedure and not long after you have m
 		<choice hidden="true" req="mind" lvl="2" max_group="0">
 			<text>(Improved Mind Control) Make the enforcer believe you have already been cleared to dock.</text>
 			<event>
-				<text>You 'convince' the enforcer that you have already been checked by another patrol and had already been cleared to dock at the station. They apologise for the mix up and let you continue your way into the station without further incident.</text>
+				<text>You 'convince' the enforcer that you have already been checked by another patrol and had already been cleared to dock at the station. They apologise for the mix up and let you continue your way into the station.</text>
 				<choice hidden="true">
 					<text>Phew, that was close.</text>
 					<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
 				</choice>
 			</event>
 		</choice>
-		<choice hidden="true" req="mind" lvl="2" max_group="0">
+		<choice hidden="true" req="mind" lvl="3" max_group="0">
 			<text>(Advanced Mind Control) Make the enforcer believe you have already been cleared to dock.</text>
 			<event>
 				<autoReward level="LOW">scrap_only</autoReward>
-				<text>You 'convince' the enforcer that you have already been checked by another patrol and had already been cleared to dock at the station. They apologise profusely for the mix up and offer you a small helping of scrap for your inconvenience of being pulled out of the queue and let you continue your way into the station without further incident.</text>
+				<text>You 'convince' the enforcer that you have already been checked by another patrol and had already been cleared to dock at the station. They apologise profusely for the mix up and offer you a small helping of scrap for your inconvenience of being pulled out of the queue. They let you continue your way into the station.</text>
 				<choice hidden="true">
 					<text>Phew, that was close.</text>
 					<event load="GB_SMUGGLE_DELIVERY_SUCCESS"/>
