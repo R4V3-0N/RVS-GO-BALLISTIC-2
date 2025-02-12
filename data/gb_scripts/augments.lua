@@ -1,4 +1,4 @@
-local vter = mods.inferno.vter
+local vter = mods.multiverse.vter
 
 -- Force ships with integrated ballistics to only use one non-ballistic weapon
 local intBallisticWhitelist = {}
