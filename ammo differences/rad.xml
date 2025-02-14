@@ -1,0 +1,436 @@
+<weaponBlueprint name="GB_AC_1_RAD"> 
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Autocannon Mark I [Rad]</title>
+	<short>AC I [R]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means. (FT: Warcrimes!)</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance>	
+	<damage>1</damage>
+	<persDamage>1</persDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>3</breachChance>
+	<cooldown>6</cooldown>
+	<statBoosts> 
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+		<statBoost name="stunMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.75</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+		</statBoost>
+		<statBoost name="repairSpeed">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+		</statBoost>
+	</statBoosts>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>20</cost> 
+	<image>GB_shot_light_RAD</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_RAD</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_RAD">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Autocannon Mark II [Radiation]</title>
+	<short>AC II [Rad]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>70</freeMissileChance>	
+	<damage>2</damage>
+	<persDamage>1</persDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>6</cooldown>
+	<statBoosts> 
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>10</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+		<statBoost name="stunMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.75</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>10</duration>
+		</statBoost>
+		<statBoost name="repairSpeed">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>10</duration>
+		</statBoost>
+	</statBoosts>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>40</cost> 
+	<image>GB_shot_medium_RAD</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_RAD</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_RAD">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Autocannon Mark III [Radiation]</title>
+	<short>AC III [R]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>55</freeMissileChance>	
+	<damage>3</damage>
+	<persDamage>2</persDamage> 
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>6</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>6</cooldown>
+		<statBoosts> 
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>15</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+		<statBoost name="stunMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.75</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>15</duration>
+		</statBoost>
+		<statBoost name="repairSpeed">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>15</duration>
+		</statBoost>
+	</statBoosts>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> 
+	<image>GB_shot_heavy_RAD</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_RAD</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_1_ELITE_RAD"> 
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [Rad]</title>
+	<short>€ AC I [R]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means. (FT: Warcrimes!)</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance>	
+	<damage>1</damage>
+	<persDamage>2</persDamage> 
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>3</breachChance>
+	<cooldown>6</cooldown>
+	<statBoosts> 
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+		<statBoost name="stunMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.75</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+		</statBoost>
+		<statBoost name="repairSpeed">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>5</duration>
+		</statBoost>
+	</statBoosts>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost> 
+	<image>GB_shot_light_RAD</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_RAD</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_ELITE_RAD">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II [Radiation]</title>
+	<short>€ AC II [Rad]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>70</freeMissileChance>	
+	<damage>2</damage>
+	<persDamage>2</persDamage> 
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>6</cooldown>
+	<statBoosts> 
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>10</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+		<statBoost name="stunMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.75</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>10</duration>
+		</statBoost>
+		<statBoost name="repairSpeed">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>10</duration>
+		</statBoost>
+	</statBoosts>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> 
+	<image>GB_shot_medium_RAD</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_RAD</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_ELITE_RAD">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [Radiation]</title>
+	<short>€ AC III [R]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>55</freeMissileChance>	
+	<damage>3</damage>
+	<persDamage>3</persDamage> 
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>6</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>6</cooldown>
+		<statBoosts> 
+		<statBoost name="moveSpeedMultiplier">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>15</duration>
+			<boostAnim>bio_poison</boostAnim>
+		</statBoost>
+		<statBoost name="stunMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.75</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>15</duration>
+		</statBoost>
+		<statBoost name="repairSpeed">
+			<boostType>MULT</boostType>
+			<amount>0.33</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<maxStacks>1</maxStacks>
+			<duration>15</duration>
+		</statBoost>
+	</statBoosts>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> 
+	<image>GB_shot_heavy_RAD</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_RAD</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+

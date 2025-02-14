@@ -2147,7 +2147,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 
 
-
+<!-- Choosechee: Maybe this can finally get properly implemented soon -->
 <weaponBlueprint name="GB_AC_4">
 	<type>LASER</type>
 	<title>Autocannon Mark IV</title>
@@ -4331,9 +4331,9 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 		•••••••••••••••••••••
 -->
 
-<!-----------------------
+<!--
 	GAUSS RIFLES
------------------------->
+-->
 <weaponBlueprint name="GB_GAUSS_1">
 	<type>LASER</type>
 	<title>Gauss Rifle Mark I</title>
@@ -4626,9 +4626,9 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 </weaponBlueprint>
 
 
-<!-----------------------
+<!--
 	RAIL GUNS
------------------------->
+-->
 <weaponBlueprint name="GB_RAIL_1">
 	<type>LASER</type>
 	<title>Rail Gun Mark I</title>
@@ -5507,9 +5507,9 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 		•••••••••••••••••••••
 -->
 
-<!-----------------------
+<!--
 	BASIC AUTOCANNONS
------------------------->
+-->
 
 
 <!-- Autocannon Amp Toggle Drone -->

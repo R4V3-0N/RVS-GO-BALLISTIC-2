@@ -1,0 +1,63 @@
+Caseless Ammo:
+Decreases weapon cooldown from 6 s to 4 s.
+Ammo replication chance 85% > 80% Autocannon I
+Ammo replication chance 80% > 75% Autocannon II
+Ammo replication chance 70% > 60% Autocannon III
+
+High Velocity (HV) Ammo:
+Increases shot speed to 80, adds 10% to accuracy, and increases breach chance. Enemy version only has +5% accuracy.
+Breach chance 10% > 20% Autocannon I
+Breach chance 20% > 40% Autocannon II
+Breach chance 40% > 70% Autocannon III
+Ammo replication chance 85% > 80% Autocannon I
+Ammo replication chance 80% > 77% Autocannon II
+Ammo replication chance 70% > 66% Autocannon III
+
+Recycler (Free) Ammo:
+Ammo replication chance becomes 100%, but a large amount of missiles are required to fire (but it doesn't consume them) and secondary effects are removed.
+Autocannon I requires 10 missiles to fire
+Autocannon II requires 15 missiles to fire
+Autocannon III requires 25 missiles to fire
+
+High Explosive (HE) Ammo:
+Shots have a chance to crit, dealing double damage (III only gets +1 damage, but that might be a bug). Breach and stun chance are increased either on critical hits, all hits, or some more on normal hits and even more on critical hits? I'm confused and I'm going to fill this out more thoroughly later.
+
+Electromagnetic Pulse (EMP) Ammo:
+Adds ion damage equal to hull damage, but ion is only applied when rooms are hit. System damage is removed (probably? or at least reduced). May be changed to a shield popping effect.
+Ammo replication chance 85% > 77% Autocannon I
+Ammo replication chance 80% > 72% Autocannon II
+Ammo replication chance 70% > 60% Autocannon III
+
+Particle (Heat) Ammo:
+Hull damage is replaced by system damage double to the hull damage, and some crew damage. Breach chance is halved (rounding down) and stun chance is removed, but fire chance equal to the previous breach chance is added.
+Autocannon I gets 1 crew damage
+Autocannon II & III gets 2 crew damage
+Ammo replication chance 85% > 75% Autocannon I
+Ammo replication chance 80% > 70% Autocannon II
+Ammo replication chance 70% > 50% Autocannon III
+
+Incendiary Ammo:
+Requires a Lost Sun crewmember to use. Large fire chance is added. Breach chance is halved (rounding down again) but stun chance is unaffected.
+Autocannon I gets a 40% fire chance.
+Autocannon II gets a 70% fire chance.
+Autocannon III gets a 100% fire chance.
+Ammo replication chance 85% > 80% Autocannon I
+Ammo replication chance 80% > 75% Autocannon II
+Ammo replication chance 70% > 65% Autocannon III
+
+Flechette Ammo (Choosechee's Favorite):
+Shoots multiple projectiles, one normal, and some flechettes. Normal projectile does no crew damage, does one less system damage, but adds 10% breach chance. Flechettes do no damage and don't burst shields, but apply a bleed effect to hit crew and have a 20% breach chance.
+Autocannon I shoots 1 flechette
+Autocannon II shoots 4 flechettes
+Autocannon III shoots 6 flechettes
+Ammo replication chance 85% > 80% Autocannon I
+Ammo replication chance 80% > 75% Autocannon II
+Ammo replication chance 70% > 55% Autocannon III
+
+Radiation Ammo (RAD):
+Requires a Slug Clansman (and/or Ranger?) crewmember to use. Adds extra crew damage, 20% breach chance, and applies the radiation effect to hit crew.
+Autocannon I & II get +1 crew damage
+Autocannon III gets +2 crew damage
+Ammo replication chance 85% > 75% Autocannon I
+Ammo replication chance 80% > 70% Autocannon II
+Ammo replication chance 70% > 55% Autocannon III

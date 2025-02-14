@@ -1,0 +1,300 @@
+<weaponBlueprint name="GB_AC_1_HE"> 
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+	<title>Autocannon Mark I [High Explosive]</title>
+	<short>AC I [HE]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance> 
+	<damage>1</damage>
+	
+	<shots>1</shots>
+	<stun>4</stun>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>20</cost> 
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_1_HE">GB_shot_light_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_HE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+    <type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+	<title>Autocannon Mark II [High Explosive]</title>
+	<short>AC II [HE]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>66</freeMissileChance>	
+	<damage>2</damage>	
+	
+	<persDamage>2</persDamage>	
+	
+	
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<stun>4</stun>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>40</cost> 
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_2_HE">GB_shot_medium_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_HE">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+    <type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+	<title>Autocannon Mark III [High Explosive]</title>
+	<short>AC III [HE]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>50</freeMissileChance>	
+	<damage>3</damage>
+	
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>8</stunChance>
+	<cooldown>6</cooldown>
+	<statBoosts>
+		<statBoost name="powerRechargeMultiplier">
+			<boostType>MULT</boostType>
+			<amount>-1</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+		<statBoost name="allDamageTakenMultiplier">
+			<boostType>MULT</boostType>
+			<amount>1.9</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<affectsSelf>true</affectsSelf>
+			<duration>15</duration>
+		</statBoost>
+	</statBoosts>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> 
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_3_HE">GB_shot_heavy_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_1_ELITE_HE"> 
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+    <type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+	<title>Elite Autocannon Mark I [Squash head]</title>
+	<short>€ AC I [HE]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<tooltip>1 shot 1 damage weapon, 85% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>75</freeMissileChance> 
+	<damage>1</damage>
+	<sysDamage>1</sysDamage> 
+	
+	<shots>1</shots>
+	<stun>4</stun>
+	<sp>0</sp>
+	<breachChance>4</breachChance> 
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost>
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_1_ELITE_HE">GB_shot_light_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_ELITE_HE"> 
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+    <type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+	<title>Elite Autocannon Mark II [Squash Head]</title>
+	<short>€ AC II [HE]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<tooltip>1 shot 2 damage weapon, 85% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>66</freeMissileChance>	
+	<damage>2</damage>
+	<sysDamage>1</sysDamage> 
+	
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>5</breachChance>
+	<stun>4</stun>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> 
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_2_ELITE_HE">GB_shot_medium_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_ELITE_HE"> 
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+    <type>BURST</type>
+    <drone_targetable>0</drone_targetable>
+	<title>Elite Autocannon Mark III [Squash Head]</title>
+	<short>€ AC III [HE]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<tooltip>1 shot 3 damage weapon, 85% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<missiles>1</missiles>
+	<freeMissileChance>50</freeMissileChance>	
+	<damage>3</damage>
+	<sysDamage>1</sysDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>8</breachChance>
+	<stunChance>8</stunChance>
+	<cooldown>6</cooldown>
+	
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> 
+    <projectiles>
+        <projectile count="1" fake="false" blueprint="GB_CRIT_LIST_AC_3_ELITE_HE">GB_shot_heavy_HE</projectile>
+    </projectiles>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_HE</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+

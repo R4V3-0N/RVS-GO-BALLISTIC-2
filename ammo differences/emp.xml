@@ -1,0 +1,403 @@
+<weaponBlueprint name="GB_AC_1_EMP"> 
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Autocannon Mark I [EMP]</title>
+	<short>AC I [EMP]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	<descriptionOverride>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.
+
+		Stats:
+		Required Power: 1
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 77%
+
+		Base Hull Damage: 1
+		Total Crew Damage: 15
+		Ion Damage: 1 (Rooms Only)
+
+		Breach Chance: 10% (Adjusted: 10%)
+
+		Buy/Sell Price: 10~/5~
+	</descriptionOverride>
+	<tooltip>1 shot 1 damage weapon, 77% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	<tooltipOverride>Required Power: 1
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 77%
+
+		Base Hull Damage: 1
+		Total Crew Damage: 15
+		Ion Damage: 1 (Rooms Only)
+
+		Breach Chance: 10% (Adjusted: 10%)
+	</tooltipOverride>
+	<missiles>1</missiles>
+	<freeMissileChance>77</freeMissileChance>
+	<damage>1</damage>
+	<sysDamage>-1</sysDamage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>1</breachChance>
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>20</cost> 
+	<speed>80</speed>
+	<image>GB_shot_light_EMP</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_emp</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_EMP">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Autocannon Mark II [Electromagnetic Pulse]</title>
+	<short>AC II [EMP]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<descriptionOverride>The standard Autocannon of the Federation during its founding. Outdated but still effective.
+
+		Stats:
+		Required Power: 2
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 73%
+
+		Base Hull Damage: 2
+		Total Crew Damage: 30
+		Ion Damage: 2 (Rooms Only)
+
+		Breach Chance: 20% (Adjusted: 20%)
+		Stun Chance: 20% (3 seconds long)
+
+		Buy/Sell Price: 20~/10~
+	</descriptionOverride>
+	<tooltip>1 shot 2 damage weapon, 73% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<tooltipOverride>Required Power: 2
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 73%
+
+		Base Hull Damage: 2
+		Total Crew Damage: 30
+		Ion Damage: 2 (Rooms Only)
+
+		Breach Chance: 20% (Adjusted: 20%)
+		Stun Chance: 20% (3 seconds long)
+	</tooltipOverride>
+	<missiles>1</missiles>
+	<freeMissileChance>72</freeMissileChance>	
+	<damage>2</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>40</cost> 
+	<image>GB_shot_medium_EMP</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_EMP</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_EMP">
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Autocannon Mark III [Electro-magnetic pulse]</title>
+	<short>AC III [EMP]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<descriptionOverride>The standard Autocannon of the Federation during its founding. Outdated but still effective.
+
+		Stats:
+		Required Power: 3
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 62%
+
+		Base Hull Damage: 3
+		Total Crew Damage: 45
+		Ion Damage: 3 (Rooms Only)
+
+		Breach Chance: 40% (Adjusted: 40%)
+		Stun Chance: 40% (3 seconds long)
+
+		Buy/Sell Price: 40~/20~
+	</descriptionOverride>
+	<tooltip>1 shot 3 damage weapon, 62% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<tooltipOverride>Required Power: 3
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 62%
+
+		Base Hull Damage: 3
+		Total Crew Damage: 45
+		Ion Damage: 3 (Rooms Only)
+
+		Breach Chance: 40% (Adjusted: 40%)
+		Stun Chance: 40% (3 seconds long)
+	</tooltipOverride>
+	<missiles>1</missiles>
+	<freeMissileChance>60</freeMissileChance>	
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>6</cooldown>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> 
+	<image>GB_shot_heavy_EMP</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_EMP</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_1_ELITE_EMP"> 
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Elite Autocannon Mark I [EMP]</title>
+	<short>€ AC I [EMP]</short>
+	<desc>The very basic ballistic weapon used by the Federation during the Federation-Mantis war. Heavily outdated by modern standards, it is still a weapon by all means.</desc>
+	
+	<tooltip>1 shot 1 damage weapon, 77% chance to not use ammo, 10% chance to cause a breach</tooltip>
+	
+	<missiles>1</missiles>
+	<freeMissileChance>77</freeMissileChance>
+	<damage>1</damage>
+	<sysDamage>-1</sysDamage>
+	<ion>1</ion> 
+	
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>1</breachChance>
+	<cooldown>6</cooldown>
+	<power>1</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>30</cost> 
+	<speed>80</speed>
+	<image>GB_shot_light_EMP</image>
+	<launchSounds>
+		<sound>GB_cannonLight1</sound>
+		<sound>GB_cannonLight2</sound>
+		<sound>GB_cannonLight3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_1_Elite_emp</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_2_ELITE_EMP"> 
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Elite Autocannon Mark II [Electromagnetic Pulse]</title>
+	<short>€ AC II [EMP]</short>
+	<desc>The standard Autocannon of the Federation during its founding. Outdated but still effective.</desc>
+	<descriptionOverride>The standard Autocannon of the Federation during its founding. Outdated but still effective.
+
+		Stats:
+		Required Power: 2
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 73%
+
+		Base Hull Damage: 2
+		Total Crew Damage: 30
+		Ion Damage: 2 (only 1 to shields)
+
+		Breach Chance: 20% (Adjusted: 20%)
+		Stun Chance: 20% (3 seconds long)
+
+		Buy/Sell Price: 20~/10~
+	</descriptionOverride>
+	<tooltip>1 shot 2 damage weapon, 73% chance to not use ammo, 20% chance to cause a breach, 20% chance to stun</tooltip>
+	<tooltipOverride>Required Power: 2
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 73%
+
+		Base Hull Damage: 2
+		Total Crew Damage: 30
+		Ion Damage: 2 (only 1 to shields)
+
+		Breach Chance: 20% (Adjusted: 20%)
+		Stun Chance: 20% (3 seconds long)
+	</tooltipOverride>
+	<missiles>1</missiles>
+	<freeMissileChance>72</freeMissileChance>	
+	<damage>2</damage>
+    <ion>1</ion>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>2</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>60</cost> 
+	<image>GB_shot_medium_EMP</image>
+	<launchSounds>
+		<sound>GB_cannonMedium1</sound>
+		<sound>GB_cannonMedium2</sound>
+		<sound>GB_cannonMedium3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_2_Elite_EMP</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="GB_AC_3_ELITE_EMP"> 
+    <flavorType>Autocannon</flavorType>
+    <tip>rvs_tip_autocannon</tip>
+	<type>LASER</type>
+	<title>Elite Autocannon Mark III [Electro-magnetic pulse]</title>
+	<short>€ AC III [EMP]</short>
+	<desc>The heaviest Autocannon in service during the Federation-Mantis war; capable of bringing down any warship under a continuous bombardment.</desc>
+	<descriptionOverride>The standard Autocannon of the Federation during its founding. Outdated but still effective.
+
+		Stats:
+		Required Power: 3
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 62%
+
+		Base Hull Damage: 3
+		Total Crew Damage: 45
+		Ion Damage: 3 (only 1 to shields)
+
+		Breach Chance: 40% (Adjusted: 40%)
+		Stun Chance: 40% (3 seconds long)
+
+		Buy/Sell Price: 40~/20~
+	</descriptionOverride>
+	<tooltip>1 shot 3 damage weapon, 62% chance to not use ammo, 40% chance to cause a breach, 40% chance to stun</tooltip>
+	<tooltipOverride>Required Power: 3
+		Charge Time: 6 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 62%
+
+		Base Hull Damage: 3
+		Total Crew Damage: 45
+		Ion Damage: 3 (only 1 to shields)
+
+		Breach Chance: 40% (Adjusted: 40%)
+		Stun Chance: 40% (3 seconds long)
+	</tooltipOverride>
+	<missiles>1</missiles>
+	<freeMissileChance>60</freeMissileChance>	
+	<damage>3</damage>
+    <ion>1</ion>
+	<shots>1</shots>
+	<sp>0</sp>
+	<breachChance>4</breachChance>
+	<stunChance>4</stunChance>
+	<cooldown>6</cooldown>
+	<power>3</power>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<cost>80</cost> 
+	<image>GB_shot_heavy_EMP</image>
+	<launchSounds>
+		<sound>GB_cannonHeavy1</sound>
+		<sound>GB_cannonHeavy2</sound>
+		<sound>GB_cannonHeavy3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>GB_Autocannon_3_Elite_EMP</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
