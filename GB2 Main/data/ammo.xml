@@ -1,0 +1,55 @@
+<!--
+Ammo Blueprint Tutorial
+
+What is an ammo blueprint?
+Ammo blueprints define ammo types for weapons that use ammo. Internally, each combination of
+weapon and ammo is a separate weapon, but that gets messy quickly. Ammo blueprints are used to
+automatically generate these weapons, using the base weapon and applying new stats defined by
+the ammo blueprint.
+
+Starting out
+Use <GB_ammoBlueprint name="NAME"> to declare an ammo blueprint. When generating a weapon with
+ammo, the name is appended with a leading underscore to the end of the base weapon name. For
+example, let's say we have a weapon named "GB_AC_1", and an ammo type named "FLECHETTE". The
+generated weapon corresponding to the weapon and ammo combination would be named
+"GB_AC_1_FLECHETTE". This is useful to know if you want to use a generated weapon in a list.
+
+continue later
+-->
+
+<GB_ammoBlueprint name="CASELESS" ammoType="AUTOCANNON">
+	<title>base .. " [Caseless G]"</title>
+	<short>base .. " [CL]"</short>
+	<cooldown>(2/3) * base</cooldown>
+	<freeMissileChance>if(damage >= 3, base - 10, base - 5)</freeMissileChance>
+	<weaponArt>base .. "_CASELESS"</weaponArt>
+</GB_ammoBlueprint>
+
+<GB_ammoBlueprint name="TEST" ammoType="AUTOCANNON">
+	<title>base .. " [Test]"</title>
+	<short>base .. " [T]"</short>
+	<installReq>Funny</installReq>
+	<if>
+		<condition>damage == 1</condition>
+		<stats>
+			<cooldown>0</cooldown>
+			<desc>base .. " PEW PEW PEW PEW!"</desc>
+		</stats>
+	</if>
+	<match nameContains="2">
+		<breachChance>10</breachChance>
+		<sp>10</sp>
+		<stun>99</stun>
+		<speed>200</speed>
+		<description>base .. " The piercer."</description>
+	</match>
+	<match nameEquals="GB_AC_3">
+		<damage>99</damage>
+		<cooldown>15</cooldown>
+		<description>base .. " Big chonker."</description>
+	</match>
+	<match hasTag="banana">
+		<sp>-100</sp>
+	</match>
+	<match literalNode="true">Match</match>
+</GB_ammoBlueprint>

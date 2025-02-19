@@ -1,0 +1,11 @@
+<metadata>
+  <title><![CDATA[ GO BALLISTIC 2 GENERATOR ]]></title>
+  <threadUrl><![CDATA[ https://www.subsetgames.com/forum/viewtopic.php?f=11&t=38203 ]]></threadUrl>
+  <author><![CDATA[ R4V3-0N, Chrono Vortex, Kommandant_Julk, Pepson and Choosechee ]]></author>
+  <version><![CDATA[ 1.0.0 ]]></version>
+  
+  <description>
+    <![CDATA[Contains the scripts used to generate every weapon and ammo combination and the events to switch ammo types.
+	Patch AFTER the main mod, and any mod that adds new ammo or weapons that use ammo!]]>
+  </description>
+</metadata>

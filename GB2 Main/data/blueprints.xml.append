@@ -88,7 +88,7 @@
 
 <!--AUTOCANNON 1-->
 
-<weaponBlueprint name="GB_AC_1"> <!-- standard-->
+<weaponBlueprint name="GB_AC_1" usesGBAmmo="AUTOCANNON"> <!-- standard-->
     <flavorType>Autocannon</flavorType>
     <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
@@ -767,7 +767,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 <!--AUTOCANNON 2-->
 
-<weaponBlueprint name="GB_AC_2">
+<weaponBlueprint name="GB_AC_2" usesGBAmmo="AUTOCANNON">
     <flavorType>Autocannon</flavorType>
     <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
@@ -1459,7 +1459,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 
 <!--AUTOCANNON 3-->
 
-<weaponBlueprint name="GB_AC_3">
+<weaponBlueprint name="GB_AC_3" usesGBAmmo="AUTOCANNON">
     <flavorType>Autocannon</flavorType>
     <tip>rvs_tip_autocannon</tip>
 	<type>LASER</type>
@@ -4348,7 +4348,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>2</sp>
 	<breachChance>3</breachChance>
 	<stunChance>2</stunChance>
-	<cooldown>15</cooldown> <!--- was 10, 14 -->
+	<cooldown>15</cooldown> <!-- was 10, 14 -->
 	<power>1</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4389,7 +4389,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>2</sp>
 	<breachChance>3</breachChance>
 	<stunChance>2</stunChance>
-	<cooldown>15</cooldown> <!--- was 10, 14 -->
+	<cooldown>15</cooldown> <!-- was 10, 14 -->
 	<power>1</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4431,7 +4431,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>2</sp>
 	<breachChance>4</breachChance>
 	<stunChance>3</stunChance>
-	<cooldown>17</cooldown> <!--- was 13, 16 -->
+	<cooldown>17</cooldown> <!-- was 13, 16 -->
 	<power>2</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4473,7 +4473,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>3</sp>
 	<breachChance>8</breachChance>
 	<stunChance>3</stunChance>
-	<cooldown>17</cooldown> <!--- was 13, 16 -->
+	<cooldown>17</cooldown> <!-- was 13, 16 -->
 	<power>2</power>
 	<speed>200</speed>
 	<bp>4</bp>
@@ -4514,7 +4514,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<sp>2</sp>
 	<breachChance>4</breachChance>
 	<stunChance>3</stunChance>
-	<cooldown>17</cooldown> <!--- fixed, was 13 when the others were 16, now 17 to match above rebalance -->
+	<cooldown>17</cooldown> <!-- fixed, was 13 when the others were 16, now 17 to match above rebalance -->
 	<power>2</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4645,7 +4645,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<breachChance>4</breachChance>
 	<stunChance>3</stunChance>
 	<stun>3</stun>
-	<cooldown>14</cooldown> <!--- was 10 -->
+	<cooldown>14</cooldown> <!-- was 10 -->
 	<power>2</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4688,7 +4688,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<breachChance>4</breachChance>
 	<stunChance>3</stunChance>
 	<stun>3</stun>
-	<cooldown>14</cooldown> <!--- was 10 -->
+	<cooldown>14</cooldown> <!-- was 10 -->
 	<power>2</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4732,7 +4732,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<breachChance>5</breachChance>
 	<stunChance>3</stunChance>
 	<stun>3</stun>
-	<cooldown>16</cooldown> <!--- was 13 -->
+	<cooldown>16</cooldown> <!-- was 13 -->
 	<power>3</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4775,7 +4775,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<breachChance>5</breachChance>
 	<stunChance>3</stunChance>
 	<stun>3</stun>
-	<cooldown>16</cooldown> <!--- was 13 -->
+	<cooldown>16</cooldown> <!-- was 13 -->
 	<power>3</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4819,7 +4819,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<breachChance>6</breachChance>
 	<stunChance>4</stunChance>
 	<stun>3</stun>
-	<cooldown>24</cooldown> <!--- was 16 -->
+	<cooldown>24</cooldown> <!-- was 16 -->
 	<power>4</power>
 	<speed>180</speed>
 	<bp>4</bp>
@@ -4862,7 +4862,7 @@ R4 2022/11/24: Important. With the Vert black magic I want this to do 1 system d
 	<breachChance>6</breachChance>
 	<stunChance>4</stunChance>
 	<stun>3</stun>
-	<cooldown>24</cooldown> <!--- was 16 -->
+	<cooldown>24</cooldown> <!-- was 16 -->
 	<power>4</power>
 	<speed>180</speed>
 	<bp>4</bp>
